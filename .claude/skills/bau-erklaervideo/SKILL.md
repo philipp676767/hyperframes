@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 50–70 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, one-word captions, ElevenLabs voice "Christian Plasa – Dynamic and Vibrant", structure hook → build loop → "Schau dich an. Du hast gerade X gebaut." → follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
+description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, max. 60 s (ideal ~50 s) explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, one-word captions, ElevenLabs voice "Christian Plasa – Dynamic and Vibrant", structure hook → build loop → "Schau dich an. Du hast gerade X gebaut." → follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -16,7 +16,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 | What       | Value                                                                                                                                                                                          |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format     | 1080×1920, 30 fps, 50–70 s total (aim ~68 s)                                                                                                                                                   |
+| Format     | 1080×1920, 30 fps, **max. 60 s, ideal ~50 s**                                                                                                                                                  |
 | Voice      | ElevenLabs **Christian Plasa – Dynamic and Vibrant**, `voice_id nsFsExJHz4xV1sOX6Kdn`, model `eleven_multilingual_v2`                                                                          |
 | CTA        | Spoken "Folg mir, um mehr zu lernen." (stock take in `assets/cta-christian-plasa.mp3`, reused — never regenerate) + red "+ Folgen" pill that gets tapped → "Gefolgt" (already in the template) |
 | Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                     |
@@ -29,9 +29,10 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 ### 1. Script → user approval (always first)
 
-Write the German script with `references/script-formel.md`: hook, 5–7 build
-beats, outro, CTA. **165–185 words before the CTA** (the voice reads slowly;
-more than that will not fit 70 s). Show the user the script plus a one-line
+Write the German script with `references/script-formel.md`: hook, 4–5 build
+beats, outro, CTA. **120–135 words before the CTA** (≈ 50 s video), never
+more than **150** (≈ 60 s, the hard limit). Count them before showing the
+script; if a topic needs more, cut beats rather than squeeze. Show the user the script plus a one-line
 visual idea per beat, and **wait for their OK** before spending credits or
 building. Apply their edits verbatim.
 
@@ -92,13 +93,13 @@ file (the key must come from the environment's secrets, never the chat).
 Then, in the project dir:
 
 ```bash
-bash scripts/prepare-voice.sh          # tighten pauses + stock CTA + speed-up ≤ 67 s → assets/voiceover.mp3
+bash scripts/prepare-voice.sh          # tighten pauses + stock CTA + speed-up to ~49 s → assets/voiceover.mp3
 python3 -I scripts/align-words.py      # Whisper word timings snapped onto script.txt → assets/words.js
 node scripts/sync-html.mjs             # root duration, caption length, the one <audio> tag
 ```
 
 `align-words.py` needs `pip install faster-whisper` (downloads the `small`
-model once). If `prepare-voice.sh` warns about >12 % speed-up, shorten the
+model once). If `prepare-voice.sh` stops because the voice would end past 58.8 s, shorten the
 script with the user rather than speeding up more.
 
 ### 4. Build the subject (`assets/scene.js`)
@@ -131,7 +132,7 @@ ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<s
 ffmpeg -hide_banner -i renders/<slug>.mp4 -af ebur128 -f null - 2>&1 | grep "I:"   # ≈ -12…-15 LUFS
 ```
 
-Confirm exactly one audio stream and 50–70 s, then send the MP4 with
+Confirm exactly one audio stream and ≤ 60 s (ideally ~50 s), then send the MP4 with
 `SendUserFile` (display `render`). Commit `tiktok/<slug>/` (renders are
 git-ignored; mp3s go through LFS via `.gitattributes`) on a branch
 `tiktok/<slug>` and push.
@@ -144,13 +145,19 @@ git-ignored; mp3s go through LFS via `.gitattributes`) on a branch
 - **Anchors:** `W()` matches whole words case-insensitively and counts
   occurrences; common words ("an", "die", "das") collide across sentences.
   Prefer nouns/verbs that appear once, or pass the occurrence number.
-- **Length:** the voice reads ~2.5 words/s plus pauses; 185 words ≈ 75 s raw
-  → ~67 s after `prepare-voice.sh`. Over 70 s total is a reject.
+- **Length:** after `prepare-voice.sh` the voice runs ~2.5 words/s plus the
+  CTA: 125 words ≈ 50 s, 150 words ≈ 60 s. Over 60 s total is a reject;
+  `prepare-voice.sh` refuses to build it. The fridge (68 s, 185 words)
+  predates this limit — don't copy its length.
 - **One audio tag:** only `sync-html.mjs` writes the `<audio id="vo">` tag;
   it removes old ones first. Lint error `duplicate_media_id` means two.
 - **Camera:** shots are authored close and pulled back ×1.7 (`zoom`). For a
   macro close-up use `zoom: 1.0–1.4`. Scenery (trees, houses, palms) can block
   side/back shots — move the camera, not the environment's stage rules.
+- **Git LFS:** mp3/mp4/png under `tiktok/` and the skill's stock CTA are LFS
+  files. In a fresh clone they can be 130-byte pointers ("Invalid argument"
+  from ffmpeg). Fix: `git lfs install --local && git lfs pull`.
+  `new-video.sh` does this automatically for the CTA.
 - **Never `pkill -f` a pattern that appears in your own command line** — it
   kills the shell running it. Use `pkill -f "render -o render[s]"` style.
 - **Outro corridor:** the drone pull-back flies out towards +x/+z; any new

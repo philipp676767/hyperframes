@@ -15,6 +15,12 @@ if [ -e "$DEST" ]; then
   exit 1
 fi
 
+# Fresh clones may hold Git LFS pointers instead of the real audio.
+if [ "$(wc -c <"$SKILL/assets/cta-christian-plasa.mp3")" -lt 1000 ]; then
+  git -C "$ROOT" lfs install --local >/dev/null
+  git -C "$ROOT" lfs pull --include=".claude/skills/bau-erklaervideo/**,tiktok/**"
+fi
+
 mkdir -p "$ROOT/tiktok"
 cp -R "$SKILL/template" "$DEST"
 mv "$DEST/gitignore" "$DEST/.gitignore"
