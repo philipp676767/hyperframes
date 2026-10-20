@@ -72,12 +72,13 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="68.2"
+      data-duration="67.9"
       data-width="1080"
       data-height="1920"
     >
       <canvas id="stage" width="720" height="1280"></canvas>
       <div id="captions"></div>
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="67.9" data-track-index="2" data-volume="1"></audio>
       <audio
         id="vo"
         src="assets/voiceover.mp3"
@@ -104,7 +105,7 @@
           tl.set(el, { opacity: 1 }, w.start);
           tl.set(el, { opacity: 0 }, off);
         });
-        tl.set({}, {}, 68.2);
+        tl.set({}, {}, 67.9);
         window.__timelines["main"] = tl;
       })();
     </script>
