@@ -46,6 +46,55 @@
         top: 900px;
         height: 120px;
       }
+      #cta {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 560px;
+        display: flex;
+        justify-content: center;
+      }
+      #cta-btn {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 26px 56px 26px 34px;
+        border-radius: 999px;
+        background: #fe2c55;
+        box-shadow: 0 14px 40px rgba(60, 10, 40, 0.35);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 60px;
+        color: #ffffff;
+        opacity: 0;
+      }
+      #cta-plus {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #ffffff;
+      }
+      #cta-plus::before,
+      #cta-plus::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 34px;
+        height: 9px;
+        margin: -4.5px 0 0 -17px;
+        border-radius: 5px;
+        background: #fe2c55;
+      }
+      #cta-plus::after {
+        width: 9px;
+        height: 34px;
+        margin: -17px 0 0 -4.5px;
+      }
+      #cta-label-done {
+        display: none;
+      }
       .word {
         position: absolute;
         left: 0;
@@ -72,21 +121,19 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="67.9"
+      data-duration="68.3"
       data-width="1080"
       data-height="1920"
     >
       <canvas id="stage" width="720" height="1280"></canvas>
       <div id="captions"></div>
-      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="67.9" data-track-index="2" data-volume="1"></audio>
-      <audio
-        id="vo"
-        src="assets/voiceover.mp3"
-        data-start="0"
-        data-duration="68.2"
-        data-track-index="2"
-        data-volume="1"
-      ></audio>
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="68.3" data-track-index="2" data-volume="1"></audio>
+      <div id="cta">
+        <div id="cta-btn">
+          <div id="cta-plus"></div>
+          <span id="cta-label">Folgen</span><span id="cta-label-done">Gefolgt</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -105,7 +152,24 @@
           tl.set(el, { opacity: 1 }, w.start);
           tl.set(el, { opacity: 0 }, off);
         });
-        tl.set({}, {}, 67.9);
+        // CTA: "Folgen" pill pops in on "Folg", gets tapped, flips to "Gefolgt".
+        const cta = words.find((w) => w.w === "Folg");
+        if (cta) {
+          const t0 = cta.start;
+          tl.fromTo(
+            "#cta-btn",
+            { opacity: 0, scale: 0.4, y: 40 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
+            t0,
+          );
+          tl.to("#cta-btn", { scale: 0.9, duration: 0.12, ease: "power2.in" }, t0 + 1.0);
+          tl.set("#cta-btn", { backgroundColor: "#3a3a46" }, t0 + 1.12);
+          tl.set("#cta-plus", { opacity: 0, width: 0, marginRight: -22 }, t0 + 1.12);
+          tl.set("#cta-label", { display: "none" }, t0 + 1.12);
+          tl.set("#cta-label-done", { display: "inline" }, t0 + 1.12);
+          tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, t0 + 1.12);
+        }
+        tl.set({}, {}, 68.3);
         window.__timelines["main"] = tl;
       })();
     </script>

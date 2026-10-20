@@ -13,8 +13,8 @@ let html = fs.readFileSync(htmlUrl, "utf8");
 html = html.replace(/(data-composition-id="main"[\s\S]*?data-duration=")[\d.]+"/, `$1${dur}"`);
 html = html.replace(/tl\.set\(\{\}, \{\}, [\d.]+\);/, `tl.set({}, {}, ${dur});`);
 const audioTag = `<audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="${dur}" data-track-index="2" data-volume="1"></audio>`;
-html = /<audio id="vo"[^>]*><\/audio>/.test(html)
-  ? html.replace(/<audio id="vo"[^>]*><\/audio>/, audioTag)
-  : html.replace('<div id="captions"></div>', `<div id="captions"></div>\n      ${audioTag}`);
+// Drop every existing voiceover tag (formatters may have wrapped it), then add one.
+html = html.replace(/\n?[ \t]*<audio\b[^>]*\bid="vo"[^>]*>\s*<\/audio>/g, "");
+html = html.replace('<div id="captions"></div>', `<div id="captions"></div>\n      ${audioTag}`);
 fs.writeFileSync(htmlUrl, html);
 console.log(`composition ${dur}s`);
