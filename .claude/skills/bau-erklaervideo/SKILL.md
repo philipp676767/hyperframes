@@ -134,14 +134,23 @@ Fix and re-snapshot. Expect 2–3 rounds.
 
 ```bash
 npx hyperframes render -o renders/<slug>.mp4      # ~15 min (software WebGL); run in background
-ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<slug>.mp4
-ffmpeg -hide_banner -i renders/<slug>.mp4 -af ebur128 -f null - 2>&1 | grep "I:"   # ≈ -12…-15 LUFS
+bash scripts/finish-audio.sh renders/<slug>.mp4   # -> renders/<slug>-final.mp4 at -14 LUFS (picture untouched)
+ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<slug>-final.mp4
 ```
 
-Confirm exactly one audio stream and ≤ 60 s (ideally ~50 s), then send the MP4 with
-`SendUserFile` (display `render`). Commit `tiktok/<slug>/` (renders are
-git-ignored; mp3s go through LFS via `.gitattributes`) on a branch
-`tiktok/<slug>` and push.
+The render's mixer drops voice + music to ≈ -18 LUFS; `finish-audio.sh`
+brings it back to -14 LUFS. Confirm exactly one audio stream and ≤ 60 s
+(ideally ~50 s), then send **`<slug>-final.mp4`** with `SendUserFile`
+(display `render`). Append the episode to `tiktok/serie.md`.
+
+### 7. Save — always on `main`
+
+Commit `tiktok/<slug>/` and `tiktok/serie.md` **directly on `main`**
+(`git pull origin main` first) and push. Same for any change to this
+skill. Other chats start on `main`: an episode or skill change left on a
+side branch is invisible to them (the music bed once sat on a branch for
+a whole episode and the next video shipped without it). Renders are
+git-ignored; mp3/png go through LFS via `.gitattributes`.
 
 ## Gotchas (all learned the hard way)
 
@@ -155,6 +164,10 @@ git-ignored; mp3s go through LFS via `.gitattributes`) on a branch
   CTA: 125 words ≈ 50 s, 150 words ≈ 60 s. Over 60 s total is a reject;
   `prepare-voice.sh` refuses to build it. The fridge (68 s, 185 words)
   predates this limit — don't copy its length.
+- **Skill changes live on `main` only.** Before starting a video, `git
+pull origin main`; if `git branch -r` shows `tiktok/*` branches that
+  aren't merged (`git branch -r --no-merged origin/main`), look for skill
+  changes there and merge them first.
 - **Audio tags:** only `sync-html.mjs` writes the `<audio id="vo">` and
   `<audio id="bgm">` tags; it removes old ones first. Lint error
   `duplicate_media_id` means two of one. The render mixes both into one
