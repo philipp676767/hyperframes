@@ -18,7 +18,6 @@ import {
   xrayEdges,
   setXray,
   addFloor,
-  addTrees,
   showNope,
   makeArrowSet,
   animateArrows,
@@ -28,9 +27,12 @@ import {
   renderFrame,
   start,
 } from "./world.js";
+import { createWorld } from "./environments.js";
 
+// Pick the place + light for this topic: env insel | stadt | strand | winter | land,
+// sky sonnenuntergang | morgen | mittag | abend (optional, each env has a default).
+createWorld({ env: "insel" });
 addFloor(3.2, "#f3e9dc", "#d9c9b6");
-addTrees();
 
 // ---------------------------------------------------------------- hook prop
 // The primitive version from the hook ("Kerze in einem Glas").

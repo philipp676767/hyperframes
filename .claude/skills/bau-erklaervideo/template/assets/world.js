@@ -1,7 +1,8 @@
-// Shared world for the "Du hast gerade X gebaut" explainer series: low-poly
-// floating island at sunset, word-anchored timing, camera shots, LED panel,
-// wavy force/heat arrows, orange "nope" X and x-ray glass. A video's
-// scene.js imports from here and only builds its own subject + story beats.
+// Shared engine for the "Du hast gerade X gebaut" explainer series:
+// word-anchored timing, renderer, materials, camera shots, LED panel, wavy
+// force/heat arrows, orange "nope" X and x-ray glass. The landscape and sky
+// come from environments.js (createWorld). A video's scene.js imports from
+// both and only builds its own subject + story beats.
 // Everything renders as a pure function of time t (seconds).
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
 
@@ -171,122 +172,11 @@ export function setXray(materials, k) {
 // glowing outline for an x-ray mesh (add it next to the mesh, same transform)
 export const xrayEdges = (geo) => new THREE.LineSegments(new THREE.EdgesGeometry(geo, 35), edgeMat);
 
-// ---------------------------------------------------------------- sky
-const sunDir = V(-0.32, 0.07, -1).normalize();
-scene.add(
-  new THREE.Mesh(
-    new THREE.SphereGeometry(300, 48, 24),
-    new THREE.ShaderMaterial({
-      side: THREE.BackSide,
-      depthWrite: false,
-      fog: false,
-      uniforms: { sunDir: { value: sunDir } },
-      vertexShader: `varying vec3 vDir;
-      void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
-      fragmentShader: `uniform vec3 sunDir; varying vec3 vDir;
-      void main(){
-        vec3 d = normalize(vDir);
-        float h = d.y;
-        vec3 top = vec3(0.43, 0.36, 0.82);
-        vec3 mid = vec3(0.93, 0.56, 0.76);
-        vec3 hor = vec3(1.0, 0.70, 0.47);
-        vec3 below = vec3(0.91, 0.65, 0.77);
-        vec3 c;
-        if (h > 0.0) { c = mix(hor, mid, smoothstep(0.0, 0.16, h)); c = mix(c, top, smoothstep(0.14, 0.62, h)); }
-        else { c = mix(hor, below, smoothstep(0.0, 0.10, -h)); }
-        float s = clamp(dot(d, sunDir), 0.0, 1.0);
-        c += vec3(1.0, 0.86, 0.6) * (pow(s, 90.0) * 0.95 + pow(s, 10.0) * 0.28);
-        gl_FragColor = vec4(c, 1.0);
-      }`,
-    }),
-  ),
-);
-
-// low-poly clouds
-const cloudMat = new THREE.MeshLambertMaterial({
-  color: 0xffe6ef,
-  emissive: 0xffb8d2,
-  emissiveIntensity: 0.35,
-  flatShading: true,
-  fog: false,
-});
-for (let i = 0; i < 16; i++) {
-  const g = new THREE.Group();
-  const a = (i / 16) * Math.PI * 2 + rand() * 0.3;
-  const r = 55 + rand() * 30;
-  g.position.set(Math.cos(a) * r, 6 + rand() * 20, Math.sin(a) * r);
-  const n = 3 + Math.floor(rand() * 3);
-  for (let k = 0; k < n; k++) {
-    const m = new THREE.Mesh(
-      jitter(new THREE.IcosahedronGeometry(1, 1), 0.08, i * 7 + k),
-      cloudMat,
-    );
-    const s = 2.4 + rand() * 2.4;
-    m.scale.set(s * 1.25, s * 0.75, s);
-    m.position.set((k - n / 2) * 3 + rand(), rand() * 1.2, rand() * 1.5);
-    g.add(m);
-  }
-  g.lookAt(0, g.position.y, 0);
-  scene.add(g);
-}
-
-// ---------------------------------------------------------------- lights
-scene.add(new THREE.HemisphereLight(0xffe9f2, 0x8a6a7a, 1.35));
-const sun = new THREE.DirectionalLight(0xffe2c4, 2.6);
-sun.position.set(6, 11, 8);
-sun.castShadow = true;
-sun.shadow.mapSize.set(1536, 1536);
-sun.shadow.camera.left = -11;
-sun.shadow.camera.right = 11;
-sun.shadow.camera.top = 11;
-sun.shadow.camera.bottom = -11;
-sun.shadow.camera.near = 1;
-sun.shadow.camera.far = 40;
-sun.shadow.bias = -0.0006;
-sun.shadow.normalBias = 0.02;
-scene.add(sun);
-const rim = new THREE.DirectionalLight(0xff9ec4, 0.7);
-rim.position.set(-6, 4, -9);
-scene.add(rim);
-
-// ---------------------------------------------------------------- island
-// Radius 9, grass top at y=0, the subject stands at the origin.
-export const island = new THREE.Group();
-scene.add(island);
-{
-  const top = new THREE.Mesh(
-    jitter(new THREE.CylinderGeometry(9, 8.8, 0.7, 30, 1), 0.08, 3),
-    M.grass,
-  );
-  top.position.y = -0.35;
-  top.receiveShadow = true;
-  island.add(top);
-  const cone = new THREE.Mesh(jitter(new THREE.ConeGeometry(8.8, 7, 16, 3), 0.45, 4), M.earth);
-  cone.rotation.x = Math.PI;
-  cone.position.y = -0.7 - 3.5;
-  island.add(cone);
-  for (let i = 0; i < 26; i++) {
-    const a = rand() * Math.PI * 2;
-    const r = 1 + rand() * 6.5;
-    const y0 = -0.8 - (1 - r / 8.8) * 6.2;
-    const pts = [];
-    let x = Math.cos(a) * r;
-    let z = Math.sin(a) * r;
-    let y = y0 + 0.4;
-    for (let k = 0; k < 6; k++) {
-      pts.push(V(x, y, z));
-      x += (rand() - 0.5) * 0.7;
-      z += (rand() - 0.5) * 0.7;
-      y -= 0.6 + rand() * 0.8;
-    }
-    island.add(
-      new THREE.Mesh(
-        new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 16, 0.05 + rand() * 0.04, 5),
-        M.root,
-      ),
-    );
-  }
-}
+// ---------------------------------------------------------------- ground
+// Environments (sky, lights, landscape) live in environments.js and fill this
+// group; createWorld() there must run before the subject is built.
+export const ground = new THREE.Group();
+scene.add(ground);
 
 // Checkered floor pad under the subject (kitchen tiles, workshop floor...).
 export function addFloor(size = 3.6, colorA = "#f3e9dc", colorB = "#d9c9b6") {
@@ -305,72 +195,13 @@ export function addFloor(size = 3.6, colorA = "#f3e9dc", colorB = "#d9c9b6") {
     new THREE.MeshStandardMaterial({ map: tex, roughness: 0.6 }),
   );
   floor.receiveShadow = true;
-  island.add(floor);
+  ground.add(floor);
   return floor;
 }
 
-export function tree(x, z, s = 1, seed = 0) {
-  const g = new THREE.Group();
-  const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.2, 1.9, 6), M.trunk);
-  trunk.position.y = 0.95;
-  trunk.castShadow = true;
-  g.add(trunk);
-  const n = 2 + (seed % 2);
-  for (let k = 0; k < n; k++) {
-    const r = 0.95 - k * 0.18;
-    const m = new THREE.Mesh(
-      jitter(new THREE.IcosahedronGeometry(r, 1), 0.07, seed * 13 + k),
-      k % 2 ? M.leaf2 : M.leaf,
-    );
-    m.position.set((k % 2 ? 0.35 : -0.15) * (seed % 3 ? 1 : -1), 2.2 + k * 0.85, k * 0.1);
-    m.castShadow = true;
-    g.add(m);
-  }
-  g.position.set(x, 0, z);
-  g.scale.setScalar(s);
-  g.rotation.y = seed;
-  island.add(g);
-  return g;
-}
-// [x, z, scale] — a ring that keeps the centre and the front (+z) clear.
-export const DEFAULT_TREES = [
-  [-3.4, -3.6, 1.1],
-  [3.0, -4.4, 1.2],
-  [-6.2, -1.2, 1.0],
-  [6.3, -2.6, 1.15],
-  [0.6, -6.8, 1.3],
-  [-2.4, -7.2, 1.0],
-  [-7.3, 2.6, 0.9],
-  [7.4, 1.4, 0.95],
-  [-4.6, 5.4, 0.9],
-  [5.6, 5.6, 1.0],
-  [4.6, -6.6, 1.0],
-  [-6.4, -4.8, 1.1],
-];
-export const addTrees = (list = DEFAULT_TREES) => list.map(([x, z, s], i) => tree(x, z, s, i + 1));
-
-for (let i = 0; i < 14; i++) {
-  const a = rand() * Math.PI * 2;
-  const r = 3 + rand() * 5.2;
-  const m = new THREE.Mesh(
-    jitter(new THREE.DodecahedronGeometry(0.18 + rand() * 0.22, 0), 0.04, i),
-    M.rock,
-  );
-  m.position.set(Math.cos(a) * r, 0.05, Math.sin(a) * r);
-  m.castShadow = true;
-  island.add(m);
-}
-for (let i = 0; i < 10; i++) {
-  const a = rand() * Math.PI * 2;
-  const r = 4 + rand() * 4.5;
-  const m = new THREE.Mesh(
-    jitter(new THREE.IcosahedronGeometry(0.35 + rand() * 0.25, 0), 0.05, 50 + i),
-    M.grassDark,
-  );
-  m.position.set(Math.cos(a) * r, 0.15, Math.sin(a) * r);
-  m.castShadow = true;
-  island.add(m);
-}
+// Per-frame hooks for animated environment details (falling snow, waves...).
+const frameHooks = [];
+export const onFrame = (fn) => frameHooks.push(fn);
 
 // ---------------------------------------------------------------- shared props
 export function roundedRect(w, h, r) {
@@ -574,11 +405,15 @@ export function renderFrame() {
 // Wire HyperFrames seeking to renderAt(t); redraw once fonts land so the LED
 // panel text uses Montserrat.
 export function start(renderAt) {
-  window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+  const frame = (t) => {
+    for (const fn of frameHooks) fn(t);
+    renderAt(t);
+  };
+  window.addEventListener("hf-seek", (e) => frame(e.detail.time));
   document.fonts.load('800 40px "Montserrat"').then(() => {
     panelKey = "";
-    renderAt(window.__hfThreeTime || 0);
+    frame(window.__hfThreeTime || 0);
   });
-  renderAt(window.__hfThreeTime || 0);
-  window.__dbg = { renderAt, scene, camera };
+  frame(window.__hfThreeTime || 0);
+  window.__dbg = { renderAt: frame, scene, camera };
 }

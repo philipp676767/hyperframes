@@ -59,9 +59,10 @@ change local agent discovery.
 ## TikTok series: "Du hast gerade X gebaut"
 
 The `bau-erklaervideo` skill makes the next video of the German explainer
-series (low-poly floating-island 3D diorama, x-ray build-up, one-word
+series (toy low-poly 3D diorama in a different setting each video —
+island, city, beach, winter, countryside —, x-ray build-up, one-word
 captions, ElevenLabs voice Christian Plasa, follow CTA). It scaffolds
 `tiktok/<slug>/` from its template (`scripts/new-video.sh`), which ships
-the shared `world.js` engine; `tiktok/kuehlschrank/` is the reference
+the shared `world.js` + `environments.js` engine; `tiktok/kuehlschrank/` is the reference
 build. Ask for a topic ("mach das nächste Video: wie funktioniert ein
 Aufzug") and it walks script approval → voice → scene → render.

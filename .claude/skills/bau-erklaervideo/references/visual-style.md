@@ -1,19 +1,36 @@
 # Visual style
 
-The world (sky, island, trees, lighting, captions, CTA) is fixed in
-`world.js` / `index.html` — don't restyle it per video. What each video
-designs is the **subject**, its **build-up**, and the **shots**.
+The look (toy low-poly, flat colours, soft shadows, pastel light, captions,
+CTA) is fixed. The **setting changes every video** — pick one of the
+environments in `environments.js` and a sky; never repeat the previous
+video's (log: `tiktok/serie.md`). What each video designs is the
+**subject**, its **build-up**, and the **shots**.
 
-## World (fixed)
+## Settings (environments.js)
 
-- Floating low-poly island (radius 9, grass top at y = 0), brown earth cone
-  with hanging roots, pink haze below.
-- Sunset sky: purple top → pink → orange horizon, low sun glow behind the
-  subject (sun direction −z), soft pink low-poly clouds.
-- Faceted trees around the edge, rocks, bushes; optional checkered floor pad
-  under the subject (`addFloor`) for indoor things (kitchen, workshop).
-- Toy-like, saturated, soft shadows. No realism, no textures beyond flat
-  colors and the floor checker.
+All share: faceted low-poly shapes, flat saturated-pastel colours, soft
+shadows, gradient sky with a low sun glow behind the subject (−z), puffy
+low-poly clouds, gentle fog into the distance. The subject always stands at
+the origin on a clear stage.
+
+- `insel` — floating island (radius 9) with earth cone and hanging roots,
+  park trees, rocks; pink haze below. The original look.
+- `stadt` — light plaza, asphalt road behind the stage with white dashes,
+  double yellow centre line and a zebra crossing, pastel houses with
+  window grids (glowing at `abend`), street lamps, parked cars.
+- `strand` — sand with wavy shoreline and moving foam, turquoise sea,
+  palms with coconuts, umbrella + towel, a rocking sailboat.
+- `winter` — snow ground with drifts, snowy pines, lavender mountains with
+  snow caps, a cabin with a lit window, falling snow.
+- `land` — meadow, dirt road with a wooden fence, striped fields, red barn,
+  silo, hay bales, trees.
+
+Skies: `sonnenuntergang` (purple → pink → orange), `morgen` (light blue →
+rose → peach), `mittag` (clear blue), `abend` (deep blue-violet, warm
+horizon, lit windows/lamps).
+
+Optional checkered floor pad under the subject (`addFloor`) for indoor
+things (kitchen tiles, workshop floor) — skip it outdoors.
 
 ## Subject
 
@@ -30,7 +47,7 @@ designs is the **subject**, its **build-up**, and the **shots**.
   `#2f9bff`, hot = red/orange `#ff3d1f`/`#ffa83a`), wavy arrows for heat/air
   (`heatMat`, `coldMat`), straight yellow arrows for forces (`forceMat`,
   `amp: 0`), bubbles, sparkles, sound rings.
-- **Analogy mini-sets** (sweat on skin, bike pump …) stand on the island
+- **Analogy mini-sets** (sweat on skin, bike pump …) stand on the stage
   at about x = ±5, z = 2 and get their own close shot when the comparison
   is spoken.
 - **LED panel** (`showPanel`) for every number: short label + big value,
@@ -43,11 +60,11 @@ designs is the **subject**, its **build-up**, and the **shots**.
 
 - Hard cut on a word every 2–4 s; never a static frame — each shot drifts
   (dolly, slow orbit, crane).
-- Mix: establishing wide (subject + island), medium 3/4, macro close-ups of
+- Mix: establishing wide (subject + surroundings), medium 3/4, macro close-ups of
   the part being named (`zoom` 1.0–1.4), one big x-ray orbit when "alles im
   Kreis läuft" / the system is complete.
-- Outro: front shot, then a drone pull-back that reveals the whole floating
-  island under the CTA.
+- Outro: front shot, then a drone pull-back that reveals the whole setting
+  under the CTA.
 - Keep the vertical centre band (y ≈ 900–1020 px) readable: that's where the
   one-word captions sit, the subject may pass behind them but not a bright
   white surface for long.

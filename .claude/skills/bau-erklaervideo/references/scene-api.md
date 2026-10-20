@@ -1,7 +1,8 @@
-# scene.js on top of world.js
+# scene.js on top of world.js + environments.js
 
-`assets/world.js` builds the renderer, sky, island, lights and shared props
-on import and exports helpers. `assets/scene.js` imports what it needs,
+`assets/world.js` builds the renderer and shared props on import and exports
+helpers; `assets/environments.js` exports `createWorld({ env, sky })`, which
+builds sky, lights and the landscape — call it first. `assets/scene.js` imports what it needs,
 builds the subject, and defines `renderAt(t)` — a **pure function of time**
 (no state carried between frames, no `Math.random`, no clocks). The demo
 `template/assets/scene.js` is the minimal pattern; `tiktok/kuehlschrank/
@@ -20,12 +21,12 @@ bubbles, analogy sets, door opening).
 | `rng(seed)`, `rand`                                                                 | seeded random (use your own `rng(n)` for per-prop randomness)                                                                                                     |
 | `V(x,y,z)`                                                                          | `new THREE.Vector3`                                                                                                                                               |
 | `jitter(geom, amt, seed)`                                                           | low-poly wobble that keeps faceted meshes watertight                                                                                                              |
-| `scene`, `camera`, `renderer`, `island`                                             | the three.js objects                                                                                                                                              |
+| `scene`, `camera`, `renderer`, `ground`                                             | the three.js objects (`ground` holds the landscape)                                                                                                               |
 | `flat(color, extra)`                                                                | flat-shaded `MeshStandardMaterial`                                                                                                                                |
 | `M`                                                                                 | shared materials: grass, earth, wood, woodDark, chrome, rubber, copper, alu, steel, concrete, water, steam, orange, … (`Object.assign(M, {...})` to add your own) |
 | `xrayMaterial(color)` / `setXray([mats], k)` / `xrayEdges(geo)`                     | shell that fades to blue glass (k 0→1) + glowing outline                                                                                                          |
 | `addFloor(size, colorA, colorB)`                                                    | checkered pad under the subject                                                                                                                                   |
-| `addTrees(list = DEFAULT_TREES)`, `tree(x,z,s,seed)`                                | tree ring (pass a filtered list if a tree blocks a shot)                                                                                                          |
+| `onFrame(fn)`                                                                       | register `fn(t)` to run before every frame (animated scenery)                                                                                                     |
 | `roundedRect(w, h, r)`                                                              | `THREE.Shape` for `ExtrudeGeometry` (rounded boxes, doors, panels)                                                                                                |
 | `showNope(k, x, y, z, size)`                                                        | orange ✕, billboarded; k from `pop()`                                                                                                                             |
 | `makeArrowSet([[from,to],…], {parent, mat, r, amp})` / `animateArrows(set, t, vis)` | wavy (amp>0) or straight (amp 0) arrows; mats `heatMat coldMat forceMat`                                                                                          |
@@ -33,6 +34,20 @@ bubbles, analogy sets, door opening).
 | `shotCamera(shots, zoom = 1.7)`                                                     | returns `applyCamera(t)`; shot format below                                                                                                                       |
 | `renderFrame()`                                                                     | billboards + render; last call of `renderAt`                                                                                                                      |
 | `start(renderAt)`                                                                   | wire HyperFrames seeking; call once at the end                                                                                                                    |
+
+## environments.js
+
+| Export                      | Use                                                                                                           |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `createWorld({ env, sky })` | build the setting; env `insel stadt strand winter land`, sky `sonnenuntergang morgen mittag abend` (optional) |
+| `ENVIRONMENTS`, `SKIES`     | the available names / sky palettes                                                                            |
+| `tree(x, z, s, seed)`       | extra park tree if a shot needs framing                                                                       |
+
+A new environment is one builder function in `ENV_BUILDERS` plus a
+`DEFAULT_SKY` entry. Rules: big ground (radius ~75) or a closed shape,
+nothing on the stage (|x| < 6.5, -5 < z < 4.5), nothing tall on the outro
+line (x ≈ 0.6·z in front), seeded randomness only (`rng(n)`), animated
+details through `onFrame`.
 
 ## Shots
 

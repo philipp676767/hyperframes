@@ -29,7 +29,7 @@ Ampel, Flugzeug, Bremsen) and proven on the fridge video.
 - Concrete numbers: _"minus 26 Grad"_, _"15-mal pro Sekunde"_, _"8 Tonnen"_.
   Each number becomes an LED-panel fact in the video.
 - One idea per beat, each beat must be **visualizable** as a component that
-  appears, moves or glows on the island. If you can't picture the shot, cut
+  appears, moves or glows on the stage. If you can't picture the shot, cut
   the beat.
 - Keep the facts right. When unsure of a number, use a safer phrasing or
   check it — the audience comments on errors.

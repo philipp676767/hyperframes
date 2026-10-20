@@ -24,7 +24,6 @@ import {
   xrayEdges,
   setXray,
   addFloor,
-  addTrees,
   roundedRect,
   showNope,
   makeArrowSet,
@@ -35,6 +34,7 @@ import {
   renderFrame,
   start,
 } from "./world.js";
+import { createWorld } from "./environments.js";
 
 Object.assign(M, {
   condenser: new THREE.MeshStandardMaterial({
@@ -84,9 +84,9 @@ Object.assign(M, {
   pumpHot: flat(0x6b7480, { roughness: 0.5, emissive: 0xff3b10, emissiveIntensity: 0 }),
 });
 
-// kitchen tiles under the fridge + the standard tree ring
+// floating island at sunset + kitchen tiles under the fridge
+createWorld({ env: "insel" });
 addFloor(3.6);
-addTrees();
 
 // ---------------------------------------------------------------- props
 function milkBottle() {
