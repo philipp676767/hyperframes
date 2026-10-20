@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Build assets/voiceover.mp3 from the raw ElevenLabs take + the stock CTA line:
+# shorten pauses, append "Folg mir, um mehr zu lernen.", speed up just enough
+# to land the spoken part at <= TARGET seconds (pitch kept), loudness -14 LUFS.
+#   bash scripts/prepare-voice.sh [main.mp3] [cta.mp3]
+set -euo pipefail
+cd "$(dirname "$0")/.."
+MAIN=${1:-assets/vo_takes/main.mp3}
+CTA=${2:-assets/vo_takes/cta.mp3}
+TARGET=${TARGET:-67}
+TMP=$(mktemp -d)
+trap 'rm -rf "$TMP"' EXIT
+
+ffmpeg -v error -y -i "$MAIN" -af "silenceremove=stop_periods=-1:stop_duration=0.25:stop_threshold=-35dB:stop_silence=0.22,areverse,silenceremove=start_periods=1:start_threshold=-40dB,areverse" -ar 44100 -ac 1 "$TMP/main.wav"
+ffmpeg -v error -y -i "$CTA" -af "silenceremove=start_periods=1:start_threshold=-40dB,areverse,silenceremove=start_periods=1:start_threshold=-40dB,areverse" -ar 44100 -ac 1 "$TMP/cta.wav"
+ffmpeg -v error -y -f lavfi -t 0.5 -i anullsrc=r=44100:cl=mono "$TMP/gap.wav"
+ffmpeg -v error -y -i "$TMP/main.wav" -i "$TMP/gap.wav" -i "$TMP/cta.wav" -filter_complex "[0][1][2]concat=n=3:v=0:a=1" "$TMP/joined.wav"
+
+DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$TMP/joined.wav")
+TEMPO=$(python3 -c "print(max(1.0, $DUR / $TARGET))")
+echo "joined ${DUR}s -> atempo ${TEMPO}"
+if python3 -c "import sys; sys.exit(0 if $TEMPO > 1.12 else 1)"; then
+  echo "WARNING: needs more than 12% speed-up; shorten the script instead (target <= 185 words)." >&2
+fi
+ffmpeg -v error -y -i "$TMP/joined.wav" -af "atempo=${TEMPO},loudnorm=I=-14:TP=-1.5:LRA=11" -ar 44100 -b:a 192k assets/voiceover.mp3
+echo "assets/voiceover.mp3: $(ffprobe -v error -show_entries format=duration -of csv=p=0 assets/voiceover.mp3)s"
