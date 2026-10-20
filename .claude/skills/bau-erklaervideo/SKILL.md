@@ -20,6 +20,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Voice      | ElevenLabs **Christian Plasa – Dynamic and Vibrant**, `voice_id nsFsExJHz4xV1sOX6Kdn`, model `eleven_multilingual_v2`                                                                          |
 | CTA        | Spoken "Folg mir, um mehr zu lernen." (stock take in `assets/cta-christian-plasa.mp3`, reused — never regenerate) + red "+ Folgen" pill that gets tapped → "Gefolgt" (already in the template) |
 | Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                     |
+| Music      | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)        |
 | Setting    | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                       |
 | Look       | `references/visual-style.md`                                                                                                                                                                   |
 | Script     | `references/script-formel.md`                                                                                                                                                                  |
@@ -64,7 +65,8 @@ bash .claude/skills/bau-erklaervideo/scripts/new-video.sh <slug> "So funktionier
 ```
 
 Creates `tiktok/<slug>/` with the shared `assets/world.js` + `assets/environments.js`, captions + CTA
-in `index.html`, the stock CTA voice in `assets/vo_takes/cta.mp3`, helper
+in `index.html`, the stock CTA voice in `assets/vo_takes/cta.mp3`, the stock
+music bed in `assets/vo_takes/bgm-ruhig.mp3`, helper
 scripts, and a small demo `assets/scene.js` (candle → light bulb) that
 already renders. Write the approved script into `script.txt` — one beat per
 line, last line exactly `Folg mir, um mehr zu lernen.` — then run
@@ -94,12 +96,15 @@ Then, in the project dir:
 ```bash
 bash scripts/prepare-voice.sh          # tighten pauses + stock CTA + speed-up ≤ 67 s → assets/voiceover.mp3
 python3 -I scripts/align-words.py      # Whisper word timings snapped onto script.txt → assets/words.js
-node scripts/sync-html.mjs             # root duration, caption length, the one <audio> tag
+bash scripts/prepare-music.sh          # calm bed cut to length, faded, ducked under the voice → assets/bgm.mp3
+node scripts/sync-html.mjs             # root duration, caption length, the <audio> tags (vo + bgm)
 ```
 
 `align-words.py` needs `pip install faster-whisper` (downloads the `small`
 model once). If `prepare-voice.sh` warns about >12 % speed-up, shorten the
-script with the user rather than speeding up more.
+script with the user rather than speeding up more. Music too loud or too
+quiet for a topic? `BGM_DB=-3 bash scripts/prepare-music.sh` (default -5;
+higher = louder), then rerun `sync-html.mjs`.
 
 ### 4. Build the subject (`assets/scene.js`)
 
@@ -146,8 +151,10 @@ git-ignored; mp3s go through LFS via `.gitattributes`) on a branch
   Prefer nouns/verbs that appear once, or pass the occurrence number.
 - **Length:** the voice reads ~2.5 words/s plus pauses; 185 words ≈ 75 s raw
   → ~67 s after `prepare-voice.sh`. Over 70 s total is a reject.
-- **One audio tag:** only `sync-html.mjs` writes the `<audio id="vo">` tag;
-  it removes old ones first. Lint error `duplicate_media_id` means two.
+- **Audio tags:** only `sync-html.mjs` writes the `<audio id="vo">` and
+  `<audio id="bgm">` tags; it removes old ones first. Lint error
+  `duplicate_media_id` means two of one. The render mixes both into one
+  audio stream.
 - **Camera:** shots are authored close and pulled back ×1.7 (`zoom`). For a
   macro close-up use `zoom: 1.0–1.4`. Scenery (trees, houses, palms) can block
   side/back shots — move the camera, not the environment's stage rules.

@@ -3,7 +3,8 @@
 #   bash .claude/skills/bau-erklaervideo/scripts/new-video.sh <slug> "<Titel>"
 #   e.g. new-video.sh aufzug "So funktioniert ein Aufzug"
 # Creates tiktok/<slug>/ (repo root) with the shared world, captions + CTA,
-# the stock CTA voice line and placeholder word timings, so it previews at once.
+# the stock CTA voice line, the stock music bed and placeholder word timings,
+# so it previews at once.
 set -euo pipefail
 SLUG=${1:?usage: new-video.sh <slug> "<Titel>"}
 TITLE=${2:?usage: new-video.sh <slug> "<Titel>"}
@@ -16,21 +17,25 @@ if [ -e "$DEST" ]; then
 fi
 
 CTA="$SKILL/assets/cta-christian-plasa.mp3"
-# A fresh clone without LFS smudge only has the 130-byte pointer; fetch the real take.
+BGM="$SKILL/assets/bgm-ruhig.mp3"
+# A fresh clone without LFS smudge only has 130-byte pointers; fetch the real audio.
 is_lfs_pointer() { head -c 40 "$1" | grep -q "^version https://git-lfs"; }
-if is_lfs_pointer "$CTA"; then
-  git -C "$ROOT" lfs pull --include="${CTA#"$ROOT"/}"
-  if is_lfs_pointer "$CTA"; then
-    echo "error: $CTA is still an LFS pointer (git lfs pull failed)" >&2
-    exit 1
+for f in "$CTA" "$BGM"; do
+  if is_lfs_pointer "$f"; then
+    git -C "$ROOT" lfs pull --include="${f#"$ROOT"/}"
+    if is_lfs_pointer "$f"; then
+      echo "error: $f is still an LFS pointer (git lfs pull failed)" >&2
+      exit 1
+    fi
   fi
-fi
+done
 
 mkdir -p "$ROOT/tiktok"
 cp -R "$SKILL/template" "$DEST"
 mv "$DEST/gitignore" "$DEST/.gitignore"
 mkdir -p "$DEST/assets/vo_takes"
 cp "$CTA" "$DEST/assets/vo_takes/cta.mp3"
+cp "$BGM" "$DEST/assets/vo_takes/bgm-ruhig.mp3"
 python3 - "$DEST" "$SLUG" "$TITLE" <<'EOF'
 import json, sys
 from pathlib import Path
