@@ -1,7 +1,6 @@
 // ElevenLabs voiceover + word timings for this project.
 //   ELEVENLABS_API_KEY=... node scripts/tts.mjs [voice_id] [speed]
-// Writes assets/voiceover.mp3 and assets/words.js, and syncs the root
-// data-duration and the <audio> clip in index.html to the new length.
+// Writes assets/voiceover.mp3 and assets/words.js, then runs sync-html.mjs.
 import fs from "node:fs";
 
 const root = new URL("..", import.meta.url);
@@ -55,16 +54,5 @@ fs.writeFileSync(
   "window.HF_WORDS = " + JSON.stringify(words) + ";\n",
 );
 
-const dur = Math.ceil((words[words.length - 1].end + 1.2) * 10) / 10;
-const htmlUrl = new URL("index.html", root);
-let html = fs.readFileSync(htmlUrl, "utf8");
-html = html.replace(/(data-composition-id="main"[\s\S]*?data-duration=")[\d.]+"/, `$1${dur}"`);
-html = html.replace(/tl\.set\(\{\}, \{\}, [\d.]+\);/, `tl.set({}, {}, ${dur});`);
-const audioTag = `<audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="${dur}" data-track-index="2" data-volume="1"></audio>`;
-html = /<audio id="vo"[^>]*><\/audio>/.test(html)
-  ? html.replace(/<audio id="vo"[^>]*><\/audio>/, audioTag)
-  : html.replace('<div id="captions"></div>', `<div id="captions"></div>\n      ${audioTag}`);
-fs.writeFileSync(htmlUrl, html);
-console.log(
-  `${words.length} words, voiceover ${words[words.length - 1].end.toFixed(2)}s, composition ${dur}s`,
-);
+console.log(`${words.length} words, voiceover ${words[words.length - 1].end.toFixed(2)}s`);
+await import("./sync-html.mjs");
