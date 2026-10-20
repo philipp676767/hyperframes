@@ -15,6 +15,8 @@ html = html.replace(/tl\.set\(\{\}, \{\}, [\d.]+\);/, `tl.set({}, {}, ${dur});`)
 const audioTag = `<audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="${dur}" data-track-index="2" data-volume="1"></audio>`;
 // Drop every existing voiceover tag (formatters may have wrapped it), then add one.
 html = html.replace(/\n?[ \t]*<audio\b[^>]*\bid="vo"[^>]*>\s*<\/audio>/g, "");
-html = html.replace('<div id="captions"></div>', `<div id="captions"></div>\n      ${audioTag}`);
+if (fs.existsSync(new URL("assets/voiceover.mp3", root))) {
+  html = html.replace('<div id="captions"></div>', `<div id="captions"></div>\n      ${audioTag}`);
+}
 fs.writeFileSync(htmlUrl, html);
 console.log(`composition ${dur}s`);

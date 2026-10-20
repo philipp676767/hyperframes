@@ -55,3 +55,13 @@ normal `npx skills add` discovery and from `npx skills add ... --all`. A named
 `metadata.internal`; no environment variable is needed. `INSTALL_INTERNAL_SKILLS=1`
 opts internal skills into normal discovery and bulk installation. This does not
 change local agent discovery.
+
+## TikTok series: "Du hast gerade X gebaut"
+
+The `bau-erklaervideo` skill makes the next video of the German explainer
+series (low-poly floating-island 3D diorama, x-ray build-up, one-word
+captions, ElevenLabs voice Christian Plasa, follow CTA). It scaffolds
+`tiktok/<slug>/` from its template (`scripts/new-video.sh`), which ships
+the shared `world.js` engine; `tiktok/kuehlschrank/` is the reference
+build. Ask for a topic ("mach das nächste Video: wie funktioniert ein
+Aufzug") and it walks script approval → voice → scene → render.

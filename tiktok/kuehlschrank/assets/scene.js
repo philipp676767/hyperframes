@@ -1,119 +1,42 @@
-// "So funktioniert ein Kühlschrank": low-poly floating-island diorama.
-// Everything is a pure function of time t (seconds); shots and story beats are
-// anchored to spoken words in window.HF_WORDS, so swapping the voiceover
-// re-times the whole film.
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
+// "So funktioniert ein Kühlschrank". The shared island world, captions
+// anchoring, camera shots, LED panel and arrows live in world.js; this file
+// only builds the fridge story.
+import {
+  THREE,
+  W,
+  END,
+  clamp01,
+  ramp,
+  lerp,
+  smooth,
+  easeInOut,
+  outBack,
+  inBack,
+  pop,
+  rng,
+  rand,
+  V,
+  jitter,
+  scene,
+  flat,
+  M,
+  xrayMaterial,
+  xrayEdges,
+  setXray,
+  addFloor,
+  addTrees,
+  roundedRect,
+  showNope,
+  makeArrowSet,
+  animateArrows,
+  showPanel,
+  LED,
+  shotCamera,
+  renderFrame,
+  start,
+} from "./world.js";
 
-window.THREE = THREE;
-
-// 3D is drawn at 2/3 resolution and scaled up by CSS; captions stay full-res DOM.
-const WIDTH = 720;
-const HEIGHT = 1280;
-
-// ---------------------------------------------------------------- anchors
-const WORDS = window.HF_WORDS;
-const norm = (s) => s.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
-function W(word, n = 1, end = false) {
-  let c = 0;
-  for (const x of WORDS) {
-    if (norm(x.w) === norm(word) && ++c === n) return end ? x.end : x.start;
-  }
-  throw new Error(`anchor not found: ${word} #${n}`);
-}
-const LAST = WORDS[WORDS.length - 1].end;
-
-// ---------------------------------------------------------------- math helpers
-const clamp01 = (x) => Math.min(1, Math.max(0, x));
-const ramp = (t, a, b) => clamp01((t - a) / (b - a));
-const lerp = (a, b, k) => a + (b - a) * k;
-const smooth = (x) => x * x * (3 - 2 * x);
-const easeInOut = (x) => -(Math.cos(Math.PI * x) - 1) / 2;
-const outBack = (x) => {
-  const c1 = 1.70158;
-  const c3 = c1 + 1;
-  return x <= 0 ? 0 : x >= 1 ? 1 : 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
-};
-const inBack = (x) => {
-  const c1 = 1.70158;
-  return x <= 0 ? 0 : x >= 1 ? 1 : (c1 + 1) * x * x * x - c1 * x * x;
-};
-// visible inside [a, b) with a quick pop in/out
-const pop = (t, a, b, d = 0.35) =>
-  t < a || t >= b ? 0 : outBack(ramp(t, a, a + d)) * (1 - ramp(t, b - 0.15, b));
-
-function rng(seed) {
-  let a = seed >>> 0;
-  return () => {
-    a = (a + 0x6d2b79f5) >>> 0;
-    let t = a;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-const rand = rng(1337);
-const V = (x, y, z) => new THREE.Vector3(x, y, z);
-
-// Displace vertices by a hash of their rounded position so faceted meshes stay watertight.
-function jitter(geom, amt, seed = 1) {
-  const p = geom.attributes.position;
-  for (let i = 0; i < p.count; i++) {
-    const x = p.getX(i);
-    const y = p.getY(i);
-    const z = p.getZ(i);
-    const h = (k) => {
-      const s =
-        Math.sin(
-          Math.round(x * 100) * 12.9898 +
-            Math.round(y * 100) * 78.233 +
-            Math.round(z * 100) * 37.719 +
-            k * 11.1 +
-            seed,
-        ) * 43758.5453;
-      return (s - Math.floor(s)) * 2 - 1;
-    };
-    p.setXYZ(i, x + h(1) * amt, y + h(2) * amt, z + h(3) * amt);
-  }
-  geom.computeVertexNormals();
-  return geom;
-}
-
-// ---------------------------------------------------------------- renderer
-const canvas = document.getElementById("stage");
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
-renderer.setPixelRatio(1);
-renderer.setSize(WIDTH, HEIGHT, false);
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
-const scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0xe9a7c4, 30, 95);
-const camera = new THREE.PerspectiveCamera(48, WIDTH / HEIGHT, 0.03, 500);
-
-// ---------------------------------------------------------------- materials
-const flat = (color, extra = {}) =>
-  new THREE.MeshStandardMaterial({
-    color,
-    flatShading: true,
-    roughness: 0.85,
-    metalness: 0,
-    ...extra,
-  });
-const M = {
-  grass: flat(0x79c24a),
-  grassDark: flat(0x5f9f37),
-  earth: flat(0x6e3b22),
-  root: flat(0x4b2414),
-  trunk: flat(0x7a4a2a),
-  leaf: flat(0x6db33c),
-  leaf2: flat(0x5aa233),
-  rock: flat(0xa9a3ad),
-  wood: flat(0xc58b4f),
-  woodDark: flat(0x9a6a38),
-  chrome: new THREE.MeshStandardMaterial({ color: 0xe8edf2, metalness: 0.9, roughness: 0.2 }),
-  rubber: flat(0x2e2a2c),
-  copper: new THREE.MeshStandardMaterial({ color: 0xc8743c, metalness: 0.6, roughness: 0.35 }),
-  alu: new THREE.MeshStandardMaterial({ color: 0xb9d6ea, metalness: 0.5, roughness: 0.3 }),
+Object.assign(M, {
   condenser: new THREE.MeshStandardMaterial({
     color: 0x2c2c30,
     metalness: 0.4,
@@ -141,12 +64,6 @@ const M = {
     emissiveIntensity: 0.18,
     flatShading: true,
   }),
-  water: new THREE.MeshStandardMaterial({
-    color: 0x7cc7f2,
-    roughness: 0.05,
-    transparent: true,
-    opacity: 0.72,
-  }),
   skin: flat(0xf0b08a),
   drop: new THREE.MeshStandardMaterial({
     color: 0xbfe8ff,
@@ -156,13 +73,6 @@ const M = {
     emissive: 0x9fdcff,
     emissiveIntensity: 0.15,
   }),
-  steam: new THREE.MeshBasicMaterial({
-    color: 0xffffff,
-    transparent: true,
-    opacity: 0.6,
-    depthWrite: false,
-  }),
-  orange: flat(0xff7a2f, { emissive: 0xff5a10, emissiveIntensity: 0.25 }),
   capillary: new THREE.MeshStandardMaterial({
     color: 0xd9894f,
     metalness: 0.6,
@@ -172,202 +82,11 @@ const M = {
   }),
   pumpBody: flat(0x5b6b7a, { roughness: 0.5, metalness: 0.3 }),
   pumpHot: flat(0x6b7480, { roughness: 0.5, emissive: 0xff3b10, emissiveIntensity: 0 }),
-  tile: null,
-};
-
-// ---------------------------------------------------------------- sky
-const sunDir = V(-0.32, 0.07, -1).normalize();
-const sky = new THREE.Mesh(
-  new THREE.SphereGeometry(300, 48, 24),
-  new THREE.ShaderMaterial({
-    side: THREE.BackSide,
-    depthWrite: false,
-    fog: false,
-    uniforms: { sunDir: { value: sunDir } },
-    vertexShader: `varying vec3 vDir;
-      void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
-    fragmentShader: `uniform vec3 sunDir; varying vec3 vDir;
-      void main(){
-        vec3 d = normalize(vDir);
-        float h = d.y;
-        vec3 top = vec3(0.43, 0.36, 0.82);
-        vec3 mid = vec3(0.93, 0.56, 0.76);
-        vec3 hor = vec3(1.0, 0.70, 0.47);
-        vec3 below = vec3(0.91, 0.65, 0.77);
-        vec3 c;
-        if (h > 0.0) { c = mix(hor, mid, smoothstep(0.0, 0.16, h)); c = mix(c, top, smoothstep(0.14, 0.62, h)); }
-        else { c = mix(hor, below, smoothstep(0.0, 0.10, -h)); }
-        float s = clamp(dot(d, sunDir), 0.0, 1.0);
-        c += vec3(1.0, 0.86, 0.6) * (pow(s, 90.0) * 0.95 + pow(s, 10.0) * 0.28);
-        gl_FragColor = vec4(c, 1.0);
-      }`,
-  }),
-);
-scene.add(sky);
-
-// low-poly clouds
-const cloudMat = new THREE.MeshLambertMaterial({
-  color: 0xffe6ef,
-  emissive: 0xffb8d2,
-  emissiveIntensity: 0.35,
-  flatShading: true,
-  fog: false,
 });
-for (let i = 0; i < 16; i++) {
-  const g = new THREE.Group();
-  const a = (i / 16) * Math.PI * 2 + rand() * 0.3;
-  const r = 55 + rand() * 30;
-  g.position.set(Math.cos(a) * r, 6 + rand() * 20, Math.sin(a) * r);
-  const n = 3 + Math.floor(rand() * 3);
-  for (let k = 0; k < n; k++) {
-    const m = new THREE.Mesh(
-      jitter(new THREE.IcosahedronGeometry(1, 1), 0.08, i * 7 + k),
-      cloudMat,
-    );
-    const s = 2.4 + rand() * 2.4;
-    m.scale.set(s * 1.25, s * 0.75, s);
-    m.position.set((k - n / 2) * 3 + rand(), rand() * 1.2, rand() * 1.5);
-    g.add(m);
-  }
-  g.lookAt(0, g.position.y, 0);
-  scene.add(g);
-}
 
-// ---------------------------------------------------------------- lights
-const hemi = new THREE.HemisphereLight(0xffe9f2, 0x8a6a7a, 1.35);
-scene.add(hemi);
-const sun = new THREE.DirectionalLight(0xffe2c4, 2.6);
-sun.position.set(6, 11, 8);
-sun.castShadow = true;
-sun.shadow.mapSize.set(1536, 1536);
-sun.shadow.camera.left = -11;
-sun.shadow.camera.right = 11;
-sun.shadow.camera.top = 11;
-sun.shadow.camera.bottom = -11;
-sun.shadow.camera.near = 1;
-sun.shadow.camera.far = 40;
-sun.shadow.bias = -0.0006;
-sun.shadow.normalBias = 0.02;
-scene.add(sun);
-const rim = new THREE.DirectionalLight(0xff9ec4, 0.7);
-rim.position.set(-6, 4, -9);
-scene.add(rim);
-
-// ---------------------------------------------------------------- island
-const island = new THREE.Group();
-scene.add(island);
-{
-  const top = new THREE.Mesh(
-    jitter(new THREE.CylinderGeometry(9, 8.8, 0.7, 30, 1), 0.08, 3),
-    M.grass,
-  );
-  top.position.y = -0.35;
-  top.receiveShadow = true;
-  island.add(top);
-  const cone = new THREE.Mesh(jitter(new THREE.ConeGeometry(8.8, 7, 16, 3), 0.45, 4), M.earth);
-  cone.rotation.x = Math.PI;
-  cone.position.y = -0.7 - 3.5;
-  island.add(cone);
-  for (let i = 0; i < 26; i++) {
-    const a = rand() * Math.PI * 2;
-    const r = 1 + rand() * 6.5;
-    const y0 = -0.8 - (1 - r / 8.8) * 6.2;
-    const pts = [];
-    let x = Math.cos(a) * r;
-    let z = Math.sin(a) * r;
-    let y = y0 + 0.4;
-    for (let k = 0; k < 6; k++) {
-      pts.push(V(x, y, z));
-      x += (rand() - 0.5) * 0.7;
-      z += (rand() - 0.5) * 0.7;
-      y -= 0.6 + rand() * 0.8;
-    }
-    const tube = new THREE.Mesh(
-      new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 16, 0.05 + rand() * 0.04, 5),
-      M.root,
-    );
-    island.add(tube);
-  }
-}
-
-// kitchen tile floor under the fridge
-{
-  const c = document.createElement("canvas");
-  c.width = c.height = 256;
-  const g = c.getContext("2d");
-  for (let i = 0; i < 8; i++)
-    for (let j = 0; j < 8; j++) {
-      g.fillStyle = (i + j) % 2 ? "#f3e9dc" : "#d9c9b6";
-      g.fillRect(i * 32, j * 32, 32, 32);
-    }
-  const tex = new THREE.CanvasTexture(c);
-  tex.colorSpace = THREE.SRGBColorSpace;
-  M.tile = new THREE.MeshStandardMaterial({ map: tex, roughness: 0.6 });
-  const floor = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.08, 3.6), M.tile);
-  floor.position.y = 0.0;
-  floor.receiveShadow = true;
-  island.add(floor);
-}
-
-function tree(x, z, s = 1, seed = 0) {
-  const g = new THREE.Group();
-  const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.2, 1.9, 6), M.trunk);
-  trunk.position.y = 0.95;
-  trunk.castShadow = true;
-  g.add(trunk);
-  const n = 2 + (seed % 2);
-  for (let k = 0; k < n; k++) {
-    const r = 0.95 - k * 0.18;
-    const m = new THREE.Mesh(
-      jitter(new THREE.IcosahedronGeometry(r, 1), 0.07, seed * 13 + k),
-      k % 2 ? M.leaf2 : M.leaf,
-    );
-    m.position.set((k % 2 ? 0.35 : -0.15) * (seed % 3 ? 1 : -1), 2.2 + k * 0.85, k * 0.1);
-    m.castShadow = true;
-    g.add(m);
-  }
-  g.position.set(x, 0, z);
-  g.scale.setScalar(s);
-  g.rotation.y = seed;
-  island.add(g);
-}
-[
-  [-3.4, -3.6, 1.1],
-  [3.0, -4.4, 1.2],
-  [-6.2, -1.2, 1.0],
-  [6.3, -2.6, 1.15],
-  [0.6, -6.8, 1.3],
-  [-2.4, -7.2, 1.0],
-  [-7.3, 2.6, 0.9],
-  [7.4, 1.4, 0.95],
-  [-4.6, 5.4, 0.9],
-  [5.6, 5.6, 1.0],
-  [4.6, -6.6, 1.0],
-  [-6.4, -4.8, 1.1],
-].forEach(([x, z, s], i) => tree(x, z, s, i + 1));
-for (let i = 0; i < 14; i++) {
-  const a = rand() * Math.PI * 2;
-  const r = 3 + rand() * 5.2;
-  const m = new THREE.Mesh(
-    jitter(new THREE.DodecahedronGeometry(0.18 + rand() * 0.22, 0), 0.04, i),
-    M.rock,
-  );
-  m.position.set(Math.cos(a) * r, 0.05, Math.sin(a) * r);
-  m.castShadow = true;
-  island.add(m);
-}
-// little bushes
-for (let i = 0; i < 10; i++) {
-  const a = rand() * Math.PI * 2;
-  const r = 4 + rand() * 4.5;
-  const m = new THREE.Mesh(
-    jitter(new THREE.IcosahedronGeometry(0.35 + rand() * 0.25, 0), 0.05, 50 + i),
-    M.grassDark,
-  );
-  m.position.set(Math.cos(a) * r, 0.15, Math.sin(a) * r);
-  m.castShadow = true;
-  island.add(m);
-}
+// kitchen tiles under the fridge + the standard tree ring
+addFloor(3.6);
+addTrees();
 
 // ---------------------------------------------------------------- props
 function milkBottle() {
@@ -454,17 +173,6 @@ const hookMilk = milkBottle();
 }
 scene.add(crate);
 
-// orange "nope" X, billboarded
-const nope = new THREE.Group();
-{
-  for (const s of [-1, 1]) {
-    const b = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.2, 0.2), M.orange);
-    b.rotation.z = (s * Math.PI) / 4;
-    nope.add(b);
-  }
-  scene.add(nope);
-}
-
 // ---------------------------------------------------------------- fridge
 const FW = 1.5;
 const FH = 2.9;
@@ -473,27 +181,8 @@ const FY = 0.14; // body bottom (feet below)
 const fridge = new THREE.Group();
 scene.add(fridge);
 
-function roundedRect(w, h, r) {
-  const s = new THREE.Shape();
-  s.moveTo(-w / 2 + r, 0);
-  s.lineTo(w / 2 - r, 0);
-  s.quadraticCurveTo(w / 2, 0, w / 2, r);
-  s.lineTo(w / 2, h - r);
-  s.quadraticCurveTo(w / 2, h, w / 2 - r, h);
-  s.lineTo(-w / 2 + r, h);
-  s.quadraticCurveTo(-w / 2, h, -w / 2, h - r);
-  s.lineTo(-w / 2, r);
-  s.quadraticCurveTo(-w / 2, 0, -w / 2 + r, 0);
-  return s;
-}
-const shellMat = new THREE.MeshStandardMaterial({
-  color: 0xffffff,
-  roughness: 0.32,
-  metalness: 0.05,
-  transparent: true,
-});
-const doorMat = shellMat.clone();
-const edgeMat = new THREE.LineBasicMaterial({ color: 0x9fdcff, transparent: true, opacity: 0 });
+const shellMat = xrayMaterial(0xffffff);
+const doorMat = xrayMaterial(0xffffff);
 const bodyGeo = new THREE.ExtrudeGeometry(roundedRect(FW, FH, 0.3), {
   depth: FD,
   bevelEnabled: true,
@@ -506,7 +195,7 @@ const body = new THREE.Mesh(bodyGeo, shellMat);
 body.position.set(0, FY, -0.65);
 body.castShadow = true;
 fridge.add(body);
-const bodyEdges = new THREE.LineSegments(new THREE.EdgesGeometry(bodyGeo, 35), edgeMat);
+const bodyEdges = xrayEdges(bodyGeo);
 bodyEdges.position.copy(body.position);
 fridge.add(bodyEdges);
 
@@ -525,7 +214,7 @@ const door = new THREE.Mesh(doorGeo, doorMat);
 door.position.set(FW / 2, 0, 0);
 door.castShadow = true;
 doorPivot.add(door);
-const doorEdges = new THREE.LineSegments(new THREE.EdgesGeometry(doorGeo, 35), edgeMat);
+const doorEdges = xrayEdges(doorGeo);
 doorEdges.position.copy(door.position);
 doorPivot.add(doorEdges);
 const handle = new THREE.Mesh(new THREE.CapsuleGeometry(0.04, 0.75, 4, 8), M.chrome);
@@ -821,53 +510,7 @@ frost.frustumCulled = false;
 fridge.add(frost);
 const frostSeed = Array.from({ length: NF }, () => [rand(), rand(), rand(), rand()]);
 
-// ---------------------------------------------------------------- wavy heat arrows
-const heatMat = new THREE.MeshBasicMaterial({
-  color: 0xff4d2e,
-  transparent: true,
-  depthWrite: false,
-});
-function waveArrow(len = 0.8, amp = 0.06, r = 0.022, mat = heatMat) {
-  const pts = [];
-  for (let k = 0; k <= 40; k++) {
-    const f = k / 40;
-    pts.push(V(f * len, Math.sin(f * Math.PI * 4) * amp, 0));
-  }
-  const g = new THREE.Group();
-  g.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 40, r, 6), mat));
-  const head = new THREE.Mesh(new THREE.ConeGeometry(r * 3.2, r * 7, 10), mat);
-  head.rotation.z = -Math.PI / 2;
-  head.position.x = len + r * 3;
-  g.add(head);
-  return g;
-}
-// arrow from a to b; travels along its own axis, fades in/out per cycle
-function makeArrowSet(list, opts = {}) {
-  const set = list.map(([a, b], i) => {
-    const g = new THREE.Group();
-    const dir = b.clone().sub(a);
-    const len = dir.length();
-    const arrow = waveArrow(len * 0.7, opts.amp ?? 0.05, opts.r ?? 0.022, opts.mat ?? heatMat);
-    g.add(arrow);
-    g.position.copy(a);
-    g.quaternion.setFromUnitVectors(V(1, 0, 0), dir.normalize());
-    g.userData = { arrow, len, phase: i * 0.37 };
-    (opts.parent ?? scene).add(g);
-    return g;
-  });
-  return set;
-}
-function animateArrows(set, t, vis) {
-  for (const g of set) {
-    const { arrow, len, phase } = g.userData;
-    const c = (t * 0.9 + phase) % 1;
-    arrow.position.x = c * len * 0.3;
-    g.visible = vis > 0.001;
-    g.scale.setScalar(Math.max(0.001, vis));
-    const o = Math.sin(c * Math.PI);
-    arrow.scale.set(1, 0.6 + 0.4 * o, 1);
-  }
-}
+// ---------------------------------------------------------------- heat arrows
 // heat from food into the evaporator
 const arrowsIn = makeArrowSet(
   [
@@ -999,54 +642,6 @@ for (let i = 0; i < 3; i++) {
   rings.push(m);
 }
 
-// ---------------------------------------------------------------- LED panel (billboard)
-const panelCanvas = document.createElement("canvas");
-panelCanvas.width = 512;
-panelCanvas.height = 256;
-const panelTex = new THREE.CanvasTexture(panelCanvas);
-panelTex.colorSpace = THREE.SRGBColorSpace;
-const panel = new THREE.Group();
-{
-  const back = new THREE.Mesh(
-    new THREE.BoxGeometry(0.84, 0.44, 0.06),
-    flat(0x1c1c22, { depthTest: false }),
-  );
-  back.renderOrder = 10;
-  panel.add(back);
-  const face = new THREE.Mesh(
-    new THREE.PlaneGeometry(0.8, 0.4),
-    new THREE.MeshBasicMaterial({ map: panelTex, toneMapped: false, depthTest: false }),
-  );
-  face.renderOrder = 11;
-  face.position.z = 0.032;
-  panel.add(face);
-  scene.add(panel);
-}
-let panelKey = "";
-let panelOn = false;
-function drawPanel(label, value, color) {
-  const key = label + value + color;
-  if (key === panelKey) return;
-  panelKey = key;
-  const g = panelCanvas.getContext("2d");
-  g.fillStyle = "#0d0d12";
-  g.fillRect(0, 0, 512, 256);
-  g.fillStyle = "#c9c9d6";
-  g.font = '800 36px "Montserrat", sans-serif';
-  g.textBaseline = "top";
-  g.fillText(label, 28, 22);
-  g.shadowColor = color;
-  g.shadowBlur = 24;
-  g.fillStyle = color;
-  g.font = '800 132px "Montserrat", sans-serif';
-  g.textBaseline = "alphabetic";
-  g.textAlign = "right";
-  g.fillText(value, 488, 222);
-  g.textAlign = "left";
-  g.shadowBlur = 0;
-  panelTex.needsUpdate = true;
-}
-
 // interior light for the outro
 const innerLight = new THREE.PointLight(0xfff3d6, 0, 4, 1.5);
 innerLight.position.set(0, 2.4, 0.2);
@@ -1176,39 +771,7 @@ const shots = [
     lookTo: [0, 0.4, 0],
   },
 ];
-const END = LAST + 1.0;
-const ZOOM = 1.7;
-const _p = V(0, 0, 0);
-const _l = V(0, 0, 0);
-function applyCamera(t) {
-  let i = shots.length - 1;
-  while (i > 0 && shots[i].at > t) i--;
-  const s = shots[i];
-  const next = i + 1 < shots.length ? shots[i + 1].at : END;
-  const k = easeInOut(clamp01((t - s.at) / Math.max(0.01, next - s.at)));
-  if (s.orbit) {
-    const o = s.orbit;
-    const a = lerp(o.a0, o.a1, k);
-    _p.set(o.c[0] + Math.sin(a) * o.r, o.y, o.c[2] + Math.cos(a) * o.r);
-    _l.set(...o.c);
-  } else {
-    const rel = s.rel ?? V(0, 0, 0);
-    _p.set(
-      lerp(s.from[0], s.to[0], k),
-      lerp(s.from[1], s.to[1], k),
-      lerp(s.from[2], s.to[2], k),
-    ).add(rel);
-    const la = s.look;
-    const lb = s.lookTo ?? s.look;
-    _l.set(lerp(la[0], lb[0], k), lerp(la[1], lb[1], k), lerp(la[2], lb[2], k)).add(rel);
-  }
-  // shots are authored tight; pull every one back along its view line
-  _p.sub(_l)
-    .multiplyScalar(s.zoom ?? ZOOM)
-    .add(_l);
-  camera.position.copy(_p);
-  camera.lookAt(_l);
-}
+const applyCamera = shotCamera(shots);
 
 // ---------------------------------------------------------------- flow phase (integrated speed)
 function pumpOn(t) {
@@ -1242,13 +805,8 @@ const _q = new THREE.Quaternion();
 const _s = V(1, 1, 1);
 const _v = V(0, 0, 0);
 const _c = new THREE.Color();
-function setXray(k) {
-  for (const m of [shellMat, doorMat]) {
-    m.opacity = lerp(1, 0.2, k);
-    m.color.setRGB(lerp(1, 0.55, k), lerp(1, 0.82, k), lerp(1, 1.0, k));
-    m.depthWrite = k < 0.02;
-  }
-  edgeMat.opacity = 0.9 * k;
+function applyXray(k) {
+  setXray([shellMat, doorMat], k);
   doorHardware.forEach((h) => (h.visible = k < 0.5));
   interior.visible = k > 0.02 || doorPivot.rotation.y < -0.05;
 }
@@ -1274,10 +832,7 @@ function renderAt(t) {
     Math.max(0.001, 0.4 + 1.5 * smooth(ramp(t, T.morgen + 0.3, T.pfuetzeEnd + 0.4))) *
       (1 - crateOut),
   );
-  const nopeK = pop(t, T.pfuetze, T.also1);
-  nope.visible = nopeK > 0;
-  nope.scale.setScalar(Math.max(0.001, nopeK * 0.7));
-  nope.position.set(0, 1.55, 0.3);
+  showNope(pop(t, T.pfuetze, T.also1), 0, 1.55, 0.3);
 
   // fridge pops in
   const fIn = outBack(ramp(t, T.also1 + 0.15, T.also1 + 0.75));
@@ -1286,7 +841,7 @@ function renderAt(t) {
   const xr =
     smooth(ramp(t, T.legst - 0.1, T.legst + 0.5)) * (1 - smooth(ramp(t, T.schau, T.schau + 0.5)));
   doorPivot.rotation.y = -1.6 * easeInOut(ramp(t, T.schau + 0.3, T.schau + 1.6));
-  setXray(xr);
+  applyXray(xr);
 
   // pipe reveal
   const reveal = {
@@ -1427,43 +982,24 @@ function renderAt(t) {
   });
 
   // LED panel
-  let pk = 0;
   if (t >= T.minus && t < T.verdampfer) {
-    pk = pop(t, T.minus, T.verdampfer);
-    drawPanel("KOCHT BEI", "-26°C", "#4fc3ff");
+    showPanel(pop(t, T.minus, T.verdampfer), "KOCHT BEI", "-26°C", LED.blue);
   } else if (t >= T.darum1 && t < T.dann) {
-    pk = pop(t, T.darum1, T.dann);
-    drawPanel("RÜCKSEITE", "+40°C", "#ff4b2b");
+    showPanel(pop(t, T.darum1, T.dann), "RÜCKSEITE", "+40°C", LED.red);
   } else if (t >= T.damit && t < T.schaltet) {
-    pk = pop(t, T.damit, T.schaltet);
-    drawPanel("MILCH", "4°C", "#4fc3ff");
+    showPanel(pop(t, T.damit, T.schaltet), "MILCH", "4°C", LED.blue);
   } else if (t >= T.schaltet && t < T.darum2) {
-    pk = pop(t, T.schaltet, T.darum2);
     const off = t >= T.aus;
-    drawPanel("PUMPE", off ? "AUS" : "AN", off ? "#ff4b2b" : "#3dff7a");
+    showPanel(pop(t, T.schaltet, T.darum2), "PUMPE", off ? "AUS" : "AN", off ? LED.red : LED.green);
+  } else {
+    showPanel(0);
   }
-  panel.visible = pk > 0;
-  panelOn = pk > 0;
-  panel.scale.setScalar(Math.max(0.001, pk * 0.8));
 
   // outro
   innerLight.intensity = 3 * smooth(ramp(t, T.schau + 0.6, T.schau + 1.4));
 
   applyCamera(t);
-  nope.quaternion.copy(camera.quaternion);
-  panel.quaternion.copy(camera.quaternion);
-  if (panelOn) {
-    // fixed spot in the upper third of the frame, just in front of the camera
-    camera.updateMatrixWorld();
-    panel.position.set(0.18, 0.78, -3.0).applyMatrix4(camera.matrixWorld);
-  }
-  renderer.render(scene, camera);
+  renderFrame();
 }
 
-window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
-document.fonts.load('800 40px "Montserrat"').then(() => {
-  panelKey = "";
-  renderAt(window.__hfThreeTime || 0);
-});
-renderAt(window.__hfThreeTime || 0);
-window.__dbg = { door, body, shellMat, doorMat, interior, renderAt, scene };
+start(renderAt);
