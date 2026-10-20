@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #000;
+      }
+      canvas {
+        display: block;
+        width: 1080px;
+        height: 1080px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <script type="module">
+      import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
+
+      const SIZE = 2160; // rendered at 2x, screenshot scales down
+      const canvas = document.getElementById("c");
+      const renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        preserveDrawingBuffer: true,
+      });
+      renderer.setPixelRatio(1);
+      renderer.setSize(SIZE, SIZE, false);
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 500);
+      camera.position.set(0.0, 1.6, 7.8);
+      camera.lookAt(0, 1.3, 0);
+
+      const V = (x, y, z) => new THREE.Vector3(x, y, z);
+      function jitter(geom, amt, seed = 1) {
+        const p = geom.attributes.position;
+        for (let i = 0; i < p.count; i++) {
+          const x = p.getX(i),
+            y = p.getY(i),
+            z = p.getZ(i);
+          const h = (k) => {
+            const s =
+              Math.sin(
+                Math.round(x * 100) * 12.9898 +
+                  Math.round(y * 100) * 78.233 +
+                  Math.round(z * 100) * 37.719 +
+                  k * 11.1 +
+                  seed,
+              ) * 43758.5453;
+            return (s - Math.floor(s)) * 2 - 1;
+          };
+          p.setXYZ(i, x + h(1) * amt, y + h(2) * amt, z + h(3) * amt);
+        }
+        geom.computeVertexNormals();
+        return geom;
+      }
+      const flat = (color, extra = {}) =>
+        new THREE.MeshStandardMaterial({ color, flatShading: true, roughness: 0.8, ...extra });
+      const mesh = (geo, mat, x = 0, y = 0, z = 0, parent = scene) => {
+        const m = new THREE.Mesh(geo, mat);
+        m.position.set(x, y, z);
+        m.castShadow = true;
+        m.receiveShadow = true;
+        parent.add(m);
+        return m;
+      };
+
+      // ---- sunset sky (same palette as the videos), sun glow behind the head
+      const sunDir = V(0.0, 0.32, -1).normalize();
+      scene.add(
+        new THREE.Mesh(
+          new THREE.SphereGeometry(300, 48, 24),
+          new THREE.ShaderMaterial({
+            side: THREE.BackSide,
+            depthWrite: false,
+            uniforms: { sunDir: { value: sunDir } },
+            vertexShader: `varying vec3 vDir; void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+            fragmentShader: `uniform vec3 sunDir; varying vec3 vDir;
+          void main(){
+            vec3 d = normalize(vDir); float h = d.y;
+            vec3 top = vec3(0.43, 0.36, 0.82); vec3 mid = vec3(0.93, 0.56, 0.76); vec3 hor = vec3(1.0, 0.70, 0.47);
+            vec3 c = mix(hor, mid, smoothstep(-0.05, 0.25, h)); c = mix(c, top, smoothstep(0.2, 0.6, h));
+            float s = clamp(dot(d, sunDir), 0.0, 1.0);
+            c += vec3(1.0, 0.86, 0.6) * (pow(s, 40.0) * 0.7 + pow(s, 6.0) * 0.25);
+            gl_FragColor = vec4(c, 1.0);
+          }`,
+          }),
+        ),
+      );
+
+      // low-poly clouds
+      const cloudMat = new THREE.MeshLambertMaterial({
+        color: 0xffe6ef,
+        emissive: 0xffb8d2,
+        emissiveIntensity: 0.35,
+        flatShading: true,
+      });
+      const cloud = (x, y, z, s, seed) => {
+        const g = new THREE.Group();
+        for (let k = 0; k < 4; k++) {
+          const m = new THREE.Mesh(
+            jitter(new THREE.IcosahedronGeometry(1, 1), 0.08, seed + k),
+            cloudMat,
+          );
+          m.scale.set(s * (1.3 - k * 0.12), s * 0.75, s);
+          m.position.set((k - 1.5) * s * 1.3, (k % 2) * s * 0.35, 0);
+          g.add(m);
+        }
+        g.position.set(x, y, z);
+        scene.add(g);
+      };
+      cloud(-7.5, 4.6, -14, 1.3, 1);
+      cloud(8.5, 3.2, -16, 1.5, 9);
+      cloud(-9.5, -0.6, -18, 1.4, 17);
+      cloud(9.0, -1.8, -15, 1.1, 23);
+
+      // ---- lights
+      scene.add(new THREE.HemisphereLight(0xffe9f2, 0x8a6a7a, 1.4));
+      const key = new THREE.DirectionalLight(0xffe2c4, 2.7);
+      key.position.set(4, 7, 8);
+      key.castShadow = true;
+      key.shadow.mapSize.set(2048, 2048);
+      Object.assign(key.shadow.camera, {
+        left: -4,
+        right: 4,
+        top: 5,
+        bottom: -2,
+        near: 1,
+        far: 30,
+      });
+      key.shadow.bias = -0.0005;
+      scene.add(key);
+      const rim = new THREE.DirectionalLight(0xff9ec4, 1.4);
+      rim.position.set(-5, 3, -6);
+      scene.add(rim);
+
+      // ---- the bear
+      const fur = flat(0xa8693a);
+      const furDark = flat(0x8a5430);
+      const light = flat(0xecc49a);
+      const black = flat(0x231a1c, { roughness: 0.35 });
+      const white = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const blush = flat(0xff8fa3, { transparent: true, opacity: 0.85 });
+      const bear = new THREE.Group();
+      scene.add(bear);
+
+      // body / bust
+      const body = mesh(
+        jitter(new THREE.IcosahedronGeometry(1.25, 2), 0.04, 3),
+        fur,
+        0,
+        -0.25,
+        0,
+        bear,
+      );
+      body.scale.set(1.15, 1.0, 0.9);
+      const belly = mesh(
+        jitter(new THREE.IcosahedronGeometry(0.75, 2), 0.03, 4),
+        light,
+        0,
+        -0.45,
+        0.55,
+        bear,
+      );
+      belly.scale.set(1.0, 1.0, 0.55);
+      // arms (paws resting in front)
+      for (const s of [-1, 1]) {
+        const arm = mesh(
+          jitter(new THREE.CapsuleGeometry(0.32, 0.55, 3, 8), 0.03, 6 + s),
+          furDark,
+          s * 1.08,
+          -0.2,
+          0.35,
+          bear,
+        );
+        arm.rotation.set(0.5, 0, s * 0.35);
+        const paw = mesh(
+          jitter(new THREE.IcosahedronGeometry(0.3, 1), 0.02, 8 + s),
+          light,
+          s * 0.88,
+          -0.62,
+          0.78,
+          bear,
+        );
+        paw.scale.set(1, 0.8, 0.9);
+      }
+
+      // head
+      const head = new THREE.Group();
+      head.position.set(0, 1.45, 0.15);
+      head.rotation.set(-0.06, 0.1, 0.05);
+      bear.add(head);
+      const skull = mesh(
+        jitter(new THREE.IcosahedronGeometry(1.0, 2), 0.035, 11),
+        fur,
+        0,
+        0,
+        0,
+        head,
+      );
+      skull.scale.set(1.12, 0.98, 0.95);
+      for (const s of [-1, 1]) {
+        const ear = mesh(
+          jitter(new THREE.IcosahedronGeometry(0.33, 1), 0.02, 12 + s),
+          fur,
+          s * 0.78,
+          0.7,
+          -0.05,
+          head,
+        );
+        ear.scale.set(1, 1, 0.6);
+        const inner = mesh(
+          new THREE.IcosahedronGeometry(0.19, 1),
+          light,
+          s * 0.78,
+          0.69,
+          0.1,
+          head,
+        );
+        inner.scale.set(1, 1, 0.4);
+        const cheek = mesh(new THREE.CircleGeometry(0.15, 10), blush, s * 0.62, -0.22, 0.86, head);
+        cheek.rotation.y = s * 0.55;
+        cheek.castShadow = false;
+      }
+      const snout = mesh(
+        jitter(new THREE.IcosahedronGeometry(0.45, 2), 0.02, 14),
+        light,
+        0,
+        -0.28,
+        0.78,
+        head,
+      );
+      snout.scale.set(1.15, 0.8, 0.75);
+      const nose = mesh(new THREE.IcosahedronGeometry(0.15, 1), black, 0, -0.14, 1.12, head);
+      nose.scale.set(1.35, 0.85, 0.8);
+      mesh(new THREE.SphereGeometry(0.045, 8, 6), white, -0.06, -0.08, 1.24, head).castShadow =
+        false;
+      // smile
+      const smile = mesh(
+        new THREE.TorusGeometry(0.13, 0.025, 6, 16, Math.PI),
+        black,
+        0,
+        -0.38,
+        1.08,
+        head,
+      );
+      smile.rotation.set(0.2, 0, Math.PI);
+      // eyes
+      for (const s of [-1, 1]) {
+        const eye = mesh(new THREE.SphereGeometry(0.11, 14, 10), black, s * 0.36, 0.12, 0.86, head);
+        eye.scale.set(1, 1.15, 0.7);
+        mesh(
+          new THREE.SphereGeometry(0.035, 8, 6),
+          white,
+          s * 0.36 + 0.035,
+          0.17,
+          0.95,
+          head,
+        ).castShadow = false;
+      }
+      // round glasses
+      const frame = flat(0x2b2440, { roughness: 0.3, metalness: 0.3 });
+      for (const s of [-1, 1]) {
+        const ring = mesh(
+          new THREE.TorusGeometry(0.24, 0.035, 8, 28),
+          frame,
+          s * 0.36,
+          0.12,
+          0.98,
+          head,
+        );
+        ring.rotation.y = s * 0.12;
+        const lens = mesh(
+          new THREE.CircleGeometry(0.23, 24),
+          new THREE.MeshStandardMaterial({
+            color: 0xcfeaff,
+            transparent: true,
+            opacity: 0.22,
+            roughness: 0.05,
+          }),
+          s * 0.36,
+          0.12,
+          0.985,
+          head,
+        );
+        lens.castShadow = false;
+      }
+      mesh(new THREE.TorusGeometry(0.1, 0.03, 6, 12, Math.PI), frame, 0, 0.13, 1.0, head);
+
+      // yellow hard hat
+      const hatMat = flat(0xffc928, { roughness: 0.45 });
+      const hat = new THREE.Group();
+      hat.position.set(0, 0.62, -0.02);
+      hat.rotation.set(-0.12, 0, -0.08);
+      head.add(hat);
+      const dome = mesh(
+        jitter(new THREE.SphereGeometry(0.86, 16, 10, 0, Math.PI * 2, 0, Math.PI / 2), 0.015, 21),
+        hatMat,
+        0,
+        0,
+        0,
+        hat,
+      );
+      dome.scale.set(1.08, 0.82, 1.0);
+      const brim = mesh(
+        new THREE.CylinderGeometry(1.02, 1.06, 0.07, 24),
+        hatMat,
+        0,
+        0.02,
+        0.1,
+        hat,
+      );
+      brim.scale.set(1.0, 1, 1.05);
+      // ridge running front to back over the dome
+      const ridge = mesh(
+        new THREE.TorusGeometry(0.88, 0.075, 6, 28, Math.PI),
+        flat(0xffe27a, { roughness: 0.45 }),
+        0,
+        0,
+        0.02,
+        hat,
+      );
+      ridge.rotation.y = Math.PI / 2;
+      ridge.scale.set(1.0, 0.83, 1.02);
+
+      bear.position.y = -0.22;
+      renderer.render(scene, camera);
+      window.__done = true;
+    </script>
+  </body>
+</html>
