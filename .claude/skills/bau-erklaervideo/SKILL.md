@@ -155,5 +155,9 @@ git-ignored; mp3s go through LFS via `.gitattributes`) on a branch
   kills the shell running it. Use `pkill -f "render -o render[s]"` style.
 - **Outro corridor:** the drone pull-back flies out towards +x/+z; any new
   environment must keep tall scenery off that line (x ≈ 0.6·z, z > 4).
+- **Fresh container:** mp3s are LFS objects; a clone may hold only 130-byte
+  pointers. `new-video.sh` pulls the stock CTA take itself (`git lfs pull`).
+  The pre-commit hook builds the workspace, so run `bun install` once before
+  the first commit (then `git checkout bun.lock` if it changed).
 - **Speed:** 3D renders at 720×1280 internally (CSS-scaled); keep shadow
   casters reasonable. Don't raise the internal resolution.

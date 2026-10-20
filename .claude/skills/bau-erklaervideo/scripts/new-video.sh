@@ -15,11 +15,22 @@ if [ -e "$DEST" ]; then
   exit 1
 fi
 
+CTA="$SKILL/assets/cta-christian-plasa.mp3"
+# A fresh clone without LFS smudge only has the 130-byte pointer; fetch the real take.
+is_lfs_pointer() { head -c 40 "$1" | grep -q "^version https://git-lfs"; }
+if is_lfs_pointer "$CTA"; then
+  git -C "$ROOT" lfs pull --include="${CTA#"$ROOT"/}"
+  if is_lfs_pointer "$CTA"; then
+    echo "error: $CTA is still an LFS pointer (git lfs pull failed)" >&2
+    exit 1
+  fi
+fi
+
 mkdir -p "$ROOT/tiktok"
 cp -R "$SKILL/template" "$DEST"
 mv "$DEST/gitignore" "$DEST/.gitignore"
 mkdir -p "$DEST/assets/vo_takes"
-cp "$SKILL/assets/cta-christian-plasa.mp3" "$DEST/assets/vo_takes/cta.mp3"
+cp "$CTA" "$DEST/assets/vo_takes/cta.mp3"
 python3 - "$DEST" "$SLUG" "$TITLE" <<'EOF'
 import json, sys
 from pathlib import Path
