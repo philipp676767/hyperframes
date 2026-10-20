@@ -6,3 +6,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | #   | Thema       | Ordner                | env   | sky             | Länge  | Datum      |
 | --- | ----------- | --------------------- | ----- | --------------- | ------ | ---------- |
 | 1   | Kühlschrank | `tiktok/kuehlschrank` | insel | sonnenuntergang | 68,3 s | 2026-10-20 |
+| 2   | Airfryer    | `tiktok/airfryer`     | land  | morgen          | 68,1 s | 2026-10-20 |
