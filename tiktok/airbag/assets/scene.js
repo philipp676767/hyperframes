@@ -638,7 +638,7 @@ const shots = [
     zoom: 1.2,
   },
   { at: T.bus, from: [1.5, 1.2, 2.6], to: [1.2, 1.1, 2.2], look: [0, 0.6, 0], rel: BS },
-  { at: T.crashsensor, orbit: { c: [1.72, 0.7, 0], r: 1.5, y: 1.3, a0: 1.0, a1: 0.35 } },
+  { at: T.crashsensor, orbit: { c: [1.72, 0.7, 0], r: 1.5, y: 1.3, a0: 0.45, a1: -0.05 } },
   {
     at: T.computer,
     from: [1.6, 1.15, 1.6],
@@ -815,13 +815,7 @@ function renderAt(t) {
   vents.forEach((v) => v.scale.setScalar(Math.max(0.001, ventK)));
   vents.forEach((v) => (v.visible = ventK > 0.01));
   ventMat.emissiveIntensity = 1.0 * pop(t, T.loecher, T.taucht + 0.3, 0.2);
-  showNope(
-    t >= T.nichts && t < T.also1 + 0.1 ? pop(t, T.nichts, T.also1) : pop(t, T.wand + 0.15, T.also2),
-    t < T.also1 + 0.1 ? 0.2 : -0.1,
-    t < T.also1 + 0.1 ? 2.15 : 2.05,
-    t < T.also1 + 0.1 ? 0.2 : 0.35,
-    t < T.also1 + 0.1 ? 0.45 : 0.3,
-  );
+  showNope(pop(t, T.nichts, T.also1), 0.2, 2.15, 0.2, 0.45);
 
   // gas: fill from the hub, later out of the vents
   const fillAge = ramp(t, T.stickstoff - 0.3, T.prall + 0.3);
