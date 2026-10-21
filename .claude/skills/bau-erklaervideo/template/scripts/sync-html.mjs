@@ -8,7 +8,9 @@ const root = new URL("..", import.meta.url);
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(new URL("assets/words.js", root), "utf8"), ctx);
 const words = ctx.window.HF_WORDS;
-const dur = Math.ceil((words[words.length - 1].end + 1.2) * 10) / 10;
+// same rule as assets/timing.js DURATION: a loop ending stops 0.25 s after the last word
+const tail = ctx.window.HF_LOOP_START != null ? 0.25 : 1.2;
+const dur = Math.ceil((words[words.length - 1].end + tail) * 10) / 10;
 const htmlUrl = new URL("index.html", root);
 let html = fs.readFileSync(htmlUrl, "utf8");
 html = html.replace(/(data-composition-id="main"[\s\S]*?data-duration=")[\d.]+"/, `$1${dur}"`);

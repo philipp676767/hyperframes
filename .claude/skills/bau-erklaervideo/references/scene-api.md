@@ -43,9 +43,18 @@ bubbles, analogy sets, door opening).
 
 ## timing.js (also in node)
 
-`W`, `LAST`, `END`, `DURATION`, `HL`, `WORDS`, `ctaTimes()` (comment /
-follow / tap / flip moments, mirrors index.html), `payoffTime()` (end of
-"… gebaut." before the CTA).
+`W`, `LAST`, `END`, `DURATION`, `HL`, `WORDS`, `LOOP` (start of the `> …`
+loop line or null), `ctaTimes()` (comment / follow / tap / flip moments,
+mirrors index.html), `payoffTime()` (end of "… gebaut." before the CTA),
+`factTime()` (the "Übrigens" word).
+
+**Loop + cover in `start()`:** from `LOOP` on, `renderAt` receives
+`t - DURATION` (negative: the moments before frame 0) and `shotCamera`
+glides into the first shot's start pose, so the last frame flows into the
+first. Keep effects keyed to anchors ≥ 0 and anything continuous (flames,
+snow, rotation) as a function of `t` — then the loop is seamless for free.
+`window.HF_COVER_T` (set by `make-cover.sh`) freezes the scene at that
+time.
 
 ## beats.js
 

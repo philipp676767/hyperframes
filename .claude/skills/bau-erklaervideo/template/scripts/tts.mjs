@@ -10,10 +10,12 @@ if (!key) throw new Error("ELEVENLABS_API_KEY is not set");
 // Jan – Social Media Creator on eleven_v3 (house voice of the series)
 const voice = process.argv[2] || "keqaIOtp0ePlmN5jgQfy";
 
-// *Wort* highlight marks are for the captions only — never send them to the voice
+// *Wort* highlight marks and the ">" of the loop line are for the captions
+// only — never send them to the voice
 const main = fs
   .readFileSync(new URL("script.txt", root), "utf8")
   .replaceAll("*", "")
+  .replace(/^\s*>\s*/gm, "")
   .trim()
   .replace(/\s+/g, " ");
 

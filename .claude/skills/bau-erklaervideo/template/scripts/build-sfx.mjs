@@ -1,8 +1,9 @@
 // Build assets/sfx.mp3: every sound effect of the video on one track, placed
 // from the same beats the picture uses (assets/beats.js + words.js).
 // Automatic cues: whoosh on each camera cut, hit on the hook title, punch on
-// each *highlighted* word, blip per label,
-// ding on the payoff line, CTA pops + click + ding. Plus beats.js SFX.
+// each *highlighted* word, blip per label, ding on the payoff line, wow on
+// the bonus fact ("Übrigens"), CTA pops + click + ding, whoosh on the loop
+// cut back to the opening shot. Plus beats.js SFX.
 // Writes assets/sfx-cues.json (what landed where) for checking.
 // Run after align-words.py (real timings), before sync-html.mjs.
 //   node scripts/build-sfx.mjs            SFX_DB=-2 shifts every level
@@ -14,7 +15,9 @@ const root = new URL("..", import.meta.url);
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(new URL("assets/words.js", root), "utf8"), ctx);
 globalThis.window = ctx.window;
-const { DURATION, HL, ctaTimes, payoffTime } = await import(new URL("assets/timing.js", root));
+const { DURATION, HL, LOOP, ctaTimes, payoffTime, factTime } = await import(
+  new URL("assets/timing.js", root)
+);
 const { shots, LABELS = [], SFX = [] } = await import(new URL("assets/beats.js", root));
 
 const kit = new URL("assets/sfx/", root);
@@ -57,6 +60,8 @@ for (const sh of shots.slice(1)) {
   lastCut = sh.at;
 }
 add("hit", 0.05, "hook title");
+if (LOOP != null) add("whoosh", LOOP, "loop cut");
+add("wow", factTime(), "bonus fact");
 for (const h of HL) add("punch", h, "highlight");
 for (const l of LABELS) add("blip", l.at + 0.05, `label ${l.text}`);
 add("ding", payoffTime(), "payoff");

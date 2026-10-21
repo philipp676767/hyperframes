@@ -154,6 +154,39 @@
       #cta-label-done {
         display: none;
       }
+      /* bonus fact badge ("Übrigens: …" line), where the hook title was */
+      #fact {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 300px;
+        display: flex;
+        justify-content: center;
+      }
+      #fact-badge {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 20px 44px 20px 22px;
+        border-radius: 999px;
+        background: #ffd23f;
+        box-shadow: 0 14px 40px rgba(60, 10, 40, 0.3);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 58px;
+        color: #1c1c22;
+        opacity: 0;
+      }
+      #fact-icon {
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        background: #1c1c22;
+        color: #ffd23f;
+        font-size: 50px;
+        line-height: 66px;
+        text-align: center;
+      }
       .word {
         position: absolute;
         left: 0;
@@ -193,6 +226,12 @@
       <canvas id="stage" width="720" height="1280"></canvas>
       <div id="captions"></div>
       <div id="hook-title">Warum <em>glüht</em> eine Glühbirne?</div>
+      <div id="fact">
+        <div id="fact-badge">
+          <div id="fact-icon">!</div>
+          <span>WUSSTEST DU?</span>
+        </div>
+      </div>
       <div id="cmt">
         <div id="cmt-btn">
           <div id="cmt-icon"></div>
@@ -245,7 +284,33 @@
         // it starts; the "Folgen" pill on the word "folg…" (or 1.2 s later),
         // gets tapped and flips to "Gefolgt".
         const ci = window.HF_CTA_START;
-        const ctaWords = ci != null ? words.slice(ci) : words.filter((w) => /^folg/i.test(w.w));
+        const li = window.HF_LOOP_START;
+        const loopT = li != null ? words[li].start : null;
+        const ctaWords =
+          ci != null
+            ? words.slice(ci, li ?? words.length)
+            : words.filter((w) => /^folg/i.test(w.w));
+
+        // Bonus fact: "WUSSTEST DU?" from "Übrigens" until the CTA starts.
+        let fi = -1;
+        words.forEach((w, i) => {
+          if (/^übrigens$/i.test(w.w) && (ci == null || i < ci)) fi = i;
+        });
+        if (fi >= 0) {
+          const f0 = words[fi].start;
+          const f1 = ctaWords.length ? ctaWords[0].start : words[words.length - 1].end;
+          tl.fromTo(
+            "#fact-badge",
+            { opacity: 0, scale: 0.4, rotation: -8 },
+            { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "back.out(2.4)" },
+            f0,
+          );
+          tl.to(
+            "#fact-badge",
+            { opacity: 0, scale: 0.8, duration: 0.2, ease: "power2.in" },
+            f1 - 0.2,
+          );
+        }
         if (ctaWords.length) {
           const c0 = ctaWords[0].start;
           tl.fromTo(
@@ -261,18 +326,29 @@
           );
           const follow = ctaWords.find((w) => /^folg/i.test(w.w));
           const t0 = follow ? follow.start : c0 + 1.2;
+          // with a loop line the tap lands before the buttons leave (mirrors timing.js ctaTimes)
+          const tap =
+            loopT != null ? Math.min(t0 + 1.0, Math.max(t0 + 0.5, loopT - 0.45)) : t0 + 1.0;
           tl.fromTo(
             "#cta-btn",
             { opacity: 0, scale: 0.4, y: 40 },
             { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
             t0,
           );
-          tl.to("#cta-btn", { scale: 0.9, duration: 0.12, ease: "power2.in" }, t0 + 1.0);
-          tl.set("#cta-btn", { backgroundColor: "#3a3a46" }, t0 + 1.12);
-          tl.set("#cta-plus", { opacity: 0, width: 0, marginRight: -22 }, t0 + 1.12);
-          tl.set("#cta-label", { display: "none" }, t0 + 1.12);
-          tl.set("#cta-label-done", { display: "inline" }, t0 + 1.12);
-          tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, t0 + 1.12);
+          tl.to("#cta-btn", { scale: 0.9, duration: 0.12, ease: "power2.in" }, tap);
+          tl.set("#cta-btn", { backgroundColor: "#3a3a46" }, tap + 0.12);
+          tl.set("#cta-plus", { opacity: 0, width: 0, marginRight: -22 }, tap + 0.12);
+          tl.set("#cta-label", { display: "none" }, tap + 0.12);
+          tl.set("#cta-label-done", { display: "inline" }, tap + 0.12);
+          tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, tap + 0.12);
+          // loop ending: clear the buttons so the last frame matches the first
+          if (loopT != null) {
+            tl.to(
+              ["#cmt-btn", "#cta-btn"],
+              { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" },
+              loopT,
+            );
+          }
         }
         tl.set({}, {}, 20);
         window.__timelines["main"] = tl;

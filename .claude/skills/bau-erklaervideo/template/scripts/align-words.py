@@ -14,10 +14,11 @@ samples = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768
 
 script = (root / "script.txt").read_text(encoding="utf8")
 # *Wort* marks a highlighted keyword; the voice and Whisper get the plain text
-tokens = [t for t in script.split() if t != "–"]
+tokens = [t for t in script.split() if t not in ("–", ">")]
 marked = [bool(re.fullmatch(r"\*.*\*[.,:!?]*", t)) for t in tokens]
 tokens = [t.replace("*", "") for t in tokens]
-script = script.replace("*", "")
+lines = [l for l in script.strip().splitlines() if l.strip()]
+script = script.replace("*", "").replace("\n>", "\n")
 norm = lambda s: re.sub(r"[^a-zäöüß0-9]", "", s.lower())
 
 model = WhisperModel("small", device="cpu", compute_type="int8")
@@ -47,11 +48,16 @@ words = [{"w": re.sub(r"[.,:!?]", "", t), "start": round(s, 3), "end": round(e, 
 for w, hl in zip(words, marked):
     if hl:
         w["hl"] = True
-# the last line of script.txt is the CTA; its first word drives the CTA buttons
-cta_len = len([t for t in script.strip().splitlines()[-1].split() if t != "–"])
+# The CTA is the last line (its first word drives the CTA buttons); an
+# optional final "> …" line is the loop bridge into the hook.
+count = lambda l: len([t for t in l.split() if t not in ("–", ">")])
+loop = lines[-1].lstrip().startswith(">")
+loop_len = count(lines[-1]) if loop else 0
+cta_len = count(lines[-2] if loop else lines[-1])
 (root / "assets" / "words.js").write_text(
     "window.HF_WORDS = " + json.dumps(words, ensure_ascii=False) + ";\n"
-    + f"window.HF_CTA_START = {len(words) - cta_len};\n",
+    + f"window.HF_CTA_START = {len(words) - loop_len - cta_len};\n"
+    + f"window.HF_LOOP_START = {len(words) - loop_len if loop else 'null'};\n",
     encoding="utf8",
 )
 print(f"{len(words)} words, last ends {words[-1]['end']:.2f}s; interpolated: {missing}")

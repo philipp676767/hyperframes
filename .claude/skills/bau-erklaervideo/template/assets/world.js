@@ -15,8 +15,8 @@ export const HEIGHT = 1280;
 
 // ---------------------------------------------------------------- word anchors
 // W(word, n), LAST, END, HL … live in timing.js (shared with build-sfx.mjs).
-import { W, LAST, END, HL } from "./timing.js";
-export { W, LAST, END, HL };
+import { W, LAST, END, HL, LOOP, DURATION } from "./timing.js";
+export { W, LAST, END, HL, LOOP, DURATION };
 
 // ---------------------------------------------------------------- math helpers
 export const clamp01 = (x) => Math.min(1, Math.max(0, x));
@@ -363,7 +363,10 @@ export function shotCamera(shots, defaultZoom = 1.7) {
     while (i > 0 && shots[i].at > t) i--;
     const s = shots[i];
     const next = i + 1 < shots.length ? shots[i + 1].at : END;
-    const k = easeInOut(clamp01((t - s.at) / Math.max(0.01, next - s.at)));
+    const len = Math.max(0.01, next - s.at);
+    // before the first shot (t < 0: the loop tail, see start()) the camera
+    // glides into the opening pose instead of standing still
+    const k = t < s.at ? ((t - s.at) / len) * 0.6 : easeInOut(clamp01((t - s.at) / len));
     if (s.orbit) {
       const o = s.orbit;
       const a = lerp(o.a0, o.a1, k);
@@ -512,8 +515,15 @@ export function renderFrame() {
 
 // Wire HyperFrames seeking to renderAt(t); redraw once fonts land so the LED
 // panel text uses Montserrat.
+// Loop ending: from LOOP on, the scene is drawn at t - DURATION — the moments
+// right *before* frame 0 — so the last frame flows into the first (hard cut
+// to the opening shot on the bridge words, flames / snow / waves continuous).
+// Cover mode (scripts/make-cover.sh sets window.HF_COVER_T): always draw that
+// one moment, whatever the seek time.
 export function start(renderAt) {
   const frame = (t) => {
+    if (window.HF_COVER_T != null) t = window.HF_COVER_T;
+    else if (LOOP != null && t >= LOOP) t -= DURATION;
     for (const fn of frameHooks) fn(t);
     renderAt(t);
   };

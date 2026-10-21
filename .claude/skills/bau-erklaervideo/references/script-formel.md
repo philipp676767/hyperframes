@@ -17,10 +17,12 @@ Expected length = words ÷ 2.8 + 1.2 s. Count before showing the script.
 
 | Part                            | Words               | Job                                                                   |
 | ------------------------------- | ------------------- | --------------------------------------------------------------------- |
-| **Hook** (line 1)               | 15–25               | win the first 2 s, open a loop                                        |
-| **Beats** (lines 2–4)           | 3 beats, 20–30 each | build the thing; each beat ends pulling into the next                 |
+| **Hook** (line 1)               | 15–22               | win the first 2 s, open a loop                                        |
+| **Beats** (lines 2–4)           | 3 beats, 18–25 each | build the thing; each beat ends pulling into the next                 |
 | **Payoff + signature** (line 5) | ~10–15              | close the hook's loop, then "Schau dich an. Du hast gerade X gebaut." |
-| **CTA** (last line)             | 12–20               | comment question + follow                                             |
+| **Bonus fact** (same line 5)    | 10–15               | "Übrigens: …" — one surprising, shareable fact                        |
+| **CTA** (line 6)                | 12–18               | comment question + follow                                             |
+| **Loop bridge** (last line)     | 2–4                 | `> Und merk dir:` — runs straight back into the hook                  |
 
 ### 1. Hook — the first sentence decides everything
 
@@ -90,9 +92,21 @@ Close the hook's loop explicitly ("Und genau deshalb ist die Rückseite
 warm."), then the series line **"Schau dich an. Du hast gerade [einen/
 eine/ein] X gebaut."**
 
+### 3b. Bonus fact — "Übrigens: …"
+
+Right after the signature, on the same line: **"Übrigens: …"** + one
+surprising fact about the topic that people want to repeat to someone
+("Übrigens: In deinem Kühlschrank ist es kälter als am Nordpol im
+Sommer."). It must start with the word **"Übrigens"** — the "WUSSTEST
+DU?" badge and a sparkle sound key on it. Rules: 10–15 words, a number or
+a comparison, **true** (check it; phrase safely when unsure), not a
+repeat of a beat, one `*keyword*`. It is the last thing before the CTA, so
+it should make people want to comment ("Krass!" / "Wusste ich nicht").
+
 ### 4. CTA — make them comment
 
-Last line of `script.txt`, spoken by the same voice in the same take.
+Second-to-last line of `script.txt` (the loop bridge comes after it),
+spoken by the same voice in the same take.
 
 - **One comment question** tied to the topic, answerable in 1–3 words:
   yes/no, either/or, a number, or a personal detail. Then **"– und folg
@@ -101,6 +115,23 @@ Last line of `script.txt`, spoken by the same voice in the same take.
 - The word **"folg"** must appear: the Folgen button is timed on it; the
   Kommentieren button pops when the CTA line starts.
 - No generic "Lass ein Like da". No question that needs a paragraph.
+
+### 5. Loop bridge — the video never ends
+
+The **last line starts with `>`**: 2–4 spoken words that flow, sentence
+and voice, straight into the hook's first sentence, so the restart
+sounds like the video continues — viewers watch a second round without
+noticing (rewatches count heavily). The `>` is never spoken (strip it
+before ElevenLabs).
+
+- Ends with a colon or an open half-sentence: `> Und merk dir:`,
+  `> Denn vergiss nie:`, `> Und jetzt weißt du, warum`, `> Also merk dir:`.
+- Read it together with hook sentence 1 out loud: it must make one
+  sentence ("Und merk dir: Dein Kühlschrank macht gar keine Kälte.").
+- The picture does the rest automatically: at the first bridge word a
+  hard cut (+ whoosh) to the opening shot, the buttons clear, the video
+  stops 0.25 s after the last word, music doesn't fade out — so the last
+  frame matches frame 0.
 
 CTA patterns:
 
@@ -150,6 +181,15 @@ Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare �
 Hook title: `Dein Kühlschrank <em>lügt</em>`. (Keyword marks added
 afterwards to show the density: 9 in 129 words.)
 
+From now on every script also gets the bonus fact and the loop bridge —
+for the fridge they would be (beats trimmed by ~16 words to stay ≤ 130):
+
+```text
+Schau dich an. Du hast gerade einen Kühlschrank gebaut. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
+Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
+> Und merk dir:
+```
+
 What changed against v1: belief-breaking first line instead of "Wenn du
 Eiswürfel …"; the "Wärme klauen" loop opened in the hook and closed in
 beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
@@ -160,15 +200,17 @@ beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
 - [ ] An open loop in the hook that the payoff line closes
 - [ ] 3 beats, each ending with a pull; one re-hook; one home moment
 - [ ] ≤ 3 technical terms; no sentence that needs a breath
+- [ ] Bonus fact starts with "Übrigens", 10–15 words, true, surprising
 - [ ] CTA: question answerable in 1–3 words + "folg"
+- [ ] Loop line `> …` + hook sentence 1 read as one sentence
 - [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
-- [ ] 115–130 words incl. CTA (≤ 135, ≥ 110), expected length stated
+- [ ] 115–130 words incl. fact, CTA and loop line (≤ 135, ≥ 110), expected length stated
 
 ## What to show the user for approval
 
 The script (one part per paragraph), word count + expected length, the
-hook title, **two alternative hooks**, and per beat one line of visual
-plan, e.g.:
+hook title, **two alternative hooks**, the **cover title** (see SKILL.md
+step 6b), and per beat one line of visual plan, e.g.:
 
 - Hook: Kühlschrank-Rückseite glüht rot, Wärmepfeile strömen aus der Milch nach hinten
 - Verdampfer: Kühlschrank wird gläsern, blaues Rohr wächst in die Rückwand (Schild „Verdampfer“), LED „KOCHT BEI −26 °C“, Siedeblasen + Zischen

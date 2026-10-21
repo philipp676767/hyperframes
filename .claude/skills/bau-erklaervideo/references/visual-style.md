@@ -92,7 +92,24 @@ in `script.txt` are **yellow `#ffd23f`, 100 px**, and pop in from 145 %.
 keyword in `<em>` (yellow `#ffd23f`), top third (y ≈ 250 px); pops in on
 the first frame, out at 2.8 s.
 
-**CTA:** when the last script line starts, a white "Kommentieren" pill
+**Bonus fact badge** (`#fact`): yellow pill "! WUSSTEST DU?" tilted
+-3°, top third (y ≈ 300 px), pops in on the word "Übrigens", out when the
+CTA starts. Show the fact in the scene too (LED panel with the number, or
+a quick close-up) — never an empty shot under it.
+
+**Loop ending:** on the first word of the `> …` line the picture hard-cuts
+to the opening shot and plays the moments _before_ frame 0 (world.js maps
+t ≥ LOOP to t − DURATION), the buttons clear, the video stops 0.25 s after
+the last word. Nothing to build per video — but the hook state at frame 0
+must be what the scene shows for t < 0 (it is, if every effect is keyed
+with `ramp`/`pop` on anchors ≥ 0).
+
+**Cover (Titelbild):** the scene frozen at one strong moment, no
+captions / buttons / labels, dark gradient at the top, title Montserrat
+132 px white with a thick dark stroke, keyword yellow, tilted -2°,
+y ≈ 300 px (`scripts/make-cover.sh`).
+
+**CTA:** when the CTA line starts, a white "Kommentieren" pill
 with a red speech bubble pops in at y ≈ 400 px and pulses; on the word
 "folg…" the red "+ Folgen" pill pops in below it (y ≈ 560 px), is tapped
 one second later and flips to grey "Gefolgt".

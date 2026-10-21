@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → comment-question + follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
+description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) for every video. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -21,6 +21,9 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Format     | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                                                                                    |
 | Voice      | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** (chosen 2026-10-21 after creator feedback; replaced Christian Plasa on `eleven_multilingual_v2`, episodes #1–#5)                                            |
 | CTA        | Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template)              |
+| Bonus fact | "Übrigens: …" right after the signature line — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                   |
+| Loop       | Last line `> Und merk dir:` (2–4 words) flows into the hook; picture cuts back to the opening shot so the end matches frame 0 (automatic)                                                                                                                     |
+| Cover      | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                 |
 | Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                                                                                    |
 | Music      | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                       |
 | Setting    | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                                      |
@@ -37,11 +40,11 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 Write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff + signature
-line, CTA question. **115–130 words including the CTA** (≈ 42–48 s), never
+line + "Übrigens" bonus fact, CTA question, `> …` loop bridge. **115–130 words including all of it** (≈ 42–48 s), never
 more than **135** (≈ 50 s) or fewer than **110** (≈ 40 s); expected length
 = words ÷ 2.8 + 1.2 s. Run the self-check in that file. Show the user the
-script, word count + length, the hook title, **two alternative hooks**, and
-a one-line visual idea per beat, and **wait for their OK** before spending
+script, word count + length, the hook title, **two alternative hooks**, the
+cover title, and a one-line visual idea per beat, and **wait for their OK** before spending
 credits or building. Apply their edits verbatim.
 
 ### 1b. Pick the setting (never the same as the last video)
@@ -77,8 +80,9 @@ the stock music bed in `assets/vo_takes/bgm-ruhig.mp3`, the sound-effect
 kit (`assets/sfx/`, git-ignored, regenerated on demand), helper scripts, and a small demo
 (`assets/scene.js` + `assets/beats.js`, candle → light bulb) that already
 renders with labels and sound. Write the approved script into
-`script.txt` — one part per line, **the CTA alone on the last line** (it
-must contain "folg"), **keywords marked `*Wort*`** — and put the hook
+`script.txt` — one part per line, **the CTA on its own line** (it must
+contain "folg"), then **the loop bridge as the last line, starting with
+`> `**, **keywords marked `*Wort*`** — and put the hook
 title into `<div id="hook-title">` in `index.html` (keyword in `<em>`).
 Then run `node scripts/fake-words.mjs && node scripts/build-sfx.mjs && node scripts/sync-html.mjs`
 for estimated timings so the scene can be built before the voice exists.
@@ -86,8 +90,9 @@ for estimated timings so the scene can be built before the voice exists.
 ### 3. Voice (ElevenLabs connector)
 
 Generate the **whole script including the CTA line** (script.txt joined to
-one paragraph, **with every `*` removed** — the marks are for the captions;
-the voice would read or stress them oddly) with `creative_generate_speech`: `voice_id
+one paragraph, **with every `*` and the leading `>` of the loop line
+removed** — the marks are for the captions; the voice would read or
+stress them oddly) with `creative_generate_speech`: `voice_id
 keqaIOtp0ePlmN5jgQfy`, `model_id eleven_v3`,
 **`generations_count: 1`** (the account hits 429 concurrency limits with
 more; a 429 means nothing was generated or charged — retry once with 1).
@@ -168,7 +173,27 @@ ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<s
 
 The render's mixer drops voice + music to ≈ -18 LUFS; `finish-audio.sh`
 brings it back to -14 LUFS. Confirm exactly one audio stream and 40–50 s, then send **`<slug>-final.mp4`** with `SendUserFile`
-(display `render`). Append the episode to `tiktok/serie.md`.
+(display `render`) **together with the cover** (6b). Append the episode to `tiktok/serie.md`.
+
+### 6b. Titelbild (cover) — every video
+
+Always make a cover and send it with the video. Pick the strongest
+moment of the scene (subject big, in x-ray / glowing / mid-action, the
+shot well framed — snapshot a few candidates) and a **cover title**:
+2–5 words, curiosity not explanation, one keyword in `<em>` (yellow),
+different wording from the hook title (e.g. hook title "Dein Kühlschrank
+<em>lügt</em>" → cover "Er <em>klaut</em> Wärme!?"). Then:
+
+```bash
+bash scripts/make-cover.sh <seconds> "Er <em>klaut</em> Wärme!?"   # -> renders/<slug>-cover.png
+```
+
+Look at it before sending: title readable on a phone thumbnail, the
+title and subject inside the middle 3:4 (TikTok crops the profile grid
+to y ≈ 240–1680), subject not hidden by the title. Send
+`renders/<slug>-cover.png` with the video and tell the user to pick it
+as the Titelbild when posting. Commit it (`tiktok/**/*.png` is LFS;
+`renders/` is git-ignored, so copy it to `tiktok/<slug>/cover.png`).
 
 ### 7. Save — always on `main`
 
@@ -191,7 +216,8 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
   on `eleven_v3` read the audition hook at the same pace. Re-measure after
   the first Jan episode and update this line if it differs.
 - **Length:** measured on the finished episodes the voice runs ~2.8
-  words/s; video ≈ words (incl. CTA) ÷ 2.8 + 1.2 s. 110 words ≈ 40 s,
+  words/s; video ≈ words (incl. CTA) ÷ 2.8 + 1.2 s (with the loop line the
+  tail is only 0.25 s, so ~1 s shorter). 110 words ≈ 40 s,
   125 ≈ 46 s, 135 ≈ 50 s. Outside 40–50 s is a reject; `prepare-voice.sh`
   refuses to build it. Kühlschrank/Airfryer (68 s) and Aufzug/Airbag
   (~50 s) predate this limit — don't copy their length.

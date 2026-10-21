@@ -3,6 +3,7 @@
 // the beats to place the sound effects).
 const WORDS = globalThis.window.HF_WORDS;
 const CTA_START = globalThis.window.HF_CTA_START;
+const LOOP_START = globalThis.window.HF_LOOP_START;
 export { WORDS };
 
 const norm = (s) => s.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
@@ -16,9 +17,14 @@ export function W(word, n = 1, end = false) {
   throw new Error(`anchor not found: ${word} #${n}`);
 }
 export const LAST = WORDS[WORDS.length - 1].end;
-export const END = LAST + 1.0;
+// Loop ending: the last script line "> Und merk dir:" leads straight back into
+// the hook. LOOP = its first word; from there the picture shows the moments
+// right before frame 0 (world.js start()), and the video ends 0.25 s after
+// the last word so the restart lands on the beat. null = no loop line.
+export const LOOP = LOOP_START != null ? WORDS[LOOP_START].start : null;
 // composition length, same rounding as scripts/sync-html.mjs
-export const DURATION = Math.ceil((LAST + 1.2) * 10) / 10;
+export const DURATION = Math.ceil((LAST + (LOOP != null ? 0.25 : 1.2)) * 10) / 10;
+export const END = LOOP != null ? DURATION : LAST + 1.0;
 
 // Start times of the words marked *like this* in script.txt (yellow, bigger
 // caption + camera punch-in + "punch" sound).
@@ -29,16 +35,29 @@ export const HL = WORDS.filter((w) => w.hl).map((w) => w.start);
 // "folg…", tapped 1.0 s later and flipped to "Gefolgt" at +1.12 s.
 export function ctaTimes() {
   const words =
-    CTA_START != null ? WORDS.slice(CTA_START) : WORDS.filter((w) => /^folg/i.test(w.w));
+    CTA_START != null
+      ? WORDS.slice(CTA_START, LOOP_START ?? WORDS.length)
+      : WORDS.filter((w) => /^folg/i.test(w.w));
   if (!words.length) return null;
   const cmt = words[0].start;
   const follow = words.find((w) => /^folg/i.test(w.w))?.start ?? cmt + 1.2;
-  return { cmt, follow, tap: follow + 1.0, flip: follow + 1.12 };
+  // with a loop line the tap must land before the buttons fade out at LOOP
+  const tap =
+    LOOP != null ? Math.min(follow + 1.0, Math.max(follow + 0.5, LOOP - 0.45)) : follow + 1.0;
+  return { cmt, follow, tap, flip: tap + 0.12 };
 }
 
 // The series line "… gebaut." right before the CTA (payoff "ding").
 export function payoffTime() {
   const end = CTA_START ?? WORDS.length;
   for (let i = end - 1; i >= 0; i--) if (/^gebaut/i.test(WORDS[i].w)) return WORDS[i].end;
+  return null;
+}
+
+// Bonus fact: the line starting with "Übrigens" after the payoff ("WUSSTEST
+// DU?" badge + "wow" sound until the CTA starts).
+export function factTime() {
+  const end = CTA_START ?? WORDS.length;
+  for (let i = end - 1; i >= 0; i--) if (/^übrigens$/i.test(WORDS[i].w)) return WORDS[i].start;
   return null;
 }
