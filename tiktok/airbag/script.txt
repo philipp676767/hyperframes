@@ -1,0 +1,8 @@
+Wenn du ein Kissen vors Lenkrad bindest, hast du einen Airbag gebaut. Aber du siehst nichts mehr.
+Also faltest du einen Nylonsack winzig klein ins Lenkrad. Doch woher weiß er, wann es kracht?
+Du baust einen Chip ein, mit einer Mini-Masse an einer Feder. Stoppt das Auto ruckartig, schwingt sie nach vorn – wie du im Bus, wenn er bremst. Das ist der Crashsensor.
+Ein Computer prüft: Echter Unfall oder nur ein Schlagloch? Das ist das Steuergerät.
+Bei einem Crash zündet es eine Tablette. Sie verbrennt blitzschnell zu Stickstoff, und nach 30 Millisekunden ist der Sack prall. Das ist der Gasgenerator.
+Aber ein praller Sack wäre hart wie eine Wand. Also bekommt er Löcher. Taucht dein Kopf ein, entweicht das Gas, und er fängt dich weich auf.
+Schau dich an. Du hast gerade einen Airbag gebaut.
+Folg mir, um mehr zu lernen.
