@@ -514,6 +514,7 @@ export function renderFrame() {
 // panel text uses Montserrat.
 export function start(renderAt) {
   const frame = (t) => {
+    if (window.HF_COVER_T != null) t = window.HF_COVER_T; // cover mode (make-cover.sh)
     for (const fn of frameHooks) fn(t);
     renderAt(t);
   };
