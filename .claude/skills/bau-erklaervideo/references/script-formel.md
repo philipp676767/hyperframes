@@ -3,9 +3,9 @@
 Derived from four reference videos (@selfmade.engineer: Tesla Roadster,
 Ampel, Flugzeug, Bremsen) and proven on the fridge video.
 
-## Shape (120–135 words + CTA, max. 150)
+## Shape (105–120 words + CTA, max. 130, min. 100)
 
-Target video length ~50 s, hard limit 60 s. Fewer, stronger beats beat
+Target video length 40–50 s (aim ~45 s); outside that range is a reject. Fewer, stronger beats beat
 more, rushed ones.
 
 1. **Hook (1–2 sentences, ≤ 5 s)** — one of:
@@ -15,7 +15,7 @@ more, rushed ones.
    - a frustrating everyday moment + "Lass ihn uns bauen": _"Es ist 3 Uhr
      nachts, niemand ist auf der Straße, und die Ampel wird nicht grün.
      Warum? Lass sie uns bauen."_
-2. **Build loop, 4–5 beats** — each beat:
+2. **Build loop, 3–4 beats** — each beat:
    - problem: _"Aber …"_ / _"Problem: …"_ / _"Jetzt …"_
    - fix: _"Also baust/legst/schickst du …"_
    - everyday comparison: _"– wie eine Fahrradpumpe, die heiß wird."_
@@ -41,24 +41,23 @@ more, rushed ones.
 - Write numbers as digits only when they're spoken as a number ("26"); the
   voice reads them correctly.
 
-## Example (fridge, cut to the new length, 133 words ≈ 51 s)
+## Example (fridge, cut to the current length, 120 words ≈ 46 s)
 
 The published fridge video used a 185-word version (68 s) from before the
-60 s limit; this is the same story at today's length — the thermostat beat
-is dropped and the sweat analogy folded into the evaporator beat:
+40–50 s rule; this is the same story at today's length — thermostat beat
+dropped, condenser and capillary tube merged into one beat:
 
 > Wenn du Eiswürfel in eine Kiste kippst und deine Milch dazustellst, hast du einen Kühlschrank gebaut. Aber morgen schwimmt sie in einer Pfütze.
 > Also legst du ein Rohr in die Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus 26 Grad kocht. Beim Verdampfen schluckt sie Wärme – wie Schweiß auf deiner Haut. Das ist der Verdampfer.
 > Aber jetzt ist das Rohr voller warmem Gas. Also presst eine Pumpe es zusammen, bis es heiß wird. Das ist der Kompressor.
-> Das heiße Gas jagst du durch ein Zickzack-Rohr hinten am Kühlschrank. Dort gibt es die Wärme ab und wird wieder flüssig. Darum ist die Rückseite warm.
-> Dann quetschst du es durch ein haarfeines Röhrchen. Der Druck fällt, und es wird eiskalt. Jetzt läuft alles im Kreis.
+> Das heiße Gas jagst du durch ein Zickzack-Rohr hinten am Kühlschrank. Dort wird es wieder flüssig. Dann quetschst du es durch ein haarfeines Röhrchen, und es wird eiskalt. Jetzt läuft alles im Kreis.
 > Schau dich an. Du hast gerade einen Kühlschrank gebaut.
 > Folg mir, um mehr zu lernen.
 
 ## What to show the user for approval
 
 The full script (as above, one beat per paragraph), the word count with the
-expected length (words ÷ 2.5 + 2 s), and per
+expected length (words ÷ 2.8 + 3 s), and per
 beat one line of visual plan, e.g.:
 
 - Hook: Holzkiste mit Eiswürfeln + Milch → Eis schmilzt zur Pfütze → oranges ✕
