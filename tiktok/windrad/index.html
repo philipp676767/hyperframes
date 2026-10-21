@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>So funktioniert ein Windrad</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="assets/words.js"></script>
+    <style>
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/montserrat-800.woff2") format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #e9a7c4;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #e9a7c4;
+      }
+      #stage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      #captions {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 900px;
+        height: 120px;
+      }
+      #cta {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 560px;
+        display: flex;
+        justify-content: center;
+      }
+      #cta-btn {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 26px 56px 26px 34px;
+        border-radius: 999px;
+        background: #fe2c55;
+        box-shadow: 0 14px 40px rgba(60, 10, 40, 0.35);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 60px;
+        color: #ffffff;
+        opacity: 0;
+      }
+      #cta-plus {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #ffffff;
+      }
+      #cta-plus::before,
+      #cta-plus::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 34px;
+        height: 9px;
+        margin: -4.5px 0 0 -17px;
+        border-radius: 5px;
+        background: #fe2c55;
+      }
+      #cta-plus::after {
+        width: 9px;
+        height: 34px;
+        margin: -17px 0 0 -4.5px;
+      }
+      #cta-label-done {
+        display: none;
+      }
+      .word {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 78px;
+        line-height: 120px;
+        color: #ffffff;
+        opacity: 0;
+        -webkit-text-stroke: 7px rgba(20, 12, 30, 0.55);
+        paint-order: stroke fill;
+        text-shadow:
+          0 0 3px rgba(0, 0, 0, 0.55),
+          0 3px 6px rgba(0, 0, 0, 0.45),
+          0 0 18px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="42.7"
+      data-width="1080"
+      data-height="1920"
+    >
+      <canvas id="stage" width="720" height="1280"></canvas>
+      <div id="captions"></div>
+      <div id="cta">
+        <div id="cta-btn">
+          <div id="cta-plus"></div>
+          <span id="cta-label">Folgen</span><span id="cta-label-done">Gefolgt</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // One word at a time, hard swap, fixed center position (reference style).
+      (function () {
+        const words = window.HF_WORDS;
+        const box = document.getElementById("captions");
+        const tl = gsap.timeline({ paused: true });
+        words.forEach((w, i) => {
+          const el = document.createElement("div");
+          el.className = "word";
+          el.textContent = w.w;
+          box.appendChild(el);
+          const next = words[i + 1];
+          const off = next ? Math.min(next.start, w.end + 0.6) : w.end + 0.8;
+          tl.set(el, { opacity: 1 }, w.start);
+          tl.set(el, { opacity: 0 }, off);
+        });
+        // CTA: "Folgen" pill pops in on "Folg", gets tapped, flips to "Gefolgt".
+        const cta = words.find((w) => w.w === "Folg");
+        if (cta) {
+          const t0 = cta.start;
+          tl.fromTo(
+            "#cta-btn",
+            { opacity: 0, scale: 0.4, y: 40 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
+            t0,
+          );
+          tl.to("#cta-btn", { scale: 0.9, duration: 0.12, ease: "power2.in" }, t0 + 1.0);
+          tl.set("#cta-btn", { backgroundColor: "#3a3a46" }, t0 + 1.12);
+          tl.set("#cta-plus", { opacity: 0, width: 0, marginRight: -22 }, t0 + 1.12);
+          tl.set("#cta-label", { display: "none" }, t0 + 1.12);
+          tl.set("#cta-label-done", { display: "inline" }, t0 + 1.12);
+          tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, t0 + 1.12);
+        }
+        tl.set({}, {}, 42.7);
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+
+    <script type="module" src="assets/scene.js"></script>
+  </body>
+</html>
