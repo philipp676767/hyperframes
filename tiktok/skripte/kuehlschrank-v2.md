@@ -1,6 +1,8 @@
 # Kühlschrank – Skript v2 (neue Formel, Stimme Jan)
 
-Nur Skript, kein Video. 129 Wörter inkl. CTA ≈ 47 s.
+**Freigegeben: Hook A, Stimme Jan (eleven_v3).** Nur Skript, kein Video
+(das veröffentlichte Video bleibt die alte Fassung). 129 Wörter inkl. CTA ≈ 47 s.
+Vorlage für künftige Skripte: Aufbau, Ton und CTA-Art so übernehmen.
 
 **Hook-Schlagzeile (0–3 s):** Dein Kühlschrank <em>lügt</em>
 
@@ -13,7 +15,7 @@ Schau dich an. Du hast gerade einen Kühlschrank gebaut.
 Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
 ```
 
-Alternative Hooks (ersetzen Zeile 1):
+Nicht gewählte Alternativ-Hooks (zum Vergleich):
 
 - B (Alltags-Rätsel, 127 Wörter ≈ 47 s): „Warum ist die Rückseite von deinem Kühlschrank warm? Weil er deiner Milch die Wärme klaut. Lass ihn uns bauen.“ – Titel: „Warum ist er hinten <em>warm</em>?“
 - C (Ergebnis zuerst, 124 Wörter ≈ 46 s): „In 40 Sekunden baust du einen Kühlschrank – aus einem Rohr, einer Pumpe und einem fiesen Trick.“ – Titel: „Kühlschrank in <em>40 Sek.</em>“ – dann in Zeile 4 „die geklaute Wärme“ → „die Wärme aus deiner Milch“.

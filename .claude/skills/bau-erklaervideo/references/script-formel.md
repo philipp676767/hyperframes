@@ -38,6 +38,12 @@ Rules:
 - The **first frame already shows the strange thing** (subject mid-action,
   the warm back, the falling car) — never an empty establishing shot.
 
+**House favourite: Mythos-Bruch.** The user picked it for the fridge v2
+(Hook A, `tiktok/skripte/kuehlschrank-v2.md`): break a belief in sentence
+1, name what really happens in sentence 2, then "Lass ihn/sie/es uns bauen."
+Make it the first (recommended) option every time; the other two hooks
+use different formulas so the user can compare.
+
 Hook formulas (write three, pick the strongest, show the other two to the
 user as alternatives):
 
@@ -114,7 +120,7 @@ CTA patterns:
   in a row, vary verbs between beats.
 - Numbers as digits only when spoken as a number ("26").
 
-## Example — fridge rewritten in v2 (129 words ≈ 47 s)
+## Example — fridge rewritten in v2, approved by the user (129 words ≈ 47 s)
 
 > Dein Kühlschrank macht gar keine Kälte. Er klaut deiner Milch die Wärme – und schmeißt sie hinten raus. Lass ihn uns bauen.
 > Du brauchst ein Rohr in der Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus 26 Grad kocht. Dabei saugt sie die Wärme aus deiner Milch. Das ist der Verdampfer.
