@@ -4,10 +4,13 @@ const text = fs.readFileSync(new URL("../script.txt", import.meta.url), "utf8");
 const toks = text.split(/\s+/).filter((w) => w && w !== "–");
 let t = 0.3;
 const words = toks.map((raw) => {
-  const w = raw.replace(/[.,:!?]/g, "");
+  // *Wort* = highlighted keyword (yellow caption + punch-in + sound)
+  const hl = /^\*.*\*[.,:!?]*$/.test(raw);
+  const w = raw.replace(/[.,:!?*]/g, "");
   const d = 0.1 + 0.037 * w.length;
   const o = { w, start: +t.toFixed(3), end: +(t + d).toFixed(3) };
-  t += d + (/[.!?]$/.test(raw) ? 0.3 : /[,:]$/.test(raw) ? 0.14 : 0.02);
+  if (hl) o.hl = true;
+  t += d + (/[.!?]\*?$/.test(raw) ? 0.3 : /[,:]$/.test(raw) ? 0.14 : 0.02);
   return o;
 });
 // the last line of script.txt is the CTA; its first word drives the CTA buttons

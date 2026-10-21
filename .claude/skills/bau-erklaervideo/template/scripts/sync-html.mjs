@@ -1,5 +1,6 @@
-// Sync index.html to assets/words.js + assets/voiceover.mp3 (+ assets/bgm.mp3):
-// root duration, caption timeline length and the voiceover / music <audio> clips.
+// Sync index.html to assets/words.js + assets/voiceover.mp3 (+ assets/bgm.mp3,
+// assets/sfx.mp3): root duration, caption timeline length and the voiceover /
+// music / sound-effect <audio> clips.
 import fs from "node:fs";
 import vm from "node:vm";
 
@@ -14,11 +15,13 @@ html = html.replace(/(data-composition-id="main"[\s\S]*?data-duration=")[\d.]+"/
 html = html.replace(/tl\.set\(\{\}, \{\}, [\d.]+\);/, `tl.set({}, {}, ${dur});`);
 const audioTag = `<audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="${dur}" data-track-index="2" data-volume="1"></audio>`;
 const bgmTag = `<audio id="bgm" src="assets/bgm.mp3" data-start="0" data-duration="${dur}" data-track-index="3" data-volume="1"></audio>`;
-// Drop every existing voiceover / music tag (formatters may have wrapped them), then add one each.
-html = html.replace(/\n?[ \t]*<audio\b[^>]*\bid="(vo|bgm)"[^>]*>\s*<\/audio>/g, "");
+const sfxTag = `<audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="${dur}" data-track-index="4" data-volume="1"></audio>`;
+// Drop every existing voiceover / music / sfx tag (formatters may have wrapped them), then add one each.
+html = html.replace(/\n?[ \t]*<audio\b[^>]*\bid="(vo|bgm|sfx)"[^>]*>\s*<\/audio>/g, "");
 const tags = [];
 if (fs.existsSync(new URL("assets/voiceover.mp3", root))) tags.push(audioTag);
 if (fs.existsSync(new URL("assets/bgm.mp3", root))) tags.push(bgmTag);
+if (fs.existsSync(new URL("assets/sfx.mp3", root))) tags.push(sfxTag);
 if (tags.length) {
   html = html.replace(
     '<div id="captions"></div>',

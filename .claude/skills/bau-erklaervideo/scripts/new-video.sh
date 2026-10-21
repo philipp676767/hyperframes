@@ -3,7 +3,8 @@
 #   bash .claude/skills/bau-erklaervideo/scripts/new-video.sh <slug> "<Titel>"
 #   e.g. new-video.sh aufzug "So funktioniert ein Aufzug"
 # Creates tiktok/<slug>/ (repo root) with the shared world, captions + CTA,
-# the hook title + comment/follow CTA buttons, the stock music bed and placeholder word timings,
+# the hook title + comment/follow CTA buttons, the stock music bed, the sound-effect
+# kit + track, the Erklärbär mascot and placeholder word timings,
 # so it previews at once.
 set -euo pipefail
 SLUG=${1:?usage: new-video.sh <slug> "<Titel>"}
@@ -47,5 +48,7 @@ pkg["name"] = slug
 (dest / "meta.json").write_text(json.dumps({"id": slug, "name": title}, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
 EOF
 node "$DEST/scripts/fake-words.mjs" >/dev/null
+python3 "$DEST/scripts/make-sfx.py" >/dev/null
+node "$DEST/scripts/build-sfx.mjs" >/dev/null
 node "$DEST/scripts/sync-html.mjs" >/dev/null
 echo "created $DEST"

@@ -13,7 +13,11 @@ pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(audio), "-ac", "1", "-a
 samples = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768
 
 script = (root / "script.txt").read_text(encoding="utf8")
+# *Wort* marks a highlighted keyword; the voice and Whisper get the plain text
 tokens = [t for t in script.split() if t != "–"]
+marked = [bool(re.fullmatch(r"\*.*\*[.,:!?]*", t)) for t in tokens]
+tokens = [t.replace("*", "") for t in tokens]
+script = script.replace("*", "")
 norm = lambda s: re.sub(r"[^a-zäöüß0-9]", "", s.lower())
 
 model = WhisperModel("small", device="cpu", compute_type="int8")
@@ -40,6 +44,9 @@ for i, t in enumerate(times):  # interpolate anything Whisper skipped
         times[i] = (prev, max(prev + 0.05, nxt))
 
 words = [{"w": re.sub(r"[.,:!?]", "", t), "start": round(s, 3), "end": round(e, 3)} for t, (s, e) in zip(tokens, times)]
+for w, hl in zip(words, marked):
+    if hl:
+        w["hl"] = True
 # the last line of script.txt is the CTA; its first word drives the CTA buttons
 cta_len = len([t for t in script.strip().splitlines()[-1].split() if t != "–"])
 (root / "assets" / "words.js").write_text(

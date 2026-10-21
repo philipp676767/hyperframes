@@ -10,7 +10,12 @@ if (!key) throw new Error("ELEVENLABS_API_KEY is not set");
 // Jan – Social Media Creator on eleven_v3 (house voice of the series)
 const voice = process.argv[2] || "keqaIOtp0ePlmN5jgQfy";
 
-const main = fs.readFileSync(new URL("script.txt", root), "utf8").trim().replace(/\s+/g, " ");
+// *Wort* highlight marks are for the captions only — never send them to the voice
+const main = fs
+  .readFileSync(new URL("script.txt", root), "utf8")
+  .replaceAll("*", "")
+  .trim()
+  .replace(/\s+/g, " ");
 
 const res = await fetch(
   `https://api.elevenlabs.io/v1/text-to-speech/${voice}?output_format=mp3_44100_128`,

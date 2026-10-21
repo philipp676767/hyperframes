@@ -1,10 +1,10 @@
 // TEMPLATE scene: a tiny working story (candle -> light bulb) that shows the
-// pattern. Replace the subject, beats (T) and shots for the new topic; keep
-// the structure. World, captions, panel, arrows and camera come from world.js.
+// pattern. Replace the subject here and the beats (T), shots, labels, mascot
+// acts and sounds in beats.js for the new topic; keep the structure. World,
+// captions, panel, arrows, labels and camera come from world.js.
 // Full-size reference: tiktok/kuehlschrank/assets/scene.js
 import {
   THREE,
-  W,
   ramp,
   smooth,
   outBack,
@@ -23,11 +23,14 @@ import {
   animateArrows,
   showPanel,
   LED,
+  labels,
   shotCamera,
   renderFrame,
   start,
 } from "./world.js";
 import { createWorld } from "./environments.js";
+import { mascot } from "./mascot.js";
+import { T, shots, LABELS, MASCOT } from "./beats.js";
 
 // Pick the place + light for this topic: env insel | stadt | strand | winter | land,
 // sky sonnenuntergang | morgen | mittag | abend (optional, each env has a default).
@@ -96,35 +99,6 @@ const heatOut = makeArrowSet(
   { parent: bulb },
 );
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
-const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  schau: W("Schau"),
-  gerade: W("gerade"),
-};
-
-// ---------------------------------------------------------------- shots
-// One shot per beat, hard cut every ~2-4 s, always slowly moving.
-const shots = [
-  { at: 0, from: [1.6, 1.3, 2.2], to: [1.2, 1.1, 1.8], look: [0, 0.5, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0] },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.schau, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.gerade, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
-];
 const applyCamera = shotCamera(shots);
 
 // ---------------------------------------------------------------- render
@@ -157,6 +131,10 @@ function renderAt(t) {
   } else {
     showPanel(0);
   }
+
+  // tags + arrows on the named parts, the Erklärbär's acts
+  labels(t, LABELS);
+  mascot(t, MASCOT);
 
   applyCamera(t);
   renderFrame();

@@ -112,6 +112,22 @@ CTA patterns:
 | **Zahl / Schätzung** | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare – und folg mir für mehr."        |
 | **Nächstes Thema**   | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare – und folg mir."            |
 
+## Keywords — mark them with `*Wort*`
+
+Mark the word of each sentence the viewer must remember — `*Kompressor*`,
+`minus *26* Grad`, `der *Trick*`, the hook's key noun. The caption turns yellow + bigger and pops, the camera punches in
+and a soft "punch" sounds. Rules:
+
+- **~1 per sentence, 8–12 per video**, never two in a row (the punches
+  must stay a surprise).
+- Always: each technical term where it is named (`Das ist der
+*Verdampfer*.`), the hook's twist word, the re-hook (`der *Trick*`),
+  every number the LED panel shows.
+- Never: the CTA line (it has its own buttons), filler words, the series
+  line ("gebaut" gets the ding anyway).
+- Only around one word, punctuation outside: `*Kompressor*.` The stars
+  never reach the voice (strip them before ElevenLabs).
+
 ## Other rules
 
 - Du-Form throughout; the viewer builds it.
@@ -122,14 +138,17 @@ CTA patterns:
 
 ## Example — fridge rewritten in v2, approved by the user (129 words ≈ 47 s)
 
-> Dein Kühlschrank macht gar keine Kälte. Er klaut deiner Milch die Wärme – und schmeißt sie hinten raus. Lass ihn uns bauen.
-> Du brauchst ein Rohr in der Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus 26 Grad kocht. Dabei saugt sie die Wärme aus deiner Milch. Das ist der Verdampfer.
-> Jetzt hast du warmes Gas. Und hier kommt der Trick: Eine Pumpe quetscht es zusammen, bis es richtig heiß wird. Das ist der Kompressor.
-> Das heiße Gas jagst du hinten durch ein Zickzack-Rohr – genau da landet die geklaute Wärme. Ein haarfeines Röhrchen macht es wieder eiskalt, und alles läuft im Kreis.
-> Schau dich an. Du hast gerade einen Kühlschrank gebaut.
-> Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
+```text
+Dein Kühlschrank macht gar keine *Kälte*. Er *klaut* deiner Milch die Wärme – und schmeißt sie hinten raus. Lass ihn uns bauen.
+Du brauchst ein Rohr in der Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus *26* Grad kocht. Dabei saugt sie die Wärme aus deiner Milch. Das ist der *Verdampfer*.
+Jetzt hast du warmes Gas. Und hier kommt der *Trick*: Eine Pumpe quetscht es zusammen, bis es richtig *heiß* wird. Das ist der *Kompressor*.
+Das heiße Gas jagst du hinten durch ein *Zickzack-Rohr* – genau da landet die geklaute Wärme. Ein haarfeines Röhrchen macht es wieder *eiskalt*, und alles läuft im Kreis.
+Schau dich an. Du hast gerade einen Kühlschrank gebaut.
+Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
+```
 
-Hook title: `Dein Kühlschrank <em>lügt</em>`.
+Hook title: `Dein Kühlschrank <em>lügt</em>`. (Keyword marks added
+afterwards to show the density: 9 in 129 words.)
 
 What changed against v1: belief-breaking first line instead of "Wenn du
 Eiswürfel …"; the "Wärme klauen" loop opened in the hook and closed in
@@ -142,6 +161,7 @@ beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
 - [ ] 3 beats, each ending with a pull; one re-hook; one home moment
 - [ ] ≤ 3 technical terms; no sentence that needs a breath
 - [ ] CTA: question answerable in 1–3 words + "folg"
+- [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
 - [ ] 115–130 words incl. CTA (≤ 135, ≥ 110), expected length stated
 
 ## What to show the user for approval
@@ -150,6 +170,7 @@ The script (one part per paragraph), word count + expected length, the
 hook title, **two alternative hooks**, and per beat one line of visual
 plan, e.g.:
 
-- Hook: Kühlschrank-Rückseite glüht rot, Wärmepfeile strömen aus der Milch nach hinten
-- Verdampfer: Kühlschrank wird gläsern, blaues Rohr wächst in die Rückwand, LED „KOCHT BEI −26 °C“, Siedeblasen
+- Hook: Kühlschrank-Rückseite glüht rot, Wärmepfeile strömen aus der Milch nach hinten; Bär schaut neugierig rein
+- Verdampfer: Kühlschrank wird gläsern, blaues Rohr wächst in die Rückwand (Schild „Verdampfer“), LED „KOCHT BEI −26 °C“, Siedeblasen + Zischen
+- Trick: Bär staunt, Kompressor brummt los
 - …
