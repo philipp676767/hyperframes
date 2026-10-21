@@ -100,12 +100,12 @@ t = t_of(1.4)
 bell = sum(a * sine(1318.5 * r, t) * np.exp(-t / d) for a, r, d in [(1, 1, 0.5), (0.5, 2.76, 0.22), (0.25, 5.4, 0.1), (0.3, 2.0, 0.35)])
 write("ding", bell * np.minimum(1, t / 0.002))
 
-# boing: cartoon spring for the bear popping in
+# boing: cartoon spring (something jumps / bounces in)
 t = t_of(0.5)
 f = 180 + 260 * (1 - np.exp(-t / 0.06)) + 60 * np.sin(2 * np.pi * 14 * t) * np.exp(-t / 0.2)
 write("boing", sine(f, t) * env(t, 0.004, 0.18))
 
-# wow: rising sparkle arpeggio for the bear's amazed moment (the trick)
+# wow: rising sparkle arpeggio (a magic / "it works" moment)
 t = t_of(0.95)
 wow = np.zeros_like(t)
 for i, f0 in enumerate([1046.5, 1318.5, 1568.0, 2093.0]):

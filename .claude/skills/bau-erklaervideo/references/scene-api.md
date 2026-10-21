@@ -5,9 +5,8 @@ helpers; `assets/environments.js` exports `createWorld({ env, sky })`, which
 builds sky, lights and the landscape — call it first. `assets/timing.js`
 holds the word anchors (no three.js, also used in node).
 `assets/beats.js` is the video's timing as plain data — `T`, `shots`,
-`LABELS`, `MASCOT`, `SFX` — read by the scene and by `scripts/build-sfx.mjs`
-(so keep three.js and the DOM out of it). `assets/mascot.js` is the
-Erklärbär. `assets/scene.js` imports what it needs,
+`LABELS`, `SFX` — read by the scene and by `scripts/build-sfx.mjs`
+(so keep three.js and the DOM out of it). `assets/scene.js` imports what it needs,
 builds the subject, and defines `renderAt(t)` — a **pure function of time**
 (no state carried between frames, no `Math.random`, no clocks). The demo
 `template/assets/scene.js` is the minimal pattern; `tiktok/kuehlschrank/
@@ -23,7 +22,6 @@ bubbles, analogy sets, door opening).
 | `LAST`, `END`                                                                       | last word end; `END = LAST + 1`                                                                                                                                   |
 | `HL`, `punch(t)`                                                                    | start times of the `*highlighted*` words; 0..1 punch envelope (shotCamera applies it to the lens automatically)                                                   |
 | `labels(t, LABELS)` / `showLabel(id, k, text, pos, side?)`                          | name tag + arrow on a world point; `labels` pops each `{ text, at, until, pos, side }` in its window. Projected in `renderFrame()`                                |
-| `hud`                                                                               | `{ scene, camera }` overlay drawn on top of the world (the mascot lives here)                                                                                     |
 | `clamp01 ramp(t,a,b) lerp smooth easeInOut outBack inBack`                          | timing math; `ramp` gives 0→1 between a and b                                                                                                                     |
 | `pop(t, a, b, d = 0.35)`                                                            | 0 outside [a,b), springs in at a, quick fade at b — for things that appear for a beat                                                                             |
 | `rng(seed)`, `rand`                                                                 | seeded random (use your own `rng(n)` for per-prop randomness)                                                                                                     |
@@ -43,12 +41,6 @@ bubbles, analogy sets, door opening).
 | `renderFrame()`                                                                     | billboards + render; last call of `renderAt`                                                                                                                      |
 | `start(renderAt)`                                                                   | wire HyperFrames seeking; call once at the end                                                                                                                    |
 
-## mascot.js
-
-| Export              | Use                                                                                                                                |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `mascot(t, MASCOT)` | call once per frame; `MASCOT = [{ act: "peek" \| "wow" \| "nod" \| "wave", at, until? }]` (until defaults to `END`), one at a time |
-
 ## timing.js (also in node)
 
 `W`, `LAST`, `END`, `DURATION`, `HL`, `WORDS`, `ctaTimes()` (comment /
@@ -62,7 +54,6 @@ import { W, END } from "./timing.js";
 export const T = { also: W("Also"), rohr: W("Rohr"), trick: W("Trick"), schau: W("Schau"), … };
 export const shots = [ … ];                                   // whoosh on every cut unless { sfx: false }
 export const LABELS = [{ text: "Verdampfer", at: T.verdampfer, until: T.jetzt, pos: [0, 1.2, -0.5], side: -1 }];
-export const MASCOT = [{ act: "peek", at: 0.3, until: 2.9 }, { act: "wow", at: T.trick, until: T.trick + 2.2 }, { act: "wave", at: T.schau, until: END }];
 export const SFX = [{ s: "pop", at: T.also + 0.15 }, { s: "brumm", at: T.pumpe, dur: 3, db: -17 }];
 ```
 
@@ -98,7 +89,7 @@ length. Positions are pulled back ×`zoom` (default 1.7) from `look`.
 ## renderAt skeleton
 
 ```js
-import { T, shots, LABELS, MASCOT } from "./beats.js"; // all beats live there
+import { T, shots, LABELS } from "./beats.js"; // all beats live there
 
 function renderAt(t) {
   // 1. hook prop: animate its failure, showNope(pop(…)), shrink it away (inBack) on T.also
@@ -109,7 +100,7 @@ function renderAt(t) {
   // 6. analogy sets: animate only while their shot is on screen
   // 7. one showPanel(...) branch per fact, else showPanel(0)
   // 8. outro: x-ray off, a small "it works" moment (door opens, light on, car arrives …)
-  // 9. labels(t, LABELS); mascot(t, MASCOT);
+  // 9. labels(t, LABELS);
   applyCamera(t);
   renderFrame();
 }

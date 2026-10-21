@@ -170,7 +170,7 @@ The script (one part per paragraph), word count + expected length, the
 hook title, **two alternative hooks**, and per beat one line of visual
 plan, e.g.:
 
-- Hook: Kühlschrank-Rückseite glüht rot, Wärmepfeile strömen aus der Milch nach hinten; Bär schaut neugierig rein
+- Hook: Kühlschrank-Rückseite glüht rot, Wärmepfeile strömen aus der Milch nach hinten
 - Verdampfer: Kühlschrank wird gläsern, blaues Rohr wächst in die Rückwand (Schild „Verdampfer“), LED „KOCHT BEI −26 °C“, Siedeblasen + Zischen
-- Trick: Bär staunt, Kompressor brummt los
+- Trick: Kompressor brummt los
 - …

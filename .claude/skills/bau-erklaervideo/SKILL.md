@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, the Erklärbär mascot (peeks in, gasps at the trick, waves goodbye), ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → comment-question + follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
+description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → comment-question + follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -16,21 +16,20 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 ## Fixed house settings
 
-| What       | Value                                                                                                                                                                                                                                                                         |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format     | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                                                                                                    |
-| Voice      | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** (chosen 2026-10-21 after creator feedback; replaced Christian Plasa on `eleven_multilingual_v2`, episodes #1–#5)                                                            |
-| CTA        | Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template)                              |
-| Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                                                                                                    |
-| Music      | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                                       |
-| Setting    | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                                                      |
-| Sound FX   | Synthesized house kit (`scripts/make-sfx.py`, no samples): whoosh on every cut, hit on the hook title, punch on highlighted words, blip per label, bear boing/wow, payoff ding, CTA pops + click. Placed from `assets/beats.js` by `scripts/build-sfx.mjs` → `assets/sfx.mp3` |
-| Keywords   | `*Wort*` in `script.txt` → caption yellow + bigger + pops, camera punch-in, punch sound. ~1 per sentence, 8–12 per video                                                                                                                                                      |
-| Labels     | Name tag + yellow arrow on a part when its term is spoken (`LABELS` in `beats.js`), every technical term + key parts                                                                                                                                                          |
-| Mascot     | Erklärbär (bear from the profile picture, `assets/mascot.js`), lower-left: `peek` on the hook, `wow` on the trick / re-hook, `wave` from "Schau dich an" to the end (`MASCOT` in `beats.js`)                                                                                  |
-| Look       | `references/visual-style.md`                                                                                                                                                                                                                                                  |
-| Script     | `references/script-formel.md`                                                                                                                                                                                                                                                 |
-| Scene code | `references/scene-api.md` (world.js API)                                                                                                                                                                                                                                      |
+| What       | Value                                                                                                                                                                                                                                                         |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Format     | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                                                                                    |
+| Voice      | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** (chosen 2026-10-21 after creator feedback; replaced Christian Plasa on `eleven_multilingual_v2`, episodes #1–#5)                                            |
+| CTA        | Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template)              |
+| Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                                                                                    |
+| Music      | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                       |
+| Setting    | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                                      |
+| Sound FX   | Synthesized house kit (`scripts/make-sfx.py`, no samples): whoosh on every cut, hit on the hook title, punch on highlighted words, blip per label, payoff ding, CTA pops + click. Placed from `assets/beats.js` by `scripts/build-sfx.mjs` → `assets/sfx.mp3` |
+| Keywords   | `*Wort*` in `script.txt` → caption yellow + bigger + pops, camera punch-in, punch sound. ~1 per sentence, 8–12 per video                                                                                                                                      |
+| Labels     | Name tag + yellow arrow on a part when its term is spoken (`LABELS` in `beats.js`), every technical term + key parts                                                                                                                                          |
+| Look       | `references/visual-style.md`                                                                                                                                                                                                                                  |
+| Script     | `references/script-formel.md`                                                                                                                                                                                                                                 |
+| Scene code | `references/scene-api.md` (world.js API)                                                                                                                                                                                                                      |
 
 ## Workflow
 
@@ -73,12 +72,11 @@ its top, and copy the file into the project.
 bash .claude/skills/bau-erklaervideo/scripts/new-video.sh <slug> "So funktioniert <X>"
 ```
 
-Creates `tiktok/<slug>/` with the shared `assets/world.js` + `assets/environments.js` +
-`assets/mascot.js`, captions, hook title and CTA buttons in `index.html`,
+Creates `tiktok/<slug>/` with the shared `assets/world.js` + `assets/environments.js`, captions, hook title and CTA buttons in `index.html`,
 the stock music bed in `assets/vo_takes/bgm-ruhig.mp3`, the sound-effect
 kit (`assets/sfx/`, git-ignored, regenerated on demand), helper scripts, and a small demo
 (`assets/scene.js` + `assets/beats.js`, candle → light bulb) that already
-renders with labels, mascot and sound. Write the approved script into
+renders with labels and sound. Write the approved script into
 `script.txt` — one part per line, **the CTA alone on the last line** (it
 must contain "folg"), **keywords marked `*Wort*`** — and put the hook
 title into `<div id="hook-title">` in `index.html` (keyword in `<em>`).
@@ -138,8 +136,7 @@ hard-code seconds.
 All timing data lives in `assets/beats.js` (plain data, read by the scene
 **and** by `build-sfx.mjs`): `T` (anchors), `shots`, `LABELS` (a tag +
 arrow for every technical term and key part, from the word that names it,
-~2.5 s), `MASCOT` (`peek` 0.3–2.9 s, `wow` on the re-hook / trick word,
-`wave` from "Schau" to `END`; optionally one `nod`) and `SFX` (the scene's
+~2.5 s) and `SFX` (the scene's
 own sounds: `pop` when the subject or a part pops in, `zisch` for gas /
 steam, `brumm` for motors / compressors, `surr` for current / heat,
 `rauschen` for air / water, `klack` for latches / brakes, `click` for
@@ -156,7 +153,7 @@ Snapshot one time per shot (word start + 0.3 s) and look at the contact
 sheet: subject readable and not cropped, captions not hidden, nothing
 blocking the camera (trees!), panel legible, x-ray actually see-through,
 every label's arrow touching its part and the tag not covering the
-subject, the bear not covering the part being explained (lower-left).
+subject.
 Read `assets/sfx-cues.json` once: one whoosh per cut, nothing stacked
 within ~0.15 s except a cut + its highlight.
 Fix and re-snapshot. Expect 2–3 rounds.
@@ -224,8 +221,10 @@ pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   point every frame; a label whose point is off screen or behind the
   camera is skipped. Keep tags off the caption band (handled) and pick
   `side` so the tag doesn't sit on the subject.
+- **No mascot in the videos.** The Erklärbär is only the profile
+  picture; the user decided against it in the videos (2026-10-21).
 - **Old episodes** (≤ #5, Windrad) were built before labels, highlights,
-  sound effects and the mascot; their `world.js` copies don't have them.
+  and sound effects; their `world.js` copies don't have them.
 - **Camera:** shots are authored close and pulled back ×1.7 (`zoom`). For a
   macro close-up use `zoom: 1.0–1.4`. Scenery (trees, houses, palms) can block
   side/back shots — move the camera, not the environment's stage rules.

@@ -4,7 +4,7 @@
 #   e.g. new-video.sh aufzug "So funktioniert ein Aufzug"
 # Creates tiktok/<slug>/ (repo root) with the shared world, captions + CTA,
 # the hook title + comment/follow CTA buttons, the stock music bed, the sound-effect
-# kit + track, the Erklärbär mascot and placeholder word timings,
+# kit + track and placeholder word timings,
 # so it previews at once.
 set -euo pipefail
 SLUG=${1:?usage: new-video.sh <slug> "<Titel>"}

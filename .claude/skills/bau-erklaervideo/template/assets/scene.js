@@ -1,6 +1,6 @@
 // TEMPLATE scene: a tiny working story (candle -> light bulb) that shows the
-// pattern. Replace the subject here and the beats (T), shots, labels, mascot
-// acts and sounds in beats.js for the new topic; keep the structure. World,
+// pattern. Replace the subject here and the beats (T), shots, labels and
+// sounds in beats.js for the new topic; keep the structure. World,
 // captions, panel, arrows, labels and camera come from world.js.
 // Full-size reference: tiktok/kuehlschrank/assets/scene.js
 import {
@@ -29,8 +29,7 @@ import {
   start,
 } from "./world.js";
 import { createWorld } from "./environments.js";
-import { mascot } from "./mascot.js";
-import { T, shots, LABELS, MASCOT } from "./beats.js";
+import { T, shots, LABELS } from "./beats.js";
 
 // Pick the place + light for this topic: env insel | stadt | strand | winter | land,
 // sky sonnenuntergang | morgen | mittag | abend (optional, each env has a default).
@@ -132,9 +131,8 @@ function renderAt(t) {
     showPanel(0);
   }
 
-  // tags + arrows on the named parts, the Erklärbär's acts
+  // tags + arrows on the named parts
   labels(t, LABELS);
-  mascot(t, MASCOT);
 
   applyCamera(t);
   renderFrame();

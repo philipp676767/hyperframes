@@ -1,7 +1,7 @@
 // TEMPLATE beats: every time-keyed decision of the video as plain data, so
 // scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
 // Keep this file free of three.js / DOM: it is imported by node too.
-import { W, END } from "./timing.js";
+import { W } from "./timing.js";
 
 // ---------------------------------------------------------------- beats
 // Word anchors: W("word", n) = start of the n-th time that word is spoken.
@@ -42,21 +42,11 @@ export const LABELS = [
   { text: "Glühfaden", at: T.gluehfaden, until: T.schau, pos: [0.2, 1.95, 0], side: 1 },
 ];
 
-// ---------------------------------------------------------------- mascot
-// The Erklärbär (mascot.js): peek on the hook, wow on the trick / re-hook,
-// wave from "Schau dich an" to the end. Max one act at a time.
-export const MASCOT = [
-  { act: "peek", at: 0.3, until: 2.9 },
-  { act: "wow", at: T.gluet, until: T.gluet + 2.2 },
-  { act: "wave", at: T.schau, until: END },
-];
-
 // ---------------------------------------------------------------- sound
 // Extra sound effects for things that happen in the scene. Automatic (no
 // entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the bear's boing / wow, the payoff
-// ding, the CTA pops + click. Kit: pop blip click klack ding boing wow hit
-// punch whoosh (one-shots), zisch brumm surr rauschen (loops: give `dur`).
+// *highlighted* word, blip per label, the payoff ding, the CTA pops +
+// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen (loops: give `dur`).
 //   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
   { s: "pop", at: T.also + 0.15 }, // the bulb pops in

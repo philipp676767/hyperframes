@@ -495,26 +495,6 @@ function drawLabels() {
   labelsNow.length = 0;
 }
 
-// ---------------------------------------------------------------- overlay (HUD)
-// A second scene drawn on top of the world with a fixed camera — for things
-// glued to the frame (the Erklärbär mascot in mascot.js). Frame edges at
-// z = 0: x ±1.51, y ±2.68.
-export const hud = {
-  scene: new THREE.Scene(),
-  camera: new THREE.PerspectiveCamera(30, WIDTH / HEIGHT, 0.1, 50),
-};
-hud.camera.position.set(0, 0, 10);
-hud.camera.lookAt(0, 0, 0);
-hud.scene.add(new THREE.HemisphereLight(0xffeef4, 0x8a6a7a, 1.6));
-{
-  const key = new THREE.DirectionalLight(0xffe2c4, 2.4);
-  key.position.set(3, 5, 8);
-  hud.scene.add(key);
-  const rim = new THREE.DirectionalLight(0xff9ec4, 1.2);
-  rim.position.set(-4, 2, -5);
-  hud.scene.add(rim);
-}
-
 // ---------------------------------------------------------------- frame loop
 // Billboards + render. Call at the end of your renderAt(t).
 export function renderFrame() {
@@ -527,12 +507,6 @@ export function renderFrame() {
     panel.position.set(0.18, 0.78, -3.0).applyMatrix4(camera.matrixWorld);
   }
   renderer.render(scene, camera);
-  if (hud.scene.children.some((c) => c.visible && c.isGroup)) {
-    renderer.autoClear = false;
-    renderer.clearDepth();
-    renderer.render(hud.scene, hud.camera);
-    renderer.autoClear = true;
-  }
   drawLabels();
 }
 

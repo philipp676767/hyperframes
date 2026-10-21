@@ -1,7 +1,7 @@
 // Build assets/sfx.mp3: every sound effect of the video on one track, placed
 // from the same beats the picture uses (assets/beats.js + words.js).
 // Automatic cues: whoosh on each camera cut, hit on the hook title, punch on
-// each *highlighted* word, blip per label, the bear's boing / wow / pop,
+// each *highlighted* word, blip per label,
 // ding on the payoff line, CTA pops + click + ding. Plus beats.js SFX.
 // Writes assets/sfx-cues.json (what landed where) for checking.
 // Run after align-words.py (real timings), before sync-html.mjs.
@@ -15,12 +15,7 @@ const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(new URL("assets/words.js", root), "utf8"), ctx);
 globalThis.window = ctx.window;
 const { DURATION, HL, ctaTimes, payoffTime } = await import(new URL("assets/timing.js", root));
-const {
-  shots,
-  LABELS = [],
-  MASCOT = [],
-  SFX = [],
-} = await import(new URL("assets/beats.js", root));
+const { shots, LABELS = [], SFX = [] } = await import(new URL("assets/beats.js", root));
 
 const kit = new URL("assets/sfx/", root);
 if (!fs.existsSync(new URL("whoosh.wav", kit))) {
@@ -64,8 +59,6 @@ for (const sh of shots.slice(1)) {
 add("hit", 0.05, "hook title");
 for (const h of HL) add("punch", h, "highlight");
 for (const l of LABELS) add("blip", l.at + 0.05, `label ${l.text}`);
-const ACT_SOUND = { peek: "boing", wow: "wow", nod: "pop", wave: "boing" };
-for (const m of MASCOT) add(ACT_SOUND[m.act] ?? "pop", m.at, `bear ${m.act}`);
 add("ding", payoffTime(), "payoff");
 const cta = ctaTimes();
 if (cta) {

@@ -66,24 +66,6 @@ things (kitchen tiles, workshop floor) — skip it outdoors.
   airbag bursting) — the camera may then pull out to the build. Never
   open on an empty stage.
 
-## Erklärbär (mascot)
-
-The channel's low-poly bear (brown, yellow hard hat, round glasses — same
-model as the profile picture) lives in a HUD layer glued to the
-**lower-left** of the frame (head ≈ y 1330–1450 px), drawn over the world,
-never part of the 3D set. Exactly three moments, so it stays special:
-
-- `peek` (hook, ~0.3–2.9 s): leans in half-hidden from the left edge,
-  head tilting — "what's this?"
-- `wow` (the re-hook / "Trick" word, ~2.2 s): pops up, eyes wide, "O"
-  mouth, arms up, hops, yellow sparkles.
-- `wave` (from "Schau dich an" to the end): slides in and waves through
-  the payoff and CTA.
-- optional `nod` (≤ 1×): slides in and nods on a "genau so" moment.
-
-Never during a close-up whose subject sits lower-left — shift the shot
-instead of the bear.
-
 ## Camera
 
 - Hard cut on a word every 2–4 s; never a static frame — each shot drifts
@@ -120,7 +102,7 @@ one second later and flips to grey "Gefolgt".
 Every video has a third audio track (`assets/sfx.mp3`) from a synthesized
 house kit, so the cuts and pop-ins _feel_ edited. Automatic: whoosh on each
 cut (peak on the cut), hit when the hook title lands, punch under each
-keyword, blip per name tag, boing / wow when the bear appears, ding on
+keyword, blip per name tag, ding on
 "… gebaut.", pop + pop + click + ding on the CTA buttons. Per scene
 (`SFX` in beats.js): pop for every part that pops in, zisch (gas, steam,
 air out), brumm (motor, compressor), surr (current, hot wire), rauschen
