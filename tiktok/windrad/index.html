@@ -121,12 +121,14 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="42.7"
+      data-duration="44.9"
       data-width="1080"
       data-height="1920"
     >
       <canvas id="stage" width="720" height="1280"></canvas>
       <div id="captions"></div>
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="44.9" data-track-index="2" data-volume="1"></audio>
+      <audio id="bgm" src="assets/bgm.mp3" data-start="0" data-duration="44.9" data-track-index="3" data-volume="1"></audio>
       <div id="cta">
         <div id="cta-btn">
           <div id="cta-plus"></div>
@@ -168,7 +170,7 @@
           tl.set("#cta-label-done", { display: "inline" }, t0 + 1.12);
           tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, t0 + 1.12);
         }
-        tl.set({}, {}, 42.7);
+        tl.set({}, {}, 44.9);
         window.__timelines["main"] = tl;
       })();
     </script>

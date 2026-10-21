@@ -9,3 +9,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 2   | Airfryer    | `tiktok/airfryer`     | land   | morgen          | 68,1 s | 2026-10-20 |
 | 3   | Aufzug      | `tiktok/aufzug`       | stadt  | abend           | 48,5 s | 2026-10-20 |
 | 4   | Airbag      | `tiktok/airbag`       | winter | mittag          | 50,1 s | 2026-10-21 |
+| 5   | Windrad     | `tiktok/windrad`      | land   | sonnenuntergang | 44,9 s | 2026-10-21 |
