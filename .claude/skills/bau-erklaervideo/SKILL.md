@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, one-word captions, ElevenLabs voice "Christian Plasa – Dynamic and Vibrant", retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → comment-question + follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
+description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, one-word captions, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → comment-question + follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -19,7 +19,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | What       | Value                                                                                                                                                                                                                                            |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Format     | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                                                                       |
-| Voice      | ElevenLabs **Christian Plasa – Dynamic and Vibrant**, `voice_id nsFsExJHz4xV1sOX6Kdn`, model `eleven_multilingual_v2`                                                                                                                            |
+| Voice      | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** (chosen 2026-10-21 after creator feedback; replaced Christian Plasa on `eleven_multilingual_v2`, episodes #1–#5)                               |
 | CTA        | Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template) |
 | Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                                                                       |
 | Music      | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                          |
@@ -83,7 +83,7 @@ timings so the scene can be built before the voice exists.
 
 Generate the **whole script including the CTA line** (script.txt joined to
 one paragraph) with `creative_generate_speech`: `voice_id
-nsFsExJHz4xV1sOX6Kdn`, `model_id eleven_multilingual_v2`,
+keqaIOtp0ePlmN5jgQfy`, `model_id eleven_v3`,
 **`generations_count: 1`** (the account hits 429 concurrency limits with
 more; a 429 means nothing was generated or charged — retry once with 1).
 Cost ≈ 800 credits (~0.08 $). Poll `creative_get_flow_run_status` (it can
@@ -167,6 +167,9 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
 - **Anchors:** `W()` matches whole words case-insensitively and counts
   occurrences; common words ("an", "die", "das") collide across sentences.
   Prefer nouns/verbs that appear once, or pass the occurrence number.
+- **Voice speed:** the ~2.8 words/s below was measured with Christian; Jan
+  on `eleven_v3` read the audition hook at the same pace. Re-measure after
+  the first Jan episode and update this line if it differs.
 - **Length:** measured on the finished episodes the voice runs ~2.8
   words/s; video ≈ words (incl. CTA) ÷ 2.8 + 1.2 s. 110 words ≈ 40 s,
   125 ≈ 46 s, 135 ≈ 50 s. Outside 40–50 s is a reject; `prepare-voice.sh`

@@ -61,7 +61,7 @@ change local agent discovery.
 The `bau-erklaervideo` skill makes the next video of the German explainer
 series (toy low-poly 3D diorama in a different setting each video —
 island, city, beach, winter, countryside —, x-ray build-up, one-word
-captions, on-screen hook title, ElevenLabs voice Christian Plasa,
+captions, on-screen hook title, ElevenLabs voice Jan (eleven_v3),
 comment-question + follow CTA). It scaffolds
 `tiktok/<slug>/` from its template (`scripts/new-video.sh`), which ships
 the shared `world.js` + `environments.js` engine; `tiktok/kuehlschrank/` is the reference
