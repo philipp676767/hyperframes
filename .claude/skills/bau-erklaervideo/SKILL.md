@@ -1,12 +1,14 @@
 ---
 name: bau-erklaervideo
-description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, one-word captions, ElevenLabs voice "Christian Plasa – Dynamic and Vibrant", structure hook → build loop → "Schau dich an. Du hast gerade X gebaut." → follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
+description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, one-word captions, ElevenLabs voice "Christian Plasa – Dynamic and Vibrant", retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → comment-question + follow CTA. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
 ---
 
 # Bau-Erklärvideo (TikTok series)
 
-One video = one topic. Voice, look, structure and CTA never change; only the
-script, the 3D subject and its story beats do. The reference build is
+One video = one topic. Voice, look and structure stay; the script (incl.
+hook title and a topic-specific CTA question), the 3D subject and its story
+beats change every time. The script is what makes people stay — write it
+with `references/script-formel.md` (v2) and treat its self-check as a gate. The reference build is
 `tiktok/kuehlschrank/` (fridge) — read its `assets/scene.js` before building
 a new subject; it shows every technique at full size.
 
@@ -14,30 +16,30 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 ## Fixed house settings
 
-| What       | Value                                                                                                                                                                                          |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format     | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                     |
-| Voice      | ElevenLabs **Christian Plasa – Dynamic and Vibrant**, `voice_id nsFsExJHz4xV1sOX6Kdn`, model `eleven_multilingual_v2`                                                                          |
-| CTA        | Spoken "Folg mir, um mehr zu lernen." (stock take in `assets/cta-christian-plasa.mp3`, reused — never regenerate) + red "+ Folgen" pill that gets tapped → "Gefolgt" (already in the template) |
-| Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                     |
-| Music      | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)        |
-| Setting    | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                       |
-| Look       | `references/visual-style.md`                                                                                                                                                                   |
-| Script     | `references/script-formel.md`                                                                                                                                                                  |
-| Scene code | `references/scene-api.md` (world.js API)                                                                                                                                                       |
+| What       | Value                                                                                                                                                                                                                                            |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Format     | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                                                                       |
+| Voice      | ElevenLabs **Christian Plasa – Dynamic and Vibrant**, `voice_id nsFsExJHz4xV1sOX6Kdn`, model `eleven_multilingual_v2`                                                                                                                            |
+| CTA        | Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template) |
+| Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                                                                       |
+| Music      | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                          |
+| Setting    | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                         |
+| Look       | `references/visual-style.md`                                                                                                                                                                                                                     |
+| Script     | `references/script-formel.md`                                                                                                                                                                                                                    |
+| Scene code | `references/scene-api.md` (world.js API)                                                                                                                                                                                                         |
 
 ## Workflow
 
 ### 1. Script → user approval (always first)
 
-Write the German script with `references/script-formel.md`: hook, 3–4 build
-beats, outro, CTA. **105–120 words before the CTA** (≈ 40–46 s video),
-never more than **130** (≈ 50 s, the hard upper limit) and not fewer than
-**100** (under 40 s). Count them and give the expected length
-(words ÷ 2.8 + 3 s) before showing the script; if a topic needs more, cut
-beats rather than squeeze. Show the user the script plus a one-line
-visual idea per beat, and **wait for their OK** before spending credits or
-building. Apply their edits verbatim.
+Write the German script with `references/script-formel.md` (v2): hook
+(+ on-screen hook title), 3 beats with one re-hook, payoff + signature
+line, CTA question. **115–130 words including the CTA** (≈ 42–48 s), never
+more than **135** (≈ 50 s) or fewer than **110** (≈ 40 s); expected length
+= words ÷ 2.8 + 1.2 s. Run the self-check in that file. Show the user the
+script, word count + length, the hook title, **two alternative hooks**, and
+a one-line visual idea per beat, and **wait for their OK** before spending
+credits or building. Apply their edits verbatim.
 
 ### 1b. Pick the setting (never the same as the last video)
 
@@ -67,23 +69,24 @@ its top, and copy the file into the project.
 bash .claude/skills/bau-erklaervideo/scripts/new-video.sh <slug> "So funktioniert <X>"
 ```
 
-Creates `tiktok/<slug>/` with the shared `assets/world.js` + `assets/environments.js`, captions + CTA
-in `index.html`, the stock CTA voice in `assets/vo_takes/cta.mp3`, the stock
-music bed in `assets/vo_takes/bgm-ruhig.mp3`, helper
-scripts, and a small demo `assets/scene.js` (candle → light bulb) that
-already renders. Write the approved script into `script.txt` — one beat per
-line, last line exactly `Folg mir, um mehr zu lernen.` — then run
+Creates `tiktok/<slug>/` with the shared `assets/world.js` + `assets/environments.js`, captions,
+hook title and CTA buttons in `index.html`, the stock music bed in
+`assets/vo_takes/bgm-ruhig.mp3`, helper scripts, and a small demo
+`assets/scene.js` (candle → light bulb) that already renders. Write the
+approved script into `script.txt` — one part per line, **the CTA alone on
+the last line** (it must contain "folg") — and put the hook title into
+`<div id="hook-title">` in `index.html` (keyword in `<em>`). Then run
 `node scripts/fake-words.mjs && node scripts/sync-html.mjs` for estimated
 timings so the scene can be built before the voice exists.
 
 ### 3. Voice (ElevenLabs connector)
 
-Generate **only the main text** (script.txt without the CTA line, joined to
+Generate the **whole script including the CTA line** (script.txt joined to
 one paragraph) with `creative_generate_speech`: `voice_id
 nsFsExJHz4xV1sOX6Kdn`, `model_id eleven_multilingual_v2`,
 **`generations_count: 1`** (the account hits 429 concurrency limits with
 more; a 429 means nothing was generated or charged — retry once with 1).
-Cost ≈ 1,100 credits (~0.11 $). Poll `creative_get_flow_run_status` (it can
+Cost ≈ 800 credits (~0.08 $). Poll `creative_get_flow_run_status` (it can
 take 1–3 min; wait with a background `sleep 40`, not a foreground sleep),
 then download `content_url` right away (expires after 2 h):
 
@@ -97,7 +100,7 @@ file (the key must come from the environment's secrets, never the chat).
 Then, in the project dir:
 
 ```bash
-bash scripts/prepare-voice.sh          # tighten pauses + stock CTA + speed-up to ~44 s → assets/voiceover.mp3
+bash scripts/prepare-voice.sh          # tighten pauses + speed-up to ~44 s → assets/voiceover.mp3
 python3 -I scripts/align-words.py      # Whisper word timings snapped onto script.txt → assets/words.js
 bash scripts/prepare-music.sh          # calm bed cut to length, faded, ducked under the voice → assets/bgm.mp3
 node scripts/sync-html.mjs             # root duration, caption length, the <audio> tags (vo + bgm)
@@ -115,7 +118,9 @@ higher = louder), then rerun `sync-html.mjs`.
 
 Follow `references/scene-api.md`. Set the chosen setting first
 (`createWorld({ env, sky })`), then rebuild the demo file around the new
-subject: hook prop → subject pops in on the first "Also …" → each component
+subject: hook visual (the strange thing the hook names — mid-action from
+frame 1, or the primitive version that fails) → subject pops in when the
+build starts → each component
 appears/animates on the word that names it → x-ray while explaining → one
 analogy mini-set per 1–2 beats → LED panel facts → outro x-ray off + drone
 pull-back. Anchor every beat on a spoken word with `W("Wort", n)`; never
@@ -163,14 +168,21 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
   occurrences; common words ("an", "die", "das") collide across sentences.
   Prefer nouns/verbs that appear once, or pass the occurrence number.
 - **Length:** measured on the finished episodes the voice runs ~2.8
-  words/s; video ≈ words ÷ 2.8 + 3 s (CTA + outro tail). 105 words ≈ 40 s,
-  120 ≈ 46 s, 130 ≈ 50 s. Outside 40–50 s is a reject; `prepare-voice.sh`
+  words/s; video ≈ words (incl. CTA) ÷ 2.8 + 1.2 s. 110 words ≈ 40 s,
+  125 ≈ 46 s, 135 ≈ 50 s. Outside 40–50 s is a reject; `prepare-voice.sh`
   refuses to build it. Kühlschrank/Airfryer (68 s) and Aufzug/Airbag
   (~50 s) predate this limit — don't copy their length.
 - **Skill changes live on `main` only.** Before starting a video, `git
 pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   aren't merged (`git branch -r --no-merged origin/main`), look for skill
   changes there and merge them first.
+- **CTA timing:** `fake-words.mjs` / `align-words.py` write
+  `window.HF_CTA_START` (index of the first word of the last script line);
+  the buttons key on it and on the first word starting with "folg". A CTA
+  without "folg" still works (Folgen pops 1.2 s after the CTA starts).
+- **Old episodes** (≤ #5) used a stock CTA take (`assets/vo_takes/cta.mp3`);
+  `prepare-voice.sh` still appends it when that file exists. New episodes
+  have no such file.
 - **Audio tags:** only `sync-html.mjs` writes the `<audio id="vo">` and
   `<audio id="bgm">` tags; it removes old ones first. Lint error
   `duplicate_media_id` means two of one. The render mixes both into one
@@ -178,16 +190,16 @@ pull origin main`; if `git branch -r` shows `tiktok/*` branches that
 - **Camera:** shots are authored close and pulled back ×1.7 (`zoom`). For a
   macro close-up use `zoom: 1.0–1.4`. Scenery (trees, houses, palms) can block
   side/back shots — move the camera, not the environment's stage rules.
-- **Git LFS:** mp3/mp4/png under `tiktok/` and the skill's stock CTA are LFS
+- **Git LFS:** mp3/mp4/png under `tiktok/` and the skill's music bed are LFS
   files. In a fresh clone they can be 130-byte pointers ("Invalid argument"
   from ffmpeg). Fix: `git lfs install --local && git lfs pull`.
-  `new-video.sh` does this automatically for the CTA.
+  `new-video.sh` does this automatically for the music bed.
 - **Never `pkill -f` a pattern that appears in your own command line** — it
   kills the shell running it. Use `pkill -f "render -o render[s]"` style.
 - **Outro corridor:** the drone pull-back flies out towards +x/+z; any new
   environment must keep tall scenery off that line (x ≈ 0.6·z, z > 4).
 - **Fresh container:** mp3s are LFS objects; a clone may hold only 130-byte
-  pointers. `new-video.sh` pulls the stock CTA take itself (`git lfs pull`).
+  pointers. `new-video.sh` pulls the music bed itself (`git lfs pull`).
   The pre-commit hook builds the workspace, so run `bun install` once before
   the first commit (then `git checkout bun.lock` if it changed).
 - **Speed:** 3D renders at 720×1280 internally (CSS-scaled); keep shadow

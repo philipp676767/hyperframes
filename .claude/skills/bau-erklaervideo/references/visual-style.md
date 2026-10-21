@@ -53,8 +53,12 @@ things (kitchen tiles, workshop floor) — skip it outdoors.
 - **LED panel** (`showPanel`) for every number: short label + big value,
   red = hot/off/danger, blue = cold, green = on/ok, yellow = force/weight.
   Max one at a time.
-- **Orange ✕** (`showNope`) when the hook's primitive version fails, or
-  any "das klappt nicht" moment.
+- **Orange ✕** (`showNope`) when a primitive version fails, or any "das
+  klappt nicht" moment.
+- **Hook visual:** frame 1 already shows what the hook talks about, in
+  motion (the warm back of the fridge glowing, the car dropping, the
+  airbag bursting) — the camera may then pull out to the build. Never
+  open on an empty stage.
 
 ## Camera
 
@@ -69,9 +73,16 @@ things (kitchen tiles, workshop floor) — skip it outdoors.
   one-word captions sit, the subject may pass behind them but not a bright
   white surface for long.
 
-## Captions / CTA (fixed in index.html)
+## Captions, hook title, CTA (index.html)
 
 One word at a time, Montserrat ExtraBold 78 px, white with a soft dark
-stroke/shadow, hard swap, centred at ~50 % height. CTA pill (TikTok red
-`#fe2c55`, "+ Folgen") pops in at y ≈ 560 px on "Folg", is tapped one second
-later and flips to grey "Gefolgt".
+stroke/shadow, hard swap, centred at ~50 % height.
+
+**Hook title** (`#hook-title`): 3–6 words, 92 px, white with a dark stroke,
+keyword in `<em>` (yellow `#ffd23f`), top third (y ≈ 250 px); pops in on
+the first frame, out at 2.8 s.
+
+**CTA:** when the last script line starts, a white "Kommentieren" pill
+with a red speech bubble pops in at y ≈ 400 px and pulses; on the word
+"folg…" the red "+ Folgen" pill pops in below it (y ≈ 560 px), is tapped
+one second later and flips to grey "Gefolgt".

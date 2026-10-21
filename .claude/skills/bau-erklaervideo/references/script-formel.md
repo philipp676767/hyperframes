@@ -1,65 +1,149 @@
-# Script-Formel
+# Script-Formel (v2 — retention first)
 
-Derived from four reference videos (@selfmade.engineer: Tesla Roadster,
-Ampel, Flugzeug, Bremsen) and proven on the fridge video.
+Feedback on episode 1 (fridge) from an experienced creator: the script was
+flat, the hook weak, nothing kept people watching. v2 writes for **watch
+time**: a hook that wins the first 2 seconds, an open loop that is only
+closed at the end, re-hooks in the middle, and a CTA that makes people
+comment. The build-it-yourself frame ("Du hast gerade X gebaut") stays —
+it's the series signature.
 
-## Shape (105–120 words + CTA, max. 130, min. 100)
+## Length
 
-Target video length 40–50 s (aim ~45 s); outside that range is a reject. Fewer, stronger beats beat
-more, rushed ones.
+**115–130 words including the CTA** (≈ 42–48 s video), never more than
+**135** (≈ 50 s) and never fewer than **110** (≈ 40 s).
+Expected length = words ÷ 2.8 + 1.2 s. Count before showing the script.
 
-1. **Hook (1–2 sentences, ≤ 5 s)** — one of:
-   - the absurd primitive version: _"Wenn du Eiswürfel in eine Kiste kippst
-     und deine Milch dazustellst, hast du einen Kühlschrank gebaut."_
-     followed by why it fails: _"Aber morgen schwimmt sie in einer Pfütze."_
-   - a frustrating everyday moment + "Lass ihn uns bauen": _"Es ist 3 Uhr
-     nachts, niemand ist auf der Straße, und die Ampel wird nicht grün.
-     Warum? Lass sie uns bauen."_
-2. **Build loop, 3–4 beats** — each beat:
-   - problem: _"Aber …"_ / _"Problem: …"_ / _"Jetzt …"_
-   - fix: _"Also baust/legst/schickst du …"_
-   - everyday comparison: _"– wie eine Fahrradpumpe, die heiß wird."_
-   - the term: **"Das ist der/die/das [Fachbegriff]."**
-   - optional aha: _"Darum ist die Rückseite warm."_ / _"Darum ploppt die Tür."_
-3. **Outro** — _"Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."_
-4. **CTA** — _"Folg mir, um mehr zu lernen."_ (fixed; stock audio is reused)
+## Shape
 
-## Rules
+| Part                            | Words               | Job                                                                   |
+| ------------------------------- | ------------------- | --------------------------------------------------------------------- |
+| **Hook** (line 1)               | 15–25               | win the first 2 s, open a loop                                        |
+| **Beats** (lines 2–4)           | 3 beats, 20–30 each | build the thing; each beat ends pulling into the next                 |
+| **Payoff + signature** (line 5) | ~10–15              | close the hook's loop, then "Schau dich an. Du hast gerade X gebaut." |
+| **CTA** (last line)             | 12–20               | comment question + follow                                             |
 
-- Du-Form throughout; the viewer is the one building it.
-- Short sentences, spoken German, no unexplained jargon. Every term is
-  introduced only after the viewer has seen why it's needed.
-- Concrete numbers: _"minus 26 Grad"_, _"15-mal pro Sekunde"_, _"8 Tonnen"_.
-  Each number becomes an LED-panel fact in the video.
-- One idea per beat, each beat must be **visualizable** as a component that
-  appears, moves or glows on the stage. If you can't picture the shot, cut
-  the beat.
-- Keep the facts right. When unsure of a number, use a safer phrasing or
-  check it — the audience comments on errors.
-- Avoid words that are hard to anchor twice in a row (the scene keys on
-  spoken words); vary verbs between beats.
-- Write numbers as digits only when they're spoken as a number ("26"); the
-  voice reads them correctly.
+### 1. Hook — the first sentence decides everything
 
-## Example (fridge, cut to the current length, 120 words ≈ 46 s)
+Rules:
 
-The published fridge video used a 185-word version (68 s) from before the
-40–50 s rule; this is the same story at today's length — thermostat beat
-dropped, condenser and capillary tube merged into one beat:
+- **The topic noun in the first 5 words.** No "Wenn du …"-wind-up, no
+  greeting, no "Heute zeige ich dir".
+- **Sentence 1 ≤ 12 words** and it must do one of: break a belief, state
+  an unbelievable fact, ask a question the viewer has _felt_ but never
+  answered, or show stakes.
+- **Sentence 2 = the promise** of the series: "Lass ihn uns bauen." /
+  "Ich zeig dir, wie – in 40 Sekunden." / "Wir bauen ihn nach."
+- **Open a loop** the video closes at the end (a "why", a strange detail,
+  a number) — viewers stay to get it.
+- The **first frame already shows the strange thing** (subject mid-action,
+  the warm back, the falling car) — never an empty establishing shot.
 
-> Wenn du Eiswürfel in eine Kiste kippst und deine Milch dazustellst, hast du einen Kühlschrank gebaut. Aber morgen schwimmt sie in einer Pfütze.
-> Also legst du ein Rohr in die Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus 26 Grad kocht. Beim Verdampfen schluckt sie Wärme – wie Schweiß auf deiner Haut. Das ist der Verdampfer.
-> Aber jetzt ist das Rohr voller warmem Gas. Also presst eine Pumpe es zusammen, bis es heiß wird. Das ist der Kompressor.
-> Das heiße Gas jagst du durch ein Zickzack-Rohr hinten am Kühlschrank. Dort wird es wieder flüssig. Dann quetschst du es durch ein haarfeines Röhrchen, und es wird eiskalt. Jetzt läuft alles im Kreis.
+Hook formulas (write three, pick the strongest, show the other two to the
+user as alternatives):
+
+| Formula               | Example                                                                       |
+| --------------------- | ----------------------------------------------------------------------------- |
+| **Mythos-Bruch**      | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."                       |
+| **Alltags-Rätsel**    | "Warum ist die Rückseite von deinem Kühlschrank warm?"                        |
+| **Unglaubliche Zahl** | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst."              |
+| **Gefahr / Stakes**   | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."                         |
+| **Du-Moment**         | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."                    |
+| **Ergebnis zuerst**   | "In 40 Sekunden baust du einen Kühlschrank – aus einem Rohr und einer Pumpe." |
+
+**Hook title (on screen, 0–3 s):** 3–6 words, same promise in fewer
+words, one keyword in `<em>` (yellow). Not a copy of the spoken line.
+E.g. spoken "Dein Kühlschrank macht gar keine Kälte." → title
+"Dein Kühlschrank <em>lügt</em>".
+
+### 2. Beats — keep them watching
+
+- **3 beats.** Each beat: problem → fix ("Also …" / "Du brauchst …") →
+  the term ("Das ist der X.") — max **3 technical terms** per video.
+- **Every beat ends with a pull** into the next: a problem ("Aber jetzt
+  ist das Gas warm."), a question, or a teaser.
+- **One re-hook in the middle** (~15–25 s): "Und hier kommt der Trick:",
+  "Jetzt wird's verrückt:", "Aber Achtung:". Max 2 per video.
+- **One home moment**: connect to something the viewer can check right
+  now — "Fass mal hinter deinen Kühlschrank.", "Hör mal hin, wenn er
+  anspringt."
+- **One vivid comparison** max per beat, from everyday life ("wie
+  Schweiß, der dich kühlt").
+- **Rhythm:** mostly ≤ 10 words per sentence, now and then a 1–3-word
+  punch ("Falsch." / "Genau hier." / "Zack."). Read it aloud in your head;
+  if a sentence needs a breath, split it.
+- **Cut** history, definitions, hedges ("eigentlich", "sozusagen",
+  "im Prinzip"), double explanations, and anything you can't show.
+- **Personality:** one light joke or personification per video ("Die
+  Pumpe hat jetzt richtig schlechte Laune.").
+- Concrete numbers (each becomes an LED-panel fact). Facts must be right;
+  when unsure, phrase safely or check.
+
+### 3. Payoff + signature
+
+Close the hook's loop explicitly ("Und genau deshalb ist die Rückseite
+warm."), then the series line **"Schau dich an. Du hast gerade [einen/
+eine/ein] X gebaut."**
+
+### 4. CTA — make them comment
+
+Last line of `script.txt`, spoken by the same voice in the same take.
+
+- **One comment question** tied to the topic, answerable in 1–3 words:
+  yes/no, either/or, a number, or a personal detail. Then **"– und folg
+  mir für mehr."** (or a teaser: "– und folg mir, morgen bauen wir einen
+  Toaster.").
+- The word **"folg"** must appear: the Folgen button is timed on it; the
+  Kommentieren button pops when the CTA line starts.
+- No generic "Lass ein Like da". No question that needs a paragraph.
+
+CTA patterns:
+
+| Pattern              | Example                                                                                   |
+| -------------------- | ----------------------------------------------------------------------------------------- |
+| **Ja / Nein**        | "Hast du einen Airfryer? Schreib's in die Kommentare – und folg mir für mehr."            |
+| **Entweder-oder**    | "Team Treppe oder Team Aufzug? Ab in die Kommentare – und folg mir für mehr."             |
+| **Test zu Hause**    | "Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's mir – und folg mir für mehr." |
+| **Zahl / Schätzung** | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare – und folg mir für mehr."        |
+| **Nächstes Thema**   | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare – und folg mir."            |
+
+## Other rules
+
+- Du-Form throughout; the viewer builds it.
+- Spoken German, short words, no unexplained jargon.
+- The scene keys on spoken words: avoid using the same rare word twice
+  in a row, vary verbs between beats.
+- Numbers as digits only when spoken as a number ("26").
+
+## Example — fridge rewritten in v2 (129 words ≈ 47 s)
+
+> Dein Kühlschrank macht gar keine Kälte. Er klaut deiner Milch die Wärme – und schmeißt sie hinten raus. Lass ihn uns bauen.
+> Du brauchst ein Rohr in der Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus 26 Grad kocht. Dabei saugt sie die Wärme aus deiner Milch. Das ist der Verdampfer.
+> Jetzt hast du warmes Gas. Und hier kommt der Trick: Eine Pumpe quetscht es zusammen, bis es richtig heiß wird. Das ist der Kompressor.
+> Das heiße Gas jagst du hinten durch ein Zickzack-Rohr – genau da landet die geklaute Wärme. Ein haarfeines Röhrchen macht es wieder eiskalt, und alles läuft im Kreis.
 > Schau dich an. Du hast gerade einen Kühlschrank gebaut.
-> Folg mir, um mehr zu lernen.
+> Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
+
+Hook title: `Dein Kühlschrank <em>lügt</em>`.
+
+What changed against v1: belief-breaking first line instead of "Wenn du
+Eiswürfel …"; the "Wärme klauen" loop opened in the hook and closed in
+beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
+
+## Self-check before showing the user
+
+- [ ] Topic noun in the first 5 words, sentence 1 ≤ 12 words, no wind-up
+- [ ] An open loop in the hook that the payoff line closes
+- [ ] 3 beats, each ending with a pull; one re-hook; one home moment
+- [ ] ≤ 3 technical terms; no sentence that needs a breath
+- [ ] CTA: question answerable in 1–3 words + "folg"
+- [ ] 115–130 words incl. CTA (≤ 135, ≥ 110), expected length stated
 
 ## What to show the user for approval
 
-The full script (as above, one beat per paragraph), the word count with the
-expected length (words ÷ 2.8 + 3 s), and per
-beat one line of visual plan, e.g.:
+The script (one part per paragraph), word count + expected length, the
+hook title, **two alternative hooks**, and per beat one line of visual
+plan, e.g.:
 
-- Hook: Holzkiste mit Eiswürfeln + Milch → Eis schmilzt zur Pfütze → oranges ✕
+- Hook: Kühlschrank-Rückseite glüht rot, Wärmepfeile strömen aus der Milch nach hinten
 - Verdampfer: Kühlschrank wird gläsern, blaues Rohr wächst in die Rückwand, LED „KOCHT BEI −26 °C“, Siedeblasen
 - …

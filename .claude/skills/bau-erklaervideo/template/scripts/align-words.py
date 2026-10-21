@@ -40,5 +40,11 @@ for i, t in enumerate(times):  # interpolate anything Whisper skipped
         times[i] = (prev, max(prev + 0.05, nxt))
 
 words = [{"w": re.sub(r"[.,:!?]", "", t), "start": round(s, 3), "end": round(e, 3)} for t, (s, e) in zip(tokens, times)]
-(root / "assets" / "words.js").write_text("window.HF_WORDS = " + json.dumps(words, ensure_ascii=False) + ";\n", encoding="utf8")
+# the last line of script.txt is the CTA; its first word drives the CTA buttons
+cta_len = len([t for t in script.strip().splitlines()[-1].split() if t != "–"])
+(root / "assets" / "words.js").write_text(
+    "window.HF_WORDS = " + json.dumps(words, ensure_ascii=False) + ";\n"
+    + f"window.HF_CTA_START = {len(words) - cta_len};\n",
+    encoding="utf8",
+)
 print(f"{len(words)} words, last ends {words[-1]['end']:.2f}s; interpolated: {missing}")
