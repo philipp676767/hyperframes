@@ -40,9 +40,9 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 Write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff + signature
-line + "Übrigens" bonus fact, CTA question, `> …` loop bridge. **115–130 words including all of it** (≈ 42–48 s), never
-more than **135** (≈ 50 s) or fewer than **110** (≈ 40 s); expected length
-= words ÷ 2.8 + 1.2 s. Run the self-check in that file. Show the user the
+line + "Übrigens" bonus fact, CTA question, `> …` loop bridge. **110–122 words including all of it** (≈ 42–46 s), never
+more than **128** (≈ 49 s) or fewer than **105** (≈ 40 s); expected length
+= words ÷ 2.7 + 1.2 s. Run the self-check in that file. Show the user the
 script, word count + length, the hook title, **two alternative hooks**, the
 cover title, and a one-line visual idea per beat, and **wait for their OK** before spending
 credits or building. Apply their edits verbatim.
@@ -212,15 +212,18 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
 - **Anchors:** `W()` matches whole words case-insensitively and counts
   occurrences; common words ("an", "die", "das") collide across sentences.
   Prefer nouns/verbs that appear once, or pass the occurrence number.
-- **Voice speed:** the ~2.8 words/s below was measured with Christian; Jan
-  on `eleven_v3` read the audition hook at the same pace. Re-measure after
-  the first Jan episode and update this line if it differs.
-- **Length:** measured on the finished episodes the voice runs ~2.8
-  words/s; video ≈ words (incl. CTA) ÷ 2.8 + 1.2 s (with the loop line the
-  tail is only 0.25 s, so ~1 s shorter). 110 words ≈ 40 s,
-  125 ≈ 46 s, 135 ≈ 50 s. Outside 40–50 s is a reject; `prepare-voice.sh`
-  refuses to build it. Kühlschrank/Airfryer (68 s) and Aufzug/Airbag
-  (~50 s) predate this limit — don't copy their length.
+- **Voice speed (Jan, measured on #6 Atomkraftwerk):** Jan on `eleven_v3`
+  reads slowly with ~0.5 s breaths between phrases (130 words = 64.6 s raw).
+  His noise floor sits above -35 dB, so `prepare-voice.sh` now cuts every
+  pause found at -30 dB down to 0.12 s (`scripts/tighten-pauses.py`,
+  `PAUSE=0.15` for a little more air) before the max +10 % speed-up. After
+  that he lands at ~2.7 words/s: video ≈ words (incl. CTA) ÷ 2.7 + 1.2 s
+  (with the loop line the tail is only 0.25 s, so ~1 s shorter).
+  105 words ≈ 40 s, 118 ≈ 45 s, 128 ≈ 49 s. #6 had 130 words and came out
+  at 49.4 s — right at the edge; write 110–122.
+- **Length:** outside 40–50 s is a reject; `prepare-voice.sh` refuses to
+  build it. Kühlschrank/Airfryer (68 s) and Aufzug/Airbag (~50 s) predate
+  this limit — don't copy their length.
 - **Skill changes live on `main` only.** Before starting a video, `git
 pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   aren't merged (`git branch -r --no-merged origin/main`), look for skill

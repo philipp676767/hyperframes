@@ -16,7 +16,8 @@ MAX=48.8 # speech for a 50 s video
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
-ffmpeg -v error -y -i "$MAIN" -af "silenceremove=stop_periods=-1:stop_duration=0.25:stop_threshold=-35dB:stop_silence=0.22,areverse,silenceremove=start_periods=1:start_threshold=-40dB,areverse" -ar 44100 -ac 1 "$TMP/main.wav"
+# cut every pause (found at -30 dB) down to PAUSE s; Jan breathes ~0.5 s between phrases
+python3 -I scripts/tighten-pauses.py "$MAIN" "$TMP/main.wav" "${PAUSE:-0.12}"
 if [ -f "$CTA" ]; then
   ffmpeg -v error -y -i "$CTA" -af "silenceremove=start_periods=1:start_threshold=-40dB,areverse,silenceremove=start_periods=1:start_threshold=-40dB,areverse" -ar 44100 -ac 1 "$TMP/cta.wav"
   ffmpeg -v error -y -f lavfi -t 0.5 -i anullsrc=r=44100:cl=mono "$TMP/gap.wav"
@@ -30,11 +31,11 @@ TEMPO=$(python3 -c "print(min(1.10, max(1.0, $DUR / $TARGET)))")
 FINAL=$(python3 -c "print(round($DUR / $TEMPO, 1))")
 echo "joined ${DUR}s -> atempo ${TEMPO} -> ${FINAL}s of speech"
 if python3 -c "import sys; sys.exit(0 if $FINAL > $MAX else 1)"; then
-  echo "ERROR: ${FINAL}s of speech makes the video longer than 50 s. Shorten the script (target 115-130 words incl. CTA, max 135) and regenerate the voice." >&2
+  echo "ERROR: ${FINAL}s of speech makes the video longer than 50 s. Shorten the script (target 110-122 words incl. CTA, max 128) and regenerate the voice." >&2
   exit 1
 fi
 if python3 -c "import sys; sys.exit(0 if $FINAL < $MIN else 1)"; then
-  echo "ERROR: ${FINAL}s of speech makes the video shorter than 40 s. Add a short beat (target 115-130 words incl. CTA, min 110) and regenerate the voice." >&2
+  echo "ERROR: ${FINAL}s of speech makes the video shorter than 40 s. Add a short beat (target 110-122 words incl. CTA, min 105) and regenerate the voice." >&2
   exit 1
 fi
 ffmpeg -v error -y -i "$TMP/joined.wav" -af "atempo=${TEMPO},loudnorm=I=-14:TP=-1.5:LRA=11" -ar 44100 -b:a 192k assets/voiceover.mp3
