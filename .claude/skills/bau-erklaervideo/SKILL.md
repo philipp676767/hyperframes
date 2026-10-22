@@ -41,9 +41,9 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 Write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff + signature
-line + "Übrigens" bonus fact, CTA question, `> …` loop bridge. **110–122 words including all of it** (≈ 42–46 s), never
-more than **128** (≈ 49 s) or fewer than **105** (≈ 40 s); expected length
-= words ÷ 2.7 + 1.2 s. Run the self-check in that file. Show the user the
+line + "Übrigens" bonus fact, CTA question, `> …` loop bridge. **102–115 words including all of it** (≈ 41–46 s), never
+more than **122** (≈ 49 s) or fewer than **100** (≈ 40 s); expected length
+= words ÷ 2.5 + 0.3 s (Stephan). Run the self-check in that file. Show the user the
 script, word count + length, the hook title, **two alternative hooks**, the
 cover title, and a one-line visual idea per beat, and **wait for their OK** before spending
 credits or building. Apply their edits verbatim.
@@ -245,18 +245,13 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
 - **Anchors:** `W()` matches whole words case-insensitively and counts
   occurrences; common words ("an", "die", "das") collide across sentences.
   Prefer nouns/verbs that appear once, or pass the occurrence number.
-- **Voice speed — re-measure with Stephan:** the numbers below are Jan's;
-  use them as the starting estimate for Stephan's first episode (#7),
-  then replace this paragraph with his measured words/s.
-- **Voice speed (Jan, measured on #6 Atomkraftwerk):** Jan on `eleven_v3`
-  reads slowly with ~0.5 s breaths between phrases (130 words = 64.6 s raw).
-  His noise floor sits above -35 dB, so `prepare-voice.sh` now cuts every
-  pause found at -30 dB down to 0.12 s (`scripts/tighten-pauses.py`,
-  `PAUSE=0.15` for a little more air) before the max +10 % speed-up. After
-  that he lands at ~2.7 words/s: video ≈ words (incl. CTA) ÷ 2.7 + 1.2 s
-  (with the loop line the tail is only 0.25 s, so ~1 s shorter).
-  105 words ≈ 40 s, 118 ≈ 45 s, 128 ≈ 49 s. #6 had 130 words and came out
-  at 49.4 s — right at the edge; write 110–122.
+- **Voice speed (Stephan, measured on #7 Mikrowelle):** Stephan on
+  `eleven_multilingual_v2` reads 122 words in 58.0 s raw; `prepare-voice.sh`
+  (pauses cut to 0.12 s, then the max +10 % speed-up) brings that to
+  48.6 s. So **video ≈ words (incl. CTA + loop line) ÷ 2.5 + 0.3 s**:
+  100 words ≈ 40 s, 112 ≈ 45 s, 122 ≈ 49 s. #7 had 122 words → 48.6 s,
+  right at the edge; write **102–115**. (Jan on `eleven_v3`, #6, was
+  ~2.7 words/s after the same treatment.)
 - **Length:** outside 40–50 s is a reject; `prepare-voice.sh` refuses to
   build it. Kühlschrank/Airfryer (68 s) and Aufzug/Airbag (~50 s) predate
   this limit — don't copy their length.
