@@ -7,8 +7,8 @@ import fs from "node:fs";
 const root = new URL("..", import.meta.url);
 const key = process.env.ELEVENLABS_API_KEY;
 if (!key) throw new Error("ELEVENLABS_API_KEY is not set");
-// Jan – Social Media Creator on eleven_v3 (house voice of the series)
-const voice = process.argv[2] || "keqaIOtp0ePlmN5jgQfy";
+// Stephan – Warm and Friendly on eleven_multilingual_v2 (house voice of the series)
+const voice = process.argv[2] || "IWm8DnJ4NGjFI7QAM5lM";
 
 // *Wort* highlight marks and the ">" of the loop line are for the captions
 // only — never send them to the voice
@@ -24,7 +24,7 @@ const res = await fetch(
   {
     method: "POST",
     headers: { "xi-api-key": key, "Content-Type": "application/json" },
-    body: JSON.stringify({ text: main, model_id: "eleven_v3" }),
+    body: JSON.stringify({ text: main, model_id: "eleven_multilingual_v2" }),
   },
 );
 if (!res.ok) throw new Error(`ElevenLabs ${res.status}: ${await res.text()}`);

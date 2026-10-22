@@ -11,7 +11,7 @@ it's the series signature.
 
 **110–122 words including fact, CTA and loop line** (≈ 42–46 s video), never more than
 **128** (≈ 49 s) and never fewer than **105** (≈ 40 s).
-Expected length = words ÷ 2.7 + 1.2 s (voice Jan, measured on #6). Count before showing the script.
+Expected length = words ÷ 2.7 + 1.2 s (measured with Jan on #6; re-check after Stephan's first episode). Count before showing the script.
 
 ## Shape
 
