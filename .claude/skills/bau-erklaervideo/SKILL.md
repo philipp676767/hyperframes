@@ -24,7 +24,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Bonus fact   | "Übrigens: …" right after the signature line — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                   |
 | Loop         | Last line `> Und merk dir:` (2–4 words) flows into the hook; picture cuts back to the opening shot so the end matches frame 0 (automatic)                                                                                                                     |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                 |
-| Beschreibung | **Every video gets a TikTok description** (step 6c): curiosity first line, comment question, 4–6 hashtags; saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                     |
+| Beschreibung | **Every video gets a TikTok description** (step 6c): curiosity first line, comment question, **max. 5 hashtags**; saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                              |
 | Outro line   | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                                                                                    |
 | Music        | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                       |
 | Setting      | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                                      |
@@ -210,9 +210,9 @@ emoji sparingly (1–3). Shape:
    fact, without spoiling it fully.
 3. **The comment question from the CTA**, worded a bit differently, so
    the comments answer it ("Ist deiner hinten warm? 👇").
-4. **4–6 hashtags**, mixed: 1–2 broad discovery tags (`#lernenmittiktok`,
-   `#wissen`), 2–3 topic tags (`#kühlschrank`, `#physik`, `#technik`), the
-   series tag `#duhastgeradegebaut`. No `#fyp` / `#viral` spam, no
+4. **3–5 hashtags, never more than 5** (the user's rule): 1–2 broad
+   discovery tags (`#lernenmittiktok`, `#wissen`), 1–2 topic tags
+   (`#kühlschrank`, `#physik`), the series tag `#duhastgeradegebaut`. No `#fyp` / `#viral` spam, no
    English filler tags.
 
 Total ≤ 300 characters. Keywords the viewer would search for ("wie
@@ -225,7 +225,7 @@ Example:
 Dein Kühlschrank macht keine Kälte – er klaut sie 🤯
 In 45 Sekunden baust du einen nach und verstehst, wie ein Kühlschrank funktioniert.
 Fass mal hinten dran: Ist deiner warm? 👇
-#lernenmittiktok #wissen #kühlschrank #physik #technik #duhastgeradegebaut
+#lernenmittiktok #wissen #kühlschrank #physik #duhastgeradegebaut
 ```
 
 ### 7. Save — always on `main`
