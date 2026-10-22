@@ -13,4 +13,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 6   | Atomkraftwerk  | `tiktok/atomkraftwerk`   | strand | abend           | 49,2 s | 2026-10-21 |
 | 7   | Mikrowelle     | `tiktok/mikrowelle`      | insel  | morgen          | 44,0 s | 2026-10-22 |
 | 8   | Geschirrspüler | `tiktok/geschirrspueler` | stadt  | mittag          | 43,6 s | 2026-10-22 |
-| 9   | Rauchmelder    | `tiktok/rauchmelder`     | winter | abend           | 44,9 s | 2026-10-22 |
+| 9   | Rauchmelder    | `tiktok/rauchmelder`     | winter | abend           | 44,0 s | 2026-10-22 |
