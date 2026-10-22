@@ -167,7 +167,7 @@ Fix and re-snapshot. Expect 2–3 rounds.
 ### 6. Render and deliver
 
 ```bash
-npx hyperframes render -o renders/<slug>.mp4      # ~15 min (software WebGL); run in background
+npx hyperframes render -o renders/<slug>.mp4      # ~30–40 min for 45 s (full 1080p + AO, software WebGL); always in background
 bash scripts/finish-audio.sh renders/<slug>.mp4   # -> renders/<slug>-final.mp4 at -14 LUFS (picture untouched)
 ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<slug>-final.mp4
 ```
@@ -303,13 +303,19 @@ pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   pointers. `new-video.sh` pulls the music bed itself (`git lfs pull`).
   The pre-commit hook builds the workspace, so run `bun install` once before
   the first commit (then `git checkout bun.lock` if it changed).
-- **Speed:** 3D renders at 720×1280 internally (CSS-scaled); keep shadow
-  casters reasonable. Don't raise the internal resolution. The camera look
-  (post.js) and the meadow cost ~35–45 % more per frame than the plain
-  render; it is already the cheap version (the scene is drawn into the
-  antialiased canvas and copied — a separate multisampled render target is
-  ~2× slower in software GL). Many instanced tufts are cheap, many separate
-  meshes are not: scatter with `InstancedMesh`.
+- **Quality over speed (user's choice 2026-10-22):** the 3D renders at the
+  full 1080×1920 with 4096² shadows, ambient occlusion (an extra
+  normal/depth pass), tilt-shift, glow and facet tinting — ~1–1.5 s per
+  frame in software GL, so a 45 s video takes ~30–40 min to render. That's
+  accepted; never lower resolution or switch effects off to save time.
+  Still keep it efficient: the scene is drawn into the antialiased canvas
+  and copied (a multisampled render target is ~2× slower in software GL),
+  scatter many small things with `InstancedMesh`, not separate meshes.
+- **Facets:** new scenery meshes get the hand-painted facet tint —
+  `new THREE.Mesh(facet(geo, 0.08, seed), facetMat(material))` (world.js).
+  Big flat areas need evenly sized triangles (`discGeo` in
+  environments.js), never a cylinder cap / `CircleGeometry` fan: tinted
+  slivers from the centre read as pie slices.
 - **Shader colours:** a custom `ShaderMaterial` that outputs colour must
   end with `#include <colorspace_fragment>` on a linear colour (see the
   sky in environments.js), or it looks wrong through the camera look.

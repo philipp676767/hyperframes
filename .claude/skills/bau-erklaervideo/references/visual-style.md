@@ -19,7 +19,17 @@ gently, clouds drift, a few low-poly birds circle far out; `insel`,
 grass on the dunes), always kept off the subject's footprint and the
 analogy spots.
 
-**Camera look** (`assets/post.js`, automatic): **tilt-shift** — the top
+**Hand-painted facets** (automatic for the scenery): every triangle of the
+ground, island, tree crowns, pines, rocks and mountains is tinted a few
+percent lighter / darker / warmer / cooler than its neighbours — the
+look of hand-made low-poly art instead of flat plastic. The ground is a
+disc of evenly sized facets that rises into soft low hills past r ≈ 36.
+Rendered at the full 1080×1920 with 4096² shadow maps, so facet edges and
+shadows stay crisp.
+
+**Camera look** (`assets/post.js`, automatic): **ambient occlusion** —
+soft contact shadows where surfaces meet (under parts, in corners, at tree
+and rock bases), **tilt-shift** — the top
 and bottom of the frame melt into a soft blur while the band around the
 subject stays sharp (the miniature-photo look that makes the diorama read
 as a toy set), a **soft glow** on emissive / very bright things (glowing

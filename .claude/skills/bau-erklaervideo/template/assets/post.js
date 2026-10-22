@@ -4,10 +4,14 @@
 //               around the subject stays sharp (the miniature-photo effect)
 //   glow        bright and emissive things (sun, glowing wire, LEDs, hot
 //               arrows) get a soft halo
+//   AO          ambient occlusion: soft contact shadows where surfaces meet
+//               (under parts, in corners, between pipes) — the depth cue of
+//               a real miniature photo; computed at half res from a quick
+//               normal + depth pass of the scene
 //   vignette    slightly darker corners pull the eye to the centre
 //   dither      tiny ordered noise so sky gradients don't band
-// All passes after the scene run at quarter resolution, so the cost is a
-// few ms per frame. world.js renderFrame() calls post.render().
+// Blur and glow run at quarter resolution, AO at half. world.js renderFrame()
+// calls post.render().
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
 
 // Tweak per video (scene.js: `LOOK.tilt = 0.6`) or per shot (`{ tilt: 0 }`).
@@ -18,6 +22,8 @@ export const LOOK = {
   glow: 0.35, // glow strength
   glowFrom: 0.95, // brightness (linear) where glow starts
   vignette: 0.22,
+  ao: 0.75, // ambient occlusion strength (0 = off)
+  aoRadius: 0.45, // world units around a point that can shade it
 };
 
 const VERT = `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }`;
@@ -54,7 +60,52 @@ void main(){
   gl_FragColor = c;
 }`;
 
+// Normal + view depth of every opaque surface (face normals from screen
+// derivatives = exactly the facets of the low-poly look).
+const GEO_V = `varying vec3 vPos;
+#include <common>
+void main(){
+  #include <begin_vertex>
+  #include <project_vertex>
+  vPos = mvPosition.xyz;
+}`;
+const GEO_F = `varying vec3 vPos;
+void main(){
+  vec3 n = normalize(cross(dFdx(vPos), dFdy(vPos)));
+  if (dot(n, vPos) > 0.0) n = -n;
+  gl_FragColor = vec4(n, -vPos.z);
+}`;
+
+// Scalable ambient obscurance from that pass: 14 spiral samples per pixel,
+// rotated by a fixed per-pixel noise (deterministic), cosine-weighted.
+const AO = `uniform sampler2D tGeo; uniform vec2 tanHalf; uniform vec2 res;
+uniform float radius; varying vec2 vUv;
+vec3 viewPos(vec2 uv, float z){ return vec3((uv * 2.0 - 1.0) * tanHalf * z, -z); }
+void main(){
+  vec4 g = texture2D(tGeo, vUv);
+  if (g.a <= 0.0) { gl_FragColor = vec4(1.0); return; }
+  vec3 P = viewPos(vUv, g.a);
+  vec3 N = g.xyz;
+  float rUv = min(radius / (g.a * tanHalf.y * 2.0), 0.1);
+  float noise = fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715))));
+  float occ = 0.0;
+  for (int i = 0; i < 14; i++) {
+    float fi = float(i);
+    float a = fi * 2.399963 + noise * 6.2831853;
+    vec2 off = vec2(cos(a) * res.y / res.x, sin(a)) * ((fi + 0.5) / 14.0) * rUv;
+    vec4 sg = texture2D(tGeo, vUv + off);
+    if (sg.a <= 0.0) continue;
+    vec3 v = viewPos(vUv + off, sg.a) - P;
+    float dist = length(v);
+    float cosT = dot(v, N) / max(dist, 1e-4);
+    occ += max(0.0, cosT - 0.12) * (1.0 - smoothstep(radius * 0.5, radius * 1.6, dist));
+  }
+  float ao = clamp(1.0 - occ / 14.0 * 2.2, 0.0, 1.0);
+  gl_FragColor = vec4(vec3(ao), 1.0);
+}`;
+
 const FINAL = /* glsl */ `uniform sampler2D tScene; uniform sampler2D tSoft; uniform sampler2D tGlow;
+uniform sampler2D tAO; uniform float aoAmt;
 uniform float tilt; uniform float focus; uniform float band; uniform float glow;
 uniform float vignette; varying vec2 vUv;
 ${DECODE}
@@ -65,6 +116,7 @@ void main(){
   float d = abs(vUv.y - focus);
   float k = smoothstep(band, band + 0.28, d) * tilt;
   c = mix(c, soft, k * 0.8);
+  c *= mix(1.0, texture2D(tAO, vUv).r, aoAmt);
   c += texture2D(tGlow, vUv).rgb * glow;
   vec2 q = vUv - 0.5;
   c *= 1.0 - vignette * smoothstep(0.25, 0.75, length(q * vec2(1.25, 1.0)));
@@ -82,6 +134,15 @@ export function createPost(renderer, width, height) {
   const qh = Math.round(height / 4);
   const q = [0, 1, 2].map(() => new THREE.WebGLRenderTarget(qw, qh, opts));
   const g = [0, 1].map(() => new THREE.WebGLRenderTarget(qw, qh, opts));
+  const hw = Math.round(width / 2);
+  const hh = Math.round(height / 2);
+  const geo = new THREE.WebGLRenderTarget(hw, hh, { type: THREE.FloatType });
+  const ao = [0, 1].map(() => new THREE.WebGLRenderTarget(hw, hh, opts));
+  const geoMat = new THREE.ShaderMaterial({
+    vertexShader: GEO_V,
+    fragmentShader: GEO_F,
+    side: THREE.DoubleSide,
+  });
 
   const cam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
   const quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2));
@@ -101,10 +162,18 @@ export function createPost(renderer, width, height) {
   });
   const bright = mat(BRIGHT, { tSrc: { value: null }, from: { value: LOOK.glowFrom } });
   const blur = mat(BLUR, { tSrc: { value: null }, dir: { value: new THREE.Vector2() } });
+  const aoMat = mat(AO, {
+    tGeo: { value: geo.texture },
+    tanHalf: { value: new THREE.Vector2() },
+    res: { value: new THREE.Vector2(hw, hh) },
+    radius: { value: LOOK.aoRadius },
+  });
   const final = mat(FINAL, {
     tScene: { value: main },
     tSoft: { value: q[2].texture },
     tGlow: { value: g[0].texture },
+    tAO: { value: ao[0].texture },
+    aoAmt: { value: 0 },
     tilt: { value: 1 },
     focus: { value: 0.5 },
     band: { value: 0.17 },
@@ -117,18 +186,63 @@ export function createPost(renderer, width, height) {
     renderer.setRenderTarget(target);
     renderer.render(fsScene, cam);
   };
-  const blurPass = (src, tmp, dst, step) => {
+  const blurPass = (src, tmp, dst, step, w = qw, h = qh) => {
     blur.uniforms.tSrc.value = src.texture;
-    blur.uniforms.dir.value.set(step / qw, 0);
+    blur.uniforms.dir.value.set(step / w, 0);
     pass(blur, tmp);
     blur.uniforms.tSrc.value = tmp.texture;
-    blur.uniforms.dir.value.set(0, step / qh);
+    blur.uniforms.dir.value.set(0, step / h);
     pass(blur, dst);
   };
+
+  // Normal/depth pass over the opaque scene only: glass that is see-through
+  // right now, sky, fog cards, arrows, puffs, lines and points stay out.
+  const hidden = [];
+  const clear = new THREE.Color(0, 0, 0);
+  const prevClear = new THREE.Color();
+  function geoPass(scene, camera) {
+    scene.traverse((o) => {
+      if (!o.visible) return;
+      let hide = o.isLine || o.isPoints || o.isSprite;
+      if (o.isMesh) {
+        const m = Array.isArray(o.material) ? o.material[0] : o.material;
+        hide = o.userData.noAO || m.depthWrite === false || (m.transparent && m.opacity < 0.9);
+      }
+      if (hide) {
+        o.visible = false;
+        hidden.push(o);
+      }
+    });
+    const fog = scene.fog;
+    const bg = scene.background;
+    scene.fog = null;
+    scene.background = null;
+    scene.overrideMaterial = geoMat;
+    const prevAlpha = renderer.getClearAlpha();
+    renderer.getClearColor(prevClear);
+    renderer.setClearColor(clear, 0);
+    renderer.setRenderTarget(geo);
+    renderer.clear();
+    renderer.render(scene, camera);
+    renderer.setClearColor(prevClear, prevAlpha);
+    scene.overrideMaterial = null;
+    scene.fog = fog;
+    scene.background = bg;
+    for (const o of hidden) o.visible = true;
+    hidden.length = 0;
+  }
 
   return {
     // scene → look → canvas; `overlay` (LED panel …) is drawn sharp on top
     render(scene, camera, overlay, shotTilt = 1) {
+      if (LOOK.ao > 0) {
+        geoPass(scene, camera);
+        const th = Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2);
+        aoMat.uniforms.tanHalf.value.set(th * camera.aspect, th);
+        aoMat.uniforms.radius.value = LOOK.aoRadius;
+        pass(aoMat, ao[0]);
+        blurPass(ao[0], ao[1], ao[0], 1.0, hw, hh);
+      }
       renderer.setRenderTarget(null);
       renderer.render(scene, camera);
       renderer.copyFramebufferToTexture(main);
@@ -150,6 +264,7 @@ export function createPost(renderer, width, height) {
       u.band.value = LOOK.band;
       u.glow.value = LOOK.glow;
       u.vignette.value = LOOK.vignette;
+      u.aoAmt.value = LOOK.ao;
       pass(final, null);
 
       if (overlay.children.some((c) => c.visible && !c.isLight)) {

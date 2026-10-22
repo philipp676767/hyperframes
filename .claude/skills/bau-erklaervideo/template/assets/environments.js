@@ -5,7 +5,23 @@
 // z = -1…4 stay empty; scenery sits behind (z < -5) and in an outer ring.
 // The outro drone flies out along +x/+z (towards x ≈ 0.6·z), so nothing tall
 // stands on that line in front of the stage.
-import { THREE, V, rand, rng, jitter, flat, M, scene, ground, onFrame } from "./world.js";
+import {
+  THREE,
+  V,
+  rand,
+  rng,
+  jitter,
+  flat,
+  M,
+  scene,
+  ground,
+  onFrame,
+  facet,
+  facetMat,
+} from "./world.js";
+
+// mesh with per-facet colour variation (world.js facet)
+const F = (geo, mat, amt = 0.08, seed = 1) => new THREE.Mesh(facet(geo, amt, seed), facetMat(mat));
 
 // ---------------------------------------------------------------- skies
 // top / mid / horizon / below are sRGB 0..1; below doubles as fog colour.
@@ -135,7 +151,7 @@ function buildSky(sky) {
   const key = new THREE.DirectionalLight(...sky.key);
   key.position.set(6, 11, 8);
   key.castShadow = true;
-  key.shadow.mapSize.set(1536, 1536);
+  key.shadow.mapSize.set(4096, 4096);
   Object.assign(key.shadow.camera, {
     left: -11,
     right: 11,
@@ -275,9 +291,79 @@ const add = (mesh, x = 0, y = 0, z = 0, shadow = true) => {
   return mesh;
 };
 
-function bigGround(color, r = 75) {
-  const m = new THREE.Mesh(new THREE.CircleGeometry(r, 48), flat(color));
-  m.rotation.x = -Math.PI / 2;
+// Flat disc (XZ plane, y = 0) triangulated with near-equal triangles: ring k
+// has 6k points, so there are no long slivers fanning out from the centre
+// (those read as pie slices / sun rays once facets are tinted). Points are
+// jittered in-plane; height(x, z, d) may lift them.
+function discGeo(r, step, seed, height = () => 0) {
+  const rings = Math.max(2, Math.round(r / step));
+  const pts = [[0, 0]];
+  const start = [0];
+  const count = [1];
+  const h = (x, z, k) => {
+    const v = Math.sin(x * 129.898 + z * 782.33 + k * 3.1 + seed) * 43758.5453;
+    return (v - Math.floor(v)) * 2 - 1;
+  };
+  for (let k = 1; k <= rings; k++) {
+    const n = 6 * k;
+    start.push(pts.length);
+    count.push(n);
+    const rad = (k / rings) * r;
+    for (let i = 0; i < n; i++) {
+      const a = (i / n) * Math.PI * 2 + k * 0.37;
+      let x = Math.cos(a) * rad;
+      let z = Math.sin(a) * rad;
+      if (k < rings) {
+        x += h(x, z, 1) * step * 0.32;
+        z += h(x, z, 2) * step * 0.32;
+      }
+      pts.push([x, z]);
+    }
+  }
+  const idx = [];
+  for (let k = 0; k < rings; k++) {
+    const a0 = start[k];
+    const na = count[k];
+    const b0 = start[k + 1];
+    const nb = count[k + 1];
+    if (na === 1) {
+      for (let i = 0; i < nb; i++) idx.push(a0, b0 + ((i + 1) % nb), b0 + i);
+      continue;
+    }
+    // walk both rings by angle, always advancing the one that lags
+    let i = 0;
+    let j = 0;
+    while (i < na || j < nb) {
+      const ai = a0 + (i % na);
+      const bj = b0 + (j % nb);
+      if (j < nb && (i >= na || (j + 1) / nb <= (i + 1) / na)) {
+        idx.push(ai, b0 + ((j + 1) % nb), bj);
+        j++;
+      } else {
+        idx.push(ai, a0 + ((i + 1) % na), bj);
+        i++;
+      }
+    }
+  }
+  const pos = [];
+  for (const [x, z] of pts) pos.push(x, Math.max(0, height(x, z, Math.hypot(x, z))), z);
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+  geo.setIndex(idx);
+  geo.computeVertexNormals();
+  return geo;
+}
+
+// Ground disc as a faceted polar grid: flat where things stand (r < 36),
+// rising into soft low hills towards the horizon, every facet tinted a
+// little differently.
+function bigGround(color, r = 75, seed = 5) {
+  const geo = discGeo(r, 3.2, seed, (x, z, d) => {
+    if (d <= 36) return 0;
+    const v = Math.sin(x * 0.21 + seed) * Math.cos(z * 0.17 - seed) * 0.5 + 0.5;
+    return ((d - 36) / (r - 36)) * (2 + 4 * v);
+  });
+  const m = new THREE.Mesh(facet(geo, 0.06, seed), facetMat(flat(color)));
   m.receiveShadow = true;
   ground.add(m);
   return m;
@@ -292,9 +378,11 @@ export function tree(x, z, s = 1, seed = 0) {
   const n = 2 + (seed % 2);
   for (let k = 0; k < n; k++) {
     const r = 0.95 - k * 0.18;
-    const m = new THREE.Mesh(
+    const m = F(
       jitter(new THREE.IcosahedronGeometry(r, 1), 0.07, seed * 13 + k),
       k % 2 ? M.leaf2 : M.leaf,
+      0.1,
+      seed * 13 + k,
     );
     m.position.set((k % 2 ? 0.35 : -0.15) * (seed % 3 ? 1 : -1), 2.2 + k * 0.85, k * 0.1);
     m.castShadow = true;
@@ -318,9 +406,11 @@ function pine(x, z, s = 1, seed = 0, snowy = false) {
   g.add(trunk);
   for (let k = 0; k < 3; k++) {
     const r = 1.05 - k * 0.27;
-    const cone = new THREE.Mesh(
+    const cone = F(
       jitter(new THREE.ConeGeometry(r, 1.3, 7), 0.05, seed * 7 + k),
       k % 2 ? pineMat2 : pineMat,
+      0.09,
+      seed * 7 + k,
     );
     cone.position.y = 1.15 + k * 0.72;
     cone.castShadow = true;
@@ -348,9 +438,11 @@ function rocks(n, rMin, rMax, seed, mat = M.rock) {
     const z = Math.sin(a) * d;
     if (Math.abs(x) < 6.5 && z > -5 && z < 4.5) continue; // keep the stage clear
     add(
-      new THREE.Mesh(
+      F(
         jitter(new THREE.DodecahedronGeometry(0.18 + r() * 0.3, 0), 0.04, seed + i),
         mat,
+        0.12,
+        seed + i,
       ),
       x,
       0.05,
@@ -392,14 +484,22 @@ function car(x, z, color, rotY = 0) {
 const ENV_BUILDERS = {
   // The original floating island (fridge video).
   insel() {
-    const top = new THREE.Mesh(
-      jitter(new THREE.CylinderGeometry(9, 8.8, 0.7, 30, 1), 0.08, 3),
+    // rim as an open cylinder, the top as a faceted polar grid (a cylinder
+    // cap would be a fan of long slivers that shows as pie slices)
+    const rim = F(
+      jitter(new THREE.CylinderGeometry(9, 8.8, 0.7, 40, 1, true), 0.08, 3),
       M.grass,
+      0.06,
+      3,
     );
-    top.position.y = -0.35;
+    rim.position.y = -0.35;
+    rim.receiveShadow = true;
+    ground.add(rim);
+    const capGeo = discGeo(9, 0.75, 3);
+    const top = F(capGeo, M.grass, 0.06, 3);
     top.receiveShadow = true;
     ground.add(top);
-    const cone = new THREE.Mesh(jitter(new THREE.ConeGeometry(8.8, 7, 16, 3), 0.45, 4), M.earth);
+    const cone = F(jitter(new THREE.ConeGeometry(8.8, 7, 16, 3), 0.45, 4), M.earth, 0.12, 4);
     cone.rotation.x = Math.PI;
     cone.position.y = -0.7 - 3.5;
     ground.add(cone);
@@ -442,9 +542,11 @@ const ENV_BUILDERS = {
       const a = rand() * Math.PI * 2;
       const r = 3 + rand() * 5.2;
       add(
-        new THREE.Mesh(
+        F(
           jitter(new THREE.DodecahedronGeometry(0.18 + rand() * 0.22, 0), 0.04, i),
           M.rock,
+          0.12,
+          i,
         ),
         Math.cos(a) * r,
         0.05,
@@ -455,9 +557,11 @@ const ENV_BUILDERS = {
       const a = rand() * Math.PI * 2;
       const r = 4 + rand() * 4.5;
       add(
-        new THREE.Mesh(
+        F(
           jitter(new THREE.IcosahedronGeometry(0.35 + rand() * 0.25, 0), 0.05, 50 + i),
           M.grassDark,
+          0.1,
+          50 + i,
         ),
         Math.cos(a) * r,
         0.15,
@@ -742,10 +846,12 @@ const ENV_BUILDERS = {
       const h = 14 + r() * 14;
       const rad = 10 + r() * 8;
       const g = new THREE.Group();
-      g.add(new THREE.Mesh(jitter(new THREE.ConeGeometry(rad, h, 7, 2), 0.6, 30 + i), peakMat));
-      const cap = new THREE.Mesh(
+      g.add(F(jitter(new THREE.ConeGeometry(rad, h, 7, 2), 0.6, 30 + i), peakMat, 0.1, 30 + i));
+      const cap = F(
         jitter(new THREE.ConeGeometry(rad * 0.38, h * 0.38, 7), 0.3, 60 + i),
         snowMat,
+        0.05,
+        60 + i,
       );
       cap.position.y = h * 0.31;
       g.add(cap);

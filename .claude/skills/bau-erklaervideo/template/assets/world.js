@@ -10,9 +10,9 @@ import { createPost, LOOK } from "./post.js";
 window.THREE = THREE;
 export { THREE, LOOK };
 
-// 3D is drawn at 2/3 resolution and scaled up by CSS; captions stay full-res DOM.
-export const WIDTH = 720;
-export const HEIGHT = 1280;
+// 3D is drawn at the full 1080×1920 (sharp facets, crisp edges); captions are DOM on top.
+export const WIDTH = 1080;
+export const HEIGHT = 1920;
 
 // ---------------------------------------------------------------- word anchors
 // W(word, n), LAST, END, HL … live in timing.js (shared with build-sfx.mjs).
@@ -73,6 +73,40 @@ export function jitter(geom, amt, seed = 1) {
   }
   geom.computeVertexNormals();
   return geom;
+}
+
+// Per-facet colour variation: every triangle gets a slightly lighter or darker
+// tint of its material colour (seeded) — the hand-painted low-poly look.
+// Returns a non-indexed geometry with a colour attribute; use it with a
+// material that has `vertexColors: true` (facetMat() below).
+export function facet(geom, amt = 0.08, seed = 1) {
+  const g = geom.index ? geom.toNonIndexed() : geom;
+  const n = g.attributes.position.count;
+  const col = new Float32Array(n * 3);
+  const r = rng(seed * 7919 + 17);
+  for (let i = 0; i < n; i += 3) {
+    const k = 1 + (r() * 2 - 1) * amt;
+    const warm = (r() * 2 - 1) * amt * 0.35; // a touch of hue shift, warm ↔ cool
+    for (let j = 0; j < 3 && i + j < n; j++) {
+      col[(i + j) * 3] = k * (1 + warm);
+      col[(i + j) * 3 + 1] = k;
+      col[(i + j) * 3 + 2] = k * (1 - warm);
+    }
+  }
+  g.setAttribute("color", new THREE.BufferAttribute(col, 3));
+  g.computeVertexNormals();
+  return g;
+}
+const facetMats = new Map();
+// The vertex-colour twin of a material (cached), for facet() geometry.
+export function facetMat(m) {
+  let f = facetMats.get(m);
+  if (!f) {
+    f = m.clone();
+    f.vertexColors = true;
+    facetMats.set(m, f);
+  }
+  return f;
 }
 
 // ---------------------------------------------------------------- renderer
