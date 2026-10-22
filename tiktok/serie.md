@@ -19,3 +19,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 12  | Noise-Cancelling-Kopfhörer | `tiktok/noise-cancelling` | stadt  | morgen          | 44,1 s | 2026-10-22 |
 | 13  | Wassersprudler             | `tiktok/sodastream`       | strand | mittag          | 43,9 s | 2026-10-22 |
 | 14  | Rauchmelder (neu)          | `tiktok/rauchmelder-v2`   | stadt  | morgen          | 44,6 s | 2026-10-22 |
+| 15  | Wassersprudler (neu)       | `tiktok/wassersprudler`   | insel  | abend           | 44,0 s | 2026-10-22 |
