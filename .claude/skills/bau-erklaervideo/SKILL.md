@@ -39,6 +39,19 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 ## Workflow
 
+### 0a. Name the chat — "Video: <Thema>"
+
+The user wants every video chat named the same way (Einheit): **`Video:
+<Thema in einem Wort>`**, e.g. `Video: Kühlschrank`, `Video: Mikrowelle`,
+`Video: Tesla` (for "Fliegender Tesla" pick the one word people search
+for). German noun, capitalised, umlauts written out as ä/ö/ü. As soon as
+the topic is known — before the script — call `get_session` (no
+`session_id`: it describes this session) and then `set_session_title`
+with that `session_id` and the title (claude-code-remote tools; load them
+with ToolSearch if they are deferred). If the topic changes, rename again.
+If the tools aren't available in this chat, tell the user in one line to
+rename it to exactly that title.
+
 ### 0. Read the learning log first
 
 Open `tiktok/lernlog.md` before writing anything. Every entry under
