@@ -1,0 +1,7 @@
+Manche Rauchmelder sind echt *radioaktiv*. Und genau das rettet dich. Lass ihn uns bauen.
+Du brauchst zwei Metallplatten, dazwischen Luft. Dazu ein Krümel *Americium* – weniger als ein Millionstel Gramm. Keine Angst: Ein Blatt *Papier* stoppt seine Strahlung.
+Die Strahlung schlägt Elektronen aus der Luft. Jetzt fließt ein winziger *Strom*. Das ist die *Ionisationskammer*.
+Hier kommt der *Trick*: Kommt Rauch rein, kleben die Teilchen am Rauch fest. Der Strom bricht ein – und ein Chip schlägt *Alarm*.
+Nicht die Strahlung warnt dich, sondern der *fehlende* Strom. Schau dich an. Du hast gerade einen Rauchmelder gebaut. Übrigens: Das Americium strahlt noch in *432* Jahren mit halber Kraft.
+Schau mal an deine Decke: Hängt da einer? Schreib's mir – und folg mir für mehr.
+> Und merk dir:
