@@ -9,9 +9,9 @@ it's the series signature.
 
 ## Length
 
-**102–115 words including fact, CTA and loop line** (≈ 41–46 s video), never more than
-**122** (≈ 49 s) and never fewer than **100** (≈ 40 s).
-Expected length = words ÷ 2.5 + 0.3 s (measured with Stephan on #7). Count before showing the script.
+**110–122 words including fact, CTA and loop line** (≈ 42–46 s video), never more than
+**128** (≈ 49 s) and never fewer than **105** (≈ 40 s).
+Expected length = words ÷ 2.7 + 1.2 s (measured with Jan, the house voice). Count before showing the script.
 
 ## Shape
 
@@ -204,7 +204,7 @@ beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
 - [ ] CTA: question answerable in 1–3 words + "folg"
 - [ ] Loop line `> …` + hook sentence 1 read as one sentence
 - [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
-- [ ] 102–115 words incl. fact, CTA and loop line (≤ 122, ≥ 100), expected length stated
+- [ ] 110–122 words incl. fact, CTA and loop line (≤ 128, ≥ 105), expected length stated
 
 ## What to show the user for approval
 
