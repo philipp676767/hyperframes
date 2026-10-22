@@ -28,7 +28,7 @@ export const shots = [
   { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
   { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
   { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0] },
+  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
   { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
   { at: T.schau, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
   { at: T.gerade, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
@@ -40,6 +40,17 @@ export const shots = [
 export const LABELS = [
   { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
   { text: "Glühfaden", at: T.gluehfaden, until: T.schau, pos: [0.2, 1.95, 0], side: 1 },
+];
+
+// ---------------------------------------------------------------- highlights
+// The video's big moments (world.js highlights()): at least one every
+// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
+// a shot cut (here T.gluehfaden).
+export const HIGHLIGHTS = [
+  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
+  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
+  { kind: "flash", at: T.gluet }, // … and glows
+  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
 ];
 
 // ---------------------------------------------------------------- sound

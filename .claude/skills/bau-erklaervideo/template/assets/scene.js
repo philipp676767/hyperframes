@@ -25,12 +25,15 @@ import {
   labels,
   squash,
   puff,
+  highlights,
   shotCamera,
   renderFrame,
   start,
 } from "./world.js";
 import { createWorld } from "./environments.js";
-import { T, shots, LABELS } from "./beats.js";
+import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
+
+highlights(HIGHLIGHTS);
 
 // Pick the place + light for this topic: env insel | stadt | strand | winter | land,
 // sky sonnenuntergang | morgen | mittag | abend (optional, each env has a default).

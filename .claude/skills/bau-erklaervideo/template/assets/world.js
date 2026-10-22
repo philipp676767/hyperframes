@@ -192,7 +192,8 @@ export const edgeMat = new THREE.LineBasicMaterial({
 const GLASS = new THREE.Color(0.55, 0.82, 1.0);
 export function setXray(materials, k) {
   for (const m of materials) {
-    m.opacity = lerp(1, 0.2, k);
+    // 0.32 at full x-ray: see-through but the shell still reads as a shape
+    m.opacity = lerp(1, 0.32, k);
     m.color.copy(m.userData.base).lerp(GLASS, k);
     m.depthWrite = k < 0.02;
   }
@@ -442,6 +443,65 @@ export function showPanel(k, label = "", value = "", color = LED.red) {
 // tighter on the word and eases back over ~0.5 s.
 const FOV = 48;
 let shotTilt = 1;
+
+// ---------------------------------------------------------------- highlights
+// The big moments of a video (beats.js HIGHLIGHTS), so it never runs at one
+// monotone pace:
+//   { kind: "slowmo", at, until, speed = 0.3 }  the picture runs in slow motion
+//        (captions + voice don't); `until` must be a shot cut, the jump back
+//        to normal time hides in the cut
+//   { kind: "shake", at, dur = 0.5, amp = 1 }   impact: camera shake
+//   { kind: "flash", at }                        white flash (explosion, ignition, "zack")
+//   { kind: "zoom", at, dur = 0.7, amount = 0.35 }  crash zoom in, ease back out
+// A shot can also whip-pan in: { …, whip: 1 } (or -1 for the other side).
+// build-sfx.mjs adds the matching sounds (hit / whoosh / slowmo).
+let FX = [];
+let realT = 0;
+export function highlights(list) {
+  FX = list;
+}
+// scene time for real time t: slow inside slowmo windows
+function warp(t) {
+  for (const h of FX) {
+    if (h.kind === "slowmo" && t >= h.at && t < h.until)
+      return h.at + (t - h.at) * (h.speed ?? 0.3);
+  }
+  return t;
+}
+const env = (x, a, d) => (x < 0 || x > a + d ? 0 : x < a ? x / a : Math.pow(1 - (x - a) / d, 2));
+function fxShake(t) {
+  let k = 0;
+  let amp = 1;
+  for (const h of FX) {
+    if (h.kind !== "shake") continue;
+    const e = env(t - h.at, 0.03, h.dur ?? 0.5);
+    if (e > k) {
+      k = e;
+      amp = h.amp ?? 1;
+    }
+  }
+  return k * amp;
+}
+function fxZoom(t) {
+  let z = 0;
+  for (const h of FX) {
+    if (h.kind !== "zoom") continue;
+    const x = t - h.at;
+    const d = h.dur ?? 0.7;
+    if (x < 0 || x > d) continue;
+    const e = x < 0.12 ? smooth(x / 0.12) : 1 - smooth((x - 0.12) / (d - 0.12));
+    z = Math.max(z, e * (h.amount ?? 0.35));
+  }
+  return z;
+}
+const flashEl = document.createElement("div");
+flashEl.style.cssText = "position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;";
+document.getElementById("root").insertBefore(flashEl, document.getElementById("captions"));
+function fxFlash(t) {
+  let k = 0;
+  for (const h of FX) if (h.kind === "flash") k = Math.max(k, env(t - h.at, 0.02, 0.35));
+  return k;
+}
 export function punch(t) {
   let p = 0;
   for (const h of HL) {
@@ -479,16 +539,30 @@ export function shotCamera(shots, defaultZoom = 1.7) {
       const lb = s.lookTo ?? s.look;
       l.set(lerp(la[0], lb[0], k), lerp(la[1], lb[1], k), lerp(la[2], lb[2], k)).add(rel);
     }
+    // whip pan into the shot: the view swings in from the side in 0.3 s
+    if (s.whip && t >= s.at && t < s.at + 0.3) {
+      const e = 1 - smooth((t - s.at) / 0.3);
+      const side = V(0, 1, 0).cross(l.clone().sub(p)).normalize();
+      l.addScaledVector(side, s.whip * e * e * p.distanceTo(l) * 0.9);
+    }
     p.sub(l)
       .multiplyScalar(s.zoom ?? defaultZoom)
       .add(l);
+    // impact shake (real time, so it stays snappy inside a slow motion)
+    const sh = fxShake(realT);
+    if (sh > 0) {
+      const d = p.distanceTo(l) * 0.012 * sh;
+      p.x += Math.sin(realT * 61) * d + Math.sin(realT * 37.3) * d * 0.6;
+      p.y += Math.sin(realT * 53.7 + 1) * d;
+      l.x += Math.sin(realT * 47.1 + 2) * d * 0.5;
+    }
     // a slow, tiny hand-held drift so no frame is ever dead still (seeded, pure in t)
     p.x += Math.sin(t * 0.83 + 1.3) * 0.012 + Math.sin(t * 1.91) * 0.006;
     p.y += Math.sin(t * 0.67 + 0.4) * 0.01 + Math.sin(t * 2.3 + 2.1) * 0.004;
     shotTilt = s.tilt ?? 1;
     camera.position.copy(p);
     camera.lookAt(l);
-    camera.fov = FOV / (1 + 0.11 * punch(t));
+    camera.fov = FOV / (1 + 0.11 * punch(t) + fxZoom(realT));
     camera.updateProjectionMatrix();
     camera.updateMatrixWorld();
   };
@@ -624,8 +698,11 @@ export function renderFrame() {
 // one moment, whatever the seek time.
 export function start(renderAt) {
   const frame = (t) => {
+    realT = t;
     if (window.HF_COVER_T != null) t = window.HF_COVER_T;
     else if (LOOP != null && t >= LOOP) t -= DURATION;
+    else t = warp(t);
+    flashEl.style.opacity = String(window.HF_COVER_T != null ? 0 : fxFlash(realT) * 0.85);
     for (const fn of frameHooks) fn(t);
     renderAt(t);
   };

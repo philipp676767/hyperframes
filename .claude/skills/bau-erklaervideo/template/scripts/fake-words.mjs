@@ -1,6 +1,9 @@
 // Placeholder word timings (estimated) until the real ElevenLabs alignment exists.
 import fs from "node:fs";
-const text = fs.readFileSync(new URL("../script.txt", import.meta.url), "utf8");
+// [excited], [whispers] … are delivery tags for the voice (eleven_v3), not words
+const text = fs
+  .readFileSync(new URL("../script.txt", import.meta.url), "utf8")
+  .replace(/\[[^\]\n]*\]/g, " ");
 // "–" is not spoken; a line starting with ">" is the loop bridge (marker not spoken)
 const isWord = (w) => w && w !== "–" && w !== ">";
 const toks = text.split(/\s+/).filter(isWord);

@@ -31,11 +31,20 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Sound FX     | Synthesized house kit (`scripts/make-sfx.py`, no samples): whoosh on every cut, hit on the hook title, punch on highlighted words, blip per label, payoff ding, CTA pops + click. Placed from `assets/beats.js` by `scripts/build-sfx.mjs` → `assets/sfx.mp3`                                                                                                                                                             |
 | Keywords     | `*Wort*` in `script.txt` → caption yellow + bigger + pops, camera punch-in, punch sound. ~1 per sentence, 8–12 per video                                                                                                                                                                                                                                                                                                  |
 | Labels       | Name tag + yellow arrow on a part when its term is spoken (`LABELS` in `beats.js`), every technical term + key parts                                                                                                                                                                                                                                                                                                      |
+| Highlights   | Every 5–7 s a big moment (`HIGHLIGHTS`: slowmo, shake, flash, crash zoom, whip pan) + 2–3 money shots that **show** the spectacular claims; voice with 3–6 delivery tags (`[excited]`, `[whispers]` …)                                                                                                                                                                                                                    |
+| Learning log | `tiktok/lernlog.md`: read before every video, update after the user reports numbers / feedback                                                                                                                                                                                                                                                                                                                            |
 | Look         | `references/visual-style.md`                                                                                                                                                                                                                                                                                                                                                                                              |
 | Script       | `references/script-formel.md`                                                                                                                                                                                                                                                                                                                                                                                             |
 | Scene code   | `references/scene-api.md` (world.js API)                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## Workflow
+
+### 0. Read the learning log first
+
+Open `tiktok/lernlog.md` before writing anything. Every entry under
+"Nächstes Mal" that isn't ticked off is a rule for this video, and the
+approval message says which one(s) this video improves. The series gets
+better one concrete step per video.
 
 ### 1. Script → user approval (always first)
 
@@ -45,7 +54,8 @@ line + "Übrigens" bonus fact, CTA question, `> …` loop bridge. **110–122 wo
 more than **128** (≈ 49 s) or fewer than **105** (≈ 40 s); expected length
 = words ÷ 2.7 + 1.2 s (Jan). Run the self-check in that file. Show the user the
 script, word count + length, the hook title, **two alternative hooks**, the
-cover title, and a one-line visual idea per beat, and **wait for their OK** before spending
+cover title, and a one-line visual idea per beat **incl. the highlight of each beat**
+(money shots, slowmo, flash …), and **wait for their OK** before spending
 credits or building. Apply their edits verbatim.
 
 ### 1b. Pick the setting (never the same as the last video)
@@ -93,7 +103,8 @@ for estimated timings so the scene can be built before the voice exists.
 Generate the **whole script including the CTA line** (script.txt joined to
 one paragraph, **with every `*` and the leading `>` of the loop line
 removed** — the marks are for the captions; the voice would read or
-stress them oddly) with `creative_generate_speech`: `voice_id
+stress them oddly; the `[excited]` / `[whispers]` delivery tags **stay**,
+eleven_v3 performs them) with `creative_generate_speech`: `voice_id
 keqaIOtp0ePlmN5jgQfy` (Jan), `model_id eleven_v3`,
 **`generations_count: 1`** (the account hits 429 concurrency limits with
 more; a 429 means nothing was generated or charged — retry once with 1).
@@ -174,7 +185,11 @@ ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<s
 
 The render's mixer drops voice + music to ≈ -18 LUFS; `finish-audio.sh`
 brings it back to -14 LUFS. Confirm exactly one audio stream and 40–50 s, then send **`<slug>-final.mp4`** with `SendUserFile`
-(display `render`) **together with the cover** (6b) **and the description** (6c). Append the episode to `tiktok/serie.md`.
+(display `render`) **together with the cover** (6b) **and the description** (6c).
+Before sending, watch it honestly as a stranger would (contact sheet every
+3 s + the hook frames): Would I stop scrolling in the first 2 s? Is there
+a highlight every 5–7 s? Is anything smeared, tiny or monotone? Fix
+before sending, not after. Append the episode to `tiktok/serie.md`.
 
 ### 6b. Titelbild (cover) — every video
 
@@ -227,6 +242,15 @@ In 45 Sekunden baust du einen nach und verstehst, wie ein Kühlschrank funktioni
 Fass mal hinten dran: Ist deiner warm? 👇
 #lernenmittiktok #wissen #kühlschrank #physik #duhastgeradegebaut
 ```
+
+### 6d. Ask for the numbers — learning log
+
+In the delivery message ask the user to tell you, 1–2 days after posting:
+views, average watch time / % watched to the end, likes, comments, and
+any feedback they got. When they do, add the episode to
+`tiktok/lernlog.md` (numbers, what worked, what didn't, and **one**
+concrete "Nächstes Mal" item), turn lasting lessons into rules in this
+skill, and commit both on `main`.
 
 ### 7. Save — always on `main`
 

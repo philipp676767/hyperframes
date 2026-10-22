@@ -118,6 +118,12 @@ write("wow", wow)
 t = t_of(0.22)
 write("klack", svf(noise(0.22), 420, q=6) * env(t, 0.001, 0.035) + 0.4 * svf(noise(0.22), 2600, q=3) * env(t, 0.0005, 0.01))
 
+# slowmo: deep "bwooom" as time slows down (falling pitch + airy swell)
+t = t_of(1.1)
+sweep = sine(190 * np.exp(-t / 0.45) + 45, t) * env(t, 0.02, 0.5)
+air = svf(noise(1.1), 900 * np.exp(-t / 0.4) + 150, q=0.8, mode="lp") * env(t, 0.05, 0.4)
+write("slowmo", sweep + 0.6 * air)
+
 # zisch: hiss loop (gas, steam, air) — build-sfx trims it to the cue length
 t = t_of(4.0)
 write("zisch", svf(noise(4.0), 5200, q=0.6, mode="hp") * (0.85 + 0.15 * np.sin(2 * np.pi * 7 * t)), peak_db=-6)

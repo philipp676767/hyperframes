@@ -13,6 +13,8 @@ pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(audio), "-ac", "1", "-a
 samples = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768
 
 script = (root / "script.txt").read_text(encoding="utf8")
+# [excited], [whispers] … are delivery tags for the voice (eleven_v3), not words
+script = re.sub(r"\[[^\]\n]*\]", " ", script)
 # *Wort* marks a highlighted keyword; the voice and Whisper get the plain text
 tokens = [t for t in script.split() if t not in ("–", ">")]
 marked = [bool(re.fullmatch(r"\*.*\*[.,:!?]*", t)) for t in tokens]

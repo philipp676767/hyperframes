@@ -97,6 +97,41 @@ things (kitchen tiles, workshop floor) — skip it outdoors.
   airbag bursting) — the camera may then pull out to the build. Never
   open on an empty stage.
 
+## Highlights — never monotone
+
+Feedback on #10: _"wirkt etwas langweilig und monoton, setze ein paar
+Highlights"_ and the most spectacular claims were only told, never shown
+("sogar kopfüber" over an x-ray car standing on the floor). Rules:
+
+- **Show the claim.** Every spectacular statement gets its own money shot
+  in the solid look: the car really drives on the ceiling, the rocket
+  really lifts off, the airbag really bursts. 2–3 per video; the
+  strongest one is also frame 1 (hook).
+- **A highlight every 5–7 s** (`HIGHLIGHTS` in beats.js, world.js):
+  `slowmo` (the picture runs at 0.3× while the voice goes on; must end on
+  a shot cut), `shake` (impact), `flash` (explosion / ignition / "zack"),
+  `zoom` (crash zoom), and shots with `whip: 1` (whip pan in). Sounds are
+  added automatically. Mix them, don't repeat one kind back to back.
+- **Vary scale and distance:** wide → macro → wide, never three similar
+  3/4 views in a row. Use the comparison mini-sets and a "what if it
+  fails" moment (the part breaks, the car falls, ✕).
+- **Pace changes:** a slow, quiet moment right before the biggest
+  highlight makes it hit harder.
+
+## Clarity — nothing may look smeared
+
+Feedback: _"Qualität noch besser, nicht so ineinander verschwimmen."_
+
+- The subject fills **≥ 40 % of the frame height** in most shots; the
+  checkered floor pad is optional and small — never half the frame.
+- **X-ray at most ~⅓ of the runtime**, only while the inside is
+  explained; the money shots and the outro are solid. Inner parts are
+  saturated, opaque colours so they read through the glass.
+- Tilt-shift stays gentle (`LOOK.tilt` 0.45 default) — raise it only for
+  the wide drone outro.
+- Strong colour contrast between subject and background (red car on
+  green meadow, not light-blue glass on white sky).
+
 ## Camera
 
 - Hard cut on a word every 2–4 s; never a static frame — each shot drifts

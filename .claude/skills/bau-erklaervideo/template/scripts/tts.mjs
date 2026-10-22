@@ -11,7 +11,8 @@ if (!key) throw new Error("ELEVENLABS_API_KEY is not set");
 const voice = process.argv[2] || "keqaIOtp0ePlmN5jgQfy";
 
 // *Wort* highlight marks and the ">" of the loop line are for the captions
-// only — never send them to the voice
+// only — never send them to the voice. [excited] / [whispers] … tags DO go
+// to the voice (eleven_v3 performs them).
 const main = fs
   .readFileSync(new URL("script.txt", root), "utf8")
   .replaceAll("*", "")

@@ -16,9 +16,10 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
 
 // Tweak per video (scene.js: `LOOK.tilt = 0.6`) or per shot (`{ tilt: 0 }`).
 export const LOOK = {
-  tilt: 1, // 0 = everything sharp, 1 = full miniature blur at the frame edges
+  // kept gentle: a strong miniature blur makes the picture look smeared on a phone
+  tilt: 0.45, // 0 = everything sharp, 1 = full miniature blur at the frame edges
   focus: 0.5, // sharp band centre, 0 = bottom, 1 = top of the frame
-  band: 0.2, // half height of the fully sharp band
+  band: 0.28, // half height of the fully sharp band
   glow: 0.35, // glow strength
   glowFrom: 0.95, // brightness (linear) where glow starts
   vignette: 0.22,

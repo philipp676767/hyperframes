@@ -18,7 +18,12 @@ globalThis.window = ctx.window;
 const { DURATION, HL, LOOP, ctaTimes, payoffTime, factTime } = await import(
   new URL("assets/timing.js", root)
 );
-const { shots, LABELS = [], SFX = [] } = await import(new URL("assets/beats.js", root));
+const {
+  shots,
+  LABELS = [],
+  SFX = [],
+  HIGHLIGHTS = [],
+} = await import(new URL("assets/beats.js", root));
 
 const kit = new URL("assets/sfx/", root);
 if (!fs.existsSync(new URL("whoosh.wav", kit))) {
@@ -43,6 +48,7 @@ const LEVEL = {
   brumm: -15,
   surr: -19,
   rauschen: -17,
+  slowmo: -9,
 };
 // where the audible "moment" sits inside each file (whoosh peaks at 0.22 s)
 const LEAD = { whoosh: 0.22 };
@@ -72,9 +78,17 @@ if (cta) {
   add("click", cta.tap + 0.08, "follow tap");
   add("ding", cta.flip, "gefolgt", { db: -16 });
 }
+const FX_SOUND = { shake: "hit", flash: "hit", zoom: "whoosh", slowmo: "slowmo" };
+for (const h of HIGHLIGHTS) add(FX_SOUND[h.kind] ?? "hit", h.at, `highlight ${h.kind}`);
 for (const c of SFX) add(c.s, c.at, "beats.js", { dur: c.dur, db: c.db });
 
 cues.sort((a, b) => a.at - b.at);
+// an older kit may miss a newer sound: rebuild the kit once
+if (cues.some((c) => !fs.existsSync(new URL(`${c.s}.wav`, kit)))) {
+  execFileSync("python3", [new URL("scripts/make-sfx.py", root).pathname, kit.pathname], {
+    stdio: "inherit",
+  });
+}
 for (const c of cues) {
   if (!fs.existsSync(new URL(`${c.s}.wav`, kit)))
     throw new Error(`unknown sound "${c.s}" (kit: ${Object.keys(LEVEL).join(" ")})`);

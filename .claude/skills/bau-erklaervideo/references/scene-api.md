@@ -37,6 +37,7 @@ bubbles, analogy sets, door opening).
 | `squash(t, at, d = 0.75, base = 1)`                                                 | scale vector for a pop-in: overshoot + squash-and-stretch that settles; `obj.scale.copy(squash(t, at))`                                                                                      |
 | `puff(id, t, at, x, y, z, size = 1)`                                                | white dust puff bursting outward for 0.8 s from `at` (call every frame)                                                                                                                      |
 | `facet(geo, amt, seed)` / `facetMat(mat)`                                           | per-facet colour tint for a geometry + the vertex-colour twin of a material: `new THREE.Mesh(facet(g, 0.08, 3), facetMat(M.wood))`                                                           |
+| `highlights(HIGHLIGHTS)`                                                            | register the video's big moments (call once in scene.js): `slowmo`, `shake`, `flash`, `zoom`; shots take `whip: ±1`                                                                          |
 | `LOOK`                                                                              | camera look settings (post.js): `tilt`, `focus`, `band`, `glow`, `glowFrom`, `vignette`, `ao`, `aoRadius` (mesh `userData.noAO = true` keeps one out of the AO); shots take `tilt: 0..1` too |
 | `showNope(k, x, y, z, size)`                                                        | orange ✕, billboarded; k from `pop()`                                                                                                                                                        |
 | `makeArrowSet([[from,to],…], {parent, mat, r, amp})` / `animateArrows(set, t, vis)` | wavy (amp>0) or straight (amp 0) arrows; mats `heatMat coldMat forceMat`                                                                                                                     |
@@ -68,6 +69,11 @@ export const T = { also: W("Also"), rohr: W("Rohr"), trick: W("Trick"), schau: W
 export const shots = [ … ];                                   // whoosh on every cut unless { sfx: false }
 export const LABELS = [{ text: "Verdampfer", at: T.verdampfer, until: T.jetzt, pos: [0, 1.2, -0.5], side: -1 }];
 export const SFX = [{ s: "pop", at: T.also + 0.15 }, { s: "brumm", at: T.pumpe, dur: 3, db: -17 }];
+export const HIGHLIGHTS = [
+  { kind: "flash", at: T.zack }, { kind: "shake", at: T.zack, dur: 0.5 },
+  { kind: "slowmo", at: T.ventil, until: T.duese, speed: 0.3 },  // until = a shot cut
+  { kind: "zoom", at: T.kompressor, amount: 0.35 },
+];
 ```
 
 ## environments.js

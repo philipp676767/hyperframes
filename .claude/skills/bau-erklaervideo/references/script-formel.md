@@ -26,6 +26,22 @@ Expected length = words ÷ 2.7 + 1.2 s (measured with Jan, the house voice). Cou
 
 ### 1. Hook — the first sentence decides everything
 
+Feedback on #10 (Fliegender Tesla, 2026-10-22): _"Warum sollte man das
+Video lange schauen? Das sollte am Anfang klar sein."_ "Lass ihn uns
+bauen" is not a reason to stay. So the hook has two jobs:
+
+1. **Spektakel / Behauptung** — the most surprising thing about the
+   topic, which the first frame _shows_ (the car driving upside down on a
+   ceiling, the microwave sparking, the fridge's hot back).
+2. **Das Versprechen** — say what the viewer gets by staying, with a time:
+   "In 40 Sekunden weißt du, wie." / "Am Ende baust du ihn selbst." /
+   "Und der Trick dahinter ist simpel." Then (optionally) "Lass ihn uns
+   bauen."
+
+Before showing a hook, ask honestly: _would a stranger scrolling at 1 a.m.
+stop for this?_ If the answer needs context ("there's a Tesla that
+flies"), the hook has to give it in the first sentence.
+
 Rules:
 
 - **The topic noun in the first 5 words.** No "Wenn du …"-wind-up, no
@@ -33,16 +49,18 @@ Rules:
 - **Sentence 1 ≤ 12 words** and it must do one of: break a belief, state
   an unbelievable fact, ask a question the viewer has _felt_ but never
   answered, or show stakes.
-- **Sentence 2 = the promise** of the series: "Lass ihn uns bauen." /
-  "Ich zeig dir, wie – in 40 Sekunden." / "Wir bauen ihn nach."
+- **Sentence 2 = the promise, with a reason to stay**: "In 40 Sekunden
+  weißt du, wie." / "Am Ende baust du ihn selbst." — never only "Lass
+  ihn uns bauen." (that can follow as sentence 3).
 - **Open a loop** the video closes at the end (a "why", a strange detail,
   a number) — viewers stay to get it.
 - The **first frame already shows the strange thing** (subject mid-action,
   the warm back, the falling car) — never an empty establishing shot.
 
-**House favourite: Mythos-Bruch.** The user picked it for the fridge v2
+**House favourite: Mythos-Bruch + Versprechen.** The user picked it for the fridge v2
 (Hook A, `tiktok/skripte/kuehlschrank-v2.md`): break a belief in sentence
-1, name what really happens in sentence 2, then "Lass ihn/sie/es uns bauen."
+1, name what really happens + the time promise in sentence 2 ("Er klaut
+sie – und in 40 Sekunden weißt du, wie."), then "Lass ihn uns bauen."
 Make it the first (recommended) option every time; the other two hooks
 use different formulas so the user can compare.
 
@@ -69,6 +87,12 @@ E.g. spoken "Dein Kühlschrank macht gar keine Kälte." → title
   the term ("Das ist der X.") — max **3 technical terms** per video.
 - **Every beat ends with a pull** into the next: a problem ("Aber jetzt
   ist das Gas warm."), a question, or a teaser.
+- **A visual highlight every 5–7 s** (plan it with the script, see
+  visual-style.md "Highlights"): each beat needs a moment worth
+  rewinding — slow motion, an explosion / flash, a crash zoom, the thing
+  failing spectacularly, a size comparison. Write lines that _give_ the
+  picture such a moment ("Und dann – zack!", "Stell dir vor, das Ventil
+  klemmt …").
 - **One re-hook in the middle** (~15–25 s): "Und hier kommt der Trick:",
   "Jetzt wird's verrückt:", "Aber Achtung:". Max 2 per video.
 - **One home moment**: connect to something the viewer can check right
@@ -143,6 +167,25 @@ CTA patterns:
 | **Zahl / Schätzung** | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare – und folg mir für mehr."        |
 | **Nächstes Thema**   | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare – und folg mir."            |
 
+## Delivery tags — make Jan sound alive
+
+Jan runs on `eleven_v3`, which performs bracketed tags. Use **3–6 per
+video** so the voice has highs and lows instead of one flat tone:
+
+| Tag                       | Where                                                    |
+| ------------------------- | -------------------------------------------------------- |
+| `[excited]`               | the hook's claim, the payoff, the bonus fact             |
+| `[whispers]`              | the re-hook / secret ("[whispers] Und jetzt der Trick:") |
+| `[curious]`               | a question to the viewer                                 |
+| `[laughs]` / `[chuckles]` | after the one joke                                       |
+| `[surprised]`             | an unbelievable number                                   |
+
+Put the tag right before the words it colours, never two in a row, never
+inside the loop line. Tags are not words: they don't count towards the
+word budget, they're removed from the captions automatically, and they
+**do** go to ElevenLabs (keep them in the connector text, only `*` and
+the leading `>` are stripped).
+
 ## Keywords — mark them with `*Wort*`
 
 Mark the word of each sentence the viewer must remember — `*Kompressor*`,
@@ -196,7 +239,10 @@ beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
 
 ## Self-check before showing the user
 
+- [ ] Hook = spectacle the first frame shows + a reason to stay (time promise)
+- [ ] Would a stranger stop scrolling for the first sentence alone?
 - [ ] Topic noun in the first 5 words, sentence 1 ≤ 12 words, no wind-up
+- [ ] A highlight planned every 5–7 s; 3–6 delivery tags
 - [ ] An open loop in the hook that the payoff line closes
 - [ ] 3 beats, each ending with a pull; one re-hook; one home moment
 - [ ] ≤ 3 technical terms; no sentence that needs a breath
