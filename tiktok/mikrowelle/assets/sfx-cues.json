@@ -1,0 +1,295 @@
+[
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "brumm",
+    "at": 0.05,
+    "why": "beats.js",
+    "dur": 4.140000000000001,
+    "db": -24
+  },
+  {
+    "s": "punch",
+    "at": 0.28,
+    "why": "highlight"
+  },
+  {
+    "s": "zisch",
+    "at": 0.4,
+    "why": "beats.js",
+    "dur": 0.6,
+    "db": -20
+  },
+  {
+    "s": "zisch",
+    "at": 2.1,
+    "why": "beats.js",
+    "dur": 0.7,
+    "db": -19
+  },
+  {
+    "s": "whoosh",
+    "at": 2.38,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 3.52,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 4.02,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 4.69,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.08,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 6.4,
+    "why": "beats.js"
+  },
+  {
+    "s": "surr",
+    "at": 7.22,
+    "why": "beats.js",
+    "dur": 1.2000000000000002,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 8.1,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 8.42,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.48,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 10.86,
+    "why": "highlight"
+  },
+  {
+    "s": "brumm",
+    "at": 10.86,
+    "why": "beats.js",
+    "dur": 1.1799999999999997,
+    "db": -24
+  },
+  {
+    "s": "blip",
+    "at": 10.91,
+    "why": "label Magnetron"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.82,
+    "why": "cut"
+  },
+  {
+    "s": "surr",
+    "at": 12.24,
+    "why": "beats.js",
+    "dur": 4.6800000000000015,
+    "db": -23
+  },
+  {
+    "s": "blip",
+    "at": 12.41,
+    "why": "label Wasserteilchen"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.28,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 14.5,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.9,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 17.42,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 19.42,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 19.64,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 20.79,
+    "why": "label Mitte"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.36,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.46,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.54,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 26.81,
+    "why": "label Gabel"
+  },
+  {
+    "s": "pop",
+    "at": 27.06,
+    "why": "beats.js"
+  },
+  {
+    "s": "surr",
+    "at": 27.74,
+    "why": "beats.js",
+    "dur": 1.6000000000000014,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 29.07,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 29.34,
+    "why": "highlight"
+  },
+  {
+    "s": "zisch",
+    "at": 29.34,
+    "why": "beats.js",
+    "dur": 0.9,
+    "db": -17
+  },
+  {
+    "s": "punch",
+    "at": 31.1,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 31.15,
+    "why": "label Metallgitter"
+  },
+  {
+    "s": "whoosh",
+    "at": 32.14,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 33.38,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.18,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 35.22,
+    "why": "cut"
+  },
+  {
+    "s": "ding",
+    "at": 36.84,
+    "why": "payoff"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.16,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 37.38,
+    "why": "bonus fact"
+  },
+  {
+    "s": "pop",
+    "at": 37.68,
+    "why": "beats.js"
+  },
+  {
+    "s": "punch",
+    "at": 41.1,
+    "why": "highlight"
+  },
+  {
+    "s": "boing",
+    "at": 42.68,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 43.12,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 43.34,
+    "why": "comment pill"
+  },
+  {
+    "s": "pop",
+    "at": 46.34,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 47.33,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 47.37,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 47.48,
+    "why": "loop cut"
+  }
+]
