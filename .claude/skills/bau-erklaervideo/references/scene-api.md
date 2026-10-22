@@ -34,6 +34,9 @@ bubbles, analogy sets, door opening).
 | `addFloor(size, colorA, colorB)`                                                    | checkered pad under the subject                                                                                                                                   |
 | `onFrame(fn)`                                                                       | register `fn(t)` to run before every frame (animated scenery)                                                                                                     |
 | `roundedRect(w, h, r)`                                                              | `THREE.Shape` for `ExtrudeGeometry` (rounded boxes, doors, panels)                                                                                                |
+| `squash(t, at, d = 0.75, base = 1)`                                                 | scale vector for a pop-in: overshoot + squash-and-stretch that settles; `obj.scale.copy(squash(t, at))`                                                           |
+| `puff(id, t, at, x, y, z, size = 1)`                                                | white dust puff bursting outward for 0.8 s from `at` (call every frame)                                                                                           |
+| `LOOK`                                                                              | camera look settings (post.js): `tilt`, `focus`, `band`, `glow`, `glowFrom`, `vignette`; shots take `tilt: 0..1` too                                              |
 | `showNope(k, x, y, z, size)`                                                        | orange ✕, billboarded; k from `pop()`                                                                                                                             |
 | `makeArrowSet([[from,to],…], {parent, mat, r, amp})` / `animateArrows(set, t, vis)` | wavy (amp>0) or straight (amp 0) arrows; mats `heatMat coldMat forceMat`                                                                                          |
 | `showPanel(k, label, value, color)` / `LED.{red,blue,green,yellow}`                 | LED fact sign pinned to the upper third; call every frame, `showPanel(0)` hides                                                                                   |
@@ -102,7 +105,7 @@ import { T, shots, LABELS } from "./beats.js"; // all beats live there
 
 function renderAt(t) {
   // 1. hook prop: animate its failure, showNope(pop(…)), shrink it away (inBack) on T.also
-  // 2. subject: scale = outBack(ramp(t, T.also + 0.15, T.also + 0.75))
+  // 2. subject: obj.scale.copy(squash(t, T.also + 0.15)); puff("subj", t, T.also + 0.3, 0, 0.05, 0, 1.3)
   // 3. setXray([...shellMats], smooth(ramp(…)) * (1 - ramp(t, T.schau, T.schau + 0.5)))
   // 4. per beat: reveal parts (visible / scale / setDrawRange), emissive glow, particles
   // 5. animateArrows(set, t, pop(t, a, b)) for each arrow set

@@ -306,4 +306,12 @@ pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   The pre-commit hook builds the workspace, so run `bun install` once before
   the first commit (then `git checkout bun.lock` if it changed).
 - **Speed:** 3D renders at 720×1280 internally (CSS-scaled); keep shadow
-  casters reasonable. Don't raise the internal resolution.
+  casters reasonable. Don't raise the internal resolution. The camera look
+  (post.js) and the meadow cost ~35–45 % more per frame than the plain
+  render; it is already the cheap version (the scene is drawn into the
+  antialiased canvas and copied — a separate multisampled render target is
+  ~2× slower in software GL). Many instanced tufts are cheap, many separate
+  meshes are not: scatter with `InstancedMesh`.
+- **Shader colours:** a custom `ShaderMaterial` that outputs colour must
+  end with `#include <colorspace_fragment>` on a linear colour (see the
+  sky in environments.js), or it looks wrong through the camera look.

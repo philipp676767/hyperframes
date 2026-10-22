@@ -5,9 +5,10 @@
 // both and only builds its own subject + story beats.
 // Everything renders as a pure function of time t (seconds).
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
+import { createPost, LOOK } from "./post.js";
 
 window.THREE = THREE;
-export { THREE };
+export { THREE, LOOK };
 
 // 3D is drawn at 2/3 resolution and scaled up by CSS; captions stay full-res DOM.
 export const WIDTH = 720;
@@ -85,10 +86,14 @@ renderer.setPixelRatio(1);
 renderer.setSize(WIDTH, HEIGHT, false);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const post = createPost(renderer, WIDTH, HEIGHT);
 
 export const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(0xe9a7c4, 30, 95);
 export const camera = new THREE.PerspectiveCamera(48, WIDTH / HEIGHT, 0.03, 500);
+// Drawn after the camera look (post.js), so it stays sharp: the LED panel.
+const overlay = new THREE.Scene();
+overlay.add(new THREE.HemisphereLight(0xffffff, 0x8a8090, 2.2));
 
 // ---------------------------------------------------------------- materials
 export const flat = (color, extra = {}) =>
@@ -223,6 +228,62 @@ export function showNope(k, x, y, z, size = 0.7) {
   nope.position.set(x, y, z);
 }
 
+// ---------------------------------------------------------------- pop-ins with life
+// Scale for anything that pops in at `at`: it grows with overshoot, then a
+// squash-and-stretch wobble settles (y stretches while x/z squash) — rubbery
+// toy motion instead of a plain zoom. obj.scale.copy(squash(t, at)).
+const sq = V(1, 1, 1);
+export function squash(t, at, d = 0.75, base = 1) {
+  if (t < at) return sq.set(0.001, 0.001, 0.001);
+  const k = clamp01((t - at) / d);
+  const s = outBack(Math.min(1, k * 1.7)) * base;
+  const w = Math.sin(k * Math.PI * 3) * (1 - k) * 0.16;
+  return sq.set(
+    Math.max(0.001, s * (1 - w * 0.5)),
+    Math.max(0.001, s * (1 + w)),
+    Math.max(0.001, s * (1 - w * 0.5)),
+  );
+}
+
+// Dust puff: a ring of little soft balls bursting outward and fading, for a
+// part landing / popping in (call every frame; it plays for 0.8 s from `at`).
+//   puff("bulb", t, T.also + 0.35, 0, 0.05, 0, 1.2)
+const puffs = new Map();
+const puffsNow = new Set();
+const puffGeo = new THREE.IcosahedronGeometry(1, 0);
+export function puff(id, t, at, x, y, z, size = 1, color = 0xfffaf5) {
+  const k = (t - at) / 0.8;
+  if (k < 0 || k >= 1) return;
+  let p = puffs.get(id);
+  if (!p) {
+    // unlit, so it reads as a bright soft cloud in any light
+    const mat = new THREE.MeshBasicMaterial({ color, transparent: true, depthWrite: false });
+    p = new THREE.Group();
+    for (let i = 0; i < 12; i++) {
+      const m = new THREE.Mesh(puffGeo, mat);
+      m.userData.a = (i / 12) * Math.PI * 2 + (i % 2) * 0.25;
+      p.add(m);
+    }
+    p.userData.mat = mat;
+    scene.add(p);
+    puffs.set(id, p);
+  }
+  puffsNow.add(id);
+  const e = 1 - Math.pow(1 - k, 3);
+  p.position.set(x, y, z);
+  p.userData.mat.opacity = 0.8 * (1 - k) * (1 - k);
+  for (const m of p.children) {
+    const a = m.userData.a;
+    const r = (0.25 + 0.95 * e) * size;
+    m.position.set(
+      Math.cos(a) * r,
+      (0.06 + 0.3 * e * (0.6 + 0.4 * Math.sin(a * 3))) * size,
+      Math.sin(a) * r,
+    );
+    m.scale.setScalar(size * (0.1 + 0.12 * e) * (0.8 + 0.2 * Math.cos(a * 5)));
+  }
+}
+
 // ---------------------------------------------------------------- wavy arrows
 export const heatMat = new THREE.MeshBasicMaterial({
   color: 0xff4d2e,
@@ -306,7 +367,7 @@ const panel = new THREE.Group();
   face.position.z = 0.032;
   panel.add(face);
   panel.visible = false;
-  scene.add(panel);
+  overlay.add(panel);
 }
 export const LED = { red: "#ff4b2b", blue: "#4fc3ff", green: "#3dff7a", yellow: "#ffd23f" };
 let panelKey = "";
@@ -346,6 +407,7 @@ export function showPanel(k, label = "", value = "", color = LED.red) {
 // Every highlighted word (HL) adds a short punch-in: the lens snaps ~10 %
 // tighter on the word and eases back over ~0.5 s.
 const FOV = 48;
+let shotTilt = 1;
 export function punch(t) {
   let p = 0;
   for (const h of HL) {
@@ -386,6 +448,10 @@ export function shotCamera(shots, defaultZoom = 1.7) {
     p.sub(l)
       .multiplyScalar(s.zoom ?? defaultZoom)
       .add(l);
+    // a slow, tiny hand-held drift so no frame is ever dead still (seeded, pure in t)
+    p.x += Math.sin(t * 0.83 + 1.3) * 0.012 + Math.sin(t * 1.91) * 0.006;
+    p.y += Math.sin(t * 0.67 + 0.4) * 0.01 + Math.sin(t * 2.3 + 2.1) * 0.004;
+    shotTilt = s.tilt ?? 1;
     camera.position.copy(p);
     camera.lookAt(l);
     camera.fov = FOV / (1 + 0.11 * punch(t));
@@ -501,6 +567,8 @@ function drawLabels() {
 // ---------------------------------------------------------------- frame loop
 // Billboards + render. Call at the end of your renderAt(t).
 export function renderFrame() {
+  for (const [id, p] of puffs) p.visible = puffsNow.has(id);
+  puffsNow.clear();
   nope.quaternion.copy(camera.quaternion);
   panel.visible = panelK > 0;
   if (panelK > 0) {
@@ -509,7 +577,7 @@ export function renderFrame() {
     // fixed spot in the upper third of the frame, just in front of the camera
     panel.position.set(0.18, 0.78, -3.0).applyMatrix4(camera.matrixWorld);
   }
-  renderer.render(scene, camera);
+  post.render(scene, camera, overlay, shotTilt);
   drawLabels();
 }
 

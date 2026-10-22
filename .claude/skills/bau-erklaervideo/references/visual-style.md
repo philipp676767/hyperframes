@@ -13,6 +13,22 @@ shadows, gradient sky with a low sun glow behind the subject (−z), puffy
 low-poly clouds, gentle fog into the distance. The subject always stands at
 the origin on a clear stage.
 
+**Alive, not static** (automatic in every env): trees and pines sway
+gently, clouds drift, a few low-poly birds circle far out; `insel`,
+`land` and `strand` get instanced grass tufts with little flowers (beach
+grass on the dunes), always kept off the subject's footprint and the
+analogy spots.
+
+**Camera look** (`assets/post.js`, automatic): **tilt-shift** — the top
+and bottom of the frame melt into a soft blur while the band around the
+subject stays sharp (the miniature-photo look that makes the diorama read
+as a toy set), a **soft glow** on emissive / very bright things (glowing
+wire, LEDs, sun, hot arrows), a light **vignette**, dithering against sky
+banding. The LED panel is drawn after it, always sharp. Tweak with `LOOK`
+(`LOOK.tilt = 0.6` for a whole video) or per shot (`{ …, tilt: 0 }` for a
+shot that must be sharp edge to edge, e.g. a tall subject filling the
+frame). The camera has a tiny hand-held drift on top of every shot.
+
 - `insel` — floating island (radius 9) with earth cone and hanging roots,
   park trees, rocks; pink haze below. The original look.
 - `stadt` — light plaza, asphalt road behind the stage with white dashes,
@@ -38,9 +54,14 @@ things (kitchen tiles, workshop floor) — skip it outdoors.
   cylinders, lathes, tubes), flat-shaded, clean bright colors; the main body
   slightly glossy. ~2–3 units tall, standing at the origin, front = +z.
 - Readable silhouette first; detail only where the script points at it.
-- **Build-up:** the subject pops in (outBack) on the first "Also …". Every
+- **Build-up:** the subject pops in on the first "Also …". Every
   component the script names appears exactly on its word: tubes grow
   (`setDrawRange`), parts pop in, things light up.
+- **Pop-ins are rubbery:** use `obj.scale.copy(squash(t, at))` (overshoot +
+  squash-and-stretch that settles) instead of a plain scale, and a dust
+  `puff(id, t, at + 0.15, x, y, z, size)` where something big lands on the
+  ground. Parts that pop in one after another get staggered by
+  0.08–0.15 s, never all on one frame.
 - **X-ray:** the shell turns to light-blue glass with glowing edges while the
   inside is explained, solid again for the outro.
 - **Flow / energy:** particles streaming along paths (cold = blue

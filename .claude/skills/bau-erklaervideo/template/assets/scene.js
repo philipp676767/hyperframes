@@ -7,7 +7,6 @@ import {
   THREE,
   ramp,
   smooth,
-  outBack,
   inBack,
   pop,
   V,
@@ -24,6 +23,8 @@ import {
   showPanel,
   LED,
   labels,
+  squash,
+  puff,
   shotCamera,
   renderFrame,
   start,
@@ -112,9 +113,10 @@ function renderAt(t) {
   hook.scale.setScalar(Math.max(0.001, 1 - hookOut));
 
   // subject pops in when the build starts, x-ray while explaining
-  const k = outBack(ramp(t, T.also + 0.15, T.also + 0.75));
-  bulb.visible = k > 0;
-  bulb.scale.setScalar(Math.max(0.001, k));
+  // pop-ins: squash() for rubbery growth + a dust puff where it lands
+  bulb.visible = t >= T.also + 0.15;
+  bulb.scale.copy(squash(t, T.also + 0.15));
+  puff("bulb", t, T.also + 0.3, 0, 0.05, 0, 1.3);
   setXray(
     [glassMat],
     smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.schau, T.schau + 0.5)),

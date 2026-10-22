@@ -87,7 +87,12 @@ function buildSky(sky) {
         else { c = mix(hor, below, smoothstep(0.0, 0.10, -h)); }
         float s = clamp(dot(d, sunDir), 0.0, 1.0);
         c += sunCol * (pow(s, 90.0) * 0.95 + pow(s, 10.0) * 0.28);
+        // the gradient is authored in sRGB; hand three a linear colour so it
+        // looks the same on the canvas and through post.js
+        c = clamp(c, 0.0, 1.0);
+        c = mix(c / 12.92, pow((c + 0.055) / 1.055, vec3(2.4)), step(0.04045, c));
         gl_FragColor = vec4(c, 1.0);
+        #include <colorspace_fragment>
       }`,
       }),
     ),
@@ -101,6 +106,10 @@ function buildSky(sky) {
     flatShading: true,
     fog: false,
   });
+  // clouds drift slowly around the stage
+  const clouds = new THREE.Group();
+  scene.add(clouds);
+  onFrame((t) => (clouds.rotation.y = t * 0.006));
   for (let i = 0; i < 16; i++) {
     const g = new THREE.Group();
     const a = (i / 16) * Math.PI * 2 + rand() * 0.3;
@@ -118,8 +127,9 @@ function buildSky(sky) {
       g.add(m);
     }
     g.lookAt(0, g.position.y, 0);
-    scene.add(g);
+    clouds.add(g);
   }
+  birds();
 
   scene.add(new THREE.HemisphereLight(...sky.hemi));
   const key = new THREE.DirectionalLight(...sky.key);
@@ -140,6 +150,120 @@ function buildSky(sky) {
   const rim = new THREE.DirectionalLight(...sky.rim);
   rim.position.set(-6, 4, -9);
   scene.add(rim);
+}
+
+// ---------------------------------------------------------------- life
+// Small, slow, deterministic motion that makes the set feel alive: trees and
+// pines sway, a few birds circle far out, clouds drift (buildSky).
+const swaying = [];
+onFrame((t) => {
+  for (const { g, seed, amp } of swaying) {
+    g.rotation.z = Math.sin(t * 1.1 + seed * 1.7) * amp;
+    g.rotation.x = Math.sin(t * 0.8 + seed * 2.9) * amp * 0.7;
+  }
+});
+
+const birdMat = new THREE.MeshBasicMaterial({ color: 0x4a3a5c, side: THREE.DoubleSide });
+function birds(n = 4) {
+  const wingGeo = new THREE.BufferGeometry();
+  wingGeo.setAttribute(
+    "position",
+    new THREE.Float32BufferAttribute([0, 0, -0.18, 0, 0, 0.18, 0.75, 0, 0.05], 3),
+  );
+  wingGeo.computeVertexNormals();
+  const flock = [];
+  for (let i = 0; i < n; i++) {
+    const b = new THREE.Group();
+    const wings = [-1, 1].map((sd) => {
+      const w = new THREE.Mesh(wingGeo, birdMat);
+      w.scale.x = sd;
+      b.add(w);
+      return w;
+    });
+    b.userData = { wings, r: 24 + i * 3.5, y: 9 + (i % 3) * 2.2, a0: i * 1.9, v: 0.07 + i * 0.012 };
+    b.scale.setScalar(0.9);
+    scene.add(b);
+    flock.push(b);
+  }
+  onFrame((t) => {
+    for (const b of flock) {
+      const { wings, r, y, a0, v } = b.userData;
+      const a = a0 + t * v;
+      b.position.set(
+        Math.cos(a) * r,
+        y + Math.sin(t * 0.9 + a0) * 0.5,
+        -Math.abs(Math.sin(a)) * r - 6,
+      );
+      b.rotation.y = -a;
+      const f = Math.sin(t * 9 + a0 * 3) * 0.6;
+      wings[0].rotation.z = f;
+      wings[1].rotation.z = -f;
+    }
+  });
+}
+
+// Grass tufts and little flowers scattered on the ground (instanced, cheap).
+// keep(x, z) says where they may grow; the subject's footprint and the
+// analogy spots (x = ±5, z = -1…4) always stay clean.
+function meadow({
+  n = 260,
+  rMin = 2.6,
+  rMax = 9,
+  seed = 1,
+  keep = () => true,
+  flowers = 0.25,
+  tint = [0x5f9f37, 0x79c24a, 0x8fd35a],
+}) {
+  const r = rng(seed);
+  const spots = [];
+  for (let i = 0; spots.length < n && i < n * 6; i++) {
+    const a = r() * Math.PI * 2;
+    const d = Math.sqrt(rMin * rMin + r() * (rMax * rMax - rMin * rMin));
+    const x = Math.cos(a) * d;
+    const z = Math.sin(a) * d;
+    if (x * x + z * z < 2.6 * 2.6) continue;
+    if ((Math.abs(x) - 5) ** 2 + (z - 1.5) ** 2 < 2.4 * 2.4) continue;
+    if (!keep(x, z)) continue;
+    spots.push([x, z, r(), r(), r()]);
+  }
+  const blades = new THREE.InstancedMesh(
+    new THREE.ConeGeometry(0.05, 0.34, 4),
+    flat(0xffffff),
+    spots.length * 3,
+  );
+  const heads = new THREE.InstancedMesh(
+    new THREE.IcosahedronGeometry(0.075, 0),
+    flat(0xffffff, { roughness: 0.6 }),
+    spots.length,
+  );
+  const m = new THREE.Matrix4();
+  const q = new THREE.Quaternion();
+  const e = new THREE.Euler();
+  const c = new THREE.Color();
+  const petals = [0xffffff, 0xffd84a, 0xff8fb8, 0xc9a4ff];
+  let bi = 0;
+  let hi = 0;
+  for (const [x, z, a, b, k] of spots) {
+    const sc = 0.7 + a * 0.7;
+    for (let j = 0; j < 3; j++) {
+      e.set((j - 1) * 0.35, a * 6, (j - 1) * 0.25 * (b - 0.5) * 2);
+      q.setFromEuler(e);
+      m.compose(V(x + (j - 1) * 0.05, 0.15 * sc, z + (b - 0.5) * 0.06), q, V(sc, sc, sc));
+      blades.setMatrixAt(bi, m);
+      blades.setColorAt(bi++, c.setHex(tint[(j + Math.floor(b * 3)) % tint.length]));
+    }
+    if (k < flowers) {
+      m.compose(V(x, 0.36 * sc, z), q.identity(), V(1, 0.8, 1));
+      heads.setMatrixAt(hi, m);
+      heads.setColorAt(hi++, c.setHex(petals[Math.floor(a * 97) % petals.length]));
+    }
+  }
+  blades.count = bi;
+  heads.count = hi;
+  for (const im of [blades, heads]) {
+    im.receiveShadow = true;
+    ground.add(im);
+  }
 }
 
 // ---------------------------------------------------------------- shared scenery pieces
@@ -180,6 +304,7 @@ export function tree(x, z, s = 1, seed = 0) {
   g.scale.setScalar(s);
   g.rotation.y = seed;
   ground.add(g);
+  swaying.push({ g, seed, amp: 0.022 });
   return g;
 }
 
@@ -210,6 +335,7 @@ function pine(x, z, s = 1, seed = 0, snowy = false) {
   g.scale.setScalar(s);
   g.rotation.y = seed;
   ground.add(g);
+  swaying.push({ g, seed, amp: 0.012 });
   return g;
 }
 
@@ -338,6 +464,7 @@ const ENV_BUILDERS = {
         Math.sin(a) * r,
       );
     }
+    meadow({ n: 240, rMin: 2.6, rMax: 8.4, seed: 7 });
   },
 
   // City street: plaza, road with markings behind, pastel houses with window
@@ -577,6 +704,16 @@ const ENV_BUILDERS = {
       boat.position.y = Math.sin(t * 1.3) * 0.08;
       boat.rotation.z = Math.sin(t * 1.1) * 0.04;
     });
+    // beach grass on the dunes, away from the water and the stage
+    meadow({
+      n: 90,
+      rMin: 6,
+      rMax: 24,
+      seed: 23,
+      flowers: 0,
+      tint: [0x8fae4a, 0xa9bf5e, 0x7d9a3e],
+      keep: (x, z) => z > -4 && (Math.abs(x) > 7 || z > 6),
+    });
   },
 
   // Snowy mountain village: snow ground, snowy pines, big peaks, a cabin,
@@ -765,6 +902,8 @@ const ENV_BUILDERS = {
       [-8, 12, 1.1],
     ].forEach(([x, z, s], i) => tree(x, z, s, i + 5));
     rocks(10, 7, 18, 58);
+    // meadow in front of the road and fields only
+    meadow({ n: 420, rMin: 2.6, rMax: 26, seed: 11, keep: (x, z) => z > -5.4, flowers: 0.35 });
   },
 };
 
