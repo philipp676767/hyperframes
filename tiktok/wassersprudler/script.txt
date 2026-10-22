@@ -1,0 +1,7 @@
+[excited] In deinem Sprudelwasser ist fast keine *Säure*. In 40 Sekunden weißt du, warum der Sprudler *brummt*.
+Du brauchst Kohlendioxid in einer Stahlflasche – [surprised] mit *60* Bar gepresst. Dreißigmal Autoreifen! Das ist der *Zylinder*.
+Knopf drücken – zack! Das Gas schießt durch ein Rohr tief ins Wasser: die *Düse*. Doch Blubbern allein reicht nicht.
+[whispers] Jetzt der *Trick*: Die Flasche ist dicht. Der Druck *quetscht* das Gas ins Wasser. Und das Brummen? Das *Überdruckventil*: voll!
+Aufdrehen: Es perlt. Doch nicht mal *1* Prozent davon ist echte Säure. Schau dich an. Du hast gerade einen Wassersprudler gebaut. [excited] Übrigens: Eiskaltes Wasser schluckt fast *doppelt* so viel Gas wie warmes.
+[curious] Wie oft drückst du? Schreib die Zahl – und folg mir für mehr.
+> Und merk dir:
