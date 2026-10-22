@@ -11,3 +11,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 4   | Airbag        | `tiktok/airbag`        | winter | mittag          | 50,1 s | 2026-10-21 |
 | 5   | Windrad       | `tiktok/windrad`       | land   | sonnenuntergang | 44,9 s | 2026-10-21 |
 | 6   | Atomkraftwerk | `tiktok/atomkraftwerk` | strand | abend           | 49,2 s | 2026-10-21 |
+| 7   | Mikrowelle    | `tiktok/mikrowelle`    | insel  | morgen          | 48,6 s | 2026-10-22 |
