@@ -15,3 +15,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 8   | Geschirrspüler   | `tiktok/geschirrspueler`  | stadt  | mittag          | 43,6 s | 2026-10-22 |
 | 9   | Rauchmelder      | `tiktok/rauchmelder`      | winter | abend           | 44,0 s | 2026-10-22 |
 | 10  | Fliegender Tesla | `tiktok/fliegender-tesla` | land   | mittag          | 43,4 s | 2026-10-22 |
+| 11  | Mikrowelle (neu) | `tiktok/mikrowelle-v2`    | winter | morgen          | 43,8 s | 2026-10-22 |

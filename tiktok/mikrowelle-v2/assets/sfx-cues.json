@@ -1,0 +1,385 @@
+[
+  {
+    "s": "brumm",
+    "at": 0.02,
+    "why": "beats.js",
+    "dur": 6.220000000000001,
+    "db": -24
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "highlight shake"
+  },
+  {
+    "s": "zisch",
+    "at": 0.3,
+    "why": "beats.js",
+    "dur": 0.6,
+    "db": -20
+  },
+  {
+    "s": "punch",
+    "at": 1.92,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 3.96,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 5.18,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 5.18,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 5.18,
+    "why": "highlight shake"
+  },
+  {
+    "s": "zisch",
+    "at": 5.18,
+    "why": "beats.js",
+    "dur": 0.8,
+    "db": -17
+  },
+  {
+    "s": "whoosh",
+    "at": 6.1,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 6.98,
+    "why": "beats.js"
+  },
+  {
+    "s": "hit",
+    "at": 7.13,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.94,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 8.16,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 8.21,
+    "why": "label Magnetron"
+  },
+  {
+    "s": "pop",
+    "at": 8.26,
+    "why": "beats.js"
+  },
+  {
+    "s": "brumm",
+    "at": 9.12,
+    "why": "beats.js",
+    "dur": 2.8800000000000003,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 9.22,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.88,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.88,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 12.1,
+    "why": "highlight"
+  },
+  {
+    "s": "slowmo",
+    "at": 12.62,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 13.32,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 13.59,
+    "why": "label Wassermolekül"
+  },
+  {
+    "s": "pop",
+    "at": 13.64,
+    "why": "beats.js"
+  },
+  {
+    "s": "punch",
+    "at": 14.48,
+    "why": "highlight"
+  },
+  {
+    "s": "surr",
+    "at": 14.48,
+    "why": "beats.js",
+    "dur": 3.1199999999999988,
+    "db": -21
+  },
+  {
+    "s": "whoosh",
+    "at": 16.1,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 16.32,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.48,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 18.44,
+    "why": "highlight"
+  },
+  {
+    "s": "pop",
+    "at": 18.54,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 19.82,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 20.09,
+    "why": "label Kern"
+  },
+  {
+    "s": "whoosh",
+    "at": 21.82,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 22.04,
+    "why": "beats.js",
+    "dur": 1,
+    "db": -21
+  },
+  {
+    "s": "whoosh",
+    "at": 22.7,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.82,
+    "why": "cut"
+  },
+  {
+    "s": "brumm",
+    "at": 24.14,
+    "why": "beats.js",
+    "dur": 5.499999999999999,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 25.98,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 26.25,
+    "why": "beats.js"
+  },
+  {
+    "s": "punch",
+    "at": 26.9,
+    "why": "highlight"
+  },
+  {
+    "s": "slowmo",
+    "at": 27.4,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "surr",
+    "at": 27.96,
+    "why": "beats.js",
+    "dur": 1.6799999999999975,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 29.52,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 29.52,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "hit",
+    "at": 29.74,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 29.74,
+    "why": "highlight shake"
+  },
+  {
+    "s": "zisch",
+    "at": 29.74,
+    "why": "beats.js",
+    "dur": 1.2,
+    "db": -14
+  },
+  {
+    "s": "punch",
+    "at": 30.38,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 30.38,
+    "why": "highlight flash"
+  },
+  {
+    "s": "zisch",
+    "at": 30.38,
+    "why": "beats.js",
+    "dur": 0.5,
+    "db": -15
+  },
+  {
+    "s": "whoosh",
+    "at": 30.72,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.74,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 33.36,
+    "why": "beats.js",
+    "db": -15
+  },
+  {
+    "s": "ding",
+    "at": 33.38,
+    "why": "payoff"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.54,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 33.76,
+    "why": "bonus fact"
+  },
+  {
+    "s": "surr",
+    "at": 34.56,
+    "why": "beats.js",
+    "dur": 3.700000000000003,
+    "db": -23
+  },
+  {
+    "s": "whoosh",
+    "at": 36.52,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 36.74,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.46,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 38.68,
+    "why": "comment pill"
+  },
+  {
+    "s": "brumm",
+    "at": 38.88,
+    "why": "beats.js",
+    "dur": 3.6199999999999974,
+    "db": -26
+  },
+  {
+    "s": "hit",
+    "at": 39,
+    "why": "highlight flash"
+  },
+  {
+    "s": "zisch",
+    "at": 39,
+    "why": "beats.js",
+    "dur": 0.6,
+    "db": -19
+  },
+  {
+    "s": "pop",
+    "at": 41.78,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 42.53,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 42.57,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 42.68,
+    "why": "loop cut"
+  }
+]
