@@ -141,4 +141,22 @@ write("surr", svf(np.sign(sine(120, t)) * 0.5 + 0.1 * noise(4.0), 900, q=1.2), p
 t = t_of(4.0)
 write("rauschen", svf(noise(4.0), 700 + 300 * np.sin(2 * np.pi * 0.4 * t), q=0.5) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.7 * t)), peak_db=-6)
 
+# piep: smoke-alarm loop, piercing ~3.1 kHz in the T3 pattern (3 beeps, pause)
+t = t_of(4.0)
+ph = t % 2.0
+gate = np.where((ph < 1.5) & ((ph % 0.5) < 0.32), 1.0, 0.0)
+gate = np.convolve(gate, np.ones(80) / 80, mode="same")
+write("piep", (sine(3100, t) + 0.35 * sine(6200, t)) * gate, peak_db=-6)
+
+# geiger: Geiger-counter crackle loop, random clicks at ~18/s with bursts
+t = t_of(4.0)
+g = np.zeros_like(t)
+r = np.random.default_rng(241)
+times = np.cumsum(r.exponential(1 / 18, 120))
+for c in times[times < 3.95]:
+    i = int(c * SR)
+    n = min(len(t) - i, int(0.004 * SR))
+    g[i : i + n] += r.uniform(0.6, 1.0) * np.exp(-np.arange(n) / (0.0008 * SR)) * np.sign(r.standard_normal(n))
+write("geiger", svf(g, 3000, q=0.7, mode="hp") + 0.6 * g, peak_db=-6)
+
 print("sfx kit ->", out, sorted(p.stem for p in out.glob("*.wav")))

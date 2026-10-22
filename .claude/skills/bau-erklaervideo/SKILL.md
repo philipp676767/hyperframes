@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) and a posting description (Beschreibung + hashtags) for every video. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
+description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) and a posting description (Beschreibung + hashtags) for every video. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".'
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -157,7 +157,8 @@ arrow for every technical term and key part, from the word that names it,
 own sounds: `pop` when the subject or a part pops in, `zisch` for gas /
 steam, `brumm` for motors / compressors, `surr` for current / heat,
 `rauschen` for air / water, `klack` for latches / brakes, `click` for
-switches). Rerun `node scripts/build-sfx.mjs && node scripts/sync-html.mjs` after changing beats.
+switches, `piep` for an alarm beep (T3 pattern), `geiger` for a Geiger-counter
+crackle / anything radioactive). Rerun `node scripts/build-sfx.mjs && node scripts/sync-html.mjs` after changing beats.
 
 ### 5. Check
 
