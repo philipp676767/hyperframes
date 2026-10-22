@@ -31,7 +31,7 @@ import {
 import { createWorld } from "./environments.js";
 import { T, shots, LABELS, MS, RT, H1, H2, HOOK_LAND, BACK } from "./beats.js";
 
-createWorld({ env: "stadt", sky: "mittag" });
+createWorld({ env: "land", sky: "mittag" });
 addFloor(3.8);
 
 Object.assign(M, {
