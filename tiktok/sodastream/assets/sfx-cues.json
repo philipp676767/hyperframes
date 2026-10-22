@@ -1,0 +1,317 @@
+[
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "rauschen",
+    "at": 0.05,
+    "why": "beats.js",
+    "dur": 4.6899999999999995,
+    "db": -24
+  },
+  {
+    "s": "whoosh",
+    "at": 1.38,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 1.6,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.6,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 2.97,
+    "why": "label CO₂"
+  },
+  {
+    "s": "punch",
+    "at": 3.6,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 4.62,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 5.34,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.74,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 7.06,
+    "why": "beats.js"
+  },
+  {
+    "s": "blip",
+    "at": 8.07,
+    "why": "label CO₂"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.52,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 10.8,
+    "why": "highlight"
+  },
+  {
+    "s": "punch",
+    "at": 12.24,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 12.29,
+    "why": "label Zylinder"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.7,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 13.24,
+    "why": "beats.js"
+  },
+  {
+    "s": "zisch",
+    "at": 13.49,
+    "why": "beats.js",
+    "dur": 1.6,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 14.82,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 15.04,
+    "why": "beats.js"
+  },
+  {
+    "s": "rauschen",
+    "at": 15.9,
+    "why": "beats.js",
+    "dur": 3.5600000000000005,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 16.8,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 17.02,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 17.07,
+    "why": "label Düse"
+  },
+  {
+    "s": "whoosh",
+    "at": 19.24,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 20.06,
+    "why": "highlight"
+  },
+  {
+    "s": "klack",
+    "at": 21.22,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 21.62,
+    "why": "cut"
+  },
+  {
+    "s": "surr",
+    "at": 21.84,
+    "why": "beats.js",
+    "dur": 3.5,
+    "db": -24
+  },
+  {
+    "s": "whoosh",
+    "at": 22.8,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.44,
+    "why": "cut"
+  },
+  {
+    "s": "brumm",
+    "at": 25.34,
+    "why": "beats.js",
+    "dur": 1.7199999999999989,
+    "db": -15
+  },
+  {
+    "s": "punch",
+    "at": 26.12,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 26.17,
+    "why": "label Überdruckventil"
+  },
+  {
+    "s": "zisch",
+    "at": 26.52,
+    "why": "beats.js",
+    "dur": 0.6,
+    "db": -19
+  },
+  {
+    "s": "whoosh",
+    "at": 26.84,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 27.31,
+    "why": "beats.js",
+    "dur": 1,
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 28.96,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 29.18,
+    "why": "beats.js",
+    "dur": 1.5599999999999987,
+    "db": -19
+  },
+  {
+    "s": "whoosh",
+    "at": 30.52,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 30.74,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 32.29,
+    "why": "label Säure"
+  },
+  {
+    "s": "whoosh",
+    "at": 32.66,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.72,
+    "why": "cut"
+  },
+  {
+    "s": "ding",
+    "at": 35.64,
+    "why": "payoff"
+  },
+  {
+    "s": "whoosh",
+    "at": 35.72,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 35.94,
+    "why": "bonus fact"
+  },
+  {
+    "s": "pop",
+    "at": 36.24,
+    "why": "beats.js"
+  },
+  {
+    "s": "rauschen",
+    "at": 36.72,
+    "why": "beats.js",
+    "dur": 3.2200000000000015,
+    "db": -25
+  },
+  {
+    "s": "blip",
+    "at": 36.97,
+    "why": "label Eiskalt"
+  },
+  {
+    "s": "punch",
+    "at": 37.94,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 37.99,
+    "why": "label ×2 Gas"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.92,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 40.14,
+    "why": "comment pill"
+  },
+  {
+    "s": "pop",
+    "at": 41.98,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 42.75,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 42.79,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 42.9,
+    "why": "loop cut"
+  }
+]

@@ -17,3 +17,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 10  | Fliegender Tesla           | `tiktok/fliegender-tesla` | land   | mittag          | 43,4 s | 2026-10-22 |
 | 11  | Mikrowelle (neu)           | `tiktok/mikrowelle-v2`    | winter | morgen          | 43,8 s | 2026-10-22 |
 | 12  | Noise-Cancelling-Kopfhörer | `tiktok/noise-cancelling` | stadt  | morgen          | 44,1 s | 2026-10-22 |
+| 13  | Wassersprudler             | `tiktok/sodastream`       | strand | mittag          | 43,9 s | 2026-10-22 |
