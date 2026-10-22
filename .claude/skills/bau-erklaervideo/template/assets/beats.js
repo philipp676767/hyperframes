@@ -57,7 +57,7 @@ export const HIGHLIGHTS = [
 // Extra sound effects for things that happen in the scene. Automatic (no
 // entry needed): whoosh on every cut, hit on the hook title, punch on each
 // *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen (loops: give `dur`).
+// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
 //   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
   { s: "pop", at: T.also + 0.15 }, // the bulb pops in

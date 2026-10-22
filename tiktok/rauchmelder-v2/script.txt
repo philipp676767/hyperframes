@@ -1,0 +1,7 @@
+[excited] Dein Rauchmelder kann *radioaktiv* sein. Und genau das rettet dich. In 40 Sekunden weißt du, wie.
+Du brauchst zwei Metallplatten, dazwischen Luft. Dazu ein Krümel *Americium* – weniger als ein *Millionstel* Gramm. Keine Angst: Ein Blatt *Papier* stoppt seine Strahlung.
+Die Strahlung schießt Elektronen aus der Luft – zack! Jetzt fließt ein winziger *Strom*. Das ist die *Ionisationskammer*.
+[whispers] Und jetzt der *Trick*: Kommt Rauch rein, kleben die Teilchen am Rauch fest. [excited] Der Strom bricht ein – und ein Chip schlägt *Alarm*.
+Nicht die Strahlung warnt dich, sondern der *fehlende* Strom. Schau dich an. Du hast gerade einen Rauchmelder gebaut. [surprised] Übrigens: Ein 17-Jähriger wollte aus Rauchmeldern einen *Atomreaktor* bauen.
+[curious] Schau mal hoch: Hängt bei dir einer? Schreib's mir – und folg mir für mehr.
+> Und merk dir:
