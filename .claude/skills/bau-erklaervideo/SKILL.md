@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) for every video. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
+description: Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) and a posting description (Beschreibung + hashtags) for every video. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -16,23 +16,24 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 ## Fixed house settings
 
-| What       | Value                                                                                                                                                                                                                                                         |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format     | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                                                                                    |
-| Voice      | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** (chosen 2026-10-21 after creator feedback; replaced Christian Plasa on `eleven_multilingual_v2`, episodes #1–#5)                                            |
-| CTA        | Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template)              |
-| Bonus fact | "Übrigens: …" right after the signature line — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                   |
-| Loop       | Last line `> Und merk dir:` (2–4 words) flows into the hook; picture cuts back to the opening shot so the end matches frame 0 (automatic)                                                                                                                     |
-| Cover      | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                 |
-| Outro line | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                                                                                    |
-| Music      | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                       |
-| Setting    | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                                      |
-| Sound FX   | Synthesized house kit (`scripts/make-sfx.py`, no samples): whoosh on every cut, hit on the hook title, punch on highlighted words, blip per label, payoff ding, CTA pops + click. Placed from `assets/beats.js` by `scripts/build-sfx.mjs` → `assets/sfx.mp3` |
-| Keywords   | `*Wort*` in `script.txt` → caption yellow + bigger + pops, camera punch-in, punch sound. ~1 per sentence, 8–12 per video                                                                                                                                      |
-| Labels     | Name tag + yellow arrow on a part when its term is spoken (`LABELS` in `beats.js`), every technical term + key parts                                                                                                                                          |
-| Look       | `references/visual-style.md`                                                                                                                                                                                                                                  |
-| Script     | `references/script-formel.md`                                                                                                                                                                                                                                 |
-| Scene code | `references/scene-api.md` (world.js API)                                                                                                                                                                                                                      |
+| What         | Value                                                                                                                                                                                                                                                         |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Format       | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                                                                                    |
+| Voice        | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** (chosen 2026-10-21 after creator feedback; replaced Christian Plasa on `eleven_multilingual_v2`, episodes #1–#5)                                            |
+| CTA          | Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template)              |
+| Bonus fact   | "Übrigens: …" right after the signature line — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                   |
+| Loop         | Last line `> Und merk dir:` (2–4 words) flows into the hook; picture cuts back to the opening shot so the end matches frame 0 (automatic)                                                                                                                     |
+| Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                 |
+| Beschreibung | **Every video gets a TikTok description** (step 6c): curiosity first line, comment question, 4–6 hashtags; saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                     |
+| Outro line   | "Schau dich an. Du hast gerade [einen/eine/ein] X gebaut."                                                                                                                                                                                                    |
+| Music        | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                       |
+| Setting      | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                                      |
+| Sound FX     | Synthesized house kit (`scripts/make-sfx.py`, no samples): whoosh on every cut, hit on the hook title, punch on highlighted words, blip per label, payoff ding, CTA pops + click. Placed from `assets/beats.js` by `scripts/build-sfx.mjs` → `assets/sfx.mp3` |
+| Keywords     | `*Wort*` in `script.txt` → caption yellow + bigger + pops, camera punch-in, punch sound. ~1 per sentence, 8–12 per video                                                                                                                                      |
+| Labels       | Name tag + yellow arrow on a part when its term is spoken (`LABELS` in `beats.js`), every technical term + key parts                                                                                                                                          |
+| Look         | `references/visual-style.md`                                                                                                                                                                                                                                  |
+| Script       | `references/script-formel.md`                                                                                                                                                                                                                                 |
+| Scene code   | `references/scene-api.md` (world.js API)                                                                                                                                                                                                                      |
 
 ## Workflow
 
@@ -173,7 +174,7 @@ ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<s
 
 The render's mixer drops voice + music to ≈ -18 LUFS; `finish-audio.sh`
 brings it back to -14 LUFS. Confirm exactly one audio stream and 40–50 s, then send **`<slug>-final.mp4`** with `SendUserFile`
-(display `render`) **together with the cover** (6b). Append the episode to `tiktok/serie.md`.
+(display `render`) **together with the cover** (6b) **and the description** (6c). Append the episode to `tiktok/serie.md`.
 
 ### 6b. Titelbild (cover) — every video
 
@@ -195,9 +196,41 @@ to y ≈ 240–1680), subject not hidden by the title. Send
 as the Titelbild when posting. Commit it (`tiktok/**/*.png` is LFS;
 `renders/` is git-ignored, so copy it to `tiktok/<slug>/cover.png`).
 
+### 6c. Beschreibung (TikTok description) — every video
+
+Write the post text for every video, save it as
+`tiktok/<slug>/beschreibung.txt` and put it **in the delivery message as
+a copy-paste block** (with the video and the cover). German, Du-Form,
+emoji sparingly (1–3). Shape:
+
+1. **First line = a second hook** (only ~1 line shows before "mehr"):
+   curiosity, not a summary, different from the spoken hook and the cover
+   title — e.g. "Dein Kühlschrank ist eigentlich eine Wärmepumpe 🤯".
+2. **1–2 short sentences** with what you learn / a teaser of the bonus
+   fact, without spoiling it fully.
+3. **The comment question from the CTA**, worded a bit differently, so
+   the comments answer it ("Ist deiner hinten warm? 👇").
+4. **4–6 hashtags**, mixed: 1–2 broad discovery tags (`#lernenmittiktok`,
+   `#wissen`), 2–3 topic tags (`#kühlschrank`, `#physik`, `#technik`), the
+   series tag `#duhastgeradegebaut`. No `#fyp` / `#viral` spam, no
+   English filler tags.
+
+Total ≤ 300 characters. Keywords the viewer would search for ("wie
+funktioniert ein Kühlschrank") belong in the text in natural words —
+TikTok search reads the description.
+
+Example:
+
+```text
+Dein Kühlschrank macht keine Kälte – er klaut sie 🤯
+In 45 Sekunden baust du einen nach und verstehst, wie ein Kühlschrank funktioniert.
+Fass mal hinten dran: Ist deiner warm? 👇
+#lernenmittiktok #wissen #kühlschrank #physik #technik #duhastgeradegebaut
+```
+
 ### 7. Save — always on `main`
 
-Commit `tiktok/<slug>/` and `tiktok/serie.md` **directly on `main`**
+Commit `tiktok/<slug>/` (incl. `cover.png` and `beschreibung.txt`) and `tiktok/serie.md` **directly on `main`**
 (`git pull origin main` first) and push. Same for any change to this
 skill. Other chats start on `main`: an episode or skill change left on a
 side branch is invisible to them (the music bed once sat on a branch for
