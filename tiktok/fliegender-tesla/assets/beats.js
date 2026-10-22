@@ -142,11 +142,11 @@ export const SFX = [
   { s: "zisch", at: T.druckluft, dur: 0.9, db: -21 }, // filling up
   { s: "klack", at: T.ventil, db: -15 }, // valve
   { s: "rauschen", at: T.ventil + 0.15, dur: T.luftballon - T.ventil - 0.2, db: -18 },
-  { s: "pop", at: T.luftballon + 0.05 }, // balloon
+  { s: "pop", at: T.luftballon + 0.25 }, // balloon
   { s: "zisch", at: T.losl, dur: 1.3, db: -17 },
   { s: "rauschen", at: T.duese + 0.1, dur: T.verrueckt - T.duese, db: -21 },
   { s: "surr", at: T.boden + 0.1, dur: T.kopf - T.boden - 0.3, db: -21 }, // fans
-  { s: "pop", at: T.kopf }, // ceiling set
+  { s: "pop", at: T.kopf + 0.22 }, // ceiling set
   { s: "pop", at: T.flamme + 0.05 }, // fuel pump
   { s: "rauschen", at: T.nur + 0.1, dur: T.gerade - T.nur, db: -21 },
   { s: "zisch", at: T.null, dur: 1.4, db: -17 }, // rear thrusters
