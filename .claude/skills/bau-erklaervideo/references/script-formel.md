@@ -90,6 +90,33 @@ E.g. spoken "Dein Kühlschrank macht gar keine Kälte." → title
 
 ### 2. Beats — keep them watching
 
+**Data (2026-10-23): on every video most viewers leave at ~13 s.** In the
+scripts, 11–15 s was always the same spot: "Jetzt der Trick:" / "Hier
+kommt der Trick:" (in almost every episode — it had become the signal
+"now comes the boring part"), right after the hook's question had
+already been mostly answered, inside the driest part (part names,
+numbers). So:
+
+- **The hook's question is answered at the end, not in beat 1.** The
+  beats make the question _bigger_ (stakes, a second mystery, "und das
+  ist erst Teil 1"), the answer comes with the payoff (last ~25 % before
+  the bonus fact). Put the question in `hf-config` (`question`), the word
+  that answers it (`answer`) — the banner stays on screen until then.
+- **A second, concrete reason to stay before 10 s** — name what's coming,
+  not a formula: "Gleich siehst du, warum dein Wasser dabei nicht kocht."
+  / "Und das Krasseste kommt bei Teil 3." / "Fälscher kennen diesen Test
+  – den dritten aber nicht."
+- **Banned stock phrases** (they became the drop-off signal): "Jetzt der
+  Trick", "Hier kommt der Trick", "Und jetzt der Trick", "Jetzt wird's
+  verrückt", "Aber Achtung". Say the concrete thing instead ("Jetzt
+  schießt Luft mit 300 km/h nach unten –").
+- **0–15 s = spectacle and mystery, max 1 technical term and no numbers
+  before ~15 s;** 10–15 s is the second money shot (visual-style.md).
+  Part names and numbers come after that.
+- **Steps on screen:** list one spoken word per build step in
+  `hf-config` → `steps` (2–3); the progress bar fills while each is
+  built.
+
 - **3 beats.** Each beat: problem → fix ("Also …" / "Du brauchst …") →
   the term ("Das ist der X.") — max **3 technical terms** per video.
 - **Every beat ends with a pull** into the next: a problem ("Aber jetzt
@@ -100,8 +127,10 @@ E.g. spoken "Dein Kühlschrank macht gar keine Kälte." → title
   failing spectacularly, a size comparison. Write lines that _give_ the
   picture such a moment ("Und dann – zack!", "Stell dir vor, das Ventil
   klemmt …").
-- **One re-hook in the middle** (~15–25 s): "Und hier kommt der Trick:",
-  "Jetzt wird's verrückt:", "Aber Achtung:". Max 2 per video.
+- **One re-hook in the middle** (~15–25 s), concrete and different every
+  video (never the banned phrases above): "Und jetzt passiert etwas, das
+  du nie gesehen hast:", "Der dritte Test ist der, an dem Fälscher
+  scheitern:". Max 2 per video.
 - **One home moment**: connect to something the viewer can check right
   now — "Fass mal hinter deinen Kühlschrank.", "Hör mal hin, wenn er
   anspringt."
@@ -179,13 +208,13 @@ CTA patterns:
 Jan runs on `eleven_v3`, which performs bracketed tags. Use **3–6 per
 video** so the voice has highs and lows instead of one flat tone:
 
-| Tag                       | Where                                                    |
-| ------------------------- | -------------------------------------------------------- |
-| `[excited]`               | the hook's claim, the payoff, the bonus fact             |
-| `[whispers]`              | the re-hook / secret ("[whispers] Und jetzt der Trick:") |
-| `[curious]`               | a question to the viewer                                 |
-| `[laughs]` / `[chuckles]` | after the one joke                                       |
-| `[surprised]`             | an unbelievable number                                   |
+| Tag                       | Where                                                     |
+| ------------------------- | --------------------------------------------------------- |
+| `[excited]`               | the hook's claim, the payoff, the bonus fact              |
+| `[whispers]`              | the re-hook / secret ("[whispers] Und jetzt passiert's:") |
+| `[curious]`               | a question to the viewer                                  |
+| `[laughs]` / `[chuckles]` | after the one joke                                        |
+| `[surprised]`             | an unbelievable number                                    |
 
 Put the tag right before the words it colours, never two in a row, never
 inside the loop line. Tags are not words: they don't count towards the
@@ -243,6 +272,8 @@ Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare �
 What changed against v1: belief-breaking first line instead of "Wenn du
 Eiswürfel …"; the "Wärme klauen" loop opened in the hook and closed in
 beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
+(Written before the ~13 s drop-off data: today "Und hier kommt der
+Trick:" is banned and the loop would only close in the payoff.)
 
 ## Self-check before showing the user
 
@@ -250,7 +281,9 @@ beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
 - [ ] Would a stranger stop scrolling for the first sentence alone?
 - [ ] Topic noun in the first 5 words, sentence 1 ≤ 12 words, no wind-up
 - [ ] A highlight planned every 5–7 s; 3–6 delivery tags
-- [ ] An open loop in the hook that the payoff line closes
+- [ ] An open loop in the hook that only the payoff closes (not beat 1); `hf-config` question + answer word + steps filled in
+- [ ] A concrete second reason to stay before 10 s; none of the banned phrases ("Jetzt der Trick" …)
+- [ ] 0–15 s: spectacle + mystery, max 1 term, no numbers
 - [ ] 3 beats, each ending with a pull; one re-hook; one home moment
 - [ ] ≤ 3 technical terms; no sentence that needs a breath
 - [ ] Bonus fact starts with "Übrigens", 10–15 words, true, surprising

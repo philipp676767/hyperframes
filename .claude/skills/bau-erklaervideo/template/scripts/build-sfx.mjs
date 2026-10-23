@@ -15,7 +15,7 @@ const root = new URL("..", import.meta.url);
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(new URL("assets/words.js", root), "utf8"), ctx);
 globalThis.window = ctx.window;
-const { DURATION, HL, LOOP, ctaTimes, payoffTime, factTime } = await import(
+const { WORDS, DURATION, HL, LOOP, ctaTimes, payoffTime, factTime } = await import(
   new URL("assets/timing.js", root)
 );
 const {
@@ -77,6 +77,26 @@ if (cta) {
   add("pop", cta.follow, "follow pill");
   add("click", cta.tap + 0.08, "follow tap");
   add("ding", cta.flip, "gefolgt", { db: -16 });
+}
+// question banner + progress bar (hf-config in index.html, same matching as there)
+const html = fs.readFileSync(new URL("index.html", root), "utf8");
+const cfgJson = html.match(/<script id="hf-config" type="application\/json">([\s\S]*?)<\/script>/);
+const cfg = cfgJson ? JSON.parse(cfgJson[1]) : {};
+const nrm = (s) => s.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+const findWord = (word, from) =>
+  WORDS.find((x) => x.start >= from && nrm(x.w) === nrm(word))?.start ?? null;
+let stepFrom = 0;
+for (const st of cfg.steps ?? []) {
+  const t = findWord(st, stepFrom);
+  if (t == null) continue;
+  add("blip", t, `step ${st}`, { db: -12 });
+  stepFrom = t + 0.01;
+}
+if (cfg.question && cfg.answer) {
+  const ans = findWord(cfg.answer, 6);
+  const pay = payoffTime();
+  if (ans != null && (pay == null || Math.abs(ans - pay) > 0.4))
+    add("ding", ans, "question answered");
 }
 const FX_SOUND = { shake: "hit", flash: "hit", zoom: "whoosh", slowmo: "slowmo" };
 for (const h of HIGHLIGHTS) add(FX_SOUND[h.kind] ?? "hit", h.at, `highlight ${h.kind}`);

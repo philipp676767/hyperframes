@@ -123,7 +123,11 @@ renders with labels and sound. Write the approved script into
 `script.txt` — one part per line, **the CTA on its own line** (it must
 contain "folg"), then **the loop bridge as the last line, starting with
 `> `**, **keywords marked `*Wort*`** — and put the hook
-title into `<div id="hook-title">` in `index.html` (keyword in `<em>`).
+title into `<div id="hook-title">` in `index.html` (keyword in `<em>`),
+and fill the `hf-config` block next to it: `question` (the hook's open
+question, ≤ 6 words), `answer` (the spoken word that answers it, in the
+payoff) and `steps` (one spoken word per build step) — they drive the
+question banner and the progress bar.
 Then run `node scripts/fake-words.mjs && node scripts/build-sfx.mjs && node scripts/sync-html.mjs`
 for estimated timings so the scene can be built before the voice exists.
 

@@ -682,8 +682,9 @@ export function renderFrame() {
   if (panelK > 0) {
     panel.quaternion.copy(camera.quaternion);
     panel.scale.setScalar(Math.max(0.001, panelK * 0.8));
-    // fixed spot in the upper third of the frame, just in front of the camera
-    panel.position.set(0.18, 0.78, -3.0).applyMatrix4(camera.matrixWorld);
+    // fixed spot just in front of the camera, below the question banner and
+    // progress bar (≈ y 520–770 px of 1920)
+    panel.position.set(0.18, 0.47, -3.0).applyMatrix4(camera.matrixWorld);
   }
   post.render(scene, camera, overlay, shotTilt);
   drawLabels();

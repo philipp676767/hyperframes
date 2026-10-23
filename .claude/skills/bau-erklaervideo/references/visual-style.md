@@ -123,6 +123,23 @@ the picture almost white. Rules for 0–3 s:
 Check: snapshot 0, 0.5, 1, 1.5, 2, 3 s — every image must look different,
 frame 0 must make you curious without sound.
 
+## Question banner + progress bar (index.html, automatic)
+
+Viewers left at ~13 s once the hook question felt answered. From 2.9 s
+(right after the hook title) the open question stays on screen as a dark
+pill with a yellow "?" (`hf-config.question`, ≤ 6 words, keyword in
+`<em>`); on the answer word it flips to a green check (+ ding) and leaves.
+Below it a progress bar with one segment per build step
+(`hf-config.steps`) fills while that part is built and pops "1/3 · 2/3 ·
+3/3" (+ blip). Both clear the top before the "WUSSTEST DU?" badge and the
+CTA. The LED panel sits lower (≈ y 520–770 px) so it never collides.
+
+## 10–15 s — the second money shot
+
+The drop-off point. Never part names over a calm object here: put the
+second big visual moment of the video in this window (slowmo, explosion,
+the thing failing, the inside revealed in motion).
+
 ## Highlights — never monotone
 
 Feedback on #10: _"wirkt etwas langweilig und monoton, setze ein paar
