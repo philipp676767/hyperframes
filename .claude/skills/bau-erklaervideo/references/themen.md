@@ -64,7 +64,6 @@ always 10+ open topics.
 | Thema                       | Hook-Idee                                                                                                                       | Money-Shot                                                                  | Kategorie     | Saison        |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------- | ------------- |
 | ★ Handy-Akku / Schnellladen | „Dein Handy lädt in 30 Minuten halb voll – und wird danach absichtlich langsam.“                                                | Ionen strömen in Zeitlupe von einer Seite zur anderen, Ladebalken bremst ab | Handy         | –             |
-| ★ Face ID                   | „Dein Handy schießt dir 30.000 unsichtbare Punkte ins Gesicht.“                                                                 | Punktgitter legt sich über ein Low-Poly-Gesicht, Schloss springt auf        | Handy         | –             |
 | ★ Touchscreen               | „Dein Bildschirm spürt deinen Finger, ohne dass du drückst.“                                                                    | Finger nähert sich, das Feld im Glas verbiegt sich, Tipp leuchtet           | Handy         | –             |
 | ★ Pfandautomat              | „Der Pfandautomat prüft deine Flasche dreimal – Form, Strichcode und ein geheimes Pfand-Zeichen.“ (Fakten prüfen)               | Flasche rollt rein, Laser tastet sie rundum ab, _Zack_, Bon kommt raus      | Einkaufen     | –             |
 | ★ Glätteisen                | „Dein Glätteisen bricht die Wasser-Brücken in deinen Haaren.“                                                                   | Haarsträhne in Nahaufnahme, Brücken zwischen den Ketten knacken auf         | Beauty        | –             |
@@ -83,12 +82,14 @@ always 10+ open topics.
 | ★ Kaffeevollautomat         | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen) | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe             | Küche         | –             |
 | Eiswürfel                   | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt       | Küche         | Sommer        |
 | Türklingel                  | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe        | Zuhause       | –             |
+| ★ Sonnencreme               | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                       | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                  | Beauty        | Sommer        |
 | Wasserkocher                | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus            | Küche         | –             |
 
 ## Reserviert (in Arbeit)
 
-| Thema | Datum | Chat |
-| ----- | ----- | ---- |
+| Thema   | Datum      | Chat           |
+| ------- | ---------- | -------------- |
+| Face ID | 2026-10-23 | Video: Face ID |
 
 ## Verwendet
 
