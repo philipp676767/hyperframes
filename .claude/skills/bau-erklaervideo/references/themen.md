@@ -137,7 +137,6 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 | --------------------------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------- | --------- |
 | 🔥 … ohne Raumanzug ins Weltall gehst?                    | Du explodierst nicht – du bleibst rund 15 Sekunden wach, dein Speichel fängt an zu kochen    | Hand öffnet die Luke, Luft schießt raus, Low-Poly-Du schwebt, LED-Countdown | unmöglich                           | Weltall   |
 | 🔥 … in ein Loch springst, das durch die ganze Erde geht? | Du fällst rund 40 Minuten – und kommst im Pazifik bei Neuseeland wieder raus (Fakten prüfen) | Röntgen-Schnitt durch die Erde, du rast am glühenden Kern vorbei            | unmöglich                           | Erde      |
-| 🔥 … die Erde plötzlich aufhört, sich zu drehen?          | Bei uns fliegt alles mit über 1000 km/h nach Osten – Häuser, Meere, du                       | Die Welt bremst, alles schießt seitwärts davon                              | unmöglich                           | Erde      |
 | 🔥 … die Sonne plötzlich ausgeht?                         | Du merkst es erst nach 8 Minuten – und die Erde fliegt geradeaus davon                       | Sonne erlischt, Licht-Welle rast zur Erde, Countdown 8:00                   | unmöglich                           | Weltall   |
 | 🔥 … ein Teelöffel Neutronenstern auf der Erde landet?    | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                  | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden              | unmöglich                           | Weltall   |
 | 🔥 … alle Menschen gleichzeitig hochspringen?             | Gar nichts – die Erde bewegt sich weniger als ein Atom                                       | 8 Milliarden Low-Poly-Menschen springen, LED „0,00000…“                     | harmlos                             | Erde      |
@@ -160,8 +159,9 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                               | Format | Datum      | Chat        |
+| --------------------------------------------------- | ------ | ---------- | ----------- |
+| … die Erde plötzlich aufhört, sich zu drehen? (#24) | B      | 2026-10-23 | Video: Erde |
 
 ## Verwendet
 
