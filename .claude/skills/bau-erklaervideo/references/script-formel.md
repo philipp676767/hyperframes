@@ -9,6 +9,11 @@ comment. The build-it-yourself frame stays in the Du-Form ("Du brauchst
 gerade X gebaut." is gone for good** (user's rule, 2026-10-23): it told
 viewers "fertig" right before the bonus fact and the CTA.
 
+**Format B „Was passiert eigentlich, wenn …?“** (alternates with this
+one, SKILL.md step 0) uses this file too, with the differences in
+`format-was-passiert.md` — question hook instead of the 4-word twist, 3
+Folgen instead of 3 build beats, the outcome as payoff.
+
 ## Length
 
 **110–122 words including fact, CTA and loop line** (≈ 42–46 s video), never more than

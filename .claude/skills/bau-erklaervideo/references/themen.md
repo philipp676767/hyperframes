@@ -23,12 +23,20 @@ an old episode only when the user asks for one.
 
 ## 2. Pick — criteria
 
+**The format comes first** (SKILL.md step 0, always alternating): for
+format A pick from **Offen — Format A „Bauen“**, for format B from
+**Offen — Format B „Was passiert, wenn …?“** (its own criteria are
+below that list). The duplicate check covers both lists: an object that
+already had an A episode is used for B too, and the other way round,
+unless the question is clearly a different one (Aufzug was built in #3 →
+„… wenn das Seil reißt?“ only if the user wants it).
+
 **Audience (TikTok data, 2026-10-23):** over 93 % from AT/CH/DE, **77 %
 aged 18–34, 51 % women / 45 % men.** TikTok still shows the account to
 broad random scrollers nearby, so a topic must grab a young adult with no
 special interest in technology — man or woman.
 
-Score each open candidate on these six; propose the best one plus two
+Format A — score each open candidate on these six; propose the best one plus two
 alternatives:
 
 1. **Jeder kennt es** — used weekly by almost everyone in Germany.
@@ -52,14 +60,14 @@ the topic (web search if available) and phrase anything uncertain safely.
 
 ## 3. Reserve it right away
 
-As soon as the user says ok: move the topic from **Offen** to
-**Reserviert** with the date, commit on `main` and push — _before_ the
+As soon as the user says ok: move the topic from its **Offen** list to
+**Reserviert** with the date and the format, commit on `main` and push — _before_ the
 script — so a parallel video chat can't take the same topic. When the
 episode is logged in `tiktok/serie.md`, delete it from **Reserviert**.
-When a topic from **Offen** is used up, add a new idea so there are
-always 10+ open topics.
+When a topic from an **Offen** list is used up, add a new idea so there
+are always 10+ open topics per format.
 
-## Offen
+## Offen — Format A „Bauen“
 
 | Thema                       | Hook-Idee                                                                                                                       | Money-Shot                                                                  | Kategorie     | Saison        |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------- | ------------- |
@@ -85,10 +93,44 @@ always 10+ open topics.
 | ★ Sonnencreme               | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                       | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                  | Beauty        | Sommer        |
 | Wasserkocher                | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus            | Küche         | –             |
 
+## Offen — Format B „Was passiert, wenn …?“
+
+Criteria (instead of A's six; `format-was-passiert.md`):
+
+1. **Schon immer gefragt** — a question almost everyone has wondered
+   about or a myth everyone has heard („Kaugummi bleibt 7 Jahre im
+   Bauch“).
+2. **Überraschender Ausgang** — the outcome is not what people expect.
+3. **Die Hand macht es in Bild 0** — the act is one clear movement the
+   viewer's low-poly hand can do.
+4. **3 Folgen in 40 s** — a chain of three consequences, max 3 terms.
+5. **Sicher** — impossible, harmless or warning-only (safety rules in
+   `format-was-passiert.md`); never a how-to.
+6. **Für 18–34, Männer und Frauen** — their day: phone, travel, food and
+   drink, going out, sport. ★ first.
+
+Hook = always „Was passiert eigentlich, wenn du …?“. Topics the comments
+ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
+
+| Szenario („Was passiert eigentlich, wenn du …?“) | Überraschender Ausgang (nur fürs Payoff!)                                                 | Money-Shot                                                          | Sicherheit                          | Kategorie |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------- | --------- |
+| ★ … im Flugzeug die Tür aufmachst?               | Sie geht gar nicht auf: Kabinenluft presst die Stöpsel-Tür mit Tonnen in den Rahmen       | Kraftpfeile drücken die Tür zu, die Hand zieht vergeblich           | unmöglich                           | Reisen    |
+| ★ … im Auto sitzt und der Blitz einschlägt?      | Dir passiert nichts – aber nicht wegen der Reifen: Der Strom fließt außen um dich herum   | Blitz kracht aufs Dach, Strom läuft als Leuchtband über die Karosse | nicht machbar; Cabrio-Hinweis       | Auto      |
+| ★ … einen Kaugummi verschluckst?                 | Er bleibt keine 7 Jahre – er wandert in ein paar Tagen ganz normal durch                  | Kaugummi rutscht in Röntgensicht durch den Bauch, Kalender fliegt   | harmlos (Fakten prüfen)             | Essen     |
+| ★ … dein Handy ins Wasser fallen lässt?          | Reis hilft nicht – sogar Apple rät davon ab (Fakten prüfen)                               | Handy platscht in Zeitlupe ins Wasser, Tropfen dringen ein          | harmlos                             | Handy     |
+| ★ … eine geschüttelte Cola aufmachst?            | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                             | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                  | harmlos                             | Essen     |
+| ★ … im Flugzeug aufs Klo gehst und spülst?       | Es wird nicht gespült, sondern gesaugt – mit dem Unterdruck von draußen                   | Röntgen ins Rohr, alles schießt mit Zisch nach hinten               | harmlos                             | Reisen    |
+| … vom 10-Meter-Brett springst?                   | Du knallst mit rund 50 km/h aufs Wasser                                                   | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt          | Hinweis „nur mit Aufsicht“          | Sport     |
+| … Wasser in brennendes Fett kippst?              | Eine Stichflamme bis zur Decke – das Wasser verdampft schlagartig und reißt das Fett mit  | Tropfen fällt, Dampf explodiert, Feuerball (nur 3D)                 | **nur als Warnung**, „Deckel drauf“ | Küche     |
+| … eine Münze vom Hochhaus fallen lässt?          | Sie tötet niemanden – sie wird nie schnell genug (Fakten prüfen); trotzdem nie machen     | Münze trudelt, Luftwiderstand-Pfeile bremsen sie                    | Warnung „nie machen“                | Stadt     |
+| … mit offenen Augen niest?                       | Deine Augen fliegen nicht raus – sie gehen per Reflex zu (Fakten prüfen)                  | Nies-Wolke in Zeitlupe, Augenlider klappen zu                       | harmlos                             | Körper    |
+| … Mentos in Cola wirfst?                         | Keine Chemie-Explosion – Millionen winziger Krater lassen die Kohlensäure auf einmal raus | Mentos sinkt, Krater-Nahaufnahme, Fontäne meterhoch                 | nur draußen, Hinweis                | Essen     |
+| … in ein Schwarzes Loch fällst?                  | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                      | Low-Poly-Astronaut wird lang und länger                             | unmöglich                           | Weltall   |
+
 ## Reserviert (in Arbeit)
 
-| Thema | Datum | Chat |
-| ----- | ----- | ---- |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 

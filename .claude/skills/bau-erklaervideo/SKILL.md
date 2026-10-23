@@ -1,11 +1,16 @@
 ---
 name: bau-erklaervideo
-description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → payoff that answers the hook question → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) and a one-sentence posting description (no hashtags) for every video. Claude picks the topic itself (references/themen.md, never one already done). Use whenever the user names a new topic for this series or asks for "noch so ein Video", "neues Video", "wie funktioniert X", "mach das nächste Video".'
+description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" (9:16, 40–50 s) in two formats that always take turns: A = how an everyday thing works, built up piece by piece in x-ray; B = "Was passiert eigentlich, wenn …?", a scenario people always wondered about played out as a chain of consequences (references/format-was-passiert.md). House style: toy-like low-poly 3D diorama in a changing setting, name tags with arrows, one-word captions with yellow punch-in keywords, sound effects, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3), retention-first script (hook + on-screen title, open loop, payoff, "Übrigens" bonus fact, comment + follow CTA, seamless loop), plus a cover image and a one-sentence description (no hashtags). Claude picks the format and the topic itself (references/themen.md, never one already done). Use whenever the user asks for "noch so ein Video", "neues Video", "wie funktioniert X", "was passiert, wenn …", "mach das nächste Video" or names a topic.'
 ---
 
 # Bau-Erklärvideo (TikTok series)
 
-One video = one topic. Voice, look and structure stay; the script (incl.
+One video = one topic, in one of **two formats that always alternate**
+(step 0): **A „Bauen“** — the thing is built up piece by piece (this
+file, `references/script-formel.md`) — and **B „Was passiert, wenn …?“**
+— a scenario played out with its consequences
+(`references/format-was-passiert.md`, which lists only what differs from
+A). Voice, look and structure stay; the script (incl.
 hook title and a topic-specific CTA question), the 3D subject and its story
 beats change every time. The script is what makes people stay — write it
 with `references/script-formel.md` (v2) and treat its self-check as a gate. The reference build is
@@ -25,6 +30,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Loop         | Last line `> Und merk dir:` (2–4 words) flows into the hook; picture cuts back to the opening shot so the end matches frame 0 (automatic)                                                                                                                                                                                                                                                                                 |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                             |
 | Beschreibung | **Every video gets a TikTok description** (step 6c): **one sentence with the topic's search words, no hashtags**; saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                                                          |
+| Serienformat | **Always alternating A „Bauen“ ↔ B „Was passiert, wenn …?“** (user's rule, 2026-10-23) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                                                                                       |
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                    |
 | Payoff       | The hook's question answered in one punchy line (banner ticks green). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                               |
 | Music        | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                                                                                                                                                                                   |
@@ -40,12 +46,24 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 ## Workflow
 
-### 0. Pick the topic — you choose it
+### 0. Pick the format — always alternating — then the topic
 
-The user leaves the topic to you (2026-10-23). Follow
+**Format first** (user's rule, 2026-10-23: "Immer abwechselnd"). After
+`git pull origin main`, look at the newest episode: the last row of
+`tiktok/serie.md` **and** the **Reserviert** table in
+`references/themen.md` (a parallel chat may already have taken the next
+slot) — the newest of them by number / date decides. The new video takes
+the **other** format: after A „Bauen“ comes B „Was passiert, wenn …?“,
+after B comes A. A row without a `Format` value counts as A (#1–#23 are
+all A). Say it in the topic proposal ("Diesmal Format B: Was passiert,
+wenn …?"). If the user explicitly asks for a format or names a topic
+that only fits one, take theirs — the next video goes on alternating
+from it.
+
+**Then the topic** — the user leaves it to you (2026-10-23). Follow
 `references/themen.md`: **duplicate check first** (`tiktok/serie.md`,
 every folder in `tiktok/`, the reserved list, remote branches), then pick
-the best open topic by the five criteria and propose it with its hook
+the best open topic **of that format's list** by its criteria and propose it with its hook
 idea, money shot and two alternatives. On "ok": reserve it in
 `themen.md`, commit + push on `main` right away (parallel chats!), then
 go on. If the user names a topic, take theirs — but still run the check
@@ -78,7 +96,10 @@ better one concrete step per video.
 
 ### 1. Script → user approval (always first)
 
-Write the German script with `references/script-formel.md` (v2): hook
+Format B: write it with `references/format-was-passiert.md` (question
+hook, 3 Folgen, outcome as payoff) on top of script-formel.md — same
+length, same approval message. Format A:
+write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff (answers the
 hook) + "Übrigens" bonus fact, CTA question, `> …` loop bridge. **110–122 words including all of it** (≈ 42–46 s), never
 more than **128** (≈ 49 s) or fewer than **105** (≈ 40 s); expected length
@@ -174,7 +195,10 @@ higher = louder), then rerun `sync-html.mjs`. Effects too loud / quiet:
 
 ### 4. Build the subject (`assets/scene.js` + `assets/beats.js`)
 
-Follow `references/scene-api.md`. Set the chosen setting first
+Format B has no build-up from parts: the scenario plays out in one
+diorama, the viewer's hand does the act from frame 0, every Folge is a
+visible change (`references/format-was-passiert.md` "Picture"). Format A:
+follow `references/scene-api.md`. Set the chosen setting first
 (`createWorld({ env, sky })`), then rebuild the demo file around the new
 subject: hook visual (the strange thing the hook names — mid-action from
 frame 1, or the primitive version that fails) → subject pops in when the
@@ -256,7 +280,7 @@ brings it back to -14 LUFS. Confirm exactly one audio stream and 40–50 s, then
 Before sending, watch it honestly as a stranger would (contact sheet every
 3 s + the hook frames): Would I stop scrolling in the first 2 s? Is there
 a highlight every 5–7 s? Is anything smeared, tiny or monotone? Fix
-before sending, not after. Append the episode to `tiktok/serie.md`.
+before sending, not after. Append the episode to `tiktok/serie.md` (with its `Format`, A or B).
 
 ### 6b. Titelbild (cover) — every video
 
