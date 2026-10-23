@@ -55,7 +55,6 @@ always 10+ open topics.
 | Thema                 | Hook-Idee                                                                                                                       | Money-Shot                                                           | Kategorie     | Saison        |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------- | ------------- |
 | Zapfpistole           | „Die Zapfpistole stoppt von allein – ganz ohne Strom und Elektronik.“                                                           | Benzin verschließt ein winziges Röhrchen, _klack_, der Hebel springt | Straße / Auto | –             |
-| Kontaktlos bezahlen   | „Deine Bankkarte hat keinen Akku. Das Terminal funkt ihr den Strom zu.“                                                         | Funkwellen laden den Chip in Zeitlupe, er leuchtet und funkt zurück  | Geld / Tech   | –             |
 | Feuerzeug             | „Dein Feuerzeug macht bei jedem Klick einen Mini-Blitz mit über 10.000 Volt.“                                                   | Hammer trifft Kristall, Funke springt, Flamme                        | Alltag        | –             |
 | Induktionsherd        | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                 | Küche         | –             |
 | Blitzer               | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ              | Straße / Auto | –             |
@@ -70,8 +69,9 @@ always 10+ open topics.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Datum | Chat |
-| ----- | ----- | ---- |
+| Thema               | Datum      | Chat              |
+| ------------------- | ---------- | ----------------- |
+| Kontaktlos bezahlen | 2026-10-23 | Video: Kontaktlos |
 
 ## Verwendet
 
