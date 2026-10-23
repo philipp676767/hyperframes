@@ -541,16 +541,11 @@ const up = V(0, 1, 0);
 const ray = new THREE.Raycaster();
 const faceHits = [];
 const photoHits = [];
-const photoPlane = new THREE.Plane().setFromNormalAndCoplanarPoint(
-  vDIR,
-  V(...PHOTO).addScaledVector(vDIR, 0.012),
-);
 {
   const r = rngLocal(7);
   const N = 52;
   const aim = V(0, 0, 0);
   const dir = V(0, 0, 0);
-  const hit = V(0, 0, 0);
   for (let i = 0; i < N; i++)
     for (let j = 0; j < N; j++) {
       const u = (i / (N - 1) - 0.5) * 1.15 + (r() - 0.5) * 0.02;
@@ -569,16 +564,19 @@ const photoPlane = new THREE.Plane().setFromNormalAndCoplanarPoint(
         const depth = h.point.clone().sub(vHead).dot(vDIR);
         faceHits.push({ p: h.point.clone().addScaledVector(dir, -0.006), depth, seed });
       }
-      // the same ray on the photo plane (in front of the face)
-      if (ray.ray.intersectPlane(photoPlane, hit)) {
-        const loc = hit.clone().sub(V(...PHOTO));
-        const lx = loc.dot(vPERP);
-        const ly = loc.y;
-        if ((i + j) % 2 === 0 && Math.abs(lx) < PHW / 2 - 0.03 && Math.abs(ly) < PHH / 2 - 0.03)
-          photoHits.push({ p: hit.clone(), seed, lx, ly });
-      }
     }
 }
+// the photo gets a perfectly even grid: every dot at the same depth
+for (let gx = -8; gx <= 8; gx++)
+  for (let gy = -10; gy <= 10; gy++) {
+    const lx = gx * 0.044;
+    const ly = gy * 0.044;
+    const p = V(...PHOTO)
+      .addScaledVector(vPERP, lx)
+      .addScaledVector(vDIR, 0.015);
+    p.y += ly;
+    photoHits.push({ p, seed: hash(gx * 37 + gy * 101 + 5), lx, ly });
+  }
 function rngLocal(s) {
   let a = s >>> 0;
   return () => {
@@ -835,7 +833,7 @@ function renderAt(t) {
   }
   // beams while a burst is in flight
   const beamK = Math.max(
-    pop(t, BURST.hook[0], BURST.hook[0] + BURST.hook[1] + 0.3, 0.2) * hookK,
+    pop(t, BURST.hook[0], T.du1 + 0.2, 0.2) * hookK,
     pop(t, BURST.main[0], BURST.main[0] + BURST.main[1] + 0.3, 0.2),
   );
   beams.material.opacity = 0.35 * beamK;
@@ -902,7 +900,8 @@ function renderAt(t) {
   } else if (nope3 > 0) {
     tmp
       .copy(vHead)
-      .addScaledVector(vDIR, 0.6)
+      .addScaledVector(vDIR, 0.45)
+      .addScaledVector(vPERP, -0.35)
       .add(V(0, 0.15, 0));
     showNope(nope3, tmp.x, tmp.y, tmp.z, 0.75);
   } else showNope(0, 0, 0, 0);
@@ -911,7 +910,7 @@ function renderAt(t) {
   if (t >= T.zahl && t < T.auf) {
     showPanel(pop(t, T.zahl, T.auf), "PUNKTE", "30.000", LED.red);
   } else if (t >= T.million && t < T.face) {
-    showPanel(pop(t, T.million, T.face), "FREMDER", "1 : 1 Mio", LED.green);
+    showPanel(pop(t, T.million, T.face), "KOMMT REIN: 1 VON", "1 Mio", LED.green);
   } else {
     showPanel(0);
   }

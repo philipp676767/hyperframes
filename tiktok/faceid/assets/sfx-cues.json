@@ -13,373 +13,368 @@
   },
   {
     "s": "whoosh",
-    "at": 0.08,
-    "why": "cut"
-  },
-  {
-    "s": "whoosh",
     "at": 0.13,
     "why": "highlight zoom"
   },
   {
-    "s": "hit",
-    "at": 0.3,
-    "why": "highlight flash"
-  },
-  {
     "s": "whoosh",
-    "at": 1.984,
+    "at": 0.96,
     "why": "cut"
   },
   {
+    "s": "hit",
+    "at": 1.18,
+    "why": "highlight flash"
+  },
+  {
     "s": "punch",
-    "at": 2.204,
+    "at": 1.82,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 3.096,
+    "at": 3,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 4.485,
+    "at": 4.06,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 4.705,
+    "at": 4.28,
     "why": "beats.js"
   },
   {
     "s": "hit",
-    "at": 5.715,
+    "at": 5.36,
     "why": "highlight shake"
   },
   {
     "s": "piep",
-    "at": 5.715,
+    "at": 5.36,
     "why": "beats.js",
     "dur": 0.5,
     "db": -16
   },
   {
     "s": "whoosh",
-    "at": 6.385,
+    "at": 5.9,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 8.162,
+    "at": 7.2,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 8.946,
+    "at": 8.14,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 8.946,
+    "at": 8.14,
     "why": "step Blitz",
     "db": -12
   },
   {
     "s": "hit",
-    "at": 8.946,
+    "at": 8.14,
     "why": "highlight flash"
   },
   {
     "s": "surr",
-    "at": 8.946,
+    "at": 8.14,
     "why": "beats.js",
-    "dur": 2.415000000000001,
+    "dur": 2.76,
     "db": -22
   },
   {
     "s": "whoosh",
-    "at": 9.031,
+    "at": 8.22,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 9.046,
+    "at": 8.24,
     "why": "label Infrarot-Blitz"
   },
   {
     "s": "punch",
-    "at": 10.702,
+    "at": 10.26,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 11.141,
+    "at": 10.68,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 11.561,
+    "at": 11.1,
     "why": "beats.js"
   },
   {
     "s": "hit",
-    "at": 11.761,
+    "at": 11.3,
     "why": "highlight shake"
   },
   {
     "s": "whoosh",
-    "at": 13.445,
+    "at": 12.92,
     "why": "cut"
   },
   {
     "s": "slowmo",
-    "at": 14.033,
+    "at": 13.4,
     "why": "highlight slowmo"
   },
   {
     "s": "zisch",
-    "at": 14.083,
+    "at": 13.45,
     "why": "beats.js",
     "dur": 1.6,
     "db": -15
   },
   {
     "s": "punch",
-    "at": 14.506,
+    "at": 13.9,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 14.506,
+    "at": 13.9,
     "why": "step Punktprojektor",
     "db": -12
   },
   {
     "s": "blip",
-    "at": 14.556,
+    "at": 13.95,
     "why": "label Punktprojektor"
   },
   {
     "s": "whoosh",
-    "at": 15.044,
+    "at": 14.82,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 15.532,
+    "at": 15.18,
     "why": "highlight"
   },
   {
     "s": "hit",
-    "at": 16.715,
+    "at": 17.4,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 17.191,
+    "at": 17.9,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 17.764,
+    "at": 18.32,
     "why": "highlight zoom"
   },
   {
     "s": "whoosh",
-    "at": 20.225,
+    "at": 20.76,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 20.713,
+    "at": 21.18,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 20.763,
+    "at": 21.23,
     "why": "label Infrarot-Kamera"
   },
   {
     "s": "surr",
-    "at": 21.388,
+    "at": 22.24,
     "why": "beats.js",
     "dur": 1,
     "db": -22
   },
   {
     "s": "whoosh",
-    "at": 22.936,
+    "at": 23.94,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 23.814,
+    "at": 24.76,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 24.034,
+    "at": 24.98,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 24.034,
+    "at": 24.98,
     "why": "step 3D-Karte",
     "db": -12
   },
   {
     "s": "blip",
-    "at": 24.184,
+    "at": 25.13,
     "why": "label 3D-Karte"
   },
   {
     "s": "whoosh",
-    "at": 25.268,
+    "at": 26.54,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 26.304,
+    "at": 27.5,
     "why": "highlight"
   },
   {
     "s": "hit",
-    "at": 26.304,
+    "at": 27.5,
     "why": "highlight flash"
   },
   {
     "s": "hit",
-    "at": 26.354,
+    "at": 27.55,
     "why": "highlight shake"
   },
   {
     "s": "klack",
-    "at": 26.354,
+    "at": 27.55,
     "why": "beats.js"
   },
   {
     "s": "whoosh",
-    "at": 27.288,
+    "at": 28.2,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 27.508,
+    "at": 28.42,
     "why": "beats.js"
   },
   {
     "s": "punch",
-    "at": 28.007,
+    "at": 29.06,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 28.007,
+    "at": 29.06,
     "why": "question answered"
   },
   {
     "s": "whoosh",
-    "at": 28.137,
+    "at": 29.19,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 29.666,
+    "at": 30.94,
     "why": "cut"
   },
   {
     "s": "hit",
-    "at": 30.191,
+    "at": 31.48,
     "why": "highlight shake"
   },
   {
     "s": "piep",
-    "at": 30.191,
+    "at": 31.48,
     "why": "beats.js",
     "dur": 0.5,
     "db": -16
   },
   {
     "s": "whoosh",
-    "at": 31.055,
+    "at": 32.26,
     "why": "cut"
   },
   {
     "s": "wow",
-    "at": 31.275,
+    "at": 32.48,
     "why": "bonus fact"
   },
   {
     "s": "pop",
-    "at": 32.042,
+    "at": 33.24,
     "why": "beats.js"
   },
   {
     "s": "whoosh",
-    "at": 33.504,
+    "at": 34.76,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 33.724,
+    "at": 34.98,
     "why": "highlight"
   },
   {
     "s": "piep",
-    "at": 33.724,
+    "at": 34.98,
     "why": "beats.js",
     "dur": 0.5,
     "db": -17
   },
   {
     "s": "pop",
-    "at": 34.689,
+    "at": 36.15,
     "why": "beats.js"
   },
   {
     "s": "hit",
-    "at": 34.839,
+    "at": 36.3,
     "why": "highlight shake"
   },
   {
     "s": "click",
-    "at": 35.155,
+    "at": 36.58,
     "why": "beats.js"
   },
   {
     "s": "whoosh",
-    "at": 35.91,
+    "at": 37.16,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 36.13,
+    "at": 37.38,
     "why": "comment pill"
   },
   {
     "s": "whoosh",
-    "at": 38.251,
+    "at": 40.08,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 39.811,
+    "at": 41.74,
     "why": "follow pill"
   },
   {
     "s": "click",
-    "at": 40.719,
+    "at": 42.65,
     "why": "follow tap"
   },
   {
     "s": "ding",
-    "at": 40.759,
+    "at": 42.69,
     "why": "gefolgt",
     "db": -16
   },
   {
     "s": "whoosh",
-    "at": 40.869,
+    "at": 42.8,
     "why": "loop cut"
   }
 ]

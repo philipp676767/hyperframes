@@ -36,7 +36,7 @@ export const MID = add(HEAD, DIR, 0.8);
 export const T = {
   handy: W("Handy", 1),
   beschiesst: W("beschießt"),
-  dein1: W("dein", 1),
+  dein1: W("dein", 2),
   gesicht1: W("Gesicht", 1),
   tausenden: W("Tausenden"),
   du1: W("Du", 1),
@@ -173,7 +173,7 @@ export const shots = [
   // bonus fact: a stranger, then the twin
   shot(
     T.uebrigens,
-    add(add(HEAD, PERP, -0.45), [0, -0.3, 0.1]),
+    add(add(HEAD, PERP, -0.45), [0, 0.25, 0.1]),
     [FY - 40, 12, 4.4],
     [FY - 30, 8, 3.9],
     {

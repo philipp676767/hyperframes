@@ -331,13 +331,15 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="42.1"
+      data-duration="43.8"
       data-width="1080"
       data-height="1920"
     >
       <canvas id="stage" width="1080" height="1920"></canvas>
       <div id="captions"></div>
-      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="42.1" data-track-index="4" data-volume="1"></audio>
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="43.8" data-track-index="2" data-volume="1"></audio>
+      <audio id="bgm" src="assets/bgm.mp3" data-start="0" data-duration="43.8" data-track-index="3" data-volume="1"></audio>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="43.8" data-track-index="4" data-volume="1"></audio>
       <!-- Per video: the hook's open question (≤ 6 words, keyword in <em>),
            the spoken word that answers it, and one word per build step
            (each fills a progress segment when it is spoken). Read by the
@@ -601,7 +603,7 @@
             );
           }
         }
-        tl.set({}, {}, 42.1);
+        tl.set({}, {}, 43.8);
         window.__timelines["main"] = tl;
       })();
     </script>

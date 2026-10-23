@@ -87,9 +87,8 @@ always 10+ open topics.
 
 ## Reserviert (in Arbeit)
 
-| Thema   | Datum      | Chat           |
-| ------- | ---------- | -------------- |
-| Face ID | 2026-10-23 | Video: Face ID |
+| Thema | Datum | Chat |
+| ----- | ----- | ---- |
 
 ## Verwendet
 
@@ -97,4 +96,4 @@ See `tiktok/serie.md` and the folders in `tiktok/` — the source of truth.
 As of 2026-10-23: Kühlschrank, Airfryer, Aufzug, Airbag, Windrad,
 Atomkraftwerk, Mikrowelle, Geschirrspüler, Rauchmelder, Fliegender Tesla,
 Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
-Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug.
+Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID.
