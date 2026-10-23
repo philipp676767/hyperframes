@@ -24,7 +24,8 @@ export const T = {
 // One shot per beat, hard cut every ~2-4 s, always slowly moving. Every cut
 // gets a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  { at: 0, from: [1.6, 1.3, 2.2], to: [1.2, 1.1, 1.8], look: [0, 0.5, 0] },
+  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
+  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
   { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
   { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
   { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
@@ -47,6 +48,7 @@ export const LABELS = [
 // 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
 // a shot cut (here T.gluehfaden).
 export const HIGHLIGHTS = [
+  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
   { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
   { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
   { kind: "flash", at: T.gluet }, // … and glows

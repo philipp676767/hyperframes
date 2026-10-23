@@ -40,6 +40,11 @@ bauen" is not a reason to stay. So the hook has two jobs:
    the user's rule, 2026-10-23): it reminds people how long they still
    have to watch. Say "gleich" instead.
 
+**The twist in the first 4 words, sentence 1 ≤ 8 words.** By ~1.2 s
+the viewer must have heard the surprising part: "Dein Herd wird nie heiß."
+not "Wenn du einen Topf auf deinen Herd stellst, …". (Most viewers leave
+in the first seconds — 2026-10-23.)
+
 Before showing a hook, ask honestly: _would a stranger scrolling at 1 a.m.
 stop for this?_ If the answer needs context ("there's a Tesla that
 flies"), the hook has to give it in the first sentence.
@@ -48,7 +53,7 @@ Rules:
 
 - **The topic noun in the first 5 words.** No "Wenn du …"-wind-up, no
   greeting, no "Heute zeige ich dir".
-- **Sentence 1 ≤ 12 words** and it must do one of: break a belief, state
+- **Sentence 1 ≤ 8 words, the twist within the first 4** and it must do one of: break a belief, state
   an unbelievable fact, ask a question the viewer has _felt_ but never
   answered, or show stakes.
 - **Sentence 2 = the promise, with a reason to stay**: "Gleich weißt

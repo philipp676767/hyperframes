@@ -97,6 +97,32 @@ things (kitchen tiles, workshop floor) — skip it outdoors.
   airbag bursting) — the camera may then pull out to the build. Never
   open on an empty stage.
 
+## The first 3 seconds — where most viewers leave
+
+Data (2026-10-23): on every posted video **< 10 % watched to the end, and
+most viewers leave in the first seconds.** A look at #13–#17 showed why:
+frame 0 had no title, the first ~3 s were one still camera with only the
+voice talking, the spectacle came at ~3 s or later, and an x-ray turned
+the picture almost white. Rules for 0–3 s:
+
+- **Frame 0 = a finished thumbnail:** hook title fully visible (template
+  does this), the subject big, and the strange thing _already happening_
+  (bill being scanned by a blue light, bottle erupting, car shooting up,
+  fridge back glowing red) — never a calm object standing there.
+- **Motion from frame 0:** the opening shot moves fast (a big push-in or
+  orbit, `from` far → `to` close within the shot), never a slow drift.
+- **First cut ≤ 1.5 s, a second one ≤ 3 s** (hook shots can be short):
+  0–1.5 s the claim in action, 1.5–3 s a closer look / the twist.
+- **The spectacle within the first second**, plus a highlight
+  (`flash`, `shake` or `zoom`) before 1.5 s.
+- **No x-ray in the first 3 s**, and never x-ray a shell that fills the
+  frame (the whole picture turns pale) — x-ray only in medium shots.
+- **One text at a time on top:** hook title 2–5 words, not on top of signs
+  or labels in the scene (move the camera so they don't clash).
+
+Check: snapshot 0, 0.5, 1, 1.5, 2, 3 s — every image must look different,
+frame 0 must make you curious without sound.
+
 ## Highlights — never monotone
 
 Feedback on #10: _"wirkt etwas langweilig und monoton, setze ein paar

@@ -20,7 +20,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Format       | 1080×1920, 30 fps, **40–50 s** (aim ~45 s)                                                                                                                                                                                                                                                                                                                                                                                |
 | Voice        | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** — the house voice; **always use Jan** (user's decision 2026-10-22 after trying Stephan on #7: back to Jan for #7 and every episode after). Don't switch voices unless the user asks. History: Christian Plasa (#1–#5), Jan (#6 →), Stephan – Warm and Friendly `IWm8DnJ4NGjFI7QAM5lM` tried once on #7, replaced by Jan |
-| CTA          | Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template)                                                                                                                                                                          |
+| CTA          | **Never cut, shortened or moved** (user's rule). Per video: a comment question tied to the topic + "– und folg mir für mehr", last line of `script.txt`, spoken in the same take. White "Kommentieren" pill pops when it starts, red "+ Folgen" pill on "folg" gets tapped → "Gefolgt" (template)                                                                                                                         |
 | Bonus fact   | "Übrigens: …" right after the signature line — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                                                                                                                                                                               |
 | Loop         | Last line `> Und merk dir:` (2–4 words) flows into the hook; picture cuts back to the opening shot so the end matches frame 0 (automatic)                                                                                                                                                                                                                                                                                 |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                             |
@@ -196,7 +196,11 @@ npx hyperframes lint                    # must be 0 errors
 npx hyperframes snapshot --at <t1,t2,…> --no-end --describe false -o <scratch dir>
 ```
 
-Snapshot one time per shot (word start + 0.3 s) and look at the contact
+**First the opening:** snapshot 0, 0.5, 1, 1.5, 2, 3 s and check it
+against "The first 3 seconds" in `references/visual-style.md` (title on
+frame 0, motion, spectacle within 1 s, first cut ≤ 1.5 s, no x-ray, every
+image different). Fix that before anything else — most viewers decide
+there. Then snapshot one time per shot (word start + 0.3 s) and look at the contact
 sheet: subject readable and not cropped, captions not hidden, nothing
 blocking the camera (trees!), panel legible, x-ray actually see-through,
 every label's arrow touching its part and the tag not covering the
