@@ -52,27 +52,28 @@ always 10+ open topics.
 
 ## Offen
 
-| Thema                     | Hook-Idee                                                                                                                       | Money-Shot                                                           | Kategorie     | Saison        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------- | ------------- |
-| Zapfpistole               | „Die Zapfpistole stoppt von allein – ganz ohne Strom und Elektronik.“                                                           | Benzin verschließt ein winziges Röhrchen, _klack_, der Hebel springt | Straße / Auto | –             |
-| Kontaktlos bezahlen       | „Deine Bankkarte hat keinen Akku. Das Terminal funkt ihr den Strom zu.“                                                         | Funkwellen laden den Chip in Zeitlupe, er leuchtet und funkt zurück  | Geld / Tech   | –             |
-| Taschenwärmer (Knick-Pad) | „Ein Knick – und das Ding wird über 50 Grad heiß. Ohne Batterie.“                                                               | Kristalle schießen in Zeitlupe durch die Flüssigkeit                 | Alltag        | Herbst/Winter |
-| Feuerzeug                 | „Dein Feuerzeug macht bei jedem Klick einen Mini-Blitz mit über 10.000 Volt.“                                                   | Hammer trifft Kristall, Funke springt, Flamme                        | Alltag        | –             |
-| Induktionsherd            | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                 | Küche         | –             |
-| Blitzer                   | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ              | Straße / Auto | –             |
-| Ampel-Kontaktschleife     | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün | Straße / Auto | –             |
-| Türschloss                | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht   | Zuhause       | –             |
-| Popcorn                   | „Jedes Popcorn ist eine Mini-Explosion – mit fast viermal so viel Druck wie in deinem Autoreifen.“ (~9 bar vs. ~2,5 bar)        | Maiskorn in extremer Zeitlupe, Hülle platzt, Stärke schäumt auf      | Küche         | –             |
-| Silvesterrakete           | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild              | Natur / Fest  | Ende Dezember |
-| Kabellos laden            | „Dein Handy lädt ohne Kabel – zwei Spulen reden durch die Luft.“                                                                | Magnetfeld-Linien springen von Spule zu Spule, Akku füllt sich       | Geld / Tech   | –             |
-| Heizkörper-Thermostat     | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt              | Zuhause       | Herbst/Winter |
-| Rolltreppe                | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück | Stadt         | –             |
-| Kaffeevollautomat         | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen) | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe      | Küche         | –             |
+| Thema                 | Hook-Idee                                                                                                                       | Money-Shot                                                           | Kategorie     | Saison        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------- | ------------- |
+| Zapfpistole           | „Die Zapfpistole stoppt von allein – ganz ohne Strom und Elektronik.“                                                           | Benzin verschließt ein winziges Röhrchen, _klack_, der Hebel springt | Straße / Auto | –             |
+| Kontaktlos bezahlen   | „Deine Bankkarte hat keinen Akku. Das Terminal funkt ihr den Strom zu.“                                                         | Funkwellen laden den Chip in Zeitlupe, er leuchtet und funkt zurück  | Geld / Tech   | –             |
+| Feuerzeug             | „Dein Feuerzeug macht bei jedem Klick einen Mini-Blitz mit über 10.000 Volt.“                                                   | Hammer trifft Kristall, Funke springt, Flamme                        | Alltag        | –             |
+| Induktionsherd        | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                 | Küche         | –             |
+| Blitzer               | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ              | Straße / Auto | –             |
+| Ampel-Kontaktschleife | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün | Straße / Auto | –             |
+| Türschloss            | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht   | Zuhause       | –             |
+| Popcorn               | „Jedes Popcorn ist eine Mini-Explosion – mit fast viermal so viel Druck wie in deinem Autoreifen.“ (~9 bar vs. ~2,5 bar)        | Maiskorn in extremer Zeitlupe, Hülle platzt, Stärke schäumt auf      | Küche         | –             |
+| Silvesterrakete       | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild              | Natur / Fest  | Ende Dezember |
+| Kabellos laden        | „Dein Handy lädt ohne Kabel – zwei Spulen reden durch die Luft.“                                                                | Magnetfeld-Linien springen von Spule zu Spule, Akku füllt sich       | Geld / Tech   | –             |
+| Heizkörper-Thermostat | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt              | Zuhause       | Herbst/Winter |
+| Rolltreppe            | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück | Stadt         | –             |
+| Schnellkochtopf       | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100      | Küche         | –             |
+| Kaffeevollautomat     | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen) | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe      | Küche         | –             |
 
 ## Reserviert (in Arbeit)
 
-| Thema | Datum | Chat |
-| ----- | ----- | ---- |
+| Thema                     | Datum      | Chat                 |
+| ------------------------- | ---------- | -------------------- |
+| Taschenwärmer (Knick-Pad) | 2026-10-23 | Video: Taschenwärmer |
 
 ## Verwendet
 
