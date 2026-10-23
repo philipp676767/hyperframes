@@ -304,6 +304,6 @@ step 6b), and per beat one line of visual plan, e.g.:
 
 - Hook: Kühlschrank-Rückseite glüht rot, Wärmepfeile strömen aus der Milch nach hinten
 - Verdampfer: Kühlschrank wird gläsern, blaues Rohr wächst in die Rückwand (Schild „Verdampfer“), LED „KOCHT BEI −26 °C“, Siedeblasen + Zischen
-- Eigene Sounds dieses Videos: „Kühlschrank-Brummen beim Anspringen“ (ElevenLabs), „Gluckern im Rohr“ (synthetisch)
+- Eigene Sounds dieses Videos: „Kühlschrank-Brummen beim Anspringen“, „Gluckern im Rohr“
 - Trick: Kompressor brummt los
 - …

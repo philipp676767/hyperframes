@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Add a ready-made sound (e.g. an ElevenLabs sound effect) to this video:
+# Add a sound file the user hands over to this video (own sounds are normally
+# synthesized in scripts/sfx-extra.py):
 # trimmed, mono 44.1 kHz, max 5 s, peak -3 dBFS like the house kit, saved
 # as assets/sfx-extra/<name>.wav. Then use it in beats.js SFX: { s: "<name>", at: T.x }.
 #   bash scripts/add-sfx.sh popcorn path/or/https-url.mp3 [max_seconds]

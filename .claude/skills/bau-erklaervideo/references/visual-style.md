@@ -234,7 +234,7 @@ hook's question is answered (banner ticks green), pop + pop + click + ding on th
 air out), brumm (motor, compressor), surr (current, hot wire), rauschen
 (wind, water), klack (latch, brake, door), click (switch, button), piep
 (alarm), geiger (radioactive crackle). **Plus 1–3 sounds of the video's
-own** (`assets/sfx-extra/`, from ElevenLabs or `scripts/sfx-extra.py` — see
+own** (`assets/sfx-extra/`, synthesized in `scripts/sfx-extra.py` — see
 SKILL.md step 4): popcorn popping, an alarm shrieking, coins rattling.
 They carry the money shots: the spectacle the picture shows should also
 be heard. Effects

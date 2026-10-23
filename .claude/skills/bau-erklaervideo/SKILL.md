@@ -201,22 +201,19 @@ topic and make its money shots audible: popcorn popping, a smoke alarm
 shrieking, coins rattling in an ATM, a lighter's spark click, ice
 cracking, a car engine roaring. Plan them with the visual plan (name them
 in the approval message) and put them where the picture shows the thing.
-Two ways, both land in `assets/sfx-extra/<name>.wav` and are used in
-`SFX` like any kit sound (`{ s: "popcorn", at: T.platzt, db: -10 }`):
-
-1. **Realistic, from ElevenLabs** (best for real-world sounds): one
-   `creative_generate_in_flow` call per sound — `node_type: "sfx"`,
-   `model_id: "eleven_text_to_sound_v2"`, **`generations_count: 1`**, an
-   English prompt that says what and how long ("single corn kernel popping,
-   sharp crisp pop, dry, close-up, 1 second" / "smoke detector alarm, three
-   piercing beeps, 3 seconds"). Poll `creative_get_flow_run_status`, then
-   `bash scripts/add-sfx.sh <name> "<content_url>"` (trims, mono, peak
-   −3 dBFS like the kit, max 5 s). Costs a few credits — keep it to the
-   sounds that matter.
-2. **Synthesized, free:** write it in `scripts/sfx-extra.py` with the kit's
-   own helpers (`t_of noise sine svf env write rng np`, see the example in
-   the file); `build-sfx.mjs` runs it every time. Good for clicks, beeps,
-   hums, crackles, rhythmic patterns.
+They are **synthesized, free — like the house kit** (user's decision
+2026-10-23: no ElevenLabs sound effects): write them in
+`scripts/sfx-extra.py` with the kit's own helpers (`t_of noise sine svf
+env write rng np`, see the example in the file). `build-sfx.mjs` runs it
+every time; each `write("popcorn", …)` becomes
+`assets/sfx-extra/popcorn.wav`, used in `SFX` like any kit sound
+(`{ s: "popcorn", at: T.platzt, db: -10 }`). Build them from the physics
+of the real sound: a pop = short noise burst + falling pitch, an alarm =
+a gated high sine in its real pattern, coins = several bright metallic
+partials with fast decay, an engine = low saw/harmonics with a pitch
+that follows the speed. Only if the user hands over a sound file
+themselves: `bash scripts/add-sfx.sh <name> <file>` (trims, mono, peak
+−3 dBFS like the kit).
 
 Rules: names must differ from the house sounds (build-sfx stops on a
 clash), own sounds default to −12 dB (set `db` per cue), max ~1 own sound
