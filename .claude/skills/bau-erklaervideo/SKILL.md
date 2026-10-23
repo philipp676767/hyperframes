@@ -196,11 +196,10 @@ crackle / anything radioactive). Rerun `node scripts/build-sfx.mjs && node scrip
 #### The video's own sounds (freedom per topic)
 
 The house kit stays in every video (whooshes, pops, dings, CTA clicks …).
-On top, **every video may get 1–3 sounds of its own** that belong to its
-topic and make its money shots audible: popcorn popping, a smoke alarm
+On top, a video **may** get 1–3 sounds of its own — **only where it really fits**: the topic has a characteristic, recognisable sound and the picture shows the thing making it right then. **None is fine and often right**; never invent a sound for something silent or just to have one. Examples of a good fit: popcorn popping, a smoke alarm
 shrieking, coins rattling in an ATM, a lighter's spark click, ice
 cracking, a car engine roaring. Plan them with the visual plan (name them
-in the approval message) and put them where the picture shows the thing.
+in the approval message, or say "keine eigenen Sounds" when nothing fits) and put them where the picture shows the thing.
 They are **synthesized, free — like the house kit** (user's decision
 2026-10-23: no ElevenLabs sound effects): write them in
 `scripts/sfx-extra.py` with the kit's own helpers (`t_of noise sine svf
