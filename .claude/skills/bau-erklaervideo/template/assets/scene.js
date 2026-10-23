@@ -122,12 +122,12 @@ function renderAt(t) {
   puff("bulb", t, T.also + 0.3, 0, 0.05, 0, 1.3);
   setXray(
     [glassMat],
-    smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.schau, T.schau + 0.5)),
+    smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.payoff, T.payoff + 0.5)),
   );
   const hot = smooth(ramp(t, T.heiss, T.gluet + 0.4));
   filamentMat.emissiveIntensity = 2.5 * hot;
   glow.intensity = 6 * hot;
-  animateArrows(heatOut, t, pop(t, T.gluet, T.schau));
+  animateArrows(heatOut, t, pop(t, T.gluet, T.payoff));
 
   // LED panel: one fact per beat, max one at a time
   if (t >= T.heiss && t < T.gluehfaden) {

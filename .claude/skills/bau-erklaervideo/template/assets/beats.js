@@ -16,8 +16,8 @@ export const T = {
   heiss: W("heiß"),
   gluet: W("glüht"),
   gluehfaden: W("Glühfaden"),
-  schau: W("Schau"),
-  gerade: W("gerade"),
+  payoff: W("weil"), // the line that answers the hook question
+  fakt: W("Übrigens"),
 };
 
 // ---------------------------------------------------------------- shots
@@ -31,8 +31,8 @@ export const shots = [
   { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
   { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
   { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.schau, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.gerade, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
+  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
 ];
 
 // ---------------------------------------------------------------- labels
@@ -40,7 +40,7 @@ export const shots = [
 // point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
   { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.schau, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
 ];
 
 // ---------------------------------------------------------------- highlights
@@ -63,5 +63,5 @@ export const HIGHLIGHTS = [
 //   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
   { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.schau - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
 ];

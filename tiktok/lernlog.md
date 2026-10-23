@@ -6,6 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
+- [ ] **Kein „Schau dich an. Du hast gerade … gebaut.“ mehr** (Nutzer, 2026-10-23): die Auflösung der Hook-Frage geht direkt in „Übrigens“ über.
 - [ ] **Absprung bei ~13 s verhindern:** Hook-Frage erst im Payoff beantworten (Banner bleibt bis dahin sichtbar), vor 10 s ein zweiter konkreter Grund zu bleiben, 10–15 s zweiter Money-Shot, keine Floskel „Jetzt der Trick“, bis 15 s keine Fachbegriffe/Zahlen. Fortschrittsbalken über `steps`.
 - [ ] **Die ersten 3 Sekunden** (wichtigster Punkt!): Titel ab Bild 0, Bewegung ab Bild 0, Spektakel in der 1. Sekunde, erster Schnitt ≤ 1,5 s, kein Röntgen am Anfang, Twist in den ersten 4 Wörtern. Die CTA bleibt unverändert.
 - [ ] Hook: Spektakel zeigen + Grund zum Bleiben („Gleich weißt du, wie.“ — nie eine Sekundenzahl nennen) — nie nur „Lass ihn uns bauen.“

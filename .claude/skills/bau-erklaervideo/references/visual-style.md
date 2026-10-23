@@ -228,8 +228,8 @@ one second later and flips to grey "Gefolgt".
 Every video has a third audio track (`assets/sfx.mp3`) from a synthesized
 house kit, so the cuts and pop-ins _feel_ edited. Automatic: whoosh on each
 cut (peak on the cut), hit when the hook title lands, punch under each
-keyword, blip per name tag, ding on
-"… gebaut.", pop + pop + click + ding on the CTA buttons. Per scene
+keyword, blip per name tag, blip per finished build step, ding when the
+hook's question is answered (banner ticks green), pop + pop + click + ding on the CTA buttons. Per scene
 (`SFX` in beats.js): pop for every part that pops in, zisch (gas, steam,
 air out), brumm (motor, compressor), surr (current, hot wire), rauschen
 (wind, water), klack (latch, brake, door), click (switch, button). Effects

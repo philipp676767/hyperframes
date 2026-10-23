@@ -50,7 +50,8 @@ bubbles, analogy sets, door opening).
 
 `W`, `LAST`, `END`, `DURATION`, `HL`, `WORDS`, `LOOP` (start of the `> …`
 loop line or null), `ctaTimes()` (comment / follow / tap / flip moments,
-mirrors index.html), `payoffTime()` (end of "… gebaut." before the CTA),
+mirrors index.html), `payoffTime()` (legacy: end of "… gebaut." in old episodes; new
+scripts have no such line),
 `factTime()` (the "Übrigens" word).
 
 **Loop + cover in `start()`:** from `LOOP` on, `renderAt` receives
@@ -113,7 +114,7 @@ import { T, shots, LABELS } from "./beats.js"; // all beats live there
 function renderAt(t) {
   // 1. hook prop: animate its failure, showNope(pop(…)), shrink it away (inBack) on T.also
   // 2. subject: obj.scale.copy(squash(t, T.also + 0.15)); puff("subj", t, T.also + 0.3, 0, 0.05, 0, 1.3)
-  // 3. setXray([...shellMats], smooth(ramp(…)) * (1 - ramp(t, T.schau, T.schau + 0.5)))
+  // 3. setXray([...shellMats], smooth(ramp(…)) * (1 - ramp(t, T.payoff, T.payoff + 0.5)))
   // 4. per beat: reveal parts (visible / scale / setDrawRange), emissive glow, particles
   // 5. animateArrows(set, t, pop(t, a, b)) for each arrow set
   // 6. analogy sets: animate only while their shot is on screen

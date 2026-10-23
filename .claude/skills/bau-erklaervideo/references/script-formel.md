@@ -4,8 +4,10 @@ Feedback on episode 1 (fridge) from an experienced creator: the script was
 flat, the hook weak, nothing kept people watching. v2 writes for **watch
 time**: a hook that wins the first 2 seconds, an open loop that is only
 closed at the end, re-hooks in the middle, and a CTA that makes people
-comment. The build-it-yourself frame ("Du hast gerade X gebaut") stays —
-it's the series signature.
+comment. The build-it-yourself frame stays in the Du-Form ("Du brauchst
+…", "Lass ihn uns bauen") — but the spoken line **"Schau dich an. Du hast
+gerade X gebaut." is gone for good** (user's rule, 2026-10-23): it told
+viewers "fertig" right before the bonus fact and the CTA.
 
 ## Length
 
@@ -15,14 +17,14 @@ Expected length = words ÷ 2.7 + 1.2 s (measured with Jan, the house voice). Cou
 
 ## Shape
 
-| Part                            | Words               | Job                                                                   |
-| ------------------------------- | ------------------- | --------------------------------------------------------------------- |
-| **Hook** (line 1)               | 15–22               | win the first 2 s, open a loop                                        |
-| **Beats** (lines 2–4)           | 3 beats, 18–25 each | build the thing; each beat ends pulling into the next                 |
-| **Payoff + signature** (line 5) | ~10–15              | close the hook's loop, then "Schau dich an. Du hast gerade X gebaut." |
-| **Bonus fact** (same line 5)    | 10–15               | "Übrigens: …" — one surprising, shareable fact                        |
-| **CTA** (line 6)                | 12–18               | comment question + follow                                             |
-| **Loop bridge** (last line)     | 2–4                 | `> Und merk dir:` — runs straight back into the hook                  |
+| Part                         | Words               | Job                                                                    |
+| ---------------------------- | ------------------- | ---------------------------------------------------------------------- |
+| **Hook** (line 1)            | 15–22               | win the first 2 s, open a loop                                         |
+| **Beats** (lines 2–4)        | 3 beats, 18–25 each | build the thing; each beat ends pulling into the next                  |
+| **Payoff** (line 5)          | ~8–15               | answer the hook's question in one punchy line — the banner ticks green |
+| **Bonus fact** (same line 5) | 10–15               | "Übrigens: …" — one surprising, shareable fact                         |
+| **CTA** (line 6)             | 12–18               | comment question + follow                                              |
+| **Loop bridge** (last line)  | 2–4                 | `> Und merk dir:` — runs straight back into the hook                   |
 
 ### 1. Hook — the first sentence decides everything
 
@@ -146,15 +148,17 @@ numbers). So:
 - Concrete numbers (each becomes an LED-panel fact). Facts must be right;
   when unsure, phrase safely or check.
 
-### 3. Payoff + signature
+### 3. Payoff
 
-Close the hook's loop explicitly ("Und genau deshalb ist die Rückseite
-warm."), then the series line **"Schau dich an. Du hast gerade [einen/
-eine/ein] X gebaut."**
+Close the hook's loop explicitly and with punch — this is the moment the
+question banner ticks green, so the `answer` word in `hf-config` sits
+here: "Und genau deshalb ist die Rückseite _warm_." / "Darum bleibt echtes
+Geld _dunkel_." **Never** "Schau dich an. Du hast gerade X gebaut." (or
+any other "fertig"-line) — go straight on to "Übrigens".
 
 ### 3b. Bonus fact — "Übrigens: …"
 
-Right after the signature, on the same line: **"Übrigens: …"** + one
+Right after the payoff, on the same line: **"Übrigens: …"** + one
 surprising fact about the topic that people want to repeat to someone
 ("Übrigens: In deinem Kühlschrank ist es kälter als am Nordpol im
 Sommer."). It must start with the word **"Übrigens"** — the "WUSSTEST
@@ -233,8 +237,7 @@ and a soft "punch" sounds. Rules:
 - Always: each technical term where it is named (`Das ist der
 *Verdampfer*.`), the hook's twist word, the re-hook (`der *Trick*`),
   every number the LED panel shows.
-- Never: the CTA line (it has its own buttons), filler words, the series
-  line ("gebaut" gets the ding anyway).
+- Never: the CTA line (it has its own buttons), filler words.
 - Only around one word, punctuation outside: `*Kompressor*.` The stars
   never reach the voice (strip them before ElevenLabs).
 
@@ -253,7 +256,7 @@ Dein Kühlschrank macht gar keine *Kälte*. Er *klaut* deiner Milch die Wärme �
 Du brauchst ein Rohr in der Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus *26* Grad kocht. Dabei saugt sie die Wärme aus deiner Milch. Das ist der *Verdampfer*.
 Jetzt hast du warmes Gas. Und hier kommt der *Trick*: Eine Pumpe quetscht es zusammen, bis es richtig *heiß* wird. Das ist der *Kompressor*.
 Das heiße Gas jagst du hinten durch ein *Zickzack-Rohr* – genau da landet die geklaute Wärme. Ein haarfeines Röhrchen macht es wieder *eiskalt*, und alles läuft im Kreis.
-Schau dich an. Du hast gerade einen Kühlschrank gebaut.
+Und genau deshalb ist er hinten *warm*.
 Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
 ```
 
@@ -264,7 +267,7 @@ From now on every script also gets the bonus fact and the loop bridge —
 for the fridge they would be (beats trimmed by ~16 words to stay ≤ 130):
 
 ```text
-Schau dich an. Du hast gerade einen Kühlschrank gebaut. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
+Und genau deshalb ist er hinten *warm*. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
 Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
 > Und merk dir:
 ```
@@ -286,6 +289,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] 0–15 s: spectacle + mystery, max 1 term, no numbers
 - [ ] 3 beats, each ending with a pull; one re-hook; one home moment
 - [ ] ≤ 3 technical terms; no sentence that needs a breath
+- [ ] No "Schau dich an. Du hast gerade X gebaut." — the payoff answers the question, then straight to "Übrigens"
 - [ ] Bonus fact starts with "Übrigens", 10–15 words, true, surprising
 - [ ] CTA: question answerable in 1–3 words + "folg"
 - [ ] Loop line `> …` + hook sentence 1 read as one sentence
