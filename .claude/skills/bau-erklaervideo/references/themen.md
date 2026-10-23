@@ -52,26 +52,27 @@ always 10+ open topics.
 
 ## Offen
 
-| Thema                 | Hook-Idee                                                                                                                       | Money-Shot                                                           | Kategorie     | Saison        |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------- | ------------- |
-| Zapfpistole           | „Die Zapfpistole stoppt von allein – ganz ohne Strom und Elektronik.“                                                           | Benzin verschließt ein winziges Röhrchen, _klack_, der Hebel springt | Straße / Auto | –             |
-| Feuerzeug             | „Dein Feuerzeug macht bei jedem Klick einen Mini-Blitz mit über 10.000 Volt.“                                                   | Hammer trifft Kristall, Funke springt, Flamme                        | Alltag        | –             |
-| Induktionsherd        | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                 | Küche         | –             |
-| Blitzer               | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ              | Straße / Auto | –             |
-| Ampel-Kontaktschleife | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün | Straße / Auto | –             |
-| Türschloss            | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht   | Zuhause       | –             |
-| Silvesterrakete       | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild              | Natur / Fest  | Ende Dezember |
-| Kabellos laden        | „Dein Handy lädt ohne Kabel – zwei Spulen reden durch die Luft.“                                                                | Magnetfeld-Linien springen von Spule zu Spule, Akku füllt sich       | Geld / Tech   | –             |
-| Heizkörper-Thermostat | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt              | Zuhause       | Herbst/Winter |
-| Rolltreppe            | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück | Stadt         | –             |
-| Schnellkochtopf       | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100      | Küche         | –             |
-| Kaffeevollautomat     | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen) | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe      | Küche         | –             |
-| Wasserkocher          | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus     | Küche         | –             |
+| Thema                 | Hook-Idee                                                                                                                       | Money-Shot                                                            | Kategorie     | Saison        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------- | ------------- |
+| Feuerzeug             | „Dein Feuerzeug macht bei jedem Klick einen Mini-Blitz mit über 10.000 Volt.“                                                   | Hammer trifft Kristall, Funke springt, Flamme                         | Alltag        | –             |
+| Induktionsherd        | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                  | Küche         | –             |
+| Blitzer               | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ               | Straße / Auto | –             |
+| Ampel-Kontaktschleife | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün  | Straße / Auto | –             |
+| Türschloss            | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht    | Zuhause       | –             |
+| Silvesterrakete       | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild               | Natur / Fest  | Ende Dezember |
+| Kabellos laden        | „Dein Handy lädt ohne Kabel – zwei Spulen reden durch die Luft.“                                                                | Magnetfeld-Linien springen von Spule zu Spule, Akku füllt sich        | Geld / Tech   | –             |
+| Heizkörper-Thermostat | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt               | Zuhause       | Herbst/Winter |
+| Rolltreppe            | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück  | Stadt         | –             |
+| Schnellkochtopf       | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100       | Küche         | –             |
+| Kaffeevollautomat     | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen) | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe       | Küche         | –             |
+| Eiswürfel             | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt | Küche         | Sommer        |
+| Wasserkocher          | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus      | Küche         | –             |
 
 ## Reserviert (in Arbeit)
 
-| Thema | Datum | Chat |
-| ----- | ----- | ---- |
+| Thema       | Datum      | Chat               |
+| ----------- | ---------- | ------------------ |
+| Zapfpistole | 2026-10-23 | Video: Zapfpistole |
 
 ## Verwendet
 
