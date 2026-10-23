@@ -24,5 +24,11 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 | alle (#1–#17) | gesamt           | –       | **< 10 % bis zum Ende**, die meisten springen schon am Anfang ab | –                  | Nutzer-Statistik 2026-10-23. Analyse von #13–#17: Bild 0 ohne Titel, ~3 s Standbild nur mit Stimme, Spektakel erst ab ~3 s, Röntgen macht das Bild fast weiß.                                               | Regeln „Die ersten 3 Sekunden“ (visual-style.md), Titel ab Bild 0 (Vorlage), Twist in den ersten 4 Wörtern, CTA bleibt unangetastet               |
 | alle          | gesamt           | –       | **die meisten springen bei ~13 s ab**                            | –                  | Nutzer-Statistik 2026-10-23. In fast jeder Folge stand bei 11–15 s „Jetzt/Hier kommt der Trick“, die Hook-Frage war schon fast beantwortet, und es kamen Bauteil-Namen + Zahlen.                            | Hook-Frage erst am Ende auflösen, Fragen-Banner + Fortschrittsbalken (Vorlage), zweiter Grund vor 10 s, Floskel-Verbot, 2. Money-Shot bei 10–15 s |
 
+## Zuschauer-Daten (Konto gesamt)
+
+| Datum      | Länder                                                                       | Alter                                                                 | Geschlecht                 | Deutung                                                                                                                                                                           |
+| ---------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-10-23 | AT 52,6 %, CH 23,3 %, DE 16,6 %, IT 1,5 %, LI 1,1 % (> 93 % deutschsprachig) | 18–24: 34,7 %, 25–34: 42,5 %, 35–44: 10,5 %, 45–54: 9,2 %, 55+: 3,1 % | 51 % w, 45 % m, 4 % andere | Sprache passt. TikTok testet das Konto noch breit in der Nähe (AT vor DE) bei jungen Zufalls-Scrollern → Bild 0 und Themen müssen für 18–34 ohne Technik-Interesse funktionieren. |
+
 Kontext: Die ersten Videos eines neuen Formats liegen oft bei 300–500 Aufrufen;
 TikTok belohnt Regelmäßigkeit und sichtbare Verbesserung von Video zu Video.
