@@ -6,7 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
-- [ ] Hook: Spektakel zeigen + Grund zum Bleiben mit Zeitversprechen („In 40 Sekunden weißt du, wie.“) — nie nur „Lass ihn uns bauen.“
+- [ ] Hook: Spektakel zeigen + Grund zum Bleiben („Gleich weißt du, wie.“ — nie eine Sekundenzahl nennen) — nie nur „Lass ihn uns bauen.“
 - [ ] Alle 5–7 s ein Highlight (Zeitlupe, Blitz, Wackeln, Crash-Zoom, Reißschwenk) und 2–3 Money-Shots, die die spektakulären Behauptungen **zeigen**.
 - [ ] Klarheit: Objekt groß im Bild, Röntgen-Look max. ⅓ der Zeit, kaum Rand-Unschärfe, starker Farbkontrast.
 - [ ] Stimme mit 3–6 Regieanweisungen (`[excited]`, `[whispers]` …), damit Jan nicht monoton klingt.

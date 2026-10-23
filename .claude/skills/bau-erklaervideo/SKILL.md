@@ -268,7 +268,7 @@ Example:
 
 ```text
 Dein Kühlschrank macht keine Kälte – er klaut sie 🤯
-In 45 Sekunden baust du einen nach und verstehst, wie ein Kühlschrank funktioniert.
+Bau ihn mit mir nach und versteh endlich, wie ein Kühlschrank funktioniert.
 Fass mal hinten dran: Ist deiner warm? 👇
 #lernenmittiktok #wissen #kühlschrank #physik #duhastgeradegebaut
 ```

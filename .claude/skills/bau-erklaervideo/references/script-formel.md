@@ -33,10 +33,12 @@ bauen" is not a reason to stay. So the hook has two jobs:
 1. **Spektakel / Behauptung** — the most surprising thing about the
    topic, which the first frame _shows_ (the car driving upside down on a
    ceiling, the microwave sparking, the fridge's hot back).
-2. **Das Versprechen** — say what the viewer gets by staying, with a time:
-   "In 40 Sekunden weißt du, wie." / "Am Ende baust du ihn selbst." /
-   "Und der Trick dahinter ist simpel." Then (optionally) "Lass ihn uns
-   bauen."
+2. **Das Versprechen** — say what the viewer gets by staying:
+   "Gleich weißt du, wie." / "Am Ende baust du ihn selbst." / "Und der
+   Trick dahinter ist simpel." Then (optionally) "Lass ihn uns bauen."
+   **Never name a number of seconds** ("In 40 Sekunden weißt du, wie" —
+   the user's rule, 2026-10-23): it reminds people how long they still
+   have to watch. Say "gleich" instead.
 
 Before showing a hook, ask honestly: _would a stranger scrolling at 1 a.m.
 stop for this?_ If the answer needs context ("there's a Tesla that
@@ -49,9 +51,9 @@ Rules:
 - **Sentence 1 ≤ 12 words** and it must do one of: break a belief, state
   an unbelievable fact, ask a question the viewer has _felt_ but never
   answered, or show stakes.
-- **Sentence 2 = the promise, with a reason to stay**: "In 40 Sekunden
-  weißt du, wie." / "Am Ende baust du ihn selbst." — never only "Lass
-  ihn uns bauen." (that can follow as sentence 3).
+- **Sentence 2 = the promise, with a reason to stay**: "Gleich weißt
+  du, wie." / "Am Ende baust du ihn selbst." — never only "Lass ihn uns
+  bauen." (that can follow as sentence 3), never a number of seconds.
 - **Open a loop** the video closes at the end (a "why", a strange detail,
   a number) — viewers stay to get it.
 - The **first frame already shows the strange thing** (subject mid-action,
@@ -59,22 +61,22 @@ Rules:
 
 **House favourite: Mythos-Bruch + Versprechen.** The user picked it for the fridge v2
 (Hook A, `tiktok/skripte/kuehlschrank-v2.md`): break a belief in sentence
-1, name what really happens + the time promise in sentence 2 ("Er klaut
-sie – und in 40 Sekunden weißt du, wie."), then "Lass ihn uns bauen."
+1, name what really happens + the promise in sentence 2 ("Er klaut sie –
+und gleich weißt du, wie."), then "Lass ihn uns bauen."
 Make it the first (recommended) option every time; the other two hooks
 use different formulas so the user can compare.
 
 Hook formulas (write three, pick the strongest, show the other two to the
 user as alternatives):
 
-| Formula               | Example                                                                       |
-| --------------------- | ----------------------------------------------------------------------------- |
-| **Mythos-Bruch**      | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."                       |
-| **Alltags-Rätsel**    | "Warum ist die Rückseite von deinem Kühlschrank warm?"                        |
-| **Unglaubliche Zahl** | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst."              |
-| **Gefahr / Stakes**   | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."                         |
-| **Du-Moment**         | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."                    |
-| **Ergebnis zuerst**   | "In 40 Sekunden baust du einen Kühlschrank – aus einem Rohr und einer Pumpe." |
+| Formula               | Example                                                               |
+| --------------------- | --------------------------------------------------------------------- |
+| **Mythos-Bruch**      | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."               |
+| **Alltags-Rätsel**    | "Warum ist die Rückseite von deinem Kühlschrank warm?"                |
+| **Unglaubliche Zahl** | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst."      |
+| **Gefahr / Stakes**   | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."                 |
+| **Du-Moment**         | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."            |
+| **Ergebnis zuerst**   | "Gleich baust du einen Kühlschrank – aus einem Rohr und einer Pumpe." |
 
 **Hook title (on screen, 0–3 s):** 3–6 words, same promise in fewer
 words, one keyword in `<em>` (yellow). Not a copy of the spoken line.
@@ -239,7 +241,7 @@ beat 3; "Und hier kommt der Trick:" as re-hook; a home test in the CTA.
 
 ## Self-check before showing the user
 
-- [ ] Hook = spectacle the first frame shows + a reason to stay (time promise)
+- [ ] Hook = spectacle the first frame shows + a reason to stay ("gleich weißt du, wie" — no seconds)
 - [ ] Would a stranger stop scrolling for the first sentence alone?
 - [ ] Topic noun in the first 5 words, sentence 1 ≤ 12 words, no wind-up
 - [ ] A highlight planned every 5–7 s; 3–6 delivery tags
