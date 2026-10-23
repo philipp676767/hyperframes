@@ -1,0 +1,355 @@
+[
+  {
+    "s": "whoosh",
+    "at": 0,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "klack",
+    "at": 0.25,
+    "why": "beats.js"
+  },
+  {
+    "s": "surr",
+    "at": 0.35,
+    "why": "beats.js",
+    "dur": 2.55,
+    "db": -24
+  },
+  {
+    "s": "punch",
+    "at": 2.04,
+    "why": "highlight"
+  },
+  {
+    "s": "pop",
+    "at": 2.09,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.78,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 3.05,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 3.73,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 4.1,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 4.1,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.84,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 7.31,
+    "why": "beats.js"
+  },
+  {
+    "s": "hit",
+    "at": 7.36,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.48,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 8.8,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 8.85,
+    "why": "label Natriumacetat"
+  },
+  {
+    "s": "rauschen",
+    "at": 8.85,
+    "why": "beats.js",
+    "dur": 0.8,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 9.44,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "pop",
+    "at": 9.51,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.04,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 12.76,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.9,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 13.28,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 13.5,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 13.55,
+    "why": "label unterkühlt"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.18,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 16.22,
+    "why": "highlight"
+  },
+  {
+    "s": "punch",
+    "at": 16.82,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 16.87,
+    "why": "label Metallplättchen"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.74,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 18.34,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 18.34,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.7,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 20,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "blip",
+    "at": 20.27,
+    "why": "label Kristall-Keim"
+  },
+  {
+    "s": "whoosh",
+    "at": 21.48,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 21.7,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 21.7,
+    "why": "highlight flash"
+  },
+  {
+    "s": "slowmo",
+    "at": 21.7,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "hit",
+    "at": 21.75,
+    "why": "highlight shake"
+  },
+  {
+    "s": "surr",
+    "at": 21.75,
+    "why": "beats.js",
+    "dur": 3.1400000000000006,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 24.06,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 25.48,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 27.64,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 27.64,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 27.86,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 27.91,
+    "why": "label Kristallisationswärme"
+  },
+  {
+    "s": "whoosh",
+    "at": 29.06,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.84,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 31.26,
+    "why": "beats.js",
+    "dur": 2.04,
+    "db": -20
+  },
+  {
+    "s": "zisch",
+    "at": 31.56,
+    "why": "beats.js",
+    "dur": 1.4,
+    "db": -24
+  },
+  {
+    "s": "whoosh",
+    "at": 33.18,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.3,
+    "why": "cut"
+  },
+  {
+    "s": "ding",
+    "at": 36.34,
+    "why": "payoff"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.4,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 36.62,
+    "why": "bonus fact"
+  },
+  {
+    "s": "pop",
+    "at": 36.72,
+    "why": "beats.js"
+  },
+  {
+    "s": "blip",
+    "at": 37.89,
+    "why": "label Natriumacetat"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.48,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 40.1,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 40.32,
+    "why": "comment pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 41.62,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 42.04,
+    "why": "beats.js",
+    "dur": 1.6599999999999995,
+    "db": -27
+  },
+  {
+    "s": "pop",
+    "at": 42.62,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 43.47,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 43.51,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 43.62,
+    "why": "loop cut"
+  }
+]

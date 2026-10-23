@@ -1,0 +1,7 @@
+[excited] Dein Taschenwärmer hat keine *Batterie*. Ein Knick – und er wird über *50* Grad heiß. Gleich weißt du, wie.
+Du brauchst einen Beutel mit flüssigem *Salz*. Unter 58 Grad müsste es fest werden – tut es aber nicht. Es ist *unterkühlt* – und wartet.
+[whispers] Und hier kommt der *Trick*: ein *Metallplättchen*. Knickst du es, entsteht ein winziger Kristall. Und dann – *zack*!
+Kristall für Kristall schießt durch den Beutel. Beim Festwerden gibt das Salz Wärme ab. Das ist *Kristallisationswärme*.
+Die Wärme war schon drin – in kochendem Wasser lädst du sie wieder auf. Schau dich an. Du hast gerade einen Taschenwärmer gebaut. [excited] Übrigens: Das gleiche Salz steckt in Salt-and-Vinegar-*Chips*.
+[curious] Hast du schon mal einen geknickt? Schreib's mir – und folg mir für mehr.
+> Und merk dir:
