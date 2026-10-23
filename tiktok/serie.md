@@ -21,3 +21,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 14  | Rauchmelder (neu)          | `tiktok/rauchmelder-v2`      | stadt  | morgen          | 44,6 s | 2026-10-22 |
 | 15  | Wassersprudler (neu)       | `tiktok/wassersprudler`      | insel  | abend           | 44,0 s | 2026-10-22 |
 | 16  | Fliegender Tesla (neu)     | `tiktok/fliegender-tesla-v2` | stadt  | abend           | 41,9 s | 2026-10-22 |
+| 17  | Geldautomat                | `tiktok/geldautomat`         | winter | mittag          | 46,0 s | 2026-10-23 |
