@@ -1,0 +1,378 @@
+[
+  {
+    "s": "whoosh",
+    "at": 0,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "brumm",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 3.34,
+    "db": -24
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.82,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 3.04,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 3.04,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.86,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 6.41,
+    "why": "label Rollen"
+  },
+  {
+    "s": "hit",
+    "at": 6.46,
+    "why": "highlight shake"
+  },
+  {
+    "s": "pop",
+    "at": 6.56,
+    "why": "beats.js"
+  },
+  {
+    "s": "brumm",
+    "at": 6.56,
+    "why": "beats.js",
+    "dur": 2.759999999999999,
+    "db": -23
+  },
+  {
+    "s": "whoosh",
+    "at": 7.9,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.7,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 8.92,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 8.97,
+    "why": "label UV-Lampe"
+  },
+  {
+    "s": "surr",
+    "at": 9.07,
+    "why": "beats.js",
+    "dur": 5.380000000000001,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 9.84,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 11.6,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 11.6,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.92,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.08,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 14.8,
+    "why": "beats.js"
+  },
+  {
+    "s": "hit",
+    "at": 14.9,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.7,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 16.34,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.62,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 16.84,
+    "why": "beats.js"
+  },
+  {
+    "s": "surr",
+    "at": 16.94,
+    "why": "beats.js",
+    "dur": 7.199999999999998,
+    "db": -25
+  },
+  {
+    "s": "slowmo",
+    "at": 17.78,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "punch",
+    "at": 20.04,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.42,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.56,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.76,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 22.98,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 23.03,
+    "why": "label Infrarot-Sensor"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.02,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 24.64,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 24.69,
+    "why": "label Magnetkopf"
+  },
+  {
+    "s": "whoosh",
+    "at": 25.64,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 26.11,
+    "why": "label Kassettenrekorder"
+  },
+  {
+    "s": "klack",
+    "at": 26.26,
+    "why": "beats.js"
+  },
+  {
+    "s": "brumm",
+    "at": 26.26,
+    "why": "beats.js",
+    "dur": 0.43999999999999984,
+    "db": -26
+  },
+  {
+    "s": "whoosh",
+    "at": 26.48,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 27.53,
+    "why": "label Magnet-Tinte"
+  },
+  {
+    "s": "blip",
+    "at": 27.93,
+    "why": "beats.js"
+  },
+  {
+    "s": "blip",
+    "at": 28.28,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 29.44,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.26,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 30.48,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 30.48,
+    "why": "highlight flash"
+  },
+  {
+    "s": "piep",
+    "at": 30.53,
+    "why": "beats.js",
+    "dur": 1.6200000000000023,
+    "db": -20
+  },
+  {
+    "s": "hit",
+    "at": 30.78,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 30.81,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.98,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.04,
+    "why": "cut"
+  },
+  {
+    "s": "ding",
+    "at": 34.56,
+    "why": "beats.js",
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 34.98,
+    "why": "cut"
+  },
+  {
+    "s": "ding",
+    "at": 36.88,
+    "why": "payoff"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.02,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 37.24,
+    "why": "bonus fact"
+  },
+  {
+    "s": "pop",
+    "at": 37.34,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 40.12,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 40.34,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 40.39,
+    "why": "label Baumwolle"
+  },
+  {
+    "s": "whoosh",
+    "at": 40.92,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 41.14,
+    "why": "comment pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 42.92,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 43.34,
+    "why": "beats.js",
+    "dur": 1.6599999999999995,
+    "db": -27
+  },
+  {
+    "s": "pop",
+    "at": 43.9,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 44.73,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 44.77,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 44.88,
+    "why": "loop cut"
+  }
+]

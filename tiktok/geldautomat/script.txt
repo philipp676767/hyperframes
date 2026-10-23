@@ -1,0 +1,7 @@
+[excited] Dein Geldautomat schaut sich deinen Schein gar nicht an. Er *durchleuchtet* ihn – in 40 Sekunden weißt du, wie.
+Zwei Rollen ziehen den Schein rein. Darüber: eine *UV-Lampe*. Billiges Papier leuchtet darunter *blau*. Echtes Euro-Papier bleibt dunkel. Aber Fälscher wissen das.
+[whispers] Jetzt der *Trick*. Im Infrarot-Licht verschwindet beim echten Schein fast die halbe *Farbe*. Beim falschen bleibt alles. Das ist der *Infrarot-Sensor*.
+Dann ein *Magnetkopf*, wie im Kassettenrekorder. Er spürt Magnet-Tinte an geheimen Stellen. Fehlt eine? *Zack* – der Automat behält ihn.
+Er sieht, was du nicht siehst. Schau dich an. Du hast gerade einen Geldautomaten gebaut. [excited] Übrigens: Euroscheine sind nicht aus Papier – sondern aus *Baumwolle*.
+[curious] Hattest du schon mal Falschgeld in der Hand? Schreib's mir – und folg mir für mehr.
+> Und merk dir:
