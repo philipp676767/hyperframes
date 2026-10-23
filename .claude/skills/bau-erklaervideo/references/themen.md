@@ -70,9 +70,8 @@ always 10+ open topics.
 
 ## Reserviert (in Arbeit)
 
-| Thema   | Datum      | Chat           |
-| ------- | ---------- | -------------- |
-| Popcorn | 2026-10-23 | Video: Popcorn |
+| Thema | Datum | Chat |
+| ----- | ----- | ---- |
 
 ## Verwendet
 
@@ -80,4 +79,4 @@ See `tiktok/serie.md` and the folders in `tiktok/` — the source of truth.
 As of 2026-10-23: Kühlschrank, Airfryer, Aufzug, Airbag, Windrad,
 Atomkraftwerk, Mikrowelle, Geschirrspüler, Rauchmelder, Fliegender Tesla,
 Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
-Taschenwärmer.
+Taschenwärmer, Popcorn.

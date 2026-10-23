@@ -23,3 +23,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 16  | Fliegender Tesla (neu)     | `tiktok/fliegender-tesla-v2` | stadt  | abend           | 41,9 s | 2026-10-22 |
 | 17  | Geldautomat                | `tiktok/geldautomat`         | winter | mittag          | 46,0 s | 2026-10-23 |
 | 18  | Taschenwärmer              | `tiktok/taschenwaermer`      | insel  | sonnenuntergang | 44,7 s | 2026-10-23 |
+| 19  | Popcorn                    | `tiktok/popcorn`             | strand | mittag          | 40,9 s | 2026-10-23 |
