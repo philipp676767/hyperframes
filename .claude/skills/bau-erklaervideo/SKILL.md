@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → payoff that answers the hook question → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) and a posting description (Beschreibung + hashtags) for every video. Claude picks the topic itself (references/themen.md, never one already done). Use whenever the user names a new topic for this series or asks for "noch so ein Video", "neues Video", "wie funktioniert X", "mach das nächste Video".'
+description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → payoff that answers the hook question → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) and a one-sentence posting description (no hashtags) for every video. Claude picks the topic itself (references/themen.md, never one already done). Use whenever the user names a new topic for this series or asks for "noch so ein Video", "neues Video", "wie funktioniert X", "mach das nächste Video".'
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -24,7 +24,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Bonus fact   | "Übrigens: …" right after the payoff — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                                                                                                                                                                                       |
 | Loop         | Last line `> Und merk dir:` (2–4 words) flows into the hook; picture cuts back to the opening shot so the end matches frame 0 (automatic)                                                                                                                                                                                                                                                                                 |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                             |
-| Beschreibung | **Every video gets a TikTok description** (step 6c): curiosity first line, comment question, **max. 5 hashtags**; saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                                                          |
+| Beschreibung | **Every video gets a TikTok description** (step 6c): **one sentence with the topic's search words, no hashtags**; saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                                                          |
 | Payoff       | The hook's question answered in one punchy line (banner ticks green). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                               |
 | Music        | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                                                                                                                                                                                   |
 | Setting      | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                  |
@@ -279,34 +279,29 @@ as the Titelbild when posting. Commit it (`tiktok/**/*.png` is LFS;
 
 ### 6c. Beschreibung (TikTok description) — every video
 
-Write the post text for every video, save it as
+**One sentence, no hashtags** (user's rule, 2026-10-23 — most viewers
+swiped away after 0.1 s, so the video was likely shown to the wrong
+people; TikTok sorts videos mainly by what is said and shown, and broad
+tags like `#lernenmittiktok` pulled in an unspecific audience; successful
+creators in this niche post without hashtags). Save it as
 `tiktok/<slug>/beschreibung.txt` and put it **in the delivery message as
-a copy-paste block** (with the video and the cover). German, Du-Form,
-emoji sparingly (1–3). Shape:
+a copy-paste block** (with the video and the cover).
 
-1. **First line = a second hook** (only ~1 line shows before "mehr"):
-   curiosity, not a summary, different from the spoken hook and the cover
-   title — e.g. "Dein Kühlschrank ist eigentlich eine Wärmepumpe 🤯".
-2. **1–2 short sentences** with what you learn / a teaser of the bonus
-   fact, without spoiling it fully.
-3. **The comment question from the CTA**, worded a bit differently, so
-   the comments answer it ("Ist deiner hinten warm? 👇").
-4. **3–5 hashtags, never more than 5** (the user's rule): 1–2 broad
-   discovery tags (`#lernenmittiktok`, `#wissen`), 1–2 topic tags
-   (`#kühlschrank`, `#physik`), the series tag `#duhastgeradegebaut`. No `#fyp` / `#viral` spam, no
-   English filler tags.
+- **Exactly one sentence**, German, Du-Form, ≤ ~110 characters, 0–1 emoji.
+- It names the topic with the words people search for ("Kühlschrank",
+  "Geldautomat", "Popcorn") — that is what tells TikTok who should see it.
+- Curiosity, not a summary, and different from the spoken hook and the
+  cover title.
+- **No hashtags at all**, no "Folg mir", no question list.
 
-Total ≤ 300 characters. Keywords the viewer would search for ("wie
-funktioniert ein Kühlschrank") belong in the text in natural words —
-TikTok search reads the description.
-
-Example:
+Examples:
 
 ```text
-Dein Kühlschrank macht keine Kälte – er klaut sie 🤯
-Bau ihn mit mir nach und versteh endlich, wie ein Kühlschrank funktioniert.
-Fass mal hinten dran: Ist deiner warm? 👇
-#lernenmittiktok #wissen #kühlschrank #physik #duhastgeradegebaut
+Dein Kühlschrank macht gar keine Kälte – er klaut sie aus deinem Essen 🤯
+```
+
+```text
+So erkennt der Geldautomat in einer Sekunde, ob dein Schein echt ist.
 ```
 
 ### 6d. Ask for the numbers — learning log
