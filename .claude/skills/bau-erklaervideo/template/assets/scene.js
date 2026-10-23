@@ -31,6 +31,7 @@ import {
   start,
 } from "./world.js";
 import { createWorld } from "./environments.js";
+import { createHand } from "./hand.js";
 import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
 
 highlights(HIGHLIGHTS);
@@ -104,8 +105,20 @@ const heatOut = makeArrowSet(
 
 const applyCamera = shotCamera(shots);
 
+// the viewer's hand reaches in on frame 0 and taps the jar (visual-style.md
+// "The first 3 seconds": a hand doing something stops the scroll)
+const hand = createHand({ scale: 0.7 });
+
 // ---------------------------------------------------------------- render
 function renderAt(t) {
+  hand.track(t, [
+    // starts before 0 so the loop tail (t < 0) already shows it reaching in
+    { t: -0.6, pos: [1.7, 1.0, 1.4], rot: [0.2, -2.1, 0], pose: "open" },
+    { t: 0, pos: [1.2, 0.78, 0.98], rot: [0.25, -2.1, 0], pose: "open" },
+    { t: 0.45, pos: [0.86, 0.64, 0.7], rot: [0.3, -2.1, 0], pose: "press" },
+    { t: 0.9, pos: [0.94, 0.66, 0.76], rot: [0.3, -2.1, 0], pose: "point" },
+    { t: T.lampe1, pos: [1.7, 0.95, 1.4], rot: [0.2, -2.1, 0], pose: "open", out: true },
+  ]);
   // hook: the candle burns down, then the "nope" X
   const burn = ramp(t, T.aber, T.aus + 0.3);
   flame.scale.setScalar(Math.max(0.001, 1 - smooth(burn)));

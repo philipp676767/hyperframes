@@ -64,7 +64,7 @@ export const HIGHLIGHTS = [
 // scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
 //   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: T.kerze }, // own sound of this video (scripts/sfx-extra.py)
+  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
   { s: "pop", at: T.also + 0.15 }, // the bulb pops in
   { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
 ];

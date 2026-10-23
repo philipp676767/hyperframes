@@ -117,8 +117,24 @@ the picture almost white. Rules for 0–3 s:
   (`flash`, `shake` or `zoom`) before 1.5 s.
 - **No x-ray in the first 3 s**, and never x-ray a shell that fills the
   frame (the whole picture turns pale) — x-ray only in medium shots.
-- **One text at a time on top:** hook title 2–5 words, not on top of signs
-  or labels in the scene (move the camera so they don't clash).
+- **One text at a time on top:** hook title **2–3 huge words** (the
+  template sets them in capitals at 140 px and shrinks anything longer to
+  two lines), not on top of signs or labels in the scene (move the camera
+  so they don't clash).
+- **A sound on frame 0:** the topic's own characteristic sound at `at: 0`
+  (popcorn pop, alarm, card beep — `SFX` in beats.js, see SKILL.md own
+  sounds); if nothing fits, a strong kit sound (`hit`, `zisch`, `klack`).
+  Never a silent first frame.
+- **The viewer's hand** (`createHand()` from `assets/hand.js`) whenever a
+  person would touch the thing: it reaches into frame 0 and does the
+  action — presses the button, taps the card, touches the plate. Hands
+  stop the scroll and make it "you". Start its keys slightly before 0
+  (e.g. `t: -0.6`) so the loop tail already shows it reaching in; keep
+  the subject visible next to it.
+
+**Audience (2026-10-23):** 77 % of viewers are 18–34, half women, mostly
+random scrollers. Design frame 0 for someone with no interest in
+technology: bold, everyday, a bit cheeky — never "school film".
 
 Check: snapshot 0, 0.5, 1, 1.5, 2, 3 s — every image must look different,
 frame 0 must make you curious without sound.

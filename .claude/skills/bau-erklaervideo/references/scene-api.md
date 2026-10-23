@@ -46,6 +46,14 @@ bubbles, analogy sets, door opening).
 | `renderFrame()`                                                                     | billboards + render; last call of `renderAt`                                                                                                                                                 |
 | `start(renderAt)`                                                                   | wire HyperFrames seeking; call once at the end                                                                                                                                               |
 
+## hand.js — the viewer's hand
+
+| Export                                                   | Use                                                                                                                                                                             |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `createHand({ skin, sleeve, left, scale })`              | low-poly right hand (palm down, fingers along +z) with a hoodie sleeve; returns `{ group, pose, track }`                                                                        |
+| `hand.track(t, keys)`                                    | call every frame; keys `{ t, pos:[x,y,z], rot:[x,y,z], pose, out? }` are eased; hidden before the first key and after a key with `out: true`. Poses: open point press grab fist |
+| `hand.pose(name or {index, middle, ring, pinky, thumb})` | set finger curls directly                                                                                                                                                       |
+
 ## timing.js (also in node)
 
 `W`, `LAST`, `END`, `DURATION`, `HL`, `WORDS`, `LOOP` (start of the `> …`

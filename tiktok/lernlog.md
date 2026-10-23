@@ -6,6 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
+- [ ] **Für die echte Zielgruppe (18–34, m/w, Zufalls-Scroller):** Alltagsthemen (★ in themen.md), frecher Ton, Bild 0 mit Geräusch + 2–3 Riesen-Wörtern + Hand, die etwas tut.
 - [ ] **Test ab jetzt: Beschreibung nur 1 Satz, keine Hashtags** (Nutzer, 2026-10-23: die meisten wischen nach 0,1 s weg → vermutlich falsches Publikum). Nach 2–3 Videos vergleichen: Wiedergabe nach 1–3 s, Aufrufe, Anteil bis zum Ende.
 - [ ] **Kein „Schau dich an. Du hast gerade … gebaut.“ mehr** (Nutzer, 2026-10-23): die Auflösung der Hook-Frage geht direkt in „Übrigens“ über.
 - [ ] **Absprung bei ~13 s verhindern:** Hook-Frage erst im Payoff beantworten (Banner bleibt bis dahin sichtbar), vor 10 s ein zweiter konkreter Grund zu bleiben, 10–15 s zweiter Money-Shot, keine Floskel „Jetzt der Trick“, bis 15 s keine Fachbegriffe/Zahlen. Fortschrittsbalken über `steps`.

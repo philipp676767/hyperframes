@@ -85,10 +85,19 @@ user as alternatives):
 | **Du-Moment**         | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."            |
 | **Ergebnis zuerst**   | "Gleich baust du einen Kühlschrank – aus einem Rohr und einer Pumpe." |
 
-**Hook title (on screen, 0–3 s):** 3–6 words, same promise in fewer
-words, one keyword in `<em>` (yellow). Not a copy of the spoken line.
-E.g. spoken "Dein Kühlschrank macht gar keine Kälte." → title
-"Dein Kühlschrank <em>lügt</em>".
+**Hook title (on screen, 0–3 s):** **2–3 words, ≤ 18 characters**, shown
+huge in capitals — readable in the 0.1 s a scroller gives it. Same promise
+in fewer words, one keyword in `<em>` (yellow). Not a copy of the spoken
+line. E.g. spoken "Dein Kühlschrank macht gar keine Kälte." → title
+"Er <em>lügt</em>!" / "<em>Keine</em> Kälte?!".
+
+**Tone for the audience (2026-10-23: 77 % are 18–34, half women, mostly
+random scrollers):** talk like a cheeky friend, not a teacher. Everyday
+references from _their_ life (Handy, Kaffee, Party, Gym, Pendeln), a bit
+of attitude and provocation — "Dein Handy belauscht dich gar nicht – es
+macht was Schlimmeres." Never kid-like or school-like ("Heute lernen
+wir …", "Weißt du eigentlich …", "Ganz einfach erklärt"), never
+clickbait that the video doesn't deliver, facts stay correct.
 
 ### 2. Beats — keep them watching
 
@@ -282,6 +291,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 
 - [ ] Hook = spectacle the first frame shows + a reason to stay ("gleich weißt du, wie" — no seconds)
 - [ ] Would a stranger stop scrolling for the first sentence alone?
+- [ ] Tone: cheeky friend for 18–34 (men and women), nothing school-like; hook title 2–3 words
 - [ ] Topic noun in the first 5 words, sentence 1 ≤ 12 words, no wind-up
 - [ ] A highlight planned every 5–7 s; 3–6 delivery tags
 - [ ] An open loop in the hook that only the payoff closes (not beat 1); `hf-config` question + answer word + steps filled in
