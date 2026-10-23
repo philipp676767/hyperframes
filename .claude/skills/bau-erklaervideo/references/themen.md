@@ -54,7 +54,6 @@ always 10+ open topics.
 
 | Thema                 | Hook-Idee                                                                                                                       | Money-Shot                                                            | Kategorie     | Saison        |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------- | ------------- |
-| Feuerzeug             | „Dein Feuerzeug macht bei jedem Klick einen Mini-Blitz mit über 10.000 Volt.“                                                   | Hammer trifft Kristall, Funke springt, Flamme                         | Alltag        | –             |
 | Induktionsherd        | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                  | Küche         | –             |
 | Blitzer               | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ               | Straße / Auto | –             |
 | Ampel-Kontaktschleife | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün  | Straße / Auto | –             |
@@ -66,12 +65,14 @@ always 10+ open topics.
 | Schnellkochtopf       | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100       | Küche         | –             |
 | Kaffeevollautomat     | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen) | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe       | Küche         | –             |
 | Eiswürfel             | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt | Küche         | Sommer        |
+| Türklingel            | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe  | Zuhause       | –             |
 | Wasserkocher          | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus      | Küche         | –             |
 
 ## Reserviert (in Arbeit)
 
-| Thema | Datum | Chat |
-| ----- | ----- | ---- |
+| Thema     | Datum      | Chat             |
+| --------- | ---------- | ---------------- |
+| Feuerzeug | 2026-10-23 | Video: Feuerzeug |
 
 ## Verwendet
 
