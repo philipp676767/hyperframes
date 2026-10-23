@@ -66,12 +66,12 @@ always 10+ open topics.
 | Rolltreppe            | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück | Stadt         | –             |
 | Schnellkochtopf       | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100      | Küche         | –             |
 | Kaffeevollautomat     | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen) | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe      | Küche         | –             |
+| Wasserkocher          | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus     | Küche         | –             |
 
 ## Reserviert (in Arbeit)
 
-| Thema               | Datum      | Chat              |
-| ------------------- | ---------- | ----------------- |
-| Kontaktlos bezahlen | 2026-10-23 | Video: Kontaktlos |
+| Thema | Datum | Chat |
+| ----- | ----- | ---- |
 
 ## Verwendet
 
@@ -79,4 +79,4 @@ See `tiktok/serie.md` and the folders in `tiktok/` — the source of truth.
 As of 2026-10-23: Kühlschrank, Airfryer, Aufzug, Airbag, Windrad,
 Atomkraftwerk, Mikrowelle, Geschirrspüler, Rauchmelder, Fliegender Tesla,
 Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
-Taschenwärmer, Popcorn.
+Taschenwärmer, Popcorn, Kontaktlos bezahlen.
