@@ -25,3 +25,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 18  | Taschenwärmer              | `tiktok/taschenwaermer`      | insel  | sonnenuntergang | 44,7 s | 2026-10-23 |
 | 19  | Popcorn                    | `tiktok/popcorn`             | strand | mittag          | 40,9 s | 2026-10-23 |
 | 20  | Kontaktlos bezahlen        | `tiktok/kontaktlos`          | stadt  | abend           | 43,9 s | 2026-10-23 |
+| 21  | Zapfpistole                | `tiktok/zapfpistole`         | land   | morgen          | 42,7 s | 2026-10-23 |
