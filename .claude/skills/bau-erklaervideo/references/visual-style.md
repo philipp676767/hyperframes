@@ -1,20 +1,32 @@
 # Visual style
 
 The look (toy low-poly, flat colours, soft shadows, pastel light, captions,
-CTA) is fixed. The **setting changes every video** — pick one of the
-environments in `environments.js` and a sky; never repeat the previous
-video's (log: `tiktok/serie.md`). What each video designs is the
-**subject**, its **build-up**, and the **shots**.
+CTA) is fixed. The **world is designed new for every video** (SKILL.md
+1b: env + sky + seed + palette, topic props, one hero background piece) —
+more detailed and more realistic in light and material, never another
+style. What each video designs is the **set**, the **subject**, its
+**build-up**, and the **shots**.
 
 ## Settings (environments.js)
 
 All share: faceted low-poly shapes, flat saturated-pastel colours, soft
 shadows, gradient sky with a low sun glow behind the subject (−z), puffy
-low-poly clouds, gentle fog into the distance. The subject always stands at
-the origin on a clear stage.
+low-poly cumulus with flat undersides, gentle fog into the distance. The
+subject always stands at the origin on a clear stage.
 
-**Alive, not static** (automatic in every env): trees and pines sway
-gently, clouds drift, a few low-poly birds circle far out; `insel`,
+**Realistic, still a toy** (automatic): every env lights the scene with
+its own sky (image-based light) — glossy parts mirror the real sky, matte
+facets take its colour in the shade; big grounds carry **colour patches**
+(worn grass, wet sand at the water line, blue hollows in the snow,
+weathered paving) instead of one even colour; the sea is a moving faceted
+surface that reflects the sky, turquoise in the shallows over sloping
+sand. Houses have window frames, sills, shops with awnings, gable or flat
+roofs; at night only some windows are lit.
+
+**Alive, not static** (automatic in every env): trees, bushes and pines
+sway gently, clouds drift, a few low-poly birds circle far out; chimney
+smoke rises in `winter`, kelp sways, bubbles rise and fish circle in
+`tiefsee`, the Earth turns and a satellite passes in `weltall`; `insel`,
 `land` and `strand` get instanced grass tufts with little flowers (beach
 grass on the dunes), always kept off the subject's footprint and the
 analogy spots.
@@ -32,28 +44,46 @@ soft contact shadows where surfaces meet (under parts, in corners, at tree
 and rock bases), **tilt-shift** — the top
 and bottom of the frame melt into a soft blur while the band around the
 subject stays sharp (the miniature-photo look that makes the diorama read
-as a toy set), a **soft glow** on emissive / very bright things (glowing
-wire, LEDs, sun, hot arrows), a light **vignette**, dithering against sky
-banding. The LED panel is drawn after it, always sharp. Tweak with `LOOK`
-(`LOOK.tilt = 0.6` for a whole video) or per shot (`{ …, tilt: 0 }` for a
-shot that must be sharp edge to edge, e.g. a tall subject filling the
-frame). The camera has a tiny hand-held drift on top of every shot.
+as a toy set), **clarity** — a little local contrast so every shape stands
+off its background, a **grade** — soft S-curve, a touch more colour, warm
+highlights and cool shadows — a **soft glow** on emissive / very bright
+things (glowing wire, LEDs, sun, hot arrows), a light **vignette**,
+dithering against sky banding. The LED panel is drawn after it, always
+sharp. Tweak with `LOOK` (`LOOK.tilt = 0.6` for a whole video) or per shot
+(`{ …, tilt: 0 }` for a shot that must be sharp edge to edge, e.g. a tall
+subject filling the frame). The camera has a tiny hand-held drift on top
+of every shot.
 
 - `insel` — floating island (radius 9) with earth cone and hanging roots,
-  park trees, rocks; pink haze below. The original look.
-- `stadt` — light plaza, asphalt road behind the stage with white dashes,
+  park trees, bushes, rocks; pink haze below. The original look.
+- `stadt` — stone-slab plaza, asphalt road behind the stage with dashes,
   double yellow centre line and a zebra crossing, pastel houses with
-  window grids (glowing at `abend`), street lamps, parked cars.
-- `strand` — sand with wavy shoreline and moving foam, turquoise sea,
-  palms with coconuts, umbrella + towel, a rocking sailboat.
-- `winter` — snow ground with drifts, snowy pines, lavender mountains with
-  snow caps, a cabin with a lit window, falling snow.
-- `land` — meadow, dirt road with a wooden fence, striped fields, red barn,
-  silo, hay bales, trees.
+  framed windows (some lit at `abend` / `nacht`), shops with striped
+  awnings, street lamps, benches, bikes, a bin, parked cars.
+- `strand` — beach sloping into the sea, wet sand along the water line,
+  washing foam, a faceted moving sea (turquoise → deep blue), palms,
+  umbrella + towel, a rocking sailboat.
+- `winter` — snow with blue-shaded hollows and drifts, snowy pines,
+  lavender mountains with snow caps, a cabin with chimney smoke, a frozen
+  pond, a snowman, a fence, falling snow.
+- `land` — meadow with dry and lush patches, a dirt path, a fence,
+  furrowed fields, red barn, silo, hay bales, cows and sheep, bushes.
+- `weltall` — a moon-rock island with craters floating in space, the
+  faceted Earth with a blue atmosphere, a ringed planet, a satellite,
+  stars; hard white sunlight, no fog.
+- `tiefsee` — sandy seabed with dunes, big rocks, corals, swaying kelp,
+  light shafts from the surface, drifting particles, rising bubbles, a
+  fish school; dense blue fog.
+- `wolken` — above the clouds: a sea of faceted cumulus below the stage,
+  towering clouds on the horizon, deep blue sky.
+- `kueche` — a big kitchen worktop by a window (daylight, treeline),
+  tiled wall, upper cabinets, glass jars, a fruit bowl, a cutting board, a
+  herb pot (1 unit ≈ 15 cm).
 
 Skies: `sonnenuntergang` (purple → pink → orange), `morgen` (light blue →
 rose → peach), `mittag` (clear blue), `abend` (deep blue-violet, warm
-horizon, lit windows/lamps).
+horizon, lit windows/lamps), `nacht` (stars, moonlight), `weltall`,
+`tiefsee`, `hoch` (for their envs).
 
 Optional checkered floor pad under the subject (`addFloor`) for indoor
 things (kitchen tiles, workshop floor) — skip it outdoors.

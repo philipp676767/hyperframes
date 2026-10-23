@@ -97,6 +97,49 @@ export function facet(geom, amt = 0.08, seed = 1) {
   g.computeVertexNormals();
   return g;
 }
+// Smooth value noise in 0..1 (deterministic): large-scale variation for
+// ground colour patches, height, drift. noise2(x, z, seed).
+export function noise2(x, z, seed = 0) {
+  const h = (i, j) => {
+    const v = Math.sin(i * 127.1 + j * 311.7 + seed * 74.7) * 43758.5453;
+    return v - Math.floor(v);
+  };
+  const i = Math.floor(x);
+  const j = Math.floor(z);
+  const fx = x - i;
+  const fz = z - j;
+  const u = fx * fx * (3 - 2 * fx);
+  const w = fz * fz * (3 - 2 * fz);
+  const a = h(i, j) + (h(i + 1, j) - h(i, j)) * u;
+  const b = h(i, j + 1) + (h(i + 1, j + 1) - h(i, j + 1)) * u;
+  return a + (b - a) * w;
+}
+
+// Large colour patches across a facet() surface — worn and sun-bleached
+// spots in the grass, damp sand, blue shade in the snow — so a big ground
+// never reads as one flat colour. `scale` = patches per world unit, `warm`
+// shifts bright patches warm and dark ones cool, `fn(x, z)` (optional) adds
+// its own brightness offset (e.g. wet sand near the water).
+export function patches(geo, { amt = 0.12, scale = 0.15, seed = 1, warm = 0.3, fn } = {}) {
+  const p = geo.attributes.position;
+  const c = geo.attributes.color;
+  for (let i = 0; i + 2 < p.count; i += 3) {
+    const x = (p.getX(i) + p.getX(i + 1) + p.getX(i + 2)) / 3;
+    const z = (p.getZ(i) + p.getZ(i + 1) + p.getZ(i + 2)) / 3;
+    const n =
+      noise2(x * scale, z * scale, seed) * 0.65 +
+      noise2(x * scale * 2.9, z * scale * 2.9, seed + 7) * 0.35;
+    const d = (n - 0.5) * 2 * amt + (fn ? fn(x, z) : 0);
+    const k = 1 + d;
+    const wr = 1 + d * warm;
+    const wb = 1 - d * warm;
+    for (let j = 0; j < 3; j++)
+      c.setXYZ(i + j, c.getX(i + j) * k * wr, c.getY(i + j) * k, c.getZ(i + j) * k * wb);
+  }
+  c.needsUpdate = true;
+  return geo;
+}
+
 const facetMats = new Map();
 // The vertex-colour twin of a material (cached), for facet() geometry.
 export function facetMat(m) {

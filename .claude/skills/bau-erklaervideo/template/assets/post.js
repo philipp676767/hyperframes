@@ -8,6 +8,11 @@
 //               (under parts, in corners, between pipes) — the depth cue of
 //               a real miniature photo; computed at half res from a quick
 //               normal + depth pass of the scene
+//   clarity     local contrast: every shape separates a little from what is
+//               behind it (crisp on a phone, nothing "melts together")
+//   grade       gentle colour grade: a soft S-curve, a touch more colour,
+//               warm highlights and cool shadows — the "photographed
+//               miniature" finish
 //   vignette    slightly darker corners pull the eye to the centre
 //   dither      tiny ordered noise so sky gradients don't band
 // Blur and glow run at quarter resolution, AO at half. world.js renderFrame()
@@ -25,6 +30,10 @@ export const LOOK = {
   vignette: 0.22,
   ao: 0.75, // ambient occlusion strength (0 = off)
   aoRadius: 0.45, // world units around a point that can shade it
+  clarity: 0.22, // local contrast inside the sharp band (0 = off)
+  contrast: 0.12, // S-curve strength (0 = off)
+  saturation: 1.06,
+  split: 0.035, // warm highlights / cool shadows (0 = off)
 };
 
 const VERT = `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }`;
@@ -108,7 +117,8 @@ void main(){
 const FINAL = /* glsl */ `uniform sampler2D tScene; uniform sampler2D tSoft; uniform sampler2D tGlow;
 uniform sampler2D tAO; uniform float aoAmt;
 uniform float tilt; uniform float focus; uniform float band; uniform float glow;
-uniform float vignette; varying vec2 vUv;
+uniform float vignette; uniform float clarity; uniform float contrast; uniform float saturation;
+uniform float split; varying vec2 vUv;
 ${DECODE}
 vec3 toSRGB(vec3 c){ return sqrt(clamp(c, 0.0, 1.0)); }
 void main(){
@@ -116,12 +126,19 @@ void main(){
   vec3 soft = texture2D(tSoft, vUv).rgb;
   float d = abs(vUv.y - focus);
   float k = smoothstep(band, band + 0.28, d) * tilt;
+  // clarity against the wide blur, kept off the blurred edges and the darkest darks
+  c = max(c + (c - soft) * clarity * (1.0 - k), c * 0.6);
   c = mix(c, soft, k * 0.8);
   c *= mix(1.0, texture2D(tAO, vUv).r, aoAmt);
   c += texture2D(tGlow, vUv).rgb * glow;
   vec2 q = vUv - 0.5;
   c *= 1.0 - vignette * smoothstep(0.25, 0.75, length(q * vec2(1.25, 1.0)));
   vec3 o = toSRGB(c);
+  // grade (display space): S-curve, saturation, split toning
+  o = mix(o, o * o * (3.0 - 2.0 * o), contrast);
+  float l = dot(o, vec3(0.2126, 0.7152, 0.0722));
+  o = mix(vec3(l), o, saturation);
+  o += split * (l - 0.5) * vec3(1.0, 0.15, -1.0);
   // 4x4 ordered dither, ±0.5 of an 8-bit step
   vec2 p = mod(floor(gl_FragCoord.xy), 4.0);
   float b = mod(p.x * 4.0 + p.y * 11.0, 16.0) / 16.0 - 0.5;
@@ -180,6 +197,10 @@ export function createPost(renderer, width, height) {
     band: { value: 0.17 },
     glow: { value: 0.45 },
     vignette: { value: 0.22 },
+    clarity: { value: 0 },
+    contrast: { value: 0 },
+    saturation: { value: 1 },
+    split: { value: 0 },
   });
 
   const pass = (m, target) => {
@@ -266,6 +287,10 @@ export function createPost(renderer, width, height) {
       u.glow.value = LOOK.glow;
       u.vignette.value = LOOK.vignette;
       u.aoAmt.value = LOOK.ao;
+      u.clarity.value = LOOK.clarity;
+      u.contrast.value = LOOK.contrast;
+      u.saturation.value = LOOK.saturation;
+      u.split.value = LOOK.split;
       pass(final, null);
 
       if (overlay.children.some((c) => c.visible && !c.isLight)) {

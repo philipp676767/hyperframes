@@ -1,8 +1,9 @@
 # scene.js on top of world.js + environments.js
 
 `assets/world.js` builds the renderer and shared props on import and exports
-helpers; `assets/environments.js` exports `createWorld({ env, sky })`, which
-builds sky, lights and the landscape — call it first. `assets/timing.js`
+helpers; `assets/environments.js` exports `createWorld({ env, sky, seed, palette })`, which
+builds sky, lights and the landscape — call it first; `assets/props.js`
+dresses it for the topic (SKILL.md 1b). `assets/timing.js`
 holds the word anchors (no three.js, also used in node).
 `assets/beats.js` is the video's timing as plain data — `T`, `shots`,
 `LABELS`, `SFX` — read by the scene and by `scripts/build-sfx.mjs`
@@ -15,36 +16,37 @@ bubbles, analogy sets, door opening).
 
 ## Exports
 
-| Export                                                                              | Use                                                                                                                                                                                          |
-| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `THREE`                                                                             | three.js r181                                                                                                                                                                                |
-| `W(word, n = 1, end = false)`                                                       | start (or end) time of the n-th spoken `word`; throws if missing                                                                                                                             |
-| `LAST`, `END`                                                                       | last word end; `END = LAST + 1`                                                                                                                                                              |
-| `HL`, `punch(t)`                                                                    | start times of the `*highlighted*` words; 0..1 punch envelope (shotCamera applies it to the lens automatically)                                                                              |
-| `labels(t, LABELS)` / `showLabel(id, k, text, pos, side?)`                          | name tag + arrow on a world point; `labels` pops each `{ text, at, until, pos, side }` in its window. Projected in `renderFrame()`                                                           |
-| `clamp01 ramp(t,a,b) lerp smooth easeInOut outBack inBack`                          | timing math; `ramp` gives 0→1 between a and b                                                                                                                                                |
-| `pop(t, a, b, d = 0.35)`                                                            | 0 outside [a,b), springs in at a, quick fade at b — for things that appear for a beat                                                                                                        |
-| `rng(seed)`, `rand`                                                                 | seeded random (use your own `rng(n)` for per-prop randomness)                                                                                                                                |
-| `V(x,y,z)`                                                                          | `new THREE.Vector3`                                                                                                                                                                          |
-| `jitter(geom, amt, seed)`                                                           | low-poly wobble that keeps faceted meshes watertight                                                                                                                                         |
-| `scene`, `camera`, `renderer`, `ground`                                             | the three.js objects (`ground` holds the landscape)                                                                                                                                          |
-| `flat(color, extra)`                                                                | flat-shaded `MeshStandardMaterial`                                                                                                                                                           |
-| `M`                                                                                 | shared materials: grass, earth, wood, woodDark, chrome, rubber, copper, alu, steel, concrete, water, steam, orange, … (`Object.assign(M, {...})` to add your own)                            |
-| `xrayMaterial(color)` / `setXray([mats], k)` / `xrayEdges(geo)`                     | shell that fades to blue glass (k 0→1) + glowing outline                                                                                                                                     |
-| `addFloor(size, colorA, colorB)`                                                    | checkered pad under the subject                                                                                                                                                              |
-| `onFrame(fn)`                                                                       | register `fn(t)` to run before every frame (animated scenery)                                                                                                                                |
-| `roundedRect(w, h, r)`                                                              | `THREE.Shape` for `ExtrudeGeometry` (rounded boxes, doors, panels)                                                                                                                           |
-| `squash(t, at, d = 0.75, base = 1)`                                                 | scale vector for a pop-in: overshoot + squash-and-stretch that settles; `obj.scale.copy(squash(t, at))`                                                                                      |
-| `puff(id, t, at, x, y, z, size = 1)`                                                | white dust puff bursting outward for 0.8 s from `at` (call every frame)                                                                                                                      |
-| `facet(geo, amt, seed)` / `facetMat(mat)`                                           | per-facet colour tint for a geometry + the vertex-colour twin of a material: `new THREE.Mesh(facet(g, 0.08, 3), facetMat(M.wood))`                                                           |
-| `highlights(HIGHLIGHTS)`                                                            | register the video's big moments (call once in scene.js): `slowmo`, `shake`, `flash`, `zoom`; shots take `whip: ±1`                                                                          |
-| `LOOK`                                                                              | camera look settings (post.js): `tilt`, `focus`, `band`, `glow`, `glowFrom`, `vignette`, `ao`, `aoRadius` (mesh `userData.noAO = true` keeps one out of the AO); shots take `tilt: 0..1` too |
-| `showNope(k, x, y, z, size)`                                                        | orange ✕, billboarded; k from `pop()`                                                                                                                                                        |
-| `makeArrowSet([[from,to],…], {parent, mat, r, amp})` / `animateArrows(set, t, vis)` | wavy (amp>0) or straight (amp 0) arrows; mats `heatMat coldMat forceMat`                                                                                                                     |
-| `showPanel(k, label, value, color)` / `LED.{red,blue,green,yellow}`                 | LED fact sign pinned to the upper third; call every frame, `showPanel(0)` hides                                                                                                              |
-| `shotCamera(shots, zoom = 1.7)`                                                     | returns `applyCamera(t)`; shot format below                                                                                                                                                  |
-| `renderFrame()`                                                                     | billboards + render; last call of `renderAt`                                                                                                                                                 |
-| `start(renderAt)`                                                                   | wire HyperFrames seeking; call once at the end                                                                                                                                               |
+| Export                                                                              | Use                                                                                                                                                                                                                                        |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `THREE`                                                                             | three.js r181                                                                                                                                                                                                                              |
+| `W(word, n = 1, end = false)`                                                       | start (or end) time of the n-th spoken `word`; throws if missing                                                                                                                                                                           |
+| `LAST`, `END`                                                                       | last word end; `END = LAST + 1`                                                                                                                                                                                                            |
+| `HL`, `punch(t)`                                                                    | start times of the `*highlighted*` words; 0..1 punch envelope (shotCamera applies it to the lens automatically)                                                                                                                            |
+| `labels(t, LABELS)` / `showLabel(id, k, text, pos, side?)`                          | name tag + arrow on a world point; `labels` pops each `{ text, at, until, pos, side }` in its window. Projected in `renderFrame()`                                                                                                         |
+| `clamp01 ramp(t,a,b) lerp smooth easeInOut outBack inBack`                          | timing math; `ramp` gives 0→1 between a and b                                                                                                                                                                                              |
+| `pop(t, a, b, d = 0.35)`                                                            | 0 outside [a,b), springs in at a, quick fade at b — for things that appear for a beat                                                                                                                                                      |
+| `rng(seed)`, `rand`                                                                 | seeded random (use your own `rng(n)` for per-prop randomness)                                                                                                                                                                              |
+| `V(x,y,z)`                                                                          | `new THREE.Vector3`                                                                                                                                                                                                                        |
+| `jitter(geom, amt, seed)`                                                           | low-poly wobble that keeps faceted meshes watertight                                                                                                                                                                                       |
+| `scene`, `camera`, `renderer`, `ground`                                             | the three.js objects (`ground` holds the landscape)                                                                                                                                                                                        |
+| `flat(color, extra)`                                                                | flat-shaded `MeshStandardMaterial`                                                                                                                                                                                                         |
+| `M`                                                                                 | shared materials: grass, earth, wood, woodDark, chrome, rubber, copper, alu, steel, concrete, water, steam, orange, … (`Object.assign(M, {...})` to add your own)                                                                          |
+| `xrayMaterial(color)` / `setXray([mats], k)` / `xrayEdges(geo)`                     | shell that fades to blue glass (k 0→1) + glowing outline                                                                                                                                                                                   |
+| `addFloor(size, colorA, colorB)`                                                    | checkered pad under the subject                                                                                                                                                                                                            |
+| `onFrame(fn)`                                                                       | register `fn(t)` to run before every frame (animated scenery)                                                                                                                                                                              |
+| `roundedRect(w, h, r)`                                                              | `THREE.Shape` for `ExtrudeGeometry` (rounded boxes, doors, panels)                                                                                                                                                                         |
+| `squash(t, at, d = 0.75, base = 1)`                                                 | scale vector for a pop-in: overshoot + squash-and-stretch that settles; `obj.scale.copy(squash(t, at))`                                                                                                                                    |
+| `puff(id, t, at, x, y, z, size = 1)`                                                | white dust puff bursting outward for 0.8 s from `at` (call every frame)                                                                                                                                                                    |
+| `facet(geo, amt, seed)` / `facetMat(mat)`                                           | per-facet colour tint for a geometry + the vertex-colour twin of a material: `new THREE.Mesh(facet(g, 0.08, 3), facetMat(M.wood))`                                                                                                         |
+| `patches(geo, { amt, scale, seed, warm, fn })` / `noise2(x, z, seed)`               | large colour patches over a `facet()` geometry (worn grass, wet sand, shaded snow); `fn(x, z)` adds its own offset. `noise2` = smooth deterministic noise 0..1                                                                             |
+| `highlights(HIGHLIGHTS)`                                                            | register the video's big moments (call once in scene.js): `slowmo`, `shake`, `flash`, `zoom`; shots take `whip: ±1`                                                                                                                        |
+| `LOOK`                                                                              | camera look settings (post.js): `tilt`, `focus`, `band`, `glow`, `glowFrom`, `vignette`, `ao`, `aoRadius`, `clarity`, `contrast`, `saturation`, `split` (mesh `userData.noAO = true` keeps one out of the AO); shots take `tilt: 0..1` too |
+| `showNope(k, x, y, z, size)`                                                        | orange ✕, billboarded; k from `pop()`                                                                                                                                                                                                      |
+| `makeArrowSet([[from,to],…], {parent, mat, r, amp})` / `animateArrows(set, t, vis)` | wavy (amp>0) or straight (amp 0) arrows; mats `heatMat coldMat forceMat`                                                                                                                                                                   |
+| `showPanel(k, label, value, color)` / `LED.{red,blue,green,yellow}`                 | LED fact sign pinned to the upper third; call every frame, `showPanel(0)` hides                                                                                                                                                            |
+| `shotCamera(shots, zoom = 1.7)`                                                     | returns `applyCamera(t)`; shot format below                                                                                                                                                                                                |
+| `renderFrame()`                                                                     | billboards + render; last call of `renderAt`                                                                                                                                                                                               |
+| `start(renderAt)`                                                                   | wire HyperFrames seeking; call once at the end                                                                                                                                                                                             |
 
 ## hand.js — the viewer's hand
 
@@ -87,11 +89,38 @@ export const HIGHLIGHTS = [
 
 ## environments.js
 
-| Export                      | Use                                                                                                           |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `createWorld({ env, sky })` | build the setting; env `insel stadt strand winter land`, sky `sonnenuntergang morgen mittag abend` (optional) |
-| `ENVIRONMENTS`, `SKIES`     | the available names / sky palettes                                                                            |
-| `tree(x, z, s, seed)`       | extra park tree if a shot needs framing                                                                       |
+| Export                                     | Use                                                                                                                                                                                                                                                                                                      |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `createWorld({ env, sky, seed, palette })` | build the setting; env `insel stadt strand winter land weltall tiefsee wolken kueche`, sky `sonnenuntergang morgen mittag abend nacht weltall tiefsee hoch` (optional); `seed` reshuffles every random placement, `palette` tints (`houses`, `paving`, `corals`, `worktop`, `cabinets`, `tiles`, `wall`) |
+| `ENVIRONMENTS`, `SKIES`                    | the available names / sky palettes                                                                                                                                                                                                                                                                       |
+| `tree(x, z, s, seed)`                      | extra park tree if a shot needs framing                                                                                                                                                                                                                                                                  |
+
+Every env also lights the scene with its own sky (image-based light,
+`scene.environment`): glossy materials (`M.chrome`, glass, paint with
+`roughness` ≤ 0.3) mirror it automatically — give the subject's shiny
+parts low roughness so they catch it.
+
+## props.js — set dressing (SKILL.md 1b)
+
+`place(obj, x, z, rotY, s, y)` puts a prop in the world (warns when it
+lands on the stage); `scatter(make, n, { rMin, rMax, seed, keep, s })`
+spreads copies in a ring; `inStage(x, z)`; `sway(group, seed, amp)` makes
+anything leafy move. Builders (all return a group on y = 0, front +z):
+
+| Group   | Props                                                                                                                                                 |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nature  | `bush(seed, color)`, `flowerBed(seed, colors)`, `rock(seed, size)`, `palm(seed, lean)`                                                                |
+| Street  | `bench()`, `bin()`, `lamp({ on })`, `planter()`, `bike(color)`, `cone()`, `hydrant()`, `sign(color)`, `mailbox()`, `busStop()`, `trafficLight(state)` |
+| Shops   | `awning(w, colors)`, `stall(colors, goods)`, `cafeTable(color)`, `parasol(color)`, `crate()`, `barrel()`                                              |
+| Country | `fence(len, color)`, `cow(seed)`, `sheep(seed)`, `snowman(scarf)`                                                                                     |
+
+```js
+import { place, scatter, cafeTable, bike, bush } from "./props.js";
+place(cafeTable(0x2f9e6a), -7.5, -2.5);
+place(cafeTable(0x2f9e6a), 7.8, -3.2, 0.6);
+place(bike(0xffd23f), 9.5, 1.5, 2.2);
+scatter((i) => bush(i), 6, { rMin: 9, rMax: 16, seed: 24 });
+```
 
 A new environment is one builder function in `ENV_BUILDERS` plus a
 `DEFAULT_SKY` entry. Rules: big ground (radius ~75) or a closed shape,

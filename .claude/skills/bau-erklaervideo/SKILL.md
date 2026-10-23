@@ -34,7 +34,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                    |
 | Payoff       | The hook's question answered in one punchy line (banner ticks green). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                               |
 | Music        | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                                                                                                                                                                                   |
-| Setting      | **different every video**: pick `env` + `sky` (see step 1b), log it in `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                  |
+| Setting      | **designed new for every video** (step 1b): `env` + `sky` + new `seed` + topic props + one hero piece, log it in `tiktok/serie.md`                                                                                                                                                                                                                                                                                        |
 | Sound FX     | Synthesized house kit (`scripts/make-sfx.py`, no samples): whoosh on every cut, hit on the hook title, punch on highlighted words, blip per label, payoff ding, CTA pops + click. Placed from `assets/beats.js` by `scripts/build-sfx.mjs` → `assets/sfx.mp3`                                                                                                                                                             |
 | Keywords     | `*Wort*` in `script.txt` → caption yellow + bigger + pops, camera punch-in, punch sound. ~1 per sentence, 8–12 per video                                                                                                                                                                                                                                                                                                  |
 | Labels       | Name tag + yellow arrow on a part when its term is spoken (`LABELS` in `beats.js`), every technical term + key parts                                                                                                                                                                                                                                                                                                      |
@@ -109,27 +109,56 @@ cover title, and a one-line visual idea per beat **incl. the highlight of each b
 (money shots, slowmo, flash …), and **wait for their OK** before spending
 credits or building. Apply their edits verbatim.
 
-### 1b. Pick the setting (never the same as the last video)
+### 1b. Design the set — new for every video, same style
 
-Read `tiktok/serie.md`. Choose an environment that suits the topic **and**
-differs from the previous video's; vary the sky too. Mention the choice in
-the approval message so the user can veto it.
+The user's rule (2026-10-23): **every video gets its own world, designed
+for its topic** — better quality, more realistic light and material, but
+always the same toy low-poly style. Never reuse the last video's set.
+Three layers:
 
-| `env`    | Place                                                        | Default `sky`     | Fits e.g.                                   |
-| -------- | ------------------------------------------------------------ | ----------------- | ------------------------------------------- |
-| `insel`  | floating island, park trees                                  | `sonnenuntergang` | anything small, kitchen things              |
-| `stadt`  | plaza, road with markings, pastel houses, street lamps, cars | `abend`           | Aufzug, Ampel, Auto, Rolltreppe, Bus        |
-| `strand` | sand, turquoise sea, palms, boat                             | `mittag`          | Kühlbox, Sonnencreme, Boot, Solarzelle      |
-| `winter` | snow, snowy pines, mountains, cabin, falling snow            | `morgen`          | Heizung, Thermoskanne, Seilbahn, Wärmepumpe |
-| `land`   | meadow, dirt road, fields, red barn, silo, hay bales         | `sonnenuntergang` | Traktor, Windrad, Mähdrescher, Brunnen      |
+1. **Base world** — `env` + `sky` (table below), different from the
+   previous video (`tiktok/serie.md`), plus a new **`seed`** (any
+   number, e.g. the episode number: every random placement — houses,
+   rocks, grass, corals, cloud carpet — comes out different) and an
+   optional **`palette`** (`houses`, `paving`, `corals`, `worktop`,
+   `cabinets`, `tiles`, `wall`) to tint it for the topic:
+   `createWorld({ env: "stadt", sky: "mittag", seed: 24, palette: { houses: [0xf7d6a8, 0xe9b8a8] } })`.
+2. **Set dressing** — 5–12 props from `assets/props.js` that tell the
+   topic at a glance (café tables + parasols for the coffee machine; a bus
+   stop + bikes for the e-scooter; cows + a fence for the milking robot;
+   a snowman + sled for the heater), placed with `place()` / `scatter()`
+   in the outer ring, never on the stage (`place` warns). Build a missing
+   prop in `scene.js` in the same style (faceted `F()`, `flat()` colours).
+3. **One hero background piece** tied to the topic — the thing a viewer
+   recognises the place by: a petrol station canopy, an airport tower, a
+   rocket launch pad, a shipwreck, a ski lift. Built once in `scene.js`,
+   big, behind the stage (z < −8), lit by the same sun.
+
+Put it in the approval message as one line ("Bühnenbild: Stadt am Mittag,
+Café-Terrasse mit 3 Tischen, Lieferroller, im Hintergrund eine
+Kaffeerösterei mit Schornstein").
+
+| `env`     | Place                                                                             | Default `sky`     | Fits e.g.                                       |
+| --------- | --------------------------------------------------------------------------------- | ----------------- | ----------------------------------------------- |
+| `insel`   | floating island, park trees, bushes                                               | `sonnenuntergang` | anything small                                  |
+| `stadt`   | stone-slab plaza, road with markings, houses with shops + awnings, lamps, bikes   | `abend`           | Aufzug, Ampel, Auto, Rolltreppe, Bus, Geld      |
+| `strand`  | sloping beach, wet sand, faceted moving sea, palms, boat                          | `mittag`          | Kühlbox, Sonnencreme, Boot, Solarzelle          |
+| `winter`  | snow with blue hollows, pines, mountains, cabin with chimney smoke, frozen pond   | `morgen`          | Heizung, Thermoskanne, Seilbahn, Wärmepumpe     |
+| `land`    | meadow, dirt path, furrowed fields, barn, silo, cows + sheep                      | `sonnenuntergang` | Traktor, Windrad, Mähdrescher, Brunnen          |
+| `weltall` | moon-rock island with craters, the Earth, a ringed planet, a satellite, stars     | `weltall`         | Rakete, Satellit, GPS, „… ohne Raumanzug“       |
+| `tiefsee` | seabed, rocks, corals, kelp, light shafts, particles, bubbles, fish               | `tiefsee`         | U-Boot, Tiefsee, Taucher, „… ganz tief tauchen“ |
+| `wolken`  | above the clouds: a sea of cumulus below the stage, towers on the horizon         | `hoch`            | Flugzeug, Fallschirm, Wetter, „… Flugzeugtür“   |
+| `kueche`  | big kitchen worktop by a window, tiled wall, cabinets, jars, fruit bowl, herb pot | `morgen`          | Kaffeemaschine, Toaster, Wasserkocher, Herd     |
 
 Skies: `sonnenuntergang`, `morgen`, `mittag`, `abend` (blue hour, windows
-and lamps glow). Every env can take any sky:
-`createWorld({ env: "stadt", sky: "mittag" })`. After the video is done,
-append a line to `tiktok/serie.md`. If a topic needs a place that doesn't
-exist yet (Küche innen, Fabrikhalle, Weltraum …), add a builder to
-`template/assets/environments.js` following the stage-clearance rules at
-its top, and copy the file into the project.
+and lamps glow), `nacht` (stars, moonlight, lit windows), `weltall`,
+`tiefsee`, `hoch`. The outdoor envs take any of the first five. After the
+video is done, append a line to `tiktok/serie.md`. If a topic needs a
+place that doesn't exist yet (Fabrikhalle, Wüste, Vulkan …), add a
+builder to `template/assets/environments.js` following the stage-clearance
+rules at its top (and the quality bar of the existing ones: faceted
+`discGeo` ground with `patches()`, life, sky light), and copy the file
+into the project.
 
 ### 2. Scaffold the project
 
@@ -198,8 +227,9 @@ higher = louder), then rerun `sync-html.mjs`. Effects too loud / quiet:
 Format B has no build-up from parts: the scenario plays out in one
 diorama, the viewer's hand does the act from frame 0, every Folge is a
 visible change (`references/format-was-passiert.md` "Picture"). Format A:
-follow `references/scene-api.md`. Set the chosen setting first
-(`createWorld({ env, sky })`), then rebuild the demo file around the new
+follow `references/scene-api.md`. Set the set first (step 1b:
+`createWorld({ env, sky, seed, palette })`, then the topic props from
+`assets/props.js` and the hero background piece), then rebuild the demo file around the new
 subject: hook visual (the strange thing the hook names — mid-action from
 frame 1, or the primitive version that fails) → subject pops in when the
 build starts → each component
@@ -269,7 +299,7 @@ Fix and re-snapshot. Expect 2–3 rounds.
 ### 6. Render and deliver
 
 ```bash
-npx hyperframes render -o renders/<slug>.mp4      # ~30–40 min for 45 s (full 1080p + AO, software WebGL); always in background
+npx hyperframes render -o renders/<slug>.mp4      # ~30–45 min for 45 s (full 1080p + AO, software WebGL); always in background
 bash scripts/finish-audio.sh renders/<slug>.mp4   # -> renders/<slug>-final.mp4 at -14 LUFS (picture untouched)
 ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<slug>-final.mp4
 ```
@@ -415,8 +445,9 @@ pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   the first commit (then `git checkout bun.lock` if it changed).
 - **Quality over speed (user's choice 2026-10-22):** the 3D renders at the
   full 1080×1920 with 4096² shadows, ambient occlusion (an extra
-  normal/depth pass), tilt-shift, glow and facet tinting — ~1–1.5 s per
-  frame in software GL, so a 45 s video takes ~30–40 min to render. That's
+  normal/depth pass), tilt-shift, glow, facet tinting, sky light (PMREM)
+  and the grade — ~1–2 s per frame in software GL (the moving sea of
+  `strand` is the slowest, ~2 s), so a 45 s video takes ~30–45 min. That's
   accepted; never lower resolution or switch effects off to save time.
   Still keep it efficient: the scene is drawn into the antialiased canvas
   and copied (a multisampled render target is ~2× slower in software GL),

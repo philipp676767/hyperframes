@@ -18,7 +18,25 @@ import {
   onFrame,
   facet,
   facetMat,
+  patches,
+  noise2,
+  renderer,
 } from "./world.js";
+import {
+  place,
+  scatter,
+  lamp,
+  planter,
+  bench,
+  bin,
+  bike,
+  awning,
+  bush,
+  snowman,
+  fence,
+  cow,
+  sheep,
+} from "./props.js";
 
 // mesh with per-facet colour variation (world.js facet)
 const F = (geo, mat, amt = 0.08, seed = 1) => new THREE.Mesh(facet(geo, amt, seed), facetMat(mat));
@@ -71,13 +89,69 @@ export const SKIES = {
     rim: [0x8f7dff, 0.9],
     nightWindows: true,
   },
+  // clear night: deep blue, stars, cool moonlight (any env)
+  nacht: {
+    top: [0.03, 0.05, 0.16],
+    mid: [0.08, 0.12, 0.3],
+    hor: [0.24, 0.3, 0.52],
+    below: [0.12, 0.16, 0.3],
+    sun: [0.75, 0.82, 1.0],
+    cloud: [0x5c6890, 0x2c3560],
+    hemi: [0x8fa4ff, 0x2a2f4a, 1.0],
+    key: [0xb9c8ff, 1.4],
+    rim: [0x6f8dff, 1.0],
+    stars: 1,
+    nightWindows: true,
+  },
+  // black space, dense stars, hard white sunlight (env "weltall")
+  weltall: {
+    top: [0.0, 0.0, 0.02],
+    mid: [0.02, 0.02, 0.07],
+    hor: [0.06, 0.05, 0.16],
+    below: [0.02, 0.02, 0.06],
+    sun: [1.0, 0.97, 0.9],
+    cloud: [0x000000, 0x000000],
+    hemi: [0x9aa8ff, 0x1a1a2a, 0.7],
+    key: [0xffffff, 3.2],
+    rim: [0x6f7dff, 1.1],
+    stars: 1.4,
+    noClouds: true,
+  },
+  // under water: light from above, deep blue below (env "tiefsee")
+  tiefsee: {
+    top: [0.35, 0.78, 0.9],
+    mid: [0.1, 0.45, 0.66],
+    hor: [0.04, 0.24, 0.42],
+    below: [0.03, 0.15, 0.3],
+    sun: [0.6, 0.95, 1.0],
+    cloud: [0x000000, 0x000000],
+    hemi: [0x8fe3ff, 0x0b2a44, 1.3],
+    key: [0xc9f3ff, 2.0],
+    rim: [0x3fb5ff, 0.8],
+    noClouds: true,
+    fog: [10, 48],
+  },
+  // high up, above the clouds: deep blue zenith, bright haze (env "wolken")
+  hoch: {
+    top: [0.08, 0.3, 0.78],
+    mid: [0.3, 0.56, 0.92],
+    hor: [0.7, 0.83, 0.98],
+    below: [0.74, 0.83, 0.96],
+    sun: [1.0, 0.98, 0.92],
+    cloud: [0xffffff, 0x9fb4d8],
+    hemi: [0xeef6ff, 0x7f93bd, 1.3],
+    key: [0xfffaf0, 3.0],
+    rim: [0xbfe0ff, 0.6],
+    fog: [45, 160],
+  },
 };
 
+let skyMesh = null;
 function buildSky(sky) {
   const sunDir = V(-0.32, 0.07, -1).normalize();
   const vec = (c) => new THREE.Vector3(...c);
   scene.add(
-    new THREE.Mesh(
+    (skyMesh = new THREE.Mesh(
       new THREE.SphereGeometry(300, 48, 24),
       new THREE.ShaderMaterial({
         side: THREE.BackSide,
@@ -90,11 +164,12 @@ function buildSky(sky) {
           hor: { value: vec(sky.hor) },
           below: { value: vec(sky.below) },
           sunCol: { value: vec(sky.sun) },
+          stars: { value: sky.stars ?? 0 },
         },
         vertexShader: `varying vec3 vDir;
       void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
         fragmentShader: `uniform vec3 sunDir; uniform vec3 top; uniform vec3 mid; uniform vec3 hor;
-      uniform vec3 below; uniform vec3 sunCol; varying vec3 vDir;
+      uniform vec3 below; uniform vec3 sunCol; uniform float stars; varying vec3 vDir;
       void main(){
         vec3 d = normalize(vDir);
         float h = d.y;
@@ -103,6 +178,10 @@ function buildSky(sky) {
         else { c = mix(hor, below, smoothstep(0.0, 0.10, -h)); }
         float s = clamp(dot(d, sunDir), 0.0, 1.0);
         c += sunCol * (pow(s, 90.0) * 0.95 + pow(s, 10.0) * 0.28);
+        // stars (night / space skies): sparse fixed dots, fading out at the horizon
+        vec3 q = floor(d * 420.0);
+        float st = fract(sin(dot(q, vec3(12.9898, 78.233, 37.719))) * 43758.5453);
+        c += stars * step(0.9982, st) * (0.5 + 0.5 * fract(st * 97.0)) * smoothstep(0.02, 0.3, h);
         // the gradient is authored in sRGB; hand three a linear colour so it
         // looks the same on the canvas and through post.js
         c = clamp(c, 0.0, 1.0);
@@ -111,43 +190,42 @@ function buildSky(sky) {
         #include <colorspace_fragment>
       }`,
       }),
-    ),
+    )),
   );
-  scene.fog = new THREE.Fog(new THREE.Color().setRGB(...sky.below, THREE.SRGBColorSpace), 30, 95);
+  const [fogNear, fogFar] = sky.fog ?? [30, 95];
+  scene.fog = new THREE.Fog(
+    new THREE.Color().setRGB(...sky.below, THREE.SRGBColorSpace),
+    fogNear,
+    fogFar,
+  );
 
-  const cloudMat = new THREE.MeshLambertMaterial({
-    color: sky.cloud[0],
-    emissive: sky.cloud[1],
-    emissiveIntensity: 0.35,
-    flatShading: true,
-    fog: false,
-  });
+  const cloudMat = facetMat(
+    new THREE.MeshStandardMaterial({
+      color: sky.cloud[0],
+      emissive: sky.cloud[1],
+      emissiveIntensity: 0.28,
+      roughness: 1,
+      flatShading: true,
+      fog: false,
+    }),
+  );
   // clouds drift slowly around the stage
   const clouds = new THREE.Group();
   scene.add(clouds);
   onFrame((t) => (clouds.rotation.y = t * 0.006));
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < (sky.noClouds ? 0 : 16); i++) {
     const g = new THREE.Group();
     const a = (i / 16) * Math.PI * 2 + rand() * 0.3;
     const r = 55 + rand() * 30;
     g.position.set(Math.cos(a) * r, 6 + rand() * 20, Math.sin(a) * r);
-    const n = 3 + Math.floor(rand() * 3);
-    for (let k = 0; k < n; k++) {
-      const m = new THREE.Mesh(
-        jitter(new THREE.IcosahedronGeometry(1, 1), 0.08, i * 7 + k),
-        cloudMat,
-      );
-      const s = 2.4 + rand() * 2.4;
-      m.scale.set(s * 1.25, s * 0.75, s);
-      m.position.set((k - n / 2) * 3 + rand(), rand() * 1.2, rand() * 1.5);
-      g.add(m);
-    }
+    cloudPuffs(g, 4 + Math.floor(rand() * 4), 2.2 + rand() * 1.6, cloudMat, i * 7);
     g.lookAt(0, g.position.y, 0);
     clouds.add(g);
   }
-  birds();
+  if (!sky.noClouds && !sky.stars) birds();
 
-  scene.add(new THREE.HemisphereLight(...sky.hemi));
+  // the sky's image-based light (skyLight) now carries part of the fill
+  scene.add(new THREE.HemisphereLight(sky.hemi[0], sky.hemi[1], sky.hemi[2] * HEMI));
   const key = new THREE.DirectionalLight(...sky.key);
   key.position.set(6, 11, 8);
   key.castShadow = true;
@@ -166,6 +244,45 @@ function buildSky(sky) {
   const rim = new THREE.DirectionalLight(...sky.rim);
   rim.position.set(-6, 4, -9);
   scene.add(rim);
+}
+
+// Image-based light from this video's own sky plus its ground colour below:
+// glossy parts (chrome, glass, paint, water) mirror the real sky, matte
+// facets pick up its colour in the shade. Built once (PMREM), after the env.
+const HEMI = 0.4; // share of the old hemisphere fill that stays
+const ENV_LIGHT = 0.4; // strength of the sky light
+function skyLight(groundColor) {
+  const pm = new THREE.PMREMGenerator(renderer);
+  const env = new THREE.Scene();
+  env.add(skyMesh.clone());
+  const floor = new THREE.Mesh(
+    new THREE.CircleGeometry(280, 32),
+    new THREE.MeshBasicMaterial({ color: groundColor, fog: false }),
+  );
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = -6;
+  env.add(floor);
+  scene.environment = pm.fromScene(env, 0.02, 1, 1000).texture;
+  scene.environmentIntensity = ENV_LIGHT;
+  pm.dispose();
+}
+
+// A cumulus: lobes biggest in the middle, a flat underside (like real fair-
+// weather clouds), soft per-facet shading. Adds the lobes to group g.
+function cloudPuffs(g, n, size, mat, seed) {
+  const r = rng(seed + 3);
+  for (let k = 0; k < n; k++) {
+    const geo = jitter(new THREE.IcosahedronGeometry(1, 1), 0.09, seed + k);
+    const p = geo.attributes.position;
+    for (let i = 0; i < p.count; i++) p.setY(i, Math.max(p.getY(i), -0.32));
+    geo.computeVertexNormals();
+    const m = new THREE.Mesh(facet(geo, 0.05, seed + k), mat);
+    const mid = 1 - Math.abs(k - (n - 1) / 2) / n;
+    const s = size * (0.6 + mid * 0.7) * (0.85 + r() * 0.3);
+    m.scale.set(s * 1.2, s * 0.8, s);
+    m.position.set((k - (n - 1) / 2) * size * 1.15, s * 0.32 + r() * 0.4, (r() - 0.5) * size);
+    g.add(m);
+  }
 }
 
 // ---------------------------------------------------------------- life
@@ -357,13 +474,16 @@ function discGeo(r, step, seed, height = () => 0) {
 // Ground disc as a faceted polar grid: flat where things stand (r < 36),
 // rising into soft low hills towards the horizon, every facet tinted a
 // little differently.
-function bigGround(color, r = 75, seed = 5) {
+function bigGround(color, r = 75, seed = 5, look = {}) {
   const geo = discGeo(r, 3.2, seed, (x, z, d) => {
     if (d <= 36) return 0;
     const v = Math.sin(x * 0.21 + seed) * Math.cos(z * 0.17 - seed) * 0.5 + 0.5;
     return ((d - 36) / (r - 36)) * (2 + 4 * v);
   });
-  const m = new THREE.Mesh(facet(geo, 0.06, seed), facetMat(flat(color)));
+  const m = new THREE.Mesh(
+    patches(facet(geo, 0.06, seed), { amt: 0.1, scale: 0.12, seed, ...look }),
+    facetMat(flat(color)),
+  );
   m.receiveShadow = true;
   ground.add(m);
   return m;
@@ -480,10 +600,74 @@ function car(x, z, color, rotY = 0) {
   return g;
 }
 
+// Faceted, moving sea: a grid whose points bob on a few overlapping swells
+// (flat shading turns every triangle into a little mirror of the sky — the
+// low-poly ocean look), turquoise in the shallows, deep blue further out,
+// slightly see-through so the sloping sand shows near the shore.
+function sea({ zFrom = -4, depth = 110, width = 180, y = -0.05, amp = 0.09 } = {}) {
+  const geo = new THREE.PlaneGeometry(width, depth, 96, 56);
+  geo.rotateX(-Math.PI / 2);
+  geo.translate(0, y, zFrom - depth / 2);
+  const p = geo.attributes.position;
+  const r = rng(77);
+  const base = new Float32Array(p.count * 2);
+  const col = new Float32Array(p.count * 3);
+  const shallow = new THREE.Color(0x46d0d8);
+  const deepC = new THREE.Color(0x1f7fb5);
+  const c = new THREE.Color();
+  for (let i = 0; i < p.count; i++) {
+    const x = p.getX(i) + (r() - 0.5) * 0.9;
+    const z = p.getZ(i) + (r() - 0.5) * 0.9;
+    p.setX(i, x);
+    p.setZ(i, z);
+    base[i * 2] = x;
+    base[i * 2 + 1] = z;
+    c.lerpColors(shallow, deepC, Math.min(1, Math.max(0, (zFrom - 3 - z) / 22)));
+    col.set([c.r, c.g, c.b], i * 3);
+  }
+  geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
+  const water = new THREE.Mesh(
+    geo,
+    new THREE.MeshStandardMaterial({
+      vertexColors: true,
+      flatShading: true,
+      roughness: 0.12,
+      metalness: 0.05,
+      transparent: true,
+      opacity: 0.86,
+      envMapIntensity: 1.6,
+    }),
+  );
+  water.receiveShadow = true;
+  ground.add(water);
+  onFrame((t) => {
+    for (let i = 0; i < p.count; i++) {
+      const x = base[i * 2];
+      const z = base[i * 2 + 1];
+      const fade = Math.min(1, (zFrom - z + 1) / 6); // calm right at the beach
+      const h =
+        Math.sin(x * 0.33 + z * 0.12 + t * 1.15) * 0.6 +
+        Math.sin(z * 0.47 - x * 0.08 - t * 0.9) * 0.45 +
+        Math.sin((x + z) * 0.9 + t * 1.8) * 0.18;
+      p.setY(i, y + h * amp * Math.max(0.15, fade) * (1 + Math.min(1, -z / 60)));
+    }
+    p.needsUpdate = true;
+  });
+  // far ocean to the horizon
+  const far = new THREE.Mesh(
+    new THREE.CircleGeometry(260, 48),
+    new THREE.MeshStandardMaterial({ color: 0x1f7fb5, roughness: 0.2, envMapIntensity: 1.2 }),
+  );
+  far.rotation.x = -Math.PI / 2;
+  far.position.y = y - 0.35;
+  ground.add(far);
+  return water;
+}
+
 // ---------------------------------------------------------------- environments
 const ENV_BUILDERS = {
   // The original floating island (fridge video).
-  insel() {
+  insel(sky, o) {
     // rim as an open cylinder, the top as a faceted polar grid (a cylinder
     // cap would be a fan of long slivers that shows as pie slices)
     const rim = F(
@@ -495,8 +679,10 @@ const ENV_BUILDERS = {
     rim.position.y = -0.35;
     rim.receiveShadow = true;
     ground.add(rim);
-    const capGeo = discGeo(9, 0.75, 3);
-    const top = F(capGeo, M.grass, 0.06, 3);
+    const top = new THREE.Mesh(
+      patches(facet(discGeo(9, 0.6, 3), 0.06, 3), { amt: 0.12, scale: 0.35, seed: 3 }),
+      facetMat(M.grass),
+    );
     top.receiveShadow = true;
     ground.add(top);
     const cone = F(jitter(new THREE.ConeGeometry(8.8, 7, 16, 3), 0.45, 4), M.earth, 0.12, 4);
@@ -568,15 +754,39 @@ const ENV_BUILDERS = {
         Math.sin(a) * r,
       );
     }
-    meadow({ n: 240, rMin: 2.6, rMax: 8.4, seed: 7 });
+    meadow({ n: 300, rMin: 2.6, rMax: 8.4, seed: 7 + o.seed });
+    scatter((i) => bush(i + 3 + o.seed), 5, {
+      rMin: 5.5,
+      rMax: 8,
+      seed: 31 + o.seed,
+      s: [0.6, 0.9],
+    });
   },
 
   // City street: plaza, road with markings behind, pastel houses with window
   // grids, street lamps, parked cars.
-  stadt(sky) {
-    const r = rng(41);
+  stadt(sky, o) {
+    const r = rng(41 + o.seed);
     bigGround(0xbdb6ad);
-    add(new THREE.Mesh(new THREE.BoxGeometry(40, 0.06, 15), flat(0xd9d3cc)), 0, 0.0, 0.5, false);
+    // plaza of stone slabs, each a touch different
+    const slabs = [];
+    for (let x = -20; x <= 20; x += 1.2) for (let z = -5.6; z <= 8.2; z += 1.2) slabs.push([x, z]);
+    const slab = new THREE.InstancedMesh(
+      new THREE.BoxGeometry(1.14, 0.08, 1.14),
+      flat(0xffffff, { roughness: 0.9 }),
+      slabs.length,
+    );
+    const m4 = new THREE.Matrix4();
+    const col = new THREE.Color();
+    const stone = new THREE.Color(o.palette?.paving ?? 0xc9bfb3);
+    slabs.forEach(([x, z], i) => {
+      m4.makeTranslation(x, -0.01, z); // top at 0.03: above the ground, under a stage floor (0.04)
+      slab.setMatrixAt(i, m4);
+      const k = 0.88 + r() * 0.16 + (noise2(x * 0.15, z * 0.15, 3) - 0.5) * 0.16;
+      slab.setColorAt(i, col.copy(stone).multiplyScalar(k));
+    });
+    slab.receiveShadow = true;
+    ground.add(slab);
     // road along x behind the stage
     add(new THREE.Mesh(new THREE.BoxGeometry(90, 0.05, 5.4), flat(0x46444f)), 0, 0.02, -9.2, false);
     for (let x = -44; x < 44; x += 3.2)
@@ -592,7 +802,7 @@ const ENV_BUILDERS = {
         new THREE.Mesh(new THREE.BoxGeometry(90, 0.02, 0.08), flat(0xf2c230)),
         0,
         0.06,
-        -9.2 + dz - 0.0,
+        -9.2 + dz,
         false,
       );
     for (let i = 0; i < 7; i++)
@@ -604,39 +814,86 @@ const ENV_BUILDERS = {
         false,
       );
     add(new THREE.Mesh(new THREE.BoxGeometry(90, 0.18, 0.3), flat(0xb2aca5)), 0, 0.09, -6.4);
-    add(new THREE.Mesh(new THREE.BoxGeometry(90, 0.12, 4), flat(0xcfc8c0)), 0, 0.06, -13.9, false);
+    add(new THREE.Mesh(new THREE.BoxGeometry(90, 0.14, 4), flat(0xcfc8c0)), 0, 0.07, -13.9, false);
+    add(new THREE.Mesh(new THREE.BoxGeometry(90, 0.18, 0.3), flat(0xb2aca5)), 0, 0.09, -11.9);
 
-    // houses: back row facing +z, side rows facing the centre
-    const pastel = [0xe9b8a8, 0xf2d0a4, 0xb8c7e0, 0xc9b3d9, 0xa8d5c2, 0xf0e2b6, 0xe7a9b5];
-    const winMat = sky.nightWindows
-      ? flat(0xffd27a, { emissive: 0xffb84d, emissiveIntensity: 0.9 })
-      : flat(0x5a6f99, { roughness: 0.25 });
-    const wins = [];
-    const house = (x, z, w, d, h, rotY) => {
+    // houses: back row facing +z (with shops), side rows facing the centre
+    const pastel = o.palette?.houses ?? [
+      0xe9b8a8, 0xf2d0a4, 0xb8c7e0, 0xc9b3d9, 0xa8d5c2, 0xf0e2b6, 0xe7a9b5,
+    ];
+    const roofCols = [0xb4553c, 0x8a7f86, 0x6f6470, 0xc0683f];
+    const night = !!sky.nightWindows;
+    const lit = [];
+    const dark = [];
+    const frames = [];
+    const house = (x, z, w, d, h, rotY, shop) => {
       const g = new THREE.Group();
+      const wall = pastel[Math.floor(r() * pastel.length)];
       const body = new THREE.Mesh(
-        new THREE.BoxGeometry(w, h, d),
-        flat(pastel[Math.floor(r() * pastel.length)]),
+        facet(new THREE.BoxGeometry(w, h, d), 0.03, Math.floor(r() * 99)),
+        facetMat(flat(wall)),
       );
       body.position.y = h / 2;
-      body.castShadow = true;
-      body.receiveShadow = true;
+      body.castShadow = body.receiveShadow = true;
       g.add(body);
-      const roof = new THREE.Mesh(new THREE.BoxGeometry(w + 0.3, 0.3, d + 0.3), flat(0x8a7f86));
-      roof.position.y = h + 0.15;
-      g.add(roof);
+      const trim = flat(new THREE.Color(wall).multiplyScalar(0.82));
+      const band = (y, hh, out) => {
+        const b = new THREE.Mesh(new THREE.BoxGeometry(w + out, hh, d + out), trim);
+        b.position.y = y;
+        b.castShadow = true;
+        g.add(b);
+      };
+      band(0.3, 0.6, 0.06); // plinth
+      band(h - 0.12, 0.24, 0.16); // cornice
+      if (r() < 0.5) {
+        // gable roof
+        const rs = new THREE.Shape();
+        rs.moveTo(-w / 2 - 0.2, 0);
+        rs.lineTo(0, Math.min(2.4, w * 0.4));
+        rs.lineTo(w / 2 + 0.2, 0);
+        rs.lineTo(-w / 2 - 0.2, 0);
+        const roof = new THREE.Mesh(
+          facet(new THREE.ExtrudeGeometry(rs, { depth: d + 0.3, bevelEnabled: false }), 0.05, 7),
+          facetMat(flat(roofCols[Math.floor(r() * roofCols.length)])),
+        );
+        roof.position.set(0, h, -d / 2 - 0.15);
+        roof.castShadow = true;
+        g.add(roof);
+      } else {
+        // flat roof: parapet + a chimney / vent box
+        const pr = new THREE.Mesh(new THREE.BoxGeometry(w + 0.1, 0.4, d + 0.1), trim);
+        pr.position.y = h + 0.2;
+        g.add(pr);
+        const ch = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.9, 0.5), flat(0x9a8f88));
+        ch.position.set((r() - 0.5) * (w - 1), h + 0.45, (r() - 0.5) * (d - 1));
+        ch.castShadow = true;
+        g.add(ch);
+      }
       const cols = Math.max(1, Math.floor((w - 0.6) / 1.1));
-      const rows = Math.max(1, Math.floor((h - 1.4) / 1.3));
+      const rows = Math.max(1, Math.floor((h - 1.6) / 1.3));
       for (let cx = 0; cx < cols; cx++)
-        for (let ry = 0; ry < rows; ry++)
-          wins.push({
-            g,
-            x: -((cols - 1) * 1.1) / 2 + cx * 1.1,
-            y: 1.6 + ry * 1.3,
-            z: d / 2 + 0.03,
-          });
-      const door = new THREE.Mesh(new THREE.BoxGeometry(0.8, 1.3, 0.08), flat(0x6b4a3a));
-      door.position.set(0, 0.65, d / 2 + 0.03);
+        for (let ry = 0; ry < rows; ry++) {
+          if (shop && ry === 0) continue;
+          const wx = -((cols - 1) * 1.1) / 2 + cx * 1.1;
+          const wy = 1.7 + ry * 1.3;
+          frames.push({ g, x: wx, y: wy, z: d / 2 + 0.02 });
+          (night && r() < 0.68 ? lit : dark).push({ g, x: wx, y: wy, z: d / 2 + 0.05 });
+        }
+      if (shop) {
+        const sw = new THREE.Mesh(
+          new THREE.BoxGeometry(w * 0.55, 1.3, 0.06),
+          night
+            ? flat(0xffe2a8, { emissive: 0xffc46b, emissiveIntensity: 0.8 })
+            : flat(0x5a6f99, { roughness: 0.15, metalness: 0.3 }),
+        );
+        sw.position.set(-w * 0.12, 1.15, d / 2 + 0.04);
+        g.add(sw);
+        const aw = awning(w * 0.6, [roofCols[Math.floor(r() * 2)], 0xffffff]);
+        aw.position.set(-w * 0.12, 2.05, d / 2);
+        g.add(aw);
+      }
+      const door = new THREE.Mesh(new THREE.BoxGeometry(0.8, 1.4, 0.08), flat(0x6b4a3a));
+      door.position.set(shop ? w * 0.32 : 0, 0.7, d / 2 + 0.03);
       g.add(door);
       g.position.set(x, 0, z);
       g.rotation.y = rotY;
@@ -644,49 +901,50 @@ const ENV_BUILDERS = {
     };
     for (let x = -34; x < 34; ) {
       const w = 4 + r() * 3;
-      house(x + w / 2, -18.5, w, 5, 4 + r() * 9, 0);
+      house(x + w / 2, -18.5, w, 5, 4.5 + r() * 9, 0, r() < 0.6);
       x += w + 0.4;
     }
     for (const side of [-1, 1])
       for (let z = -12; z < 10; ) {
         const w = 4 + r() * 2.5;
-        house(side * 16, z + w / 2, w, 5, 4 + r() * 7, (-side * Math.PI) / 2);
+        house(side * 16, z + w / 2, w, 5, 4 + r() * 7, (-side * Math.PI) / 2, false);
         z += w + 0.5;
       }
-    const winGeo = new THREE.BoxGeometry(0.6, 0.8, 0.06);
-    const wm = new THREE.InstancedMesh(winGeo, winMat, wins.length);
-    const m4 = new THREE.Matrix4();
-    wins.forEach((w, i) => {
-      w.g.updateMatrixWorld();
-      m4.makeTranslation(w.x, w.y, w.z).premultiply(w.g.matrixWorld);
-      wm.setMatrixAt(i, m4);
-    });
-    ground.add(wm);
+    const inst = (list, geo, mat) => {
+      const im = new THREE.InstancedMesh(geo, mat, Math.max(1, list.length));
+      list.forEach((w, i) => {
+        w.g.updateMatrixWorld();
+        m4.makeTranslation(w.x, w.y, w.z).premultiply(w.g.matrixWorld);
+        im.setMatrixAt(i, m4);
+      });
+      im.count = list.length;
+      ground.add(im);
+    };
+    inst(frames, new THREE.BoxGeometry(0.74, 0.94, 0.05), flat(0xf6f1ea));
+    inst(
+      lit,
+      new THREE.BoxGeometry(0.6, 0.8, 0.06),
+      flat(0xffd27a, { emissive: 0xffb84d, emissiveIntensity: 0.9 }),
+    );
+    inst(
+      dark,
+      new THREE.BoxGeometry(0.6, 0.8, 0.06),
+      flat(night ? 0x2b3352 : 0x55709c, { roughness: 0.12, metalness: 0.35 }),
+    );
+    inst(
+      frames.map((f) => ({ ...f, y: f.y - 0.52, z: f.z + 0.06 })),
+      new THREE.BoxGeometry(0.86, 0.07, 0.16),
+      flat(0xf6f1ea),
+    );
 
-    // street lamps along the road, planters, parked cars
-    const lampMat = sky.nightWindows
-      ? flat(0xfff1c2, { emissive: 0xffd27a, emissiveIntensity: 1.2 })
-      : flat(0xfff6dc);
-    for (const x of [-15, -6, 6, 15]) {
-      const pole = add(
-        new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 4.2, 6), M.steel),
-        x,
-        2.1,
-        -6.9,
-      );
-      pole.castShadow = true;
-      add(new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.08, 0.12), M.steel), x, 4.15, -7.3);
-      add(new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.16, 0.3), lampMat), x, 4.05, -7.7, false);
-    }
-    for (const x of [-10, 10]) {
-      add(
-        new THREE.Mesh(new THREE.CylinderGeometry(0.7, 0.6, 0.6, 10), flat(0xc9c1b8)),
-        x,
-        0.3,
-        -4.8,
-      );
-      tree(x, -4.8, 0.85, Math.abs(x));
-    }
+    // street furniture along the road and on the plaza edge
+    for (const x of [-15, -6, 6, 15]) place(lamp({ on: night }), x, -6.9);
+    for (const x of [-10, 10]) place(planter(Math.abs(x)), x, -4.8);
+    place(bench(), -12.5, -5.3);
+    place(bench(), 12.5, -5.3);
+    place(bin(), -8.2, -5.6);
+    place(bike(0x2f9bff), 8.4, -5.5, 0.2);
+    place(bike(0xffd23f), 9.2, -5.6, 0.15);
     car(9, -8.2, 0xe2453c);
     car(-12, -10.3, 0x3c7be2, Math.PI);
     car(20, -10.3, 0xf2c230, Math.PI);
@@ -694,35 +952,57 @@ const ENV_BUILDERS = {
 
   // Beach: sand in front, turquoise sea behind, palms, umbrella, a boat.
   strand() {
-    const sea = new THREE.Mesh(
-      new THREE.CircleGeometry(80, 48),
-      new THREE.MeshStandardMaterial({ color: 0x3fb8d0, roughness: 0.25, metalness: 0.1 }),
+    // wavy shoreline at z ≈ -7: dry sand in front, wet sand along the
+    // water, the beach sloping on under the (see-through) shallow sea
+    const shore = (x) => -(7 + Math.sin(x * 0.35) * 0.8 + Math.sin(x * 0.11) * 1.2);
+    const sandGeo = discGeo(62, 1.1, 9);
+    const sp = sandGeo.attributes.position;
+    for (let i = 0; i < sp.count; i++) {
+      const x = sp.getX(i);
+      const z = sp.getZ(i);
+      const d = Math.hypot(x, z);
+      const below = shore(x) - z; // > 0 = under water
+      let y;
+      if (below > 0) y = -Math.min(2.5, below * 0.09 + below * below * 0.004);
+      else {
+        // dunes and ripples away from the stage
+        const k = Math.min(1, Math.max(0, (d - 6) / 10));
+        y =
+          (noise2(x * 0.18, z * 0.18, 4) - 0.35) * 0.9 * k + Math.sin(x * 2.1 + z * 0.7) * 0.02 * k;
+        y = Math.max(y, 0) * Math.min(1, -below / 3);
+      }
+      sp.setY(i, y);
+    }
+    sandGeo.computeVertexNormals();
+    const sand = new THREE.Mesh(
+      patches(facet(sandGeo, 0.05, 9), {
+        amt: 0.07,
+        scale: 0.2,
+        seed: 9,
+        // wet, darker band along the water line
+        fn: (x, z) => {
+          const above = z - shore(x);
+          return above < 1.6 ? -0.2 * (1 - Math.max(0, above) / 1.6) : 0;
+        },
+      }),
+      facetMat(flat(0xf2dcae)),
     );
-    sea.rotation.x = -Math.PI / 2;
-    sea.position.y = -0.04;
-    ground.add(sea);
-    // sand with a wavy shoreline at z ≈ -7
-    const shape = new THREE.Shape();
-    shape.moveTo(-60, -60);
-    shape.lineTo(60, -60);
-    shape.lineTo(60, 7);
-    for (let x = 60; x >= -60; x -= 2)
-      shape.lineTo(x, 7 + Math.sin(x * 0.35) * 0.8 + Math.sin(x * 0.11) * 1.2);
-    shape.lineTo(-60, -60);
-    const sand = new THREE.Mesh(new THREE.ShapeGeometry(shape, 4), flat(0xf2dcae));
-    sand.rotation.x = -Math.PI / 2;
     sand.receiveShadow = true;
     ground.add(sand);
+    sea({ zFrom: -4.5 });
+    // foam: a line that washes in and out
     const foamPts = [];
-    for (let x = -60; x <= 60; x += 2)
-      foamPts.push(V(x, 0.0, -(7 + Math.sin(x * 0.35) * 0.8 + Math.sin(x * 0.11) * 1.2) - 0.3));
+    for (let x = -60; x <= 60; x += 2) foamPts.push(V(x, 0.0, shore(x) + 0.15));
     const foam = new THREE.Mesh(
-      new THREE.TubeGeometry(new THREE.CatmullRomCurve3(foamPts), 240, 0.12, 4),
-      flat(0xffffff),
+      new THREE.TubeGeometry(new THREE.CatmullRomCurve3(foamPts), 240, 0.1, 4),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.85 }),
     );
+    foam.scale.y = 0.4;
     ground.add(foam);
     onFrame((t) => {
-      foam.position.z = Math.sin(t * 0.9) * 0.25;
+      const k = Math.sin(t * 0.9);
+      foam.position.z = k * 0.35;
+      foam.material.opacity = 0.55 + 0.35 * (0.5 - 0.5 * k);
     });
 
     const trunkMat = flat(0x9b6b3d);
@@ -822,9 +1102,10 @@ const ENV_BUILDERS = {
 
   // Snowy mountain village: snow ground, snowy pines, big peaks, a cabin,
   // gently falling snow.
-  winter() {
-    const r = rng(23);
-    bigGround(0xeef3fa);
+  winter(sky, o) {
+    const r = rng(23 + o.seed);
+    // snow with blue-shaded hollows and bright crests
+    bigGround(0xeef3fa, 75, 5, { amt: 0.07, scale: 0.18, warm: -0.6 });
     for (let i = 0; i < 18; i++) {
       const a = r() * Math.PI * 2;
       const d = 8 + r() * 20;
@@ -896,9 +1177,55 @@ const ENV_BUILDERS = {
     );
     win.position.set(0.7, 1.3, 1.31);
     cabin.add(win);
+    const chimney = new THREE.Mesh(new THREE.BoxGeometry(0.4, 1.0, 0.4), flat(0x8a7f86));
+    chimney.position.set(0.9, 3.0, -0.4);
+    cabin.add(chimney);
     cabin.position.set(-11, 0, -11);
     cabin.rotation.y = 0.5;
     ground.add(cabin);
+    // chimney smoke: soft puffs rising and fading (deterministic)
+    cabin.updateMatrixWorld();
+    const smokeAt = chimney.getWorldPosition(V(0, 0, 0)).add(V(0, 0.55, 0));
+    const smokeMat = new THREE.MeshStandardMaterial({
+      color: 0xf4f2f6,
+      transparent: true,
+      opacity: 0.6,
+      depthWrite: false,
+      flatShading: true,
+    });
+    const smoke = Array.from({ length: 9 }, (_, i) => {
+      const m = new THREE.Mesh(new THREE.IcosahedronGeometry(0.35, 0), smokeMat.clone());
+      m.userData.noAO = true;
+      ground.add(m);
+      return { m, ph: i / 9 };
+    });
+    onFrame((t) => {
+      for (const { m, ph } of smoke) {
+        const k = (t * 0.18 + ph) % 1;
+        m.position
+          .copy(smokeAt)
+          .add(V(k * 1.8 + Math.sin(k * 6 + ph * 9) * 0.2, k * 4.2, -k * 0.6));
+        m.scale.setScalar(0.5 + k * 1.6);
+        m.material.opacity = 0.55 * Math.sin(Math.PI * Math.min(1, k * 1.3));
+      }
+    });
+    // frozen pond, a snowman, a fence half buried in snow
+    const ice = new THREE.Mesh(
+      patches(facet(discGeo(3.2, 0.5, 8), 0.05, 8), { amt: 0.08, scale: 0.6, seed: 8 }),
+      facetMat(
+        new THREE.MeshStandardMaterial({
+          color: 0xbfe3f5,
+          roughness: 0.08,
+          metalness: 0.1,
+          envMapIntensity: 1.5,
+        }),
+      ),
+    );
+    ice.scale.set(1.3, 1, 0.8);
+    ice.position.set(9.5, 0.03, 7.5);
+    ground.add(ice);
+    place(snowman(), -7.2, -5.2, 0.5);
+    place(fence(9, 0x8a6a4a), 2, -6.8, 0.05);
 
     // falling snow (deterministic)
     const N = 260;
@@ -923,8 +1250,8 @@ const ENV_BUILDERS = {
 
   // Countryside: meadow, dirt road, striped fields, red barn + silo, fence,
   // hay bales.
-  land() {
-    bigGround(0x86c45a);
+  land(sky, o) {
+    bigGround(0x86c45a, 75, 5, { amt: 0.12, scale: 0.1, warm: 0.5 });
     add(new THREE.Mesh(new THREE.BoxGeometry(90, 0.05, 3.2), flat(0xc9a46b)), 0, 0.02, -7.5, false);
     const fieldCols = [0xe9c85a, 0x9b6b45, 0x6db33c, 0xd9b44a, 0x8a5e3c];
     for (let i = 0; i < 9; i++) {
@@ -1007,29 +1334,607 @@ const ENV_BUILDERS = {
       [12, 8, 1.0],
       [-8, 12, 1.1],
     ].forEach(([x, z, s], i) => tree(x, z, s, i + 5));
-    rocks(10, 7, 18, 58);
+    rocks(10, 7, 18, 58 + o.seed);
+    // dirt path from the stage to the road, a paddock with cows, bushes
+    const path = new THREE.Mesh(
+      patches(facet(new THREE.PlaneGeometry(2.2, 12, 3, 12).rotateX(-Math.PI / 2), 0.08, 4), {
+        amt: 0.1,
+        scale: 0.6,
+        seed: 4,
+      }),
+      facetMat(flat(0xc9a46b)),
+    );
+    path.position.set(-2.6, 0.015, -1.5);
+    path.rotation.y = 0.12;
+    path.receiveShadow = true;
+    ground.add(path);
+    place(cow(1 + o.seed), -8.6, 6.8, 0.6);
+    place(cow(2 + o.seed), -11, 9.2, -0.4);
+    place(sheep(3 + o.seed), 13, 7.5, 2.4);
+    place(sheep(4 + o.seed), 14.3, 9, 2.0);
+    scatter((i) => bush(i + 11 + o.seed), 7, {
+      rMin: 9,
+      rMax: 22,
+      seed: 13 + o.seed,
+      keep: (x, z) => z > -5,
+    });
+    // furrows on the fields
+    const furrow = new THREE.InstancedMesh(
+      new THREE.BoxGeometry(9.6, 0.08, 0.22),
+      flat(0x000000, { transparent: true, opacity: 0.12 }),
+      9 * 14,
+    );
+    let fi = 0;
+    for (let i = 0; i < 9; i++)
+      for (let k = 0; k < 14; k++) {
+        const m4 = new THREE.Matrix4()
+          .makeRotationY(0.05)
+          .setPosition(-42 + i * 10.5, 0.13, -12 + -k * 1.5);
+        furrow.setMatrixAt(fi++, m4);
+      }
+    furrow.userData.noAO = true;
+    ground.add(furrow);
     // meadow in front of the road and fields only
-    meadow({ n: 420, rMin: 2.6, rMax: 26, seed: 11, keep: (x, z) => z > -5.4, flowers: 0.35 });
+    meadow({
+      n: 520,
+      rMin: 2.6,
+      rMax: 26,
+      seed: 11 + o.seed,
+      keep: (x, z) => z > -5.4,
+      flowers: 0.35,
+    });
+  },
+
+  // Space: the stage is a small moon-rock island floating in front of the
+  // Earth, a ringed planet far off, a satellite passing — for anything in
+  // orbit, rockets, "Was passiert, wenn … im Weltall".
+  weltall(sky, o) {
+    scene.fog = null;
+    const r = rng(61 + o.seed);
+    const regolith = flat(0xa7a3ad);
+    // crater-dented top
+    const craters = Array.from({ length: 7 }, () => {
+      const a = r() * Math.PI * 2;
+      const d = 4.8 + r() * 3.2;
+      return [Math.cos(a) * d, Math.sin(a) * d, 0.6 + r() * 0.9];
+    });
+    const topGeo = discGeo(9.2, 0.55, 61, () => 0);
+    const tp = topGeo.attributes.position;
+    for (let i = 0; i < tp.count; i++) {
+      const x = tp.getX(i);
+      const z = tp.getZ(i);
+      let y = 0;
+      if (Math.hypot(x, z) > 4.6) {
+        y += (noise2(x * 0.5, z * 0.5, 2) - 0.5) * 0.25;
+        for (const [cx, cz, cr] of craters) {
+          const q = Math.hypot(x - cx, z - cz) / cr;
+          if (q < 1.4)
+            y += q < 1 ? -0.35 * (1 - q * q) : 0.18 * Math.sin(((q - 1) / 0.4) * Math.PI);
+        }
+      }
+      tp.setY(i, y);
+    }
+    topGeo.computeVertexNormals();
+    const top = new THREE.Mesh(
+      patches(facet(topGeo, 0.07, 61), { amt: 0.12, scale: 0.3, seed: 6, warm: 0 }),
+      facetMat(regolith),
+    );
+    top.receiveShadow = true;
+    ground.add(top);
+    const rim = F(
+      jitter(new THREE.CylinderGeometry(9.2, 8.6, 1.0, 36, 2, true), 0.15, 62),
+      regolith,
+      0.1,
+      62,
+    );
+    rim.position.y = -0.5;
+    ground.add(rim);
+    const under = F(
+      jitter(new THREE.ConeGeometry(8.6, 6, 14, 3), 0.6, 63),
+      flat(0x7b7682),
+      0.14,
+      63,
+    );
+    under.rotation.x = Math.PI;
+    under.position.y = -4;
+    ground.add(under);
+    for (let i = 0; i < 12; i++) {
+      const a = r() * Math.PI * 2;
+      const d = 5 + r() * 3.6;
+      add(
+        F(
+          jitter(new THREE.DodecahedronGeometry(0.15 + r() * 0.35, 0), 0.05, 70 + i),
+          flat(0x8d8893),
+          0.14,
+          70 + i,
+        ),
+        Math.cos(a) * d,
+        0.08,
+        Math.sin(a) * d,
+      );
+    }
+    // the Earth: oceans, continents, ice caps, a thin blue atmosphere
+    const earthGeo = facet(new THREE.IcosahedronGeometry(30, 4), 0.04, 9);
+    const ep = earthGeo.attributes.position;
+    const ec = earthGeo.attributes.color;
+    const ocean = new THREE.Color(0x2a6fd1);
+    const land = [new THREE.Color(0x4f9a45), new THREE.Color(0x8c7a4a), new THREE.Color(0x3f8040)];
+    const ice = new THREE.Color(0xf4f8ff);
+    const c = new THREE.Color();
+    for (let i = 0; i < ep.count; i += 3) {
+      const x = (ep.getX(i) + ep.getX(i + 1) + ep.getX(i + 2)) / 90;
+      const y = (ep.getY(i) + ep.getY(i + 1) + ep.getY(i + 2)) / 90;
+      const z = (ep.getZ(i) + ep.getZ(i + 1) + ep.getZ(i + 2)) / 90;
+      const n =
+        noise2(x * 2.2 + z * 1.3, y * 2.2 - z * 0.7, 5) * 0.7 +
+        noise2(x * 5, y * 5 + z * 3, 6) * 0.3;
+      if (Math.abs(y) > 0.82) c.copy(ice);
+      else if (n > 0.56) c.copy(land[Math.floor(n * 37) % 3]);
+      else c.copy(ocean).multiplyScalar(0.85 + n * 0.3);
+      for (let j = 0; j < 3; j++)
+        ec.setXYZ(i + j, ec.getX(i + j) * c.r, ec.getY(i + j) * c.g, ec.getZ(i + j) * c.b);
+    }
+    const earth = new THREE.Mesh(
+      earthGeo,
+      new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, roughness: 0.7 }),
+    );
+    earth.position.set(-46, -16, -115);
+    ground.add(earth);
+    const atmo = new THREE.Mesh(
+      new THREE.SphereGeometry(31.6, 48, 32),
+      new THREE.MeshBasicMaterial({
+        color: 0x6fb6ff,
+        transparent: true,
+        opacity: 0.22,
+        side: THREE.BackSide,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    atmo.position.copy(earth.position);
+    atmo.userData.noAO = true;
+    ground.add(atmo);
+    onFrame((t) => (earth.rotation.y = t * 0.02));
+    // ringed planet far away
+    const planet = F(new THREE.IcosahedronGeometry(7, 2), flat(0xe0b27a), 0.08, 12);
+    planet.position.set(58, 34, -140);
+    ground.add(planet);
+    const ring = new THREE.Mesh(
+      new THREE.RingGeometry(9.5, 14, 48, 1),
+      flat(0xf1d9b0, { side: THREE.DoubleSide, transparent: true, opacity: 0.85 }),
+    );
+    ring.position.copy(planet.position);
+    ring.rotation.set(1.2, 0.3, 0.2);
+    ring.userData.noAO = true;
+    ground.add(ring);
+    // satellite drifting across
+    const sat = new THREE.Group();
+    sat.add(new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.6, 0.9), M.chrome));
+    for (const s of [-1, 1]) {
+      const p = new THREE.Mesh(
+        new THREE.BoxGeometry(1.6, 0.04, 0.7),
+        flat(0x2d4d9a, { metalness: 0.6, roughness: 0.25 }),
+      );
+      p.position.x = s * 1.15;
+      sat.add(p);
+    }
+    ground.add(sat);
+    onFrame((t) => {
+      sat.position.set(-30 + ((t * 0.6) % 60), 14 + Math.sin(t * 0.1) * 2, -40);
+      sat.rotation.set(t * 0.2, t * 0.13, 0);
+    });
+  },
+
+  // Deep sea: sandy seabed, rocks, corals, swaying kelp, light shafts from
+  // the surface, drifting particles, rising bubbles, a fish school — for
+  // Tiefsee, U-Boot, "Was passiert, wenn du ganz tief tauchst".
+  tiefsee(sky, o) {
+    const r = rng(81 + o.seed);
+    bigGround(0xc9b48a, 75, 81, { amt: 0.14, scale: 0.14, warm: 0.2 });
+    // seabed dunes
+    for (let i = 0; i < 14; i++) {
+      const a = r() * Math.PI * 2;
+      const d = 9 + r() * 22;
+      const m = add(
+        new THREE.Mesh(
+          facet(jitter(new THREE.SphereGeometry(1, 9, 5), 0.08, i), 0.06, i),
+          facetMat(flat(0xbfa87e)),
+        ),
+        Math.cos(a) * d,
+        -0.3,
+        Math.sin(a) * d,
+        false,
+      );
+      m.scale.set(2 + r() * 3, 0.6 + r() * 0.5, 1.5 + r() * 2.5);
+    }
+    // big rocks behind, small rocks around
+    const stone = flat(0x6f7f8f);
+    for (let i = 0; i < 9; i++) {
+      const a = Math.PI * (1.1 + r() * 0.8);
+      const d = 12 + r() * 16;
+      const m = add(
+        F(
+          jitter(new THREE.DodecahedronGeometry(1.5 + r() * 2.5, 1), 0.3, 90 + i),
+          stone,
+          0.12,
+          90 + i,
+        ),
+        Math.sin(a) * d,
+        0.4,
+        Math.cos(a) * d,
+      );
+      m.scale.y = 0.7 + r() * 0.6;
+    }
+    rocks(16, 6, 16, 95 + o.seed, flat(0x7c8a96));
+    // corals: branching ones, brain corals, fans
+    const coralCols = o.palette?.corals ?? [0xff6f91, 0xff9f5a, 0xb07cff, 0xffd166, 0x4fd1c5];
+    const coral = (i) => {
+      const g = new THREE.Group();
+      const col = flat(coralCols[i % coralCols.length], { roughness: 0.6 });
+      const kind = i % 3;
+      if (kind === 0) {
+        for (let k = 0; k < 5; k++) {
+          const b = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.09, 0.7 + r() * 0.6, 5), col);
+          b.position.set((r() - 0.5) * 0.3, 0.35, (r() - 0.5) * 0.3);
+          b.rotation.set((r() - 0.5) * 0.9, 0, (r() - 0.5) * 0.9);
+          g.add(b);
+        }
+      } else if (kind === 1) {
+        const m = F(jitter(new THREE.IcosahedronGeometry(0.45, 1), 0.06, i), col, 0.12, i);
+        m.scale.y = 0.65;
+        m.position.y = 0.25;
+        g.add(m);
+      } else {
+        const m = new THREE.Mesh(
+          new THREE.CircleGeometry(0.6, 7, 0, Math.PI),
+          flat(coralCols[(i + 2) % coralCols.length], { side: THREE.DoubleSide }),
+        );
+        m.position.y = 0.05;
+        g.add(m);
+      }
+      return g;
+    };
+    scatter(coral, 26, { rMin: 5.5, rMax: 16, seed: 83 + o.seed });
+    // kelp: tall strips that sway
+    const kelpMat = flat(0x3f8f4f, { side: THREE.DoubleSide });
+    const kelps = scatter(
+      () => {
+        const g = new THREE.Group();
+        const h = 2.5 + r() * 3.5;
+        const m = new THREE.Mesh(new THREE.PlaneGeometry(0.35, h, 1, 8), kelpMat);
+        m.position.y = h / 2;
+        g.add(m);
+        return g;
+      },
+      22,
+      { rMin: 7, rMax: 20, seed: 85 + o.seed, keep: (x, z) => z < 2 || Math.abs(x) > 10 },
+    );
+    onFrame((t) => kelps.forEach((k, i) => (k.rotation.z = Math.sin(t * 0.7 + i) * 0.12)));
+    // light shafts from the surface
+    const shaftMat = new THREE.MeshBasicMaterial({
+      color: 0x9fe8ff,
+      transparent: true,
+      opacity: 0.08,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide,
+    });
+    const shafts = [];
+    for (let i = 0; i < 7; i++) {
+      const m = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 2.2, 26, 6, 1, true), shaftMat);
+      m.position.set(-14 + i * 4.6 + r() * 2, 11, -6 - r() * 10);
+      m.rotation.z = 0.25;
+      m.userData = { noAO: true, ph: r() * 6 };
+      ground.add(m);
+      shafts.push(m);
+    }
+    onFrame((t) =>
+      shafts.forEach((m) => (m.material.opacity = 0.06 + 0.04 * Math.sin(t * 0.5 + m.userData.ph))),
+    );
+    // drifting particles + rising bubbles + a fish school circling behind
+    const N = 300;
+    const snow = new THREE.InstancedMesh(
+      new THREE.IcosahedronGeometry(0.03, 0),
+      new THREE.MeshBasicMaterial({ color: 0xdff6ff }),
+      N,
+    );
+    snow.userData.noAO = true;
+    snow.frustumCulled = false;
+    ground.add(snow);
+    const seeds = Array.from({ length: N }, () => [r(), r(), r()]);
+    const m4 = new THREE.Matrix4();
+    onFrame((t) => {
+      seeds.forEach(([a, b, c], i) => {
+        m4.makeTranslation(
+          (a - 0.5) * 30 + Math.sin(t * 0.3 + i) * 0.4,
+          ((b * 12 - t * 0.12 * (0.5 + c)) % 12) + (b * 12 - t * 0.12 * (0.5 + c) < 0 ? 12 : 0),
+          (c - 0.5) * 30,
+        );
+        snow.setMatrixAt(i, m4);
+      });
+      snow.instanceMatrix.needsUpdate = true;
+    });
+    const bubbleMat = new THREE.MeshStandardMaterial({
+      color: 0xe8fbff,
+      transparent: true,
+      opacity: 0.55,
+      roughness: 0.05,
+      depthWrite: false,
+    });
+    const bubbles = Array.from({ length: 24 }, (_, i) => {
+      const m = new THREE.Mesh(new THREE.IcosahedronGeometry(0.06 + (i % 4) * 0.03, 1), bubbleMat);
+      m.userData.noAO = true;
+      ground.add(m);
+      return m;
+    });
+    onFrame((t) =>
+      bubbles.forEach((m, i) => {
+        const k = (t * 0.25 + i / 24) % 1;
+        m.position.set(
+          -7.5 + (i % 3) * 0.3 + Math.sin(t * 2 + i) * 0.15,
+          k * 12,
+          -8 + (i % 2) * 0.4,
+        );
+      }),
+    );
+    const fishMat = flat(0xffb347, { roughness: 0.4 });
+    const fish = Array.from({ length: 14 }, (_, i) => {
+      const f = new THREE.Mesh(
+        new THREE.ConeGeometry(0.12, 0.45, 5).rotateZ(-Math.PI / 2),
+        fishMat,
+      );
+      ground.add(f);
+      return { f, i };
+    });
+    onFrame((t) =>
+      fish.forEach(({ f, i }) => {
+        const a = t * 0.18 + i * 0.09;
+        f.position.set(
+          Math.cos(a) * 14 + (i % 4) * 0.4,
+          4 + (i % 5) * 0.35 + Math.sin(t + i) * 0.1,
+          -10 + Math.sin(a) * 5 + (i % 3) * 0.4,
+        );
+        f.rotation.y = -a - Math.PI / 2;
+      }),
+    );
+  },
+
+  // Above the clouds: no ground, a sea of cumulus below the stage, a few
+  // towers on the horizon — for planes, parachutes, weather, birds.
+  wolken(sky, o) {
+    const r = rng(91 + o.seed);
+    const mat = facetMat(
+      new THREE.MeshStandardMaterial({
+        color: sky.cloud[0],
+        emissive: sky.cloud[1],
+        emissiveIntensity: 0.12,
+        roughness: 1,
+        flatShading: true,
+      }),
+    );
+    // carpet: big flattened puffs on a ring grid, top surface about y = -1.6
+    for (let i = 0; i < 170; i++) {
+      const a = r() * Math.PI * 2;
+      const d = 5 + Math.sqrt(r()) * 75;
+      const g = new THREE.Group();
+      cloudPuffs(g, 3 + Math.floor(r() * 3), 2.2 + r() * 2.4 + d * 0.02, mat, 200 + i);
+      g.position.set(Math.cos(a) * d, -9 - r() * 1.5, Math.sin(a) * d);
+      g.rotation.y = r() * Math.PI * 2;
+      ground.add(g);
+    }
+    for (let i = 0; i < 6; i++) {
+      const a = Math.PI * (1.15 + i * 0.13);
+      const g = new THREE.Group();
+      for (let k = 0; k < 4; k++) {
+        const t = new THREE.Group();
+        cloudPuffs(t, 4, 4.5 - k * 0.7, mat, 300 + i * 9 + k);
+        t.position.y = k * 4;
+        g.add(t);
+      }
+      g.position.set(Math.sin(a) * 75, -9, Math.cos(a) * 75);
+      ground.add(g);
+    }
+  },
+
+  // Kitchen counter: the stage is a big worktop by the window — tiles,
+  // cabinets, jars, a fruit bowl, a plant — for anything in the kitchen.
+  // Scale: about 1 unit ≈ 15 cm, so a 2.5-unit subject is appliance size.
+  kueche(sky, o) {
+    scene.fog = null;
+    const r = rng(101 + o.seed);
+    const worktop = o.palette?.worktop ?? 0xc49a6c;
+    const cab = o.palette?.cabinets ?? 0x8fb8a8;
+    // worktop slab and the cabinets below it, the room floor far below
+    const top = new THREE.Mesh(
+      patches(facet(new THREE.BoxGeometry(40, 0.8, 16, 20, 1, 8), 0.04, 3), {
+        amt: 0.08,
+        scale: 0.25,
+        seed: 3,
+      }),
+      facetMat(flat(worktop, { roughness: 0.55 })),
+    );
+    top.position.set(0, -0.4, 1.5);
+    top.receiveShadow = true;
+    ground.add(top);
+    for (let x = -18; x < 18; x += 4.5) {
+      const d = new THREE.Mesh(new THREE.BoxGeometry(4.3, 9, 0.3), flat(cab));
+      d.position.set(x + 2.25, -5.3, 9.4);
+      ground.add(d);
+      const h = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.18, 0.2), M.chrome);
+      h.position.set(x + 2.25, -1.6, 9.65);
+      ground.add(h);
+    }
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(120, 120), flat(0xb08a64));
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = -9.8;
+    ground.add(floor);
+    // back wall with tiles, a window with daylight, upper cabinets
+    const wall = new THREE.Mesh(
+      new THREE.BoxGeometry(60, 30, 0.4),
+      flat(o.palette?.wall ?? 0xf6efe4),
+    );
+    wall.position.set(0, 12, -6.7);
+    ground.add(wall);
+    const tiles = [];
+    for (let x = -20; x <= 20; x += 1.0)
+      for (let y = 0.5; y < 6; y += 1.0) if (!(Math.abs(x) < 5.5 && y > 2.5)) tiles.push([x, y]);
+    const tile = new THREE.InstancedMesh(
+      new THREE.BoxGeometry(0.94, 0.94, 0.08),
+      flat(0xffffff, { roughness: 0.2 }),
+      tiles.length,
+    );
+    const m4 = new THREE.Matrix4();
+    const tc = new THREE.Color();
+    const tileCol = new THREE.Color(o.palette?.tiles ?? 0xbfe3dc);
+    tiles.forEach(([x, y], i) => {
+      tile.setMatrixAt(i, m4.makeTranslation(x, y, -6.46));
+      tile.setColorAt(i, tc.copy(tileCol).multiplyScalar(0.94 + r() * 0.08));
+    });
+    tile.receiveShadow = true;
+    ground.add(tile);
+    const frame = flat(0xffffff);
+    const win = new THREE.Group();
+    // daylight outside: a bright sky with a soft green treeline
+    win.add(
+      new THREE.Mesh(
+        new THREE.BoxGeometry(10, 8, 0.1),
+        new THREE.MeshBasicMaterial({ color: 0xcfe8ff }),
+      ),
+    );
+    const trees = new THREE.Mesh(
+      new THREE.BoxGeometry(10, 2.2, 0.05),
+      new THREE.MeshBasicMaterial({ color: 0x9fcf8a }),
+    );
+    trees.position.set(0, -2.9, 0.06);
+    win.add(trees);
+    for (const [w, h, x, y] of [
+      [10.6, 0.5, 0, 4],
+      [10.6, 0.5, 0, -4],
+      [0.5, 8.5, -5.1, 0],
+      [0.5, 8.5, 5.1, 0],
+      [0.3, 8, 0, 0],
+      [10, 0.3, 0, 0.5],
+    ]) {
+      const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.4), frame);
+      b.position.set(x, y, 0.2);
+      win.add(b);
+    }
+    const sill = new THREE.Mesh(new THREE.BoxGeometry(11.4, 0.3, 1.2), frame);
+    sill.position.set(0, -4.3, 0.5);
+    win.add(sill);
+    win.position.set(0, 7.5, -6.45);
+    ground.add(win);
+    for (const x of [-13.5, 13.5]) {
+      const c = new THREE.Mesh(new THREE.BoxGeometry(8.5, 6, 3.5), flat(cab));
+      c.position.set(x, 12, -4.8);
+      c.castShadow = true;
+      ground.add(c);
+      for (const dx of [-2.1, 2.1]) {
+        const h = new THREE.Mesh(new THREE.BoxGeometry(0.2, 1.2, 0.2), M.chrome);
+        h.position.set(x + dx * 0.25, 10, -2.95);
+        ground.add(h);
+      }
+    }
+    // things on the counter, all outside the stage
+    const glass = new THREE.MeshStandardMaterial({
+      color: 0xdff2ff,
+      roughness: 0.05,
+      transparent: true,
+      opacity: 0.4,
+    });
+    for (const [x, z, h, fill] of [
+      [-9.5, -4.6, 2.2, 0xf2e6c9],
+      [-8, -4.8, 1.6, 0x9a6a38],
+      [-6.8, -4.6, 1.9, 0xffd166],
+    ]) {
+      const jar = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.55, h, 14), glass);
+      jar.position.set(x, h / 2, z);
+      jar.userData.noAO = true;
+      ground.add(jar);
+      add(
+        new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, h * 0.6, 14), flat(fill)),
+        x,
+        h * 0.3,
+        z,
+      );
+      add(new THREE.Mesh(new THREE.CylinderGeometry(0.58, 0.58, 0.25, 14), M.wood), x, h + 0.12, z);
+    }
+    const bowl = add(
+      new THREE.Mesh(
+        new THREE.SphereGeometry(1.4, 16, 8, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2),
+        flat(0xf4efe6, { side: THREE.DoubleSide }),
+      ),
+      9,
+      1.4,
+      -3.8,
+    );
+    bowl.scale.y = 0.6;
+    for (let i = 0; i < 6; i++)
+      add(
+        F(
+          new THREE.IcosahedronGeometry(0.42, 1),
+          flat([0xd8352a, 0xffb347, 0x79c24a][i % 3]),
+          0.06,
+          i,
+        ),
+        9 + Math.cos(i) * 0.6,
+        0.85 + (i % 2) * 0.35,
+        -3.8 + Math.sin(i) * 0.6,
+      );
+    const board = add(
+      new THREE.Mesh(new THREE.BoxGeometry(4.2, 0.18, 2.6), M.wood),
+      8.5,
+      0.09,
+      4.8,
+    );
+    board.rotation.y = -0.3;
+    add(
+      new THREE.Mesh(new THREE.CylinderGeometry(0.75, 0.6, 1.2, 10), flat(0xc0683f)),
+      -9,
+      0.6,
+      5.5,
+    );
+    const herb = bush(7, 0x4f9a35);
+    herb.position.set(-9, 1.0, 5.5);
+    herb.scale.setScalar(0.9);
+    ground.add(herb);
   },
 };
 
 export const ENVIRONMENTS = Object.keys(ENV_BUILDERS);
 // Default light per environment (any SKIES key can be passed instead).
+// ground colour each env shows the sky light from below
+const GROUND = {
+  insel: 0x79c24a,
+  stadt: 0xbdb6ad,
+  strand: 0x4fb7cf,
+  winter: 0xeef3fa,
+  land: 0x86c45a,
+  weltall: 0x8d8893,
+  tiefsee: 0x1c5a7a,
+  wolken: 0xf4f8ff,
+  kueche: 0xc49a6c,
+};
 const DEFAULT_SKY = {
   insel: "sonnenuntergang",
   stadt: "abend",
   strand: "mittag",
   winter: "morgen",
   land: "sonnenuntergang",
+  weltall: "weltall",
+  tiefsee: "tiefsee",
+  wolken: "hoch",
+  kueche: "morgen",
 };
 
 // Build sky + landscape. Call once, first thing in scene.js.
-export function createWorld({ env = "insel", sky } = {}) {
+export function createWorld({ env = "insel", sky, seed = 0, palette = {} } = {}) {
   if (!ENV_BUILDERS[env]) throw new Error(`unknown env "${env}" (${ENVIRONMENTS.join(", ")})`);
   const skyName = sky ?? DEFAULT_SKY[env];
   if (!SKIES[skyName])
     throw new Error(`unknown sky "${skyName}" (${Object.keys(SKIES).join(", ")})`);
   buildSky(SKIES[skyName]);
-  ENV_BUILDERS[env](SKIES[skyName]);
+  ENV_BUILDERS[env](SKIES[skyName], { seed, palette });
+  skyLight(GROUND[env] ?? 0x808080);
   return { env, sky: skyName };
 }

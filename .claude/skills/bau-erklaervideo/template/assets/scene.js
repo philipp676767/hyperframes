@@ -32,14 +32,23 @@ import {
 } from "./world.js";
 import { createWorld } from "./environments.js";
 import { createHand } from "./hand.js";
+import { place, bench, lamp, flowerBed } from "./props.js";
 import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
 
 highlights(HIGHLIGHTS);
 
-// Pick the place + light for this topic: env insel | stadt | strand | winter | land,
-// sky sonnenuntergang | morgen | mittag | abend (optional, each env has a default).
-createWorld({ env: "insel" });
+// ---------------------------------------------------------------- set (SKILL.md 1b)
+// New for every video: env insel | stadt | strand | winter | land | weltall |
+// tiefsee | wolken | kueche, a sky (optional, each env has a default), a new
+// seed (reshuffles every random placement) and an optional palette.
+createWorld({ env: "insel", seed: 1 });
 addFloor(3.2, "#f3e9dc", "#d9c9b6");
+// Set dressing for the topic (props.js), outside the stage — here a cosy
+// evening in the park for "light": a bench, a lamp, flowers. The hero
+// background piece of a real video gets built here too.
+place(bench(), -6.6, -4.4, 0.55);
+place(lamp(), -4.6, -6.2);
+place(flowerBed(2), 6.6, -4.2);
 
 // ---------------------------------------------------------------- hook prop
 // The primitive version from the hook ("Kerze in einem Glas").
