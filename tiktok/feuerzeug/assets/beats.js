@@ -16,7 +16,7 @@ export const TIP = [0.12, 2.56, 0.08]; // spark electrode tip
 export const CRY = [PZX, 1.09, 0.0]; // crystal centre
 export const HAM = [PZX, 1.38, 0.0]; // hammer at rest
 export const P = [-5, 0, 2];
-export const K = [5, 0, 2];
+export const K = [3.4, 0, 2.3];
 export const R = [-1.55, 0, 0.55];
 
 // ---------------------------------------------------------------- beats
@@ -155,9 +155,9 @@ export const shots = [
   // "Dein Druck wird zum Blitz"
   shot(T.druck, TOP, [-16, 6, 2.2], [-8, 6, 1.9], { tilt: 0.25 }),
   // bonus fact: quartz watch
-  shot(T.uebrigens, add(K, [0.55, 0.95, 0.15]), [-8, 8, 5.0], [0, 6, 4.5], { whip: 1 }),
+  shot(T.uebrigens, add(K, [0.55, 0.95, 0.15]), [-18, 8, 4.8], [-10, 6, 4.3], { whip: 1 }),
   // "32.000 Mal": the vibrating quartz fork
-  shot(T.zahl, add(K, [1.15, 0.65, 0.3]), [-16, 10, 2.4], [-8, 8, 2.1], { tilt: 0.2 }),
+  shot(T.zahl, add(K, [1.15, 0.65, 0.3]), [-22, 10, 2.4], [-14, 8, 2.1], { tilt: 0.2 }),
   // CTA: flint wheel or click
   shot(T.reibrad, [-0.75, 1.3, 0.3], [10, 10, 5.8], [4, 10, 5.3], { whip: -1 }),
   {
