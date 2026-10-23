@@ -1,6 +1,6 @@
 # Lern-Logbuch „Du hast gerade X gebaut“
 
-Vor jedem neuen Video lesen (Skill `bau-erklaervideo`, Schritt 0). Nach jedem
+Vor jedem neuen Video lesen (Skill `bau-erklaervideo`, Schritt 0b). Nach jedem
 Upload: Zahlen + Feedback eintragen, **eine** konkrete Verbesserung fürs nächste
 Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 

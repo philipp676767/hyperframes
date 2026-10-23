@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) and a posting description (Beschreibung + hashtags) for every video. Use whenever the user names a new topic for this series or asks for "noch so ein Video", "wie funktioniert X", "mach das nächste Video".'
+description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" — a 9:16, 40–50 s explainer of how an everyday thing works (Kühlschrank, Aufzug, Toaster, Ampel …), in the house style — toy-like low-poly 3D diorama in a changing setting (island, city street, beach, snowy village, countryside), the object built up piece by piece in x-ray, name tags with arrows on the parts, one-word captions with yellow punch-in keywords, sound effects on every cut and pop-in, ElevenLabs voice "Jan – Social Media Creator" (model eleven_v3), retention-first script (strong hook + on-screen hook title, open loop, re-hook, payoff) → "Schau dich an. Du hast gerade X gebaut." → "Übrigens: …" bonus fact → comment-question + follow CTA → loop bridge back into the hook (seamless loop), plus a cover image (Titelbild) and a posting description (Beschreibung + hashtags) for every video. Claude picks the topic itself (references/themen.md, never one already done). Use whenever the user names a new topic for this series or asks for "noch so ein Video", "neues Video", "wie funktioniert X", "mach das nächste Video".'
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -39,6 +39,17 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 ## Workflow
 
+### 0. Pick the topic — you choose it
+
+The user leaves the topic to you (2026-10-23). Follow
+`references/themen.md`: **duplicate check first** (`tiktok/serie.md`,
+every folder in `tiktok/`, the reserved list, remote branches), then pick
+the best open topic by the five criteria and propose it with its hook
+idea, money shot and two alternatives. On "ok": reserve it in
+`themen.md`, commit + push on `main` right away (parallel chats!), then
+go on. If the user names a topic, take theirs — but still run the check
+and say so if it was done before.
+
 ### 0a. Name the chat — "Video: <Thema>"
 
 The user wants every video chat named the same way (Einheit): **`Video:
@@ -57,7 +68,7 @@ the topic is known — before the script — rename the chat:
 
 If the topic changes, rename again.
 
-### 0. Read the learning log first
+### 0b. Read the learning log first
 
 Open `tiktok/lernlog.md` before writing anything. Every entry under
 "Nächstes Mal" that isn't ticked off is a rule for this video, and the
