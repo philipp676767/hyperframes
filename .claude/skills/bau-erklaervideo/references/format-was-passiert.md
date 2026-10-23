@@ -7,8 +7,8 @@ car, the swallowed chewing gum — and follows its chain of consequences to
 a surprising outcome. **The formats always alternate** (SKILL.md step 0).
 
 Everything else stays the house standard: Jan, the look, captions,
-keywords, labels, highlights, the first-3-seconds rules, question banner +
-progress bar, payoff, "Übrigens", the CTA (never cut, shortened or moved),
+keywords, labels, highlights, the first-3-seconds rules, the open question
+on screen, payoff, "Übrigens", the CTA (never cut, shortened or moved),
 the loop, cover, one-sentence description, learning log. This file only
 lists what is **different** from `script-formel.md` and `visual-style.md`.
 
@@ -31,7 +31,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 | **Folge 1** (line 2)  | 15–22 | The first consequence / the condition that makes it strange                                                                                         |
 | **Folge 2** (line 3)  | 10–20 | It escalates — the re-hook sits here, often with `[whispers]`                                                                                       |
 | **Folge 3** (line 4)  | 15–22 | The decisive consequence: the real mechanism, max 1–2 terms                                                                                         |
-| **Payoff + Übrigens** | 18–28 | The outcome in one punchy line (banner ticks green) + "Übrigens: …"                                                                                 |
+| **Payoff + Übrigens** | 18–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                                                       |
 | **CTA**               | 12–18 | "Was sollen wir als Nächstes passieren lassen? Schreib's mir – und folg mir für mehr." (or another comment question tied to the topic, with "folg") |
 | **Loop bridge**       | 2–4   | `> Und jetzt frag dich:` / `> Also nochmal:` — flows into "Was passiert eigentlich, wenn …?"                                                        |
 
@@ -50,7 +50,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
   seconds: "Gleich siehst du, warum der Pilot ganz ruhig bleibt." /
   "Und Folge drei hat noch keiner erwartet."
 - **Never reveal the outcome in the hook.** Not "Spoiler: sie geht nicht
-  auf" — the outcome is the payoff, the banner stays open until then.
+  auf" — the outcome is the payoff, the question stays on screen until then.
 - Hook formulas for the two alternatives: the same question with a
   different act ("… wenn du sie im Landeanflug aufmachst?"), or the
   **Mythos variant**: "Alle sagen, … Was passiert wirklich, wenn du …?"
@@ -62,8 +62,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 
 - **3 Folgen instead of 3 build beats.** Each one ends with a pull ("… und
   genau das wird jetzt dein Problem."), each one is bigger than the one
-  before. Steps in `hf-config` = one spoken word per Folge (e.g.
-  `["Luft", "Tonnen", "Stöpsel"]`).
+  before.
 - The **real mechanism** comes in Folge 3, not earlier (max 3 terms in
   total, still none before ~15 s, no numbers before ~15 s — the
   "höher als der Everest"-kind of comparison is fine).
@@ -75,7 +74,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 - **Payoff = the outcome**, answering the hook's question in one line with
   the `answer` word: "Darum bleibt sie _zu_, selbst wenn zehn Leute
   ziehen." The answer word must not be spoken earlier in the script (the
-  banner ticks on its first use after 6 s).
+  on-screen question is answered on its first use after 6 s).
 - "Übrigens: …" exactly as in script-formel.md.
 - CTA: default **"Was sollen wir als Nächstes passieren lassen?
   Schreib's mir – und folg mir für mehr."** — when the user reports
@@ -113,8 +112,7 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - **Cutaway / x-ray only after ~3 s** and only when a Folge needs a look
   inside (pressure in the cabin, the current in the car body).
 - **The payoff shot** shows the outcome big: the door that doesn't move,
-  the car standing there, the passenger unharmed — plus the green tick
-  of the banner. Then the usual "Übrigens" and CTA shots, loop cut back to
+  the car standing there, the passenger unharmed. Then the usual "Übrigens" and CTA shots, loop cut back to
   the hand at frame 0.
 - **Setting:** the act happens _in_ a place (a plane cabin, a car on a
   road, a kitchen). Use the env that fits as the world around or below
@@ -137,8 +135,7 @@ Was sollen wir als Nächstes passieren lassen? Schreib's mir – und folg mir f�
 ```
 
 - Hook title `<em>Tür</em> auf?!`; `hf-config`: question
-  `Geht die <em>Tür</em> auf?`, answer `zu`, steps
-  `["Luft", "Tonnen", "Stöpsel"]`.
+  `Geht die <em>Tür</em> auf?`, answer `zu`.
 - Facts: cruise ~10–12 km (Everest 8,8 km); cabin ~0,75–0,8 bar vs.
   ~0,2–0,25 bar outside → ~0,55 bar ≈ 5,5 t per m², a door of ~1,5 m² →
   several tonnes; passenger doors are plug doors that first move inward;
@@ -148,14 +145,14 @@ Was sollen wir als Nächstes passieren lassen? Schreib's mir – und folg mir f�
   air outside (few particles), air pumped in (many) → Folge 2 yellow force
   arrows press the door into the frame, LED "MEHRERE TONNEN", slowmo →
   Folge 3 x-ray of the door as a plug, ✕ when it tries to move inward →
-  payoff the hand pulls, door doesn't move, banner ticks green →
+  payoff the hand pulls, door doesn't move, the question fades →
   Übrigens: frost on the outside of the window, LED "−50 °C".
 
 ## Self-check (in addition to script-formel.md's)
 
 - [ ] Sentence 1 = "Was passiert eigentlich, wenn du …?" (≤ 12 words, topic noun inside)
 - [ ] Sentence 2 starts the act; the outcome is **not** revealed before the payoff
-- [ ] 3 Folgen, each bigger than the last, each ending with a pull; steps = one word per Folge
+- [ ] 3 Folgen, each bigger than the last, each ending with a pull
 - [ ] The `answer` word is spoken only in the payoff
 - [ ] Safe: impossible / harmless / warning-only, no how-to, facts checked
 - [ ] Frame 0: the viewer's hand doing the act, with sound

@@ -169,16 +169,20 @@ technology: bold, everyday, a bit cheeky — never "school film".
 Check: snapshot 0, 0.5, 1, 1.5, 2, 3 s — every image must look different,
 frame 0 must make you curious without sound.
 
-## Question banner + progress bar (index.html, automatic)
+## The open question on screen (index.html, automatic)
 
 Viewers left at ~13 s once the hook question felt answered. From 2.9 s
-(right after the hook title) the open question stays on screen as a dark
-pill with a yellow "?" (`hf-config.question`, ≤ 6 words, keyword in
-`<em>`); on the answer word it flips to a green check (+ ding) and leaves.
-Below it a progress bar with one segment per build step
-(`hf-config.steps`) fills while that part is built and pops "1/3 · 2/3 ·
-3/3" (+ blip). Both clear the top before the "WUSSTEST DU?" badge and the
-CTA. The LED panel sits lower (≈ y 520–770 px) so it never collides.
+(right after the hook title) the open question stays at the top as
+**plain creator text** — white Montserrat with a dark outline like the
+captions, keyword yellow (`hf-config.question`, ≤ 6 words, keyword in
+`<em>`). On the answer word it nudges once (+ ding) and fades out; it
+always clears before the "WUSSTEST DU?" badge and the CTA. The LED panel
+sits lower (≈ y 520–770 px) so it never collides.
+
+**No UI chrome** (user's call, 2026-10-23): no pill / box behind the
+question, no "?" or check-mark icons, **no progress bar or "1/3" counter**
+— they made the video look like an ad, and a progress bar tells viewers
+how much is still to come (the same mistake as naming seconds).
 
 ## 10–15 s — the second money shot
 
@@ -274,8 +278,8 @@ one second later and flips to grey "Gefolgt".
 Every video has a third audio track (`assets/sfx.mp3`) from a synthesized
 house kit, so the cuts and pop-ins _feel_ edited. Automatic: whoosh on each
 cut (peak on the cut), hit when the hook title lands, punch under each
-keyword, blip per name tag, blip per finished build step, ding when the
-hook's question is answered (banner ticks green), pop + pop + click + ding on the CTA buttons. Per scene
+keyword, blip per name tag, ding when the
+hook's question is answered, pop + pop + click + ding on the CTA buttons. Per scene
 (`SFX` in beats.js): pop for every part that pops in, zisch (gas, steam,
 air out), brumm (motor, compressor), surr (current, hot wire), rauschen
 (wind, water), klack (latch, brake, door), click (switch, button), piep

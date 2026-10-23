@@ -32,7 +32,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Beschreibung | **Every video gets a TikTok description** (step 6c): **one sentence with the topic's search words, no hashtags**; saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                                                          |
 | Serienformat | **Always alternating A „Bauen“ ↔ B „Was passiert, wenn …?“** (user's rule, 2026-10-23) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                                                                                       |
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                    |
-| Payoff       | The hook's question answered in one punchy line (banner ticks green). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                               |
+| Payoff       | The hook's question answered in one punchy line (the on-screen question fades out). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                 |
 | Music        | Calm stock bed `assets/bgm-ruhig.mp3` (original, license-free, from `scripts/make-bgm.py`), same in every video; ~15 dB under the voice and ducked while it speaks (`prepare-music.sh`)                                                                                                                                                                                                                                   |
 | Setting      | **designed new for every video** (step 1b): `env` + `sky` + new `seed` + topic props + one hero piece, log it in `tiktok/serie.md`                                                                                                                                                                                                                                                                                        |
 | Sound FX     | Synthesized house kit (`scripts/make-sfx.py`, no samples): whoosh on every cut, hit on the hook title, punch on highlighted words, blip per label, payoff ding, CTA pops + click. Placed from `assets/beats.js` by `scripts/build-sfx.mjs` → `assets/sfx.mp3`                                                                                                                                                             |
@@ -176,9 +176,9 @@ contain "folg"), then **the loop bridge as the last line, starting with
 `> `**, **keywords marked `*Wort*`** — and put the hook
 title (**2–3 words**) into `<div id="hook-title">` in `index.html` (keyword in `<em>`),
 and fill the `hf-config` block next to it: `question` (the hook's open
-question, ≤ 6 words), `answer` (the spoken word that answers it, in the
-payoff) and `steps` (one spoken word per build step) — they drive the
-question banner and the progress bar.
+question, ≤ 6 words) and `answer` (the spoken word that answers it, in the
+payoff) — they drive the question text at the top. **No progress bar, no
+`steps`** (it looked like an ad, 2026-10-23).
 Then run `node scripts/fake-words.mjs && node scripts/build-sfx.mjs && node scripts/sync-html.mjs`
 for estimated timings so the scene can be built before the voice exists.
 

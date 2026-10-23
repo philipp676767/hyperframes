@@ -22,14 +22,14 @@ Expected length = words ÷ 2.7 + 1.2 s (measured with Jan, the house voice). Cou
 
 ## Shape
 
-| Part                         | Words               | Job                                                                    |
-| ---------------------------- | ------------------- | ---------------------------------------------------------------------- |
-| **Hook** (line 1)            | 15–22               | win the first 2 s, open a loop                                         |
-| **Beats** (lines 2–4)        | 3 beats, 18–25 each | build the thing; each beat ends pulling into the next                  |
-| **Payoff** (line 5)          | ~8–15               | answer the hook's question in one punchy line — the banner ticks green |
-| **Bonus fact** (same line 5) | 10–15               | "Übrigens: …" — one surprising, shareable fact                         |
-| **CTA** (line 6)             | 12–18               | comment question + follow                                              |
-| **Loop bridge** (last line)  | 2–4                 | `> Und merk dir:` — runs straight back into the hook                   |
+| Part                         | Words               | Job                                                                     |
+| ---------------------------- | ------------------- | ----------------------------------------------------------------------- |
+| **Hook** (line 1)            | 15–22               | win the first 2 s, open a loop                                          |
+| **Beats** (lines 2–4)        | 3 beats, 18–25 each | build the thing; each beat ends pulling into the next                   |
+| **Payoff** (line 5)          | ~8–15               | answer the hook's question in one punchy line — the question text fades |
+| **Bonus fact** (same line 5) | 10–15               | "Übrigens: …" — one surprising, shareable fact                          |
+| **CTA** (line 6)             | 12–18               | comment question + follow                                               |
+| **Loop bridge** (last line)  | 2–4                 | `> Und merk dir:` — runs straight back into the hook                    |
 
 ### 1. Hook — the first sentence decides everything
 
@@ -117,7 +117,7 @@ numbers). So:
   beats make the question _bigger_ (stakes, a second mystery, "und das
   ist erst Teil 1"), the answer comes with the payoff (last ~25 % before
   the bonus fact). Put the question in `hf-config` (`question`), the word
-  that answers it (`answer`) — the banner stays on screen until then.
+  that answers it (`answer`) — the question stays on screen until then.
 - **A second, concrete reason to stay before 10 s** — name what's coming,
   not a formula: "Gleich siehst du, warum dein Wasser dabei nicht kocht."
   / "Und das Krasseste kommt bei Teil 3." / "Fälscher kennen diesen Test
@@ -129,9 +129,6 @@ numbers). So:
 - **0–15 s = spectacle and mystery, max 1 technical term and no numbers
   before ~15 s;** 10–15 s is the second money shot (visual-style.md).
   Part names and numbers come after that.
-- **Steps on screen:** list one spoken word per build step in
-  `hf-config` → `steps` (2–3); the progress bar fills while each is
-  built.
 
 - **3 beats.** Each beat: problem → fix ("Also …" / "Du brauchst …") →
   the term ("Das ist der X.") — max **3 technical terms** per video.
@@ -165,7 +162,7 @@ numbers). So:
 ### 3. Payoff
 
 Close the hook's loop explicitly and with punch — this is the moment the
-question banner ticks green, so the `answer` word in `hf-config` sits
+on-screen question is answered and fades, so the `answer` word in `hf-config` sits
 here: "Und genau deshalb ist die Rückseite _warm_." / "Darum bleibt echtes
 Geld _dunkel_." **Never** "Schau dich an. Du hast gerade X gebaut." (or
 any other "fertig"-line) — go straight on to "Übrigens".
@@ -299,7 +296,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] Tone: cheeky friend for 18–34 (men and women), nothing school-like; hook title 2–3 words
 - [ ] Topic noun in the first 5 words, sentence 1 ≤ 12 words, no wind-up
 - [ ] A highlight planned every 5–7 s; 3–6 delivery tags
-- [ ] An open loop in the hook that only the payoff closes (not beat 1); `hf-config` question + answer word + steps filled in
+- [ ] An open loop in the hook that only the payoff closes (not beat 1); `hf-config` question + answer word filled in
 - [ ] A concrete second reason to stay before 10 s; none of the banned phrases ("Jetzt der Trick" …)
 - [ ] 0–15 s: spectacle + mystery, max 1 term, no numbers
 - [ ] 3 beats, each ending with a pull; one re-hook; one home moment
