@@ -61,7 +61,6 @@ always 10+ open topics.
 | Blitzer               | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ              | Straße / Auto | –             |
 | Ampel-Kontaktschleife | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün | Straße / Auto | –             |
 | Türschloss            | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht   | Zuhause       | –             |
-| Popcorn               | „Jedes Popcorn ist eine Mini-Explosion – mit fast viermal so viel Druck wie in deinem Autoreifen.“ (~9 bar vs. ~2,5 bar)        | Maiskorn in extremer Zeitlupe, Hülle platzt, Stärke schäumt auf      | Küche         | –             |
 | Silvesterrakete       | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild              | Natur / Fest  | Ende Dezember |
 | Kabellos laden        | „Dein Handy lädt ohne Kabel – zwei Spulen reden durch die Luft.“                                                                | Magnetfeld-Linien springen von Spule zu Spule, Akku füllt sich       | Geld / Tech   | –             |
 | Heizkörper-Thermostat | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt              | Zuhause       | Herbst/Winter |
@@ -71,8 +70,9 @@ always 10+ open topics.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Datum | Chat |
-| ----- | ----- | ---- |
+| Thema   | Datum      | Chat           |
+| ------- | ---------- | -------------- |
+| Popcorn | 2026-10-23 | Video: Popcorn |
 
 ## Verwendet
 
