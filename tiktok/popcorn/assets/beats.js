@@ -192,7 +192,6 @@ export const SFX = [
   { s: "zisch", at: BURST + 0.05, dur: 0.9, db: -20 }, // steam escapes
   { s: "rauschen", at: T.bauschaum + 0.1, dur: 1.2, db: -22 }, // foam can
   { s: "boing", at: HOP },
-  { s: "ding", at: HOP + 0.35 },
   { s: "pop", at: T.popcorn2 + 0.1 },
   ...pops(T.suess + 0.2, END - 0.6, 0.45, -24),
 ];
