@@ -26,6 +26,16 @@ const {
 } = await import(new URL("assets/beats.js", root));
 
 const kit = new URL("assets/sfx/", root);
+// this video's own sounds (scripts/sfx-extra.py and/or scripts/add-sfx.sh)
+const extra = new URL("assets/sfx-extra/", root);
+if (fs.existsSync(new URL("scripts/sfx-extra.py", root))) {
+  execFileSync("python3", [new URL("scripts/make-sfx.py", root).pathname, "--extra"], {
+    stdio: "inherit",
+  });
+}
+const extraFile = (s) =>
+  ["wav", "mp3"].map((e) => new URL(`${s}.${e}`, extra)).find((u) => fs.existsSync(u));
+const soundFile = (s) => extraFile(s) ?? new URL(`${s}.wav`, kit);
 if (!fs.existsSync(new URL("whoosh.wav", kit))) {
   execFileSync("python3", [new URL("scripts/make-sfx.py", root).pathname, kit.pathname], {
     stdio: "inherit",
@@ -104,13 +114,15 @@ for (const c of SFX) add(c.s, c.at, "beats.js", { dur: c.dur, db: c.db });
 
 cues.sort((a, b) => a.at - b.at);
 // an older kit may miss a newer sound: rebuild the kit once
-if (cues.some((c) => !fs.existsSync(new URL(`${c.s}.wav`, kit)))) {
+if (cues.some((c) => !fs.existsSync(soundFile(c.s)))) {
   execFileSync("python3", [new URL("scripts/make-sfx.py", root).pathname, kit.pathname], {
     stdio: "inherit",
   });
 }
 for (const c of cues) {
-  if (!fs.existsSync(new URL(`${c.s}.wav`, kit)))
+  if (extraFile(c.s) && fs.existsSync(new URL(`${c.s}.wav`, kit)))
+    throw new Error(`assets/sfx-extra/${c.s} has the name of a house sound — rename it`);
+  if (!fs.existsSync(soundFile(c.s)))
     throw new Error(`unknown sound "${c.s}" (kit: ${Object.keys(LEVEL).join(" ")})`);
 }
 
@@ -118,13 +130,13 @@ const shift = Number(process.env.SFX_DB ?? 0);
 const args = ["-v", "error", "-y"];
 const parts = [];
 cues.forEach((c, i) => {
-  args.push("-i", new URL(`${c.s}.wav`, kit).pathname);
-  const db = (c.db ?? LEVEL[c.s] ?? -14) + shift;
+  args.push("-i", soundFile(c.s).pathname);
+  const db = (c.db ?? LEVEL[c.s] ?? (extraFile(c.s) ? -12 : -14)) + shift;
   const ms = Math.round(c.at * 1000);
   let f = `[${i}:a]`;
   if (c.dur) {
     const d = Math.max(0.2, c.dur);
-    f += `aloop=loop=-1:size=176400,atrim=0:${d.toFixed(3)},afade=t=in:d=0.15,afade=t=out:st=${Math.max(0, d - 0.3).toFixed(3)}:d=0.3,`;
+    f += `aloop=loop=-1:size=1323000,atrim=0:${d.toFixed(3)},afade=t=in:d=0.15,afade=t=out:st=${Math.max(0, d - 0.3).toFixed(3)}:d=0.3,`;
   }
   f += `volume=${db}dB,adelay=${ms}:all=1[c${i}]`;
   parts.push(f);

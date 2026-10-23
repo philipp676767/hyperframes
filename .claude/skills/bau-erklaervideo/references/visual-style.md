@@ -232,6 +232,11 @@ keyword, blip per name tag, blip per finished build step, ding when the
 hook's question is answered (banner ticks green), pop + pop + click + ding on the CTA buttons. Per scene
 (`SFX` in beats.js): pop for every part that pops in, zisch (gas, steam,
 air out), brumm (motor, compressor), surr (current, hot wire), rauschen
-(wind, water), klack (latch, brake, door), click (switch, button). Effects
+(wind, water), klack (latch, brake, door), click (switch, button), piep
+(alarm), geiger (radioactive crackle). **Plus 1–3 sounds of the video's
+own** (`assets/sfx-extra/`, from ElevenLabs or `scripts/sfx-extra.py` — see
+SKILL.md step 4): popcorn popping, an alarm shrieking, coins rattling.
+They carry the money shots: the spectacle the picture shows should also
+be heard. Effects
 sit well under the voice; long loops (zisch/brumm/surr/rauschen) quieter
 still and never for more than one beat.

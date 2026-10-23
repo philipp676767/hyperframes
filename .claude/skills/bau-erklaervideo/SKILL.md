@@ -193,6 +193,38 @@ steam, `brumm` for motors / compressors, `surr` for current / heat,
 switches, `piep` for an alarm beep (T3 pattern), `geiger` for a Geiger-counter
 crackle / anything radioactive). Rerun `node scripts/build-sfx.mjs && node scripts/sync-html.mjs` after changing beats.
 
+#### The video's own sounds (freedom per topic)
+
+The house kit stays in every video (whooshes, pops, dings, CTA clicks …).
+On top, **every video may get 1–3 sounds of its own** that belong to its
+topic and make its money shots audible: popcorn popping, a smoke alarm
+shrieking, coins rattling in an ATM, a lighter's spark click, ice
+cracking, a car engine roaring. Plan them with the visual plan (name them
+in the approval message) and put them where the picture shows the thing.
+Two ways, both land in `assets/sfx-extra/<name>.wav` and are used in
+`SFX` like any kit sound (`{ s: "popcorn", at: T.platzt, db: -10 }`):
+
+1. **Realistic, from ElevenLabs** (best for real-world sounds): one
+   `creative_generate_in_flow` call per sound — `node_type: "sfx"`,
+   `model_id: "eleven_text_to_sound_v2"`, **`generations_count: 1`**, an
+   English prompt that says what and how long ("single corn kernel popping,
+   sharp crisp pop, dry, close-up, 1 second" / "smoke detector alarm, three
+   piercing beeps, 3 seconds"). Poll `creative_get_flow_run_status`, then
+   `bash scripts/add-sfx.sh <name> "<content_url>"` (trims, mono, peak
+   −3 dBFS like the kit, max 5 s). Costs a few credits — keep it to the
+   sounds that matter.
+2. **Synthesized, free:** write it in `scripts/sfx-extra.py` with the kit's
+   own helpers (`t_of noise sine svf env write rng np`, see the example in
+   the file); `build-sfx.mjs` runs it every time. Good for clicks, beeps,
+   hums, crackles, rhythmic patterns.
+
+Rules: names must differ from the house sounds (build-sfx stops on a
+clash), own sounds default to −12 dB (set `db` per cue), max ~1 own sound
+every 3 s so they stay special, and they never cover the voice. A
+self-made sound that turns out generally useful (like `piep` and `geiger`
+from the Rauchmelder episode) can be promoted into the house kit
+(`template/scripts/make-sfx.py`) in the skill chat.
+
 ### 5. Check
 
 ```bash

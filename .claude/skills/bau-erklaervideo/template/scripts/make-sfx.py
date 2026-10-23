@@ -3,13 +3,18 @@
 # and nothing licensed has to be shipped. build-sfx.mjs runs this when the kit
 # is missing.
 #   python3 scripts/make-sfx.py [out_dir]
+# Per-video sounds (popcorn popping, a smoke alarm …): write them in
+# scripts/sfx-extra.py with the same helpers (t_of, noise, sine, svf, env,
+# write, rng, np) — they land in assets/sfx-extra/:
+#   python3 scripts/make-sfx.py --extra
 import sys, wave
 from pathlib import Path
 
 import numpy as np
 
 SR = 44100
-out = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent / "assets" / "sfx"
+args = [a for a in sys.argv[1:] if not a.startswith("--")]
+out = Path(args[0]) if args else Path(__file__).resolve().parent.parent / "assets" / "sfx"
 out.mkdir(parents=True, exist_ok=True)
 rng = np.random.default_rng(7)
 
@@ -65,6 +70,15 @@ def write(name, x, peak_db=-3.0):
         w.setframerate(SR)
         w.writeframes(pcm.tobytes())
 
+
+if "--extra" in sys.argv:
+    extra = Path(__file__).resolve().parent / "sfx-extra.py"
+    out = Path(__file__).resolve().parent.parent / "assets" / "sfx-extra"
+    out.mkdir(parents=True, exist_ok=True)
+    if extra.exists():
+        exec(compile(extra.read_text(encoding="utf8"), str(extra), "exec"))
+    print("extra sfx ->", out, sorted(p.stem for p in out.glob("*.wav")))
+    sys.exit(0)
 
 # whoosh: band-passed noise sweeping up then down, peak at 0.22 s (= the cut)
 t = t_of(0.55)
