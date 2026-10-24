@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Was passiert, wenn der Blitz ins Auto einschlägt?</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="assets/words.js"></script>
+    <style>
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/montserrat-800.woff2") format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #10132a;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #10132a;
+      }
+      #stage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      #captions {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 900px;
+        height: 120px;
+      }
+      /* hook headline: big two-line title over the first seconds */
+      /* 2–3 huge words, readable in the 0.1 s a scroller gives the video */
+      #hook-title {
+        position: absolute;
+        left: 50px;
+        right: 50px;
+        top: 230px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 140px;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        color: #ffffff;
+        opacity: 0;
+        -webkit-text-stroke: 14px rgba(20, 12, 30, 0.7);
+        paint-order: stroke fill;
+        text-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      }
+      #hook-title em {
+        font-style: normal;
+        color: #ffd23f;
+      }
+      /* comment prompt pill, above the follow pill */
+      #cmt {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 400px;
+        display: flex;
+        justify-content: center;
+      }
+      #cmt-btn {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 22px 46px 22px 30px;
+        border-radius: 999px;
+        background: #ffffff;
+        box-shadow: 0 14px 40px rgba(60, 10, 40, 0.3);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 52px;
+        color: #1c1c22;
+        opacity: 0;
+      }
+      #cmt-icon {
+        position: relative;
+        width: 58px;
+        height: 46px;
+        border-radius: 14px;
+        background: #fe2c55;
+      }
+      #cmt-icon::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -12px;
+        border-left: 14px solid #fe2c55;
+        border-bottom: 14px solid transparent;
+      }
+      #cta {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 560px;
+        display: flex;
+        justify-content: center;
+      }
+      #cta-btn {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 26px 56px 26px 34px;
+        border-radius: 999px;
+        background: #fe2c55;
+        box-shadow: 0 14px 40px rgba(60, 10, 40, 0.35);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 60px;
+        color: #ffffff;
+        opacity: 0;
+      }
+      #cta-plus {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #ffffff;
+      }
+      #cta-plus::before,
+      #cta-plus::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 34px;
+        height: 9px;
+        margin: -4.5px 0 0 -17px;
+        border-radius: 5px;
+        background: #fe2c55;
+      }
+      #cta-plus::after {
+        width: 9px;
+        height: 34px;
+        margin: -17px 0 0 -4.5px;
+      }
+      #cta-label-done {
+        display: none;
+      }
+      /* bonus fact badge ("Übrigens: …" line), where the hook title was */
+      /* the hook's open question as plain creator text — no pill, no icons,
+         no progress bar (they made the video look like an ad): visible until
+         the payoff answers it */
+      #question {
+        position: absolute;
+        left: 60px;
+        right: 60px;
+        top: 250px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 1.12;
+        color: #ffffff;
+        opacity: 0;
+        -webkit-text-stroke: 7px rgba(20, 12, 30, 0.55);
+        paint-order: stroke fill;
+        text-shadow:
+          0 0 3px rgba(0, 0, 0, 0.55),
+          0 3px 6px rgba(0, 0, 0, 0.45),
+          0 0 18px rgba(0, 0, 0, 0.25);
+      }
+      #question em {
+        font-style: normal;
+        color: #ffd23f;
+      }
+      #fact {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 300px;
+        display: flex;
+        justify-content: center;
+      }
+      #fact-badge {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 20px 44px 20px 22px;
+        border-radius: 999px;
+        background: #ffd23f;
+        box-shadow: 0 14px 40px rgba(60, 10, 40, 0.3);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 58px;
+        color: #1c1c22;
+        opacity: 0;
+      }
+      #fact-icon {
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        background: #1c1c22;
+        color: #ffd23f;
+        font-size: 50px;
+        line-height: 66px;
+        text-align: center;
+      }
+      .word {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 78px;
+        line-height: 120px;
+        color: #ffffff;
+        opacity: 0;
+        -webkit-text-stroke: 7px rgba(20, 12, 30, 0.55);
+        paint-order: stroke fill;
+        text-shadow:
+          0 0 3px rgba(0, 0, 0, 0.55),
+          0 3px 6px rgba(0, 0, 0, 0.45),
+          0 0 18px rgba(0, 0, 0, 0.25);
+      }
+      /* *Wort* in script.txt: the keyword of a sentence, yellow and bigger */
+      .word.hl {
+        color: #ffd23f;
+        font-size: 100px;
+        -webkit-text-stroke: 9px rgba(20, 12, 30, 0.65);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="60"
+      data-width="1080"
+      data-height="1920"
+    >
+      <canvas id="stage" width="1080" height="1920"></canvas>
+      <div id="captions"></div>
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="60" data-track-index="2" data-volume="1"></audio>
+      <audio id="bgm" src="assets/bgm.mp3" data-start="0" data-duration="60" data-track-index="3" data-volume="1"></audio>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="60" data-track-index="4" data-volume="1"></audio>
+      <!-- Per video: the hook's open question (≤ 6 words, keyword in <em>)
+           and the spoken word that answers it (in the payoff). Read by the
+           timeline below and by scripts/build-sfx.mjs. -->
+      <script id="hf-config" type="application/json">
+        {
+          "question": "Retten dich die <em>Reifen</em>?",
+          "answer": "Blech"
+        }
+      </script>
+      <div id="question"></div>
+      <div id="hook-title"><em>Blitz</em> ins Auto?!</div>
+      <div id="fact">
+        <div id="fact-badge">
+          <div id="fact-icon">!</div>
+          <span>WUSSTEST DU?</span>
+        </div>
+      </div>
+      <div id="cmt">
+        <div id="cmt-btn">
+          <div id="cmt-icon"></div>
+          <span>Kommentieren</span>
+        </div>
+      </div>
+      <div id="cta">
+        <div id="cta-btn">
+          <div id="cta-plus"></div>
+          <span id="cta-label">Folgen</span><span id="cta-label-done">Gefolgt</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // One word at a time, hard swap, fixed center position (reference style).
+      // The CTA timing rules here are mirrored in assets/timing.js ctaTimes() (sound cues).
+      (function () {
+        const words = window.HF_WORDS;
+        // A longer hook title shrinks until it fits in two lines.
+        const fitTitle = () => {
+          const el = document.getElementById("hook-title");
+          let size = 140;
+          el.style.fontSize = size + "px";
+          while (
+            size > 70 &&
+            (el.scrollHeight > size * 2.05 || el.scrollWidth > el.clientWidth + 2)
+          ) {
+            size -= 6;
+            el.style.fontSize = size + "px";
+          }
+        };
+        fitTitle();
+        document.fonts.load('800 140px "Montserrat"').then(fitTitle);
+        const box = document.getElementById("captions");
+        const tl = gsap.timeline({ paused: true });
+        words.forEach((w, i) => {
+          const el = document.createElement("div");
+          el.className = w.hl ? "word hl" : "word";
+          el.textContent = w.w;
+          box.appendChild(el);
+          const next = words[i + 1];
+          const off = next ? Math.min(next.start, w.end + 0.6) : w.end + 0.8;
+          tl.set(el, { opacity: 1 }, w.start);
+          // highlighted keywords punch in (the camera punches with them, world.js)
+          if (w.hl)
+            tl.fromTo(
+              el,
+              { scale: 1.45 },
+              { scale: 1, duration: 0.18, ease: "back.out(3)" },
+              w.start,
+            );
+          tl.set(el, { opacity: 0 }, off);
+        });
+        // Hook headline: already fully visible on frame 0 (the first frame is
+        // what people see while deciding to stay), settles with a small
+        // punch, gone after ~2.8 s.
+        tl.fromTo(
+          "#hook-title",
+          { opacity: 1, scale: 1.07 },
+          { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" },
+          0,
+        );
+        tl.to("#hook-title", { opacity: 0, scale: 1.08, duration: 0.25, ease: "power2.in" }, 2.8);
+
+        // CTA = last script line (HF_CTA_START): the comment pill pops in when
+        // it starts. The "Folgen" pill pops on the first "folg…" — a line in
+        // the middle of the video since 2026-10-24 (shown low, under the
+        // captions, gone 2.5 s later) — gets tapped and flips to "Gefolgt".
+        const ci = window.HF_CTA_START;
+        const li = window.HF_LOOP_START;
+        const loopT = li != null ? words[li].start : null;
+        const ctaWords =
+          ci != null
+            ? words.slice(ci, li ?? words.length)
+            : words.filter((w) => /^folg/i.test(w.w));
+
+        // The open question (hf-config above). Word matching
+        // mirrors scripts/build-sfx.mjs, which puts the sounds on them.
+        const cfg = JSON.parse(document.getElementById("hf-config").textContent);
+        const nrm = (s) => s.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+        const findWord = (word, from) => {
+          const w = words.find((x) => x.start >= from && nrm(x.w) === nrm(word));
+          return w ? w.start : null;
+        };
+        const ctaT = ctaWords.length ? ctaWords[0].start : words[words.length - 1].end;
+        let payT = null;
+        words.forEach((w, i) => {
+          if (/^gebaut/i.test(w.w) && (ci == null || i < ci)) payT = w.start;
+        });
+        const showT = 2.9; // right after the hook title leaves
+        // both clear the top before the "WUSSTEST DU?" badge / the CTA pills
+        let factT = null;
+        words.forEach((w, i) => {
+          if (/^übrigens$/i.test(w.w) && (ci == null || i < ci)) factT = w.start;
+        });
+        const topClear = Math.min(ctaT, factT ?? ctaT) - 0.25;
+        if (cfg.question) {
+          const q = document.getElementById("question");
+          q.innerHTML = cfg.question;
+          const ansT = (cfg.answer && findWord(cfg.answer, 6)) ?? payT ?? ctaT - 1;
+          // fades in like a creator's text overlay, a small nudge when it is
+          // answered, then gone
+          tl.fromTo(q, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.25 }, showT);
+          tl.fromTo(q, { scale: 1.08 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, ansT);
+          tl.to(q, { opacity: 0, duration: 0.25 }, Math.min(ansT + 1.0, topClear));
+        }
+
+        // Bonus fact: "WUSSTEST DU?" from "Übrigens" until the CTA starts.
+        let fi = -1;
+        words.forEach((w, i) => {
+          if (/^übrigens$/i.test(w.w) && (ci == null || i < ci)) fi = i;
+        });
+        if (fi >= 0) {
+          const f0 = words[fi].start;
+          const f1 = ctaWords.length ? ctaWords[0].start : words[words.length - 1].end;
+          tl.fromTo(
+            "#fact-badge",
+            { opacity: 0, scale: 0.4, rotation: -8 },
+            { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "back.out(2.4)" },
+            f0,
+          );
+          tl.to(
+            "#fact-badge",
+            { opacity: 0, scale: 0.8, duration: 0.2, ease: "power2.in" },
+            f1 - 0.2,
+          );
+        }
+        if (ctaWords.length) {
+          const c0 = ctaWords[0].start;
+          tl.fromTo(
+            "#cmt-btn",
+            { opacity: 0, scale: 0.4, y: 40 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
+            c0,
+          );
+          tl.to(
+            "#cmt-btn",
+            { scale: 1.06, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 3 },
+            c0 + 0.6,
+          );
+          const follow = words.slice(0, li ?? words.length).find((w) => /^folg/i.test(w.w));
+          const t0 = follow ? follow.start : c0 + 1.2;
+          const mid = t0 < c0;
+          if (mid) document.getElementById("cta").style.top = "1230px";
+          // at the end with a loop line the tap lands before the buttons leave (mirrors timing.js ctaTimes)
+          const tap =
+            !mid && loopT != null ? Math.min(t0 + 1.0, Math.max(t0 + 0.5, loopT - 0.45)) : t0 + 1.0;
+          tl.fromTo(
+            "#cta-btn",
+            { opacity: 0, scale: 0.4, y: 40 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
+            t0,
+          );
+          tl.to("#cta-btn", { scale: 0.9, duration: 0.12, ease: "power2.in" }, tap);
+          tl.set("#cta-btn", { backgroundColor: "#3a3a46" }, tap + 0.12);
+          tl.set("#cta-plus", { opacity: 0, width: 0, marginRight: -22 }, tap + 0.12);
+          tl.set("#cta-label", { display: "none" }, tap + 0.12);
+          tl.set("#cta-label-done", { display: "inline" }, tap + 0.12);
+          tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, tap + 0.12);
+          if (mid)
+            tl.to(
+              "#cta-btn",
+              { opacity: 0, scale: 0.85, duration: 0.2, ease: "power2.in" },
+              tap + 1.4,
+            );
+          // loop ending: clear the buttons so the last frame matches the first
+          if (loopT != null) {
+            tl.to(
+              mid ? ["#cmt-btn"] : ["#cmt-btn", "#cta-btn"],
+              { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" },
+              loopT,
+            );
+          }
+        }
+        tl.set({}, {}, 60);
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+
+    <script type="module" src="assets/scene.js"></script>
+  </body>
+</html>

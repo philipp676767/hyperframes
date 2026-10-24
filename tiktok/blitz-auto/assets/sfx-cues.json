@@ -1,0 +1,630 @@
+[
+  {
+    "s": "hit",
+    "at": 0,
+    "why": "highlight shake"
+  },
+  {
+    "s": "regen",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "donner",
+    "at": 0,
+    "why": "beats.js",
+    "db": -7
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "hit",
+    "at": 0.63,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 0.63,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.24,
+    "why": "cut"
+  },
+  {
+    "s": "donner",
+    "at": 1.56,
+    "why": "beats.js",
+    "db": -7
+  },
+  {
+    "s": "hit",
+    "at": 1.59,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.7,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 2.92,
+    "why": "highlight"
+  },
+  {
+    "s": "regen",
+    "at": 3.9,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 3.92,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.28,
+    "why": "cut"
+  },
+  {
+    "s": "donner",
+    "at": 5.58,
+    "why": "beats.js",
+    "db": -7
+  },
+  {
+    "s": "hit",
+    "at": 5.61,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 5.61,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.62,
+    "why": "cut"
+  },
+  {
+    "s": "regen",
+    "at": 7.8,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 7.92,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.04,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 8.26,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 8.31,
+    "why": "label Reifen?"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.26,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.3,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.32,
+    "why": "cut"
+  },
+  {
+    "s": "regen",
+    "at": 11.7,
+    "why": "beats.js",
+    "dur": 3.3400000000000016,
+    "db": -20
+  },
+  {
+    "s": "grollen",
+    "at": 11.74,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "whoosh",
+    "at": 12.22,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 13.98,
+    "why": "cut"
+  },
+  {
+    "s": "donner",
+    "at": 14.13,
+    "why": "beats.js",
+    "db": -7
+  },
+  {
+    "s": "hit",
+    "at": 14.16,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 14.16,
+    "why": "highlight shake"
+  },
+  {
+    "s": "punch",
+    "at": 14.2,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.82,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 16.96,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.08,
+    "why": "cut"
+  },
+  {
+    "s": "regen",
+    "at": 17.3,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "slowmo",
+    "at": 17.84,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "donner",
+    "at": 18.391,
+    "why": "beats.js",
+    "db": -7
+  },
+  {
+    "s": "hit",
+    "at": 18.411,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 18.411,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.76,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 18.98,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 20.06,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 20.1,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 20.92,
+    "why": "cut"
+  },
+  {
+    "s": "regen",
+    "at": 21.2,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "surr",
+    "at": 22.02,
+    "why": "beats.js",
+    "dur": 3.960000000000001,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 23.1,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 23.7,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 23.75,
+    "why": "label Boden"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.2,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 24.85,
+    "why": "label Du"
+  },
+  {
+    "s": "regen",
+    "at": 25.1,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 25.68,
+    "why": "cut"
+  },
+  {
+    "s": "radioknacken",
+    "at": 26.25,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "funken",
+    "at": 26.4,
+    "why": "beats.js",
+    "db": -15
+  },
+  {
+    "s": "whoosh",
+    "at": 26.9,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.08,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 28.3,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.46,
+    "why": "cut"
+  },
+  {
+    "s": "regen",
+    "at": 29,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 31.46,
+    "why": "cut"
+  },
+  {
+    "s": "donner",
+    "at": 31.68,
+    "why": "beats.js",
+    "db": -7
+  },
+  {
+    "s": "hit",
+    "at": 31.71,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 31.71,
+    "why": "highlight shake"
+  },
+  {
+    "s": "punch",
+    "at": 32.16,
+    "why": "highlight"
+  },
+  {
+    "s": "regen",
+    "at": 32.9,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 33.28,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.28,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 35.38,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 35.38,
+    "why": "highlight shake"
+  },
+  {
+    "s": "boing",
+    "at": 35.4,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 36.32,
+    "why": "cut"
+  },
+  {
+    "s": "donner",
+    "at": 36.79,
+    "why": "beats.js",
+    "db": -7
+  },
+  {
+    "s": "regen",
+    "at": 36.8,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "hit",
+    "at": 36.82,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.6,
+    "why": "cut"
+  },
+  {
+    "s": "funken",
+    "at": 39.23,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "blip",
+    "at": 39.33,
+    "why": "label Gummi"
+  },
+  {
+    "s": "hit",
+    "at": 39.38,
+    "why": "highlight shake"
+  },
+  {
+    "s": "regen",
+    "at": 40.7,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 40.76,
+    "why": "cut"
+  },
+  {
+    "s": "surr",
+    "at": 41.06,
+    "why": "beats.js",
+    "dur": 4.359999999999999,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 42.15,
+    "why": "label Metall"
+  },
+  {
+    "s": "whoosh",
+    "at": 43.22,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 43.96,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 44.01,
+    "why": "label Faradayscher Käfig"
+  },
+  {
+    "s": "regen",
+    "at": 44.6,
+    "why": "beats.js",
+    "dur": 0.8200000000000074,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 45.2,
+    "why": "cut"
+  },
+  {
+    "s": "regen",
+    "at": 45.42,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 45.75,
+    "why": "label Kein Dach"
+  },
+  {
+    "s": "donner",
+    "at": 46.58,
+    "why": "beats.js",
+    "db": -7
+  },
+  {
+    "s": "hit",
+    "at": 46.61,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 46.61,
+    "why": "highlight shake"
+  },
+  {
+    "s": "punch",
+    "at": 47.18,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 47.56,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 48.6,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 49.22,
+    "why": "cut"
+  },
+  {
+    "s": "regen",
+    "at": 49.32,
+    "why": "beats.js",
+    "dur": 1.4399999999999977,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 49.36,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 49.58,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 49.58,
+    "why": "question answered"
+  },
+  {
+    "s": "whoosh",
+    "at": 50.54,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 50.76,
+    "why": "bonus fact"
+  },
+  {
+    "s": "donner",
+    "at": 52,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "hit",
+    "at": 52.03,
+    "why": "highlight flash"
+  },
+  {
+    "s": "punch",
+    "at": 53.3,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 54.72,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 54.94,
+    "why": "comment pill"
+  },
+  {
+    "s": "regen",
+    "at": 54.94,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "grollen",
+    "at": 56.32,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "grollen",
+    "at": 58.32,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "regen",
+    "at": 58.84,
+    "why": "beats.js",
+    "dur": 1.1600000000000037,
+    "db": -20
+  }
+]
