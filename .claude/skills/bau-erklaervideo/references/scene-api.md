@@ -119,6 +119,24 @@ shop awnings, the sloping beach, chimney smoke, crater relief, the faceted
 Earth, corals + kelp + light shafts, the cloud sea, the kitchen worktop.
 Copy pieces into `set.js` and adapt them; never use a set unchanged.
 
+Dark stage: `setSky(SKIES.studio)` + `darkStage({ floor, accent, spot,
+r, horizon, dust })` — glossy floor fading into the dark, warm spotlight
+on the origin, neon rim light, thin glowing horizon ring, fine dust.
+
+## hud.js — device-style displays
+
+Call every frame from `renderAt` with `k` (visibility 0..1, from `pop()`);
+anything not called is hidden. Positions in frame px (1080 × 1920).
+
+| Function                                                            | Shows                                                          |
+| ------------------------------------------------------------------- | -------------------------------------------------------------- |
+| `viewfinder(k, { label, time, color })`                             | full-frame camera: corner brackets, REC dot + label, time code |
+| `readout(id, k, { label, value, unit, note, x, y, color, digits })` | small panel "TEMPO · 59 km/h · Bremse an"                      |
+| `gauge(id, k, { label, value, max, unit, x, y, color, digits })`    | speedometer / pressure gauge with needle                       |
+| `stopwatch(id, k, { seconds, max, label, x, y, color })`            | ring + m:ss,s                                                  |
+| `counter(id, k, { label, value, x, y, color })`                     | big number ("Paletten 33") — animate `value` with `t`          |
+| `meter(id, k, { label, value 0..1, x, y, width, color, text })`     | horizontal bar (Akku, Füllstand, Signal)                       |
+
 ## props.js — set dressing (SKILL.md 1b)
 
 `place(obj, x, z, rotY, s, y)` puts a prop in the world (warns when it

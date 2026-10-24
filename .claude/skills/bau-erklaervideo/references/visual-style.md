@@ -62,6 +62,19 @@ bandstand. Never repeat one of the last three.
 Optional checkered floor pad under the subject (`addFloor`) for indoor
 things (kitchen tiles, workshop floor) — skip it outdoors.
 
+**Dark stage** (option, `darkStage()` + `SKIES.studio`, learned from
+successful videos 2026-10-24): near-black surroundings, one warm spotlight
+on the subject, a coloured neon rim and horizon line, a glossy floor, fine
+dust in the light. One subject + two or three objects; the light makes the
+quality. For technical, invisible and night topics — alternate with the
+bright worlds.
+
+**Device-style displays** (`hud.js`): when the topic has a screen of its
+own, information appears the way the machine would show it — a camera
+viewfinder, a speedometer, a stopwatch, a counter ticking up, a meter.
+Clean dark-glass panels, white Montserrat, yellow (or the accent) values,
+max 2 at once, never over the captions.
+
 ## Subject
 
 - Built from simple primitives (boxes, extrusions of `roundedRect`,

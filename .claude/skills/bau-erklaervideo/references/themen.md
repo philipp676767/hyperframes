@@ -24,7 +24,8 @@ an old episode only when the user asks for one.
 ## 2. Pick — criteria
 
 **The format comes first** (SKILL.md step 0, always alternating): for
-format A pick from **Offen — Format A „Bauen“**, for format B from
+format A pick from **Offen — Format A „Bauen“** or **Offen —
+Detail-Rätsel** (one small odd detail, also format A), for format B from
 **Offen — Format B „Was passiert, wenn …?“** (its own criteria are
 below that list). The duplicate check covers both lists: an object that
 already had an A episode is used for B too, and the other way round,
@@ -131,6 +132,33 @@ are always 10+ open topics per format.
 | Türklingel                  | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                    | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe        | Zuhause       | –             |
 | ★ Sonnencreme               | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                         | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                  | Beauty        | Sommer        |
 | Wasserkocher                | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                                 | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus            | Küche         | –             |
+
+## Offen — Detail-Rätsel (Format A)
+
+A topic type learned from successful videos (2026-10-24): not the whole
+machine, but **one small odd detail everyone has seen and never asked
+about** — the loose hook on a tape measure, the pallets standing
+crosswise. Hook = the detail as a question, shown huge in frame 0;
+sentence 2 = the Umdeutung ("Das ist kein Fehler. Das ist Absicht.");
+the beats build the reason. Same scorecard — a detail only goes in when
+it carries a minute (≥ 5 facts: the reason, the physics, the history /
+an accident, a comparison, the "Übrigens"); else keep it for a later
+short format. Counts as format A in the alternation.
+
+| Detail (Hook-Frage)                                     | Die Auflösung (nur fürs Payoff!)                                                                     | Money-Shot                                                         | Kategorie |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | --------- |
+| ★ Warum hat dein Kugelschreiber-Deckel ein Loch?        | Damit man noch Luft bekommt, wenn ein Kind ihn verschluckt (Fakten prüfen)                           | Deckel im Röntgenblick in der Luftröhre, Luft strömt durchs Loch   | Alltag    |
+| 🔥 Warum haben Flugzeugfenster ein winziges Loch?       | Es gleicht den Druck zwischen den Scheiben aus – die äußere trägt die Last, die mittlere ist Reserve | Drei Scheiben im Schnitt, Druckpfeile, Luft zischt durchs Loch     | Reisen    |
+| 🔥 Warum sind Flugzeugfenster rund?                     | Ecken reißen unter Druck – eckige Fenster haben in den 1950ern Flugzeuge zerrissen (Fakten prüfen)   | Eckiges Fenster, Risse wachsen aus den Ecken, Zeitlupe             | Reisen    |
+| ★ Wofür ist der kleine Pfeil an deiner Tankanzeige?     | Er zeigt, auf welcher Seite der Tankdeckel ist                                                       | Riesige Tankanzeige, Pfeil leuchtet, Auto dreht sich zur Säule     | Auto      |
+| ★ Was bedeuten die bunten Striche am Zahnpasta-Ende?    | Nichts über den Inhalt – Lichtschranken-Marken für die Maschine, die die Tube schneidet              | Tube auf dem Fließband, Laser trifft den Strich, _zack_, Schnitt   | Bad       |
+| Warum ist der Boden deiner Dose nach innen gewölbt?     | Die Kuppel hält den Druck der Kohlensäure – flach würde er sich ausbeulen                            | Druckpfeile drücken, flacher Boden beult aus, Kuppel hält          | Essen     |
+| Warum sind Gullideckel rund?                            | Ein runder Deckel kann nie durch sein eigenes Loch fallen                                            | Eckiger Deckel kippt diagonal ins Loch, runder bleibt liegen       | Stadt     |
+| Warum hat ein Vorhängeschloss unten ein kleines Loch?   | Regenwasser läuft ab und gefriert nicht im Schloss (Fakten prüfen)                                   | Wasser läuft rein, friert, Schloss klemmt – mit Loch läuft es raus | Zuhause   |
+| ★ Wofür ist die Mini-Tasche in deiner Jeans?            | Ursprünglich für die Taschenuhr (Fakten prüfen)                                                      | Jeans in Röntgensicht, Taschenuhr gleitet hinein                   | Mode      |
+| Warum liegen Bahngleise auf Steinen?                    | Der Schotter verteilt das Gewicht, lässt Wasser ablaufen und hält die Schwellen fest                 | Zug rollt, Gewichtspfeile verteilen sich, Regen versickert         | Reisen    |
+| Warum ist der Rand von Münzen geriffelt?                | Früher feilten Leute Silber vom Rand ab – die Riffel verrieten es (Fakten prüfen)                    | Feile schabt Silber ab, Riffel verschwinden                        | Geld      |
+| Wofür sind die zwei Metallklammern an deiner Steckdose? | Der Schutzkontakt: Bei einem Defekt fließt der Strom dort ab statt durch dich                        | Fehlerstrom im Röntgenblick, Strom biegt in die Klammer ab         | Zuhause   |
 
 ## Offen — Format B „Was passiert, wenn …?“
 

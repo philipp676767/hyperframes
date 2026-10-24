@@ -130,6 +130,24 @@ export const SKIES = {
     noClouds: true,
     fog: [10, 48],
   },
+  // dark stage: near-black blue, no clouds or birds — the light does the
+  // work (darkStage(): spotlight, neon rim, glossy floor). Moody, cinematic.
+  studio: {
+    top: [0.02, 0.025, 0.06],
+    mid: [0.04, 0.05, 0.11],
+    hor: [0.08, 0.09, 0.18],
+    below: [0.03, 0.035, 0.08],
+    sun: [0.35, 0.45, 0.9],
+    sunDir: [0, 0.35, -1],
+    cloud: [0x000000, 0x000000],
+    noClouds: true,
+    birds: false,
+    hemi: [0x8a96c8, 0x101018, 0.7],
+    key: [0xfff1e0, 0.9],
+    keyPos: [3, 12, 7],
+    rim: [0x6f8dff, 1.6],
+    fog: [16, 48],
+  },
   // high up, above the clouds: deep blue zenith, bright haze (env "wolken")
   hoch: {
     top: [0.08, 0.3, 0.78],
@@ -823,4 +841,62 @@ export function fireflies(
     im.instanceMatrix.needsUpdate = true;
   });
   return im;
+}
+
+// Dark, cinematic stage (with setSky(SKIES.studio) or another dark palette):
+// a glossy floor that falls off into darkness, a warm spotlight on the
+// subject, a coloured neon rim from behind, a thin glowing horizon line and
+// fine dust in the light. Quality from light, not from props — one subject,
+// two or three objects at most (the speed camera on its gantry, the road).
+export function darkStage({
+  floor = 0x1b2033,
+  accent = 0x6f8dff,
+  spot = 0xffe2c0,
+  r = 26,
+  horizon = true,
+  dust = true,
+} = {}) {
+  const geo = discGeo(r, 0.9, 12);
+  const p = geo.attributes.position;
+  const col = new Float32Array(p.count * 3);
+  for (let i = 0; i < p.count; i++) {
+    const d = Math.hypot(p.getX(i), p.getZ(i)) / r;
+    const k = 0.25 + 0.75 * Math.pow(1 - Math.min(1, d), 1.6);
+    col.set([k, k, k], i * 3);
+  }
+  geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
+  const m = new THREE.Mesh(
+    geo,
+    new THREE.MeshStandardMaterial({
+      color: floor,
+      vertexColors: true,
+      roughness: 0.45,
+      metalness: 0.1,
+      envMapIntensity: 0.6,
+    }),
+  );
+  m.receiveShadow = true;
+  ground.add(m);
+  const s = new THREE.SpotLight(spot, 2.0, 0, 0.42, 0.85, 0);
+  s.position.set(2.5, 10, 6);
+  s.target.position.set(0, 0.8, 0);
+  s.castShadow = true;
+  s.shadow.mapSize.set(2048, 2048);
+  s.shadow.bias = -0.0004;
+  ground.add(s, s.target);
+  const back = new THREE.PointLight(accent, 30, 18, 1.4);
+  back.position.set(-1.5, 3.5, -5);
+  ground.add(back);
+  if (horizon) {
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(42, 0.08, 6, 160),
+      new THREE.MeshBasicMaterial({ color: accent, fog: false }),
+    );
+    ring.rotation.x = Math.PI / 2;
+    ring.position.y = 0.3;
+    ring.userData.noAO = true;
+    ground.add(ring);
+  }
+  if (dust) fireflies(70, { area: [-6, 6, 0.3, 5, -5, 4], color: 0xc9d4ff, size: 0.018, seed: 21 });
+  return m;
 }

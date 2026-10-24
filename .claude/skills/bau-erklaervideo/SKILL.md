@@ -63,7 +63,9 @@ from it.
 **Then the topic** — the user leaves it to you (2026-10-23). Follow
 `references/themen.md`: **duplicate check first** (`tiktok/serie.md`,
 every folder in `tiktok/`, the reserved list, remote branches), then pick
-the best open topic **of that format's list** by its criteria and propose it with its hook
+the best open topic **of that format's list** by its criteria (format A
+also takes **Detail-Rätsel** — one small odd detail everyone has seen,
+`themen.md`) and propose it with its hook
 idea, money shot and two alternatives. On "ok": reserve it in
 `themen.md`, commit + push on `main` right away (parallel chats!), then
 go on. If the user names a topic, take theirs — but still run the check
@@ -128,6 +130,13 @@ Draht") — replace it completely.
 2. **Light + palette.** An own sky (`setSky({ ...SKIES.morgen, top: … })`
    or a fully own palette, `sunDir`, `keyPos`, `fog`), a time of day that
    carries the mood, and one accent colour the subject stands out from.
+   **Or a dark stage** (learned from successful videos, 2026-10-24):
+   `setSky(SKIES.studio)` + `darkStage({ accent })` — near-black, a warm
+   spotlight on the subject, a neon rim, a glossy floor, dust in the light;
+   one subject and two or three objects instead of a full world. Fits
+   technical, mysterious, night and "invisible" topics (Blitzer, Face ID,
+   Strahlung, Tiefsee). Alternate it with bright worlds; the quality bar
+   of step 4 still applies (light, depth, life).
 3. **Build it in layers** (all in `set.js`):
    - **Ground** — `terrain()` with its own relief and patches, or an own
      floor (tiles, planks, deck, worktop); `pathStrip`, `pond`, `sea`
@@ -154,7 +163,7 @@ Draht") — replace it completely.
 5. **Reuse, don't repeat.** The kit (`environments.js`: `setSky`,
    `SKIES`, `terrain`, `discGeo`, `pathStrip`, `pond`, `sea`, `meadow`,
    `tree`, `pine`, `rocks`, `car`, `cloudPuffs`, `birds`, `lightString`,
-   `fireflies`, `F`, `add`, `finishSet`) and `props.js` are the building
+   `fireflies`, `darkStage`, `F`, `add`, `finishSet`) and `props.js` are the building
    blocks. `references/set-beispiele.js` holds nine complete earlier sets
    (floating island, town square with shops, beach with moving sea, snowy
    village with chimney smoke, farm, moon rock with the Earth, deep sea,
@@ -246,6 +255,15 @@ appears/animates on the word that names it → x-ray while explaining → one
 analogy mini-set per 1–2 beats → LED panel facts → outro x-ray off + drone
 pull-back. Anchor every beat on a spoken word with `W("Wort", n)`; never
 hard-code seconds.
+
+**Device-style displays** (`assets/hud.js`, learned from successful
+videos 2026-10-24): when the topic has a "screen" of its own, show the
+information the way the machine would — `viewfinder` (camera frame,
+"CAM A · INFRARED"), `gauge` (speedometer / pressure), `stopwatch`,
+`counter` (a number that ticks up: "Paletten 33"), `readout`, `meter`.
+Max 2 at once, called every frame from `renderAt` with a `pop()`
+visibility, placed clear of captions and the question text. The LED panel
+stays for single facts without a device.
 
 All timing data lives in `assets/beats.js` (plain data, read by the scene
 **and** by `build-sfx.mjs`): `T` (anchors), `shots`, `LABELS` (a tag +

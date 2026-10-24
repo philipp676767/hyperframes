@@ -115,29 +115,42 @@ Rules:
   a number) — viewers stay to get it.
 - The **first frame already shows the strange thing** (subject mid-action,
   the warm back, the falling car) — never an empty establishing shot.
+- **The Umdeutung by ~10 s** (learned from successful videos,
+  2026-10-24): in sentence 2–4 say what the thing _really_ is, as a
+  reframe "Es ist nicht X – es ist Y": "Er misst gar nicht deine
+  Geschwindigkeit. Er stoppt deine Zeit." / "Er ist nicht kaputt. Er ist
+  absichtlich locker." / "Dein Kühlschrank macht keine Kälte. Er klaut
+  sie." It names the idea early — the _how_ stays open and is what the
+  rest of the video proves (the hook question is still answered only in
+  the payoff).
 
 **House favourite: Mythos-Bruch + Haken.** The user picked it for the fridge v2
 (Hook A, `tiktok/skripte/kuehlschrank-v2.md`): break a belief in sentence
 1, name what really happens in sentence 2 ("Er klaut sie – und schmeißt
 sie hinten raus."), then "Lass ihn uns bauen."
 Make it the first (recommended) option every time; the other two hooks
-use different formulas so the user can compare.
+use different formulas so the user can compare. **Equally strong
+(2026-10-24): Deine Handlung + Folge** — a thing the viewer does, and why
+it doesn't work: "Vor dem Blitzer bremsen rettet dich nicht." Always try
+it in the hook lab when the topic has an action people do.
 
 Hook formulas (the hook lab below writes six with them):
 
-| Formula                  | Example                                                          |
-| ------------------------ | ---------------------------------------------------------------- |
-| **Mythos-Bruch**         | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."          |
-| **Alltags-Rätsel**       | "Warum ist die Rückseite von deinem Kühlschrank warm?"           |
-| **Unglaubliche Zahl**    | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst." |
-| **Gefahr / Stakes**      | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."            |
-| **Du-Moment**            | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."       |
-| **Ergebnis zuerst**      | "Ein Kühlschrank ist nur ein Rohr und eine Pumpe."               |
-| **Du machst es falsch**  | "Du lädst dein Handy falsch – jede Nacht."                       |
-| **Gefahr im Alltag**     | "Das Gefährlichste in deiner Küche steht neben dem Herd."        |
-| **Identitäts-Twist**     | "Dein Airbag ist eigentlich eine Bombe."                         |
-| **Körper / Ekel**        | "In deinem Kopfkissen leben gerade Millionen Tiere."             |
-| **Unmöglich, aber wahr** | "Diese Rakete landet rückwärts."                                 |
+| Formula                    | Example                                                                                       |
+| -------------------------- | --------------------------------------------------------------------------------------------- |
+| **Mythos-Bruch**           | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."                                       |
+| **Alltags-Rätsel**         | "Warum ist die Rückseite von deinem Kühlschrank warm?"                                        |
+| **Unglaubliche Zahl**      | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst."                              |
+| **Gefahr / Stakes**        | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."                                         |
+| **Du-Moment**              | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."                                    |
+| **Ergebnis zuerst**        | "Ein Kühlschrank ist nur ein Rohr und eine Pumpe."                                            |
+| **Du machst es falsch**    | "Du lädst dein Handy falsch – jede Nacht."                                                    |
+| **Gefahr im Alltag**       | "Das Gefährlichste in deiner Küche steht neben dem Herd."                                     |
+| **Identitäts-Twist**       | "Dein Airbag ist eigentlich eine Bombe."                                                      |
+| **Körper / Ekel**          | "In deinem Kopfkissen leben gerade Millionen Tiere."                                          |
+| **Unmöglich, aber wahr**   | "Diese Rakete landet rückwärts."                                                              |
+| **Deine Handlung + Folge** | "Vor dem Blitzer bremsen rettet dich nicht." / "Handy auf 100 % laden macht den Akku kaputt." |
+| **Detail-Rätsel**          | "Warum hat dein Kugelschreiber-Deckel ein Loch?" — a small odd detail everyone has seen       |
 
 **Hook lab — every script** (user's wish 2026-10-24: "die Hook noch
 stärker"). Write **six** hooks with six different formulas, score each
@@ -170,6 +183,19 @@ wir …", "Weißt du eigentlich …", "Ganz einfach erklärt"), never
 clickbait that the video doesn't deliver, facts stay correct.
 
 ### 2. Beats — keep them watching
+
+**Story frame — "Stell dir vor, du …"** (learned from successful videos,
+2026-10-24). Wherever the topic allows, beat 1 drops the viewer into a
+concrete scene with something at stake, and the explanation happens
+_inside_ that scene: "Stell dir vor, du fährst nachts allein auf der
+Autobahn. Am ersten Blitzer bist du brav. Dann gibst du Gas. Am
+zweiten bremst du rechtzeitig runter. Zwei perfekte Durchfahrten – und
+trotzdem liegt drei Wochen später ein Brief im Briefkasten." Rules: a
+time and place, an action of the viewer, a consequence to lose (Strafe,
+Geld, verbrannte Finger, leerer Akku), told in the present tense; the
+picture plays the scene (the set is that place). Later beats can step
+back into the scene ("Zurück auf die Autobahn: …") — it is the thread
+that holds the minute together.
 
 **Data (2026-10-23): on every video most viewers leave at ~13 s.** In the
 scripts, 11–15 s was always the same spot: "Jetzt der Trick:" / "Hier

@@ -6,6 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
+- [ ] **Aus erfolgreichen Videos (2026-10-24):** Detail-Rätsel als Themenart, Hook „Deine Handlung + Folge“ + Umdeutung bis ~10 s, „Stell dir vor, du …“-Szene als roter Faden, Geräte-Anzeigen (`hud.js`), dunkle Bühne als Alternative. Beobachten, welche davon die Zahlen verbessern.
 - [ ] **Kein Loop mehr** (Nutzer, 2026-10-24): das Video endet nach der Kommentar-Frage auf einem starken letzten Bild. Beobachten: Wiederholungen / Ø Wiedergabezeit gegenüber den Loop-Videos.
 - [ ] **Genau 60 s** (Nutzer, 2026-10-24): 152–166 Wörter, 60-s-Aufbau mit Fragen-Kette, Wendung bei ~30 s und 1–2 „Rate mal“-Momenten; Hook-Labor (6 Hooks, Punkte ≥ 10/12), Themen-Punkte (≥ 12/16, mind. 5 „Was?!“-Fakten). Vergleichen: Ø Wiedergabezeit und Absprung bei 13 s / 30 s gegenüber den 45-s-Videos.
 - [ ] **Folgen-Aufruf in der Mitte** (Nutzer, 2026-10-24): „Folg mir, wenn du noch mehr lernen willst.“ als eigene Zeile nach Beat 2 (≈ 12–20 s), am Ende nur noch die Kommentar-Frage. Vergleichen: neue Follower pro 1.000 Aufrufe vorher/nachher.
