@@ -1,9 +1,9 @@
-# scene.js on top of world.js + environments.js
+# scene.js + set.js on top of world.js, environments.js and props.js
 
 `assets/world.js` builds the renderer and shared props on import and exports
-helpers; `assets/environments.js` exports `createWorld({ env, sky, seed, palette })`, which
-builds sky, lights and the landscape — call it first; `assets/props.js`
-dresses it for the topic (SKILL.md 1b). `assets/timing.js`
+helpers. **`assets/set.js` builds this video's own world** (SKILL.md 1b)
+from the set kit `assets/environments.js` and the props in
+`assets/props.js`; `scene.js` imports it first (`import "./set.js"`). `assets/timing.js`
 holds the word anchors (no three.js, also used in node).
 `assets/beats.js` is the video's timing as plain data — `T`, `shots`,
 `LABELS`, `SFX` — read by the scene and by `scripts/build-sfx.mjs`
@@ -87,18 +87,36 @@ export const HIGHLIGHTS = [
 ];
 ```
 
-## environments.js
+## environments.js — the set kit
 
-| Export                                     | Use                                                                                                                                                                                                                                                                                                      |
-| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `createWorld({ env, sky, seed, palette })` | build the setting; env `insel stadt strand winter land weltall tiefsee wolken kueche`, sky `sonnenuntergang morgen mittag abend nacht weltall tiefsee hoch` (optional); `seed` reshuffles every random placement, `palette` tints (`houses`, `paving`, `corals`, `worktop`, `cabinets`, `tiles`, `wall`) |
-| `ENVIRONMENTS`, `SKIES`                    | the available names / sky palettes                                                                                                                                                                                                                                                                       |
-| `tree(x, z, s, seed)`                      | extra park tree if a shot needs framing                                                                                                                                                                                                                                                                  |
+No fixed environments: `set.js` composes a new world from these.
 
-Every env also lights the scene with its own sky (image-based light,
-`scene.environment`): glossy materials (`M.chrome`, glass, paint with
-`roughness` ≤ 0.3) mirror it automatically — give the subject's shiny
-parts low roughness so they catch it.
+| Export                                                                                                              | Use                                                                                                                                                                                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `setSky(palette)` / `SKIES`                                                                                         | sky dome, fog, clouds, birds, sun / fill / rim lights — call first. `SKIES.{sonnenuntergang,morgen,mittag,abend,nacht,weltall,tiefsee,hoch}` are starting palettes: spread one and change it (`{ ...SKIES.morgen, top: [r,g,b], sunDir, keyPos, fog: [near, far], clouds: 8, birds: false, stars: 0.4, nightWindows: true }`) |
+| `terrain(color, { r, step, flatR, hills, height, seed, amt, scale, warm, fn })`                                     | faceted ground disc with relief + colour patches; `height(x, z, d)` = own relief (may go negative, keep 0 for d < 6)                                                                                                                                                                                                          |
+| `discGeo(r, step, seed, height)`                                                                                    | even-triangle disc geometry for any round surface (island tops, ponds, plazas)                                                                                                                                                                                                                                                |
+| `pathStrip([[x, z], …], { width, color, lift, seed })`                                                              | path / road / stream bed as a faceted ribbon                                                                                                                                                                                                                                                                                  |
+| `pond(x, z, { rx, rz, color })`                                                                                     | glossy, gently rippling pond with a pebble rim                                                                                                                                                                                                                                                                                |
+| `sea({ zFrom, depth, width, y, amp })`                                                                              | faceted moving sea (shallow → deep), reflects the sky; the slowest piece to render                                                                                                                                                                                                                                            |
+| `meadow({ n, rMin, rMax, seed, keep, flowers, tint })`                                                              | instanced grass tufts + flowers, never on the stage                                                                                                                                                                                                                                                                           |
+| `tree(x, z, s, seed)` / `pine(x, z, s, seed, snowy)` / `rocks(n, rMin, rMax, seed, mat)` / `car(x, z, color, rotY)` | vegetation and scenery that sways / sits in the world                                                                                                                                                                                                                                                                         |
+| `cloudPuffs(group, n, size, mat, seed)` / `birds(n)`                                                                | an extra cumulus anywhere (cloud sea, steam cloud) / circling birds                                                                                                                                                                                                                                                           |
+| `lightString(a, b, { n, sag, colors, glow })`                                                                       | fairy lights / bulbs on a sagging wire between two points                                                                                                                                                                                                                                                                     |
+| `fireflies(n, { area, color, seed, size })`                                                                         | glowing drifting motes: fireflies, sparks, dust in a sunbeam, plankton                                                                                                                                                                                                                                                        |
+| `F(geo, mat, amt, seed)` / `add(mesh, x, y, z, shadow)`                                                             | faceted mesh / add to the world with shadows                                                                                                                                                                                                                                                                                  |
+| `finishSet({ ground })`                                                                                             | last call: image-based light from the sky + the ground colour                                                                                                                                                                                                                                                                 |
+
+The sky light makes glossy materials (`M.chrome`, glass, paint with
+`roughness` ≤ 0.3) mirror the sky automatically — give shiny parts of the
+subject low roughness so they catch it.
+
+`references/set-beispiele.js` = nine complete earlier sets as a cookbook
+(`insel stadt strand winter land weltall tiefsee wolken kueche`, each
+`name({ light, seed, palette })`): the town houses with framed windows and
+shop awnings, the sloping beach, chimney smoke, crater relief, the faceted
+Earth, corals + kelp + light shafts, the cloud sea, the kitchen worktop.
+Copy pieces into `set.js` and adapt them; never use a set unchanged.
 
 ## props.js — set dressing (SKILL.md 1b)
 

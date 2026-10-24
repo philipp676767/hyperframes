@@ -114,11 +114,10 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - **The payoff shot** shows the outcome big: the door that doesn't move,
   the car standing there, the passenger unharmed. Then the usual "Übrigens" and CTA shots, loop cut back to
   the hand at frame 0.
-- **Setting:** the act happens _in_ a place (a plane cabin, a car on a
-  road, a kitchen). Use the env that fits as the world around or below
-  it (the plane flies over `land` or `strand`, the car stands in `stadt`);
-  build an interior as the subject when needed, or add an env
-  (SKILL.md 1b).
+- **World:** built new for the scenario like every video (SKILL.md 1b) —
+  the act happens _in_ a place (the plane cabin with the window over the
+  clouds, the car on a stormy road, the kitchen at night), so that place
+  is the set, with its own light, props and hero piece.
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 

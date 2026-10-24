@@ -1,43 +1,41 @@
 # Visual style
 
 The look (toy low-poly, flat colours, soft shadows, pastel light, captions,
-CTA) is fixed. The **world is designed new for every video** (SKILL.md
-1b: env + sky + seed + palette, topic props, one hero background piece) —
-more detailed and more realistic in light and material, never another
-style. What each video designs is the **set**, the **subject**, its
-**build-up**, and the **shots**.
+CTA) is fixed. **The world is not: there are no fixed environments** — every
+video builds a new, high-quality place for its topic in `assets/set.js`
+(SKILL.md 1b: concept, own light, layers, quality check). What each video
+designs is the **world**, the **subject**, its **build-up**, and the
+**shots**.
 
-## Settings (environments.js)
+## The world (set.js on the set kit)
 
-All share: faceted low-poly shapes, flat saturated-pastel colours, soft
-shadows, gradient sky with a low sun glow behind the subject (−z), puffy
-low-poly cumulus with flat undersides, gentle fog into the distance. The
-subject always stands at the origin on a clear stage.
+What every world shares, whatever the place: faceted low-poly shapes, flat
+saturated-pastel colours, soft shadows, a gradient sky with a sun glow,
+puffy low-poly cumulus with flat undersides, gentle fog into the
+distance. The subject always stands at the origin on a clear stage.
 
-**Realistic, still a toy** (automatic): every env lights the scene with
-its own sky (image-based light) — glossy parts mirror the real sky, matte
-facets take its colour in the shade; big grounds carry **colour patches**
-(worn grass, wet sand at the water line, blue hollows in the snow,
-weathered paving) instead of one even colour; the sea is a moving faceted
-surface that reflects the sky, turquoise in the shallows over sloping
-sand. Houses have window frames, sills, shops with awnings, gable or flat
-roofs; at night only some windows are lit.
+**Realistic, still a toy** (from the kit): the scene is lit by its own sky
+(image-based light) — glossy parts mirror the real sky, matte facets take
+its colour in the shade; big surfaces carry **colour patches** (worn
+grass, wet sand, blue hollows in snow, weathered paving) instead of one
+even colour; water is a moving faceted surface that reflects the sky.
+Buildings get frames, sills, roofs, awnings; at night only some windows
+are lit.
 
-**Alive, not static** (automatic in every env): trees, bushes and pines
-sway gently, clouds drift, a few low-poly birds circle far out; chimney
-smoke rises in `winter`, kelp sways, bubbles rise and fish circle in
-`tiefsee`, the Earth turns and a satellite passes in `weltall`; `insel`,
-`land` and `strand` get instanced grass tufts with little flowers (beach
-grass on the dunes), always kept off the subject's footprint and the
-analogy spots.
+**Alive, not static** (at least 2 per world): swaying trees and bushes,
+drifting clouds, birds, smoke, steam, rippling water, fireflies, bubbles,
+snow, a passing vehicle.
 
-**Hand-painted facets** (automatic for the scenery): every triangle of the
-ground, island, tree crowns, pines, rocks and mountains is tinted a few
-percent lighter / darker / warmer / cooler than its neighbours — the
-look of hand-made low-poly art instead of flat plastic. The ground is a
-disc of evenly sized facets that rises into soft low hills past r ≈ 36.
-Rendered at the full 1080×1920 with 4096² shadow maps, so facet edges and
-shadows stay crisp.
+**Hand-painted facets**: every triangle of the ground and scenery is
+tinted a few percent lighter / darker / warmer / cooler than its
+neighbours (`facet()`, `F()`); big flat surfaces use evenly sized
+triangles (`discGeo`, `terrain`) so they never show pie slices. Rendered
+at the full 1080×1920 with 4096² shadow maps, so facet edges and shadows
+stay crisp.
+
+**Depth:** at least three layers — the near ring of topic props, one
+hero piece behind the stage, a far layer (skyline, hills, mountains, tree
+line) so the horizon is never empty.
 
 **Camera look** (`assets/post.js`, automatic): **ambient occlusion** —
 soft contact shadows where surfaces meet (under parts, in corners, at tree
@@ -47,43 +45,19 @@ subject stays sharp (the miniature-photo look that makes the diorama read
 as a toy set), **clarity** — a little local contrast so every shape stands
 off its background, a **grade** — soft S-curve, a touch more colour, warm
 highlights and cool shadows — a **soft glow** on emissive / very bright
-things (glowing wire, LEDs, sun, hot arrows), a light **vignette**,
-dithering against sky banding. The LED panel is drawn after it, always
-sharp. Tweak with `LOOK` (`LOOK.tilt = 0.6` for a whole video) or per shot
-(`{ …, tilt: 0 }` for a shot that must be sharp edge to edge, e.g. a tall
-subject filling the frame). The camera has a tiny hand-held drift on top
-of every shot.
+things (glowing wire, LEDs, sun, hot arrows, fairy lights), a light
+**vignette**, dithering against sky banding. The LED panel is drawn after
+it, always sharp. Tweak with `LOOK` (`LOOK.tilt = 0.6` for a whole video)
+or per shot (`{ …, tilt: 0 }` for a shot that must be sharp edge to edge,
+e.g. a tall subject filling the frame). The camera has a tiny hand-held
+drift on top of every shot.
 
-- `insel` — floating island (radius 9) with earth cone and hanging roots,
-  park trees, bushes, rocks; pink haze below. The original look.
-- `stadt` — stone-slab plaza, asphalt road behind the stage with dashes,
-  double yellow centre line and a zebra crossing, pastel houses with
-  framed windows (some lit at `abend` / `nacht`), shops with striped
-  awnings, street lamps, benches, bikes, a bin, parked cars.
-- `strand` — beach sloping into the sea, wet sand along the water line,
-  washing foam, a faceted moving sea (turquoise → deep blue), palms,
-  umbrella + towel, a rocking sailboat.
-- `winter` — snow with blue-shaded hollows and drifts, snowy pines,
-  lavender mountains with snow caps, a cabin with chimney smoke, a frozen
-  pond, a snowman, a fence, falling snow.
-- `land` — meadow with dry and lush patches, a dirt path, a fence,
-  furrowed fields, red barn, silo, hay bales, cows and sheep, bushes.
-- `weltall` — a moon-rock island with craters floating in space, the
-  faceted Earth with a blue atmosphere, a ringed planet, a satellite,
-  stars; hard white sunlight, no fog.
-- `tiefsee` — sandy seabed with dunes, big rocks, corals, swaying kelp,
-  light shafts from the surface, drifting particles, rising bubbles, a
-  fish school; dense blue fog.
-- `wolken` — above the clouds: a sea of faceted cumulus below the stage,
-  towering clouds on the horizon, deep blue sky.
-- `kueche` — a big kitchen worktop by a window (daylight, treeline),
-  tiled wall, upper cabinets, glass jars, a fruit bowl, a cutting board, a
-  herb pot (1 unit ≈ 15 cm).
-
-Skies: `sonnenuntergang` (purple → pink → orange), `morgen` (light blue →
-rose → peach), `mittag` (clear blue), `abend` (deep blue-violet, warm
-horizon, lit windows/lamps), `nacht` (stars, moonlight), `weltall`,
-`tiefsee`, `hoch` (for their envs).
+Worlds built so far (for inspiration, `references/set-beispiele.js`):
+floating island, town square with shops, beach with moving sea, snowy
+village with chimney smoke, farm with cows, moon rock with the Earth,
+deep sea with corals and light shafts, sea of clouds, kitchen worktop;
+the template demo: town park at blue hour with fairy lights and a
+bandstand. Never repeat one of the last three.
 
 Optional checkered floor pad under the subject (`addFloor`) for indoor
 things (kitchen tiles, workshop floor) — skip it outdoors.

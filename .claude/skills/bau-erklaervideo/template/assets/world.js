@@ -1,8 +1,9 @@
 // Shared engine for the "Du hast gerade X gebaut" explainer series:
 // word-anchored timing, renderer, materials, camera shots, LED panel, wavy
-// force/heat arrows, orange "nope" X and x-ray glass. The landscape and sky
-// come from environments.js (createWorld). A video's scene.js imports from
-// both and only builds its own subject + story beats.
+// force/heat arrows, orange "nope" X and x-ray glass. The world around the
+// subject (sky, light, ground, props) is new in every video: set.js builds
+// it from the kit in environments.js + props.js. scene.js builds the
+// subject + story beats.
 // Everything renders as a pure function of time t (seconds).
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
 import { createPost, LOOK } from "./post.js";
@@ -246,8 +247,8 @@ export function setXray(materials, k) {
 export const xrayEdges = (geo) => new THREE.LineSegments(new THREE.EdgesGeometry(geo, 35), edgeMat);
 
 // ---------------------------------------------------------------- ground
-// Environments (sky, lights, landscape) live in environments.js and fill this
-// group; createWorld() there must run before the subject is built.
+// The video's set (set.js: sky, lights, landscape, props) fills this group;
+// it is imported before the subject is built.
 export const ground = new THREE.Group();
 scene.add(ground);
 
@@ -728,6 +729,13 @@ export function renderFrame() {
     // fixed spot just in front of the camera, below the question banner and
     // progress bar (≈ y 520–770 px of 1920)
     panel.position.set(0.18, 0.47, -3.0).applyMatrix4(camera.matrixWorld);
+  }
+  // set check (SKILL.md 1b): window.__cam = { p: [x, y, z], l: [x, y, z] }
+  // replaces the shot camera, e.g. from a snapshot script
+  if (window.__cam) {
+    camera.position.set(...window.__cam.p);
+    camera.lookAt(...window.__cam.l);
+    camera.updateMatrixWorld();
   }
   post.render(scene, camera, overlay, shotTilt);
   drawLabels();
