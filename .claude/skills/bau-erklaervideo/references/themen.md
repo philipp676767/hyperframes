@@ -159,9 +159,8 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema  | Format | Datum      | Chat       |
-| ------ | ------ | ---------- | ---------- |
-| 🔥 MRT | A      | 2026-10-24 | Video: MRT |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
@@ -170,4 +169,4 @@ As of 2026-10-23: Kühlschrank, Airfryer, Aufzug, Airbag, Windrad,
 Atomkraftwerk, Mikrowelle, Geschirrspüler, Rauchmelder, Fliegender Tesla,
 Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
-Erde hört auf, sich zu drehen (B), Flugzeugtür (B).
+Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT.

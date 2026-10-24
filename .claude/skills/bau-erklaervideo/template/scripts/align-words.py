@@ -46,7 +46,8 @@ for i, t in enumerate(times):  # interpolate anything Whisper skipped
         nxt = next((times[j][0] for j in range(i + 1, len(times)) if times[j]), prev + 0.3)
         times[i] = (prev, max(prev + 0.05, nxt))
 
-words = [{"w": re.sub(r"[.,:!?]", "", t), "start": round(s, 3), "end": round(e, 3)} for t, (s, e) in zip(tokens, times)]
+# strip punctuation, but keep a dot / comma inside a number ("60.000-mal", "1,5")
+words = [{"w": re.sub(r"(?<!\d)[.,]|[.,](?!\d)|[:!?]", "", t), "start": round(s, 3), "end": round(e, 3)} for t, (s, e) in zip(tokens, times)]
 for w, hl in zip(words, marked):
     if hl:
         w["hl"] = True
