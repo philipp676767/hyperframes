@@ -2,10 +2,13 @@
 
 Eine Zeile pro fertigem Video. `Format`: **A** = „Bauen“ (Du hast gerade X
 gebaut), **B** = „Was passiert eigentlich, wenn …?“ — die Formate wechseln
-sich immer ab (Skill `bau-erklaervideo`, Schritt 0). Die nächste Folge wählt eine andere
-Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
+sich immer ab (Skill `bau-erklaervideo`, Schritt 0). `Set` = die Welt des Videos
+in 2–4 Wörtern, `Licht` = Tageszeit / Himmel. Seit 2026-10-24 gibt es keine
+festen Umgebungen mehr: jedes Video baut eine neue, passende Welt (Schritt 1b),
+nie der Ort eines der letzten drei Videos. #1–#24 nutzten noch die festen
+Umgebungen (insel, stadt, …).
 
-| #   | Thema                         | Format | Ordner                       | env     | sky             | Länge  | Datum      |
+| #   | Thema                         | Format | Ordner                       | Set     | Licht           | Länge  | Datum      |
 | --- | ----------------------------- | ------ | ---------------------------- | ------- | --------------- | ------ | ---------- |
 | 1   | Kühlschrank                   | A      | `tiktok/kuehlschrank`        | insel   | sonnenuntergang | 68,3 s | 2026-10-20 |
 | 2   | Airfryer                      | A      | `tiktok/airfryer`            | land    | morgen          | 68,1 s | 2026-10-20 |
