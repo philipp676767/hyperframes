@@ -1,0 +1,356 @@
+[
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "klack",
+    "at": 0.12,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "grollen",
+    "at": 0.16,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "hit",
+    "at": 0.18,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 0.18,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.28,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.7,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 1.92,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.92,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 4.44,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.48,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 6.7,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 6.7,
+    "why": "highlight shake"
+  },
+  {
+    "s": "pop",
+    "at": 6.75,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.9,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.79,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "slowmo",
+    "at": 8.96,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.8,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 10.94,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 10.99,
+    "why": "label Osten →"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.14,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.24,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "hit",
+    "at": 13.14,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 13.19,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "pop",
+    "at": 13.89,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "punch",
+    "at": 14.48,
+    "why": "highlight"
+  },
+  {
+    "s": "slowmo",
+    "at": 14.48,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "boing",
+    "at": 14.56,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 15.04,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.96,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 16.18,
+    "why": "beats.js",
+    "dur": 4.779999999999999,
+    "db": -13
+  },
+  {
+    "s": "whoosh",
+    "at": 17.6,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 17.82,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 17.82,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 17.82,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.34,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 20.56,
+    "why": "highlight"
+  },
+  {
+    "s": "welle",
+    "at": 21.06,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "whoosh",
+    "at": 21.29,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "hit",
+    "at": 21.51,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.14,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 24.24,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 24.29,
+    "why": "label Äquator"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.94,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 25.16,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 25.16,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "rauschen",
+    "at": 25.92,
+    "why": "beats.js",
+    "dur": 2.2,
+    "db": -19
+  },
+  {
+    "s": "punch",
+    "at": 27.22,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 27.27,
+    "why": "label Nordpol"
+  },
+  {
+    "s": "whoosh",
+    "at": 27.7,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 29.53,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "punch",
+    "at": 29.58,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 29.58,
+    "why": "question answered"
+  },
+  {
+    "s": "hit",
+    "at": 29.58,
+    "why": "highlight flash"
+  },
+  {
+    "s": "blip",
+    "at": 29.63,
+    "why": "label Superkontinent"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.98,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 32.64,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 32.86,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 32.91,
+    "why": "label Europa"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.6,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 34.82,
+    "why": "bonus fact"
+  },
+  {
+    "s": "punch",
+    "at": 37.4,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.02,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 38.24,
+    "why": "comment pill"
+  },
+  {
+    "s": "pop",
+    "at": 41.02,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 41.81,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 41.85,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 41.96,
+    "why": "loop cut"
+  }
+]

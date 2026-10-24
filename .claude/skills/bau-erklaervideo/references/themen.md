@@ -159,9 +159,8 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                               | Format | Datum      | Chat        |
-| --------------------------------------------------- | ------ | ---------- | ----------- |
-| … die Erde plötzlich aufhört, sich zu drehen? (#24) | B      | 2026-10-23 | Video: Erde |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
@@ -169,4 +168,5 @@ See `tiktok/serie.md` and the folders in `tiktok/` — the source of truth.
 As of 2026-10-23: Kühlschrank, Airfryer, Aufzug, Airbag, Windrad,
 Atomkraftwerk, Mikrowelle, Geschirrspüler, Rauchmelder, Fliegender Tesla,
 Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
-Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID.
+Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
+Erde hört auf, sich zu drehen (B).
