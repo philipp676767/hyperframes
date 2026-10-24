@@ -31,8 +31,12 @@ export const END = LOOP != null ? DURATION : LAST + 1.0;
 export const HL = WORDS.filter((w) => w.hl).map((w) => w.start);
 
 // CTA moments, the same rules as the button timeline in index.html: the
-// comment pill pops when the last script line starts, the follow pill on
-// "folg…", tapped 1.0 s later and flipped to "Gefolgt" at +1.12 s.
+// comment pill pops when the last script line starts; the follow pill on the
+// first "folg…" — since 2026-10-24 a line in the MIDDLE of the video
+// ("Folg mir, wenn du noch mehr lernen willst."), so most viewers still see
+// it — tapped 1.0 s later, flipped to "Gefolgt" at +1.12 s, gone at +2.4 s
+// (`mid`). A "folg" inside the last line (older scripts) keeps the old
+// end-of-video behaviour.
 export function ctaTimes() {
   const words =
     CTA_START != null
@@ -40,11 +44,15 @@ export function ctaTimes() {
       : WORDS.filter((w) => /^folg/i.test(w.w));
   if (!words.length) return null;
   const cmt = words[0].start;
-  const follow = words.find((w) => /^folg/i.test(w.w))?.start ?? cmt + 1.2;
-  // with a loop line the tap must land before the buttons fade out at LOOP
+  const fw = WORDS.slice(0, LOOP_START ?? WORDS.length).find((w) => /^folg/i.test(w.w));
+  const follow = fw?.start ?? cmt + 1.2;
+  const mid = follow < cmt;
+  // at the end with a loop line the tap must land before the buttons fade out at LOOP
   const tap =
-    LOOP != null ? Math.min(follow + 1.0, Math.max(follow + 0.5, LOOP - 0.45)) : follow + 1.0;
-  return { cmt, follow, tap, flip: tap + 0.12 };
+    !mid && LOOP != null
+      ? Math.min(follow + 1.0, Math.max(follow + 0.5, LOOP - 0.45))
+      : follow + 1.0;
+  return { cmt, follow, tap, flip: tap + 0.12, mid, out: mid ? tap + 1.4 : null };
 }
 
 // The series line "… gebaut." right before the CTA (payoff "ding").

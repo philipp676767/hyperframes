@@ -28,7 +28,8 @@ Expected length = words ÷ 2.7 + 1.2 s (measured with Jan, the house voice). Cou
 | **Beats** (lines 2–4)        | 3 beats, 18–25 each | build the thing; each beat ends pulling into the next                   |
 | **Payoff** (line 5)          | ~8–15               | answer the hook's question in one punchy line — the question text fades |
 | **Bonus fact** (same line 5) | 10–15               | "Übrigens: …" — one surprising, shareable fact                          |
-| **CTA** (line 6)             | 12–18               | comment question + follow                                               |
+| **Follow line** (middle)     | 6–9                 | „Folg mir, wenn du noch mehr lernen willst.“ — own line after beat 2    |
+| **CTA** (line before loop)   | 8–14                | comment question                                                        |
 | **Loop bridge** (last line)  | 2–4                 | `> Und merk dir:` — runs straight back into the hook                    |
 
 ### 1. Hook — the first sentence decides everything
@@ -186,17 +187,30 @@ a comparison, **true** (check it; phrase safely when unsure), not a
 repeat of a beat, one `*keyword*`. It is the last thing before the CTA, so
 it should make people want to comment ("Krass!" / "Wusste ich nicht").
 
-### 4. CTA — make them comment
+### 4. CTA — follow in the middle, comment at the end
 
-Second-to-last line of `script.txt` (the loop bridge comes after it),
-spoken by the same voice in the same take.
+The user moved the follow ask into the middle (2026-10-24): fewer than
+10 % watch to the end, so at the end almost nobody heard it. Both parts
+are spoken by the same voice in the same take; neither may be dropped or
+shortened.
+
+**Follow line (middle)** — its own line in `script.txt`, **right after
+the second money shot / beat 2 (≈ 12–20 s)**, never in the first 10 s:
+**„Folg mir, wenn du noch mehr lernen willst.“** (the user's wording) or a
+variant that fits the topic and the tone — „Folg mir, wenn du mehr solche
+Sachen wissen willst.“ / „Folg mir für mehr davon.“ Rules: 6–9 words,
+contains **"folg"** (the Folgen pill pops on it, gets tapped, says
+"Gefolgt", leaves after 2.5 s), no pause around it — the next beat goes
+straight on with a strange fact, so it feels like a quick aside, not a
+break. No LED panel or label during it (the pill sits under the
+captions).
+
+**Comment question (end)** — the line before the loop bridge:
 
 - **One comment question** tied to the topic, answerable in 1–3 words:
-  yes/no, either/or, a number, or a personal detail. Then **"– und folg
-  mir für mehr."** (or a teaser: "– und folg mir, morgen bauen wir einen
-  Toaster.").
-- The word **"folg"** must appear: the Folgen button is timed on it; the
-  Kommentieren button pops when the CTA line starts.
+  yes/no, either/or, a number, or a personal detail, + „Schreib's in die
+  Kommentare.“ (or „Ab in die Kommentare.“). No "folg" here any more.
+- The Kommentieren button pops when this line starts.
 - No generic "Lass ein Like da". No question that needs a paragraph.
 
 ### 5. Loop bridge — the video never ends
@@ -218,13 +232,13 @@ before ElevenLabs).
 
 CTA patterns:
 
-| Pattern              | Example                                                                                   |
-| -------------------- | ----------------------------------------------------------------------------------------- |
-| **Ja / Nein**        | "Hast du einen Airfryer? Schreib's in die Kommentare – und folg mir für mehr."            |
-| **Entweder-oder**    | "Team Treppe oder Team Aufzug? Ab in die Kommentare – und folg mir für mehr."             |
-| **Test zu Hause**    | "Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's mir – und folg mir für mehr." |
-| **Zahl / Schätzung** | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare – und folg mir für mehr."        |
-| **Nächstes Thema**   | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare – und folg mir."            |
+| Pattern              | Example                                                           |
+| -------------------- | ----------------------------------------------------------------- |
+| **Ja / Nein**        | "Hast du einen Airfryer? Schreib's in die Kommentare."            |
+| **Entweder-oder**    | "Team Treppe oder Team Aufzug? Ab in die Kommentare."             |
+| **Test zu Hause**    | "Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's mir." |
+| **Zahl / Schätzung** | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare."        |
+| **Nächstes Thema**   | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare."   |
 
 ## Delivery tags — make Jan sound alive
 
@@ -282,12 +296,16 @@ Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare �
 Hook title: `Dein Kühlschrank <em>lügt</em>`. (Keyword marks added
 afterwards to show the density: 9 in 129 words.)
 
+(Since 2026-10-24 the follow ask is its own line in the middle —
+„Folg mir, wenn du noch mehr lernen willst.“ after beat 2 — and the end
+keeps only the comment question.)
+
 From now on every script also gets the bonus fact and the loop bridge —
 for the fridge they would be (beats trimmed by ~16 words to stay ≤ 130):
 
 ```text
 Und genau deshalb ist er hinten *warm*. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
-Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
+Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare.
 > Und merk dir:
 ```
 
@@ -311,7 +329,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] ≤ 3 technical terms; no sentence that needs a breath
 - [ ] No "Schau dich an. Du hast gerade X gebaut." — the payoff answers the question, then straight to "Übrigens"
 - [ ] Bonus fact starts with "Übrigens", 10–15 words, true, surprising
-- [ ] CTA: question answerable in 1–3 words + "folg"
+- [ ] Follow line in the middle (after beat 2, ≈ 12–20 s, 6–9 words, "folg"); comment question at the end, answerable in 1–3 words, no "folg"
 - [ ] Loop line `> …` + hook sentence 1 read as one sentence
 - [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
 - [ ] 110–122 words incl. fact, CTA and loop line (≤ 128, ≥ 105), expected length stated

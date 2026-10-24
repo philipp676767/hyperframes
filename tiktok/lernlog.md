@@ -6,6 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
+- [ ] **Folgen-Aufruf in der Mitte** (Nutzer, 2026-10-24): „Folg mir, wenn du noch mehr lernen willst.“ als eigene Zeile nach Beat 2 (≈ 12–20 s), am Ende nur noch die Kommentar-Frage. Vergleichen: neue Follower pro 1.000 Aufrufe vorher/nachher.
 - [ ] **Abgefahrenere Themen** (Nutzer, 2026-10-23): nur Themen mit „Was?!“-Moment, 🔥 in themen.md zuerst (Weltall, Tiefsee, Erde, Extrem-Physik, wilde Maschinen). Vergleichen, ob 🔥-Themen mehr Aufrufe und Wiedergabe bringen.
 - [ ] **Zwei Formate im Wechsel (ab 2026-10-23):** A „Bauen“ und B „Was passiert eigentlich, wenn …?“ immer abwechselnd. Bei jedem Eintrag das Format notieren; nach 2–3 Videos pro Format vergleichen (Wiedergabe nach 1–3 s, Absprung bei ~13 s, Anteil bis zum Ende, Kommentare).
 - [ ] **Für die echte Zielgruppe (18–34, m/w, Zufalls-Scroller):** Alltagsthemen (★ in themen.md), frecher Ton, Bild 0 mit Geräusch + 2–3 Riesen-Wörtern + Hand, die etwas tut.

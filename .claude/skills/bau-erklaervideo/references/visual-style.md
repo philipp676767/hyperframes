@@ -242,10 +242,11 @@ captions / buttons / labels, dark gradient at the top, title Montserrat
 132 px white with a thick dark stroke, keyword yellow, tilted -2°,
 y ≈ 300 px (`scripts/make-cover.sh`).
 
-**CTA:** when the CTA line starts, a white "Kommentieren" pill
-with a red speech bubble pops in at y ≈ 400 px and pulses; on the word
-"folg…" the red "+ Folgen" pill pops in below it (y ≈ 560 px), is tapped
-one second later and flips to grey "Gefolgt".
+**CTA:** on the word "folg…" of the follow line in the middle, the red
+"+ Folgen" pill pops in under the captions (y ≈ 1230 px), is tapped one
+second later, flips to grey "Gefolgt" and leaves 1.4 s after that. When
+the comment question at the end starts, a white "Kommentieren" pill with a
+red speech bubble pops in at y ≈ 400 px and pulses until the loop cut.
 
 ## Sound effects
 

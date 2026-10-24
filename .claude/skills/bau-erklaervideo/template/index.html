@@ -336,9 +336,10 @@
         );
         tl.to("#hook-title", { opacity: 0, scale: 1.08, duration: 0.25, ease: "power2.in" }, 2.8);
 
-        // CTA = last script line (HF_CTA_START). The comment pill pops in when
-        // it starts; the "Folgen" pill on the word "folg…" (or 1.2 s later),
-        // gets tapped and flips to "Gefolgt".
+        // CTA = last script line (HF_CTA_START): the comment pill pops in when
+        // it starts. The "Folgen" pill pops on the first "folg…" — a line in
+        // the middle of the video since 2026-10-24 (shown low, under the
+        // captions, gone 2.5 s later) — gets tapped and flips to "Gefolgt".
         const ci = window.HF_CTA_START;
         const li = window.HF_LOOP_START;
         const loopT = li != null ? words[li].start : null;
@@ -411,11 +412,13 @@
             { scale: 1.06, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 3 },
             c0 + 0.6,
           );
-          const follow = ctaWords.find((w) => /^folg/i.test(w.w));
+          const follow = words.slice(0, li ?? words.length).find((w) => /^folg/i.test(w.w));
           const t0 = follow ? follow.start : c0 + 1.2;
-          // with a loop line the tap lands before the buttons leave (mirrors timing.js ctaTimes)
+          const mid = t0 < c0;
+          if (mid) document.getElementById("cta").style.top = "1230px";
+          // at the end with a loop line the tap lands before the buttons leave (mirrors timing.js ctaTimes)
           const tap =
-            loopT != null ? Math.min(t0 + 1.0, Math.max(t0 + 0.5, loopT - 0.45)) : t0 + 1.0;
+            !mid && loopT != null ? Math.min(t0 + 1.0, Math.max(t0 + 0.5, loopT - 0.45)) : t0 + 1.0;
           tl.fromTo(
             "#cta-btn",
             { opacity: 0, scale: 0.4, y: 40 },
@@ -428,10 +431,16 @@
           tl.set("#cta-label", { display: "none" }, tap + 0.12);
           tl.set("#cta-label-done", { display: "inline" }, tap + 0.12);
           tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, tap + 0.12);
+          if (mid)
+            tl.to(
+              "#cta-btn",
+              { opacity: 0, scale: 0.85, duration: 0.2, ease: "power2.in" },
+              tap + 1.4,
+            );
           // loop ending: clear the buttons so the last frame matches the first
           if (loopT != null) {
             tl.to(
-              ["#cmt-btn", "#cta-btn"],
+              mid ? ["#cmt-btn"] : ["#cmt-btn", "#cta-btn"],
               { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" },
               loopT,
             );

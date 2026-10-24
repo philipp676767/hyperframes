@@ -25,15 +25,16 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 
 ## Script shape (same length: 110–122 words, ≈ 42–46 s)
 
-| Part                  | Words | Job                                                                                                                                                 |
-| --------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)     | 18–30 | The question **"Was passiert eigentlich, wenn du …?"** + the act starting ("Du packst den Griff …") + a reason to stay before 10 s                  |
-| **Folge 1** (line 2)  | 15–22 | The first consequence / the condition that makes it strange                                                                                         |
-| **Folge 2** (line 3)  | 10–20 | It escalates — the re-hook sits here, often with `[whispers]`                                                                                       |
-| **Folge 3** (line 4)  | 15–22 | The decisive consequence: the real mechanism, max 1–2 terms                                                                                         |
-| **Payoff + Übrigens** | 18–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                                                       |
-| **CTA**               | 12–18 | "Was sollen wir als Nächstes passieren lassen? Schreib's mir – und folg mir für mehr." (or another comment question tied to the topic, with "folg") |
-| **Loop bridge**       | 2–4   | `> Und jetzt frag dich:` / `> Also nochmal:` — flows into "Was passiert eigentlich, wenn …?"                                                        |
+| Part                  | Words | Job                                                                                                                                       |
+| --------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hook** (line 1)     | 18–30 | The question **"Was passiert eigentlich, wenn du …?"** + the act starting ("Du packst den Griff …") + a reason to stay before 10 s        |
+| **Folge 1** (line 2)  | 15–22 | The first consequence / the condition that makes it strange                                                                               |
+| **Folge 2** (line 3)  | 10–20 | It escalates — the re-hook sits here, often with `[whispers]`                                                                             |
+| **Folge 3** (line 4)  | 15–22 | The decisive consequence: the real mechanism, max 1–2 terms                                                                               |
+| **Payoff + Übrigens** | 18–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                                             |
+| **Follow line**       | 6–9   | „Folg mir, wenn du noch mehr lernen willst.“ — own line after Folge 2 (script-formel.md §4)                                               |
+| **CTA**               | 8–14  | "Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare." (or another comment question tied to the topic, with "folg") |
+| **Loop bridge**       | 2–4   | `> Und jetzt frag dich:` / `> Also nochmal:` — flows into "Was passiert eigentlich, wenn …?"                                              |
 
 ### Hook — the differences
 
@@ -77,8 +78,9 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
   ziehen." The answer word must not be spoken earlier in the script (the
   on-screen question is answered on its first use after 6 s).
 - "Übrigens: …" exactly as in script-formel.md.
-- CTA: default **"Was sollen wir als Nächstes passieren lassen?
-  Schreib's mir – und folg mir für mehr."** — when the user reports
+- Follow line after Folge 2 (as in script-formel.md §4). CTA at the end:
+  default **"Was sollen wir als Nächstes passieren lassen? Schreib's in
+  die Kommentare."** — when the user reports
   scenario wishes from the comments, add them to the topic list
   (`themen.md`, Format B).
 - Loop line + hook sentence 1 must read as one sentence: "Und jetzt frag
@@ -122,15 +124,16 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (116 words ≈ 44 s)
+## Example — Flugzeugtür (121 words ≈ 46 s)
 
 ```text
 [curious] Was passiert eigentlich, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
 Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Drinnen pumpt das Flugzeug Luft rein.
 [whispers] Und genau diese Luft presst die Tür mit mehreren *Tonnen* in den Rahmen.
+Folg mir, wenn du noch mehr lernen willst.
 Und die Tür ist größer als das Loch: ein *Stöpsel*, der zuerst nach *innen* aufgeht – gegen den Druck.
 [excited] Darum bleibt sie *zu*, selbst wenn zehn Leute ziehen. Übrigens: Draußen ist es dort kälter als minus *50* Grad.
-Was sollen wir als Nächstes passieren lassen? Schreib's mir – und folg mir für mehr.
+Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare.
 > Und jetzt frag dich:
 ```
 
