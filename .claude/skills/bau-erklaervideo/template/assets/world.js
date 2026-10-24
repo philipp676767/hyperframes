@@ -572,6 +572,10 @@ export function shotCamera(shots, defaultZoom = 1.7) {
       const a = lerp(o.a0, o.a1, k);
       p.set(o.c[0] + Math.sin(a) * o.r, o.y, o.c[2] + Math.cos(a) * o.r);
       l.set(...o.c);
+      if (s.rel) {
+        p.add(s.rel);
+        l.add(s.rel);
+      }
     } else {
       const rel = s.rel ?? zero;
       p.set(

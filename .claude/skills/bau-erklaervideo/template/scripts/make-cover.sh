@@ -23,7 +23,7 @@ path, at, title = sys.argv[1], float(sys.argv[2]), sys.argv[3]
 html = open(path, encoding="utf8").read()
 html = re.sub(r'\n?[ \t]*<audio\b[^>]*>\s*</audio>', "", html)
 style = """<style>
-      #captions, #hook-title, #cmt, #cta, #fact, #labels { display: none !important; }
+      #captions, #hook-title, #cmt, #cta, #fact, #labels, #hud { display: none !important; }
       #cover-shade { position: absolute; left: 0; right: 0; top: 0; height: 900px;
         background: linear-gradient(rgba(20, 12, 30, 0.45), rgba(20, 12, 30, 0)); }
       #cover-title { position: absolute; left: 60px; right: 60px; top: 300px;

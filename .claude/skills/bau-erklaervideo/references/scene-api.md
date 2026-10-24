@@ -172,7 +172,8 @@ const shots = [
   { at: 0, from: [x,y,z], to: [x,y,z], look: [x,y,z] },              // drift from→to
   { at: T.foo, from: …, to: …, look: …, lookTo: […], zoom: 1.2 },      // tilt + tighter
   { at: T.bar, from: …, to: …, look: …, rel: SET_POS },                // relative to an analogy set
-  { at: T.baz, orbit: { c: [x,y,z], r: 3, y: 2.4, a0: 0.9, a1: -0.9 } } // a = angle, 0 = front (+z)
+  { at: T.baz, orbit: { c: [x,y,z], r: 3, y: 2.4, a0: 0.9, a1: -0.9 } }, // a = angle, 0 = front (+z)
+  { at: T.qux, rel: SUBJ_POS, orbit: { c: [0, 1, 0], r: 6, y: 2, a0: 1, a1: 0.3 } } // orbit around a moving thing (c, y relative to rel)
 ];
 const applyCamera = shotCamera(shots);
 ```
