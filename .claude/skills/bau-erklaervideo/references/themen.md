@@ -106,7 +106,6 @@ are always 10+ open topics per format.
 
 | Thema                       | Hook-Idee                                                                                                                         | Money-Shot                                                                  | Kategorie     | Saison        |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------- | ------------- |
-| 🔥 Raketen-Landung          | „Diese Rakete fliegt ins All – und landet dann rückwärts wieder auf dem Boden.“                                                   | Booster fällt, zündet kurz vor dem Boden, Beine klappen aus, Stand          | Weltall       | –             |
 | 🔥 Magnetschwebebahn        | „Dieser Zug berührt die Schiene nie – er schwebt knapp über ihr.“ (Abstand prüfen)                                                | Magnete ziehen den Zug hoch, Lichtspalt unter dem Zug, er rast los          | Reisen        | –             |
 | 🔥 Schleudersitz            | „Der Schleudersitz schießt dich mit einer Rakete aus dem Jet.“ (g-Werte prüfen)                                                   | Kanzel fliegt weg, Raketenflamme unter dem Sitz, Fallschirm ploppt          | Extrem        | –             |
 | 🔥 Blitzableiter            | „Ein Blitz ist heißer als die Sonnenoberfläche – und ein Draht leitet ihn sicher in die Erde.“                                    | Blitz schlägt ins Dach, rast den Draht runter, verpufft im Boden            | Zuhause       | Sommer        |
@@ -209,8 +208,9 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema           | Format | Datum      | Chat          |
+| --------------- | ------ | ---------- | ------------- |
+| Raketen-Landung | A      | 2026-10-24 | Video: Rakete |
 
 ## Verwendet
 
