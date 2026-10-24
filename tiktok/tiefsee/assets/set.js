@@ -27,7 +27,10 @@ const AIR = {
   keyPos: [5, 12, 7],
   fog: [60, 190],
 };
+const before = new Set(scene.children);
 const sky = setSky(AIR);
+// clouds + birds of the air sky: only above water
+const airOnly = scene.children.filter((o) => !before.has(o) && o.isGroup);
 const skyMesh = scene.children.find((o) => o.material?.uniforms?.top);
 const lights = {
   key: scene.children.find((o) => o.isDirectionalLight && o.castShadow),
@@ -63,6 +66,7 @@ const WATER_SUN = V(0.25, 1, 0.15).normalize();
 const SUN_COL = u.sunCol.value.clone();
 
 function atmosphere(t) {
+  for (const g of airOnly) g.visible = t < T.wenn;
   if (t < T.wenn) {
     // above water (the hook's first shot)
     u.top.value.set(...AIR.top);
@@ -266,10 +270,10 @@ ship.add(cable);
 // release lever on a control post at the stern rail (the hand pulls it)
 export const lever = new THREE.Group();
 {
-  const post = box(0.42, 0.85, 0.42, flat(0xd9dbe0), 1.55, 1.67, -1.95, 18);
+  const post = box(0.42, 0.85, 0.42, flat(0xd9dbe0), 0.95, 1.67, -1.6, 18);
   post.castShadow = true;
-  box(0.46, 0.06, 0.46, flat(0xffd23f), 1.55, 2.12, -1.95, 19); // yellow warning top
-  lever.position.set(1.55, 2.15, -1.95);
+  box(0.46, 0.06, 0.46, flat(0xffd23f), 0.95, 2.12, -1.6, 19); // yellow warning top
+  lever.position.set(0.95, 2.15, -1.6);
   ship.add(lever);
   const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.7, 6), flat(0x333333));
   arm.position.y = 0.35;
