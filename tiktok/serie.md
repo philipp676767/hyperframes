@@ -31,3 +31,4 @@ Umgebung (`env`) als die letzte und variiert den Himmel (`sky`).
 | 22  | Feuerzeug                     | A      | `tiktok/feuerzeug`           | insel   | abend           | 43,8 s | 2026-10-23 |
 | 23  | Face ID                       | A      | `tiktok/faceid`              | strand  | sonnenuntergang | 43,8 s | 2026-10-23 |
 | 24  | Erde hört auf, sich zu drehen | B      | `tiktok/erde-stopp`          | weltall | weltall         | 43,6 s | 2026-10-24 |
+| 25  | Flugzeugtür                   | B      | `tiktok/flugzeugtuer`        | wolken  | hoch            | 42,9 s | 2026-10-24 |
