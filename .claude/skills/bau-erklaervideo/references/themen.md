@@ -194,7 +194,6 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 | 🔥 … der Mond verschwindet?                               | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                   | Mond verpufft, Meer flacht ab, Nacht wird schwarz                           | unmöglich                           | Weltall   |
 | 🔥 … im Weltall weinst?                                   | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                             | Träne wächst zur wackelnden Kugel vor dem Auge                              | unmöglich                           | Weltall   |
 | 🔥 … in Treibsand fällst?                                 | Du gehst nicht unter – du bleibst ungefähr bis zur Hüfte stecken (Studie prüfen)              | Beine sinken, Sandkörner in Röntgensicht, Stopp an der Hüfte                | Hinweis, harmlos erklärt            | Natur     |
-| 🔥 … im Auto sitzt und der Blitz einschlägt?              | Dir passiert nichts – aber nicht wegen der Reifen: Der Strom fließt außen um dich herum       | Blitz kracht aufs Dach, Strom läuft als Leuchtband über die Karosse         | nicht machbar; Cabrio-Hinweis       | Auto      |
 | ★ … einen Kaugummi verschluckst?                          | Er bleibt keine 7 Jahre – er wandert in ein paar Tagen ganz normal durch                      | Kaugummi rutscht in Röntgensicht durch den Bauch, Kalender fliegt           | harmlos (Fakten prüfen)             | Essen     |
 | ★ … dein Handy ins Wasser fallen lässt?                   | Reis hilft nicht – sogar Apple rät davon ab (Fakten prüfen)                                   | Handy platscht in Zeitlupe ins Wasser, Tropfen dringen ein                  | harmlos                             | Handy     |
 | ★ … eine geschüttelte Cola aufmachst?                     | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                 | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                          | harmlos                             | Essen     |
@@ -209,8 +208,9 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                                        | Format | Datum      | Chat         |
+| ------------------------------------------------------------ | ------ | ---------- | ------------ |
+| Blitz ins Auto („… im Auto sitzt und der Blitz einschlägt?“) | B      | 2026-10-24 | Video: Blitz |
 
 ## Verwendet
 
