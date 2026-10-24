@@ -106,6 +106,7 @@ are always 10+ open topics per format.
 
 | Thema                       | Hook-Idee                                                                                                                         | Money-Shot                                                                  | Kategorie     | Saison        |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------- | ------------- |
+| 🔥 Hitzeschild              | „Die Raumkapsel wird beim Rückflug über 1.500 Grad heiß – und drinnen schwitzt keiner.“ (Zahl prüfen)                             | Kapsel glüht in Zeitlupe, Schild verkohlt Schicht für Schicht, innen grün   | Weltall       | –             |
 | 🔥 Magnetschwebebahn        | „Dieser Zug berührt die Schiene nie – er schwebt knapp über ihr.“ (Abstand prüfen)                                                | Magnete ziehen den Zug hoch, Lichtspalt unter dem Zug, er rast los          | Reisen        | –             |
 | 🔥 Schleudersitz            | „Der Schleudersitz schießt dich mit einer Rakete aus dem Jet.“ (g-Werte prüfen)                                                   | Kanzel fliegt weg, Raketenflamme unter dem Sitz, Fallschirm ploppt          | Extrem        | –             |
 | 🔥 Blitzableiter            | „Ein Blitz ist heißer als die Sonnenoberfläche – und ein Draht leitet ihn sicher in die Erde.“                                    | Blitz schlägt ins Dach, rast den Draht runter, verpufft im Boden            | Zuhause       | Sommer        |
@@ -208,9 +209,8 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema           | Format | Datum      | Chat          |
-| --------------- | ------ | ---------- | ------------- |
-| Raketen-Landung | A      | 2026-10-24 | Video: Rakete |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
@@ -219,4 +219,4 @@ As of 2026-10-23: Kühlschrank, Airfryer, Aufzug, Airbag, Windrad,
 Atomkraftwerk, Mikrowelle, Geschirrspüler, Rauchmelder, Fliegender Tesla,
 Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
-Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT.
+Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung.

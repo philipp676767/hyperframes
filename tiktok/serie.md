@@ -37,3 +37,4 @@ Umgebungen (insel, stadt, …).
 | 25  | Flugzeugtür                   | B      | `tiktok/flugzeugtuer`        | wolken         | hoch             | 42,9 s | 2026-10-24 |
 | 26  | MRT                           | A      | `tiktok/mrt`                 | klinik         | nacht            | 45,6 s | 2026-10-24 |
 | 27  | Tiefsee (Marianengraben)      | B      | `tiktok/tiefsee`             | tiefsee-graben | mittag → finster | 60,0 s | 2026-10-24 |
+| 28  | Raketen-Landung               | A      | `tiktok/rakete`              | drohnenschiff  | sonnenaufgang    | 60,0 s | 2026-10-24 |
