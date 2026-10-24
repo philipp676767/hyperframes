@@ -209,9 +209,8 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                              | Format | Datum      | Chat           |
-| -------------------------------------------------- | ------ | ---------- | -------------- |
-| 🔥 … zum tiefsten Punkt im Meer tauchst? (Tiefsee) | B      | 2026-10-24 | Video: Tiefsee |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
