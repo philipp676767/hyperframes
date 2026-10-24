@@ -47,8 +47,28 @@ Extrem-Physik): they are impossible, so they're also the safest. Keep at
 least half of each list 🔥 and add new ideas the same way. Facts stay
 correct — the wilder the claim, the more carefully it's checked.
 
-Format A — score each open candidate on these six; propose the best one plus two
-alternatives:
+**Scorecard — every proposal** (user's wish 2026-10-24: „Themen noch
+passender und interessanter“). Score the open candidates of the format 0–2
+on its six criteria below **plus these two**, and propose the best one
+plus two alternatives **with their scores** (max 16; propose nothing under
+12 — then come up with better ideas first):
+
+- **Was?!-Faktor** — 2 = a stranger says "Was?!" out loud (🔥), 1 = "oh,
+  interessant", 0 = nice to know.
+- **Trägt eine Minute (Fakten-Inventar)** — write down the topic's
+  "Was?!" facts _before_ scoring: 2 = **five or more** strong, true,
+  showable facts (one per beat, one for the mid twist, the payoff, the
+  "Übrigens"), 1 = three or four, 0 = fewer. A 60-s video on a two-fact
+  topic gets boring at 30 s — that is where viewers leave.
+
+**What people really ask** (when web search is available): search the
+topic the way viewers do ("warum wird …", "was passiert wenn …", "wie
+funktioniert …" + the thing) and take the angle of the most asked
+question — that is the hook question. Also check `tiktok/lernlog.md` for
+which topics did best so far and for topics the comments asked for; a
+topic viewers asked for gets +2.
+
+Format A — score each open candidate on these six (+ the two above):
 
 1. **Jeder kennt es** — used weekly by almost everyone in Germany, **or**
    a wild 🔥 machine everyone has seen in films or the news (rocket,
@@ -57,7 +77,8 @@ alternatives:
    people assume ("ohne Strom", "wird gar nicht heiß", "hat keinen Akku").
 3. **Spektakel zum Zeigen** — at least one money shot the 3D style can
    show big (spark, explosion, crystals shooting through, waves, flip).
-4. **In 40 s erklärbar** — max 3 parts / terms.
+4. **In 60 s erklärbar** — max 3 parts / terms, but enough to fill 3
+   beats + a mid twist.
 5. **Weitererzählbar / selbst testbar** — the viewer can try it today or
    tells a friend ("Hand auf den Induktionsherd").
 6. **Für 18–34, Männer und Frauen** — part of _their_ day: phone,
@@ -113,7 +134,8 @@ are always 10+ open topics per format.
 
 ## Offen — Format B „Was passiert, wenn …?“
 
-Criteria (instead of A's six; `format-was-passiert.md`):
+Criteria (instead of A's six, + the two of the scorecard;
+`format-was-passiert.md`):
 
 1. **Schon immer gefragt oder sofort neugierig** — a question almost
    everyone has wondered about, a myth everyone has heard („Kaugummi
@@ -123,7 +145,8 @@ Criteria (instead of A's six; `format-was-passiert.md`):
 3. **Die Hand macht es in Bild 0** — the act is one clear movement the
    viewer's low-poly hand can do (pull the lever, drop the spoon, open
    the hatch) — also in space.
-4. **3 Folgen in 40 s** — a chain of three consequences, max 3 terms.
+4. **3 Folgen + Twist in 60 s** — a chain of three consequences plus a
+   surprise or "Rate mal" at the halfway mark, max 3 terms.
 5. **Sicher** — impossible, harmless or warning-only (safety rules in
    `format-was-passiert.md`); never a how-to.
 6. **Für 18–34, Männer und Frauen** — their day (phone, travel, food,

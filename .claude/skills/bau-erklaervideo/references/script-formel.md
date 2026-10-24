@@ -14,23 +14,61 @@ one, SKILL.md step 0) uses this file too, with the differences in
 `format-was-passiert.md` — question hook instead of the 4-word twist, 3
 Folgen instead of 3 build beats, the outcome as payoff.
 
-## Length
+## Length — exactly one minute
 
-**110–122 words including fact, CTA and loop line** (≈ 42–46 s video), never more than
-**128** (≈ 49 s) and never fewer than **105** (≈ 40 s).
-Expected length = words ÷ 2.7 + 1.2 s (measured with Jan, the house voice). Count before showing the script.
+Every video is **exactly 60.0 s** (user's rule, 2026-10-24). Write
+**152–166 words including fact, follow line, CTA and loop line** (Jan ≈
+2.7 words/s), never more than **172** or fewer than **145** —
+`prepare-voice.sh` fits that range to exactly 60 s (≤ 8 % faster or
+slightly longer pauses). Count before showing the script.
 
-## Shape
+A minute is long on TikTok: it only works if **every 8–10 s something
+new and stronger happens**. More words of the same is not enough — the
+extra time goes into one more beat, a mid twist and "Rate mal" moments
+(see "Retention engine" below).
 
-| Part                         | Words               | Job                                                                     |
-| ---------------------------- | ------------------- | ----------------------------------------------------------------------- |
-| **Hook** (line 1)            | 15–22               | win the first 2 s, open a loop                                          |
-| **Beats** (lines 2–4)        | 3 beats, 18–25 each | build the thing; each beat ends pulling into the next                   |
-| **Payoff** (line 5)          | ~8–15               | answer the hook's question in one punchy line — the question text fades |
-| **Bonus fact** (same line 5) | 10–15               | "Übrigens: …" — one surprising, shareable fact                          |
-| **Follow line** (middle)     | 6–9                 | „Folg mir, wenn du noch mehr lernen willst.“ — own line after beat 2    |
-| **CTA** (line before loop)   | 8–14                | comment question                                                        |
-| **Loop bridge** (last line)  | 2–4                 | `> Und merk dir:` — runs straight back into the hook                    |
+## Shape (60 s)
+
+| Part                         | When     | Words | Job                                                                                         |
+| ---------------------------- | -------- | ----- | ------------------------------------------------------------------------------------------- |
+| **Hook** (line 1)            | 0–5 s    | 15–22 | win the first second; twist + Haken; open loop 1 (the big question)                         |
+| **Beat 1**                   | 5–15 s   | 25–30 | first part; ends on the **second money shot** (10–15 s) and opens loop 2                    |
+| **Follow line**              | ~15–18 s | 6–9   | „Folg mir, wenn du noch mehr lernen willst.“ — own line, straight on after it               |
+| **Beat 2**                   | 18–28 s  | 25–30 | second part, bigger than beat 1; closes loop 2, opens loop 3                                |
+| **Mid twist** (re-hook)      | ~28–33 s | 12–18 | at the halfway mark: the obvious explanation is wrong / it's even crazier — or a "Rate mal" |
+| **Beat 3**                   | 33–45 s  | 25–32 | the decisive part (the real trick), the biggest money shot so far                           |
+| **Payoff + Übrigens** (line) | 45–53 s  | 22–28 | answer the hook's question (the question text fades) + "Übrigens: …"                        |
+| **CTA** (line before loop)   | 53–58 s  | 8–14  | comment question                                                                            |
+| **Loop bridge** (last line)  | 58–60 s  | 2–4   | `> Und merk dir:` — runs straight back into the hook                                        |
+
+## Retention engine — how a minute holds
+
+1. **Open-loop chain.** There is always at least one open question. Open
+   the next one _before_ you close the current one: hook question (open
+   until the payoff) → beat 1 ends on a new "but why …?" → beat 2 answers
+   it and opens the next → the mid twist opens the biggest one → beat 3 +
+   payoff close everything. Write the **loop map** (which question is
+   open from when to when) and show it with the script.
+2. **Escalation.** Every 8–10 s a new "Was?!" — a fact, a number, a
+   consequence — each stronger than the one before. Order the facts by
+   strength, weakest first; the strongest goes into beat 3 / the payoff,
+   the second strongest into the mid twist. Never put the best fact
+   first and coast.
+3. **Mid twist at ~30 s.** The halfway mark is the second drop-off point
+   of a minute: break the viewer's new understanding ("Nur: Das allein
+   würde nie reichen.", "Und das Verrückte: Er macht das 50-mal pro
+   Sekunde.") — a statement about the thing, never an announcement.
+4. **"Rate mal" moments** (1–2 per video, after ~15 s): ask the viewer to
+   guess a number or an outcome — "Was glaubst du, wie heiß der Draht
+   wird?" — and answer 2–3 s later with an LED panel and a highlight. A
+   guess makes people wait for the answer, and it drives comments.
+5. **The viewer's life every ~15 s** — "dein Handy", "deine Küche",
+   "wenn du morgen …": it keeps the topic personal.
+6. **No signal of the end** before the payoff: no summary, no "fertig",
+   no "zusammengefasst", no slowing down. The payoff comes late (≥ 45 s).
+7. **Picture keeps pace** (visual-style.md): a cut every 2–3 s (≈ 22–28
+   shots), a highlight every 5–7 s (9–12), **4 money shots** (the hook,
+   10–15 s, the mid twist, beat 3 / payoff).
 
 ### 1. Hook — the first sentence decides everything
 
@@ -86,18 +124,38 @@ sie hinten raus."), then "Lass ihn uns bauen."
 Make it the first (recommended) option every time; the other two hooks
 use different formulas so the user can compare.
 
-Hook formulas (write three, pick the strongest, show the other two to the
-user as alternatives):
+Hook formulas (the hook lab below writes six with them):
 
-| Formula               | Example                                                          |
-| --------------------- | ---------------------------------------------------------------- |
-| **Mythos-Bruch**      | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."          |
-| **Alltags-Rätsel**    | "Warum ist die Rückseite von deinem Kühlschrank warm?"           |
-| **Unglaubliche Zahl** | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst." |
-| **Gefahr / Stakes**   | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."            |
-| **Du-Moment**         | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."       |
-| **Ergebnis zuerst**   | "Ein Kühlschrank ist nur ein Rohr und eine Pumpe."               |
+| Formula                  | Example                                                          |
+| ------------------------ | ---------------------------------------------------------------- |
+| **Mythos-Bruch**         | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."          |
+| **Alltags-Rätsel**       | "Warum ist die Rückseite von deinem Kühlschrank warm?"           |
+| **Unglaubliche Zahl**    | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst." |
+| **Gefahr / Stakes**      | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."            |
+| **Du-Moment**            | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."       |
+| **Ergebnis zuerst**      | "Ein Kühlschrank ist nur ein Rohr und eine Pumpe."               |
+| **Du machst es falsch**  | "Du lädst dein Handy falsch – jede Nacht."                       |
+| **Gefahr im Alltag**     | "Das Gefährlichste in deiner Küche steht neben dem Herd."        |
+| **Identitäts-Twist**     | "Dein Airbag ist eigentlich eine Bombe."                         |
+| **Körper / Ekel**        | "In deinem Kopfkissen leben gerade Millionen Tiere."             |
+| **Unmöglich, aber wahr** | "Diese Rakete landet rückwärts."                                 |
 
+**Hook lab — every script** (user's wish 2026-10-24: "die Hook noch
+stärker"). Write **six** hooks with six different formulas, score each
+0–2 on these six points and keep the best (≥ 10 of 12):
+
+| Point                 | 2 = …                                                                                    |
+| --------------------- | ---------------------------------------------------------------------------------------- |
+| **Twist fast**        | the surprising part is in the first 4 words, sentence 1 ≤ 8 words                        |
+| **Bild 0 zeigt es**   | frame 0 can _show_ exactly this (spoken line, 2–3-word title and picture say one thing)  |
+| **Stakes**            | danger, money, body, disgust, time, or "du machst es falsch" — something to lose or gain |
+| **Dein Alltag**       | "dein / du" + a thing the viewer touched today                                           |
+| **Keine Vorkenntnis** | a stranger at 1 a.m. gets it without context or a technical word                         |
+| **Offene Frage**      | it raises a "Warum?! / Wie?!" the viewer can't answer — and the hook doesn't answer it   |
+
+Show the user the winner and the next two **with their scores**. A
+winner under 10 is a sign the topic is weak — say so and offer another
+topic rather than a weak hook.
 **Hook title (on screen, 0–3 s):** **2–3 words, ≤ 18 characters**, shown
 huge in capitals — readable in the 0.1 s a scroller gives it. The hook's
 twist in fewer words, one keyword in `<em>` (yellow). Not a copy of the spoken
@@ -139,7 +197,7 @@ numbers). So:
   before ~15 s;** 10–15 s is the second money shot (visual-style.md).
   Part names and numbers come after that.
 
-- **3 beats.** Each beat: problem → fix ("Also …" / "Du brauchst …") →
+- **3 beats + the mid twist.** Each beat: problem → fix ("Also …" / "Du brauchst …") →
   the term ("Das ist der X.") — max **3 technical terms** per video.
 - **Every beat ends with a pull** into the next: a problem ("Aber jetzt
   ist das Gas warm."), a question, or a teaser.
@@ -149,10 +207,10 @@ numbers). So:
   failing spectacularly, a size comparison. Write lines that _give_ the
   picture such a moment ("Und dann – zack!", "Stell dir vor, das Ventil
   klemmt …").
-- **One re-hook in the middle** (~15–25 s), concrete and different every
-  video (never the banned phrases above): "Und jetzt passiert etwas, das
-  du nie gesehen hast:", "Der dritte Test ist der, an dem Fälscher
-  scheitern:". Max 2 per video.
+- **The re-hook is the mid twist at ~30 s** (see "Retention engine"):
+  concrete, a statement about the thing, never an announcement —
+  "Der dritte Test ist der, an dem Fälscher scheitern." / "Nur: Das allein
+  würde nie reichen." Max 2 re-hooks per video.
 - **One home moment**: connect to something the viewer can check right
   now — "Fass mal hinter deinen Kühlschrank.", "Hör mal hin, wenn er
   anspringt."
@@ -195,7 +253,7 @@ are spoken by the same voice in the same take; neither may be dropped or
 shortened.
 
 **Follow line (middle)** — its own line in `script.txt`, **right after
-the second money shot / beat 2 (≈ 12–20 s)**, never in the first 10 s:
+beat 1 / the second money shot (≈ 15–18 s)**, never in the first 10 s:
 **„Folg mir, wenn du noch mehr lernen willst.“** (the user's wording) or a
 variant that fits the topic and the tone — „Folg mir, wenn du mehr solche
 Sachen wissen willst.“ / „Folg mir für mehr davon.“ Rules: 6–9 words,
@@ -332,12 +390,19 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] Follow line in the middle (after beat 2, ≈ 12–20 s, 6–9 words, "folg"); comment question at the end, answerable in 1–3 words, no "folg"
 - [ ] Loop line `> …` + hook sentence 1 read as one sentence
 - [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
-- [ ] 110–122 words incl. fact, CTA and loop line (≤ 128, ≥ 105), expected length stated
+- [ ] 152–166 words incl. fact, follow line, CTA and loop line (≤ 172, ≥ 145) → exactly 60 s
+- [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
+- [ ] 60-s shape: beat 1 → follow line (~15–18 s) → beat 2 → mid twist (~30 s) → beat 3 → payoff (≥ 45 s)
+- [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes
+- [ ] Escalation: a new "Was?!" every 8–10 s, weakest first, strongest in beat 3 / payoff; 1–2 "Rate mal" moments after 15 s
 
 ## What to show the user for approval
 
-The script (one part per paragraph), word count + expected length, the
-hook title, **two alternative hooks**, the **cover title** (see SKILL.md
+The script (one part per paragraph), word count (→ exactly 60 s), the
+**loop map** (e.g. "0–47 s: Warum ist er hinten warm? · 13–24 s: Wohin
+mit der Wärme? · 30–41 s: Warum kocht es bei −26 °C?"), the hook title,
+the winning hook + **two alternative hooks with their scores**, the
+**cover title** (see SKILL.md
 step 6b), and per beat one line of visual plan, e.g.:
 
 - Hook: Kühlschrank-Rückseite glüht rot, Wärmepfeile strömen aus der Milch nach hinten

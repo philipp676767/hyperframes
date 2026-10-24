@@ -23,18 +23,22 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 - The CTA question writes itself: "Was sollen wir als Nächstes passieren
   lassen?" — comments that are also the next topics.
 
-## Script shape (same length: 110–122 words, ≈ 42–46 s)
+## Script shape (same length: exactly 60 s, 152–166 words)
 
-| Part                  | Words | Job                                                                                                                                       |
-| --------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)     | 18–30 | The question **"Was passiert eigentlich, wenn du …?"** + the act starting ("Du packst den Griff …") + a reason to stay before 10 s        |
-| **Folge 1** (line 2)  | 15–22 | The first consequence / the condition that makes it strange                                                                               |
-| **Folge 2** (line 3)  | 10–20 | It escalates — the re-hook sits here, often with `[whispers]`                                                                             |
-| **Folge 3** (line 4)  | 15–22 | The decisive consequence: the real mechanism, max 1–2 terms                                                                               |
-| **Payoff + Übrigens** | 18–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                                             |
-| **Follow line**       | 6–9   | „Folg mir, wenn du noch mehr lernen willst.“ — own line after Folge 2 (script-formel.md §4)                                               |
-| **CTA**               | 8–14  | "Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare." (or another comment question tied to the topic, with "folg") |
-| **Loop bridge**       | 2–4   | `> Und jetzt frag dich:` / `> Also nochmal:` — flows into "Was passiert eigentlich, wenn …?"                                              |
+| Part                  | When     | Words | Job                                                                                                                   |
+| --------------------- | -------- | ----- | --------------------------------------------------------------------------------------------------------------------- |
+| **Hook** (line 1)     | 0–5 s    | 18–28 | The question **"Was passiert eigentlich, wenn du …?"** + the act starting ("Du packst den Griff …") + the Haken       |
+| **Folge 1**           | 5–15 s   | 25–30 | The first consequence / the condition that makes it strange; ends on the second money shot                            |
+| **Follow line**       | ~15–18 s | 6–9   | „Folg mir, wenn du noch mehr lernen willst.“ (script-formel.md §4)                                                    |
+| **Folge 2**           | 18–28 s  | 25–30 | It escalates                                                                                                          |
+| **Mid twist**         | ~28–33 s | 12–18 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                           |
+| **Folge 3**           | 33–45 s  | 25–32 | The decisive consequence: the real mechanism, max 1–2 terms                                                           |
+| **Payoff + Übrigens** | 45–53 s  | 22–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                         |
+| **CTA**               | 53–58 s  | 8–14  | "Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare." (or another comment question, no "folg") |
+| **Loop bridge**       | 58–60 s  | 2–4   | `> Und jetzt frag dich:` / `> Also nochmal:` — flows into "Was passiert eigentlich, wenn …?"                          |
+
+The retention engine of script-formel.md (open-loop chain, escalation,
+mid twist, "Rate mal", hook lab) applies here too.
 
 ### Hook — the differences
 
@@ -78,7 +82,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
   ziehen." The answer word must not be spoken earlier in the script (the
   on-screen question is answered on its first use after 6 s).
 - "Übrigens: …" exactly as in script-formel.md.
-- Follow line after Folge 2 (as in script-formel.md §4). CTA at the end:
+- Follow line after Folge 1 (as in script-formel.md §4). CTA at the end:
   default **"Was sollen wir als Nächstes passieren lassen? Schreib's in
   die Kommentare."** — when the user reports
   scenario wishes from the comments, add them to the topic list
@@ -124,15 +128,16 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (121 words ≈ 46 s)
+## Example — Flugzeugtür (164 words → 60 s)
 
 ```text
 [curious] Was passiert eigentlich, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
-Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Drinnen pumpt das Flugzeug Luft rein.
-[whispers] Und genau diese Luft presst die Tür mit mehreren *Tonnen* in den Rahmen.
+Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du nach kurzer Zeit *ohnmächtig* würdest. Darum pumpt das Flugzeug ständig Luft rein – und genau die wird dein Problem.
 Folg mir, wenn du noch mehr lernen willst.
-Und die Tür ist größer als das Loch: ein *Stöpsel*, der zuerst nach *innen* aufgeht – gegen den Druck.
-[excited] Darum bleibt sie *zu*, selbst wenn zehn Leute ziehen. Übrigens: Draußen ist es dort kälter als minus *50* Grad.
+[whispers] Sie drückt von innen gegen die Tür, draußen drückt fast nichts dagegen. Das presst die Tür in den *Rahmen*.
+Was glaubst du: Wie viele Leute müssten ziehen, um das zu schaffen? [surprised] Rund *hundert*.
+Und selbst die hätten keine Chance: Die Tür ist größer als das Loch. Sie sitzt wie ein *Stöpsel* im Rahmen und geht zuerst nach *innen* auf – direkt gegen den Druck.
+[excited] Darum bleibt sie *zu*, egal wie stark du bist. Übrigens: Draußen ist es da oben kälter als minus *50* Grad.
 Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare.
 > Und jetzt frag dich:
 ```
@@ -141,8 +146,10 @@ Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare.
   `Geht die <em>Tür</em> auf?`, answer `zu`.
 - Facts: cruise ~10–12 km (Everest 8,8 km); cabin ~0,75–0,8 bar vs.
   ~0,2–0,25 bar outside → ~0,55 bar ≈ 5,5 t per m², a door of ~1,5 m² →
-  several tonnes; passenger doors are plug doors that first move inward;
+  several tonnes (~8 t ÷ ~80 kg pull per person ≈ 100 people); passenger doors are plug doors that first move inward;
   ~−50 to −56 °C at 11 km.
+- Loop map: 0–50 s Geht die Tür auf? · 12–25 s Warum ist die Luft dein Problem? ·
+  27–31 s Wie viele Leute? · 31–48 s Warum hätten selbst die keine Chance?
 - Visual plan: frame 0 the hand on the door lever inside a sunny cabin,
   window with clouds → Folge 1 cutaway of the plane over the clouds, thin
   air outside (few particles), air pumped in (many) → Folge 2 yellow force

@@ -8,9 +8,18 @@ const root = new URL("..", import.meta.url);
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(new URL("assets/words.js", root), "utf8"), ctx);
 const words = ctx.window.HF_WORDS;
-// same rule as assets/timing.js DURATION: a loop ending stops 0.25 s after the last word
-const tail = ctx.window.HF_LOOP_START != null ? 0.25 : 1.2;
-const dur = Math.ceil((words[words.length - 1].end + tail) * 10) / 10;
+// same rule as assets/timing.js DURATION: exactly LENGTH (one minute) when the
+// voice was fitted to it, else a loop ending stops 0.25 s after the last word
+const LENGTH = 60;
+const loop = ctx.window.HF_LOOP_START != null;
+const last = words[words.length - 1].end;
+const tail = loop ? 0.25 : 1.2;
+const natural = Math.ceil((last + tail) * 10) / 10;
+const dur = loop && last > LENGTH - 2 && last + 0.15 <= LENGTH ? LENGTH : natural;
+if (loop && last > LENGTH - 2 && dur !== LENGTH)
+  console.warn(
+    `WARNING: speech ends at ${last}s — too long for exactly ${LENGTH}s; rerun prepare-voice.sh`,
+  );
 const htmlUrl = new URL("index.html", root);
 let html = fs.readFileSync(htmlUrl, "utf8");
 html = html.replace(/(data-composition-id="main"[\s\S]*?data-duration=")[\d.]+"/, `$1${dur}"`);
