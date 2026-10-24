@@ -218,6 +218,10 @@ for (const sx of [-1, 1]) {
   beam.userData.noAO = true;
   body.add(beam);
 }
+// work light: keeps the sub itself readable in the dark
+const workLight = new THREE.PointLight(0xcfe4ff, 0, 16, 1.2);
+workLight.position.set(1.8, 2.4, 3.0);
+sub.add(workLight);
 // manipulator arm + the cola can (red, unbranded) strapped to it
 const CAN = V(0.98, -0.62, 1.12);
 const canGroup = new THREE.Group();
@@ -605,7 +609,7 @@ const amphipods = [];
       ph: r() * 6,
       s: 0.8 + r() * 0.5,
     };
-    g.scale.setScalar(g.userData.s * 1.3);
+    g.scale.setScalar(g.userData.s * 0.85);
     ground.add(g);
     amphipods.push(g);
   }
@@ -683,14 +687,16 @@ scene.add(car);
 car.visible = false;
 
 // ================================================================ the viewer's hand on the lever (frame 0)
-const hand = createHand({ scale: 0.9 });
-const KNOB = (a) => V(1.55, 0.55 + 0.72 * Math.cos(a), -2.65 + 0.72 * Math.sin(a));
+const hand = createHand({ scale: 1.2 });
+const KNOB = (a) => V(0.95, 0.55 + 0.72 * Math.cos(a), -2.3 + 0.72 * Math.sin(a));
 const handAt = (a, dy = 0) => {
   const k = KNOB(a);
-  return [k.x + 0.2, k.y - 0.05 + dy, k.z + 0.27];
+  return [k.x - 0.1, k.y + 0.1 + dy, k.z - 0.5];
 };
-const HROT = [0.15, -2.5, 0];
+const HROT = [0.35, 0.3, 0];
 
+// beats.js stays three-free: turn its [x, y, z] offsets into vectors here
+for (const s of shots) if (Array.isArray(s.rel)) s.rel = V(...s.rel);
 const applyCamera = shotCamera(shots);
 
 // ================================================================ render
@@ -699,7 +705,7 @@ function renderAt(t) {
   const pull = smooth(ramp(t, 0.08, DROP.at));
   lever.rotation.x = 0.9 * pull;
   hand.track(t, [
-    { t: -0.6, pos: [2.4, 1.5, -1.6], rot: HROT, pose: "open" },
+    { t: -0.6, pos: [1.4, 1.5, -3.6], rot: HROT, pose: "open" },
     { t: -0.05, pos: handAt(0, 0.02), rot: HROT, pose: "grab" },
     { t: 0.08, pos: handAt(0), rot: HROT, pose: "grab" },
     { t: DROP.at, pos: handAt(0.9), rot: HROT, pose: "grab" },
@@ -753,6 +759,7 @@ function renderAt(t) {
   const on = smooth(ramp(t, LIGHTS_ON, LIGHTS_ON + 0.15));
   const flick = t > LIGHTS_ON && t < LIGHTS_ON + 0.3 ? (Math.sin(t * 90) > 0 ? 1 : 0.4) : 1;
   spots.forEach((s) => (s.intensity = 38 * on * flick));
+  workLight.intensity = (16 + 14 * pop(t, T.rate, T.rund, 0.2)) * dark(t);
   lampMat.emissiveIntensity = 2.5 * on * flick;
   beamMat.opacity = 0.075 * on * dark(t);
   domeMat.emissiveIntensity = 0.25 + 0.6 * dark(t);
@@ -794,7 +801,6 @@ function renderAt(t) {
     crateG.rotation.y = 0.5 + t * 0.15;
     crushCrate(smooth(ramp(t, T.zerknuellen, T.zerknuellen + 0.28)));
   }
-  showNope(pop(t, T.zerknuellen + 0.35, T.dein - 0.1), -2.6, -D0 + 1.0, 0.5, 0.6);
 
   // ---------------------------------------------------------------- x-ray: the titanium sphere
   const xr =
@@ -817,13 +823,9 @@ function renderAt(t) {
     snail.rotation.x = -flee * 0.9;
     snail.children[1].rotation.y = Math.sin(t * 9) * 0.25;
   }
-  showNope(
-    Math.max(
-      pop(t, T.zerknuellen + 0.35, T.dein - 0.1) * 0, // (first ✕ drawn above)
-      pop(t, T.fisch + 0.3, T.trotzdem - 0.15),
-    ),
-    ...(t > T.fisch ? [1.7, -D0 + 0.7, 0.6, 0.55] : [-2.6, -D0 + 1.0, 0.5, 0.6]),
-  );
+  // one ✕ at a time: the box (crumpled) or the last fish (turned back)
+  if (t < T.ab) showNope(pop(t, T.zerknuellen + 0.35, T.dein - 0.1), -2.6, -D0 + 1.0, 0.5, 0.6);
+  else showNope(pop(t, T.fisch + 0.3, T.trotzdem - 0.15), 1.7, -D0 + 0.7, 0.6, 0.55);
 
   // ---------------------------------------------------------------- touchdown + amphipods
   puff("land", t, T.trotzdem, 0, -D0 - 1.1, 0, 1.8, 0xb8ad95);
@@ -862,10 +864,10 @@ function renderAt(t) {
     },
   ]);
   puff("hand", t, T.ganz2 + 0.75, NAIL.x - 0.6, -D0 - 1.05, NAIL.z + 0.2, 0.8, 0xb8ad95);
-  car.visible = t >= T.fingernaegel - 0.1 && t < T.fakt + 0.8;
+  car.visible = t >= T.fingernaegel - 0.1 && t < T.fakt + 0.2;
   if (car.visible) {
     const drop = ramp(t, T.ein, T.ein + 0.3);
-    const h = 1.5 * (1 - drop * drop);
+    const h = 0.55 * (1 - drop * drop);
     const hover = (1 - ramp(t, T.ein, T.ein + 0.05)) * Math.sin(t * 2.4) * 0.06;
     car.position.set(NAIL.x, NAIL.y + 0.01 + h + hover, NAIL.z);
     car.rotation.set(0, 0.35, (1 - drop) * 0.15);
@@ -881,15 +883,15 @@ function renderAt(t) {
 
   // ---------------------------------------------------------------- LED panels (one at a time)
   if (t >= T.fahrt && t < T.vier)
-    showPanel(pop(t, T.fahrt, T.vier, 0.25), "FAHRT NACH UNTEN", "? ? ?", LED.yellow);
+    showPanel(pop(t, T.fahrt, T.vier, 0.25), "FAHRT NACH UNTEN", "???", LED.yellow);
   else if (t >= T.vier && t < T.dann4)
-    showPanel(pop(t, T.vier, T.dann4, 0.25), "FAHRT NACH UNTEN", "4 STUNDEN", LED.yellow);
+    showPanel(pop(t, T.vier, T.dann4, 0.25), "FAHRT NACH UNTEN", "4 Std", LED.yellow);
   else if (t >= T.elf && t < T.ab)
-    showPanel(pop(t, T.elf, T.ab), "ÜBER DIR", "11 KM WASSER", LED.blue);
+    showPanel(pop(t, T.elf, T.ab), "WASSER ÜBER DIR", "11 km", LED.blue);
   else if (t >= T.acht && t < T.trotzdem)
-    showPanel(pop(t, T.acht, T.trotzdem), "AB 8 KM", "KEIN FISCH", LED.red);
+    showPanel(pop(t, T.acht, T.trotzdem), "FISCHE AB 8 KM", "0", LED.red);
   else if (t >= T.auto && t < T.fakt + 0.6)
-    showPanel(pop(t, T.auto, T.fakt + 0.6), "AUF DEINEM NAGEL", "≈ 1 TONNE", LED.yellow);
+    showPanel(pop(t, T.auto, T.fakt + 0.6), "AUF DEINEM NAGEL", "1 t", LED.yellow);
   else showPanel(0);
 
   labels(t, LABELS);

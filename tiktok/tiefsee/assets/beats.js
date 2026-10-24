@@ -54,7 +54,7 @@ export const T = {
   fakt: W("Übrigens"),
   forscher: W("Forscher"),
   tuete: W("Plastiktüte"),
-  cta: W("Was", 3),
+  cta: W("Was", 4), // #3 is "noch was"
 };
 
 // ---------------------------------------------------------------- the descent
@@ -105,7 +105,15 @@ export const SUB = [0, -D0, 0];
 export const EV = [90, -D0, 0]; // the Everest tank, far off to the side
 export const shots = [
   // 0: the hand on the release lever on the ship's stern, the sub on the crane
-  { at: 0, from: [4.4, 1.5, 4.4], to: [3.2, 0.9, 3.3], look: [0.7, -0.6, -1.0], zoom: 1.0 },
+  { at: 0, from: [2.3, 2.1, -4.9], to: [1.9, 1.8, -4.3], look: [0.5, 0.75, -1.6], zoom: 1.0 },
+  // … the hook lets go: wide, the sub drops and splashes (spectacle in the first second)
+  {
+    at: DROP.at - 0.04,
+    from: [4.8, 2.0, 4.8],
+    to: [4.3, 1.4, 4.3],
+    look: [0.2, -0.7, -0.4],
+    zoom: 1.0,
+  },
   // under water: the sub sinks out of its own splash, the surface glitters above
   {
     at: T.wenn,
@@ -120,11 +128,11 @@ export const shots = [
   // the can strapped to the sub's arm
   {
     at: T.coladose,
-    from: [1.9, -0.1, 2.5],
-    to: [1.6, -0.3, 2.05],
-    look: [0.9, -0.55, 1.1],
+    from: [3.0, 0.3, 3.2],
+    to: [2.6, 0.0, 2.8],
+    look: [0.7, -0.5, 1.0],
     rel: SUB,
-    zoom: 1.0,
+    zoom: 1.6,
   },
   // ballast vents blow, the sub tips its nose down
   { at: T.hebel, from: [-2.6, 1.6, 3.0], to: [-2.0, 1.2, 2.5], look: [0, 0.1, 0], rel: SUB },
@@ -167,12 +175,19 @@ export const shots = [
   // look up the dark column above the sub
   { at: T.wasser1, from: [1.4, -2.6, 2.6], to: [1.0, -2.2, 2.2], look: [0, 1.6, 0], rel: SUB },
   // the box next to the sub crumples
-  { at: T.kiste, from: [-4.4, 0.8, 4.0], to: [-3.8, 0.6, 3.4], look: [-2.2, 0.0, 0.4], rel: SUB },
+  {
+    at: T.kiste,
+    from: [-3.6, 0.7, 2.8],
+    to: [-3.3, 0.5, 2.4],
+    look: [-2.3, 0.1, 0.5],
+    rel: SUB,
+    zoom: 1.4,
+  },
   // x-ray: the titanium sphere inside
   // (orbit shots are in world coordinates: rel does not apply)
   { at: T.dein, orbit: { c: SUB, r: 3.2, y: SUB[1] + 0.9, a0: 0.9, a1: -0.5 } },
   // Rate mal: far out, a tiny light in endless black
-  { at: T.rate, from: [9, 4, 16], to: [12, 6, 21], look: [0, -0.5, 0], rel: SUB },
+  { at: T.rate, from: [3.4, 1.8, 6.2], to: [4.6, 2.6, 8.6], look: [0, -0.4, 0], rel: SUB },
   // "vier Stunden": crash back in, the snow streaks past
   { at: T.rund, from: [2.4, 0.4, 3.6], to: [2.1, 0.3, 3.1], look: [0, 0.1, 0], rel: SUB },
   // eleven kilometres above you: look up past the sub
@@ -194,25 +209,25 @@ export const shots = [
     to: [0.9, -0.65, 3.0],
     look: [0.4, -1.05, 2.4],
     rel: SUB,
-    zoom: 1.0,
+    zoom: 1.7,
   },
   // payoff: your hand on the seabed
   { at: T.ganz2, from: [-2.4, 0.4, 5.2], to: [-2.0, 0.1, 4.6], look: [-0.6, -0.8, 3.0], rel: SUB },
   // the fingernail, a car hovering above it (slowmo)
   {
     at: T.fingernaegel,
-    from: [0.4, -0.2, 4.6],
-    to: [0.25, -0.35, 4.3],
-    look: [-0.45, -0.85, 3.45],
+    from: [0.6, -0.1, 4.9],
+    to: [0.45, -0.25, 4.6],
+    look: [-0.45, -0.55, 3.45],
     rel: SUB,
-    zoom: 1.0,
+    zoom: 1.45,
   },
   // … it lands
   {
     at: T.auto,
-    from: [-1.9, -0.25, 4.6],
-    to: [-1.75, -0.35, 4.3],
-    look: [-0.45, -0.8, 3.45],
+    from: [-1.0, -0.2, 5.0],
+    to: [-0.9, -0.3, 4.7],
+    look: [-0.45, -0.6, 3.45],
     rel: SUB,
     zoom: 1.0,
   },
@@ -224,15 +239,15 @@ export const shots = [
     to: [2.3, -0.45, 5.2],
     look: [1.6, -1.0, 4.0],
     rel: SUB,
-    zoom: 1.0,
+    zoom: 1.5,
   },
   // CTA: drone pull-back over the trench floor, the sub's lights below
   {
     at: T.cta,
     from: [2.4, 0.8, 4.2],
-    to: [7.5, 6.5, 13.5],
+    to: [4.0, 3.0, 7.2],
     look: [0, -0.6, 0],
-    lookTo: [0, -1.2, -1.5],
+    lookTo: [0, -0.9, -0.5],
     rel: SUB,
     tilt: 0.7,
   },
@@ -245,7 +260,7 @@ export const LABELS = [
     text: "Wasserdruck",
     at: T.wasserdruck,
     until: T.seiten + 0.5,
-    pos: S(0.2, 1.75, 0.3),
+    pos: S(-1.9, -0.35, 0.9),
     side: -1,
   },
   { text: "Titankugel", at: T.titankugel, until: T.rate - 0.1, pos: S(0, 0.55, 0.2) },
