@@ -208,10 +208,9 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                                        | Format | Datum      | Chat                 |
-| ------------------------------------------------------------ | ------ | ---------- | -------------------- |
-| Blitz ins Auto („… im Auto sitzt und der Blitz einschlägt?“) | B      | 2026-10-24 | Video: Blitz         |
-| Schleudersitz                                                | A      | 2026-10-24 | Video: Schleudersitz |
+| Thema         | Format | Datum      | Chat                 |
+| ------------- | ------ | ---------- | -------------------- |
+| Schleudersitz | A      | 2026-10-24 | Video: Schleudersitz |
 
 ## Verwendet
 
@@ -220,4 +219,4 @@ As of 2026-10-23: Kühlschrank, Airfryer, Aufzug, Airbag, Windrad,
 Atomkraftwerk, Mikrowelle, Geschirrspüler, Rauchmelder, Fliegender Tesla,
 Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
-Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung.
+Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B).
