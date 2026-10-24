@@ -17,8 +17,8 @@ Folgen instead of 3 build beats, the outcome as payoff.
 ## Length — exactly one minute
 
 Every video is **exactly 60.0 s** (user's rule, 2026-10-24). Write
-**152–166 words including fact, follow line, CTA and loop line** (Jan ≈
-2.7 words/s), never more than **172** or fewer than **145** —
+**150–164 words including fact, follow line and CTA** (Jan ≈
+2.7 words/s), never more than **170** or fewer than **143** —
 `prepare-voice.sh` fits that range to exactly 60 s (≤ 8 % faster or
 slightly longer pauses). Count before showing the script.
 
@@ -38,8 +38,7 @@ extra time goes into one more beat, a mid twist and "Rate mal" moments
 | **Mid twist** (re-hook)      | ~28–33 s | 12–18 | at the halfway mark: the obvious explanation is wrong / it's even crazier — or a "Rate mal" |
 | **Beat 3**                   | 33–45 s  | 25–32 | the decisive part (the real trick), the biggest money shot so far                           |
 | **Payoff + Übrigens** (line) | 45–53 s  | 22–28 | answer the hook's question (the question text fades) + "Übrigens: …"                        |
-| **CTA** (line before loop)   | 53–58 s  | 8–14  | comment question                                                                            |
-| **Loop bridge** (last line)  | 58–60 s  | 2–4   | `> Und merk dir:` — runs straight back into the hook                                        |
+| **CTA** (last line)          | 53–58 s  | 8–14  | comment question — then the video ends (~1.2 s on the last shot, no loop)                   |
 
 ## Retention engine — how a minute holds
 
@@ -263,7 +262,7 @@ straight on with a strange fact, so it feels like a quick aside, not a
 break. No LED panel or label during it (the pill sits under the
 captions).
 
-**Comment question (end)** — the line before the loop bridge:
+**Comment question (end)** — the last line of the script:
 
 - **One comment question** tied to the topic, answerable in 1–3 words:
   yes/no, either/or, a number, or a personal detail, + „Schreib's in die
@@ -271,22 +270,13 @@ captions).
 - The Kommentieren button pops when this line starts.
 - No generic "Lass ein Like da". No question that needs a paragraph.
 
-### 5. Loop bridge — the video never ends
+### 5. Ending — no loop
 
-The **last line starts with `>`**: 2–4 spoken words that flow, sentence
-and voice, straight into the hook's first sentence, so the restart
-sounds like the video continues — viewers watch a second round without
-noticing (rewatches count heavily). The `>` is never spoken (strip it
-before ElevenLabs).
-
-- Ends with a colon or an open half-sentence: `> Und merk dir:`,
-  `> Denn vergiss nie:`, `> Und jetzt weißt du, warum`, `> Also merk dir:`.
-- Read it together with hook sentence 1 out loud: it must make one
-  sentence ("Und merk dir: Dein Kühlschrank macht gar keine Kälte.").
-- The picture does the rest automatically: at the first bridge word a
-  hard cut (+ whoosh) to the opening shot, the buttons clear, the video
-  stops 0.25 s after the last word, music doesn't fade out — so the last
-  frame matches frame 0.
+**No loop bridge** (user's rule, 2026-10-24; before, a `> Und merk dir:`
+line ran back into the hook). The comment question is the last line;
+after it the picture holds ~1.2 s on a strong last shot (the subject big
+and finished, or the drone pull-back over the world) and the video ends.
+No summary, no "Tschüss", nothing after the question.
 
 CTA patterns:
 
@@ -311,11 +301,10 @@ video** so the voice has highs and lows instead of one flat tone:
 | `[laughs]` / `[chuckles]` | after the one joke                                        |
 | `[surprised]`             | an unbelievable number                                    |
 
-Put the tag right before the words it colours, never two in a row, never
-inside the loop line. Tags are not words: they don't count towards the
+Put the tag right before the words it colours, never two in a row. Tags are not words: they don't count towards the
 word budget, they're removed from the captions automatically, and they
-**do** go to ElevenLabs (keep them in the connector text, only `*` and
-the leading `>` are stripped).
+**do** go to ElevenLabs (keep them in the connector text, only `*` is
+stripped).
 
 ## Keywords — mark them with `*Wort*`
 
@@ -358,13 +347,12 @@ afterwards to show the density: 9 in 129 words.)
 „Folg mir, wenn du noch mehr lernen willst.“ after beat 2 — and the end
 keeps only the comment question.)
 
-From now on every script also gets the bonus fact and the loop bridge —
-for the fridge they would be (beats trimmed by ~16 words to stay ≤ 130):
+Every script also gets the bonus fact (since 2026-10-24 without a loop
+bridge) — for the fridge the end would be:
 
 ```text
 Und genau deshalb ist er hinten *warm*. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
 Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare.
-> Und merk dir:
 ```
 
 What changed against v1: belief-breaking first line instead of "Wenn du
@@ -388,9 +376,8 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] No "Schau dich an. Du hast gerade X gebaut." — the payoff answers the question, then straight to "Übrigens"
 - [ ] Bonus fact starts with "Übrigens", 10–15 words, true, surprising
 - [ ] Follow line in the middle (after beat 2, ≈ 12–20 s, 6–9 words, "folg"); comment question at the end, answerable in 1–3 words, no "folg"
-- [ ] Loop line `> …` + hook sentence 1 read as one sentence
 - [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
-- [ ] 152–166 words incl. fact, follow line, CTA and loop line (≤ 172, ≥ 145) → exactly 60 s
+- [ ] 150–164 words incl. fact, follow line and CTA (≤ 170, ≥ 143) → exactly 60 s; no `> …` loop line
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
 - [ ] 60-s shape: beat 1 → follow line (~15–18 s) → beat 2 → mid twist (~30 s) → beat 3 → payoff (≥ 45 s)
 - [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes

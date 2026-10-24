@@ -22,15 +22,15 @@ export const LAST = WORDS[WORDS.length - 1].end;
 // right before frame 0 (world.js start()), and the video ends 0.25 s after
 // the last word so the restart lands on the beat. null = no loop line.
 export const LOOP = LOOP_START != null ? WORDS[LOOP_START].start : null;
-// House length (user's rule, 2026-10-24): every video is exactly one minute.
-// scripts/prepare-voice.sh fits the speech to end ~0.3 s before it; then the
-// composition is exactly LENGTH (the loop tail is whatever is left, ≥ 0.15 s).
-// Anything else (the short template demo) keeps its natural length, same
-// rule as scripts/sync-html.mjs.
+// House length (user's rule, 2026-10-24): every video is exactly one minute,
+// and it simply ends — no loop line any more (2026-10-24). scripts/prepare-
+// voice.sh fits the speech to end ~1.2 s before 60 s; then the composition
+// is exactly LENGTH. Anything else (the short template demo, old episodes)
+// keeps its natural length — same rule as scripts/sync-html.mjs.
 export const LENGTH = 60;
 const natural = Math.ceil((LAST + (LOOP != null ? 0.25 : 1.2)) * 10) / 10;
-export const DURATION =
-  LOOP != null && LAST > LENGTH - 2 && LAST + 0.15 <= LENGTH ? LENGTH : natural;
+const fitted = LAST > LENGTH - 3 && LAST + (LOOP != null ? 0.15 : 0.6) <= LENGTH;
+export const DURATION = fitted ? LENGTH : natural;
 export const END = LOOP != null ? DURATION : LAST + 1.0;
 
 // Start times of the words marked *like this* in script.txt (yellow, bigger

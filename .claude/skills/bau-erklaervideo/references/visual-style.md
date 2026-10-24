@@ -133,7 +133,7 @@ the picture almost white. Rules for 0–3 s:
   person would touch the thing: it reaches into frame 0 and does the
   action — presses the button, taps the card, touches the plate. Hands
   stop the scroll and make it "you". Start its keys slightly before 0
-  (e.g. `t: -0.6`) so the loop tail already shows it reaching in; keep
+  (e.g. `t: -0.6`) so it is already moving on frame 0; keep
   the subject visible next to it.
 
 **Audience (2026-10-23):** 77 % of viewers are 18–34, half women, mostly
@@ -239,12 +239,9 @@ the first frame, out at 2.8 s.
 CTA starts. Show the fact in the scene too (LED panel with the number, or
 a quick close-up) — never an empty shot under it.
 
-**Loop ending:** on the first word of the `> …` line the picture hard-cuts
-to the opening shot and plays the moments _before_ frame 0 (world.js maps
-t ≥ LOOP to t − DURATION), the buttons clear, the video stops 0.25 s after
-the last word. Nothing to build per video — but the hook state at frame 0
-must be what the scene shows for t < 0 (it is, if every effect is keyed
-with `ramp`/`pop` on anchors ≥ 0).
+**Ending (no loop, 2026-10-24):** the last ~1.2 s after the comment
+question hold one strong last shot — the subject big and finished, or a
+slow drone pull-back over the world. No cut back to frame 0.
 
 **Cover (Titelbild):** the scene frozen at one strong moment, no
 captions / buttons / labels, dark gradient at the top, title Montserrat
@@ -255,7 +252,7 @@ y ≈ 300 px (`scripts/make-cover.sh`).
 "+ Folgen" pill pops in under the captions (y ≈ 1230 px), is tapped one
 second later, flips to grey "Gefolgt" and leaves 1.4 s after that. When
 the comment question at the end starts, a white "Kommentieren" pill with a
-red speech bubble pops in at y ≈ 400 px and pulses until the loop cut.
+red speech bubble pops in at y ≈ 400 px and stays, pulsing, to the end.
 
 ## Sound effects
 

@@ -9,7 +9,7 @@ a surprising outcome. **The formats always alternate** (SKILL.md step 0).
 Everything else stays the house standard: Jan, the look, captions,
 keywords, labels, highlights, the first-3-seconds rules, the open question
 on screen, payoff, "Übrigens", the CTA (never cut, shortened or moved),
-the loop, cover, one-sentence description, learning log. This file only
+the clean ending (no loop), cover, one-sentence description, learning log. This file only
 lists what is **different** from `script-formel.md` and `visual-style.md`.
 
 ## Why it works
@@ -23,7 +23,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 - The CTA question writes itself: "Was sollen wir als Nächstes passieren
   lassen?" — comments that are also the next topics.
 
-## Script shape (same length: exactly 60 s, 152–166 words)
+## Script shape (same length: exactly 60 s, 150–164 words)
 
 | Part                  | When     | Words | Job                                                                                                                   |
 | --------------------- | -------- | ----- | --------------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +35,6 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 | **Folge 3**           | 33–45 s  | 25–32 | The decisive consequence: the real mechanism, max 1–2 terms                                                           |
 | **Payoff + Übrigens** | 45–53 s  | 22–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                         |
 | **CTA**               | 53–58 s  | 8–14  | "Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare." (or another comment question, no "folg") |
-| **Loop bridge**       | 58–60 s  | 2–4   | `> Und jetzt frag dich:` / `> Also nochmal:` — flows into "Was passiert eigentlich, wenn …?"                          |
 
 The retention engine of script-formel.md (open-loop chain, escalation,
 mid twist, "Rate mal", hook lab) applies here too.
@@ -75,7 +74,7 @@ mid twist, "Rate mal", hook lab) applies here too.
 - The banned phrases of script-formel.md apply here too; also never
   "Und jetzt wird's krass" — say the concrete thing.
 
-### Payoff, Übrigens, CTA, loop
+### Payoff, Übrigens, CTA, ending
 
 - **Payoff = the outcome**, answering the hook's question in one line with
   the `answer` word: "Darum bleibt sie _zu_, selbst wenn zehn Leute
@@ -87,8 +86,8 @@ mid twist, "Rate mal", hook lab) applies here too.
   die Kommentare."** — when the user reports
   scenario wishes from the comments, add them to the topic list
   (`themen.md`, Format B).
-- Loop line + hook sentence 1 must read as one sentence: "Und jetzt frag
-  dich: Was passiert eigentlich, wenn du im Flugzeug die Tür aufmachst?"
+- No loop line: the comment question is the last line, the video ends on
+  the outcome shot.
 
 ## Safety — non-negotiable
 
@@ -119,8 +118,7 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - **Cutaway / x-ray only after ~3 s** and only when a Folge needs a look
   inside (pressure in the cabin, the current in the car body).
 - **The payoff shot** shows the outcome big: the door that doesn't move,
-  the car standing there, the passenger unharmed. Then the usual "Übrigens" and CTA shots, loop cut back to
-  the hand at frame 0.
+  the car standing there, the passenger unharmed. Then the usual "Übrigens" and CTA shots; the video ends there.
 - **World:** built new for the scenario like every video (SKILL.md 1b) —
   the act happens _in_ a place (the plane cabin with the window over the
   clouds, the car on a stormy road, the kitchen at night), so that place
@@ -128,7 +126,7 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (164 words → 60 s)
+## Example — Flugzeugtür (160 words → 60 s)
 
 ```text
 [curious] Was passiert eigentlich, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
@@ -139,7 +137,6 @@ Was glaubst du: Wie viele Leute müssten ziehen, um das zu schaffen? [surprised]
 Und selbst die hätten keine Chance: Die Tür ist größer als das Loch. Sie sitzt wie ein *Stöpsel* im Rahmen und geht zuerst nach *innen* auf – direkt gegen den Druck.
 [excited] Darum bleibt sie *zu*, egal wie stark du bist. Übrigens: Draußen ist es da oben kälter als minus *50* Grad.
 Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare.
-> Und jetzt frag dich:
 ```
 
 - Hook title `<em>Tür</em> auf?!`; `hf-config`: question
