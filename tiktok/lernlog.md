@@ -13,7 +13,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 - [ ] **Kein „Schau dich an. Du hast gerade … gebaut.“ mehr** (Nutzer, 2026-10-23): die Auflösung der Hook-Frage geht direkt in „Übrigens“ über.
 - [ ] **Absprung bei ~13 s verhindern:** Hook-Frage erst im Payoff beantworten (Frage bleibt bis dahin oben stehen), vor 10 s ein zweiter konkreter Grund zu bleiben, 10–15 s zweiter Money-Shot, keine Floskel „Jetzt der Trick“, bis 15 s keine Fachbegriffe/Zahlen. ~~Fortschrittsbalken~~ gestrichen (wirkte wie Werbung, Nutzer 2026-10-23); die Frage steht oben als normale Creator-Schrift ohne Box und Symbole.
 - [ ] **Die ersten 3 Sekunden** (wichtigster Punkt!): Titel ab Bild 0, Bewegung ab Bild 0, Spektakel in der 1. Sekunde, erster Schnitt ≤ 1,5 s, kein Röntgen am Anfang, Twist in den ersten 4 Wörtern. Die CTA bleibt unverändert.
-- [ ] Hook: Spektakel zeigen + Grund zum Bleiben („Gleich weißt du, wie.“ — nie eine Sekundenzahl nennen) — nie nur „Lass ihn uns bauen.“
+- [ ] Hook: Spektakel zeigen + ein Haken (zweites seltsames Detail / was auf dem Spiel steht) — **keine Ankündigungen** wie „Gleich weißt du …“, „Am Ende …“, „Bleib dran“ (Nutzer, 2026-10-24), nie eine Sekundenzahl, nie nur „Lass ihn uns bauen.“
 - [ ] Alle 5–7 s ein Highlight (Zeitlupe, Blitz, Wackeln, Crash-Zoom, Reißschwenk) und 2–3 Money-Shots, die die spektakulären Behauptungen **zeigen**.
 - [ ] Klarheit: Objekt groß im Bild, Röntgen-Look max. ⅓ der Zeit, kaum Rand-Unschärfe, starker Farbkontrast.
 - [ ] Stimme mit 3–6 Regieanweisungen (`[excited]`, `[whispers]` …), damit Jan nicht monoton klingt.

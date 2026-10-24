@@ -46,9 +46,10 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 - **Sentence 2 starts the act** in the Du-Form, in the present tense, so
   the picture has motion from frame 0: "Du packst den Griff, ziehst mit
   aller Kraft – und dann?"
-- **Then the second reason to stay**, concrete, never a number of
-  seconds: "Gleich siehst du, warum der Pilot ganz ruhig bleibt." /
-  "Und Folge drei hat noch keiner erwartet."
+- **Then the second reason to stay** — a strange fact about the
+  scenario, never an announcement ("Gleich siehst du …", "Am Ende …")
+  and never a number of seconds: "Und der Pilot? Bleibt ganz ruhig." /
+  "Dabei hält die Tür nur ein Griff."
 - **Never reveal the outcome in the hook.** Not "Spoiler: sie geht nicht
   auf" — the outcome is the payoff, the question stays on screen until then.
 - Hook formulas for the two alternatives: the same question with a
@@ -121,10 +122,10 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (119 words ≈ 45 s)
+## Example — Flugzeugtür (116 words ≈ 44 s)
 
 ```text
-[curious] Was passiert eigentlich, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Gleich siehst du, warum der Pilot ganz ruhig bleibt.
+[curious] Was passiert eigentlich, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
 Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Drinnen pumpt das Flugzeug Luft rein.
 [whispers] Und genau diese Luft presst die Tür mit mehreren *Tonnen* in den Rahmen.
 Und die Tür ist größer als das Loch: ein *Stöpsel*, der zuerst nach *innen* aufgeht – gegen den Druck.

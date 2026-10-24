@@ -40,12 +40,18 @@ bauen" is not a reason to stay. So the hook has two jobs:
 1. **Spektakel / Behauptung** — the most surprising thing about the
    topic, which the first frame _shows_ (the car driving upside down on a
    ceiling, the microwave sparking, the fridge's hot back).
-2. **Das Versprechen** — say what the viewer gets by staying:
-   "Gleich weißt du, wie." / "Am Ende baust du ihn selbst." / "Und der
-   Trick dahinter ist simpel." Then (optionally) "Lass ihn uns bauen."
-   **Never name a number of seconds** ("In 40 Sekunden weißt du, wie" —
-   the user's rule, 2026-10-23): it reminds people how long they still
-   have to watch. Say "gleich" instead.
+2. **Der Haken** — a second strange detail, a consequence or the stakes,
+   said as a fact or a question _about the thing itself_: "Er klaut sie –
+   und schmeißt sie hinten raus." / "Und das Verrückte: Er braucht dafür
+   nicht mal Strom." / "Trotzdem verbrennst du dich nie." The open
+   question is the reason to stay — not an announcement. Then
+   (optionally) "Lass ihn uns bauen."
+   **No promise phrases about the video** (user's rule, 2026-10-24): never
+   "Gleich weißt du / erfährst du / siehst du …", "Am Ende …", "Bleib
+   dran", "Pass auf", "Du wirst nicht glauben …" — and never a number of
+   seconds ("In 40 Sekunden …", 2026-10-23). They talk _about_ the video
+   instead of being interesting, and they remind people that there is
+   still a lot to watch.
 
 **The twist in the first 4 words, sentence 1 ≤ 8 words.** By ~1.2 s
 the viewer must have heard the surprising part: "Dein Herd wird nie heiß."
@@ -63,36 +69,37 @@ Rules:
 - **Sentence 1 ≤ 8 words, the twist within the first 4** and it must do one of: break a belief, state
   an unbelievable fact, ask a question the viewer has _felt_ but never
   answered, or show stakes.
-- **Sentence 2 = the promise, with a reason to stay**: "Gleich weißt
-  du, wie." / "Am Ende baust du ihn selbst." — never only "Lass ihn uns
-  bauen." (that can follow as sentence 3), never a number of seconds.
+- **Sentence 2 = the hook's Haken**: a second strange detail or the
+  stakes ("Er klaut sie – und schmeißt sie hinten raus.") — never only
+  "Lass ihn uns bauen." (that can follow as sentence 3), never a promise
+  phrase ("Gleich …", "Am Ende …") or a number of seconds.
 - **Open a loop** the video closes at the end (a "why", a strange detail,
   a number) — viewers stay to get it.
 - The **first frame already shows the strange thing** (subject mid-action,
   the warm back, the falling car) — never an empty establishing shot.
 
-**House favourite: Mythos-Bruch + Versprechen.** The user picked it for the fridge v2
+**House favourite: Mythos-Bruch + Haken.** The user picked it for the fridge v2
 (Hook A, `tiktok/skripte/kuehlschrank-v2.md`): break a belief in sentence
-1, name what really happens + the promise in sentence 2 ("Er klaut sie –
-und gleich weißt du, wie."), then "Lass ihn uns bauen."
+1, name what really happens in sentence 2 ("Er klaut sie – und schmeißt
+sie hinten raus."), then "Lass ihn uns bauen."
 Make it the first (recommended) option every time; the other two hooks
 use different formulas so the user can compare.
 
 Hook formulas (write three, pick the strongest, show the other two to the
 user as alternatives):
 
-| Formula               | Example                                                               |
-| --------------------- | --------------------------------------------------------------------- |
-| **Mythos-Bruch**      | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."               |
-| **Alltags-Rätsel**    | "Warum ist die Rückseite von deinem Kühlschrank warm?"                |
-| **Unglaubliche Zahl** | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst."      |
-| **Gefahr / Stakes**   | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."                 |
-| **Du-Moment**         | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."            |
-| **Ergebnis zuerst**   | "Gleich baust du einen Kühlschrank – aus einem Rohr und einer Pumpe." |
+| Formula               | Example                                                          |
+| --------------------- | ---------------------------------------------------------------- |
+| **Mythos-Bruch**      | "Dein Kühlschrank macht gar keine Kälte. Er klaut sie."          |
+| **Alltags-Rätsel**    | "Warum ist die Rückseite von deinem Kühlschrank warm?"           |
+| **Unglaubliche Zahl** | "Dein Airbag ist schneller aufgeblasen, als du blinzeln kannst." |
+| **Gefahr / Stakes**   | "Ohne dieses eine Teil würde jeder Aufzug abstürzen."            |
+| **Du-Moment**         | "Du stehst jeden Tag in einer Kiste, die an Seilen hängt."       |
+| **Ergebnis zuerst**   | "Ein Kühlschrank ist nur ein Rohr und eine Pumpe."               |
 
 **Hook title (on screen, 0–3 s):** **2–3 words, ≤ 18 characters**, shown
-huge in capitals — readable in the 0.1 s a scroller gives it. Same promise
-in fewer words, one keyword in `<em>` (yellow). Not a copy of the spoken
+huge in capitals — readable in the 0.1 s a scroller gives it. The hook's
+twist in fewer words, one keyword in `<em>` (yellow). Not a copy of the spoken
 line. E.g. spoken "Dein Kühlschrank macht gar keine Kälte." → title
 "Er <em>lügt</em>!" / "<em>Keine</em> Kälte?!".
 
@@ -118,10 +125,11 @@ numbers). So:
   ist erst Teil 1"), the answer comes with the payoff (last ~25 % before
   the bonus fact). Put the question in `hf-config` (`question`), the word
   that answers it (`answer`) — the question stays on screen until then.
-- **A second, concrete reason to stay before 10 s** — name what's coming,
-  not a formula: "Gleich siehst du, warum dein Wasser dabei nicht kocht."
-  / "Und das Krasseste kommt bei Teil 3." / "Fälscher kennen diesen Test
-  – den dritten aber nicht."
+- **A second, concrete reason to stay before 10 s** — a new strange fact
+  or a bigger question, said about the thing, never an announcement:
+  "Und dein Wasser kocht dabei nicht mal." / "Fälscher kennen diesen Test
+  – den dritten aber nicht." Not "Gleich siehst du …", not "Das Krasseste
+  kommt noch"
 - **Banned stock phrases** (they became the drop-off signal): "Jetzt der
   Trick", "Hier kommt der Trick", "Und jetzt der Trick", "Jetzt wird's
   verrückt", "Aber Achtung". Say the concrete thing instead ("Jetzt
@@ -291,7 +299,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 
 ## Self-check before showing the user
 
-- [ ] Hook = spectacle the first frame shows + a reason to stay ("gleich weißt du, wie" — no seconds)
+- [ ] Hook = spectacle the first frame shows + a Haken (second strange detail / stakes) — no "Gleich …", "Am Ende …", "Bleib dran", no seconds
 - [ ] Would a stranger stop scrolling for the first sentence alone?
 - [ ] Tone: cheeky friend for 18–34 (men and women), nothing school-like; hook title 2–3 words
 - [ ] Topic noun in the first 5 words, sentence 1 ≤ 12 words, no wind-up
