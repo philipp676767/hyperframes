@@ -163,7 +163,6 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 | 🔥 … die Sonne plötzlich ausgeht?                         | Du merkst es erst nach 8 Minuten – und die Erde fliegt geradeaus davon                        | Sonne erlischt, Licht-Welle rast zur Erde, Countdown 8:00                   | unmöglich                           | Weltall   |
 | 🔥 … ein Teelöffel Neutronenstern auf der Erde landet?    | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                   | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden              | unmöglich                           | Weltall   |
 | 🔥 … alle Menschen gleichzeitig hochspringen?             | Gar nichts – die Erde bewegt sich weniger als ein Atom                                        | 8 Milliarden Low-Poly-Menschen springen, LED „0,00000…“                     | harmlos                             | Erde      |
-| 🔥 … zum tiefsten Punkt im Meer tauchst?                  | Auf jedem Fingernagel drückt das Gewicht eines Autos (~1.100 bar, Fakten prüfen)              | U-Boot sinkt ins Dunkel, Druck-Pfeile, Dose wird zerquetscht                | unmöglich (ohne U-Boot)             | Tiefsee   |
 | 🔥 … der Mond verschwindet?                               | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                   | Mond verpufft, Meer flacht ab, Nacht wird schwarz                           | unmöglich                           | Weltall   |
 | 🔥 … im Weltall weinst?                                   | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                             | Träne wächst zur wackelnden Kugel vor dem Auge                              | unmöglich                           | Weltall   |
 | 🔥 … in Treibsand fällst?                                 | Du gehst nicht unter – du bleibst ungefähr bis zur Hüfte stecken (Studie prüfen)              | Beine sinken, Sandkörner in Röntgensicht, Stopp an der Hüfte                | Hinweis, harmlos erklärt            | Natur     |
@@ -182,8 +181,9 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                              | Format | Datum      | Chat           |
+| -------------------------------------------------- | ------ | ---------- | -------------- |
+| 🔥 … zum tiefsten Punkt im Meer tauchst? (Tiefsee) | B      | 2026-10-24 | Video: Tiefsee |
 
 ## Verwendet
 
