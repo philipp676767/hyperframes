@@ -42,3 +42,4 @@ Umgebungen (insel, stadt, …).
 | 30  | Schleudersitz                 | A      | `tiktok/schleudersitz`       | alpental-fliegerhorst | abendlicht       | 60,0 s | 2026-10-24 |
 | 31  | Loch durch die Erde           | B      | `tiktok/erdloch`             | vorstadtgarten        | spätnachmittag   | 60,0 s | 2026-10-25 |
 | 32  | Flugzeugfenster (rund)        | A      | `tiktok/flugzeugfenster`     | testhangar-1950er     | nacht            | 60,0 s | 2026-10-25 |
+| 33  | Ohne Raumanzug ins Weltall    | B      | `tiktok/weltall`             | raumstation-orbit     | sonnenaufgang    | 60,0 s | 2026-10-25 |
