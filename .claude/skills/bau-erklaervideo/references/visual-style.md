@@ -136,7 +136,7 @@ the picture almost white. Rules for 0–3 s:
   0 at phone size — does a stranger see in 0.5 s _what_ it is and _that_
   something wild is happening?
 - **A known warning sign beats a pretty object** (#14 Rauchmelder neu,
-  2026-10-25: best video so far, 1.2K views, 36 % average, 6.85 % to the
+  2026-10-25: most views and highest completion so far, 1.2K views, 36 % average, 6.85 % to the
   end): frame 0 was the ☢ symbol, big, yellow-black, glowing green, with a
   ticking Geiger counter — readable at thumbnail size in a blink. When the
   topic has such an icon (☢, ⚡, flame, skull, warning triangle, a gauge

@@ -142,6 +142,7 @@ packages/studio/data/
 !.agents/skills/seam-craft
 !.agents/skills/captions-overlay
 !.agents/skills/oversized-cursor
+!.agents/skills/bau-erklaervideo
 skills-lock.json
 
 # Skills from other PRs (not managed here)
