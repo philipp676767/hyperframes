@@ -135,9 +135,15 @@ the picture almost white. Rules for 0–3 s:
   (bright on dark); detail macros come after the first cut. Check: frame
   0 at phone size — does a stranger see in 0.5 s _what_ it is and _that_
   something wild is happening?
+- **Frame 0 = the cover shot** (#23 Face ID, 2026-10-25: best episode so
+  far — 6.1K views, 44 % average watch — but most still left at 0:01; it
+  opened on a medium side view of bust + phone, while the cover was the
+  macro of the face covered in dots). Open on the strongest, closest
+  image — the one you would pick as the Titelbild — and cut to the
+  explaining wide shot after ≤ 1.5 s. A face or a hand in frame 0 helps.
 - **A known warning sign beats a pretty object** (#14 Rauchmelder neu,
-  2026-10-25: most views and highest completion so far, 1.2K views, 36 % average, 6.85 % to the
-  end): frame 0 was the ☢ symbol, big, yellow-black, glowing green, with a
+  2026-10-25: 1.2K views, 36 % average, 6.85 % to the end, far ahead of
+  the episodes around it): frame 0 was the ☢ symbol, big, yellow-black, glowing green, with a
   ticking Geiger counter — readable at thumbnail size in a blink. When the
   topic has such an icon (☢, ⚡, flame, skull, warning triangle, a gauge
   in the red), put it big and high-contrast in frame 0, and make the twist
