@@ -126,6 +126,15 @@ the picture almost white. Rules for 0–3 s:
   does this), the subject big, and the strange thing _already happening_
   (bill being scanned by a blue light, bottle erupting, car shooting up,
   fridge back glowing red) — never a calm object standing there.
+- **The subject recognisable at a glance in frame 0** (#11 Mikrowelle,
+  2026-10-25: 265 views, most left at 0:01 although sparks ran from frame
+  0): the camera opened on a macro of fork + plate in a grey cavity, so
+  nobody could tell it was a microwave, and the pale-cyan sparks barely
+  stood out. Show the whole thing as a clear silhouette (the microwave
+  from the front, door glowing) with the spectacle big and high-contrast
+  (bright on dark); detail macros come after the first cut. Check: frame
+  0 at phone size — does a stranger see in 0.5 s _what_ it is and _that_
+  something wild is happening?
 - **Motion from frame 0:** the opening shot moves fast (a big push-in or
   orbit, `from` far → `to` close within the shot), never a slow drift.
 - **First cut ≤ 1.5 s, a second one ≤ 3 s** (hook shots can be short):
