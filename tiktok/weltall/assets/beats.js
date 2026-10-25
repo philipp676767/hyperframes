@@ -95,21 +95,21 @@ export const shots = [
   // twice the size — low angle, black space
   { at: T.doppelte, from: [0.6, 0.2, 3.4], to: [0.45, 0.35, 3.0], look: [0, 1.3, 0.4], zoom: 1 },
   // the skin holds you together: close on the arm
-  { at: T.haut, ...me, from: [1.1, 0.55, 2.6], to: [0.9, 0.45, 2.2], look: [0.15, 0.05, 0] },
+  { at: T.haut, ...me, from: [1.7, 0.6, 3.8], to: [1.45, 0.5, 3.3], look: [0.2, 0.0, 0] },
   // Rate mal: the stopwatch, you in the middle
   { at: T.rate, from: [0, 1.65, 4.3], to: [0, 1.5, 3.7], look: [0, 1.3, 0.3], zoom: 1 },
   // 15 seconds — crash in on your face
-  { at: T.fuenfzehn, ...me, from: [0.25, 0.55, 1.6], to: [0.15, 0.5, 1.3], look: [0, 0.38, 0] },
+  { at: T.fuenfzehn, ...me, from: [0.35, 0.75, 2.6], to: [0.2, 0.65, 2.2], look: [0, 0.45, 0] },
   // then it goes black: slow pull-back
   { at: T.schwarz, from: [1.2, 1.8, 2.6], to: [2.4, 2.6, 4.7], look: [0, 1.2, 0.4], zoom: 1 },
   // x-ray: the blood keeps flowing
   { at: T.blut, ...me, from: [0.9, 0.45, 2.3], to: [0.7, 0.38, 1.9], look: [0, 0.05, 0], whip: 1 },
   // the heart
-  { at: T.herz, ...me, from: [0.38, 0.32, 1.1], to: [0.28, 0.28, 0.88], look: [0.03, 0.18, 0.03] },
+  { at: T.herz, ...me, from: [0.5, 0.4, 1.7], to: [0.38, 0.34, 1.4], look: [0.03, 0.2, 0.03] },
   // the pressure holds it liquid: orbit round the chest
   { at: T.druck, ...me, orbit: { c: [0, 0.15, 0], r: 1.5, y: 0.45, a0: -0.6, a1: 0.2 } },
   // freezing? from below, the body still warm
-  { at: T.erfrieren, from: [-2.6, 0.4, 2.5], to: [-2.2, 0.6, 2.05], look: [0, 1.3, 0.4], zoom: 1 },
+  { at: T.erfrieren, from: [-2.8, 2.6, 3.0], to: [-2.3, 2.2, 2.6], look: [0, 1.1, 0.4], zoom: 1 },
   // the thermos flask floating next to the station
   { at: T.vakuum, ...th, from: [1.7, 1.0, 3.1], to: [1.25, 0.9, 2.45], look: [0, 0.55, 0] },
   {
