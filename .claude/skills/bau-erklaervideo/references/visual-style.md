@@ -141,6 +141,13 @@ the picture almost white. Rules for 0–3 s:
   macro of the face covered in dots). Open on the strongest, closest
   image — the one you would pick as the Titelbild — and cut to the
   explaining wide shot after ≤ 1.5 s. A face or a hand in frame 0 helps.
+- **A known warning sign beats a pretty object** (#14 Rauchmelder neu,
+  2026-10-25: 1.2K views, 36 % average, 6.85 % to the end, far ahead of
+  the episodes around it): frame 0 was the ☢ symbol, big, yellow-black, glowing green, with a
+  ticking Geiger counter — readable at thumbnail size in a blink. When the
+  topic has such an icon (☢, ⚡, flame, skull, warning triangle, a gauge
+  in the red), put it big and high-contrast in frame 0, and make the twist
+  word the first spoken word.
 - **Motion from frame 0:** the opening shot moves fast (a big push-in or
   orbit, `from` far → `to` close within the shot), never a slow drift.
 - **First cut ≤ 1.5 s, a second one ≤ 3 s** (hook shots can be short):
