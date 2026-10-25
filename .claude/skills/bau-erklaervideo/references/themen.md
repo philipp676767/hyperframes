@@ -207,9 +207,8 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                                  | Format | Datum      | Chat           |
-| ------------------------------------------------------ | ------ | ---------- | -------------- |
-| … in ein Loch springst, das durch die ganze Erde geht? | B      | 2026-10-25 | Video: Erdloch |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
