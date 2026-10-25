@@ -209,7 +209,7 @@ eleven_v3 performs them) with `creative_generate_speech`: `voice_id
 keqaIOtp0ePlmN5jgQfy` (Jan), `model_id eleven_v3`,
 **`generations_count: 1`** (the account hits 429 concurrency limits with
 more; a 429 means nothing was generated or charged — retry once with 1).
-Cost ≈ 800 credits (~0.08 $). Poll `creative_get_flow_run_status` (it can
+Cost ≈ 800 credits (~0.08 $). Refused with 429 on the first try → short pieces, see Gotchas. Poll `creative_get_flow_run_status` (it can
 take 1–3 min; wait with a background `sleep 40`, not a foreground sleep),
 then download `content_url` right away (expires after 2 h):
 
@@ -412,14 +412,21 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
 - **Anchors:** `W()` matches whole words case-insensitively and counts
   occurrences; common words ("an", "die", "das") collide across sentences.
   Prefer nouns/verbs that appear once, or pass the occurrence number.
-- **ElevenLabs 429 that won't go away** (#32, 2026-10-25: over an hour of
-  `rate_limited` on the full script, while a one-word test went through):
-  generate the script in **4 parts** (≈ 2 script lines each, delivery tags
-  kept), one at a time, waiting until each is finished and **~3–5 min**
-  after a 429 before the next try; then join them with 0.35 s silence
-  (`ffmpeg … concat`) into `assets/vo_takes/main.mp3` and run
-  `prepare-voice.sh` as usual — `tighten-pauses.py` evens out the joins.
-  Don't burn retries back to back: each refused call extends the block.
+- **ElevenLabs 429 — split right away** (user's rule, 2026-10-25): if the
+  full take is refused on the **first try**, don't wait it out — generate
+  the script in **short pieces**, always: one or two sentences each
+  (**≤ ~90 characters**, delivery tags kept), one at a time. Measured on
+  #33 Weltall: whole script, 2 halves and 4 quarters were refused for over
+  an hour, while single sentences went through. A 429 on a short piece is
+  random load: **retry the same piece right away** (it usually passes on
+  the 2nd–3rd try); after ~4 refusals in a row wait 1–2 min, and if a
+  piece keeps failing split it again. Poll each piece until `completed`,
+  `curl` it to `assets/vo_takes/parts/pNN.mp3` (names sort in script
+  order: `p03a`, `p03b` …), commit the parts as you go (container
+  restarts), then `bash scripts/join-voice.sh` (→ `assets/vo_takes/main.mp3`,
+  0.35 s between pieces) and `prepare-voice.sh` as usual —
+  `tighten-pauses.py` evens out the joins. Cost is the same (credits =
+  characters).
 - **Voice speed (Jan, measured on #6 Atomkraftwerk):** Jan on `eleven_v3`
   reads slowly with ~0.5 s breaths between phrases (130 words = 64.6 s raw).
   His noise floor sits above -35 dB, so `prepare-voice.sh` now cuts every
