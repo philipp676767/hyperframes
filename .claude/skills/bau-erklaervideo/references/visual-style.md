@@ -135,6 +135,13 @@ the picture almost white. Rules for 0–3 s:
   (bright on dark); detail macros come after the first cut. Check: frame
   0 at phone size — does a stranger see in 0.5 s _what_ it is and _that_
   something wild is happening?
+- **A known warning sign beats a pretty object** (#14 Rauchmelder neu,
+  2026-10-25: best video so far, 1.2K views, 36 % average, 6.85 % to the
+  end): frame 0 was the ☢ symbol, big, yellow-black, glowing green, with a
+  ticking Geiger counter — readable at thumbnail size in a blink. When the
+  topic has such an icon (☢, ⚡, flame, skull, warning triangle, a gauge
+  in the red), put it big and high-contrast in frame 0, and make the twist
+  word the first spoken word.
 - **Motion from frame 0:** the opening shot moves fast (a big push-in or
   orbit, `from` far → `to` close within the shot), never a slow drift.
 - **First cut ≤ 1.5 s, a second one ≤ 3 s** (hook shots can be short):
