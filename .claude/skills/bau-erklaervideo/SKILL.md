@@ -412,6 +412,14 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
 - **Anchors:** `W()` matches whole words case-insensitively and counts
   occurrences; common words ("an", "die", "das") collide across sentences.
   Prefer nouns/verbs that appear once, or pass the occurrence number.
+- **ElevenLabs 429 that won't go away** (#32, 2026-10-25: over an hour of
+  `rate_limited` on the full script, while a one-word test went through):
+  generate the script in **4 parts** (≈ 2 script lines each, delivery tags
+  kept), one at a time, waiting until each is finished and **~3–5 min**
+  after a 429 before the next try; then join them with 0.35 s silence
+  (`ffmpeg … concat`) into `assets/vo_takes/main.mp3` and run
+  `prepare-voice.sh` as usual — `tighten-pauses.py` evens out the joins.
+  Don't burn retries back to back: each refused call extends the block.
 - **Voice speed (Jan, measured on #6 Atomkraftwerk):** Jan on `eleven_v3`
   reads slowly with ~0.5 s breaths between phrases (130 words = 64.6 s raw).
   His noise floor sits above -35 dB, so `prepare-voice.sh` now cuts every

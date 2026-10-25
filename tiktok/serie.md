@@ -41,3 +41,4 @@ Umgebungen (insel, stadt, …).
 | 29  | Blitz ins Auto                | B      | `tiktok/blitz-auto`          | gewitter-landstraße   | nacht            | 60,0 s | 2026-10-24 |
 | 30  | Schleudersitz                 | A      | `tiktok/schleudersitz`       | alpental-fliegerhorst | abendlicht       | 60,0 s | 2026-10-24 |
 | 31  | Loch durch die Erde           | B      | `tiktok/erdloch`             | vorstadtgarten        | spätnachmittag   | 60,0 s | 2026-10-25 |
+| 32  | Flugzeugfenster (rund)        | A      | `tiktok/flugzeugfenster`     | testhangar-1950er     | nacht            | 60,0 s | 2026-10-25 |
