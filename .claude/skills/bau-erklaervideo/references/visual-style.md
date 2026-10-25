@@ -135,6 +135,12 @@ the picture almost white. Rules for 0–3 s:
   (bright on dark); detail macros come after the first cut. Check: frame
   0 at phone size — does a stranger see in 0.5 s _what_ it is and _that_
   something wild is happening?
+- **Frame 0 = the cover shot** (#23 Face ID, 2026-10-25: best episode so
+  far — 6.1K views, 44 % average watch — but most still left at 0:01; it
+  opened on a medium side view of bust + phone, while the cover was the
+  macro of the face covered in dots). Open on the strongest, closest
+  image — the one you would pick as the Titelbild — and cut to the
+  explaining wide shot after ≤ 1.5 s. A face or a hand in frame 0 helps.
 - **Motion from frame 0:** the opening shot moves fast (a big push-in or
   orbit, `from` far → `to` close within the shot), never a slow drift.
 - **First cut ≤ 1.5 s, a second one ≤ 3 s** (hook shots can be short):
