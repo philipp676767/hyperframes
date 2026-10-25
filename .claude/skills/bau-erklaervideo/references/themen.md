@@ -145,20 +145,20 @@ it carries a minute (≥ 5 facts: the reason, the physics, the history /
 an accident, a comparison, the "Übrigens"); else keep it for a later
 short format. Counts as format A in the alternation.
 
-| Detail (Hook-Frage)                                     | Die Auflösung (nur fürs Payoff!)                                                                     | Money-Shot                                                         | Kategorie |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | --------- |
-| ★ Warum hat dein Kugelschreiber-Deckel ein Loch?        | Damit man noch Luft bekommt, wenn ein Kind ihn verschluckt (Fakten prüfen)                           | Deckel im Röntgenblick in der Luftröhre, Luft strömt durchs Loch   | Alltag    |
-| 🔥 Warum haben Flugzeugfenster ein winziges Loch?       | Es gleicht den Druck zwischen den Scheiben aus – die äußere trägt die Last, die mittlere ist Reserve | Drei Scheiben im Schnitt, Druckpfeile, Luft zischt durchs Loch     | Reisen    |
-| 🔥 Warum sind Flugzeugfenster rund?                     | Ecken reißen unter Druck – eckige Fenster haben in den 1950ern Flugzeuge zerrissen (Fakten prüfen)   | Eckiges Fenster, Risse wachsen aus den Ecken, Zeitlupe             | Reisen    |
-| ★ Wofür ist der kleine Pfeil an deiner Tankanzeige?     | Er zeigt, auf welcher Seite der Tankdeckel ist                                                       | Riesige Tankanzeige, Pfeil leuchtet, Auto dreht sich zur Säule     | Auto      |
-| ★ Was bedeuten die bunten Striche am Zahnpasta-Ende?    | Nichts über den Inhalt – Lichtschranken-Marken für die Maschine, die die Tube schneidet              | Tube auf dem Fließband, Laser trifft den Strich, _zack_, Schnitt   | Bad       |
-| Warum ist der Boden deiner Dose nach innen gewölbt?     | Die Kuppel hält den Druck der Kohlensäure – flach würde er sich ausbeulen                            | Druckpfeile drücken, flacher Boden beult aus, Kuppel hält          | Essen     |
-| Warum sind Gullideckel rund?                            | Ein runder Deckel kann nie durch sein eigenes Loch fallen                                            | Eckiger Deckel kippt diagonal ins Loch, runder bleibt liegen       | Stadt     |
-| Warum hat ein Vorhängeschloss unten ein kleines Loch?   | Regenwasser läuft ab und gefriert nicht im Schloss (Fakten prüfen)                                   | Wasser läuft rein, friert, Schloss klemmt – mit Loch läuft es raus | Zuhause   |
-| ★ Wofür ist die Mini-Tasche in deiner Jeans?            | Ursprünglich für die Taschenuhr (Fakten prüfen)                                                      | Jeans in Röntgensicht, Taschenuhr gleitet hinein                   | Mode      |
-| Warum liegen Bahngleise auf Steinen?                    | Der Schotter verteilt das Gewicht, lässt Wasser ablaufen und hält die Schwellen fest                 | Zug rollt, Gewichtspfeile verteilen sich, Regen versickert         | Reisen    |
-| Warum ist der Rand von Münzen geriffelt?                | Früher feilten Leute Silber vom Rand ab – die Riffel verrieten es (Fakten prüfen)                    | Feile schabt Silber ab, Riffel verschwinden                        | Geld      |
-| Wofür sind die zwei Metallklammern an deiner Steckdose? | Der Schutzkontakt: Bei einem Defekt fließt der Strom dort ab statt durch dich                        | Fehlerstrom im Röntgenblick, Strom biegt in die Klammer ab         | Zuhause   |
+| Detail (Hook-Frage)                                     | Die Auflösung (nur fürs Payoff!)                                                                     | Money-Shot                                                             | Kategorie |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | --------- |
+| ★ Warum hat dein Kugelschreiber-Deckel ein Loch?        | Damit man noch Luft bekommt, wenn ein Kind ihn verschluckt (Fakten prüfen)                           | Deckel im Röntgenblick in der Luftröhre, Luft strömt durchs Loch       | Alltag    |
+| 🔥 Warum haben Flugzeugfenster ein winziges Loch?       | Es gleicht den Druck zwischen den Scheiben aus – die äußere trägt die Last, die mittlere ist Reserve | Drei Scheiben im Schnitt, Druckpfeile, Luft zischt durchs Loch         | Reisen    |
+| Warum steht auf Flugzeugflügeln „No Step“?              | Der Flügel ist dort nur dünnes Blech über Rippen – ein Fuß würde eine Delle treten (Fakten prüfen)   | Riesiger Stiefel auf dem Flügel, Blech beult ein, Röntgen zeigt Rippen | Reisen    |
+| ★ Wofür ist der kleine Pfeil an deiner Tankanzeige?     | Er zeigt, auf welcher Seite der Tankdeckel ist                                                       | Riesige Tankanzeige, Pfeil leuchtet, Auto dreht sich zur Säule         | Auto      |
+| ★ Was bedeuten die bunten Striche am Zahnpasta-Ende?    | Nichts über den Inhalt – Lichtschranken-Marken für die Maschine, die die Tube schneidet              | Tube auf dem Fließband, Laser trifft den Strich, _zack_, Schnitt       | Bad       |
+| Warum ist der Boden deiner Dose nach innen gewölbt?     | Die Kuppel hält den Druck der Kohlensäure – flach würde er sich ausbeulen                            | Druckpfeile drücken, flacher Boden beult aus, Kuppel hält              | Essen     |
+| Warum sind Gullideckel rund?                            | Ein runder Deckel kann nie durch sein eigenes Loch fallen                                            | Eckiger Deckel kippt diagonal ins Loch, runder bleibt liegen           | Stadt     |
+| Warum hat ein Vorhängeschloss unten ein kleines Loch?   | Regenwasser läuft ab und gefriert nicht im Schloss (Fakten prüfen)                                   | Wasser läuft rein, friert, Schloss klemmt – mit Loch läuft es raus     | Zuhause   |
+| ★ Wofür ist die Mini-Tasche in deiner Jeans?            | Ursprünglich für die Taschenuhr (Fakten prüfen)                                                      | Jeans in Röntgensicht, Taschenuhr gleitet hinein                       | Mode      |
+| Warum liegen Bahngleise auf Steinen?                    | Der Schotter verteilt das Gewicht, lässt Wasser ablaufen und hält die Schwellen fest                 | Zug rollt, Gewichtspfeile verteilen sich, Regen versickert             | Reisen    |
+| Warum ist der Rand von Münzen geriffelt?                | Früher feilten Leute Silber vom Rand ab – die Riffel verrieten es (Fakten prüfen)                    | Feile schabt Silber ab, Riffel verschwinden                            | Geld      |
+| Wofür sind die zwei Metallklammern an deiner Steckdose? | Der Schutzkontakt: Bei einem Defekt fließt der Strom dort ab statt durch dich                        | Fehlerstrom im Röntgenblick, Strom biegt in die Klammer ab             | Zuhause   |
 
 ## Offen — Format B „Was passiert, wenn …?“
 
@@ -207,8 +207,9 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                | Format | Datum      | Chat                   |
+| ------------------------------------ | ------ | ---------- | ---------------------- |
+| Flugzeugfenster rund (Detail-Rätsel) | A      | 2026-10-25 | Video: Flugzeugfenster |
 
 ## Verwendet
 
