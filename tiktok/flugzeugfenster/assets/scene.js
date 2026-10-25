@@ -870,12 +870,14 @@ jet.pieces.rear.bodyG.add(jetCrack.g);
 // the geyser: water beads blasting up out of the tank
 const GEY_N = 120;
 const geyser = new THREE.InstancedMesh(
-  new THREE.IcosahedronGeometry(0.11, 0),
+  new THREE.IcosahedronGeometry(0.075, 1),
   new THREE.MeshStandardMaterial({
-    color: 0xbfe8ff,
-    roughness: 0.1,
+    color: 0x7cc8ff,
+    emissive: 0x2a7fd0,
+    emissiveIntensity: 0.35,
+    roughness: 0.05,
     transparent: true,
-    opacity: 0.85,
+    opacity: 0.8,
   }),
   GEY_N,
 );
@@ -1116,7 +1118,7 @@ function renderAt(t) {
     });
     sparks.instanceMatrix.needsUpdate = true;
   }
-  const br = hook ? ramp(t, T.mitten, T.denn) : 0; // break progress (slowmo)
+  const br = hook ? ramp(t, T.mitten, T.mitten + 0.85) : 0; // break progress (slowmo)
   const be = smooth(br);
   fly.front.position.set(-be * 1.4, -be * 2.2 - be * be * 2, 0);
   fly.front.rotation.set(be * 0.3, 0, be * 0.9);
@@ -1183,7 +1185,8 @@ function renderAt(t) {
   // ------------------------------------------------ the parked jet
   dangerGlow.material.opacity =
     0.9 * pop(t, T.gefaehr - 0.1, T.stell) * (0.75 + 0.25 * Math.sin(t * 12));
-  const rk = (i, x) => ramp(t, T.rund - 0.25 + (x + 3.2) * 0.07, T.rund + 0.15 + (x + 3.2) * 0.07);
+  const rk = (i, x) =>
+    ramp(t, T.darum + 0.35 + (x + 3.2) * 0.07, T.darum + 0.75 + (x + 3.2) * 0.07);
   setWindows(jet.pieces.front.win, rk);
   setWindows(jet.pieces.rear.win, rk);
   jet.pieces.beacon.material.emissiveIntensity = Math.sin(t * 7) > 0.6 ? 4 : 0.3;
@@ -1222,7 +1225,7 @@ function renderAt(t) {
     });
   bubbles.instanceMatrix.needsUpdate = true;
   // zack: the geyser
-  const gk = t >= T.zack && t < T.riss + 0.3 ? (t - T.zack) / 1.6 : -1;
+  const gk = t >= T.zack && t < T.riss + 0.3 ? (t - T.zack) / 0.55 : -1;
   geyser.visible = gk >= 0;
   if (geyser.visible)
     geySeed.forEach(([a, b, c, d], i) => {
@@ -1298,7 +1301,7 @@ function renderAt(t) {
   clip.visible = clipOn;
   const bendT = clamp01((t - T.biegst + 0.3) / Math.max(0.5, T.bricht - T.biegst + 0.5));
   const bends = t < T.biegst - 0.3 ? 0 : Math.sin(bendT * Math.PI * 2 * 2.5) * 0.9;
-  const snap = ramp(t, T.bricht + 0.2, T.bricht + 1.4);
+  const snap = ramp(t, T.bricht + 0.05, T.bricht + 0.65);
   clipPivot.rotation.x = snap > 0 ? 0.9 + snap * 1.2 : bends;
   clipPivot.position.set(
     snap * 0.4,
@@ -1308,7 +1311,7 @@ function renderAt(t) {
   clipPivot.rotation.z = snap * 2.5;
   bendGlow.material.opacity = clipOn ? clamp01(bendT * 1.1) * (snap > 0 ? 1 - snap : 1) * 0.85 : 0;
   bendGlow.material.color.setHex(bendT > 0.75 ? 0xffd27a : 0xff7a1a);
-  puff("snap", t, T.bricht + 0.2, CLIP[0], CLIP_Y + BEND_Y * CLIP_S, CLIP[2], 0.6);
+  puff("snap", t, T.bricht + 0.05, CLIP[0], CLIP_Y + BEND_Y * CLIP_S, CLIP[2], 0.6);
   hand.track(t, [
     { t: T.klammer - 0.4, pos: [1.2, 0.5, 0.3], rot: [0, -Math.PI / 2, 0.2], pose: "open" },
     { t: T.klammer + 0.2, pos: [0.62, 0.38, 0.04], rot: [0, -Math.PI / 2, 0.15], pose: "grab" },
@@ -1349,7 +1352,7 @@ function renderAt(t) {
   // the guess: the force on the window ticks up
   if (t >= T.rate && t < T.kraft1) {
     const v = Math.round(480 * Math.pow(smooth(ramp(t, T.rate + 0.4, T.tonne)), 1.4));
-    counter("kg", pop(t, T.rate + 0.2, T.kraft1), {
+    counter("kg", pop(t, T.rate + 0.6, T.kraft1), {
       label: "Druck aufs Fenster",
       value: `${v} kg`,
       x: 70,

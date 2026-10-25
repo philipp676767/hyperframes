@@ -311,6 +311,10 @@
           const el = document.createElement("div");
           el.className = w.hl ? "word hl" : "word";
           el.textContent = w.w;
+          // long words ("auseinandergebrochen") shrink so they never run off the frame
+          const fit = w.hl ? 14 : 18;
+          if (w.w.length > fit)
+            el.style.fontSize = `${Math.round(((w.hl ? 100 : 78) * fit) / w.w.length)}px`;
           box.appendChild(el);
           const next = words[i + 1];
           const off = next ? Math.min(next.start, w.end + 0.6) : w.end + 0.8;

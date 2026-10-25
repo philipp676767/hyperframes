@@ -202,8 +202,8 @@ export const HIGHLIGHTS = [
   { kind: "flash", at: T.zack },
   { kind: "shake", at: T.zack, dur: 0.8, amp: 1.3 },
   { kind: "slowmo", at: T.zack + 0.05, until: T.riss, speed: 0.4 },
-  { kind: "flash", at: T.bricht + 0.2 },
-  { kind: "zoom", at: T.rund, amount: 0.25 },
+  { kind: "flash", at: T.bricht + 0.05 },
+  { kind: "zoom", at: T.darum + 0.4, amount: 0.25 },
 ];
 
 // ---------------------------------------------------------------- sound
@@ -222,6 +222,6 @@ export const SFX = [
   { s: "reissen", at: T.zack, db: -6 },
   { s: "klack", at: T.biegst, db: -14 },
   { s: "klack", at: T.biegst + 0.45, db: -14 },
-  { s: "reissen", at: T.bricht + 0.2, db: -12 },
+  { s: "reissen", at: T.bricht + 0.05, db: -12 },
   { s: "zisch", at: T.loch1, dur: 1.2, db: -22 }, // air through the tiny hole
 ];

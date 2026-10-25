@@ -248,17 +248,33 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="57.8"
+      data-duration="60"
       data-width="1080"
       data-height="1920"
     >
       <canvas id="stage" width="1080" height="1920"></canvas>
       <div id="captions"></div>
       <audio
+        id="vo"
+        src="assets/voiceover.mp3"
+        data-start="0"
+        data-duration="60"
+        data-track-index="2"
+        data-volume="1"
+      ></audio>
+      <audio
+        id="bgm"
+        src="assets/bgm.mp3"
+        data-start="0"
+        data-duration="60"
+        data-track-index="3"
+        data-volume="1"
+      ></audio>
+      <audio
         id="sfx"
         src="assets/sfx.mp3"
         data-start="0"
-        data-duration="57.8"
+        data-duration="60"
         data-track-index="4"
         data-volume="1"
       ></audio>
@@ -319,6 +335,10 @@
           const el = document.createElement("div");
           el.className = w.hl ? "word hl" : "word";
           el.textContent = w.w;
+          // long words ("auseinandergebrochen") shrink so they never run off the frame
+          const fit = w.hl ? 14 : 18;
+          if (w.w.length > fit)
+            el.style.fontSize = `${Math.round(((w.hl ? 100 : 78) * fit) / w.w.length)}px`;
           box.appendChild(el);
           const next = words[i + 1];
           const off = next ? Math.min(next.start, w.end + 0.6) : w.end + 0.8;
@@ -454,7 +474,7 @@
             );
           }
         }
-        tl.set({}, {}, 57.8);
+        tl.set({}, {}, 60);
         window.__timelines["main"] = tl;
       })();
     </script>
