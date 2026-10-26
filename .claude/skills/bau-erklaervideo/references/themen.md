@@ -88,10 +88,52 @@ Format A — score each open candidate on these six (+ the two above):
    ★ in the list fit best — pick those first.
 
 Also: vary the category from the last 2 episodes (kitchen → street →
-money/tech → nature …), and use the **Saison** column (Silvester in late
+money/tech → nature …), run the **Trend-Check** (2b) and use the **Saison** column (Silvester in late
 December, Heizung / Taschenwärmer in winter, Klimaanlage / Ventilator in
 summer). Before writing the script, check the key facts and numbers of
 the topic (web search if available) and phrase anything uncertain safely.
+
+## 2b. Trend-Check — topical when it fits, never forced
+
+The user's wish (2026-10-26): **whenever it fits, take a topic that is
+in the air right now** — like the flying Tesla the day it went viral, or
+the Taschenwärmer when it got cold. **But only when it fits:** never dig
+up some news item nobody cares about just to be current. An evergreen
+topic that scores high always beats a weak trend.
+
+Before every proposal, check two things (2 minutes, not a research
+project):
+
+1. **Right now** (web search when available, else what you know of the
+   last days): a tech / science / everyday moment people talk about this
+   week — a viral clip (Tesla flies, a rocket lands), a launch everyone
+   sees (new iPhone, a new Deutschland-Ticket rule), a weather event
+   (Hitzewelle, erster Schnee, Sturm, Glatteis), a big event (WM, Wiesn,
+   Silvester). Ask: _would a young scroller in AT/CH/DE recognise it
+   without context this week?_ If not, it's not a trend for us.
+2. **The calendar** (always available) — what everybody's life is about
+   in the next 1–2 weeks:
+
+| Zeit       | Was alle gerade erleben                                 | Themen-Ideen                                                                  |
+| ---------- | ------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Ende Okt   | Zeitumstellung, es wird kalt und früh dunkel, Halloween | Taschenwärmer ✓, Heizkörper-Thermostat, Funkuhr stellt sich um, Nebelmaschine |
+| Nov        | Grau, Erkältung, Black Friday, St. Martin               | Fieberthermometer, Paketzustellung / Paketstation, Wärmflasche, Laterne       |
+| Dez        | Advent, Glühwein, Schnee, Weihnachten, Silvester        | Lichterkette, Glatteis / Streusalz, Silvesterrakete, Wunderkerze              |
+| Jan–Feb    | Kälte, Skiurlaub, Fasching, Vorsätze / Gym              | Schneekanone, Sessellift, Smartwatch-Puls, Eisdiele (Kältemaschine)           |
+| März–April | Frühling, Zeitumstellung, Ostern                        | Pollen / Luftfilter, Funkuhr, Rasenmäher-Roboter                              |
+| Mai–Aug    | Hitze, Gewitter, Urlaub, Festivals, Freibad             | Klimaanlage, Ventilator, Blitz im Auto, Flugzeug-Themen, 10-Meter-Brett       |
+| Sept       | Schulstart, neues iPhone, Wiesn                         | Face ID ✓, Akku / Schnellladen, Bierzapfanlage, Achterbahn                    |
+
+**How it goes into the pick:** a trend is a bonus, not a rule — **+2 on
+the scorecard** when the topic is clearly in the air this week (+1 for
+the season), and it still needs ≥ 12 / 16 like any other topic, the
+duplicate check and the format that is due (a trend usually fits either
+format: the flying Tesla works as "Bauen" and as "Was passiert, wenn …?").
+If the trend only fits the other format, take the best evergreen topic
+instead — or ask the user whether to swap the order once. Say it in the
+proposal in one line: "Trend: es wird kalt (Saison)" or "Kein passender
+Trend gerade — bestes Dauerthema". A video on a hot trend should go out
+**within 1–3 days**; say so if it's time-critical.
 
 ## 3. Reserve it right away
 

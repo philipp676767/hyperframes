@@ -60,7 +60,9 @@ wenn …?"). If the user explicitly asks for a format or names a topic
 that only fits one, take theirs — the next video goes on alternating
 from it.
 
-**Then the topic** — the user leaves it to you (2026-10-23). Follow
+**Then the topic** — the user leaves it to you (2026-10-23). **Topical
+when it fits** (2026-10-26): run the Trend-Check in `themen.md` 2b — a
+trend or the season gives a bonus, never a weak topic. Follow
 `references/themen.md`: **duplicate check first** (`tiktok/serie.md`,
 every folder in `tiktok/`, the reserved list, remote branches), then pick
 the best open topic **of that format's list** by its criteria (format A
