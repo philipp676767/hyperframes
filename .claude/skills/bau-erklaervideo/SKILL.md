@@ -425,6 +425,16 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
   may time out harmlessly; re-arm it). Splitting into parts doesn't help:
   one render already uses all 4 cores. Tell the user ~2 h, not 40–60 min.
 
+- **Commit blocked by "Skill mirror out of sync"** (#37 Kaugummi,
+  2026-10-26): the repo's commit hook runs `bun run lint`, which checks that
+  `.claude/skills/` and `.agents/skills/` match. `.agents/skills/bau-erklaervideo`
+  is git-ignored, so a fresh container doesn't have it and every commit is
+  refused. Fix: `cp -r .claude/skills/bau-erklaervideo .agents/skills/`
+  (local only, nothing to commit), then commit again.
+- **A worker restart kills the render too** (#37): even a detached render
+  dies when the session's worker restarts. Check `pgrep -f "node.*hyperframes
+render"` after any restart notice and start it again (clear
+  `renders/work-*` and `renders/.<slug>.hf-transaction-*` first).
 - **X-ray glass:** use `xrayMaterial()` + `setXray()`. Never toggle
   `material.transparent` at runtime — three.js keeps the opaque shader and
   the shell stays solid in sequential renders.
