@@ -23,7 +23,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 - The CTA question writes itself: "Was sollen wir als Nächstes passieren
   lassen?" — comments that are also the next topics.
 
-## Script shape (same length: exactly 60 s, 166–182 words)
+## Script shape (same length: exactly 60 s, 186–202 words)
 
 | Part                  | When     | Words | Job                                                                                                                   |
 | --------------------- | -------- | ----- | --------------------------------------------------------------------------------------------------------------------- |
@@ -126,13 +126,13 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (181 words → 60 s)
+## Example — Flugzeugtür (191 words → 60 s)
 
 ```text
 [curious] Was passiert eigentlich, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
 Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du nach kurzer Zeit *ohnmächtig* würdest. Darum pumpt das Flugzeug ständig Luft rein – und genau die wird dein Problem.
 Folg mir, wenn du noch mehr lernen willst.
-[whispers] Sie drückt von innen gegen die Tür, draußen drückt fast nichts dagegen. Das presst die Tür in den *Rahmen*.
+[whispers] Sie drückt von innen gegen die Tür, draußen drückt fast nichts dagegen. Das presst die Tür in den *Rahmen*. Auf jedem Quadratmeter lastet so viel wie ein ausgewachsener *Elefant*.
 Was glaubst du: Wie viele Leute müssten ziehen, um das zu schaffen? [surprised] Rund *hundert*. Viel Spaß im Gang.
 Und selbst die hätten keine Chance: Die Tür ist größer als das Loch. Sie sitzt wie ein *Stöpsel* im Rahmen und geht zuerst nach *innen* auf – direkt gegen den Druck.
 Erst am Boden geht sie ganz leicht auf – wenn drinnen und draußen gleich viel Luft drückt.
@@ -144,7 +144,7 @@ Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare.
   `Geht die <em>Tür</em> auf?`, answer `zu`.
 - Facts: cruise ~10–12 km (Everest 8,8 km); cabin ~0,75–0,8 bar vs.
   ~0,2–0,25 bar outside → ~0,55 bar ≈ 5,5 t per m², a door of ~1,5 m² →
-  several tonnes (~8 t ÷ ~80 kg pull per person ≈ 100 people); passenger doors are plug doors that first move inward;
+  several tonnes, ~5,5 t per m² ≈ an adult elephant (~8 t ÷ ~80 kg pull per person ≈ 100 people); passenger doors are plug doors that first move inward;
   ~−50 to −56 °C at 11 km.
 - Loop map: 0–50 s Geht die Tür auf? · 12–25 s Warum ist die Luft dein Problem? ·
   27–31 s Wie viele Leute? · 31–48 s Warum hätten selbst die keine Chance?
