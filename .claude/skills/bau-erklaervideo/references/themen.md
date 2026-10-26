@@ -88,7 +88,7 @@ Format A — score each open candidate on these six (+ the two above):
    ★ in the list fit best — pick those first.
 
 Also: vary the category from the last 2 episodes (kitchen → street →
-money/tech → nature …), run the **Trend-Check** (2b) and use the **Saison** column (Silvester in late
+money/tech → nature …), run the **Trend-Check** (2b — trends are the exception, max one of three proposals) and use the **Saison** column only as a hint (Silvester in late
 December, Heizung / Taschenwärmer in winter, Klimaanlage / Ventilator in
 summer). Before writing the script, check the key facts and numbers of
 the topic (web search if available) and phrase anything uncertain safely.
@@ -111,8 +111,8 @@ project):
    (Hitzewelle, erster Schnee, Sturm, Glatteis), a big event (WM, Wiesn,
    Silvester). Ask: _would a young scroller in AT/CH/DE recognise it
    without context this week?_ If not, it's not a trend for us.
-2. **The calendar** (always available) — what everybody's life is about
-   in the next 1–2 weeks:
+2. **The calendar** — only as an idea source for _real_ moments (the
+   first snow, Silvester night), **not as a theme for the whole list**:
 
 | Zeit       | Was alle gerade erleben                                 | Themen-Ideen                                                                  |
 | ---------- | ------------------------------------------------------- | ----------------------------------------------------------------------------- |
@@ -124,16 +124,26 @@ project):
 | Mai–Aug    | Hitze, Gewitter, Urlaub, Festivals, Freibad             | Klimaanlage, Ventilator, Blitz im Auto, Flugzeug-Themen, 10-Meter-Brett       |
 | Sept       | Schulstart, neues iPhone, Wiesn                         | Face ID ✓, Akku / Schnellladen, Bierzapfanlage, Achterbahn                    |
 
-**How it goes into the pick:** a trend is a bonus, not a rule — **+2 on
-the scorecard** when the topic is clearly in the air this week (+1 for
-the season), and it still needs ≥ 12 / 16 like any other topic, the
-duplicate check and the format that is due (a trend usually fits either
-format: the flying Tesla works as "Bauen" and as "Was passiert, wenn …?").
-If the trend only fits the other format, take the best evergreen topic
-instead — or ask the user whether to swap the order once. Say it in the
-proposal in one line: "Trend: es wird kalt (Saison)" or "Kein passender
-Trend gerade — bestes Dauerthema". A video on a hot trend should go out
-**within 1–3 days**; say so if it's time-critical.
+**How it goes into the pick — trends are the exception, not the
+theme** (user's correction 2026-10-26: one round proposed only cold
+topics; that is exactly what he did _not_ want):
+
+- **"It's getting cold" / "it's summer" is not a trend.** A season gives
+  **no bonus**. Only a concrete moment of _this week_ that strangers
+  recognise without context (a viral clip, a launch, the first snow
+  storm, Silvester night) gets **+2** — and still needs ≥ 12 / 16, the
+  duplicate check and the format that is due.
+- **At most one** of the three proposals may be a trend or season topic;
+  the other two are the best evergreen topics, **from three different
+  categories** (never three times Kälte / Küche / Handy).
+- **At most one seasonal topic in any three videos in a row**
+  (`tiktok/serie.md`): after a cold topic (Taschenwärmer, Heizung …) the
+  next two are not about cold — unless a genuinely hot trend comes up.
+- No real trend this week → no trend topic, and the proposal says "Kein
+  echter Trend gerade — bestes Dauerthema". That is the normal case.
+- A trend that only fits the other format: take the best evergreen
+  topic, or ask the user once whether to swap the order. A video on a hot
+  trend should go out **within 1–3 days**; say so.
 
 ## 3. Reserve it right away
 
