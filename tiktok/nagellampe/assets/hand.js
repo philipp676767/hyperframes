@@ -153,6 +153,7 @@ export function createHand({ skin = 0xf1c09a, sleeve = 0x4a7bd6, left = false, s
   const rot = new THREE.Euler();
   return {
     group,
+    fingers: f,
     pose: (p) => applyPose(typeof p === "string" ? POSES[p] : p),
     // place + pose the hand at time t from keyframes (call every frame)
     track(t, keys) {
