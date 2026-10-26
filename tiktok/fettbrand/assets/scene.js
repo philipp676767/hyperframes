@@ -18,7 +18,6 @@ import {
   scene,
   flat,
   M,
-  showNope,
   showPanel,
   LED,
   labels,
@@ -957,8 +956,7 @@ function renderAt(t) {
     { t: -0.6, pos: [2.6, 2.3, 0.9], rot: [0.15, YAW, 0], pose: "grab" },
     { t: 0, pos: [2.25, 2.1, 0.7], rot: [0.25, YAW, 0], pose: "grab" },
     { t: T.wasser1, pos: [1.95, 2.0, 0.55], rot: [0.55, YAW, 0], pose: "grab" },
-    { t: T.vorweg, pos: [1.85, 1.95, 0.5], rot: [0.75, YAW, 0], pose: "grab" },
-    { t: T.niemals, pos: [2.4, 2.15, 0.7], rot: [0.15, YAW, 0], pose: "grab" },
+    { t: T.die1 - 0.3, pos: [1.85, 1.95, 0.5], rot: [0.75, YAW, 0], pose: "grab" },
     { t: T.die1, pos: [3.6, 2.5, 1.3], rot: [0.1, YAW, 0], pose: "grab", out: true },
     // "du greifst zum Glas": in from the right, grab, lift over the pan
     { t: T.greifst - 0.25, pos: [4.6, 1.6, 2.4], rot: [0, YAW, 0], pose: "open" },
@@ -1034,8 +1032,6 @@ function renderAt(t) {
   splashRing.position.set(0.05, 0.34, 0.05);
   splashRing.scale.setScalar(0.4 + ringK * 1.6);
   splashRing.material.opacity = 0.9 * (1 - ringK * 0.7);
-  // "nie": orange ✕ over the glass in the hook
-  showNope(pop(t, T.niemals, T.die1), 1.35, 2.15, 0.5, 0.9);
 
   // phone: lights up on "schaust … aufs Handy"
   const phoneOn = t >= T.schaust - 0.2 && t < T.feuer1;

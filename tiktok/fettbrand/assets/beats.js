@@ -14,8 +14,6 @@ const U = (x, y, z) => [x + TUBS[0], y + TUBS[1], z + TUBS[2]];
 export const T = {
   wasser1: W("Wasser", 1),
   fett1: W("Fett", 1),
-  vorweg: W("Vorweg"),
-  niemals: W("niemals"),
   die1: W("Die", 1),
   greifst: W("greifst"),
   glas: W("Glas"),
@@ -25,7 +23,7 @@ export const T = {
   abends: W("Abends"),
   pommes: W("Pommes"),
   schaust: W("schaust"),
-  das2: W("Das", 2),
+  das2: W("Das", 1),
   bis1: W("bis", 1),
   feuer1: W("Feuer", 1),
   der1: W("Der", 2),
@@ -50,9 +48,9 @@ export const T = {
   der2: W("Der", 3),
   zerplatzt: W("zerplatzt"),
   jeder: W("Jeder"),
-  das4: W("Das", 4),
+  das4: W("Das", 3),
   fettexplosion: W("Fettexplosion"),
-  das5: W("Das", 5),
+  das5: W("Das", 4),
   feuerball: W("Feuerball"),
   bis2: W("bis", 2),
   darum: W("Darum"),
@@ -78,8 +76,6 @@ export const shots = [
   { at: T.wasser1, from: [3.0, 2.5, 2.6], to: [2.6, 2.3, 2.1], look: [1.3, 1.6, 0.4], zoom: 1.15 },
   // "Fett": low into the flames
   { at: T.fett1, from: [0.4, 0.6, 2.6], to: [0.25, 0.55, 2.15], look: [0, 1.05, 0], zoom: 1.3 },
-  // "Vorweg: Mach das niemals nach." — front, the ✕ over the glass
-  { at: T.vorweg, from: [0.4, 2.4, 4.6], to: [0.3, 2.1, 3.9], look: [0.5, 1.3, 0], zoom: 1.5 },
   // "Die Pfanne brennt": the whole kitchen at night
   { at: T.die1, from: [6.4, 4.8, 11.5], to: [5.3, 4.1, 9.8], look: [-1, 1.9, -2], zoom: 1.0 },
   // "du greifst zum Glas"
