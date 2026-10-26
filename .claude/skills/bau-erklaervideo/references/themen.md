@@ -258,10 +258,9 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                 | Format | Datum      | Chat             |
-| ------------------------------------- | ------ | ---------- | ---------------- |
-| Handy-Akku / Schnellladen             | A      | 2026-10-26 | Video: Akku      |
-| Fettbrand (Wasser in brennendes Fett) | B      | 2026-10-26 | Video: Fettbrand |
+| Thema                     | Format | Datum      | Chat        |
+| ------------------------- | ------ | ---------- | ----------- |
+| Handy-Akku / Schnellladen | A      | 2026-10-26 | Video: Akku |
 
 ## Verwendet
 
@@ -271,4 +270,5 @@ Atomkraftwerk, Mikrowelle, Geschirrspüler, Rauchmelder, Fliegender Tesla,
 Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
 Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B),
-Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B).
+Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B),
+Fettbrand (B).

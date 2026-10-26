@@ -329,7 +329,7 @@ Fix and re-snapshot. Expect 2–3 rounds.
 
 ```bash
 # ~2 h for 60 s (full 1080p + AO, software WebGL, ~4 s/frame) — ALWAYS detached (see Gotchas "Render detached"):
-setsid nohup npx hyperframes render -o renders/<slug>.mp4 > /tmp/render.log 2>&1 < /dev/null & disown
+HYPERFRAMES_RENDER_DETACHED=1 setsid nohup npx hyperframes render -o renders/<slug>.mp4 > /tmp/render.log 2>&1 < /dev/null & disown
 tail --pid=$(pgrep -f "hyperframes render -o renders/<slug>.mp4" | head -1) -f /dev/null   # run_in_background: notifies when done
 bash scripts/finish-audio.sh renders/<slug>.mp4   # -> renders/<slug>-final.mp4 at -14 LUFS (picture untouched)
 ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<slug>-final.mp4
@@ -416,6 +416,11 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
   killed at frame 1716/1800 and the half file was unusable (the mp4 is
   only finalised at the end). Always start the render with `setsid nohup
 … & disown` (step 6) so it runs in its own session, and watch it with a
+  **`HYPERFRAMES_RENDER_DETACHED=1` is required** (#35 Fettbrand,
+  2026-10-26): without it the CLI watches its parent processes and cancels
+  with `render_cancelled_parent_exited` ~30 s in, as soon as the shell that
+  started it ends — `setsid nohup` alone is not enough. Watch the `node …
+  hyperframes render` pid (not the npx wrapper) with a
   separate `tail --pid=<pid> -f /dev/null` in the background (that one
   may time out harmlessly; re-arm it). Splitting into parts doesn't help:
   one render already uses all 4 cores. Tell the user ~2 h, not 40–60 min.
