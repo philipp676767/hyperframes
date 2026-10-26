@@ -3,8 +3,9 @@
 #   bash .claude/skills/bau-erklaervideo/scripts/new-video.sh <slug> "<Titel>"
 #   e.g. new-video.sh aufzug "So funktioniert ein Aufzug"
 # Creates tiktok/<slug>/ (repo root) with the shared world, captions + CTA,
-# the hook title + comment/follow CTA buttons, the stock music bed, the sound-effect
-# kit + track and placeholder word timings,
+# the hook title + comment/follow CTA buttons, the sound-effect kit + track
+# and placeholder word timings (no music since 2026-10-26: voice + sound
+# effects only),
 # so it previews at once.
 set -euo pipefail
 SLUG=${1:?usage: new-video.sh <slug> "<Titel>"}
@@ -17,25 +18,10 @@ if [ -e "$DEST" ]; then
   exit 1
 fi
 
-BGM="$SKILL/assets/bgm-ruhig.mp3"
-# A fresh clone without LFS smudge only has 130-byte pointers; fetch the real audio.
-is_lfs_pointer() { head -c 40 "$1" | grep -q "^version https://git-lfs"; }
-for f in "$BGM"; do
-  if is_lfs_pointer "$f"; then
-    git -C "$ROOT" lfs install --local >/dev/null
-    git -C "$ROOT" lfs pull --include="${f#"$ROOT"/}"
-    if is_lfs_pointer "$f"; then
-      echo "error: $f is still an LFS pointer (git lfs pull failed)" >&2
-      exit 1
-    fi
-  fi
-done
-
 mkdir -p "$ROOT/tiktok"
 cp -R "$SKILL/template" "$DEST"
 mv "$DEST/gitignore" "$DEST/.gitignore"
 mkdir -p "$DEST/assets/vo_takes"
-cp "$BGM" "$DEST/assets/vo_takes/bgm-ruhig.mp3"
 python3 - "$DEST" "$SLUG" "$TITLE" <<'EOF'
 import json, sys
 from pathlib import Path
