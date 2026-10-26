@@ -446,6 +446,13 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
   0.35 s between pieces) and `prepare-voice.sh` as usual —
   `tighten-pauses.py` evens out the joins. Cost is the same (credits =
   characters).
+  **Pieces read slower** (#36 Nagellampe, 2026-10-26): Jan read the
+  19 pieces at ≈ 2.4 words/s (80.6 s for 190 words), so `prepare-voice.sh`
+  stopped. Starting the next piece without polling in between avoids most
+  429s. Fix used: cut 2 weak sentences from the finished take (no new
+  credits) and `BASE=1.28 bash scripts/prepare-voice.sh` (≈ 3.0 words/s
+  after the cut) — ask the user first. A piece that comes back `failed`
+  ("Free Tier access disabled") is not charged-for audio: regenerate it.
 - **Voice speed (Jan):** on `eleven_v3` he reads slowly with ~0.5 s
   breaths (≈ 2.7 words/s after the pauses are cut to 0.12 s by
   `scripts/tighten-pauses.py`). Since 2026-10-26 `prepare-voice.sh`
