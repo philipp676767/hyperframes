@@ -1,18 +1,22 @@
-# Per-video sound effects — the topic's own sounds (popcorn popping, a smoke
-# alarm, a till drawer …), synthesized with the helpers of make-sfx.py:
-#   t_of(dur), noise(dur), sine(freq, t), svf(x, cutoff, q, mode), env(t, a, d),
-#   write(name, x, peak_db=-3), rng (seeded), np
-# Each write("name", …) becomes assets/sfx-extra/name.wav, usable in beats.js
-# SFX like a kit sound: { s: "name", at: T.x }. Names must differ from the
-# house kit (whoosh, pop, ding …). build-sfx.mjs runs this file every time.
-# A sound file the user hands over can be added with scripts/add-sfx.sh.
+# Own sounds of #37 Kaugummi (helpers from make-sfx.py: t_of noise sine svf env write rng np)
 
-# Example (delete or replace): a candle wick catching fire — short crackle + soft whump
+# schluck — a gulp: a short wet click (tongue) + a low pitch-falling "glk"
+t = t_of(0.45)
+click = svf(noise(0.45), 2400, q=2.0) * env(t, 0.001, 0.025)
+glk_f = 320 * np.exp(-t / 0.09) + 110
+glk = sine(glk_f, t) * env(t, 0.01, 0.12)
+gurgle = svf(noise(0.45), 500 + 300 * np.sin(2 * np.pi * 18 * t), q=4.0) * env(t, 0.06, 0.12)
+write("schluck", 0.6 * click + glk + 0.5 * np.roll(gurgle, int(0.05 * 44100)))
+
+# platsch — the gum plops into the stomach fluid: a drop "plip" + a splash
 t = t_of(0.7)
-crackle = np.zeros_like(t)
-for c in rng.uniform(0.0, 0.45, 9):
-    i = int(c * 44100)
-    n = min(len(t) - i, 200)
-    crackle[i : i + n] += rng.uniform(0.4, 1.0) * np.exp(-np.arange(n) / 30)
-whump = svf(noise(0.7), 260, q=0.8, mode="lp") * env(t, 0.03, 0.18)
-write("anzuenden", svf(crackle, 3500, q=0.8, mode="hp") + 1.5 * whump)
+plip = sine(900 * np.exp(-t / 0.03) + 380, t) * env(t, 0.002, 0.06)
+splash = svf(noise(0.7), 1800, q=0.7, mode="lp") * env(t, 0.01, 0.22)
+write("platsch", plip + 0.7 * np.roll(splash, int(0.03 * 44100)))
+
+# spuelung — a toilet flush: rushing water swelling, swirling, draining
+t = t_of(2.4)
+rush = svf(noise(2.4), 1400 + 500 * np.sin(2 * np.pi * 3.5 * t), q=0.8, mode="lp")
+shape = np.minimum(1, t / 0.25) * np.exp(-np.maximum(0, t - 0.9) / 0.6)
+gurgle = svf(noise(2.4), 350 + 200 * np.sin(2 * np.pi * 9 * t), q=5.0) * np.clip((t - 1.0) / 0.4, 0, 1) * np.exp(-np.maximum(0, t - 1.6) / 0.35)
+write("spuelung", rush * shape + 0.6 * gurgle)

@@ -468,7 +468,13 @@ export function showPanel(k, label = "", value = "", color = LED.red) {
   g.shadowColor = color;
   g.shadowBlur = 24;
   g.fillStyle = color;
-  g.font = '800 132px "Montserrat", sans-serif';
+  // long values shrink to fit the panel width
+  let size = 132;
+  g.font = `800 ${size}px "Montserrat", sans-serif`;
+  while (size > 60 && g.measureText(value).width > 460) {
+    size -= 4;
+    g.font = `800 ${size}px "Montserrat", sans-serif`;
+  }
   g.textBaseline = "alphabetic";
   g.textAlign = "right";
   g.fillText(value, 488, 222);
