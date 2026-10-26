@@ -24,7 +24,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | What         | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Format       | 1080×1920, 30 fps, **exactly 60.0 s** (user's rule, 2026-10-24) — `prepare-voice.sh` fits the speech, the composition is fixed at 60 s (`LENGTH` in timing.js)                                                                                                                                                                                                                                                                                                                                                                                       |
-| Voice        | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** — the house voice; **always use Jan**, always **3.3 words/s** — ~22 % faster than he reads (`prepare-voice.sh` `BASE=1.22`, pitch kept — user's wish 2026-10-26) (user's decision 2026-10-22 after trying Stephan on #7: back to Jan for #7 and every episode after). Don't switch voices unless the user asks. History: Christian Plasa (#1–#5), Jan (#6 →), Stephan – Warm and Friendly `IWm8DnJ4NGjFI7QAM5lM` tried once on #7, replaced by Jan |
+| Voice        | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** — the house voice; **always use Jan**, always **3.2 words/s** — ~19 % faster than he reads (`prepare-voice.sh` `BASE=1.19`, pitch kept — user's wish 2026-10-26) (user's decision 2026-10-22 after trying Stephan on #7: back to Jan for #7 and every episode after). Don't switch voices unless the user asks. History: Christian Plasa (#1–#5), Jan (#6 →), Stephan – Warm and Friendly `IWm8DnJ4NGjFI7QAM5lM` tried once on #7, replaced by Jan |
 | CTA          | **Never dropped or shortened** (user's rule). Two parts since 2026-10-24: (1) **follow line in the middle** — „Folg mir, wenn du noch mehr lernen willst.“ (or a variant) as its own short line right after the second money shot, ≈ 12–20 s, so most viewers still hear it; red "+ Folgen" pill pops on "folg", gets tapped → "Gefolgt", gone 2.5 s later. (2) **comment question at the end** — tied to the topic, last line before the loop bridge, white "Kommentieren" pill. Both in the same take (template)                                   |
 | Bonus fact   | "Übrigens: …" right after the payoff — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Ending       | **No loop** (user's rule, 2026-10-24): the video simply ends ~1.2 s after the comment question, on a strong last shot (the subject big, or the drone pull-back over the world). No `> …` line, no cut back to frame 0                                                                                                                                                                                                                                                                                                                                |
@@ -105,7 +105,7 @@ hook, 3 Folgen, outcome as payoff) on top of script-formel.md — same
 length, same approval message. Format A:
 write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff (answers the
-hook) + "Übrigens" bonus fact, the follow line in the middle, the comment question as the last line (no loop) — in the **60-second shape** (script-formel.md "Shape": open-loop chain, mid twist at ~30 s, "Rate mal" moments). **186–202 words including all of it** (Jan at 3.3 words/s → ~60 s), never more than **210** or fewer than **178**
+hook) + "Übrigens" bonus fact, the follow line in the middle, the comment question as the last line (no loop) — in the **60-second shape** (script-formel.md "Shape": open-loop chain, mid twist at ~30 s, "Rate mal" moments). **180–196 words including all of it** (Jan at 3.2 words/s → ~60 s), never more than **204** or fewer than **172**
 (`prepare-voice.sh` fits that range to exactly 60 s). Run the hook lab and the self-check in that file. Show the user the
 script, word count, the **loop map** (which question is open when), the hook title with its score, **two alternative hooks** (scored), the
 cover title, and a one-line visual idea per beat **incl. the highlight of each beat**
@@ -225,15 +225,15 @@ file (the key must come from the environment's secrets, never the chat).
 Then, in the project dir:
 
 ```bash
-bash scripts/prepare-voice.sh          # tighten pauses, Jan +22 % (3.3 words/s), fit to exactly 60 s → assets/voiceover.mp3
+bash scripts/prepare-voice.sh          # tighten pauses, Jan +19 % (3.2 words/s), fit to exactly 60 s → assets/voiceover.mp3
 python3 -I scripts/align-words.py      # Whisper word timings snapped onto script.txt → assets/words.js
 node scripts/build-sfx.mjs             # all sound effects on one track from beats.js → assets/sfx.mp3
 node scripts/sync-html.mjs             # root duration, caption length, the <audio> tags (vo + sfx; no music)
 ```
 
 `align-words.py` needs `pip install faster-whisper` (downloads the `small`
-model once). `prepare-voice.sh` speeds Jan up by a fixed 22 % (pitch
-kept, 3.3 words/s) and fits the take to exactly 60 s (speech ends at
+model once). `prepare-voice.sh` speeds Jan up by a fixed 19 % (pitch
+kept, 3.2 words/s) and fits the take to exactly 60 s (speech ends at
 58.8 s, ~1.2 s before the end: ≤ 6 % more speed or pauses stretched to ≤ 0.45 s). If it
 stops, it says how many words to cut or add — adjust the script with the
 user (cut a weak sentence / add a "Rate mal" moment or one more strange
@@ -430,10 +430,9 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
 - **Voice speed (Jan):** on `eleven_v3` he reads slowly with ~0.5 s
   breaths (≈ 2.7 words/s after the pauses are cut to 0.12 s by
   `scripts/tighten-pauses.py`). Since 2026-10-26 `prepare-voice.sh`
-  always speeds him up by 22 % (`BASE=1.22`, pitch kept) → **3.3
-  words/s** (the user's choice): **186–202 words ≈ 60 s**. Tested on old
-  takes: Airfryer (≈ 175 words) is ~2 words short, Feuerzeug (~130) ~38
-  words short. If a take sounds rushed, `BASE=1.18` for that video is
+  always speeds him up by 19 % (`BASE=1.19`, pitch kept) → **3.2 words/s** (the user's choice): **180–196 words ≈ 60 s**. Tested on old
+  takes: Airfryer (≈ 175 words) fits exactly, Feuerzeug (~130) is far too
+  short. If a take sounds rushed, `BASE=1.15` for that video is
   the fallback — say so to the user. (Stephan, tried once on #7, read
   slower.)
 - **Length:** exactly 60.0 s since 2026-10-24 (before: 40–50 s, #1–#24).

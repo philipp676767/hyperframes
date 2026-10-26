@@ -23,7 +23,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 - The CTA question writes itself: "Was sollen wir als Nächstes passieren
   lassen?" — comments that are also the next topics.
 
-## Script shape (same length: exactly 60 s, 186–202 words)
+## Script shape (same length: exactly 60 s, 180–196 words)
 
 | Part                  | When     | Words | Job                                                                                                                   |
 | --------------------- | -------- | ----- | --------------------------------------------------------------------------------------------------------------------- |

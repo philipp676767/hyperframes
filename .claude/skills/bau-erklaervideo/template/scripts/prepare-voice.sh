@@ -2,9 +2,9 @@
 # Build assets/voiceover.mp3 from the raw ElevenLabs take (whole script incl.
 # the follow line and the comment question) and fit it to the house length:
 # every video is EXACTLY one minute (user's rule, 2026-10-24) and simply
-# ends after the comment question (no loop line). Jan always talks ~22 %
-# faster than he reads (BASE 1.22, pitch kept — user's wish 2026-10-26:
-# 3.3 words/s). The speech must end ~1.2 s
+# ends after the comment question (no loop line). Jan always talks ~19 %
+# faster than he reads (BASE 1.19, pitch kept — user's wish 2026-10-26:
+# 3.2 words/s). The speech must end ~1.2 s
 # before 60 s (TARGET 58.8) so the last shot can breathe:
 #   - pauses (found at -30 dB) are first cut to 0.12 s;
 #   - too long  → sped up a little more (pitch kept), at most 6 % on top;
@@ -19,7 +19,7 @@ cd "$(dirname "$0")/.."
 MAIN=${1:-assets/vo_takes/main.mp3}
 CTA=${2:-assets/vo_takes/cta.mp3}
 TARGET=${TARGET:-58.8}
-BASE=${BASE:-1.22}
+BASE=${BASE:-1.19}
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
@@ -41,8 +41,8 @@ RAW_TARGET=$(python3 -c "print($TARGET * $BASE)") # joined length that lands on 
 if python3 -c "import sys; sys.exit(0 if $D1 > $RAW_TARGET else 1)"; then
   TEMPO=$(python3 -c "print(round($D1 / $TARGET, 4))")
   if python3 -c "import sys; sys.exit(0 if $TEMPO > $BASE * 1.06 else 1)"; then
-    CUT=$(python3 -c "import math; print(math.ceil(($D1 / ($BASE * 1.06) - $TARGET) * 3.3))")
-    echo "ERROR: ${D1}s of speech is too long for a 60 s video even at +6 % on top of the base speed. Cut about $CUT words (target 186-202 words incl. CTA) and regenerate the voice." >&2
+    CUT=$(python3 -c "import math; print(math.ceil(($D1 / ($BASE * 1.06) - $TARGET) * 3.2))")
+    echo "ERROR: ${D1}s of speech is too long for a 60 s video even at +6 % on top of the base speed. Cut about $CUT words (target 180-196 words incl. CTA) and regenerate the voice." >&2
     exit 1
   fi
 else
@@ -51,8 +51,8 @@ else
   PER=$(python3 -c "print(($D2 - $D1) / 0.2)") # seconds per +1 s of every pause = number of pauses
   KEEP=$(python3 -c "print(round(0.12 + ($RAW_TARGET - $D1) / max($PER, 1), 3))")
   if python3 -c "import sys; sys.exit(0 if $KEEP > 0.45 else 1)"; then
-    ADD=$(python3 -c "import math; print(math.ceil(($RAW_TARGET - $D1 - $PER * 0.33) / $BASE * 3.3))")
-    echo "ERROR: ${D1}s of speech is too short for a 60 s video (pauses would get longer than 0.45 s). Add about $ADD words — a 'Rate mal' moment or another strange fact (target 186-202 words) — and regenerate the voice." >&2
+    ADD=$(python3 -c "import math; print(math.ceil(($RAW_TARGET - $D1 - $PER * 0.33) / $BASE * 3.2))")
+    echo "ERROR: ${D1}s of speech is too short for a 60 s video (pauses would get longer than 0.45 s). Add about $ADD words — a 'Rate mal' moment or another strange fact (target 180-196 words) — and regenerate the voice." >&2
     exit 1
   fi
   D1=$(join "$KEEP")
