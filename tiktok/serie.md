@@ -43,5 +43,5 @@ Umgebungen (insel, stadt, …).
 | 31  | Loch durch die Erde           | B      | `tiktok/erdloch`             | vorstadtgarten              | spätnachmittag   | 60,0 s | 2026-10-25 |
 | 32  | Flugzeugfenster (rund)        | A      | `tiktok/flugzeugfenster`     | testhangar-1950er           | nacht            | 60,0 s | 2026-10-25 |
 | 33  | Ohne Raumanzug ins Weltall    | B      | `tiktok/weltall`             | raumstation-orbit           | sonnenaufgang    | 60,0 s | 2026-10-25 |
-| 35  | Fettbrand (Wasser auf Fett)   | B      | `tiktok/fettbrand`           | wg-küche-regennacht         | nacht            | 60,0 s | 2026-10-26 |
 | 34  | Handy-Akku (Schnellladen)     | A      | `tiktok/akku`                | altbau-flur + akku-parkhaus | wintermorgen     | 60,0 s | 2026-10-26 |
+| 35  | Fettbrand (Wasser auf Fett)   | B      | `tiktok/fettbrand`           | wg-küche-regennacht         | nacht            | 60,0 s | 2026-10-26 |
