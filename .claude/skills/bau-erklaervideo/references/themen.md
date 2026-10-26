@@ -258,9 +258,8 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                     | Format | Datum      | Chat        |
-| ------------------------- | ------ | ---------- | ----------- |
-| Handy-Akku / Schnellladen | A      | 2026-10-26 | Video: Akku |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
