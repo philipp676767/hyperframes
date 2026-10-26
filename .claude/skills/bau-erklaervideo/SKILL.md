@@ -328,7 +328,9 @@ Fix and re-snapshot. Expect 2–3 rounds.
 ### 6. Render and deliver
 
 ```bash
-npx hyperframes render -o renders/<slug>.mp4      # ~40–60 min for 60 s (full 1080p + AO, software WebGL); always in background
+# ~2 h for 60 s (full 1080p + AO, software WebGL, ~4 s/frame) — ALWAYS detached (see Gotchas "Render detached"):
+setsid nohup npx hyperframes render -o renders/<slug>.mp4 > /tmp/render.log 2>&1 < /dev/null & disown
+tail --pid=$(pgrep -f "hyperframes render -o renders/<slug>.mp4" | head -1) -f /dev/null   # run_in_background: notifies when done
 bash scripts/finish-audio.sh renders/<slug>.mp4   # -> renders/<slug>-final.mp4 at -14 LUFS (picture untouched)
 ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<slug>-final.mp4
 ```
@@ -407,6 +409,16 @@ a whole episode and the next video shipped without it). Renders are
 git-ignored; mp3/png go through LFS via `.gitattributes`.
 
 ## Gotchas (all learned the hard way)
+
+- **Render detached — never as a background task** (user's rule,
+  2026-10-26, #34 Akku): a `run_in_background` command is killed after
+  2 hours, and a 60-s render takes ~2 h (~4 s/frame on 4 cores). #34 was
+  killed at frame 1716/1800 and the half file was unusable (the mp4 is
+  only finalised at the end). Always start the render with `setsid nohup
+… & disown` (step 6) so it runs in its own session, and watch it with a
+  separate `tail --pid=<pid> -f /dev/null` in the background (that one
+  may time out harmlessly; re-arm it). Splitting into parts doesn't help:
+  one render already uses all 4 cores. Tell the user ~2 h, not 40–60 min.
 
 - **X-ray glass:** use `xrayMaterial()` + `setXray()`. Never toggle
   `material.transparent` at runtime — three.js keeps the opaque shader and
@@ -491,7 +503,7 @@ pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   full 1080×1920 with 4096² shadows, ambient occlusion (an extra
   normal/depth pass), tilt-shift, glow, facet tinting, sky light (PMREM)
   and the grade — ~1–2 s per frame in software GL (a big moving sea,
-  `sea()`, is the slowest, ~2 s), so a 60 s video takes ~40–60 min. That's
+  `sea()`, is the slowest, ~2 s), so a 60 s video takes ~2 h (render it detached, see above). That's
   accepted; never lower resolution or switch effects off to save time.
   Still keep it efficient: the scene is drawn into the antialiased canvas
   and copied (a multisampled render target is ~2× slower in software GL),
