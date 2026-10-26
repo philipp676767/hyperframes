@@ -167,7 +167,6 @@ are always 10+ open topics per format.
 | ★ Touchscreen                | „Dein Bildschirm spürt deinen Finger, ohne dass du drückst.“                                                                                                    | Finger nähert sich, das Feld im Glas verbiegt sich, Tipp leuchtet         | Handy         | –                    |
 | ★ Pfandautomat               | „Der Pfandautomat prüft deine Flasche dreimal – Form, Strichcode und ein geheimes Pfand-Zeichen.“ (Fakten prüfen)                                               | Flasche rollt rein, Laser tastet sie rundum ab, _Zack_, Bon kommt raus    | Einkaufen     | –                    |
 | ★ Glätteisen                 | „Dein Glätteisen bricht die Wasser-Brücken in deinen Haaren.“                                                                                                   | Haarsträhne in Nahaufnahme, Brücken zwischen den Ketten knacken auf       | Beauty        | –                    |
-| ★ UV-Nagellampe              | „Gel-Nägel trocknen nicht – sie werden in Sekunden zu Plastik.“                                                                                                 | UV-Licht trifft das Gel, Moleküle verketten sich zu einem Netz            | Beauty        | –                    |
 | ★ Smartwatch-Puls            | „Deine Uhr misst deinen Puls mit grünem Licht – sie schaut in dein Blut.“                                                                                       | Grünes Licht dringt in die Haut, Blut pumpt, Kurve springt mit            | Sport         | –                    |
 | ★ Haartrockner               | „Dein Föhn schaltet sich selbst ab, bevor deine Haare brennen.“                                                                                                 | Heizdraht glüht, Bimetall biegt sich, _klack_, aus                        | Beauty        | –                    |
 | Induktionsherd               | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                      | Küche         | –                    |
@@ -258,8 +257,9 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                                                             | Format | Datum      | Chat              |
+| --------------------------------------------------------------------------------- | ------ | ---------- | ----------------- |
+| ★ UV-Nagellampe („Gel-Nägel trocknen nicht – sie werden in Sekunden zu Plastik.“) | A      | 2026-10-26 | Video: Nagellampe |
 
 ## Verwendet
 
