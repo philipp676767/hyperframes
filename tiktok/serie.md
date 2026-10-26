@@ -45,3 +45,4 @@ Umgebungen (insel, stadt, …).
 | 33  | Ohne Raumanzug ins Weltall    | B      | `tiktok/weltall`             | raumstation-orbit           | sonnenaufgang    | 60,0 s | 2026-10-25 |
 | 34  | Handy-Akku (Schnellladen)     | A      | `tiktok/akku`                | altbau-flur + akku-parkhaus | wintermorgen     | 60,0 s | 2026-10-26 |
 | 35  | Fettbrand (Wasser auf Fett)   | B      | `tiktok/fettbrand`           | wg-küche-regennacht         | nacht            | 60,0 s | 2026-10-26 |
+| 36  | UV-Nagellampe (Gel-Nägel)     | A      | `tiktok/nagellampe`          | nagelstudio-wiener-gasse    | abenddämmerung   | 60,0 s | 2026-10-26 |
