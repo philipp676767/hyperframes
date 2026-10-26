@@ -970,6 +970,7 @@ function renderAt(t) {
   else if (t >= T.zwanzig && t < T.es)
     showPanel(pop(t, T.zwanzig, T.es), "KALT · AUS BEI", "20 %", LED.blue);
   else showPanel(0);
+  if (window.HF_COVER_T !== undefined) showPanel(0); // cover: no panel
 
   labels(t, LABELS);
   applyCamera(t);
