@@ -23,7 +23,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 - The CTA question writes itself: "Was sollen wir als Nächstes passieren
   lassen?" — comments that are also the next topics.
 
-## Script shape (same length: exactly 60 s, 180–196 words)
+## Script shape (same length: exactly 60 s, 174–190 words)
 
 | Part                  | When     | Words | Job                                                                                                                   |
 | --------------------- | -------- | ----- | --------------------------------------------------------------------------------------------------------------------- |
@@ -126,17 +126,17 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (191 words → 60 s)
+## Example — Flugzeugtür (188 words → 60 s)
 
 ```text
 [curious] Was passiert eigentlich, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
 Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du nach kurzer Zeit *ohnmächtig* würdest. Darum pumpt das Flugzeug ständig Luft rein – und genau die wird dein Problem.
 Folg mir, wenn du noch mehr lernen willst.
-[whispers] Sie drückt von innen gegen die Tür, draußen drückt fast nichts dagegen. Das presst die Tür in den *Rahmen*. Auf jedem Quadratmeter lastet so viel wie ein ausgewachsener *Elefant*.
+[whispers] Sie drückt von innen gegen die Tür, draußen drückt fast nichts dagegen. Das presst die Tür in den *Rahmen*. Auf jedem Quadratmeter lastet so viel wie ein *Elefant*.
 Was glaubst du: Wie viele Leute müssten ziehen, um das zu schaffen? [surprised] Rund *hundert*. Viel Spaß im Gang.
-Und selbst die hätten keine Chance: Die Tür ist größer als das Loch. Sie sitzt wie ein *Stöpsel* im Rahmen und geht zuerst nach *innen* auf – direkt gegen den Druck.
+Und selbst die hätten keine Chance: Die Tür ist größer als das Loch. Sie sitzt wie ein *Stöpsel* im Rahmen und geht zuerst nach *innen* auf – gegen den Druck.
 Erst am Boden geht sie ganz leicht auf – wenn drinnen und draußen gleich viel Luft drückt.
-[excited] Darum bleibt sie oben *zu*, egal wie stark du bist. Übrigens: Draußen ist es da oben kälter als minus *50* Grad.
+[excited] Darum bleibt sie oben *zu*, egal wie stark du bist. Übrigens: Draußen ist es dort kälter als minus *50* Grad.
 Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare.
 ```
 

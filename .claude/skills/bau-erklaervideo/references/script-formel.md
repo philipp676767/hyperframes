@@ -17,9 +17,9 @@ Folgen instead of 3 build beats, the outcome as payoff.
 ## Length — exactly one minute
 
 Every video is **exactly 60.0 s** (user's rule, 2026-10-24). Write
-**180–196 words including fact, follow line and CTA** (Jan at **3.2
+**174–190 words including fact, follow line and CTA** (Jan at **3.1
 words/s**, sped up by `prepare-voice.sh` — user's wish 2026-10-26), never
-more than **204** or fewer than **172** —
+more than **198** or fewer than **166** —
 `prepare-voice.sh` fits that range to exactly 60 s (≤ 8 % faster or
 slightly longer pauses). Count before showing the script.
 
@@ -32,13 +32,13 @@ extra time goes into one more beat, a mid twist and "Rate mal" moments
 
 | Part                         | When     | Words | Job                                                                                         |
 | ---------------------------- | -------- | ----- | ------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)            | 0–5 s    | 16–25 | win the first second; twist + Haken; open loop 1 (the big question)                         |
-| **Beat 1**                   | 5–15 s   | 30–35 | first part; ends on the **second money shot** (10–15 s) and opens loop 2                    |
+| **Hook** (line 1)            | 0–5 s    | 15–25 | win the first second; twist + Haken; open loop 1 (the big question)                         |
+| **Beat 1**                   | 5–15 s   | 29–34 | first part; ends on the **second money shot** (10–15 s) and opens loop 2                    |
 | **Follow line**              | ~15–18 s | 6–9   | „Folg mir, wenn du noch mehr lernen willst.“ — own line, straight on after it               |
-| **Beat 2**                   | 18–28 s  | 30–35 | second part, bigger than beat 1; closes loop 2, opens loop 3                                |
+| **Beat 2**                   | 18–28 s  | 29–34 | second part, bigger than beat 1; closes loop 2, opens loop 3                                |
 | **Mid twist** (re-hook)      | ~28–33 s | 15–21 | at the halfway mark: the obvious explanation is wrong / it's even crazier — or a "Rate mal" |
-| **Beat 3**                   | 33–45 s  | 30–37 | the decisive part (the real trick), the biggest money shot so far                           |
-| **Payoff + Übrigens** (line) | 45–53 s  | 25–32 | answer the hook's question (the question text fades) + "Übrigens: …"                        |
+| **Beat 3**                   | 33–45 s  | 29–36 | the decisive part (the real trick), the biggest money shot so far                           |
+| **Payoff + Übrigens** (line) | 45–53 s  | 25–31 | answer the hook's question (the question text fades) + "Übrigens: …"                        |
 | **CTA** (last line)          | 53–58 s  | 8–14  | comment question — then the video ends (~1.2 s on the last shot, no loop)                   |
 
 ## Retention engine — how a minute holds
@@ -420,7 +420,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] Humor: 0–2 small, situational moments that fit — none forced, none in serious topics
 - [ ] Follow line in the middle (after beat 2, ≈ 12–20 s, 6–9 words, "folg"); comment question at the end, answerable in 1–3 words, no "folg"
 - [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
-- [ ] 180–196 words incl. fact, follow line and CTA (≤ 204, ≥ 172) → exactly 60 s; no `> …` loop line
+- [ ] 174–190 words incl. fact, follow line and CTA (≤ 198, ≥ 166) → exactly 60 s; no `> …` loop line
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
 - [ ] 60-s shape: beat 1 → follow line (~15–18 s) → beat 2 → mid twist (~30 s) → beat 3 → payoff (≥ 45 s)
 - [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes
