@@ -47,3 +47,4 @@ Umgebungen (insel, stadt, …).
 | 35  | Fettbrand (Wasser auf Fett)   | B      | `tiktok/fettbrand`           | wg-küche-regennacht         | nacht            | 60,0 s | 2026-10-26 |
 | 36  | UV-Nagellampe (Gel-Nägel)     | A      | `tiktok/nagellampe`          | nagelstudio-wiener-gasse    | abenddämmerung   | 60,0 s | 2026-10-26 |
 | 37  | Kaugummi verschluckt          | B      | `tiktok/kaugummi`            | wiener-prater               | abenddämmerung   | 60,0 s | 2026-10-27 |
+| 38  | Knicklicht (Halloween)        | A      | `tiktok/knicklicht`          | halloween-vorgarten         | nacht            | 60,0 s | 2026-10-27 |

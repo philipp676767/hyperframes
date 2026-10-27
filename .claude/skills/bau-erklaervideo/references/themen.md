@@ -257,10 +257,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                  | Format | Datum      | Chat               |
-| ---------------------- | ------ | ---------- | ------------------ |
-| Knicklicht (Halloween) | A      | 2026-10-27 | Video: Knicklicht  |
-| Flugzeugklo (spülen)   | B      | 2026-10-27 | Video: Flugzeugklo |
+| Thema                | Format | Datum      | Chat               |
+| -------------------- | ------ | ---------- | ------------------ |
+| Flugzeugklo (spülen) | B      | 2026-10-27 | Video: Flugzeugklo |
 
 ## Verwendet
 
@@ -271,4 +270,4 @@ Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
 Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B),
 Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B),
-Fettbrand (B).
+Fettbrand (B), Knicklicht.
