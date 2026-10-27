@@ -1,4 +1,4 @@
-# Format B — „Was passiert eigentlich, wenn …?“
+# Format B — „Was passiert, wenn …?“
 
 The series' second format (user's idea, 2026-10-23): instead of building an
 everyday thing, the video **plays out a scenario people have always
@@ -9,7 +9,7 @@ a surprising outcome. **The formats always alternate** (SKILL.md step 0).
 Everything else stays the house standard: Jan, the look, captions,
 keywords, labels, highlights, the first-3-seconds rules, the open question
 on screen, payoff, "Übrigens", the CTA (never cut, shortened or moved),
-the clean ending (no loop), cover, one-sentence description, learning log. This file only
+the clean ending (no loop), cover, short keyword description, learning log. This file only
 lists what is **different** from `script-formel.md` and `visual-style.md`.
 
 ## Why it works
@@ -20,29 +20,29 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
   the video pulls forward instead of explaining parts — the ~13 s drop-off
   spot gets an escalation, not a term.
 - The viewer's hand does the act from frame 0 — _du_ opens the door.
-- The CTA question writes itself: "Was sollen wir als Nächstes passieren
-  lassen?" — comments that are also the next topics.
+- The scenario gives the comment question a personal angle: "Würdest du
+  dich jetzt noch an den Notausgang setzen?" — viewers answer for
+  themselves.
 
 ## Script shape (same length: exactly 60 s, 174–190 words)
 
-| Part                  | When     | Words | Job                                                                                                                   |
-| --------------------- | -------- | ----- | --------------------------------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)     | 0–5 s    | 18–28 | The question **"Was passiert eigentlich, wenn du …?"** + the act starting ("Du packst den Griff …") + the Haken       |
-| **Folge 1**           | 5–15 s   | 25–30 | The first consequence / the condition that makes it strange; ends on the second money shot                            |
-| **Follow line**       | ~15–18 s | 6–9   | „Folg mir, wenn du noch mehr lernen willst.“ (script-formel.md §4)                                                    |
-| **Folge 2**           | 18–28 s  | 25–30 | It escalates                                                                                                          |
-| **Mid twist**         | ~28–33 s | 12–18 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                           |
-| **Folge 3**           | 33–45 s  | 25–32 | The decisive consequence: the real mechanism, max 1–2 terms                                                           |
-| **Payoff + Übrigens** | 45–53 s  | 22–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                         |
-| **CTA**               | 53–58 s  | 8–14  | "Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare." (or another comment question, no "folg") |
+| Part                  | When     | Words | Job                                                                                                            |
+| --------------------- | -------- | ----- | -------------------------------------------------------------------------------------------------------------- |
+| **Hook** (line 1)     | 0–5 s    | 18–28 | The question **"Was passiert, wenn du …?"** + the act starting ("Du packst den Griff …") + the Haken           |
+| **Folge 1**           | 5–15 s   | 25–30 | The first consequence / the condition that makes it strange; ends on the second money shot                     |
+| **Follow line**       | ~15–18 s | 6–9   | „Folg mir, wenn du noch mehr lernen willst.“ (script-formel.md §4)                                             |
+| **Folge 2**           | 18–28 s  | 25–30 | It escalates                                                                                                   |
+| **Mid twist**         | ~28–33 s | 12–18 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                    |
+| **Folge 3**           | 33–45 s  | 25–32 | The decisive consequence: the real mechanism, max 1–2 terms                                                    |
+| **Payoff + Übrigens** | 45–53 s  | 22–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                  |
+| **CTA**               | 53–58 s  | 8–14  | a **new comment question that fits this scenario** every time (see "Payoff, Übrigens, CTA, ending"), no "folg" |
 
 The retention engine of script-formel.md (open-loop chain, escalation,
 mid twist, "Rate mal", hook lab) applies here too.
 
 ### Hook — the differences
 
-- **Sentence 1 is always the question**, starting with "Was passiert
-  eigentlich, wenn du …?" (the format's signature — keep the wording
+- **Sentence 1 is always the question**, starting with "Was passiert, wenn du …?" (the format's signature — keep the wording
   identical every time, viewers learn it). It may be up to **12 words**
   and replaces script-formel's "twist in the first 4 words" rule: here
   the twist is the scenario itself. The topic noun stays inside it
@@ -81,11 +81,20 @@ mid twist, "Rate mal", hook lab) applies here too.
   ziehen." The answer word must not be spoken earlier in the script (the
   on-screen question is answered on its first use after 6 s).
 - "Übrigens: …" exactly as in script-formel.md.
-- Follow line after Folge 1 (as in script-formel.md §4). CTA at the end:
-  default **"Was sollen wir als Nächstes passieren lassen? Schreib's in
-  die Kommentare."** — when the user reports
-  scenario wishes from the comments, add them to the topic list
-  (`themen.md`, Format B).
+- Follow line after Folge 1 (as in script-formel.md §4).
+- **The closing line is new every time** (user's rule, 2026-10-27) — never
+  the stock "Was sollen wir als Nächstes passieren lassen?". Think of the
+  line that fits _this_ scenario best: a personal, slightly cheeky
+  question the viewer can answer in 1–3 words, + „Schreib's in die
+  Kommentare.“ (or a variant). Examples:
+  - Flugzeugtür: "Würdest du dich jetzt noch an den Notausgang setzen?"
+  - Blitz im Auto: "Wo bist du bei Gewitter lieber – im Auto oder im Zelt?"
+  - Kaugummi: "Wie viele hast du schon verschluckt? Ehrlich."
+  - Erde hört auf, sich zu drehen: "Was würdest du in der letzten Sekunde
+    noch festhalten?"
+    Write three, take the best, never repeat the previous video's line
+    (check its `script.txt`). Scenario wishes the comments bring up still
+    go into `themen.md` (Format B).
 - No loop line: the comment question is the last line, the video ends on
   the outcome shot.
 
@@ -126,10 +135,10 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (188 words → 60 s)
+## Example — Flugzeugtür (189 words → 60 s)
 
 ```text
-[curious] Was passiert eigentlich, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
+[curious] Was passiert, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
 Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du nach kurzer Zeit *ohnmächtig* würdest. Darum pumpt das Flugzeug ständig Luft rein – und genau die wird dein Problem.
 Folg mir, wenn du noch mehr lernen willst.
 [whispers] Sie drückt von innen gegen die Tür, draußen drückt fast nichts dagegen. Das presst die Tür in den *Rahmen*. Auf jedem Quadratmeter lastet so viel wie ein *Elefant*.
@@ -137,7 +146,7 @@ Was glaubst du: Wie viele Leute müssten ziehen, um das zu schaffen? [surprised]
 Und selbst die hätten keine Chance: Die Tür ist größer als das Loch. Sie sitzt wie ein *Stöpsel* im Rahmen und geht zuerst nach *innen* auf – gegen den Druck.
 Erst am Boden geht sie ganz leicht auf – wenn drinnen und draußen gleich viel Luft drückt.
 [excited] Darum bleibt sie oben *zu*, egal wie stark du bist. Übrigens: Draußen ist es dort kälter als minus *50* Grad.
-Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare.
+Würdest du dich jetzt noch an den Notausgang setzen? Schreib's in die Kommentare.
 ```
 
 - Hook title `<em>Tür</em> auf?!`; `hf-config`: question
@@ -158,7 +167,7 @@ Was sollen wir als Nächstes passieren lassen? Schreib's in die Kommentare.
 
 ## Self-check (in addition to script-formel.md's)
 
-- [ ] Sentence 1 = "Was passiert eigentlich, wenn du …?" (≤ 12 words, topic noun inside)
+- [ ] Sentence 1 = "Was passiert, wenn du …?" (≤ 12 words, topic noun inside)
 - [ ] Sentence 2 starts the act; the outcome is **not** revealed before the payoff
 - [ ] 3 Folgen, each bigger than the last, each ending with a pull
 - [ ] The `answer` word is spoken only in the payoff

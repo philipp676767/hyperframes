@@ -9,7 +9,7 @@ comment. The build-it-yourself frame stays in the Du-Form ("Du brauchst
 gerade X gebaut." is gone for good** (user's rule, 2026-10-23): it told
 viewers "fertig" right before the bonus fact and the CTA.
 
-**Format B „Was passiert eigentlich, wenn …?“** (alternates with this
+**Format B „Was passiert, wenn …?“** (alternates with this
 one, SKILL.md step 0) uses this file too, with the differences in
 `format-was-passiert.md` — question hook instead of the 4-word twist, 3
 Folgen instead of 3 build beats, the outcome as payoff.
@@ -306,6 +306,9 @@ captions).
 
 **Comment question (end)** — the last line of the script:
 
+- **A new question every video** (2026-10-27): think of the one that fits
+  _this_ topic best — personal, a bit cheeky — write three, take the
+  best, never repeat the previous video's line.
 - **One comment question** tied to the topic, answerable in 1–3 words:
   yes/no, either/or, a number, or a personal detail, + „Schreib's in die
   Kommentare.“ (or „Ab in die Kommentare.“). No "folg" here any more.

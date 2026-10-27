@@ -232,10 +232,10 @@ Criteria (instead of A's six, + the two of the scorecard;
    sport) or the big „Was wäre, wenn“ everyone talks about at 2 a.m.
    (space, the end of the world, the deep sea). 🔥 first, then ★.
 
-Hook = always „Was passiert eigentlich, wenn du …?“. Topics the comments
-ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
+Hook = always „Was passiert, wenn du …?“. Topics the comments
+ask for go in here.
 
-| Szenario („Was passiert eigentlich, wenn du …?“)       | Überraschender Ausgang (nur fürs Payoff!)                                                     | Money-Shot                                                       | Sicherheit                  | Kategorie |
+| Szenario („Was passiert, wenn du …?“)                  | Überraschender Ausgang (nur fürs Payoff!)                                                     | Money-Shot                                                       | Sicherheit                  | Kategorie |
 | ------------------------------------------------------ | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------- | --------- |
 | 🔥 … die Sonne plötzlich ausgeht?                      | Du merkst es erst nach 8 Minuten – und die Erde fliegt geradeaus davon                        | Sonne erlischt, Licht-Welle rast zur Erde, Countdown 8:00        | unmöglich                   | Weltall   |
 | 🔥 … ein Teelöffel Neutronenstern auf der Erde landet? | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                   | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden   | unmöglich                   | Weltall   |

@@ -6,6 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
+- [ ] **Format B ohne „eigentlich“, Schlussfrage jedes Mal neu, Beschreibung ≤ 60 Zeichen mit starken Suchwörtern + 1 Emoji am Ende** (Nutzer, 2026-10-27).
 - [ ] **Trends nur als Ausnahme** (Nutzer-Korrektur, 2026-10-26: eine Vorschlagsrunde hatte nur Kälte-Themen): Jahreszeit gibt keinen Bonus, höchstens 1 von 3 Vorschlägen ist ein Trend-/Saison-Thema, die 3 Vorschläge aus 3 verschiedenen Kategorien, höchstens 1 Saison-Thema in 3 Videos.
 - [ ] **Jan mit 3,1 Wörtern/s, etwas Humor, keine Musik** (Nutzer, 2026-10-26): +15 % Tempo (174–190 Wörter), 0–2 kleine passende Humor-Momente, nur Stimme + Soundeffekte. Beobachten: Ø Wiedergabezeit und Kommentare im Vergleich zu vorher.
 - [ ] **Trend-Themen, wenn es passt** (Nutzer, 2026-10-26): Trend-Check vor jedem Vorschlag (aktuell + Kalender), Trend = Bonus, nie ein uninteressantes Thema erzwingen. Vergleichen: Aufrufe von Trend- vs. Dauerthemen (Tesla und Taschenwärmer waren Trend-Themen).
@@ -20,7 +21,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 - [ ] **Genau 60 s** (Nutzer, 2026-10-24): 152–166 Wörter, 60-s-Aufbau mit Fragen-Kette, Wendung bei ~30 s und 1–2 „Rate mal“-Momenten; Hook-Labor (6 Hooks, Punkte ≥ 10/12), Themen-Punkte (≥ 12/16, mind. 5 „Was?!“-Fakten). Vergleichen: Ø Wiedergabezeit und Absprung bei 13 s / 30 s gegenüber den 45-s-Videos.
 - [ ] **Folgen-Aufruf in der Mitte** (Nutzer, 2026-10-24): „Folg mir, wenn du noch mehr lernen willst.“ als eigene Zeile nach Beat 2 (≈ 12–20 s), am Ende nur noch die Kommentar-Frage. Vergleichen: neue Follower pro 1.000 Aufrufe vorher/nachher.
 - [ ] **Abgefahrenere Themen** (Nutzer, 2026-10-23): nur Themen mit „Was?!“-Moment, 🔥 in themen.md zuerst (Weltall, Tiefsee, Erde, Extrem-Physik, wilde Maschinen). Vergleichen, ob 🔥-Themen mehr Aufrufe und Wiedergabe bringen.
-- [ ] **Zwei Formate im Wechsel (ab 2026-10-23):** A „Bauen“ und B „Was passiert eigentlich, wenn …?“ immer abwechselnd. Bei jedem Eintrag das Format notieren; nach 2–3 Videos pro Format vergleichen (Wiedergabe nach 1–3 s, Absprung bei ~13 s, Anteil bis zum Ende, Kommentare).
+- [ ] **Zwei Formate im Wechsel (ab 2026-10-23):** A „Bauen“ und B „Was passiert, wenn …?“ immer abwechselnd. Bei jedem Eintrag das Format notieren; nach 2–3 Videos pro Format vergleichen (Wiedergabe nach 1–3 s, Absprung bei ~13 s, Anteil bis zum Ende, Kommentare).
 - [ ] **Für die echte Zielgruppe (18–34, m/w, Zufalls-Scroller):** Alltagsthemen (★ in themen.md), frecher Ton, Bild 0 mit Geräusch + 2–3 Riesen-Wörtern + Hand, die etwas tut.
 - [ ] **Test ab jetzt: Beschreibung nur 1 Satz, keine Hashtags** (Nutzer, 2026-10-23: die meisten wischen nach 0,1 s weg → vermutlich falsches Publikum). Nach 2–3 Videos vergleichen: Wiedergabe nach 1–3 s, Aufrufe, Anteil bis zum Ende.
 - [ ] **Kein „Schau dich an. Du hast gerade … gebaut.“ mehr** (Nutzer, 2026-10-23): die Auflösung der Hook-Frage geht direkt in „Übrigens“ über.

@@ -1,7 +1,7 @@
 # Serie „Du hast gerade X gebaut“ – Logbuch
 
 Eine Zeile pro fertigem Video. `Format`: **A** = „Bauen“ (Du hast gerade X
-gebaut), **B** = „Was passiert eigentlich, wenn …?“ — die Formate wechseln
+gebaut), **B** = „Was passiert, wenn …?“ — die Formate wechseln
 sich immer ab (Skill `bau-erklaervideo`, Schritt 0). `Set` = die Welt des Videos
 in 2–4 Wörtern, `Licht` = Tageszeit / Himmel. Seit 2026-10-24 gibt es keine
 festen Umgebungen mehr: jedes Video baut eine neue, passende Welt (Schritt 1b),
