@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" (9:16, exactly 60 s) in two formats that always take turns: A = how an everyday thing works, built up piece by piece in x-ray; B = "Was passiert, wenn …?", a scenario people always wondered about played out as a chain of consequences (references/format-was-passiert.md). House style: toy-like low-poly 3D diorama in a new world built for every topic, name tags with arrows, one-word captions with yellow punch-in keywords, sound effects, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3), retention-first script (hook + on-screen title, open loop, payoff, "Übrigens" bonus fact, comment + follow CTA, no loop), plus a cover image and a short keyword description (no hashtags). Claude picks the format and the topic itself (references/themen.md, never one already done). Use whenever the user asks for "noch so ein Video", "neues Video", "wie funktioniert X", "was passiert, wenn …", "mach das nächste Video" or names a topic.'
+description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" (9:16, exactly 60 s) in two formats that always take turns: A = how an everyday thing works, built up piece by piece in x-ray; B = "Was passiert, wenn …?", a scenario people always wondered about played out as a chain of consequences (references/format-was-passiert.md). House style: toy-like low-poly 3D diorama in a new world built for every topic, name tags with arrows, one-word captions with yellow punch-in keywords, sound effects, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3), retention-first script (hook + on-screen title, open loop, payoff, "Übrigens" bonus fact, comment + follow CTA, no loop), plus a cover image and a keyword description with 3–5 fitting hashtags. Claude picks the format and the topic itself (references/themen.md, never one already done). Use whenever the user asks for "noch so ein Video", "neues Video", "wie funktioniert X", "was passiert, wenn …", "mach das nächste Video" or names a topic.'
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -29,7 +29,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Bonus fact   | "Übrigens: …" right after the payoff — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Ending       | **No loop** (user's rule, 2026-10-24): the video simply ends ~1.2 s after the comment question, on a strong last shot (the subject big, or the drone pull-back over the world). No `> …` line, no cut back to frame 0                                                                                                                                                                                                                                                                                                                                |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Beschreibung | **Every video gets a TikTok description** (step 6c): **≤ 60 characters, 2–3 strong search keywords first, exactly one emoji at the end, no hashtags**; saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                                                                                                                                                |
+| Beschreibung | **Every video gets a TikTok description** (step 6c): a keyword line **≤ 60 characters, strongest search words first, one emoji at the end, no dash** + **3–5 hashtags that fit the topic and are really watched** (topic tag first; never `#fyp`, `#viral`, `#lernenmittiktok`); saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                      |
 | Serienformat | **Always alternating A „Bauen“ ↔ B „Was passiert, wenn …?“** (user's rule, 2026-10-23) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                                                                                                                                               |
 | Payoff       | The hook's question answered in one punchy line (the on-screen question fades out). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                                                                                                                                            |
@@ -365,12 +365,15 @@ as the Titelbild when posting. Commit it (`tiktok/**/*.png` is LFS;
 
 ### 6c. Beschreibung (TikTok description) — every video
 
-**Short, keyword-strong, one emoji at the end, no hashtags** (user's rules
-2026-10-23 and 2026-10-27). TikTok sorts videos mainly by what is said,
-shown and written — the description's job is to hand it the **exact
-words people search for**, nothing else. Save it as
+**A short keyword line with one emoji at the end + 3–5 good hashtags**
+(user's rules 2026-10-23, 2026-10-27; hashtags back since 2026-10-27).
+TikTok sorts videos by what is said, shown and written — the description
+hands it the **exact words people search for**, the hashtags put the video
+into the feeds of people who follow that topic. Save it as
 `tiktok/<slug>/beschreibung.txt` and put it **in the delivery message as
 a copy-paste block** (with the video and the cover).
+
+**Line 1 — the keyword line**
 
 - **≤ 60 characters** including the emoji — one short line, no full
   sentence needed.
@@ -378,24 +381,48 @@ a copy-paste block** (with the video and the cover).
   name + what people type about it ("Flugzeugtür öffnen", "Kühlschrank
   Funktion", "Falschgeld erkennen", "Blitzer Abschnittskontrolle").
   Plain nouns and verbs, no filler ("So", "Wusstest du", "krass").
-- **Exactly one emoji, at the very end**, that fits the topic (✈️ 🧊 💶 ⚡).
-- **No dash** (user's rule, 2026-10-27): no Gedankenstrich „–“ / „—“ and no
-  „ - “ — use a colon or just the words.
-- Not a copy of the spoken hook or the cover title.
-- **No hashtags**, no "Folg mir", no question list.
+- **Exactly one emoji, at the very end of the line**, that fits the topic
+  (✈️ 🧊 💶 ⚡).
+- **No dash**: no Gedankenstrich „–“ / „—“ and no „ - “ — use a colon or
+  just the words.
+- Not a copy of the spoken hook or the cover title. No "Folg mir", no
+  question list.
+
+**Line 2 — 3–5 hashtags that fit this topic and are really watched**
+
+1. **1–2 topic tags first** — the thing itself, spelled the way people
+   type it, umlauts included: `#taschenwärmer`, `#kühlschrank`,
+   `#faceid`, `#flugzeug`, `#blitzer`.
+2. **1 field tag with a big German-speaking audience** that matches:
+   `#physik`, `#technik`, `#chemie`, `#wissenschaft`, `#handy`, `#auto`,
+   `#weltall`, `#küche`.
+3. **Optional 1 broad knowledge tag:** `#wissen` or `#wusstestdu`
+   (alternate them).
+4. **Check that they are watched:** when web search is available, look up
+   the tags (TikTok tag page / search: views or post count) and swap a
+   tag with few views for a bigger fitting one; prefer the German tag
+   over the English one when our viewers would type it.
+5. **Never:** `#fyp`, `#foryou`, `#viral`, `#fy` and other empty reach
+   tags; `#lernenmittiktok` (pulls a school audience — dropped
+   2026-10-23); our own series tag (nobody searches it); tags that don't
+   match the video (TikTok then shows it to the wrong people — the 0.1 s
+   swipes).
 
 Examples:
 
 ```text
 Flugzeugtür im Flug öffnen: geht das? ✈️
+#flugzeug #fliegen #physik #wissen
 ```
 
 ```text
-Kühlschrank: So kühlt er wirklich 🧊
+Taschenwärmer: flüssiges Salz wird heiß 🔥
+#taschenwärmer #winter #chemie #wusstestdu
 ```
 
 ```text
 Geldautomat erkennt Falschgeld in 1 Sekunde 💶
+#geldautomat #falschgeld #technik #wissen
 ```
 
 ### 6d. Ask for the numbers — learning log
