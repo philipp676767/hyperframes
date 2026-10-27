@@ -48,3 +48,4 @@ Umgebungen (insel, stadt, …).
 | 36  | UV-Nagellampe (Gel-Nägel)     | A      | `tiktok/nagellampe`          | nagelstudio-wiener-gasse    | abenddämmerung   | 60,0 s | 2026-10-26 |
 | 37  | Kaugummi verschluckt          | B      | `tiktok/kaugummi`            | wiener-prater               | abenddämmerung   | 60,0 s | 2026-10-27 |
 | 38  | Knicklicht (Halloween)        | A      | `tiktok/knicklicht`          | halloween-vorgarten         | nacht            | 60,0 s | 2026-10-27 |
+| 39  | Flugzeugklo (spülen)          | B      | `tiktok/flugzeugklo`         | nachtflug-wolkenmeer        | nacht            | 60,0 s | 2026-10-27 |

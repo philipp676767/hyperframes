@@ -257,9 +257,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                | Format | Datum      | Chat               |
-| -------------------- | ------ | ---------- | ------------------ |
-| Flugzeugklo (spülen) | B      | 2026-10-27 | Video: Flugzeugklo |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
