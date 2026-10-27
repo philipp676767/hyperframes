@@ -257,8 +257,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                  | Format | Datum      | Chat              |
+| ---------------------- | ------ | ---------- | ----------------- |
+| Knicklicht (Halloween) | A      | 2026-10-27 | Video: Knicklicht |
 
 ## Verwendet
 
