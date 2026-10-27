@@ -28,6 +28,7 @@ import {
   roundedRect,
   showNope,
   makeArrowSet,
+  coldMat,
   animateArrows,
   showPanel,
   LED,
@@ -72,7 +73,14 @@ const paintMat = xrayMaterial(0xf4f6fb, { flatShading: true, roughness: 0.3 });
 const stripeMat = xrayMaterial(0x2a5fd0, { flatShading: true, roughness: 0.3 });
 const tailMat = xrayMaterial(0x1e3f8f, { flatShading: true, roughness: 0.35 });
 const floorMat = xrayMaterial(0x5c6478, { flatShading: true, roughness: 0.6 });
+const shroudMat = xrayMaterial(0xd8d3ca, { flatShading: true, roughness: 0.6 });
+const bowlMat = xrayMaterial(0x7d899c, {
+  metalness: 0.3,
+  roughness: 0.5,
+  side: THREE.DoubleSide,
+});
 const XRAY = [paintMat, stripeMat, tailMat, floorMat];
+const XRAY_LAV = [shroudMat, bowlMat];
 
 // shell: an open cylinder along x; the front (+z) gets a cut-out at the
 // lavatory so the camera can look in from outside (a dollhouse cut)
@@ -238,11 +246,11 @@ for (const s of [1, -1]) {
     7,
   );
   wing.rotation.x = Math.PI / 2;
-  wing.position.set(-2.2, AY - 1.55, 0);
+  wing.position.set(-2.2, AY - 1.98, 0);
   plane.add(wing);
   // winglet
   const wl = Fm(new THREE.BoxGeometry(1.2, 1.4, 0.12), tailMat, 0.03, 8);
-  wl.position.set(-2.2 + 9.1, AY - 0.9, 15 * s);
+  wl.position.set(-2.2 + 9.1, AY - 1.35, 15 * s);
   wl.rotation.z = -0.4;
   plane.add(wl);
   // engine nacelle with spinning fan
@@ -277,7 +285,7 @@ for (const s of [1, -1]) {
   fan.position.x = -1.2;
   eng.add(fan);
   fans.push(fan);
-  eng.position.set(1.0, AY - 2.35, 5.6 * s);
+  eng.position.set(1.0, AY - 2.8, 5.6 * s);
   plane.add(eng);
 }
 // nav lights: red left (+z), green right (−z), white strobes, red beacon
@@ -291,10 +299,10 @@ function navLight(color, x, y, z) {
   navMats.push(m);
   return m;
 }
-const redNav = navLight(0xff3344, 7.3, AY - 1.4, 15.1);
-const greenNav = navLight(0x33ff77, 7.3, AY - 1.4, -15.1);
-const strobeA = navLight(0xffffff, 7.6, AY - 1.3, 15.3);
-const strobeB = navLight(0xffffff, 7.6, AY - 1.3, -15.3);
+const redNav = navLight(0xff3344, 7.3, AY - 1.85, 15.1);
+const greenNav = navLight(0x33ff77, 7.3, AY - 1.85, -15.1);
+const strobeA = navLight(0xffffff, 7.6, AY - 1.75, 15.3);
+const strobeB = navLight(0xffffff, 7.6, AY - 1.75, -15.3);
 const beacon = navLight(0xff2222, 2, AY + R + 0.05, 0);
 
 // ---------------------------------------------------------------- cabin
@@ -464,7 +472,7 @@ const panelMat2 = flat(0x6a7086, { roughness: 0.55 });
   led.position.set(0, 2.25, -1.72);
   led.userData.noAO = true;
   lav.add(led);
-  const lamp = new THREE.SpotLight(0xf2f6ff, 18, 5, 0.6, 0.5, 1.2);
+  const lamp = new THREE.SpotLight(0xf2f6ff, 9, 5, 0.6, 0.5, 1.2);
   lamp.position.set(0, 2.2, -0.7);
   lamp.target.position.set(0, 0.3, -1.1);
   lav.add(lamp.target);
@@ -485,26 +493,20 @@ const panelMat2 = flat(0x6a7086, { roughness: 0.55 });
   sign.position.set(-0.15, 1.85, -1.745);
   lav.add(sign);
 }
+// walls etc. vanish in the cut-away (x-ray) part of the video
+const lavWalls = lav.children.filter((o) => !o.isLight);
 // the toilet: grey shroud, steel bowl, black seat, lid up
 const BOWL = V(0, 0.45, -1.1);
 {
-  const shroud = Fm(new THREE.BoxGeometry(0.52, 0.42, 0.62), flat(0xd8d3ca), 0.03, 30);
-  shroud.position.set(0, 0.21, -1.25);
+  const shroud = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.2, 0.6), shroudMat);
+  shroud.position.set(0, 0.1, -1.2);
   lav.add(shroud);
   const pts = [];
   for (let i = 0; i <= 8; i++) {
     const k = i / 8;
     pts.push(new THREE.Vector2(0.05 + 0.18 * Math.sin((k * Math.PI) / 2), -0.25 + k * 0.25));
   }
-  const bowl = new THREE.Mesh(
-    new THREE.LatheGeometry(pts, 24),
-    new THREE.MeshStandardMaterial({
-      color: 0xdfe6f0,
-      metalness: 0.55,
-      roughness: 0.22,
-      side: THREE.DoubleSide,
-    }),
-  );
+  const bowl = new THREE.Mesh(new THREE.LatheGeometry(pts, 24), bowlMat);
   bowl.position.copy(BOWL);
   lav.add(bowl);
   const seat = new THREE.Mesh(
@@ -619,7 +621,7 @@ const sprayData = (() => {
 })();
 // a tiny puddle of blue water at the bottom (the "glass")
 const water = new THREE.Mesh(
-  new THREE.CircleGeometry(0.075, 16),
+  new THREE.CircleGeometry(0.1, 16),
   new THREE.MeshStandardMaterial({
     color: 0x3fb4ff,
     emissive: 0x1a6fd0,
@@ -630,7 +632,7 @@ const water = new THREE.Mesh(
   }),
 );
 water.rotation.x = -Math.PI / 2;
-water.position.set(0, 0.215, -1.1);
+water.position.set(0, 0.235, -1.1);
 lav.add(water);
 // the paper ball (what gets flushed)
 const paper = Fm(jitter(new THREE.IcosahedronGeometry(0.07, 1), 0.02, 9), flat(0xfbfbf6), 0.06, 9);
@@ -663,10 +665,11 @@ tank.position.set(...TANK);
 plane.add(tank);
 const tankMat = new THREE.MeshStandardMaterial({
   color: 0xb7c2d6,
+  emissive: 0x2a3a66,
   metalness: 0.7,
   roughness: 0.25,
   transparent: true,
-  opacity: 0.55,
+  opacity: 0.8,
   depthWrite: false,
 });
 {
@@ -733,7 +736,7 @@ pump.add(pumpFan);
 
 // ---------------------------------------------------------------- air particles
 // dense blue dots in the cabin air, a few inside the pipe, very few outside
-const dotGeo = new THREE.IcosahedronGeometry(0.035, 0);
+const dotGeo = new THREE.IcosahedronGeometry(0.022, 0);
 const dotMat = new THREE.MeshBasicMaterial({ color: 0x7fd0ff, transparent: true, opacity: 0 });
 const N_CABIN = 160;
 const cabinDots = new THREE.InstancedMesh(dotGeo, dotMat, N_CABIN);
@@ -752,7 +755,7 @@ const cabinSeed = (() => {
 })();
 const outMat = new THREE.MeshBasicMaterial({ color: 0x9fdcff, transparent: true, opacity: 0 });
 const N_OUT = 14;
-const outDots = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(0.06, 0), outMat, N_OUT);
+const outDots = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(0.1, 0), outMat, N_OUT);
 outDots.userData.noAO = true;
 outDots.frustumCulled = false;
 plane.add(outDots);
@@ -780,7 +783,7 @@ const suckArrows = makeArrowSet(
     [V(-0.45, 1.05, -0.6), V(-0.08, 0.5, -1.1)],
     [V(0.0, 1.25, -0.4), V(0.0, 0.55, -1.0)],
   ],
-  { parent: plane, amp: 0.04 },
+  { parent: plane, amp: 0.04, mat: coldMat },
 );
 const skyArrows = makeArrowSet(
   [
@@ -788,7 +791,7 @@ const skyArrows = makeArrowSet(
     [V(VENT[0] - 0.2, VENT[1] - 0.1, VENT[2]), V(VENT[0] - 0.9, VENT[1] - 2.0, VENT[2] + 0.8)],
     [V(VENT[0] + 0.2, VENT[1] - 0.1, VENT[2]), V(VENT[0] + 1.5, VENT[1] - 1.6, VENT[2] - 0.3)],
   ],
-  { parent: plane, amp: 0.06 },
+  { parent: plane, amp: 0.06, mat: coldMat },
 );
 
 // ---------------------------------------------------------------- analogy props in the aisle
@@ -951,7 +954,7 @@ const iceMat = flat(0x5fc8ff, {
   roughness: 0.1,
   metalness: 0.1,
 });
-const ice = Fm(jitter(new THREE.IcosahedronGeometry(0.3, 1), 0.08, 90), iceMat, 0.08, 90);
+const ice = Fm(jitter(new THREE.IcosahedronGeometry(0.19, 1), 0.05, 90), iceMat, 0.08, 90);
 plane.add(ice);
 const icePos = V(0, 0, 0);
 const iceDrip = Fm(new THREE.ConeGeometry(0.12, 0.5, 6), iceMat, 0.05, 91);
@@ -1048,13 +1051,17 @@ function renderAt(t) {
   // pipe glows while air rushes through; x-ray from Folge 2 to the payoff
   pipeMat.emissiveIntensity =
     1.4 * Math.max(pop(t, T.dahinter, T.kabinenluft + 1.8), pop(t, T.zahl - 0.15, T.dein1)) +
-    0.25 * f;
+    0.25 * f +
+    0.7 * pop(t, T.dahinter, T.fakt, 0.4);
   const xr =
     smooth(ramp(t, T.dahinter - 0.3, T.dahinter + 0.2)) *
     (1 - ramp(t, T.ehrlich - 0.4, T.ehrlich)) *
     (1 - pop(t, T.wer, T.draussen, 0.2) * 0.6) *
     (1 - pop(t, T.fakt, T.ehrlich, 0.3));
-  setXray(XRAY, Math.max(xr, 0.85 * pop(t, T.schwer - 0.6, T.aber, 0.2) * 0));
+  setXray(XRAY, xr);
+  const cutK = pop(t, T.unten - 0.15, T.landet, 0.25);
+  setXray(XRAY_LAV, cutK);
+  for (const o of lavWalls) o.visible = cutK < 0.5;
 
   // paper ball: sits in the bowl, then shoots down the pipe
   const pa = paperAt(t);
@@ -1149,12 +1156,12 @@ function renderAt(t) {
   carPos.set(cx, 0.35, 0).applyMatrix4(plane.matrixWorld);
 
   // blue ice under the belly: grows on "Leitung", breaks off on "runter"
-  const iceGrow = smooth(ramp(t, T.leitung, T.blaues));
-  const fall = Math.max(0, t - T.runter + 0.2);
+  const iceGrow = smooth(ramp(t, T.fakt, T.leitung + 0.6));
+  const fall = Math.max(0, t - T.blaues - 0.3);
   ice.visible = iceGrow > 0.01 && t < T.ehrlich + 0.5;
   iceDrip.visible = ice.visible && fall === 0;
   ice.scale.setScalar(Math.max(0.001, iceGrow));
-  ice.position.set(ICE[0], ICE[1] - 0.28 - 0.5 * fall * fall * 6, ICE[2]);
+  ice.position.set(ICE[0], ICE[1] - 0.28 - 2.4 * fall * fall, ICE[2]);
   ice.rotation.set(fall * 4, fall * 3, 0);
   iceDrip.scale.setScalar(Math.max(0.001, iceGrow));
   iceDrip.position.set(ICE[0] + 0.25, ICE[1] - 0.25, ICE[2] + 0.1);
@@ -1186,11 +1193,11 @@ function renderAt(t) {
     color: "#4fc3ff",
   });
   if (t >= T.schwer - 0.2 && t < T.aber)
-    showPanel(pop(t, T.schwer - 0.2, T.aber), "WASSER", "TONNEN", LED.red);
+    showPanel(pop(t, T.schwer - 0.2, T.aber), "WASSER", "ZU VIEL", LED.red);
   else if (t >= T.unterdruck && t < T.rate)
-    showPanel(pop(t, T.unterdruck, T.rate), "IM ROHR", "UNTERDRUCK", LED.blue);
+    showPanel(pop(t, T.unterdruck, T.rate), "IM ROHR", "SOG!", LED.blue);
   else if (t >= T.boden - 0.2 && t < T.landet)
-    showPanel(pop(t, T.boden - 0.2, T.landet), "AM BODEN", "PUMPE AN", LED.yellow);
+    showPanel(pop(t, T.boden - 0.2, T.landet), "AM BODEN", "PUMPE", LED.yellow);
   else if (t >= T.friert && t < T.ehrlich)
     showPanel(pop(t, T.friert, T.ehrlich), "AUSSEN", "−50 °C", LED.blue);
   else showPanel(0);

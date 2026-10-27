@@ -183,6 +183,11 @@
   },
   {
     "s": "whoosh",
+    "at": 19.56,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
     "at": 19.66,
     "why": "highlight zoom"
   },
@@ -248,12 +253,6 @@
     "s": "whoosh",
     "at": 29.86,
     "why": "highlight zoom"
-  },
-  {
-    "s": "whoosh",
-    "at": 29.91,
-    "why": "beats.js",
-    "db": -8
   },
   {
     "s": "punch",
@@ -391,7 +390,7 @@
   },
   {
     "s": "whoosh",
-    "at": 53.6,
+    "at": 53.9,
     "why": "cut"
   },
   {
