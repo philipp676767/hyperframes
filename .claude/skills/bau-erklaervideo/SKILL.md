@@ -379,13 +379,15 @@ a copy-paste block** (with the video and the cover).
   Funktion", "Falschgeld erkennen", "Blitzer Abschnittskontrolle").
   Plain nouns and verbs, no filler ("So", "Wusstest du", "krass").
 - **Exactly one emoji, at the very end**, that fits the topic (✈️ 🧊 💶 ⚡).
+- **No dash** (user's rule, 2026-10-27): no Gedankenstrich „–“ / „—“ and no
+  „ - “ — use a colon or just the words.
 - Not a copy of the spoken hook or the cover title.
 - **No hashtags**, no "Folg mir", no question list.
 
 Examples:
 
 ```text
-Flugzeugtür im Flug öffnen – geht das? ✈️
+Flugzeugtür im Flug öffnen: geht das? ✈️
 ```
 
 ```text

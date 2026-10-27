@@ -6,7 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
-- [ ] **Format B ohne „eigentlich“, Schlussfrage jedes Mal neu, Beschreibung ≤ 60 Zeichen mit starken Suchwörtern + 1 Emoji am Ende** (Nutzer, 2026-10-27).
+- [ ] **Format B ohne „eigentlich“, Schlussfrage jedes Mal neu, Beschreibung ≤ 60 Zeichen mit starken Suchwörtern + 1 Emoji am Ende, ohne Gedankenstrich** (Nutzer, 2026-10-27).
 - [ ] **Trends nur als Ausnahme** (Nutzer-Korrektur, 2026-10-26: eine Vorschlagsrunde hatte nur Kälte-Themen): Jahreszeit gibt keinen Bonus, höchstens 1 von 3 Vorschlägen ist ein Trend-/Saison-Thema, die 3 Vorschläge aus 3 verschiedenen Kategorien, höchstens 1 Saison-Thema in 3 Videos.
 - [ ] **Jan mit 3,1 Wörtern/s, etwas Humor, keine Musik** (Nutzer, 2026-10-26): +15 % Tempo (174–190 Wörter), 0–2 kleine passende Humor-Momente, nur Stimme + Soundeffekte. Beobachten: Ø Wiedergabezeit und Kommentare im Vergleich zu vorher.
 - [ ] **Trend-Themen, wenn es passt** (Nutzer, 2026-10-26): Trend-Check vor jedem Vorschlag (aktuell + Kalender), Trend = Bonus, nie ein uninteressantes Thema erzwingen. Vergleichen: Aufrufe von Trend- vs. Dauerthemen (Tesla und Taschenwärmer waren Trend-Themen).
