@@ -434,7 +434,11 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
 - **A worker restart kills the render too** (#37): even a detached render
   dies when the session's worker restarts. Check `pgrep -f "node.*hyperframes
 render"` after any restart notice and start it again (clear
-  `renders/work-*` and `renders/.<slug>.hf-transaction-*` first).
+  `renders/work-*` and `renders/.<slug>.hf-transaction-*` first). The
+  container is also reclaimed when the chat sits idle for a while (#37
+  lost a render at 53 % overnight): keep the turn alive while rendering
+  with a `Monitor` that prints progress every 10 % and re-arm it on expiry,
+  instead of ending the turn and waiting for a notification.
 - **X-ray glass:** use `xrayMaterial()` + `setXray()`. Never toggle
   `material.transparent` at runtime — three.js keeps the opaque shader and
   the shell stays solid in sequential renders.

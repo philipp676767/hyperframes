@@ -257,9 +257,8 @@ ask for (CTA „Was sollen wir als Nächstes passieren lassen?“) go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                                                                               | Format | Datum      | Chat            |
-| --------------------------------------------------------------------------------------------------- | ------ | ---------- | --------------- |
-| ★ Kaugummi verschluckt („Er bleibt keine 7 Jahre – er wandert in ein paar Tagen ganz normal durch“) | B      | 2026-10-26 | Video: Kaugummi |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
