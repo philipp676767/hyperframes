@@ -22,12 +22,13 @@ export const LAST = WORDS[WORDS.length - 1].end;
 // right before frame 0 (world.js start()), and the video ends 0.25 s after
 // the last word so the restart lands on the beat. null = no loop line.
 export const LOOP = LOOP_START != null ? WORDS[LOOP_START].start : null;
-// House length (user's rule, 2026-10-24): every video is exactly one minute,
+// House length (user's rule, 2026-10-28; 60 s from 2026-10-24 to -27):
+// every video is exactly 45 s,
 // and it simply ends — no loop line any more (2026-10-24). scripts/prepare-
-// voice.sh fits the speech to end ~1.2 s before 60 s; then the composition
+// voice.sh fits the speech to end ~1.2 s before 45 s; then the composition
 // is exactly LENGTH. Anything else (the short template demo, old episodes)
 // keeps its natural length — same rule as scripts/sync-html.mjs.
-export const LENGTH = 60;
+export const LENGTH = 45;
 const natural = Math.ceil((LAST + (LOOP != null ? 0.25 : 1.2)) * 10) / 10;
 const fitted = LAST > LENGTH - 3 && LAST + (LOOP != null ? 0.15 : 0.6) <= LENGTH;
 export const DURATION = fitted ? LENGTH : natural;
@@ -40,7 +41,7 @@ export const HL = WORDS.filter((w) => w.hl).map((w) => w.start);
 // CTA moments, the same rules as the button timeline in index.html: the
 // comment pill pops when the last script line starts; the follow pill on the
 // first "folg…" — since 2026-10-24 a line in the MIDDLE of the video
-// ("Folg mir, wenn du noch mehr lernen willst."), so most viewers still see
+// ("Folge für mehr Wissen."), so most viewers still see
 // it — tapped 1.0 s later, flipped to "Gefolgt" at +1.12 s, gone at +2.4 s
 // (`mid`). A "folg" inside the last line (older scripts) keeps the old
 // end-of-video behaviour.

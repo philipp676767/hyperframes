@@ -8,10 +8,10 @@ const root = new URL("..", import.meta.url);
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(new URL("assets/words.js", root), "utf8"), ctx);
 const words = ctx.window.HF_WORDS;
-// same rule as assets/timing.js DURATION: exactly LENGTH (one minute) when the
+// same rule as assets/timing.js DURATION: exactly LENGTH (45 s) when the
 // voice was fitted to it, else 1.2 s after the last word (0.25 s with an old
 // loop line)
-const LENGTH = 60;
+const LENGTH = 45;
 const loop = ctx.window.HF_LOOP_START != null;
 const last = words[words.length - 1].end;
 const tail = loop ? 0.25 : 1.2;

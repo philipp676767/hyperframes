@@ -58,7 +58,7 @@ bubbles, analogy sets, door opening).
 
 ## timing.js (also in node)
 
-`W`, `LAST`, `END`, `DURATION` (exactly `LENGTH` = 60 s once the voice is
+`W`, `LAST`, `END`, `DURATION` (exactly `LENGTH` = 45 s once the voice is
 fitted), `HL`, `WORDS`, `LOOP` (old episodes only: start of a `> …` loop
 line; null for every new video), `ctaTimes()` (comment / follow / tap / flip moments,
 mirrors index.html), `payoffTime()` (legacy: end of "… gebaut." in old episodes; new

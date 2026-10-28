@@ -6,6 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
+- [ ] **Zurück auf 45 s, Nutzen/Warnung im Hook, „Folge für mehr Wissen.“** (Nutzer, 2026-10-28): 130–142 Wörter; Satz 1 (spätestens 2) sagt, was der Zuschauer gewinnt oder riskiert („Deshalb darfst du niemals …“, „Dieser Trick spart dir Geld“); Folgen-Zeile exakt „Folge für mehr Wissen.“ Vergleichen: 45 s vs. 60 s (Ø Wiedergabe, Anteil bis zum Ende).
 - [ ] **Hashtags wieder drin** (Nutzer, 2026-10-27): 3–5 passende, viel gesehene Tags (Thema zuerst, dann Fachgebiet, optional #wissen / #wusstestdu), nie #fyp / #viral / #lernenmittiktok. Hinweis: das bisher beste Video (#18 Taschenwärmer, 13K) hatte 5 Hashtags. Vergleichen: Aufrufe mit vs. ohne Hashtags.
 - [ ] **Format B ohne „eigentlich“, Schlussfrage jedes Mal neu, Beschreibung ≤ 60 Zeichen mit starken Suchwörtern + 1 Emoji am Ende, ohne Gedankenstrich** (Nutzer, 2026-10-27).
 - [ ] **Trends nur als Ausnahme** (Nutzer-Korrektur, 2026-10-26: eine Vorschlagsrunde hatte nur Kälte-Themen): Jahreszeit gibt keinen Bonus, höchstens 1 von 3 Vorschlägen ist ein Trend-/Saison-Thema, die 3 Vorschläge aus 3 verschiedenen Kategorien, höchstens 1 Saison-Thema in 3 Videos.

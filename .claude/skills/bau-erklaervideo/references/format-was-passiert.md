@@ -24,18 +24,18 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
   dich jetzt noch an den Notausgang setzen?" — viewers answer for
   themselves.
 
-## Script shape (same length: exactly 60 s, 174–190 words)
+## Script shape (same length: exactly 45 s, 130–142 words)
 
 | Part                  | When     | Words | Job                                                                                                            |
 | --------------------- | -------- | ----- | -------------------------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)     | 0–5 s    | 18–28 | The question **"Was passiert, wenn du …?"** + the act starting ("Du packst den Griff …") + the Haken           |
-| **Folge 1**           | 5–15 s   | 25–30 | The first consequence / the condition that makes it strange; ends on the second money shot                     |
-| **Follow line**       | ~15–18 s | 6–9   | „Folg mir, wenn du noch mehr lernen willst.“ (script-formel.md §4)                                             |
-| **Folge 2**           | 18–28 s  | 25–30 | It escalates                                                                                                   |
-| **Mid twist**         | ~28–33 s | 12–18 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                    |
-| **Folge 3**           | 33–45 s  | 25–32 | The decisive consequence: the real mechanism, max 1–2 terms                                                    |
-| **Payoff + Übrigens** | 45–53 s  | 22–28 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                  |
-| **CTA**               | 53–58 s  | 8–14  | a **new comment question that fits this scenario** every time (see "Payoff, Übrigens, CTA, ending"), no "folg" |
+| **Hook** (line 1)     | 0–4 s    | 18–26 | The question **"Was passiert, wenn du …?"** + the act starting ("Du packst den Griff …") + the Haken           |
+| **Folge 1**           | 4–11 s   | 20–25 | The first consequence / the condition that makes it strange; ends on the second money shot                     |
+| **Follow line**       | ~11–13 s | 4     | „Folge für mehr Wissen.“ (script-formel.md §4)                                                                 |
+| **Folge 2**           | 13–21 s  | 18–24 | It escalates                                                                                                   |
+| **Mid twist**         | ~21–25 s | 10–14 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                    |
+| **Folge 3**           | 25–34 s  | 20–26 | The decisive consequence: the real mechanism, max 1–2 terms                                                    |
+| **Payoff + Übrigens** | 34–40 s  | 16–22 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …"                                  |
+| **CTA**               | 40–44 s  | 8–12  | a **new comment question that fits this scenario** every time (see "Payoff, Übrigens, CTA, ending"), no "folg" |
 
 The retention engine of script-formel.md (open-loop chain, escalation,
 mid twist, "Rate mal", hook lab) applies here too.
@@ -54,6 +54,11 @@ mid twist, "Rate mal", hook lab) applies here too.
   scenario, never an announcement ("Gleich siehst du …", "Am Ende …")
   and never a number of seconds: "Und der Pilot? Bleibt ganz ruhig." /
   "Dabei hält die Tür nur ein Griff."
+- **Why _you_ should care, early** (2026-10-28): when the scenario has a
+  real danger or gain for the viewer, say it in sentence 2–3 — "Mach das
+  nie: Das kann deine ganze Küche abfackeln." / "Das kann dich eine Menge
+  Geld kosten." Impossible scenarios (Weltall, Flugzeugtür) keep the
+  curiosity Haken instead.
 - **Never reveal the outcome in the hook.** Not "Spoiler: sie geht nicht
   auf" — the outcome is the payoff, the question stays on screen until then.
 - Hook formulas for the two alternatives: the same question with a
@@ -135,17 +140,16 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (189 words → 60 s)
+## Example — Flugzeugtür (137 words → 45 s)
 
 ```text
-[curious] Was passiert, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt ganz *ruhig*.
-Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du nach kurzer Zeit *ohnmächtig* würdest. Darum pumpt das Flugzeug ständig Luft rein – und genau die wird dein Problem.
-Folg mir, wenn du noch mehr lernen willst.
-[whispers] Sie drückt von innen gegen die Tür, draußen drückt fast nichts dagegen. Das presst die Tür in den *Rahmen*. Auf jedem Quadratmeter lastet so viel wie ein *Elefant*.
-Was glaubst du: Wie viele Leute müssten ziehen, um das zu schaffen? [surprised] Rund *hundert*. Viel Spaß im Gang.
-Und selbst die hätten keine Chance: Die Tür ist größer als das Loch. Sie sitzt wie ein *Stöpsel* im Rahmen und geht zuerst nach *innen* auf – gegen den Druck.
-Erst am Boden geht sie ganz leicht auf – wenn drinnen und draußen gleich viel Luft drückt.
-[excited] Darum bleibt sie oben *zu*, egal wie stark du bist. Übrigens: Draußen ist es dort kälter als minus *50* Grad.
+[curious] Was passiert, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt *ruhig*.
+Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Darum pumpt das Flugzeug Luft rein – und genau die wird dein Problem.
+Folge für mehr Wissen.
+[whispers] Sie drückt von innen gegen die Tür. Auf jedem Quadratmeter lastet so viel wie ein *Elefant*.
+Was glaubst du: Wie viele Leute müssten ziehen? [surprised] Rund *hundert*. Viel Spaß im Gang.
+Und selbst die hätten keine Chance: Die Tür ist ein *Stöpsel*, größer als das Loch. Sie geht zuerst nach *innen* auf – gegen den Druck.
+[excited] Darum bleibt sie oben *zu*. Übrigens: Draußen ist es kälter als minus *50* Grad.
 Würdest du dich jetzt noch an den Notausgang setzen? Schreib's in die Kommentare.
 ```
 
@@ -155,8 +159,8 @@ Würdest du dich jetzt noch an den Notausgang setzen? Schreib's in die Kommentar
   ~0,2–0,25 bar outside → ~0,55 bar ≈ 5,5 t per m², a door of ~1,5 m² →
   several tonnes, ~5,5 t per m² ≈ an adult elephant (~8 t ÷ ~80 kg pull per person ≈ 100 people); passenger doors are plug doors that first move inward;
   ~−50 to −56 °C at 11 km.
-- Loop map: 0–50 s Geht die Tür auf? · 12–25 s Warum ist die Luft dein Problem? ·
-  27–31 s Wie viele Leute? · 31–48 s Warum hätten selbst die keine Chance?
+- Loop map: 0–36 s Geht die Tür auf? · 9–15 s Warum ist die Luft dein Problem? ·
+  20–23 s Wie viele Leute? · 23–34 s Warum hätten selbst die keine Chance?
 - Visual plan: frame 0 the hand on the door lever inside a sunny cabin,
   window with clouds → Folge 1 cutaway of the plane over the clouds, thin
   air outside (few particles), air pumped in (many) → Folge 2 yellow force

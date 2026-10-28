@@ -56,11 +56,11 @@ plus two alternatives **with their scores** (max 16; propose nothing under
 
 - **Was?!-Faktor** — 2 = a stranger says "Was?!" out loud (🔥), 1 = "oh,
   interessant", 0 = nice to know.
-- **Trägt eine Minute (Fakten-Inventar)** — write down the topic's
+- **Trägt 45 Sekunden (Fakten-Inventar)** — write down the topic's
   "Was?!" facts _before_ scoring: 2 = **five or more** strong, true,
   showable facts (one per beat, one for the mid twist, the payoff, the
-  "Übrigens"), 1 = three or four, 0 = fewer. A 60-s video on a two-fact
-  topic gets boring at 30 s — that is where viewers leave.
+  "Übrigens"), 1 = three or four, 0 = fewer. A video on a two-fact
+  topic gets boring at ~20 s — that is where viewers leave.
 
 **What people really ask** (when web search is available): search the
 topic the way viewers do ("warum wird …", "was passiert wenn …", "wie
@@ -78,7 +78,7 @@ Format A — score each open candidate on these six (+ the two above):
    people assume ("ohne Strom", "wird gar nicht heiß", "hat keinen Akku").
 3. **Spektakel zum Zeigen** — at least one money shot the 3D style can
    show big (spark, explosion, crystals shooting through, waves, flip).
-4. **In 60 s erklärbar** — max 3 parts / terms, but enough to fill 3
+4. **In 45 s erklärbar** — max 3 parts / terms, but enough to fill 3
    beats + a mid twist.
 5. **Weitererzählbar / selbst testbar** — the viewer can try it today or
    tells a friend ("Hand auf den Induktionsherd").
@@ -191,7 +191,7 @@ about** — the loose hook on a tape measure, the pallets standing
 crosswise. Hook = the detail as a question, shown huge in frame 0;
 sentence 2 = the Umdeutung ("Das ist kein Fehler. Das ist Absicht.");
 the beats build the reason. Same scorecard — a detail only goes in when
-it carries a minute (≥ 5 facts: the reason, the physics, the history /
+it carries 45 s (≥ 5 facts: the reason, the physics, the history /
 an accident, a comparison, the "Übrigens"); else keep it for a later
 short format. Counts as format A in the alternation.
 
@@ -223,7 +223,7 @@ Criteria (instead of A's six, + the two of the scorecard;
 3. **Die Hand macht es in Bild 0** — the act is one clear movement the
    viewer's low-poly hand can do (pull the lever, drop the spoon, open
    the hatch) — also in space.
-4. **3 Folgen + Twist in 60 s** — a chain of three consequences plus a
+4. **3 Folgen + Twist in 45 s** — a chain of three consequences plus a
    surprise or "Rate mal" at the halfway mark, max 3 terms.
 5. **Sicher** — impossible, harmless or warning-only (safety rules in
    `format-was-passiert.md`); never a how-to.

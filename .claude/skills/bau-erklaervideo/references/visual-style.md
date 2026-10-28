@@ -192,14 +192,14 @@ The drop-off point. Never part names over a calm object here: put the
 second big visual moment of the video in this window (slowmo, explosion,
 the thing failing, the inside revealed in motion).
 
-## ~30 s — the mid twist (60-s videos)
+## ~22 s — the mid twist
 
-The halfway mark is the second drop-off point of a one-minute video. The
-script's mid twist / "Rate mal" lands here (script-formel.md "Retention
-engine"), and the picture gives it the **third money shot**: a new place
-in the set, a scale jump (zoom far out or deep inside), a slowmo or an
-LED reveal for the guessed number. In total a 60-s video has **4 money
-shots** (hook, 10–15 s, ~30 s, beat 3 / payoff) and 9–12 highlights.
+The halfway mark is the second drop-off point. The script's mid twist /
+"Rate mal" lands here (script-formel.md "Retention engine"), and the
+picture gives it the **third money shot**: a new place in the set, a
+scale jump (zoom far out or deep inside), a slowmo or an LED reveal for
+the guessed number. In total a 45-s video has **4 money shots** (hook,
+~10 s, ~22 s, beat 3 / payoff) and 7–9 highlights.
 
 ## Highlights — never monotone
 
@@ -238,7 +238,7 @@ Feedback: _"Qualität noch besser, nicht so ineinander verschwimmen."_
 
 ## Camera
 
-- Hard cut on a word every 2–3 s (≈ 22–28 shots in the 60-s video); never a static frame — each shot drifts
+- Hard cut on a word every 2–3 s (≈ 16–20 shots in the 45-s video); never a static frame — each shot drifts
   (dolly, slow orbit, crane).
 - Mix: establishing wide (subject + surroundings), medium 3/4, macro close-ups of
   the part being named (`zoom` 1.0–1.4), one big x-ray orbit when "alles im

@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" (9:16, exactly 60 s) in two formats that always take turns: A = how an everyday thing works, built up piece by piece in x-ray; B = "Was passiert, wenn …?", a scenario people always wondered about played out as a chain of consequences (references/format-was-passiert.md). House style: toy-like low-poly 3D diorama in a new world built for every topic, name tags with arrows, one-word captions with yellow punch-in keywords, sound effects, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3), retention-first script (hook + on-screen title, open loop, payoff, "Übrigens" bonus fact, comment + follow CTA, no loop), plus a cover image and a keyword description with 3–5 fitting hashtags. Claude picks the format and the topic itself (references/themen.md, never one already done). Use whenever the user asks for "noch so ein Video", "neues Video", "wie funktioniert X", "was passiert, wenn …", "mach das nächste Video" or names a topic.'
+description: 'Make the next video of the German TikTok series "Du hast gerade X gebaut" (9:16, exactly 45 s) in two formats that always take turns: A = how an everyday thing works, built up piece by piece in x-ray; B = "Was passiert, wenn …?", a scenario people always wondered about played out as a chain of consequences (references/format-was-passiert.md). House style: toy-like low-poly 3D diorama in a new world built for every topic, name tags with arrows, one-word captions with yellow punch-in keywords, sound effects, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3), retention-first script (hook + on-screen title, open loop, payoff, "Übrigens" bonus fact, comment + follow CTA, no loop), plus a cover image and a keyword description with 3–5 fitting hashtags. Claude picks the format and the topic itself (references/themen.md, never one already done). Use whenever the user asks for "noch so ein Video", "neues Video", "wie funktioniert X", "was passiert, wenn …", "mach das nächste Video" or names a topic.'
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -23,9 +23,9 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 | What         | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format       | 1080×1920, 30 fps, **exactly 60.0 s** (user's rule, 2026-10-24) — `prepare-voice.sh` fits the speech, the composition is fixed at 60 s (`LENGTH` in timing.js)                                                                                                                                                                                                                                                                                                                                                                                       |
+| Format       | 1080×1920, 30 fps, **exactly 45.0 s** (user's rule, 2026-10-28; 60 s from 2026-10-24 to -27) — `prepare-voice.sh` fits the speech, the composition is fixed at 45 s (`LENGTH` in timing.js)                                                                                                                                                                                                                                                                                                                                                          |
 | Voice        | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** — the house voice; **always use Jan**, always **3.1 words/s** — ~15 % faster than he reads (`prepare-voice.sh` `BASE=1.15`, pitch kept — user's wish 2026-10-26) (user's decision 2026-10-22 after trying Stephan on #7: back to Jan for #7 and every episode after). Don't switch voices unless the user asks. History: Christian Plasa (#1–#5), Jan (#6 →), Stephan – Warm and Friendly `IWm8DnJ4NGjFI7QAM5lM` tried once on #7, replaced by Jan |
-| CTA          | **Never dropped or shortened** (user's rule). Two parts since 2026-10-24: (1) **follow line in the middle** — „Folg mir, wenn du noch mehr lernen willst.“ (or a variant) as its own short line right after the second money shot, ≈ 12–20 s, so most viewers still hear it; red "+ Folgen" pill pops on "folg", gets tapped → "Gefolgt", gone 2.5 s later. (2) **comment question at the end** — tied to the topic, last line before the loop bridge, white "Kommentieren" pill. Both in the same take (template)                                   |
+| CTA          | **Never dropped or shortened** (user's rule). Two parts: (1) **follow line in the middle** — exactly **„Folge für mehr Wissen.“** (user's wording, 2026-10-28) as its own short line right after the second money shot, ≈ 11–15 s, so most viewers still hear it; red "+ Folgen" pill pops on "Folge", gets tapped → "Gefolgt", gone 2.5 s later. (2) **comment question at the end** — new for every video, tied to the topic, the last line, white "Kommentieren" pill. Both in the same take (template)                                           |
 | Bonus fact   | "Übrigens: …" right after the payoff — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Ending       | **No loop** (user's rule, 2026-10-24): the video simply ends ~1.2 s after the comment question, on a strong last shot (the subject big, or the drone pull-back over the world). No `> …` line, no cut back to frame 0                                                                                                                                                                                                                                                                                                                                |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -107,8 +107,8 @@ hook, 3 Folgen, outcome as payoff) on top of script-formel.md — same
 length, same approval message. Format A:
 write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff (answers the
-hook) + "Übrigens" bonus fact, the follow line in the middle, the comment question as the last line (no loop) — in the **60-second shape** (script-formel.md "Shape": open-loop chain, mid twist at ~30 s, "Rate mal" moments). **174–190 words including all of it** (Jan at 3.1 words/s → ~60 s), never more than **198** or fewer than **166**
-(`prepare-voice.sh` fits that range to exactly 60 s). Run the hook lab and the self-check in that file. Show the user the
+hook) + "Übrigens" bonus fact, the follow line in the middle, the comment question as the last line (no loop) — in the **45-second shape** (script-formel.md "Shape": open-loop chain, mid twist at ~22 s, a "Rate mal" moment). **130–142 words including all of it** (Jan at 3.1 words/s → ~45 s), never more than **148** or fewer than **124**
+(`prepare-voice.sh` fits that range to exactly 45 s). Run the hook lab and the self-check in that file. Show the user the
 script, word count, the **loop map** (which question is open when), the hook title with its score, **two alternative hooks** (scored), the
 cover title, and a one-line visual idea per beat **incl. the highlight of each beat**
 (money shots, slowmo, flash …), and **wait for their OK** before spending
@@ -227,7 +227,7 @@ file (the key must come from the environment's secrets, never the chat).
 Then, in the project dir:
 
 ```bash
-bash scripts/prepare-voice.sh          # tighten pauses, Jan +15 % (3.1 words/s), fit to exactly 60 s → assets/voiceover.mp3
+bash scripts/prepare-voice.sh          # tighten pauses, Jan +15 % (3.1 words/s), fit to exactly 45 s → assets/voiceover.mp3
 python3 -I scripts/align-words.py      # Whisper word timings snapped onto script.txt → assets/words.js
 node scripts/build-sfx.mjs             # all sound effects on one track from beats.js → assets/sfx.mp3
 node scripts/sync-html.mjs             # root duration, caption length, the <audio> tags (vo + sfx; no music)
@@ -235,8 +235,8 @@ node scripts/sync-html.mjs             # root duration, caption length, the <aud
 
 `align-words.py` needs `pip install faster-whisper` (downloads the `small`
 model once). `prepare-voice.sh` speeds Jan up by a fixed 15 % (pitch
-kept, 3.1 words/s) and fits the take to exactly 60 s (speech ends at
-58.8 s, ~1.2 s before the end: ≤ 6 % more speed or pauses stretched to ≤ 0.45 s). If it
+kept, 3.1 words/s) and fits the take to exactly 45 s (speech ends at
+43.8 s, ~1.2 s before the end: ≤ 6 % more speed or pauses stretched to ≤ 0.45 s). If it
 stops, it says how many words to cut or add — adjust the script with the
 user (cut a weak sentence / add a "Rate mal" moment or one more strange
 fact) and regenerate the voice; never pad with silence or music.
@@ -328,7 +328,7 @@ Fix and re-snapshot. Expect 2–3 rounds.
 ### 6. Render and deliver
 
 ```bash
-# ~2 h for 60 s (full 1080p + AO, software WebGL, ~4 s/frame) — ALWAYS detached (see Gotchas "Render detached"):
+# ~1.5 h for 45 s (full 1080p + AO, software WebGL, ~4 s/frame) — ALWAYS detached (see Gotchas "Render detached"):
 HYPERFRAMES_RENDER_DETACHED=1 setsid nohup npx hyperframes render -o renders/<slug>.mp4 > /tmp/render.log 2>&1 < /dev/null & disown
 tail --pid=$(pgrep -f "hyperframes render -o renders/<slug>.mp4" | head -1) -f /dev/null   # run_in_background: notifies when done
 bash scripts/finish-audio.sh renders/<slug>.mp4   # -> renders/<slug>-final.mp4 at -14 LUFS (picture untouched)
@@ -336,7 +336,7 @@ ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<s
 ```
 
 The render's mixer drops voice + music to ≈ -18 LUFS; `finish-audio.sh`
-brings it back to -14 LUFS. Confirm exactly one audio stream and **60.0 s**, then send **`<slug>-final.mp4`** with `SendUserFile`
+brings it back to -14 LUFS. Confirm exactly one audio stream and **45.0 s**, then send **`<slug>-final.mp4`** with `SendUserFile`
 (display `render`) **together with the cover** (6b) **and the description** (6c).
 Before sending, watch it honestly as a stranger would (contact sheet every
 3 s + the hook frames): Would I stop scrolling in the first 2 s? Is there
@@ -447,7 +447,7 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
 
 - **Render detached — never as a background task** (user's rule,
   2026-10-26, #34 Akku): a `run_in_background` command is killed after
-  2 hours, and a 60-s render takes ~2 h (~4 s/frame on 4 cores). #34 was
+  2 hours, and a 60-s render took ~2 h (~4 s/frame on 4 cores; 45 s ≈ 1.5 h). #34 was
   killed at frame 1716/1800 and the half file was unusable (the mp4 is
   only finalised at the end). Always start the render with `setsid nohup
 … & disown` (step 6) so it runs in its own session, and watch it with a
@@ -458,7 +458,7 @@ git-ignored; mp3/png go through LFS via `.gitattributes`.
   hyperframes render` pid (not the npx wrapper) with a
   separate `tail --pid=<pid> -f /dev/null` in the background (that one
   may time out harmlessly; re-arm it). Splitting into parts doesn't help:
-  one render already uses all 4 cores. Tell the user ~2 h, not 40–60 min.
+  one render already uses all 4 cores. Tell the user ~1.5 h for 45 s, not 40–60 min.
 
 - **Commit blocked by "Skill mirror out of sync"** (#37 Kaugummi,
   2026-10-26): the repo's commit hook runs `bun run lint`, which checks that
@@ -505,15 +505,15 @@ render"` after any restart notice and start it again (clear
 - **Voice speed (Jan):** on `eleven_v3` he reads slowly with ~0.5 s
   breaths (≈ 2.7 words/s after the pauses are cut to 0.12 s by
   `scripts/tighten-pauses.py`). Since 2026-10-26 `prepare-voice.sh`
-  always speeds him up by 15 % (`BASE=1.15`, pitch kept) → **3.1 words/s** (the user's choice): **174–190 words ≈ 60 s**. Tested on old
-  takes: Airfryer (≈ 175 words) fits, Feuerzeug (~130) is far too
-  short. If a take sounds rushed, `BASE=1.11` for that video is
+  always speeds him up by 15 % (`BASE=1.15`, pitch kept) → **3.1 words/s** (the user's choice): **130–142 words ≈ 45 s**. Tested on old
+  takes: Face ID and Zapfpistole (~135 words) fit exactly. If a take sounds rushed, `BASE=1.11` for that video is
   the fallback — say so to the user. (Stephan, tried once on #7, read
   slower.)
-- **Length:** exactly 60.0 s since 2026-10-24 (before: 40–50 s, #1–#24).
-  `prepare-voice.sh` fits the speech, `timing.js` / `sync-html.mjs` fix
-  the composition at `LENGTH = 60` once the speech ends between 57 and
-  59.4 s (the take is fitted to 58.8 s).
+- **Length:** exactly 45.0 s since 2026-10-28 (60 s from 2026-10-24 to
+  -27, 40–50 s before). `prepare-voice.sh` fits the speech,
+  `timing.js` / `sync-html.mjs` fix the composition at `LENGTH = 45`
+  once the speech ends between 42 and 44.4 s (the take is fitted to
+  43.8 s).
 - **Skill changes live on `main` only.** Before starting a video, `git
 pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   aren't merged (`git branch -r --no-merged origin/main`), look for skill
@@ -564,7 +564,7 @@ pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   full 1080×1920 with 4096² shadows, ambient occlusion (an extra
   normal/depth pass), tilt-shift, glow, facet tinting, sky light (PMREM)
   and the grade — ~1–2 s per frame in software GL (a big moving sea,
-  `sea()`, is the slowest, ~2 s), so a 60 s video takes ~2 h (render it detached, see above). That's
+  `sea()`, is the slowest, ~2 s), so a 45 s video takes ~1.5 h (render it detached, see above). That's
   accepted; never lower resolution or switch effects off to save time.
   Still keep it efficient: the scene is drawn into the antialiased canvas
   and copied (a multisampled render target is ~2× slower in software GL),
