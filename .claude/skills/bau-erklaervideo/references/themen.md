@@ -165,7 +165,6 @@ are always 10+ open topics per format.
 | 🔥 Teilchenbeschleuniger     | „Unter der Grenze zur Schweiz rasen Teilchen fast so schnell wie das Licht im Kreis – 11.000 Runden pro Sekunde.“ (Fakten prüfen)                               | Teilchen rasen durch den Ring, prallen frontal zusammen, Funkenregen      | Extrem        | –                    |
 | 🔥 Zeitumstellung / Atomuhr  | „Dein Handy weiß gar nicht, wie spät es ist – und stellt sich trotzdem selbst um.“ (Quarz driftet, Zeitserver, Cäsium 9,19 Mrd. Hz, GPS-Uhren laufen schneller) | Uhr springt 3:00→2:00, Atom schwingt, Zähler rast auf 9.192.631.770       | Handy         | Ende Okt / Ende März |
 | ★ Touchscreen                | „Dein Bildschirm spürt deinen Finger, ohne dass du drückst.“                                                                                                    | Finger nähert sich, das Feld im Glas verbiegt sich, Tipp leuchtet         | Handy         | –                    |
-| ★ Pfandautomat               | „Der Pfandautomat prüft deine Flasche dreimal – Form, Strichcode und ein geheimes Pfand-Zeichen.“ (Fakten prüfen)                                               | Flasche rollt rein, Laser tastet sie rundum ab, _Zack_, Bon kommt raus    | Einkaufen     | –                    |
 | ★ Glätteisen                 | „Dein Glätteisen bricht die Wasser-Brücken in deinen Haaren.“                                                                                                   | Haarsträhne in Nahaufnahme, Brücken zwischen den Ketten knacken auf       | Beauty        | –                    |
 | ★ Smartwatch-Puls            | „Deine Uhr misst deinen Puls mit grünem Licht – sie schaut in dein Blut.“                                                                                       | Grünes Licht dringt in die Haut, Blut pumpt, Kurve springt mit            | Sport         | –                    |
 | ★ Haartrockner               | „Dein Föhn schaltet sich selbst ab, bevor deine Haare brennen.“                                                                                                 | Heizdraht glüht, Bimetall biegt sich, _klack_, aus                        | Beauty        | –                    |
@@ -257,8 +256,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                | Format | Datum      | Chat                |
+| -------------------- | ------ | ---------- | ------------------- |
+| ★ Pfandautomat (#40) | A      | 2026-10-28 | Video: Pfandautomat |
 
 ## Verwendet
 
