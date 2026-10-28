@@ -256,9 +256,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                | Format | Datum      | Chat                |
-| -------------------- | ------ | ---------- | ------------------- |
-| ★ Pfandautomat (#40) | A      | 2026-10-28 | Video: Pfandautomat |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
