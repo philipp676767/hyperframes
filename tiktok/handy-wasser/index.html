@@ -248,24 +248,25 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="23.9"
+      data-duration="45"
       data-width="1080"
       data-height="1920"
     >
       <canvas id="stage" width="1080" height="1920"></canvas>
       <div id="captions"></div>
-      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="23.9" data-track-index="4" data-volume="1"></audio>
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="45" data-track-index="2" data-volume="1"></audio>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="45" data-track-index="4" data-volume="1"></audio>
       <!-- Per video: the hook's open question (≤ 6 words, keyword in <em>)
            and the spoken word that answers it (in the payoff). Read by the
            timeline below and by scripts/build-sfx.mjs. -->
       <script id="hf-config" type="application/json">
         {
-          "question": "Warum <em>glüht</em> der Draht?",
-          "answer": "dünn"
+          "question": "Ist es jetzt <em>hin</em>?",
+          "answer": "überlebt"
         }
       </script>
       <div id="question"></div>
-      <div id="hook-title"><em>Licht</em> aus Draht?!</div>
+      <div id="hook-title">Handy im <em>Wasser</em>?!</div>
       <div id="fact">
         <div id="fact-badge">
           <div id="fact-icon">!</div>
@@ -451,7 +452,7 @@
             );
           }
         }
-        tl.set({}, {}, 23.9);
+        tl.set({}, {}, 45);
         window.__timelines["main"] = tl;
       })();
     </script>
