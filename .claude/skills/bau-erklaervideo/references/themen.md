@@ -243,7 +243,6 @@ ask for go in here.
 | 🔥 … im Weltall weinst?                                    | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                              | Träne wächst zur wackelnden Kugel vor dem Auge                             | unmöglich                    | Weltall   |
 | 🔥 … in Treibsand fällst?                                  | Du gehst nicht unter – du bleibst ungefähr bis zur Hüfte stecken (Studie prüfen)               | Beine sinken, Sandkörner in Röntgensicht, Stopp an der Hüfte               | Hinweis, harmlos erklärt     | Natur     |
 | ★ … eine ganze Nacht gar nicht schläfst?                   | Dein Hirn schläft trotzdem – in Sekunden-Nickerchen, ohne dass du es merkst (Fakten prüfen)    | Augen offen, Hirn-Lichter gehen einzeln aus, „Mikroschlaf“-Blitz           | harmlos, Hinweis Autofahren  | Körper    |
-| ★ … dein Handy ins Wasser fallen lässt?                    | Reis hilft nicht – sogar Apple rät davon ab (Fakten prüfen)                                    | Handy platscht in Zeitlupe ins Wasser, Tropfen dringen ein                 | harmlos                      | Handy     |
 | ★ … eine geschüttelte Cola aufmachst?                      | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                  | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
 | … vom 10-Meter-Brett springst?                             | Du knallst mit rund 50 km/h aufs Wasser                                                        | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt                 | Hinweis „nur mit Aufsicht“   | Sport     |
 | 🔥 … einen Tropfen Wasser auf die Sonne wirfst?            | Er verdampft schon lange vorher (Fakten prüfen)                                                | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
@@ -256,8 +255,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                                      | Format | Datum      | Chat         |
+| ---------------------------------------------------------- | ------ | ---------- | ------------ |
+| Handy ins Wasser („… dein Handy ins Wasser fallen lässt?“) | B      | 2026-10-29 | Video: Handy |
 
 ## Verwendet
 
