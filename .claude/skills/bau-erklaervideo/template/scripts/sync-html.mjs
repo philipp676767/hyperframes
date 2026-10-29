@@ -18,6 +18,16 @@ const tail = loop ? 0.25 : 1.2;
 const natural = Math.ceil((last + tail) * 10) / 10;
 const fitted = last > LENGTH - 3 && last + (loop ? 0.15 : 0.6) <= LENGTH;
 const dur = fitted ? LENGTH : natural;
+// house rule (2026-10-29): the hook — the first script line — is spoken in ≤ 3 s
+const hookLen = ctx.window.HF_HOOK_LEN;
+if (hookLen) {
+  const hookEnd = words[Math.min(hookLen, words.length) - 1].end;
+  if (hookEnd > 3.0)
+    console.warn(
+      `WARNING: the hook (line 1, ${hookLen} words) ends at ${hookEnd.toFixed(2)} s — max 3.0 s. Shorten it to ≤ 9 words and regenerate the voice.`,
+    );
+  else console.log(`hook ends at ${hookEnd.toFixed(2)} s (≤ 3 s)`);
+}
 if (last > LENGTH - 3 && !fitted)
   console.warn(
     `WARNING: speech ends at ${last}s — too long for exactly ${LENGTH}s; rerun prepare-voice.sh`,

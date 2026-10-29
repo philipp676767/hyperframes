@@ -6,6 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
+- [ ] **Hook max. 3 Sekunden** (Nutzer, 2026-10-29): Zeile 1 = Hook, ≤ 9 Wörter, ≤ 3 s gesprochen (sync-html prüft); darin muss klar sein, warum man bis zum Ende schaut (Nutzen / Gefahr / brennende Frage). Vergleichen: Absprung in den ersten 3 s.
 - [ ] **Format B ohne gesprochenes „Was passiert, wenn …?“** (Nutzer, 2026-10-29): Start direkt mit der Hook — die Handlung läuft schon („Du ziehst mitten im Flug an der Notausgangstür.“) oder die Warnung zuerst.
 - [ ] **Zurück auf 45 s, Nutzen/Warnung im Hook, „Folge für mehr Wissen.“** (Nutzer, 2026-10-28): 130–142 Wörter; Satz 1 (spätestens 2) sagt, was der Zuschauer gewinnt oder riskiert („Deshalb darfst du niemals …“, „Dieser Trick spart dir Geld“); Folgen-Zeile exakt „Folge für mehr Wissen.“ Vergleichen: 45 s vs. 60 s (Ø Wiedergabe, Anteil bis zum Ende).
 - [ ] **Hashtags wieder drin** (Nutzer, 2026-10-27): 3–5 passende, viel gesehene Tags (Thema zuerst, dann Fachgebiet, optional #wissen / #wusstestdu), nie #fyp / #viral / #lernenmittiktok. Hinweis: das bisher beste Video (#18 Taschenwärmer, 13K) hatte 5 Hashtags. Vergleichen: Aufrufe mit vs. ohne Hashtags.

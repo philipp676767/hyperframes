@@ -29,8 +29,8 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 
 | Part                  | When     | Words | Job                                                                                                            |
 | --------------------- | -------- | ----- | -------------------------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)     | 0–4 s    | 14–22 | Straight in: the act already happening ("Du ziehst mitten im Flug an der Notausgangstür.") + the Haken / stake |
-| **Folge 1**           | 4–11 s   | 20–25 | The first consequence / the condition that makes it strange; ends on the second money shot                     |
+| **Hook** (line 1)     | 0–3 s    | ≤ 9   | Straight in, **max 3 s**: the act already happening ("Du reißt mitten im Flug an der Tür.") or the warning     |
+| **Folge 1**           | 3–11 s   | 26–32 | The first consequence / the condition that makes it strange; ends on the second money shot                     |
 | **Follow line**       | ~11–13 s | 4     | „Folge für mehr Wissen.“ (script-formel.md §4)                                                                 |
 | **Folge 2**           | 13–21 s  | 18–24 | It escalates                                                                                                   |
 | **Mid twist**         | ~21–25 s | 10–14 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                    |
@@ -50,6 +50,9 @@ already happening, plus the reason to watch — with the same hook rules
 as script-formel.md (twist in the first 4 words, sentence 1 ≤ 8 words,
 hook lab, gain / danger for the viewer when it is real).
 
+- **The hook line is ≤ 9 words / ≤ 3 s** (2026-10-29, script-formel.md
+  "The hook is at most 3 seconds"); the Haken follows as the start of
+  Folge 1.
 - **Sentence 1 = the act, already happening, in the Du-Form** — the
   picture has the viewer's hand doing it on frame 0: "Du ziehst mitten
   im Flug an der Notausgangstür." / "Du kippst Wasser ins brennende
@@ -143,10 +146,11 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (138 words → 45 s)
+## Example — Flugzeugtür (135 words → 45 s)
 
 ```text
-[curious] Du ziehst mitten im Flug an der *Notausgangstür*. Mit aller Kraft. Und der Pilot? Bleibt völlig *ruhig*. Dabei hängt dein Leben an genau dieser Tür.
+[curious] Du reißt mitten im Flug an der *Tür*.
+Und der Pilot? Bleibt völlig *ruhig*. Dabei hängt dein Leben an genau dieser Tür.
 Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Darum pumpt das Flugzeug Luft rein – und genau die wird dein Problem.
 Folge für mehr Wissen.
 [whispers] Sie drückt von innen gegen die Tür. Auf jedem Quadratmeter lastet so viel wie ein *Elefant*.

@@ -60,7 +60,9 @@ cta_len = count(lines[-2] if loop else lines[-1])
 (root / "assets" / "words.js").write_text(
     "window.HF_WORDS = " + json.dumps(words, ensure_ascii=False) + ";\n"
     + f"window.HF_CTA_START = {len(words) - loop_len - cta_len};\n"
-    + f"window.HF_LOOP_START = {len(words) - loop_len if loop else 'null'};\n",
+    + f"window.HF_LOOP_START = {len(words) - loop_len if loop else 'null'};\n"
+    # the hook = the first script line (max 3 s spoken, sync-html checks it)
+    + f"window.HF_HOOK_LEN = {count(lines[0])};\n",
     encoding="utf8",
 )
 print(f"{len(words)} words, last ends {words[-1]['end']:.2f}s; interpolated: {missing}")

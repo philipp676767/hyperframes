@@ -31,8 +31,8 @@ no sentence is there just to fill time.
 
 | Part                         | When     | Words | Job                                                                                         |
 | ---------------------------- | -------- | ----- | ------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)            | 0–4 s    | 14–22 | the **reason to watch for _you_** (gain / danger) + twist; open loop 1 (the big question)   |
-| **Beat 1**                   | 4–11 s   | 20–25 | first part; ends on the **second money shot** (~10 s) and opens loop 2                      |
+| **Hook** (line 1)            | 0–3 s    | ≤ 9   | **max 3 s**: the reason to watch to the end for _you_ (gain / danger) + twist; open loop 1  |
+| **Beat 1**                   | 3–11 s   | 24–32 | first part; ends on the **second money shot** (~10 s) and opens loop 2                      |
 | **Follow line**              | ~11–13 s | 4     | „Folge für mehr Wissen.“ — own line, straight on after it                                   |
 | **Beat 2**                   | 13–21 s  | 22–26 | second part, bigger than beat 1; closes loop 2, opens loop 3                                |
 | **Mid twist** (re-hook)      | ~21–25 s | 10–14 | at the halfway mark: the obvious explanation is wrong / it's even crazier — or a "Rate mal" |
@@ -91,6 +91,23 @@ bauen" is not a reason to stay. So the hook has two jobs:
    seconds ("In 40 Sekunden …", 2026-10-23). They talk _about_ the video
    instead of being interesting, and they remind people that there is
    still a lot to watch.
+
+**The hook is at most 3 seconds** (user's rule, 2026-10-29): **line 1
+of `script.txt` = the hook, ≤ 9 words**, spoken in ≤ 3.0 s
+(`sync-html.mjs` checks it after the alignment and warns — then shorten
+and regenerate). In those 3 seconds the viewer must know **why to watch to
+the end**: what it is about (frame 0 shows it) **and** what they get at
+the end — the answer to a question they now care about, the money they
+save, the danger they avoid. Everything else (the Haken, the Umdeutung,
+the story) moves to beat 1.
+
+3-second hooks (≤ 9 words):
+
+- „Wasser ins heiße Fett? Dann brennt deine Küche.“ (danger → how / why)
+- „Dieser Fehler kostet dich jedes Jahr Geld.“ (loss → which one)
+- „Dein Handy-Akku stirbt – wegen einer Gewohnheit.“ (cause → which)
+- „Dein Kühlschrank macht gar keine Kälte.“ (myth → what then)
+- „Du reißt mitten im Flug an der Tür.“ (act → what happens)
 
 **Say right away why _you_ must keep watching** (user's rule,
 2026-10-28 — the strongest lever for the first second). Sentence 1 (or
@@ -183,7 +200,7 @@ stärker"). Write **six** hooks with six different formulas, score each
 
 | Point                          | 2 = …                                                                                                    |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| **Twist fast**                 | the surprising part is in the first 4 words, sentence 1 ≤ 8 words                                        |
+| **≤ 3 s, reason inside**       | hook line ≤ 9 words / ≤ 3 s, twist in the first 4 words, and it's clear why to watch to the end          |
 | **Bild 0 zeigt es**            | frame 0 can _show_ exactly this (spoken line, 2–3-word title and picture say one thing)                  |
 | **Dein Nutzen / deine Gefahr** | sentence 1 or 2 names what the viewer gains or risks — money, safety, health, time (true, not clickbait) |
 | **Dein Alltag**                | "dein / du" + a thing the viewer touched today                                                           |
@@ -446,7 +463,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] Follow line in the middle (after beat 2, ≈ 12–20 s, 6–9 words, "folg"); comment question at the end, answerable in 1–3 words, no "folg"
 - [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
 - [ ] 130–142 words incl. fact, follow line and CTA (≤ 148, ≥ 124) → exactly 45 s; no `> …` loop line
-- [ ] Sentence 1 (or 2) says what the viewer gains or risks — true, not clickbait
+- [ ] Hook = line 1, ≤ 9 words, ≤ 3 s (sync-html checks); within it the viewer knows why to watch to the end (gain / danger / burning question) — true, not clickbait
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
 - [ ] 45-s shape: beat 1 → „Folge für mehr Wissen.“ (~11–13 s) → beat 2 → mid twist (~22 s) → beat 3 → payoff (≥ 34 s)
 - [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes

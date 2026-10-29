@@ -109,7 +109,7 @@ length, same approval message. Format A:
 write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff (answers the
 hook) + "Übrigens" bonus fact, the follow line in the middle, the comment question as the last line (no loop) — in the **45-second shape** (script-formel.md "Shape": open-loop chain, mid twist at ~22 s, a "Rate mal" moment). **130–142 words including all of it** (Jan at 3.1 words/s → ~45 s), never more than **148** or fewer than **124**
-(`prepare-voice.sh` fits that range to exactly 45 s). Run the hook lab and the self-check in that file. Show the user the
+(`prepare-voice.sh` fits that range to exactly 45 s). **The hook is line 1 of the script, ≤ 9 words / ≤ 3 s** (2026-10-29) — within it the viewer must know why to watch to the end; `sync-html.mjs` warns if the spoken hook runs longer. Run the hook lab and the self-check in that file. Show the user the
 script, word count, the **loop map** (which question is open when), the hook title with its score, **two alternative hooks** (scored), the
 cover title, and a one-line visual idea per beat **incl. the highlight of each beat**
 (money shots, slowmo, flash …), and **wait for their OK** before spending

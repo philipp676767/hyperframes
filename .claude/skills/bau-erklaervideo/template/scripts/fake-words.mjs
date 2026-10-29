@@ -36,6 +36,9 @@ fs.writeFileSync(
     (words.length - loopLen - ctaLen) +
     ";\nwindow.HF_LOOP_START = " +
     (loop ? words.length - loopLen : "null") +
+    // the hook = the first script line (max 3 s spoken, sync-html checks it)
+    ";\nwindow.HF_HOOK_LEN = " +
+    count(lines[0]) +
     ";\n",
 );
 console.log(words.length, "words, ends at", words.at(-1).end);
