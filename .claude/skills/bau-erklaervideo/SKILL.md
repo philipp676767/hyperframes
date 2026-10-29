@@ -10,7 +10,8 @@ One video = one topic, in one of **two formats that always alternate**
 file, `references/script-formel.md`) — and **B „Was passiert, wenn …?“**
 — a scenario played out with its consequences
 (`references/format-was-passiert.md`, which lists only what differs from
-A). Voice, look and structure stay; the script (incl.
+A; the hook starts straight with the act — „Was passiert, wenn …?“ is
+the idea, never spoken since 2026-10-29). Voice, look and structure stay; the script (incl.
 hook title and a topic-specific CTA question), the 3D subject and its story
 beats change every time. The script is what makes people stay — write it
 with `references/script-formel.md` (v2) and treat its self-check as a gate. The reference build is

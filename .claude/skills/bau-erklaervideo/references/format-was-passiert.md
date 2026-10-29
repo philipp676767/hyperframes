@@ -1,4 +1,4 @@
-# Format B — „Was passiert, wenn …?“
+# Format B — „Was passiert, wenn …?“ (the idea, not the spoken words)
 
 The series' second format (user's idea, 2026-10-23): instead of building an
 everyday thing, the video **plays out a scenario people have always
@@ -14,8 +14,9 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 
 ## Why it works
 
-- The question itself is the hook — a curiosity gap that needs no interest
-  in technology (the account's random 18–34 scrollers, 2026-10-23).
+- The scenario itself is the hook — you are doing something you always
+  wondered about, a curiosity gap that needs no interest in technology
+  (the account's random 18–34 scrollers, 2026-10-23).
 - Every consequence triggers the next ("… und dann?"), so the middle of
   the video pulls forward instead of explaining parts — the ~13 s drop-off
   spot gets an escalation, not a term.
@@ -28,7 +29,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 
 | Part                  | When     | Words | Job                                                                                                            |
 | --------------------- | -------- | ----- | -------------------------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)     | 0–4 s    | 18–26 | The question **"Was passiert, wenn du …?"** + the act starting ("Du packst den Griff …") + the Haken           |
+| **Hook** (line 1)     | 0–4 s    | 14–22 | Straight in: the act already happening ("Du ziehst mitten im Flug an der Notausgangstür.") + the Haken / stake |
 | **Folge 1**           | 4–11 s   | 20–25 | The first consequence / the condition that makes it strange; ends on the second money shot                     |
 | **Follow line**       | ~11–13 s | 4     | „Folge für mehr Wissen.“ (script-formel.md §4)                                                                 |
 | **Folge 2**           | 13–21 s  | 18–24 | It escalates                                                                                                   |
@@ -42,28 +43,30 @@ mid twist, "Rate mal", hook lab) applies here too.
 
 ### Hook — the differences
 
-- **Sentence 1 is always the question**, starting with "Was passiert, wenn du …?" (the format's signature — keep the wording
-  identical every time, viewers learn it). It may be up to **12 words**
-  and replaces script-formel's "twist in the first 4 words" rule: here
-  the twist is the scenario itself. The topic noun stays inside it
-  ("… im Flugzeug die _Tür_ aufmachst?"), no wind-up before it.
-- **Sentence 2 starts the act** in the Du-Form, in the present tense, so
-  the picture has motion from frame 0: "Du packst den Griff, ziehst mit
-  aller Kraft – und dann?"
-- **Then the second reason to stay** — a strange fact about the
-  scenario, never an announcement ("Gleich siehst du …", "Am Ende …")
-  and never a number of seconds: "Und der Pilot? Bleibt ganz ruhig." /
-  "Dabei hält die Tür nur ein Griff."
-- **Why _you_ should care, early** (2026-10-28): when the scenario has a
-  real danger or gain for the viewer, say it in sentence 2–3 — "Mach das
-  nie: Das kann deine ganze Küche abfackeln." / "Das kann dich eine Menge
-  Geld kosten." Impossible scenarios (Weltall, Flugzeugtür) keep the
-  curiosity Haken instead.
+**No "Was passiert, wenn …?" in the spoken hook any more** (user's rule,
+2026-10-29). The format is still the scenario + its chain of
+consequences, but the video starts **directly with the hook** — the act
+already happening, plus the reason to watch — with the same hook rules
+as script-formel.md (twist in the first 4 words, sentence 1 ≤ 8 words,
+hook lab, gain / danger for the viewer when it is real).
+
+- **Sentence 1 = the act, already happening, in the Du-Form** — the
+  picture has the viewer's hand doing it on frame 0: "Du ziehst mitten
+  im Flug an der Notausgangstür." / "Du kippst Wasser ins brennende
+  Fett." / "Du schluckst deinen Kaugummi runter."
+- **Sentence 2 = the Haken or the stake** — a strange fact about the
+  scenario or what the viewer risks, never an announcement ("Gleich
+  siehst du …", "Am Ende …") and never a number of seconds: "Und der
+  Pilot? Bleibt völlig ruhig." / "Mach das nie: Das kann deine ganze
+  Küche abfackeln." / "Angeblich bleibt er jetzt sieben Jahre in dir."
+- Or **start with the warning / the gain** (script-formel.md "Nutzen /
+  Warnung zuerst"): "Deshalb darfst du niemals Wasser ins heiße Fett
+  schütten." — then the act.
 - **Never reveal the outcome in the hook.** Not "Spoiler: sie geht nicht
-  auf" — the outcome is the payoff, the question stays on screen until then.
-- Hook formulas for the two alternatives: the same question with a
-  different act ("… wenn du sie im Landeanflug aufmachst?"), or the
-  **Mythos variant**: "Alle sagen, … Was passiert wirklich, wenn du …?"
+  auf" — the outcome is the payoff; the open question stays on screen
+  (`hf-config` question, e.g. "Geht die <em>Tür</em> auf?") until then.
+- Hook lab: the six hooks use the act, the warning, the myth ("Alle
+  sagen, er bleibt sieben Jahre in dir.") and the stake as openings.
 
 **Hook title (2–3 words, ≤ 18 chars):** the act as a shocked question —
 "<em>Tür</em> auf?!", "<em>Blitz</em> ins Auto?!", "Kaugummi <em>weg</em>?!".
@@ -140,10 +143,10 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 - The **cover** shows the act at its most tense moment with a question
   title ("<em>Tür</em> auf im Flug?").
 
-## Example — Flugzeugtür (137 words → 45 s)
+## Example — Flugzeugtür (138 words → 45 s)
 
 ```text
-[curious] Was passiert, wenn du im Flugzeug die *Tür* aufmachst? Du packst den *Griff*, ziehst mit aller Kraft – und dann? Und der Pilot? Bleibt *ruhig*.
+[curious] Du ziehst mitten im Flug an der *Notausgangstür*. Mit aller Kraft. Und der Pilot? Bleibt völlig *ruhig*. Dabei hängt dein Leben an genau dieser Tür.
 Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Darum pumpt das Flugzeug Luft rein – und genau die wird dein Problem.
 Folge für mehr Wissen.
 [whispers] Sie drückt von innen gegen die Tür. Auf jedem Quadratmeter lastet so viel wie ein *Elefant*.
@@ -171,7 +174,7 @@ Würdest du dich jetzt noch an den Notausgang setzen? Schreib's in die Kommentar
 
 ## Self-check (in addition to script-formel.md's)
 
-- [ ] Sentence 1 = "Was passiert, wenn du …?" (≤ 12 words, topic noun inside)
+- [ ] No spoken "Was passiert, wenn …?" — sentence 1 is the act already happening (≤ 8 words) or the warning
 - [ ] Sentence 2 starts the act; the outcome is **not** revealed before the payoff
 - [ ] 3 Folgen, each bigger than the last, each ending with a pull
 - [ ] The `answer` word is spoken only in the payoff

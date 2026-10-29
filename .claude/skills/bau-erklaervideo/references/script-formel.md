@@ -11,8 +11,9 @@ viewers "fertig" right before the bonus fact and the CTA.
 
 **Format B „Was passiert, wenn …?“** (alternates with this
 one, SKILL.md step 0) uses this file too, with the differences in
-`format-was-passiert.md` — question hook instead of the 4-word twist, 3
-Folgen instead of 3 build beats, the outcome as payoff.
+`format-was-passiert.md` — the hook starts straight with the act already
+happening (no spoken "Was passiert, wenn …?"), 3 Folgen instead of 3 build
+beats, the outcome as payoff.
 
 ## Length — exactly 45 seconds
 

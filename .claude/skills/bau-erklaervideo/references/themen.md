@@ -231,7 +231,9 @@ Criteria (instead of A's six, + the two of the scorecard;
    sport) or the big „Was wäre, wenn“ everyone talks about at 2 a.m.
    (space, the end of the world, the deep sea). 🔥 first, then ★.
 
-Hook = always „Was passiert, wenn du …?“. Topics the comments
+The hook starts straight with the act („Du ziehst mitten im Flug an der
+Notausgangstür.“) — the words „Was passiert, wenn …?“ are not spoken
+(2026-10-29); the list keeps them only to name the scenario. Topics the comments
 ask for go in here.
 
 | Szenario („Was passiert, wenn du …?“)                      | Überraschender Ausgang (nur fürs Payoff!)                                                      | Money-Shot                                                                 | Sicherheit                   | Kategorie |
