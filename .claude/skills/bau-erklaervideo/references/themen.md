@@ -255,9 +255,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                                      | Format | Datum      | Chat         |
-| ---------------------------------------------------------- | ------ | ---------- | ------------ |
-| Handy ins Wasser („… dein Handy ins Wasser fallen lässt?“) | B      | 2026-10-29 | Video: Handy |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 

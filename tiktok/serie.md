@@ -50,3 +50,4 @@ Umgebungen (insel, stadt, …).
 | 38  | Knicklicht (Halloween)        | A      | `tiktok/knicklicht`          | halloween-vorgarten         | nacht            | 60,0 s | 2026-10-27 |
 | 39  | Flugzeugklo (spülen)          | B      | `tiktok/flugzeugklo`         | nachtflug-wolkenmeer        | nacht            | 60,0 s | 2026-10-27 |
 | 40  | Pfandautomat (Leergut)        | A      | `tiktok/pfandautomat`        | supermarkt-leergutecke      | samstagvormittag | 60,0 s | 2026-10-28 |
+| 41  | Handy ins Wasser (Reis?)      | B      | `tiktok/handy-wasser`        | altbau-bad-wien             | abenddämmerung   | 45,0 s | 2026-10-29 |
