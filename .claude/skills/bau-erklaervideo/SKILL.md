@@ -69,8 +69,11 @@ and never a weak topic just to be current. Follow
 `references/themen.md`: **duplicate check first** (`tiktok/serie.md`,
 every folder in `tiktok/`, the reserved list, remote branches), then pick
 the best open topic **of that format's list** by its criteria (format A
-also takes **Detail-Rätsel** — one small odd detail everyone has seen,
-`themen.md`) and propose it with its hook
+also takes **Detail-Rätsel** — one small odd detail everyone has seen —
+and **Dein Look & dein Hobby** — the science behind what viewers show
+off, `themen.md`). The scorecard rates the **sweet spot** (one concrete
+thing of a huge group — not too broad, not too niche) and the
+**Zeig-Faktor** (can viewers post a photo of their own?) and propose it with its hook
 idea, money shot and two alternatives. On "ok": reserve it in
 `themen.md`, commit + push on `main` right away (parallel chats!), then
 go on. If the user names a topic, take theirs — but still run the check

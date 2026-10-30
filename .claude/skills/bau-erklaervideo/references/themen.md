@@ -24,8 +24,9 @@ an old episode only when the user asks for one.
 ## 2. Pick — criteria
 
 **The format comes first** (SKILL.md step 0, always alternating): for
-format A pick from **Offen — Format A „Bauen“** or **Offen —
-Detail-Rätsel** (one small odd detail, also format A), for format B from
+format A pick from **Offen — Format A „Bauen“**, **Offen —
+Detail-Rätsel** (one small odd detail) or **Offen — Dein Look & dein
+Hobby** (the science behind what viewers show off), for format B from
 **Offen — Format B „Was passiert, wenn …?“** (its own criteria are
 below that list). The duplicate check covers both lists: an object that
 already had an A episode is used for B too, and the other way round,
@@ -42,7 +43,10 @@ special interest in technology — man or woman.
 outcome or number makes a stranger say **„Was?!“** out loud — tonnes,
 explosions, space, the deep sea, the Earth stopping, something absurdly
 fast / hot / small. "Nice to know" is not enough. Topics marked **🔥**
-are the wildest — **pick 🔥 first, then ★**. In format B the best
+are the wildest — but a 🔥 topic still needs the sweet spot
+(Zielgruppen-Schärfe): a wild fact about a thing everybody knows beats a
+wild fact about a thing nobody knows. **Pick by score**; 🔥 and ★ are
+tie-breakers. In format B the best
 topics are the extreme thought experiments (Weltall, Tiefsee, Erde,
 Extrem-Physik): they are impossible, so they're also the safest. Keep at
 least half of each list 🔥 and add new ideas the same way. Facts stay
@@ -50,9 +54,26 @@ correct — the wilder the claim, the more carefully it's checked.
 
 **Scorecard — every proposal** (user's wish 2026-10-24: „Themen noch
 passender und interessanter“). Score the open candidates of the format 0–2
-on its six criteria below **plus these two**, and propose the best one
-plus two alternatives **with their scores** (max 16; propose nothing under
-12 — then come up with better ideas first):
+on its six criteria below **plus these four**, and propose the best one
+plus two alternatives **with their scores** (max 20; propose nothing under
+15 — then come up with better ideas first):
+
+- **Zielgruppen-Schärfe** (2026-10-30 — the sweet spot between too broad
+  and too niche): 2 = **one concrete thing with its own name that a huge
+  group uses or knows** (UV-Nagellampe, Face ID, Taschenwärmer, Blitzer,
+  Glätteisen); 1 = a bit too broad or a bit too small; 0 = an abstract
+  field („Licht“, „Strom“, „Chemie im Alltag“) or a mini niche
+  (Teilchenbeschleuniger, Fangseil am Flugzeugträger). Test: does it
+  have a name people search for — and are there millions in AT/CH/DE
+  who used or saw it this month? Topics marked **⚠️ zu nischig** /
+  **⚠️ zu allgemein** in the lists score 0–1 here.
+- **Zeig-Faktor** (learned from the viral #36 UV-Nagellampe, 2026-10-30:
+  viewers posted photos of their own nails in the comments): 2 = the
+  viewer has something of their own to show (nails, hair, tattoo,
+  coffee, car, sneakers, pet, plants, gym result) — and the comment
+  question invites exactly that; 1 = a personal answer in words („Team
+  Gel oder Lack?“); 0 = nothing personal. Photo comments are the
+  strongest signal TikTok gets.
 
 - **Was?!-Faktor** — 2 = a stranger says "Was?!" out loud (🔥), 1 = "oh,
   interessant", 0 = nice to know.
@@ -156,32 +177,32 @@ are always 10+ open topics per format.
 
 ## Offen — Format A „Bauen“
 
-| Thema                        | Hook-Idee                                                                                                                                                       | Money-Shot                                                                | Kategorie     | Saison               |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------- | -------------------- |
-| 🔥 Hitzeschild               | „Die Raumkapsel wird beim Rückflug über 1.500 Grad heiß – und drinnen schwitzt keiner.“ (Zahl prüfen)                                                           | Kapsel glüht in Zeitlupe, Schild verkohlt Schicht für Schicht, innen grün | Weltall       | –                    |
-| 🔥 Fangseil (Flugzeugträger) | „Ein Kampfjet wird auf dem Flugzeugträger in 2 Sekunden von 240 km/h auf null gestoppt – von einem Stahlseil.“ (Zahlen prüfen)                                  | Haken fängt das Seil, Seil spannt sich, Jet steht, Pilot ruckt nach vorn  | Extrem        | –                    |
-| 🔥 Magnetschwebebahn         | „Dieser Zug berührt die Schiene nie – er schwebt knapp über ihr.“ (Abstand prüfen)                                                                              | Magnete ziehen den Zug hoch, Lichtspalt unter dem Zug, er rast los        | Reisen        | –                    |
-| 🔥 Blitzableiter             | „Ein Blitz ist heißer als die Sonnenoberfläche – und ein Draht leitet ihn sicher in die Erde.“                                                                  | Blitz schlägt ins Dach, rast den Draht runter, verpufft im Boden          | Zuhause       | Sommer               |
-| 🔥 Teilchenbeschleuniger     | „Unter der Grenze zur Schweiz rasen Teilchen fast so schnell wie das Licht im Kreis – 11.000 Runden pro Sekunde.“ (Fakten prüfen)                               | Teilchen rasen durch den Ring, prallen frontal zusammen, Funkenregen      | Extrem        | –                    |
-| 🔥 Zeitumstellung / Atomuhr  | „Dein Handy weiß gar nicht, wie spät es ist – und stellt sich trotzdem selbst um.“ (Quarz driftet, Zeitserver, Cäsium 9,19 Mrd. Hz, GPS-Uhren laufen schneller) | Uhr springt 3:00→2:00, Atom schwingt, Zähler rast auf 9.192.631.770       | Handy         | Ende Okt / Ende März |
-| ★ Touchscreen                | „Dein Bildschirm spürt deinen Finger, ohne dass du drückst.“                                                                                                    | Finger nähert sich, das Feld im Glas verbiegt sich, Tipp leuchtet         | Handy         | –                    |
-| ★ Glätteisen                 | „Dein Glätteisen bricht die Wasser-Brücken in deinen Haaren.“                                                                                                   | Haarsträhne in Nahaufnahme, Brücken zwischen den Ketten knacken auf       | Beauty        | –                    |
-| ★ Smartwatch-Puls            | „Deine Uhr misst deinen Puls mit grünem Licht – sie schaut in dein Blut.“                                                                                       | Grünes Licht dringt in die Haut, Blut pumpt, Kurve springt mit            | Sport         | –                    |
-| ★ Haartrockner               | „Dein Föhn schaltet sich selbst ab, bevor deine Haare brennen.“                                                                                                 | Heizdraht glüht, Bimetall biegt sich, _klack_, aus                        | Beauty        | –                    |
-| Induktionsherd               | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                      | Küche         | –                    |
-| Blitzer                      | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ                   | Straße / Auto | –                    |
-| Ampel-Kontaktschleife        | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün      | Straße / Auto | –                    |
-| Türschloss                   | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht        | Zuhause       | –                    |
-| Silvesterrakete              | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild                   | Natur / Fest  | Ende Dezember        |
-| ★ Kabellos laden             | „Dein Handy lädt ohne Kabel – zwei Spulen reden durch die Luft.“                                                                                                | Magnetfeld-Linien springen von Spule zu Spule, Akku füllt sich            | Geld / Tech   | –                    |
-| Heizkörper-Thermostat        | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt                   | Zuhause       | Herbst/Winter        |
-| Rolltreppe                   | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück      | Stadt         | –                    |
-| Schnellkochtopf              | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100           | Küche         | –                    |
-| ★ Kaffeevollautomat          | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen)                                 | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe           | Küche         | –                    |
-| Eiswürfel                    | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt     | Küche         | Sommer               |
-| Türklingel                   | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe      | Zuhause       | –                    |
-| ★ Sonnencreme                | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                                                       | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                | Beauty        | Sommer               |
-| Wasserkocher                 | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus          | Küche         | –                    |
+| Thema                                      | Hook-Idee                                                                                                                                                       | Money-Shot                                                                | Kategorie     | Saison               |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------- | -------------------- |
+| 🔥 Hitzeschild ⚠️ zu nischig               | „Die Raumkapsel wird beim Rückflug über 1.500 Grad heiß – und drinnen schwitzt keiner.“ (Zahl prüfen)                                                           | Kapsel glüht in Zeitlupe, Schild verkohlt Schicht für Schicht, innen grün | Weltall       | –                    |
+| 🔥 Fangseil (Flugzeugträger) ⚠️ zu nischig | „Ein Kampfjet wird auf dem Flugzeugträger in 2 Sekunden von 240 km/h auf null gestoppt – von einem Stahlseil.“ (Zahlen prüfen)                                  | Haken fängt das Seil, Seil spannt sich, Jet steht, Pilot ruckt nach vorn  | Extrem        | –                    |
+| 🔥 Magnetschwebebahn ⚠️ zu nischig         | „Dieser Zug berührt die Schiene nie – er schwebt knapp über ihr.“ (Abstand prüfen)                                                                              | Magnete ziehen den Zug hoch, Lichtspalt unter dem Zug, er rast los        | Reisen        | –                    |
+| 🔥 Blitzableiter                           | „Ein Blitz ist heißer als die Sonnenoberfläche – und ein Draht leitet ihn sicher in die Erde.“                                                                  | Blitz schlägt ins Dach, rast den Draht runter, verpufft im Boden          | Zuhause       | Sommer               |
+| 🔥 Teilchenbeschleuniger ⚠️ zu nischig     | „Unter der Grenze zur Schweiz rasen Teilchen fast so schnell wie das Licht im Kreis – 11.000 Runden pro Sekunde.“ (Fakten prüfen)                               | Teilchen rasen durch den Ring, prallen frontal zusammen, Funkenregen      | Extrem        | –                    |
+| 🔥 Zeitumstellung / Atomuhr                | „Dein Handy weiß gar nicht, wie spät es ist – und stellt sich trotzdem selbst um.“ (Quarz driftet, Zeitserver, Cäsium 9,19 Mrd. Hz, GPS-Uhren laufen schneller) | Uhr springt 3:00→2:00, Atom schwingt, Zähler rast auf 9.192.631.770       | Handy         | Ende Okt / Ende März |
+| ★ Touchscreen                              | „Dein Bildschirm spürt deinen Finger, ohne dass du drückst.“                                                                                                    | Finger nähert sich, das Feld im Glas verbiegt sich, Tipp leuchtet         | Handy         | –                    |
+| ★ Glätteisen                               | „Dein Glätteisen bricht die Wasser-Brücken in deinen Haaren.“                                                                                                   | Haarsträhne in Nahaufnahme, Brücken zwischen den Ketten knacken auf       | Beauty        | –                    |
+| ★ Smartwatch-Puls                          | „Deine Uhr misst deinen Puls mit grünem Licht – sie schaut in dein Blut.“                                                                                       | Grünes Licht dringt in die Haut, Blut pumpt, Kurve springt mit            | Sport         | –                    |
+| ★ Haartrockner                             | „Dein Föhn schaltet sich selbst ab, bevor deine Haare brennen.“                                                                                                 | Heizdraht glüht, Bimetall biegt sich, _klack_, aus                        | Beauty        | –                    |
+| Induktionsherd                             | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                      | Küche         | –                    |
+| Blitzer                                    | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ                   | Straße / Auto | –                    |
+| Ampel-Kontaktschleife                      | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün      | Straße / Auto | –                    |
+| Türschloss                                 | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht        | Zuhause       | –                    |
+| Silvesterrakete                            | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild                   | Natur / Fest  | Ende Dezember        |
+| ★ Kabellos laden                           | „Dein Handy lädt ohne Kabel – zwei Spulen reden durch die Luft.“                                                                                                | Magnetfeld-Linien springen von Spule zu Spule, Akku füllt sich            | Geld / Tech   | –                    |
+| Heizkörper-Thermostat                      | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt                   | Zuhause       | Herbst/Winter        |
+| Rolltreppe                                 | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück      | Stadt         | –                    |
+| Schnellkochtopf                            | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100           | Küche         | –                    |
+| ★ Kaffeevollautomat                        | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen)                                 | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe           | Küche         | –                    |
+| Eiswürfel                                  | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt     | Küche         | Sommer               |
+| Türklingel                                 | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe      | Zuhause       | –                    |
+| ★ Sonnencreme                              | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                                                       | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                | Beauty        | Sommer               |
+| Wasserkocher                               | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus          | Küche         | –                    |
 
 ## Offen — Detail-Rätsel (Format A)
 
@@ -210,6 +231,31 @@ short format. Counts as format A in the alternation.
 | Warum ist der Rand von Münzen geriffelt?                                    | Früher feilten Leute Silber vom Rand ab – die Riffel verrieten es (Fakten prüfen)                    | Feile schabt Silber ab, Riffel verschwinden                            | Geld      |
 | Wofür sind die zwei Metallklammern an deiner Steckdose?                     | Der Schutzkontakt: Bei einem Defekt fließt der Strom dort ab statt durch dich                        | Fehlerstrom im Röntgenblick, Strom biegt in die Klammer ab             | Zuhause   |
 
+## Offen — Dein Look & dein Hobby (Format A)
+
+Learned from #36 UV-Nagellampe (viral, 2026-10-30): **the science behind
+something the viewer is proud of and can show** — their nails, hair,
+tattoo, coffee, car, sneakers, cat. Sweet spot by nature (a concrete thing
+of a huge community) with a high Zeig-Faktor. The comment question
+invites a photo („Zeig mir deine Nägel 👇“). Counts as format A. **Mix,
+don't flood:** about every third video at most, and alternate between
+topics for women, men and everyone (the audience is 51 % women, 45 %
+men).
+
+| Thema                         | Hook (≤ 9 Wörter)                                                   | Zeig-Frage (Kommentar)                       | Money-Shot                                                   |
+| ----------------------------- | ------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
+| ★ Blondieren                  | „Blondierung brennt deine Haarfarbe einfach weg.“                   | „Welche Haarfarbe hattest du schon? Bild 👇“ | Bleiche dringt ins Haar, Farbpigmente zerfallen in Zeitlupe  |
+| ★ Selbstbräuner               | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)      | „Schon mal orange geworden? Beweisfoto 👇“   | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun |
+| ★ Tattoo                      | „Deine Haut erneuert sich – dein Tattoo bleibt.“                    | „Zeig dein Tattoo 👇“                        | Fresszellen schlucken die Farbe und bleiben stecken          |
+| ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)    | „Zeig deine Wimpern 👇“                      | Bindungen im Haar knacken auf, Form, neu verknüpft           |
+| ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                      | „Welche Farbe trägst du gerade? 👇“          | Schuppenschicht klappt auf, Farbe strömt hinein              |
+| ★ Parfum                      | „Dein Parfum riecht nach einer Stunde anders – absichtlich.“        | „Welches Parfum trägst du? 👇“               | Duftnoten verdampfen nacheinander, Kopf-, Herz-, Basisnote   |
+| ★ Latte Art / Milchschaum     | „Dein Milchschaum hält nur dank Eiweiß-Käfigen.“                    | „Zeig deinen Kaffee ☕👇“                    | Eiweiß legt sich um Luftblasen, Herz wird gegossen           |
+| ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)       | „Zeig deine Sneaker 👇“                      | Luftkammer im Röntgenblick, Schritt drückt sie zusammen      |
+| ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)   | „Zeig dein Auto 👇“                          | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt |
+| ★ Muskelkater                 | „Muskelkater ist keine Milchsäure.“                                 | „Wo hast du gerade Muskelkater? 👇“          | Mini-Risse im Muskel, Reparaturtrupp rückt an                |
+| ★ Katze schnurrt              | „Deine Katze schnurrt mit einem eingebauten Motor.“ (Fakten prüfen) | „Zeig deine Katze 👇“                        | Kehlkopfmuskeln zucken, Schallwellen in Zeitlupe             |
+
 ## Offen — Format B „Was passiert, wenn …?“
 
 Criteria (instead of A's six, + the two of the scorecard;
@@ -236,24 +282,24 @@ Notausgangstür.“) — the words „Was passiert, wenn …?“ are not spoken
 (2026-10-29); the list keeps them only to name the scenario. Topics the comments
 ask for go in here.
 
-| Szenario („Was passiert, wenn du …?“)                      | Überraschender Ausgang (nur fürs Payoff!)                                                      | Money-Shot                                                                 | Sicherheit                   | Kategorie |
-| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------- | --------- |
-| 🔥 … die Sonne plötzlich ausgeht?                          | Du merkst es erst nach 8 Minuten – und die Erde fliegt geradeaus davon                         | Sonne erlischt, Licht-Welle rast zur Erde, Countdown 8:00                  | unmöglich                    | Weltall   |
-| 🔥 … ein Teelöffel Neutronenstern auf der Erde landet?     | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                    | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden             | unmöglich                    | Weltall   |
-| 🔥 … alle Menschen gleichzeitig hochspringen?              | Gar nichts – die Erde bewegt sich weniger als ein Atom                                         | 8 Milliarden Low-Poly-Menschen springen, LED „0,00000…“                    | harmlos                      | Erde      |
-| 🔥 … der Mond verschwindet?                                | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                    | Mond verpufft, Meer flacht ab, Nacht wird schwarz                          | unmöglich                    | Weltall   |
-| 🔥 … im Weltall weinst?                                    | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                              | Träne wächst zur wackelnden Kugel vor dem Auge                             | unmöglich                    | Weltall   |
-| 🔥 … in Treibsand fällst?                                  | Du gehst nicht unter – du bleibst ungefähr bis zur Hüfte stecken (Studie prüfen)               | Beine sinken, Sandkörner in Röntgensicht, Stopp an der Hüfte               | Hinweis, harmlos erklärt     | Natur     |
-| ★ … eine ganze Nacht gar nicht schläfst?                   | Dein Hirn schläft trotzdem – in Sekunden-Nickerchen, ohne dass du es merkst (Fakten prüfen)    | Augen offen, Hirn-Lichter gehen einzeln aus, „Mikroschlaf“-Blitz           | harmlos, Hinweis Autofahren  | Körper    |
-| ★ … eine geschüttelte Cola aufmachst?                      | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                  | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
-| … vom 10-Meter-Brett springst?                             | Du knallst mit rund 50 km/h aufs Wasser                                                        | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt                 | Hinweis „nur mit Aufsicht“   | Sport     |
-| 🔥 … einen Tropfen Wasser auf die Sonne wirfst?            | Er verdampft schon lange vorher (Fakten prüfen)                                                | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
-| … eine Münze vom Hochhaus fallen lässt?                    | Sie tötet niemanden – sie wird nie schnell genug (Fakten prüfen); trotzdem nie machen          | Münze trudelt, Luftwiderstand-Pfeile bremsen sie                           | Warnung „nie machen“         | Stadt     |
-| … mit offenen Augen niest?                                 | Deine Augen fliegen nicht raus – sie gehen per Reflex zu (Fakten prüfen)                       | Nies-Wolke in Zeitlupe, Augenlider klappen zu                              | harmlos                      | Körper    |
-| … Mentos in Cola wirfst?                                   | Keine Chemie-Explosion – Millionen winziger Krater lassen die Kohlensäure auf einmal raus      | Mentos sinkt, Krater-Nahaufnahme, Fontäne meterhoch                        | nur draußen, Hinweis         | Essen     |
-| 🔥 … einen Blitz in einer Flasche fangen könntest?         | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)  | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                   | unmöglich                    | Natur     |
-| 🔥 … in ein Schwarzes Loch fällst?                         | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                           | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
-| ★ … im abstürzenden Aufzug im letzten Moment hochspringst? | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen) | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz | harmlos, Fangbremse erwähnen | Stadt     |
+| Szenario („Was passiert, wenn du …?“)                                | Überraschender Ausgang (nur fürs Payoff!)                                                      | Money-Shot                                                                 | Sicherheit                   | Kategorie |
+| -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------- | --------- |
+| 🔥 … die Sonne plötzlich ausgeht? ⚠️ zu allgemein                    | Du merkst es erst nach 8 Minuten – und die Erde fliegt geradeaus davon                         | Sonne erlischt, Licht-Welle rast zur Erde, Countdown 8:00                  | unmöglich                    | Weltall   |
+| 🔥 … ein Teelöffel Neutronenstern auf der Erde landet? ⚠️ zu nischig | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                    | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden             | unmöglich                    | Weltall   |
+| 🔥 … alle Menschen gleichzeitig hochspringen?                        | Gar nichts – die Erde bewegt sich weniger als ein Atom                                         | 8 Milliarden Low-Poly-Menschen springen, LED „0,00000…“                    | harmlos                      | Erde      |
+| 🔥 … der Mond verschwindet? ⚠️ zu allgemein                          | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                    | Mond verpufft, Meer flacht ab, Nacht wird schwarz                          | unmöglich                    | Weltall   |
+| 🔥 … im Weltall weinst?                                              | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                              | Träne wächst zur wackelnden Kugel vor dem Auge                             | unmöglich                    | Weltall   |
+| 🔥 … in Treibsand fällst?                                            | Du gehst nicht unter – du bleibst ungefähr bis zur Hüfte stecken (Studie prüfen)               | Beine sinken, Sandkörner in Röntgensicht, Stopp an der Hüfte               | Hinweis, harmlos erklärt     | Natur     |
+| ★ … eine ganze Nacht gar nicht schläfst?                             | Dein Hirn schläft trotzdem – in Sekunden-Nickerchen, ohne dass du es merkst (Fakten prüfen)    | Augen offen, Hirn-Lichter gehen einzeln aus, „Mikroschlaf“-Blitz           | harmlos, Hinweis Autofahren  | Körper    |
+| ★ … eine geschüttelte Cola aufmachst?                                | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                  | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
+| … vom 10-Meter-Brett springst?                                       | Du knallst mit rund 50 km/h aufs Wasser                                                        | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt                 | Hinweis „nur mit Aufsicht“   | Sport     |
+| 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
+| … eine Münze vom Hochhaus fallen lässt?                              | Sie tötet niemanden – sie wird nie schnell genug (Fakten prüfen); trotzdem nie machen          | Münze trudelt, Luftwiderstand-Pfeile bremsen sie                           | Warnung „nie machen“         | Stadt     |
+| … mit offenen Augen niest?                                           | Deine Augen fliegen nicht raus – sie gehen per Reflex zu (Fakten prüfen)                       | Nies-Wolke in Zeitlupe, Augenlider klappen zu                              | harmlos                      | Körper    |
+| … Mentos in Cola wirfst?                                             | Keine Chemie-Explosion – Millionen winziger Krater lassen die Kohlensäure auf einmal raus      | Mentos sinkt, Krater-Nahaufnahme, Fontäne meterhoch                        | nur draußen, Hinweis         | Essen     |
+| 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)  | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                   | unmöglich                    | Natur     |
+| 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                           | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
+| ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen) | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz | harmlos, Fangbremse erwähnen | Stadt     |
 
 ## Reserviert (in Arbeit)
 

@@ -364,13 +364,14 @@ No summary, no "Tschüss", nothing after the question.
 
 CTA patterns:
 
-| Pattern              | Example                                                           |
-| -------------------- | ----------------------------------------------------------------- |
-| **Ja / Nein**        | "Hast du einen Airfryer? Schreib's in die Kommentare."            |
-| **Entweder-oder**    | "Team Treppe oder Team Aufzug? Ab in die Kommentare."             |
-| **Test zu Hause**    | "Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's mir." |
-| **Zahl / Schätzung** | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare."        |
-| **Nächstes Thema**   | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare."   |
+| Pattern                                                                                     | Example                                                                                  |
+| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **Zeig-Frage** (best when the viewer has something to show — #36 went viral on nail photos) | "Zeig mir deine Nägel 👇" / "Welche Haarfarbe hattest du schon? Bild in die Kommentare." |
+| **Ja / Nein**                                                                               | "Hast du einen Airfryer? Schreib's in die Kommentare."                                   |
+| **Entweder-oder**                                                                           | "Team Treppe oder Team Aufzug? Ab in die Kommentare."                                    |
+| **Test zu Hause**                                                                           | "Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's mir."                        |
+| **Zahl / Schätzung**                                                                        | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare."                               |
+| **Nächstes Thema**                                                                          | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare."                          |
 
 ## Delivery tags — make Jan sound alive
 
