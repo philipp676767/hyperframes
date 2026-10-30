@@ -6,6 +6,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
 ## Nächstes Mal (offen)
 
+- [ ] **„Folge für mehr Wissen.“ wieder ans Ende, schnell gesprochen** (Nutzer, 2026-10-30): letzte Zeile = Kommentar-Frage + „Folge für mehr Wissen.“; prepare-voice beschleunigt den letzten Satz ×1,3.
 - [ ] **Sweet Spot + Zeig-Faktor** (aus #36 UV-Nagellampe, viral, 2026-10-30): Themen = ein konkretes Ding einer riesigen Gruppe (nicht „Licht“, nicht „Teilchenbeschleuniger“); wenn möglich etwas, das Zuschauer selbst zeigen können, und eine Zeig-Frage („Zeig mir deine Nägel 👇“). Neue Liste „Dein Look & dein Hobby“, höchstens jedes 3. Video, Themen für Frauen, Männer und alle abwechseln.
 - [ ] **Hook max. 3 Sekunden** (Nutzer, 2026-10-29): Zeile 1 = Hook, ≤ 9 Wörter, ≤ 3 s gesprochen (sync-html prüft); darin muss klar sein, warum man bis zum Ende schaut (Nutzen / Gefahr / brennende Frage). Vergleichen: Absprung in den ersten 3 s.
 - [ ] **Format B ohne gesprochenes „Was passiert, wenn …?“** (Nutzer, 2026-10-29): Start direkt mit der Hook — die Handlung läuft schon („Du ziehst mitten im Flug an der Notausgangstür.“) oder die Warnung zuerst.

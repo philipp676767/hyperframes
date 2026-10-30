@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Build assets/voiceover.mp3 from the raw ElevenLabs take (whole script incl.
-# the follow line and the comment question) and fit it to the house length:
+# the comment question + "Folge für mehr Wissen." at the end — that last
+# sentence is sped up a further x1.3, FOLLOW_FAST) and fit it to the house length:
 # every video is EXACTLY 45 s (user's rule, 2026-10-28) and simply
 # ends after the comment question (no loop line). Jan always talks ~15 %
 # faster than he reads (BASE 1.15, pitch kept — user's wish 2026-10-26:
@@ -32,6 +33,9 @@ join() { # $1 = pause length → $TMP/joined.wav
   else
     cp "$TMP/main.wav" "$TMP/joined.wav"
   fi
+  # the closing "Folge für mehr Wissen." is spoken quickly (2026-10-30)
+  python3 -I scripts/fast-tail.py "$TMP/joined.wav" "$TMP/fast.wav" "${FOLLOW_FAST:-1.3}" >&2
+  mv "$TMP/fast.wav" "$TMP/joined.wav"
   ffprobe -v error -show_entries format=duration -of csv=p=0 "$TMP/joined.wav"
 }
 

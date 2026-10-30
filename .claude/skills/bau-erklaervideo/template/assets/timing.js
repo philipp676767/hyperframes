@@ -41,7 +41,7 @@ export const HL = WORDS.filter((w) => w.hl).map((w) => w.start);
 // CTA moments, the same rules as the button timeline in index.html: the
 // comment pill pops when the last script line starts; the follow pill on the
 // first "folg…" — since 2026-10-24 a line in the MIDDLE of the video
-// ("Folge für mehr Wissen."), so most viewers still see
+// (2026-10-24 to -29; since -30 it is back at the end), so most viewers still see
 // it — tapped 1.0 s later, flipped to "Gefolgt" at +1.12 s, gone at +2.4 s
 // (`mid`). A "folg" inside the last line (older scripts) keeps the old
 // end-of-video behaviour.
