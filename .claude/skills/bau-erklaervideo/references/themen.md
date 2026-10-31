@@ -302,9 +302,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema              | Format | Datum      | Chat          |
-| ------------------ | ------ | ---------- | ------------- |
-| Tattoo (Dein Look) | A      | 2026-10-31 | Video: Tattoo |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
