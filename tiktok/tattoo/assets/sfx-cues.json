@@ -1,149 +1,366 @@
 [
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
-  },
-  {
     "s": "hit",
     "at": 0.05,
     "why": "hook title"
   },
   {
-    "s": "whoosh",
-    "at": 1.189,
-    "why": "cut"
+    "s": "mampf",
+    "at": 0.05,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "mampf",
+    "at": 0.75,
+    "why": "beats.js",
+    "db": -14
   },
   {
     "s": "whoosh",
-    "at": 1.189,
+    "at": 0.94,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 1.409,
+    "at": 1.16,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 3.93,
+    "at": 1.36,
     "why": "cut"
   },
   {
-    "s": "pop",
-    "at": 4.3,
-    "why": "beats.js"
+    "s": "whoosh",
+    "at": 1.61,
+    "why": "highlight zoom"
   },
   {
-    "s": "hit",
-    "at": 4.45,
-    "why": "highlight shake"
-  },
-  {
-    "s": "punch",
-    "at": 5.028,
-    "why": "highlight"
+    "s": "mampf",
+    "at": 1.78,
+    "why": "beats.js",
+    "db": -9
   },
   {
     "s": "whoosh",
-    "at": 6.065,
+    "at": 2.9,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 4.68,
+    "why": "cut"
+  },
+  {
+    "s": "tattoo",
+    "at": 4.85,
+    "why": "beats.js",
+    "dur": 1.8999999999999995,
+    "db": -13
+  },
+  {
+    "s": "slowmo",
+    "at": 5.58,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "punch",
+    "at": 5.88,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 5.88,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.58,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.38,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 6.335,
-    "why": "label Draht"
+    "at": 8.65,
+    "why": "label Oberhaut"
   },
   {
     "s": "punch",
-    "at": 7.868,
+    "at": 10.12,
     "why": "highlight"
   },
   {
-    "s": "slowmo",
-    "at": 7.868,
-    "why": "highlight slowmo"
+    "s": "whoosh",
+    "at": 10.88,
+    "why": "cut"
   },
   {
-    "s": "surr",
-    "at": 7.868,
+    "s": "whoosh",
+    "at": 12.58,
+    "why": "cut"
+  },
+  {
+    "s": "tattoo",
+    "at": 13.54,
     "why": "beats.js",
-    "dur": 3.942,
-    "db": -21
+    "dur": 1.3599999999999994,
+    "db": -15
+  },
+  {
+    "s": "punch",
+    "at": 14.7,
+    "why": "highlight"
   },
   {
     "s": "hit",
-    "at": 8.718,
+    "at": 14.7,
+    "why": "highlight flash"
+  },
+  {
+    "s": "blip",
+    "at": 14.75,
+    "why": "label Lederhaut"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.28,
+    "why": "cut"
+  },
+  {
+    "s": "piep",
+    "at": 15.55,
+    "why": "beats.js",
+    "dur": 1.2,
+    "db": -22
+  },
+  {
+    "s": "hit",
+    "at": 15.6,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.48,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 17.7,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.54,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 19.4,
+    "why": "beats.js"
+  },
+  {
+    "s": "pop",
+    "at": 19.75,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "punch",
+    "at": 20.32,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 20.37,
+    "why": "label Fresszelle"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.8,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.9,
+    "why": "cut"
+  },
+  {
+    "s": "mampf",
+    "at": 23.97,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 24.44,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 24.66,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 25.24,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 27.42,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 28.09,
+    "why": "highlight flash"
+  },
+  {
+    "s": "boing",
+    "at": 28.09,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 28.56,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "mampf",
+    "at": 28.78,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 30.58,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 31.66,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 31.66,
+    "why": "question answered"
+  },
+  {
+    "s": "hit",
+    "at": 31.66,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 9.776,
+    "at": 32.15,
+    "why": "cut"
+  },
+  {
+    "s": "surr",
+    "at": 33.72,
+    "why": "beats.js",
+    "dur": 1.6,
+    "db": -22
+  },
+  {
+    "s": "punch",
+    "at": 34.02,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.32,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 9.776,
+    "at": 34.56,
     "why": "highlight zoom"
   },
   {
-    "s": "punch",
-    "at": 9.996,
-    "why": "highlight"
-  },
-  {
-    "s": "blip",
-    "at": 10.046,
-    "why": "label Glühfaden"
+    "s": "klack",
+    "at": 34.78,
+    "why": "beats.js",
+    "db": -12
   },
   {
     "s": "whoosh",
-    "at": 11.59,
-    "why": "cut"
-  },
-  {
-    "s": "punch",
-    "at": 12.466,
-    "why": "highlight"
-  },
-  {
-    "s": "ding",
-    "at": 12.466,
-    "why": "question answered"
-  },
-  {
-    "s": "whoosh",
-    "at": 13.025,
+    "at": 35.72,
     "why": "cut"
   },
   {
     "s": "wow",
-    "at": 13.245,
+    "at": 35.94,
     "why": "bonus fact"
   },
   {
+    "s": "rauschen",
+    "at": 35.94,
+    "why": "beats.js",
+    "dur": 3.6799999999999997,
+    "db": -24
+  },
+  {
+    "s": "whoosh",
+    "at": 38.04,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 38.31,
+    "why": "label Lymphknoten"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.4,
+    "why": "highlight zoom"
+  },
+  {
     "s": "punch",
-    "at": 15.574,
+    "at": 39.62,
     "why": "highlight"
   },
   {
-    "s": "pop",
-    "at": 17.573,
-    "why": "comment pill"
+    "s": "wow",
+    "at": 39.62,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 39.76,
+    "why": "cut"
   },
   {
     "s": "pop",
-    "at": 21.488,
+    "at": 39.98,
+    "why": "comment pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 41.34,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 42.54,
     "why": "follow pill"
   },
   {
     "s": "click",
-    "at": 22.568,
+    "at": 43.62,
     "why": "follow tap"
   },
   {
     "s": "ding",
-    "at": 22.608,
+    "at": 43.66,
     "why": "gefolgt",
     "db": -16
   }
