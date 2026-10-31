@@ -26,6 +26,9 @@ norm = lambda s: re.sub(r"[^a-zäöüß0-9]", "", s.lower())
 model = WhisperModel("small", device="cpu", compute_type="int8")
 segs, _ = model.transcribe(samples, language="de", word_timestamps=True, initial_prompt=script)
 heard = [w for s in segs for w in s.words]
+if len(heard) < len(tokens) // 2:  # the script prompt sometimes makes Whisper return nothing: retry without it
+    segs, _ = model.transcribe(samples, language="de", word_timestamps=True)
+    heard = [w for s in segs for w in s.words]
 
 a = [norm(t) for t in tokens]
 b = [norm(w.word) for w in heard]
