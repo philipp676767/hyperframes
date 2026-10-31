@@ -289,7 +289,6 @@ ask for go in here.
 | 🔥 … der Mond verschwindet? ⚠️ zu allgemein                          | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                    | Mond verpufft, Meer flacht ab, Nacht wird schwarz                          | unmöglich                    | Weltall   |
 | 🔥 … im Weltall weinst?                                              | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                              | Träne wächst zur wackelnden Kugel vor dem Auge                             | unmöglich                    | Weltall   |
 | 🔥 … in Treibsand fällst?                                            | Du gehst nicht unter – du bleibst ungefähr bis zur Hüfte stecken (Studie prüfen)               | Beine sinken, Sandkörner in Röntgensicht, Stopp an der Hüfte               | Hinweis, harmlos erklärt     | Natur     |
-| ★ … eine ganze Nacht gar nicht schläfst?                             | Dein Hirn schläft trotzdem – in Sekunden-Nickerchen, ohne dass du es merkst (Fakten prüfen)    | Augen offen, Hirn-Lichter gehen einzeln aus, „Mikroschlaf“-Blitz           | harmlos, Hinweis Autofahren  | Körper    |
 | ★ … eine geschüttelte Cola aufmachst?                                | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                  | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
 | … vom 10-Meter-Brett springst?                                       | Du knallst mit rund 50 km/h aufs Wasser                                                        | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt                 | Hinweis „nur mit Aufsicht“   | Sport     |
 | 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
@@ -298,12 +297,14 @@ ask for go in here.
 | … Mentos in Cola wirfst?                                             | Keine Chemie-Explosion – Millionen winziger Krater lassen die Kohlensäure auf einmal raus      | Mentos sinkt, Krater-Nahaufnahme, Fontäne meterhoch                        | nur draußen, Hinweis         | Essen     |
 | 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)  | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                   | unmöglich                    | Natur     |
 | 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                           | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
+| ★ … 24 Stunden nur Energydrinks trinkst?                             | Kein Turbo – nach dem Hoch kommt der Absturz, das Herz rast (Fakten prüfen)                    | Dose zischt, Herzschlag-Anzeige springt, Licht flackert                    | Hinweis, harmlos erklärt     | Körper    |
 | ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen) | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz | harmlos, Fangbremse erwähnen | Stadt     |
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                                 | Format | Datum      | Chat                |
+| ----------------------------------------------------- | ------ | ---------- | ------------------- |
+| … eine ganze Nacht gar nicht schläfst? (Schlafentzug) | B      | 2026-10-31 | Video: Schlafentzug |
 
 ## Verwendet
 
