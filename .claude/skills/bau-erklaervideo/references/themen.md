@@ -246,7 +246,6 @@ men).
 | ----------------------------- | ------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
 | ★ Blondieren                  | „Blondierung brennt deine Haarfarbe einfach weg.“                   | „Welche Haarfarbe hattest du schon? Bild 👇“ | Bleiche dringt ins Haar, Farbpigmente zerfallen in Zeitlupe  |
 | ★ Selbstbräuner               | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)      | „Schon mal orange geworden? Beweisfoto 👇“   | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun |
-| ★ Tattoo                      | „Deine Haut erneuert sich – dein Tattoo bleibt.“                    | „Zeig dein Tattoo 👇“                        | Fresszellen schlucken die Farbe und bleiben stecken          |
 | ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)    | „Zeig deine Wimpern 👇“                      | Bindungen im Haar knacken auf, Form, neu verknüpft           |
 | ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                      | „Welche Farbe trägst du gerade? 👇“          | Schuppenschicht klappt auf, Farbe strömt hinein              |
 | ★ Parfum                      | „Dein Parfum riecht nach einer Stunde anders – absichtlich.“        | „Welches Parfum trägst du? 👇“               | Duftnoten verdampfen nacheinander, Kopf-, Herz-, Basisnote   |
@@ -303,8 +302,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema              | Format | Datum      | Chat          |
+| ------------------ | ------ | ---------- | ------------- |
+| Tattoo (Dein Look) | A      | 2026-10-31 | Video: Tattoo |
 
 ## Verwendet
 
