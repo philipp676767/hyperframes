@@ -302,9 +302,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                             | Format | Datum      | Chat          |
-| --------------------------------- | ------ | ---------- | ------------- |
-| Mentos + Cola (Magen explodiert?) | B      | 2026-11-01 | Video: Mentos |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 

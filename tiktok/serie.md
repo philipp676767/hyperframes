@@ -54,3 +54,4 @@ Umgebungen (insel, stadt, …).
 | 42  | Tattoo (Fresszellen)           | A      | `tiktok/tattoo`              | tattoo-studio-hinterhof     | nacht            | 45,0 s | 2026-10-31 |
 | 43  | Schlafentzug (Nacht durch)     | B      | `tiktok/schlafentzug`        | wg-dachterrasse-wien        | morgendämmerung  | 45,0 s | 2026-11-01 |
 | 44  | Smartwatch-Puls (grünes Licht) | A      | `tiktok/smartwatch`          | donaukanal-promenade        | herbstmorgen     | 45,0 s | 2026-11-01 |
+| 45  | Mentos + Cola (Magen)          | B      | `tiktok/mentos`              | kino-vorplatz-nacht         | nacht            | 45,0 s | 2026-11-01 |
