@@ -304,7 +304,6 @@ ask for go in here.
 
 | Thema       | Format | Datum      | Chat                     |
 | ----------- | ------ | ---------- | ------------------------ |
-| Blondieren  | A      | 2026-11-01 | Video: Blondieren (#46)  |
 | Muskelkater | A      | 2026-11-01 | Video: Muskelkater (#47) |
 
 ## Verwendet
