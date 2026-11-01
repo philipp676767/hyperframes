@@ -1,0 +1,300 @@
+[
+  {
+    "s": "dose",
+    "at": 0,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.72,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 0.94,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 1.04,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.42,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 4.35,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 5.16,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.74,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.74,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.94,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 7.51,
+    "why": "label Adenosin"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.64,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 9.03,
+    "why": "beats.js"
+  },
+  {
+    "s": "blip",
+    "at": 9.65,
+    "why": "label Koffein"
+  },
+  {
+    "s": "punch",
+    "at": 10.3,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 10.3,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 10.3,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 10.3,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "whoosh",
+    "at": 10.8,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 11.68,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 11.68,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.66,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 14.48,
+    "why": "beats.js",
+    "dur": 0.9,
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 15.14,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.32,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "blip",
+    "at": 15.64,
+    "why": "label Gefühlszentrum"
+  },
+  {
+    "s": "punch",
+    "at": 18.18,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 19,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 19.52,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.04,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 22.56,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 22.56,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.76,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 25.3,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 26,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "punch",
+    "at": 27,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 27.05,
+    "why": "label Nervenzellen"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.07,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.75,
+    "why": "cut"
+  },
+  {
+    "s": "brumm",
+    "at": 31.02,
+    "why": "beats.js",
+    "dur": 1.6,
+    "db": -16
+  },
+  {
+    "s": "punch",
+    "at": 31.12,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 31.8,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 32.42,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.38,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 34.6,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 34.6,
+    "why": "question answered"
+  },
+  {
+    "s": "whoosh",
+    "at": 35.3,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 35.62,
+    "why": "bonus fact"
+  },
+  {
+    "s": "punch",
+    "at": 37.14,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 38.76,
+    "why": "highlight flash"
+  },
+  {
+    "s": "wow",
+    "at": 38.86,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 39.6,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 39.84,
+    "why": "comment pill"
+  },
+  {
+    "s": "pop",
+    "at": 42.82,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 43.9,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 43.94,
+    "why": "gefolgt",
+    "db": -16
+  }
+]
