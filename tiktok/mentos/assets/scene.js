@@ -18,6 +18,7 @@ import {
   V,
   rng,
   scene,
+  camera,
   flat,
   jitter,
   facet,
@@ -477,11 +478,13 @@ function makeFountain(N, seed, mat = foamMat, size = 0.11) {
         } else {
           const v = Math.sqrt(2 * G * H * str) * q.sp;
           const y = pos.y + v * a - 0.5 * G * a * a;
-          if (y < 0.05) dummy.scale.setScalar(0);
+          const fan = spread * (0.25 + (y - pos.y) / H) * v * a * 0.45;
+          dummy.position.set(pos.x + q.ax * fan, y, pos.z + q.az * fan);
+          // foam that would fall right in front of the lens is left out
+          if (y < 0.05 || dummy.position.distanceTo(camera.position) < 2.2)
+            dummy.scale.setScalar(0);
           else {
             // the jet fans out near its top: sideways drift grows with height
-            const fan = spread * (0.25 + (y - pos.y) / H) * v * a * 0.45;
-            dummy.position.set(pos.x + q.ax * fan, y, pos.z + q.az * fan);
             dummy.scale.setScalar(q.s * (1 + Math.min(a, 1) * 0.6));
             dummy.rotation.set(q.rot + a * 4, q.rot * 2, 0);
             any = true;
@@ -865,6 +868,7 @@ const q0 = new THREE.Quaternion();
 const vOne = V(1, 1, 1);
 
 function renderAt(t) {
+  applyCamera(t); // camera first: the fountains keep their foam off the lens
   // ---- the viewer's hand: has just dropped the Mentos, jerks away from the jet
   hand.track(t, [
     { t: -0.8, pos: [TB.x, 3.15, TB.z + 0.1], rot: [0.9, Math.PI, 0], pose: "grab" },
