@@ -56,3 +56,4 @@ Umgebungen (insel, stadt, …).
 | 44  | Smartwatch-Puls (grünes Licht) | A      | `tiktok/smartwatch`          | donaukanal-promenade        | herbstmorgen      | 45,0 s | 2026-11-01 |
 | 45  | Mentos + Cola (Magen)          | B      | `tiktok/mentos`              | kino-vorplatz-nacht         | nacht             | 45,0 s | 2026-11-01 |
 | 46  | Blondieren (erst orange)       | A      | `tiktok/blondieren`          | friseursalon-wien-neubau    | samstagnachmittag | 45,0 s | 2026-11-01 |
+| 47  | Muskelkater (bergab)           | A      | `tiktok/muskelkater`         | alpen-abstieg-holzstufen    | spätnachmittag    | 45,0 s | 2026-11-01 |

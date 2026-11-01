@@ -302,9 +302,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema       | Format | Datum      | Chat                     |
-| ----------- | ------ | ---------- | ------------------------ |
-| Muskelkater | A      | 2026-11-01 | Video: Muskelkater (#47) |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
