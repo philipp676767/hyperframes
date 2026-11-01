@@ -1,0 +1,370 @@
+[
+  {
+    "s": "punch",
+    "at": 0,
+    "why": "highlight"
+  },
+  {
+    "s": "kuhglocke",
+    "at": 0.02,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "hit",
+    "at": 0.3,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 0.3,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.8,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.8,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.74,
+    "why": "cut"
+  },
+  {
+    "s": "kuhglocke",
+    "at": 2.96,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 4.44,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.36,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.36,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 7.88,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.42,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 8.95,
+    "why": "label Milchsäure?"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.54,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.18,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 10.4,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 10.4,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.94,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 11.41,
+    "why": "label Muskelfaser"
+  },
+  {
+    "s": "whoosh",
+    "at": 13.86,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 14.46,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "hit",
+    "at": 14.81,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 14.81,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 15.92,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 16.14,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 16.19,
+    "why": "label Mikrorisse"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.86,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 19.8,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 19.8,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 20.02,
+    "why": "highlight"
+  },
+  {
+    "s": "piep",
+    "at": 20.02,
+    "why": "beats.js",
+    "dur": 0.45,
+    "db": -16
+  },
+  {
+    "s": "pop",
+    "at": 20.78,
+    "why": "comment pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.4,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.56,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.28,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.26,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 26.68,
+    "why": "label Oberschenkel"
+  },
+  {
+    "s": "whoosh",
+    "at": 28,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 28.7,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.04,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 30.46,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 30.51,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 30.51,
+    "why": "highlight shake"
+  },
+  {
+    "s": "hit",
+    "at": 30.51,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 31.06,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 32.48,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "punch",
+    "at": 32.68,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 32.73,
+    "why": "label Reparatur"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.24,
+    "why": "cut"
+  },
+  {
+    "s": "surr",
+    "at": 34.66,
+    "why": "beats.js",
+    "dur": 1.1000000000000014,
+    "db": -17
+  },
+  {
+    "s": "whoosh",
+    "at": 35,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 35.22,
+    "why": "highlight shake"
+  },
+  {
+    "s": "blip",
+    "at": 35.27,
+    "why": "label Nerven"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.66,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 36.88,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 36.88,
+    "why": "question answered"
+  },
+  {
+    "s": "hit",
+    "at": 36.98,
+    "why": "highlight flash"
+  },
+  {
+    "s": "klack",
+    "at": 36.98,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "blip",
+    "at": 37.03,
+    "why": "label Bremse"
+  },
+  {
+    "s": "zisch",
+    "at": 37.03,
+    "why": "beats.js",
+    "dur": 1.9400000000000006,
+    "db": -19
+  },
+  {
+    "s": "whoosh",
+    "at": 38.8,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.8,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "wow",
+    "at": 39.02,
+    "why": "bonus fact"
+  },
+  {
+    "s": "whoosh",
+    "at": 40.56,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 41.7,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 43.22,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 43.44,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 44.22,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 44.26,
+    "why": "gefolgt",
+    "db": -16
+  }
+]
