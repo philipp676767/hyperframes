@@ -302,9 +302,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema           | Format | Datum      | Chat              |
-| --------------- | ------ | ---------- | ----------------- |
-| Smartwatch-Puls | A      | 2026-11-01 | Video: Smartwatch |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
