@@ -242,18 +242,17 @@ don't flood:** about every third video at most, and alternate between
 topics for women, men and everyone (the audience is 51 % women, 45 %
 men).
 
-| Thema                         | Hook (≤ 9 Wörter)                                                   | Zeig-Frage (Kommentar)                       | Money-Shot                                                   |
-| ----------------------------- | ------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
-| ★ Blondieren                  | „Blondierung brennt deine Haarfarbe einfach weg.“                   | „Welche Haarfarbe hattest du schon? Bild 👇“ | Bleiche dringt ins Haar, Farbpigmente zerfallen in Zeitlupe  |
-| ★ Selbstbräuner               | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)      | „Schon mal orange geworden? Beweisfoto 👇“   | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun |
-| ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)    | „Zeig deine Wimpern 👇“                      | Bindungen im Haar knacken auf, Form, neu verknüpft           |
-| ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                      | „Welche Farbe trägst du gerade? 👇“          | Schuppenschicht klappt auf, Farbe strömt hinein              |
-| ★ Parfum                      | „Dein Parfum riecht nach einer Stunde anders – absichtlich.“        | „Welches Parfum trägst du? 👇“               | Duftnoten verdampfen nacheinander, Kopf-, Herz-, Basisnote   |
-| ★ Latte Art / Milchschaum     | „Dein Milchschaum hält nur dank Eiweiß-Käfigen.“                    | „Zeig deinen Kaffee ☕👇“                    | Eiweiß legt sich um Luftblasen, Herz wird gegossen           |
-| ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)       | „Zeig deine Sneaker 👇“                      | Luftkammer im Röntgenblick, Schritt drückt sie zusammen      |
-| ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)   | „Zeig dein Auto 👇“                          | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt |
-| ★ Muskelkater                 | „Muskelkater ist keine Milchsäure.“                                 | „Wo hast du gerade Muskelkater? 👇“          | Mini-Risse im Muskel, Reparaturtrupp rückt an                |
-| ★ Katze schnurrt              | „Deine Katze schnurrt mit einem eingebauten Motor.“ (Fakten prüfen) | „Zeig deine Katze 👇“                        | Kehlkopfmuskeln zucken, Schallwellen in Zeitlupe             |
+| Thema                         | Hook (≤ 9 Wörter)                                                   | Zeig-Frage (Kommentar)                     | Money-Shot                                                   |
+| ----------------------------- | ------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------ |
+| ★ Selbstbräuner               | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)      | „Schon mal orange geworden? Beweisfoto 👇“ | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun |
+| ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)    | „Zeig deine Wimpern 👇“                    | Bindungen im Haar knacken auf, Form, neu verknüpft           |
+| ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                      | „Welche Farbe trägst du gerade? 👇“        | Schuppenschicht klappt auf, Farbe strömt hinein              |
+| ★ Parfum                      | „Dein Parfum riecht nach einer Stunde anders – absichtlich.“        | „Welches Parfum trägst du? 👇“             | Duftnoten verdampfen nacheinander, Kopf-, Herz-, Basisnote   |
+| ★ Latte Art / Milchschaum     | „Dein Milchschaum hält nur dank Eiweiß-Käfigen.“                    | „Zeig deinen Kaffee ☕👇“                  | Eiweiß legt sich um Luftblasen, Herz wird gegossen           |
+| ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)       | „Zeig deine Sneaker 👇“                    | Luftkammer im Röntgenblick, Schritt drückt sie zusammen      |
+| ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)   | „Zeig dein Auto 👇“                        | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt |
+| ★ Muskelkater                 | „Muskelkater ist keine Milchsäure.“                                 | „Wo hast du gerade Muskelkater? 👇“        | Mini-Risse im Muskel, Reparaturtrupp rückt an                |
+| ★ Katze schnurrt              | „Deine Katze schnurrt mit einem eingebauten Motor.“ (Fakten prüfen) | „Zeig deine Katze 👇“                      | Kehlkopfmuskeln zucken, Schallwellen in Zeitlupe             |
 
 ## Offen — Format B „Was passiert, wenn …?“
 
@@ -302,8 +301,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema      | Format | Datum      | Chat              |
+| ---------- | ------ | ---------- | ----------------- |
+| Blondieren | A      | 2026-11-01 | Video: Blondieren |
 
 ## Verwendet
 
