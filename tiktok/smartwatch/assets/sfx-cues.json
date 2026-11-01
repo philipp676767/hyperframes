@@ -43,12 +43,6 @@
     "why": "cut"
   },
   {
-    "s": "whoosh",
-    "at": 2.59,
-    "why": "beats.js",
-    "db": -10
-  },
-  {
     "s": "hit",
     "at": 3.11,
     "why": "highlight shake"

@@ -379,9 +379,10 @@ function drawScreen(t) {
   g.fillStyle = col;
   g.font = '800 92px "Montserrat", sans-serif';
   g.fillText(val, 18, 128);
+  const vw = g.measureText(val).width;
   g.fillStyle = "#9aa0aa";
   g.font = `700 ${unit.length > 6 ? 20 : 26}px "Montserrat", sans-serif`;
-  g.fillText(unit, val === "!" ? 70 : 22 + g.measureText(val).width * 0 + val.length * 54, 128);
+  g.fillText(unit, 18 + vw + 10, 128);
   // the curve: the light coming back, scrolling
   g.strokeStyle = stumble ? "#ffb020" : lies ? "#ff4b4b" : "#3dff7a";
   g.lineWidth = 5;

@@ -133,9 +133,9 @@ export const shots = [
   {
     at: T.kanal,
     rel: JOG,
-    from: [-3.6, 2.6, 5.4],
-    to: [-4.8, 2.9, 5.8],
-    look: [-0.6, 1.0, -3],
+    from: [-1.5, 2.0, 4.8],
+    to: [-2.2, 2.2, 5.2],
+    look: [0.3, 1.1, -2],
     zoom: 1.0,
   },
   // dive into the wrist: the artery bulges with every beat (slowmo)
@@ -204,7 +204,7 @@ export const shots = [
   { at: T.darum, from: H(2.2, 2.4, 4.4), to: H(1.5, 2.2, 3.6), look: H(0, 1.95, 0), zoom: 1.0 },
   { at: T.weil, from: H(-1.2, 2.2, 2.6), to: H(-0.8, 2.05, 2.0), look: H(0, 1.9, 0), zoom: 1.0 },
   // every beat stands out: wide orbit over the whole cut
-  { at: T.schlag - 0.6, orbit: { c: H(0, 2.6, 0), r: 6.5, y: 4.4 - 60, a0: 0.55, a1: -0.25 } },
+  { at: T.schlag - 0.6, orbit: { c: H(0, 2.9, 0.5), r: 5.2, y: 3.5 - 60, a0: 0.5, a1: -0.3 } },
   // Übrigens: the heart, three billion beats
   {
     at: T.fakt,
@@ -272,7 +272,6 @@ export const HIGHLIGHTS = [
 export const SFX = [
   { s: "surr", at: 0.0, dur: 1.6, db: -16 }, // the LEDs fire on frame 0
   { s: "click", at: 0.55, db: -8 },
-  { s: "whoosh", at: T.dreh + 0.05, db: -10 },
   { s: "klack", at: T.dreh + 0.45, db: -12 },
   { s: "piep", at: T.stolpert + 0.1, dur: 0.6, db: -20 },
   { s: "herzschlag", at: T.herzschlag - 0.1, db: -10 },
