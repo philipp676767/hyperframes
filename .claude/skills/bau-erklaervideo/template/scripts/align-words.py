@@ -60,10 +60,18 @@ count = lambda l: len([t for t in l.split() if t not in ("–", ">")])
 loop = lines[-1].lstrip().startswith(">")
 loop_len = count(lines[-1]) if loop else 0
 cta_len = count(lines[-2] if loop else lines[-1])
+# The comment question has its own line in the MIDDLE of the script (since
+# 2026-11-01 — at the end it made most viewers swipe away): the first line
+# before the CTA line that says "Kommentar…" drives the "Kommentieren" pill.
+body = lines[: len(lines) - (2 if loop else 1)]
+ci = next((i for i, l in enumerate(body) if re.search("kommentar", l, re.I)), None)
+cmt_start = "null" if ci is None else sum(count(l) for l in body[:ci])
+cmt_len = 0 if ci is None else count(body[ci])
 (root / "assets" / "words.js").write_text(
     "window.HF_WORDS = " + json.dumps(words, ensure_ascii=False) + ";\n"
     + f"window.HF_CTA_START = {len(words) - loop_len - cta_len};\n"
     + f"window.HF_LOOP_START = {len(words) - loop_len if loop else 'null'};\n"
+    + f"window.HF_CMT_START = {cmt_start};\nwindow.HF_CMT_LEN = {cmt_len};\n"
     # the hook = the first script line (max 3 s spoken, sync-html checks it)
     + f"window.HF_HOOK_LEN = {count(lines[0])};\n",
     encoding="utf8",

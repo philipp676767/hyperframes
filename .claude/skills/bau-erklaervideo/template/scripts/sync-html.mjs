@@ -16,7 +16,7 @@ const loop = ctx.window.HF_LOOP_START != null;
 const last = words[words.length - 1].end;
 const tail = loop ? 0.25 : 1.2;
 const natural = Math.ceil((last + tail) * 10) / 10;
-const fitted = last > LENGTH - 3 && last + (loop ? 0.15 : 0.6) <= LENGTH;
+const fitted = last > LENGTH - 3 && last + (loop ? 0.15 : 0.4) <= LENGTH;
 const dur = fitted ? LENGTH : natural;
 // house rule (2026-10-29): the hook — the first script line — is spoken in ≤ 3 s
 const hookLen = ctx.window.HF_HOOK_LEN;
@@ -28,6 +28,20 @@ if (hookLen) {
     );
   else console.log(`hook ends at ${hookEnd.toFixed(2)} s (≤ 3 s)`);
 }
+// house rule (2026-11-01): the comment question is its own line in the middle
+// (~15–28 s), never at the end — that is where most viewers swiped away
+const cs = ctx.window.HF_CMT_START;
+if (last <= LENGTH - 3) {
+  // short demo / old episode: no position check
+} else if (cs == null)
+  console.warn(
+    "WARNING: no comment question line (a line with „Kommentare“ before the last line).",
+  );
+else if (words[cs].start < 12 || words[cs].start > 30)
+  console.warn(
+    `WARNING: the comment question starts at ${words[cs].start.toFixed(1)} s — put it at ~15–28 s.`,
+  );
+else console.log(`comment question at ${words[cs].start.toFixed(1)} s`);
 if (last > LENGTH - 3 && !fitted)
   console.warn(
     `WARNING: speech ends at ${last}s — too long for exactly ${LENGTH}s; rerun prepare-voice.sh`,

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Build assets/voiceover.mp3 from the raw ElevenLabs take (whole script incl.
-# the comment question + "Folge für mehr Wissen." at the end — that last
-# sentence is sped up a further x1.3, FOLLOW_FAST) and fit it to the house length:
-# every video is EXACTLY 45 s (user's rule, 2026-10-28) and simply
-# ends after the comment question (no loop line). Jan always talks ~15 %
-# faster than he reads (BASE 1.15, pitch kept — user's wish 2026-10-26:
-# 3.1 words/s). The speech must end ~1.2 s
-# before 45 s (TARGET 43.8) so the last shot can breathe:
+# the comment question in the middle and "Folge für mehr Wissen." as the very
+# last sentence — sped up a further x1.3, FOLLOW_FAST) and fit it to the house
+# length: every video is EXACTLY 45 s (user's rule, 2026-10-28) and simply
+# ends right after "Folge für mehr Wissen." (no loop line). Jan always talks
+# ~15 % faster than he reads (BASE 1.15, pitch kept — user's wish 2026-10-26:
+# 3.1 words/s). The speech ends ~0.7 s before 45 s (TARGET 44.3; was 43.8 —
+# a silent tail is a swipe, 2026-11-01):
 #   - pauses (found at -30 dB) are first cut to 0.12 s;
 #   - too long  → sped up a little more (pitch kept), at most 6 % on top;
 #   - too short → the pauses between phrases are stretched evenly, at most
@@ -19,7 +19,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 MAIN=${1:-assets/vo_takes/main.mp3}
 CTA=${2:-assets/vo_takes/cta.mp3}
-TARGET=${TARGET:-43.8}
+TARGET=${TARGET:-44.3}
 BASE=${BASE:-1.15}
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT

@@ -18,7 +18,7 @@ beats, the outcome as payoff.
 ## Length — exactly 45 seconds
 
 Every video is **exactly 45.0 s** (user's rule, 2026-10-28; 60 s from
-2026-10-24 to -27). Write **130–142 words including fact and the CTA line** (Jan at **3.1 words/s**, sped up by `prepare-voice.sh`), never more
+2026-10-24 to -27). Write **130–142 words including the comment question, the fact and „Folge für mehr Wissen.“** (Jan at **3.1 words/s**, sped up by `prepare-voice.sh`), never more
 than **148** or fewer than **124** — `prepare-voice.sh` fits that range to
 exactly 45 s (≤ 6 % faster or slightly longer pauses). Count before
 showing the script.
@@ -28,15 +28,24 @@ no sentence is there just to fill time.
 
 ## Shape (45 s)
 
-| Part                         | When     | Words | Job                                                                                         |
-| ---------------------------- | -------- | ----- | ------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)            | 0–3 s    | ≤ 9   | **max 3 s**: the reason to watch to the end for _you_ (gain / danger) + twist; open loop 1  |
-| **Beat 1**                   | 3–13 s   | 26–34 | first part; ends on the **second money shot** (~10 s) and opens loop 2                      |
-| **Beat 2**                   | 13–21 s  | 22–26 | second part, bigger than beat 1; closes loop 2, opens loop 3                                |
-| **Mid twist** (re-hook)      | ~21–25 s | 10–14 | at the halfway mark: the obvious explanation is wrong / it's even crazier — or a "Rate mal" |
-| **Beat 3**                   | 25–34 s  | 22–28 | the decisive part (the real trick), the biggest money shot so far                           |
-| **Payoff + Übrigens** (line) | 34–40 s  | 18–24 | answer the hook's question (the question text fades) + "Übrigens: …"                        |
-| **CTA** (last line)          | 40–44 s  | 12–16 | comment question + „Folge für mehr Wissen.“ (quick) — then the video ends (~1.2 s, no loop) |
+| Part                           | When         | Words | Job                                                                                                                            |
+| ------------------------------ | ------------ | ----- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Hook** (line 1)              | 0–3 s        | ≤ 9   | **max 3 s**: the reason to watch to the end for _you_ (gain / danger) + twist; open loop 1                                     |
+| **Beat 1**                     | 3–13 s       | 26–34 | first part; ends on the **second money shot** (~10 s) and opens loop 2                                                         |
+| **Beat 2**                     | 13–19 s      | 18–22 | second part, bigger than beat 1; closes loop 2, opens loop 3                                                                   |
+| **Kommentar-Frage** (own line) | ~19–23 s     | 8–12  | the comment question + „Schreib's in die Kommentare.“ — **in the middle, never at the end** (§4); the open question stays open |
+| **Mid twist** (re-hook)        | ~23–27 s     | 10–14 | right after it: the obvious explanation is wrong / it's even crazier — or a "Rate mal"                                         |
+| **Beat 3**                     | 27–36 s      | 22–28 | the decisive part (the real trick), the biggest money shot so far                                                              |
+| **Payoff + Übrigens** (line)   | 36–43.5 s    | 20–26 | answer the hook's question (the question text fades) + "Übrigens: …" = **the last content, the strongest fact**                |
+| **Folge** (last line)          | ~43.5–44.3 s | 4     | only „Folge für mehr Wissen.“ (sped up) — the video ends ~0.7 s later, no loop                                                 |
+
+**Why the comment question left the end (user's statistics, 2026-11-01):**
+right before the old CTA (comment question + follow, ~4 s) about 20 % were
+still watching, after it only 5 %. "Hast du …? Schreib's in die
+Kommentare." sounds like "fertig" — people swiped instead of answering.
+So the end is now content until the last second: payoff → "Übrigens" →
+a ~0.8-s „Folge für mehr Wissen.“ → cut. The comment question sits in the
+middle, where viewers are hooked and the open question still holds them.
 
 ## Retention engine — how 45 seconds hold
 
@@ -322,44 +331,56 @@ surprising fact about the topic that people want to repeat to someone
 Sommer."). It must start with the word **"Übrigens"** — the "WUSSTEST
 DU?" badge and a sparkle sound key on it. Rules: 10–15 words, a number or
 a comparison, **true** (check it; phrase safely when unsure), not a
-repeat of a beat, one `*keyword*`. It is the last thing before the CTA, so
-it should make people want to comment ("Krass!" / "Wusste ich nicht").
+repeat of a beat, one `*keyword*`. It is **the last content of the video**
+(only the quick „Folge für mehr Wissen.“ comes after it), so take the
+strongest fact you have left — the one people repeat ("Krass!" / "Wusste
+ich nicht") — and never a soft one.
 
-### 4. CTA — comment question + „Folge für mehr Wissen.“ at the end
+### 4. CTA — comment question in the middle, „Folge für mehr Wissen.“ at the very end
 
-Both parts are **the last line**, spoken by the same voice in the same
-take; neither may be dropped or shortened. (2026-10-24 to -29 the follow
-ask stood in the middle; the user moved it back to the end on
-2026-10-30.)
+Neither part may be dropped or shortened, but **they are split** (user's
+statistics, 2026-11-01: ~20 % watched until the old end-CTA, 5 % after it).
+History: until 2026-10-23 both at the end; 2026-10-24 to -29 the follow
+ask in the middle; 2026-10-30 to -31 both at the end again.
 
-**„Folge für mehr Wissen.“** — exactly these words (the user's wording,
-no variants), **right after the comment question, spoken quickly**:
-`prepare-voice.sh` speeds the last sentence of the take up by a further
-x1.3 (`scripts/fast-tail.py`, `FOLLOW_FAST=1.3`), so it rushes by like a
-sign-off. Keep it a sentence of its own (full stop before it) so the
-pause before it is found. The red "+ Folgen" pill pops on "Folge", gets
-tapped, says "Gefolgt".
+**Comment question — its own line in the middle (~19–23 s):**
 
-**Comment question** — the start of the last line:
+- **Its own line in `script.txt`**, containing the word „Kommentare“ —
+  the scripts find it there (`HF_CMT_START`) and pop the white
+  "Kommentieren" pill low on the screen while it is spoken.
+  `sync-html.mjs` warns if it is missing or outside ~12–30 s.
+- **A new question every video** (2026-10-27): the one that fits _this_
+  topic best — personal, a bit cheeky — write three, take the best, never
+  repeat the previous video's line. Answerable in 1–3 words: yes/no,
+  either/or, a number, a personal detail, a photo (Zeig-Frage), or **the
+  viewer's guess at the open question** ("Was glaubst du – geht sie auf?
+  Tipp in die Kommentare.") whose answer only comes in the payoff — that
+  one both brings comments and holds them to the end.
+- 8–12 words incl. „Schreib's in die Kommentare.“ (or „Ab in die
+  Kommentare.“, „Bild in die Kommentare.“). No "folg" in it.
+- **It must not sound like an ending.** Right after it the next pull — the
+  mid twist or a stranger fact — so the comment question is a short stop
+  on the way, not the exit. Never right after a payoff-like sentence,
+  never "Und jetzt …", never in the last 15 s.
 
-- **A new question every video** (2026-10-27): think of the one that fits
-  _this_ topic best — personal, a bit cheeky — write three, take the
-  best, never repeat the previous video's line.
-- **One comment question** tied to the topic, answerable in 1–3 words:
-  yes/no, either/or, a number, or a personal detail, + „Schreib's in die
-  Kommentare.“ (or „Ab in die Kommentare.“). No "folg" here any more.
-- The Kommentieren button pops when this line starts.
-- No generic "Lass ein Like da". No question that needs a paragraph.
+**„Folge für mehr Wissen.“ — the last line, alone:**
 
-### 5. Ending — no loop
+- Exactly these four words (the user's wording, no variants), as their own
+  line right after the "Übrigens" fact, **spoken quickly**:
+  `prepare-voice.sh` speeds this last sentence up a further x1.3
+  (`scripts/fast-tail.py`, `FOLLOW_FAST=1.3`) → ~0.8 s. Full stop before
+  it so the pause is found.
+- The red "+ Folgen" pill pops on "Folge", is tapped 0.7 s later, says
+  "Gefolgt"; the video ends ~0.7 s after the last word (`TARGET` 44.3).
 
-**No loop bridge** (user's rule, 2026-10-24; before, a `> Und merk dir:`
-line ran back into the hook). The comment question is the last line;
-after it the picture holds ~1.2 s on a strong last shot (the subject big
-and finished, or the drone pull-back over the world) and the video ends.
-No summary, no "Tschüss", nothing after the question.
+### 5. Ending — no loop, no outro
 
-CTA patterns:
+**No loop bridge** (user's rule, 2026-10-24). The video ends on the
+"Übrigens" money shot + the quick „Folge für mehr Wissen.“ — no summary,
+no "Tschüss", no question, no slow outro shot or drone pull-back (a
+calm "it's over" picture is a swipe too). Keep cutting to the end.
+
+Comment-question patterns (for the middle):
 
 | Pattern                                                                                     | Example                                                                                  |
 | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -368,6 +389,7 @@ CTA patterns:
 | **Entweder-oder**                                                                           | "Team Treppe oder Team Aufzug? Ab in die Kommentare."                                    |
 | **Test zu Hause**                                                                           | "Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's mir."                        |
 | **Zahl / Schätzung**                                                                        | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare."                               |
+| **Tipp zur offenen Frage** (answer only in the payoff)                                      | "Was glaubst du – wie viele Leute müssten ziehen? Tipp in die Kommentare."               |
 | **Nächstes Thema**                                                                          | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare."                          |
 
 ## Delivery tags — make Jan sound alive
@@ -399,7 +421,7 @@ and a soft "punch" sounds. Rules:
 - Always: each technical term where it is named (`Das ist der
 *Verdampfer*.`), the hook's twist word, the re-hook (`der *Trick*`),
   every number the LED panel shows.
-- Never: the CTA line (it has its own buttons), filler words.
+- Never: the comment question line or „Folge für mehr Wissen.“ (they have their own buttons), filler words.
 - Only around one word, punctuation outside: `*Kompressor*.` The stars
   never reach the voice (strip them before ElevenLabs).
 
@@ -425,15 +447,16 @@ Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare �
 Hook title: `Dein Kühlschrank <em>lügt</em>`. (Keyword marks added
 afterwards to show the density: 9 in 129 words.)
 
-(Today the end is the comment question + a quick „Folge für mehr
-Wissen.“)
-
-Every script also gets the bonus fact (since 2026-10-24 without a loop
-bridge) — for the fridge the end would be:
+(Today the comment question is its own line in the middle and the end is
+the "Übrigens" fact + a quick „Folge für mehr Wissen.“, 2026-11-01.) For
+the fridge:
 
 ```text
+… (beat 2)
+Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's in die Kommentare.
+[whispers] Denn eigentlich müsste er da eiskalt sein. … (mid twist, beat 3)
 Und genau deshalb ist er hinten *warm*. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
-Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare.
+Folge für mehr Wissen.
 ```
 
 What changed against v1: belief-breaking first line instead of "Wenn du
@@ -457,12 +480,12 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] No "Schau dich an. Du hast gerade X gebaut." — the payoff answers the question, then straight to "Übrigens"
 - [ ] Bonus fact starts with "Übrigens", 10–15 words, true, surprising
 - [ ] Humor: 0–2 small, situational moments that fit — none forced, none in serious topics
-- [ ] Last line = comment question (new, answerable in 1–3 words) + „Folge für mehr Wissen.“ — no follow line in the middle, no "folg"
+- [ ] Comment question (new, 1–3-word answer) = its own line with „Kommentare“ at ~19–23 s, followed by a pull; last line = only „Folge für mehr Wissen.“ right after the "Übrigens" fact
 - [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
-- [ ] 130–142 words incl. fact and the CTA line (≤ 148, ≥ 124) → exactly 45 s; no `> …` loop line
+- [ ] 130–142 words incl. comment question, fact and „Folge für mehr Wissen.“ (≤ 148, ≥ 124) → exactly 45 s; no `> …` loop line
 - [ ] Hook = line 1, ≤ 9 words, ≤ 3 s (sync-html checks); within it the viewer knows why to watch to the end (gain / danger / burning question) — true, not clickbait
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
-- [ ] 45-s shape: beat 1 → beat 2 → mid twist (~22 s) → beat 3 → payoff (≥ 34 s) → comment question + „Folge für mehr Wissen.“
+- [ ] 45-s shape: beat 1 → beat 2 → comment question (~20 s) → mid twist → beat 3 → payoff (≥ 36 s) → Übrigens (strongest fact) → „Folge für mehr Wissen.“
 - [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes
 - [ ] Escalation: a new "Was?!" every 6–8 s, weakest first, strongest in beat 3 / payoff; one "Rate mal" moment after ~13 s
 

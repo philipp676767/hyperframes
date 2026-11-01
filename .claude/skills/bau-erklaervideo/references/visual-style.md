@@ -243,8 +243,8 @@ Feedback: _"Qualität noch besser, nicht so ineinander verschwimmen."_
 - Mix: establishing wide (subject + surroundings), medium 3/4, macro close-ups of
   the part being named (`zoom` 1.0–1.4), one big x-ray orbit when "alles im
   Kreis läuft" / the system is complete.
-- Outro: front shot, then a drone pull-back that reveals the whole setting
-  under the CTA.
+- No outro (2026-11-01): the last shot is the "Übrigens" money shot,
+  still cutting and moving — no calm drone pull-back that says "it's over".
 - Keep the vertical centre band (y ≈ 900–1020 px) readable: that's where the
   one-word captions sit, the subject may pass behind them but not a bright
   white surface for long.
@@ -267,20 +267,23 @@ the first frame, out at 2.8 s.
 CTA starts. Show the fact in the scene too (LED panel with the number, or
 a quick close-up) — never an empty shot under it.
 
-**Ending (no loop, 2026-10-24):** the last ~1.2 s after the comment
-question hold one strong last shot — the subject big and finished, or a
-slow drone pull-back over the world. No cut back to frame 0.
+**Ending (no loop, 2026-10-24; no outro, 2026-11-01):** the video ends
+~0.7 s after the quick „Folge für mehr Wissen.“, still on the "Übrigens"
+money shot (the fact shown big). No calm wide outro, no cut back to frame 0.
 
 **Cover (Titelbild):** the scene frozen at one strong moment, no
 captions / buttons / labels, dark gradient at the top, title Montserrat
 132 px white with a thick dark stroke, keyword yellow, tilted -2°,
 y ≈ 300 px (`scripts/make-cover.sh`).
 
-**CTA (last line):** when the comment question starts, a white
-"Kommentieren" pill with a red speech bubble pops in at y ≈ 400 px and
-pulses; on "Folge" (the quick „Folge für mehr Wissen.“) the red
-"+ Folgen" pill pops in below it (y ≈ 560 px), is tapped one second later
-and flips to grey "Gefolgt" — both stay to the end.
+**Comment question (own line in the middle, 2026-11-01):** when it starts,
+a white "Kommentieren" pill with a red speech bubble pops in low, under
+the captions (y ≈ 1230 px), pulses and leaves ~0.6 s after the line.
+Keep the subject above it in that shot.
+
+**Follow (last line):** on "Folge" (the quick „Folge für mehr Wissen.“)
+the red "+ Folgen" pill pops in (y ≈ 560 px), is tapped 0.7 s later and
+flips to grey "Gefolgt" until the end.
 
 ## Sound effects
 

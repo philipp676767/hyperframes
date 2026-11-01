@@ -26,9 +26,9 @@ Talk to the user in German. Keep them posted in short lines while working.
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Format       | 1080×1920, 30 fps, **exactly 45.0 s** (user's rule, 2026-10-28; 60 s from 2026-10-24 to -27) — `prepare-voice.sh` fits the speech, the composition is fixed at 45 s (`LENGTH` in timing.js)                                                                                                                                                                                                                                                                                                                                                          |
 | Voice        | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** — the house voice; **always use Jan**, always **3.1 words/s** — ~15 % faster than he reads (`prepare-voice.sh` `BASE=1.15`, pitch kept — user's wish 2026-10-26) (user's decision 2026-10-22 after trying Stephan on #7: back to Jan for #7 and every episode after). Don't switch voices unless the user asks. History: Christian Plasa (#1–#5), Jan (#6 →), Stephan – Warm and Friendly `IWm8DnJ4NGjFI7QAM5lM` tried once on #7, replaced by Jan |
-| CTA          | **Never dropped or shortened** (user's rule). **The last line of the script** = a **comment question** new for every video, tied to the topic + exactly **„Folge für mehr Wissen.“** (user's wording 2026-10-28, back at the end and spoken **quickly** since 2026-10-30 — `prepare-voice.sh` speeds the last sentence up x1.3, `FOLLOW_FAST`). White "Kommentieren" pill pops when the line starts, red "+ Folgen" pill on "Folge", tapped → "Gefolgt" (template)                                                                                   |
+| CTA          | **Never dropped or shortened** (user's rule), but **split** (user's statistics 2026-11-01: ~20 % watched until the old end-CTA, 5 % after it): the **comment question** — new for every video, tied to the topic — is **its own line in the middle (~19–23 s)**, white "Kommentieren" pill low on screen; **the last line is only „Folge für mehr Wissen.“**, right after the "Übrigens" fact, spoken **quickly** (`FOLLOW_FAST` x1.3), red "+ Folgen" pill → "Gefolgt" (script-formel.md §4)                                                        |
 | Bonus fact   | "Übrigens: …" right after the payoff — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Ending       | **No loop** (user's rule, 2026-10-24): the video simply ends ~1.2 s after the comment question, on a strong last shot (the subject big, or the drone pull-back over the world). No `> …` line, no cut back to frame 0                                                                                                                                                                                                                                                                                                                                |
+| Ending       | **No loop** (2026-10-24), **no outro** (2026-11-01): the video ends ~0.7 s after „Folge für mehr Wissen.“, still on the "Übrigens" money shot — no calm drone pull-back, no `> …` line, no cut back to frame 0                                                                                                                                                                                                                                                                                                                                       |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Beschreibung | **Every video gets a TikTok description** (step 6c): a keyword line **≤ 60 characters, strongest search words first, one emoji at the end, no dash** + **3–5 hashtags that fit the topic and are really watched** (topic tag first; never `#fyp`, `#viral`, `#lernenmittiktok`); saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                      |
 | Serienformat | **Always alternating A „Bauen“ ↔ B „Was passiert, wenn …?“** (user's rule, 2026-10-23) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -111,7 +111,7 @@ hook, 3 Folgen, outcome as payoff) on top of script-formel.md — same
 length, same approval message. Format A:
 write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff (answers the
-hook) + "Übrigens" bonus fact, the comment question + „Folge für mehr Wissen.“ as the last line (no loop) — in the **45-second shape** (script-formel.md "Shape": open-loop chain, mid twist at ~22 s, a "Rate mal" moment). **130–142 words including all of it** (Jan at 3.1 words/s → ~45 s), never more than **148** or fewer than **124**
+hook) + "Übrigens" bonus fact as the last content, the **comment question as its own line in the middle (~19–23 s)** and only „Folge für mehr Wissen.“ as the last line (no loop) — in the **45-second shape** (script-formel.md "Shape": open-loop chain, comment question → mid twist at ~23 s, a "Rate mal" moment). **130–142 words including all of it** (Jan at 3.1 words/s → ~45 s), never more than **148** or fewer than **124**
 (`prepare-voice.sh` fits that range to exactly 45 s). **The hook is line 1 of the script, ≤ 9 words / ≤ 3 s** (2026-10-29) — within it the viewer must know why to watch to the end; `sync-html.mjs` warns if the spoken hook runs longer. Run the hook lab and the self-check in that file. Show the user the
 script, word count, the **loop map** (which question is open when), the hook title with its score, **two alternative hooks** (scored), the
 cover title, and a one-line visual idea per beat **incl. the highlight of each beat**
@@ -195,18 +195,17 @@ the sound-effect
 kit (`assets/sfx/`, git-ignored, regenerated on demand), helper scripts, and a small demo
 (`assets/scene.js` + `assets/beats.js`, candle → light bulb) that already
 renders with labels and sound. Write the approved script into
-`script.txt` — one part per line, \*\*the last line = the comment question
-
-- „Folge für mehr Wissen.“** (no follow line in the middle any more, no
-  `> …` loop line),
-  **keywords marked `*Wort*`** — and put the hook
-  title (**2–3 words**) into `<div id="hook-title">` in `index.html` (keyword in `<em>`),
-  and fill the `hf-config` block next to it: `question` (the hook's open
-  question, ≤ 6 words) and `answer` (the spoken word that answers it, in the
-  payoff) — they drive the question text at the top. **No progress bar, no
-  `steps`\*\* (it looked like an ad, 2026-10-23).
-  Then run `node scripts/fake-words.mjs && node scripts/build-sfx.mjs && node scripts/sync-html.mjs`
-  for estimated timings so the scene can be built before the voice exists.
+`script.txt` — one part per line, **the comment question on its own line
+in the middle** (with „Kommentare“ in it), **the last line = only „Folge
+für mehr Wissen.“** (no `> …` loop line),
+**keywords marked `*Wort*`** — and put the hook
+title (**2–3 words**) into `<div id="hook-title">` in `index.html` (keyword in `<em>`),
+and fill the `hf-config` block next to it: `question` (the hook's open
+question, ≤ 6 words) and `answer` (the spoken word that answers it, in the
+payoff) — they drive the question text at the top. \*\*No progress bar, no
+`steps`\*\* (it looked like an ad, 2026-10-23).
+Then run `node scripts/fake-words.mjs && node scripts/build-sfx.mjs && node scripts/sync-html.mjs`
+for estimated timings so the scene can be built before the voice exists.
 
 ### 3. Voice (ElevenLabs connector)
 
@@ -241,7 +240,7 @@ node scripts/sync-html.mjs             # root duration, caption length, the <aud
 `align-words.py` needs `pip install faster-whisper` (downloads the `small`
 model once). `prepare-voice.sh` speeds Jan up by a fixed 15 % (pitch
 kept, 3.1 words/s) and fits the take to exactly 45 s (speech ends at
-43.8 s, ~1.2 s before the end: ≤ 6 % more speed or pauses stretched to ≤ 0.45 s). If it
+44.3 s, ~0.7 s before the end: ≤ 6 % more speed or pauses stretched to ≤ 0.45 s). If it
 stops, it says how many words to cut or add — adjust the script with the
 user (cut a weak sentence / add a "Rate mal" moment or one more strange
 fact) and regenerate the voice; never pad with silence or music.
@@ -517,20 +516,21 @@ render"` after any restart notice and start it again (clear
 - **Length:** exactly 45.0 s since 2026-10-28 (60 s from 2026-10-24 to
   -27, 40–50 s before). `prepare-voice.sh` fits the speech,
   `timing.js` / `sync-html.mjs` fix the composition at `LENGTH = 45`
-  once the speech ends between 42 and 44.4 s (the take is fitted to
-  43.8 s).
+  once the speech ends between 42 and 44.6 s (the take is fitted to
+  44.3 s — no silent tail, 2026-11-01).
 - **Skill changes live on `main` only.** Before starting a video, `git
 pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   aren't merged (`git branch -r --no-merged origin/main`), look for skill
   changes there and merge them first.
 - **CTA timing:** `fake-words.mjs` / `align-words.py` write
-  `window.HF_CTA_START` (index of the first word of the last script line
-  = the comment question); the Kommentieren pill keys on
-  it, the Folgen pill on the first word starting with "folg" — in the
-  middle it shows low (y ≈ 1230 px, under the captions) and leaves after
-  2.5 s; a "folg" inside the last line (old scripts) keeps the old
-  end-of-video buttons. No "folg" at all → Folgen pops 1.2 s after the
-  comment question starts.
+  `window.HF_CMT_START` / `HF_CMT_LEN` (the first line before the last one
+  that contains „Kommentar…“ = the comment question) and
+  `window.HF_CTA_START` (first word of the last line). The Kommentieren
+  pill pops low (y ≈ 1230 px) on the comment line and leaves after it; the
+  Folgen pill pops on "Folge" in the last line, tapped after 0.7 s.
+  `sync-html.mjs` warns if the comment line is missing or outside ~12–30 s.
+  Old scripts without a comment line in the middle keep the old buttons
+  (comment pill when the last line starts).
 - **Old episodes** (≤ #5) used a stock CTA take (`assets/vo_takes/cta.mp3`);
   `prepare-voice.sh` still appends it when that file exists. New episodes
   have no such file.
