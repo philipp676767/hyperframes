@@ -54,7 +54,8 @@ export const T = {
 // ball set at x = -5; giant Mentos (macro) at x = 6.5, y = 2.4, z = 2.6.
 export const TABLE = [2.35, 0, 0.55];
 export const BALL = [-5.0, 0, 2.2];
-export const MAC = [6.8, 2.6, 2.8];
+export const MAC = [6.8, -40, 2.8]; // deep under the plaza: inside its own cola world
+const mac = (x, y, z) => [MAC[0] + x, MAC[1] + y, MAC[2] + z];
 export const shots = [
   // 0: frame 0 = the cover: low angle, the jet shoots past the person into the night sky
   {
@@ -67,9 +68,9 @@ export const shots = [
     tilt: 0.25,
   },
   // the person drinks
-  { at: T.hinterher, from: [0.9, 4.0, 4.4], to: [0.7, 3.9, 3.8], look: [0.3, 3.6, 0.3], zoom: 1.0 },
+  { at: T.hinterher, from: [3.0, 4.1, 2.2], to: [2.6, 4.0, 1.9], look: [0.2, 3.8, 0.5], zoom: 1.0 },
   // "Magen?" — belly bulges
-  { at: T.magen1, from: [-2.0, 3.0, 5.0], to: [-1.6, 2.8, 4.3], look: [0, 2.5, 0.2], zoom: 1.0 },
+  { at: T.magen1, from: [-3.4, 2.9, 4.2], to: [-2.9, 2.7, 3.6], look: [0, 2.5, 0.3], zoom: 1.0 },
   // the schoolyard myth: wide over the forecourt
   { at: T.schulhof, from: [-6.5, 5.5, 11], to: [-5.2, 4.6, 9.4], look: [0.6, 2.2, -1.5] },
   // a Mentos drops into the bottle
@@ -88,7 +89,7 @@ export const shots = [
   // x-ray: cola sloshes in the stomach
   { at: T.schwappt, from: [1.8, 2.8, 4.0], to: [1.3, 2.6, 3.4], look: [0.2, 2.1, 0.1], zoom: 1.0 },
   // ball set: more gas than fits into a football
-  { at: T.denn, from: [-4.0, 1.7, 6.4], to: [-4.3, 1.6, 5.6], look: [-5.0, 1.0, 2.2], zoom: 1.0 },
+  { at: T.denn, from: [-3.6, 2.3, 7.8], to: [-3.9, 2.1, 7.0], look: [-4.9, 1.2, 2.2], zoom: 1.0 },
   // Startschuss: close on the throat, the Mentos goes down
   {
     at: T.startschuss,
@@ -103,16 +104,16 @@ export const shots = [
   // crash into the giant Mentos (whip)
   {
     at: T.millionen,
-    from: [6.8, 3.4, 7.8],
-    to: [6.8, 3.0, 6.2],
-    look: [6.8, 2.6, 2.8],
+    from: mac(0, 1.0, 7.4),
+    to: mac(0, 0.4, 5.0),
+    look: mac(0, 0, 0),
     zoom: 1.0,
     whip: -1,
   },
   // Mondlandschaft: skim low over the craters
-  { at: T.rau, orbit: { c: [6.8, 2.6, 2.8], r: 2.1, y: 3.6, a0: 0.7, a1: -0.4 }, zoom: 1.0 },
+  { at: T.rau, orbit: { c: mac(0, 0, 0), r: 3.4, y: MAC[1] + 1.6, a0: 0.8, a1: 0.1 }, zoom: 1.0 },
   // Bläschen: bubbles out of every crater, a bit wider
-  { at: T.loch, from: [8.6, 3.4, 6.4], to: [8.0, 3.2, 5.6], look: [6.8, 2.9, 2.8], zoom: 1.0 },
+  { at: T.loch, from: mac(1.8, 0.8, 4.6), to: mac(1.2, 0.6, 4.0), look: mac(0, 0.3, 0), zoom: 1.0 },
   // the duel: light vs. normal
   {
     at: T.bei,
@@ -126,11 +127,11 @@ export const shots = [
   // payoff: x-ray again
   { at: T.dir, from: [-1.6, 3.0, 4.2], to: [-1.2, 2.8, 3.6], look: [0, 2.4, 0], zoom: 1.0 },
   // drinking: gas fizzes out at the mouth
-  { at: T.trinken, from: [1.7, 4.3, 2.8], to: [1.3, 4.1, 2.4], look: [0.25, 3.8, 0.25], zoom: 1.0 },
+  { at: T.trinken, from: [3.0, 4.3, 1.4], to: [2.7, 4.1, 1.7], look: [0.2, 3.85, 0.5], zoom: 1.0 },
   // the stomach stretches, the burp goes up
   { at: T.dehnt, from: [0.4, 3.1, 4.4], to: [0.3, 3.2, 3.8], look: [0.1, 2.9, 0.1], zoom: 1.0 },
   // heil: solid front, a grin
-  { at: T.heil, from: [0.9, 3.0, 5.6], to: [0.6, 2.9, 4.8], look: [0.6, 2.6, 0] },
+  { at: T.heil, from: [1.2, 3.2, 6.4], to: [0.8, 3.0, 5.6], look: [0.5, 2.4, 0] },
   // Übrigens: drone up over a forecourt full of fountains
   {
     at: T.fakt,
@@ -155,7 +156,7 @@ export const LABELS = [
 
 // ---------------------------------------------------------------- highlights
 export const HIGHLIGHTS = [
-  { kind: "shake", at: 0.05, dur: 0.5, amp: 0.8 }, // the jet on frame 0
+  { kind: "shake", at: 0.3, dur: 0.5, amp: 0.8 }, // the jet on frame 0
   { kind: "zoom", at: T.magen1, amount: 0.35 }, // the belly
   { kind: "slowmo", at: T.schiesst + 0.1, until: T.schwappt, speed: 0.35 }, // money shot 2
   { kind: "shake", at: T.geschluckt + 0.9, dur: 0.4, amp: 0.6 }, // the Mentos lands in the cola

@@ -29,7 +29,7 @@ setSky({
   hemi: [0x9a8cff, 0x241a20, 0.85],
   key: [0xffe2b8, 1.5],
   keyPos: [4, 12, 8],
-  rim: [0x39e6ff, 1.3],
+  rim: [0x39e6ff, 0.8],
   fog: [30, 85],
 });
 
@@ -626,7 +626,7 @@ const tram = new THREE.Group();
 }
 
 // moths around the lamps + warm dust under the marquee
-fireflies(40, { area: [-14, 14, 1.0, 6.5, -10, 9], color: 0xffd890, seed: 45, size: 0.6 });
+fireflies(40, { area: [-14, 14, 1.0, 6.5, -10, 9], color: 0xffd890, seed: 45, size: 0.05 });
 
 onFrame((t) => {
   // marquee bulbs: a chase running along the strip

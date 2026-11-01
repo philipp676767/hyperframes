@@ -310,6 +310,12 @@ const mouthHole = mesh(
 mouthHole.scale.set(1.1, 0.7, 0.35);
 mesh(new THREE.BoxGeometry(0.2, 0.04, 0.05), flat(0xffffff), 0, 0.055, 0.03, mouth, false);
 const MOUTH_W = V(0, HEAD_Y - 0.2, 0.47);
+{
+  // warm fill from the front so the face reads at night
+  const fill = new THREE.PointLight(0xffd6b0, 14, 9, 1.5);
+  fill.position.set(1.6, 4.6, 4.2);
+  scene.add(fill);
+}
 
 // small 0.5-l bottle in the right hand (elbow group of arms[1])
 const PET = new THREE.MeshStandardMaterial({
@@ -379,9 +385,7 @@ function makeBottle(h, rad, labelMat, capColor) {
 }
 const small = makeBottle(0.62, 0.11, LABEL_CLASSIC, 0xd4182b);
 small.cap.visible = false;
-arms[1].elbow.add(small.g);
-small.g.position.set(0, -0.92, 0.12);
-small.g.rotation.x = 1.2; // upright while the forearm rests forward
+scene.add(small.g); // placed at the right hand every frame (renderAt)
 
 // ---------------------------------------------------------------- bistro table + big bottles
 const TB = V(...TABLE);
@@ -435,9 +439,6 @@ const coreMat = new THREE.MeshStandardMaterial({
   emissive: 0xffc070,
   emissiveIntensity: 0.3,
   roughness: 0.5,
-  transparent: true,
-  opacity: 0.55,
-  depthWrite: false,
   flatShading: true,
 });
 const dummy = new THREE.Object3D();
@@ -456,7 +457,7 @@ function makeFountain(N, seed, mat = foamMat, size = 0.11) {
     rot: r() * 6,
   }));
   const core = new THREE.Mesh(
-    jitter(new THREE.CylinderGeometry(0.05, 0.12, 1, 7, 6, true), 0.02, 5),
+    jitter(new THREE.CylinderGeometry(0.2, 0.09, 1, 9, 10, true), 0.03, 5),
     coreMat,
   );
   core.userData.noAO = true;
@@ -496,7 +497,8 @@ function makeFountain(N, seed, mat = foamMat, size = 0.11) {
       core.visible = k > 0.02 && solid;
       if (core.visible) {
         const hh = H * k * 0.82;
-        core.scale.set(1 + k * 0.4, hh, 1 + k * 0.4);
+        const w = (0.6 + 0.6 * k) * (H / 8);
+        core.scale.set(w, hh, w);
         core.position.set(pos.x, pos.y + hh / 2, pos.z);
       }
     },
@@ -506,8 +508,8 @@ function makeFountain(N, seed, mat = foamMat, size = 0.11) {
     },
   };
 }
-const F1 = makeFountain(420, 11, foamMat, 0.075);
-const F2 = makeFountain(240, 12, foamMat, 0.065);
+const F1 = makeFountain(460, 11, foamMat, 0.12);
+const F2 = makeFountain(260, 12, foamMat, 0.1);
 // when each eruption of B1 happens (refill = the cut before it)
 const B1_RUNS = [
   { refill: -99, t0: -0.25, H: 8, dur: 1.7 },
@@ -753,7 +755,7 @@ const CRATERS = [];
   while (CRATERS.length < 70) {
     const d = V(r() - 0.5, r() - 0.5, r() * 0.9 + 0.1).normalize();
     if (CRATERS.some((c) => c.d.angleTo(d) < 0.16)) continue;
-    CRATERS.push({ d, rad: 0.06 + r() * 0.1, deep: 0.05 + r() * 0.05 });
+    CRATERS.push({ d, rad: 0.07 + r() * 0.13, deep: 0.09 + r() * 0.08 });
   }
 }
 {
@@ -773,8 +775,24 @@ const CRATERS = [];
     pos.setXYZ(i, d.x * rr, d.y * rr, d.z * rr * 0.45);
   }
   geo.computeVertexNormals();
-  const surf = new THREE.Mesh(facet(geo, 0.06, 17), facetMat(flat(0xf6f3ea, { roughness: 0.75 })));
-  surf.castShadow = true;
+  const fg = facet(geo, 0.06, 17);
+  // crater floors darker, rims a touch brighter: the relief reads at a glance
+  {
+    const fp = fg.attributes.position;
+    const fc = fg.attributes.color;
+    const dd = V(0, 0, 0);
+    for (let i = 0; i < fp.count; i++) {
+      dd.set(fp.getX(i), fp.getY(i), fp.getZ(i) / 0.45).normalize();
+      let k = 1;
+      for (const c of CRATERS) {
+        const u = dd.angleTo(c.d) / c.rad;
+        if (u < 1) k = Math.min(k, 0.55 + 0.45 * u * u);
+        else if (u < 1.3) k = Math.max(k, 1.08);
+      }
+      fc.setXYZ(i, fc.getX(i) * k, fc.getY(i) * k, fc.getZ(i) * k * 0.97);
+    }
+  }
+  const surf = new THREE.Mesh(fg, facetMat(flat(0xf0ebe2, { roughness: 0.8 })));
   macro.add(surf);
 }
 // inside the cola: a dark amber world around the macro
@@ -784,10 +802,10 @@ const colaWorld = new THREE.Mesh(
 );
 colaWorld.userData.noAO = true;
 macro.add(colaWorld);
-const macroLight = new THREE.PointLight(0xffd8a0, 30, 12, 1.4);
-macroLight.position.set(2.5, 3, 4);
+const macroLight = new THREE.PointLight(0xffd8a0, 7, 12, 1.4);
+macroLight.position.set(3.5, 2.6, 1.2);
 macro.add(macroLight);
-const macroRim = new THREE.PointLight(0xff7a2a, 20, 10, 1.4);
+const macroRim = new THREE.PointLight(0xff7a2a, 6, 10, 1.4);
 macroRim.position.set(-3, -1, 2);
 macro.add(macroRim);
 const craterPt = V(0, 0, 0);
@@ -825,14 +843,14 @@ const bgSeeds = (() => {
 })();
 
 // ---------------------------------------------------------------- the viewer's hand
-const hand = createHand({ skin: SKIN, sleeve: 0x4a4fd6, scale: 0.55 });
+const hand = createHand({ skin: SKIN, sleeve: 0x4a4fd6, scale: 0.8 });
 
 // ---------------------------------------------------------------- arm poses
 // rest: forearm forward on the thigh; drink: bottle to the mouth
 function armPose(k) {
   const a = arms[1];
-  a.arm.rotation.set(lerp(0.05, -1.9, k), 0, lerp(0.08, 0.72, k));
-  a.elbow.rotation.x = lerp(-1.25, -1.4, k);
+  a.arm.rotation.set(lerp(0.05, -2.05, k), 0, lerp(0.08, 0.55, k));
+  a.elbow.rotation.x = lerp(-1.25, -0.7, k);
   // the other arm rests
   arms[0].arm.rotation.set(0.05, 0, -0.08);
   arms[0].elbow.rotation.x = -1.25;
@@ -851,7 +869,8 @@ function renderAt(t) {
   hand.track(t, [
     { t: -0.8, pos: [TB.x, 3.15, TB.z + 0.1], rot: [0.9, Math.PI, 0], pose: "grab" },
     { t: -0.3, pos: [TB.x + 0.05, 3.05, TB.z + 0.15], rot: [0.9, Math.PI, 0], pose: "open" },
-    { t: 0.25, pos: [TB.x + 0.9, 3.3, TB.z + 1.1], rot: [0.6, Math.PI, 0.5], pose: "open" },
+    { t: 0.0, pos: [TB.x + 0.55, 3.15, TB.z + 0.9], rot: [0.7, Math.PI, 0.4], pose: "open" },
+    { t: 0.35, pos: [TB.x + 1.0, 3.25, TB.z + 1.6], rot: [0.6, Math.PI, 0.5], pose: "open" },
     {
       t: 0.9,
       pos: [TB.x + 1.8, 3.0, TB.z + 2.4],
@@ -869,6 +888,11 @@ function renderAt(t) {
       (1 - smooth(ramp(t, T.dehnt - 0.2, T.dehnt + 0.15))),
   );
   armPose(drink);
+  person.updateMatrixWorld(true);
+  const hp = arms[1].elbow.localToWorld(V(0, -0.92, 0.14));
+  const neck = V(0, 1, 0).lerp(tmp.copy(MOUTH_W).sub(hp).normalize(), smooth(drink)).normalize();
+  small.g.quaternion.setFromUnitVectors(V(0, 1, 0), neck);
+  small.g.position.copy(hp).addScaledVector(neck, -0.3);
   // head turns to the fountains, eyes wide; tips back while drinking
   const look = Math.max(
     1 - smooth(ramp(t, 0.8, 1.2)),
@@ -883,7 +907,7 @@ function renderAt(t) {
   mouth.scale.set(1 + 0.5 * grin, 0.5 + 1.2 * Math.max(look * 0.8, burp) + 0.2 * grin, 1);
   // belly bulges on "Magen?" (solid)
   const bulge = pop(t, T.magen1 - 0.05, T.schulhof - 0.1, 0.25);
-  belly.scale.set(1.0 + bulge * 0.35, 0.85 + bulge * 0.25, 0.5 + bulge * 0.7);
+  belly.scale.set(1.0 + bulge * 0.4, 0.85 + bulge * 0.3, 0.5 + bulge * 1.3);
   // gulp: the swallow on "geschluckt"
   const gulpK = ramp(t, T.geschluckt - 0.1, T.geschluckt + 0.4);
   gulpBulge.visible = gulpK > 0 && gulpK < 1;
