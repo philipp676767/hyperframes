@@ -187,7 +187,6 @@ are always 10+ open topics per format.
 | 🔥 Zeitumstellung / Atomuhr                | „Dein Handy weiß gar nicht, wie spät es ist – und stellt sich trotzdem selbst um.“ (Quarz driftet, Zeitserver, Cäsium 9,19 Mrd. Hz, GPS-Uhren laufen schneller) | Uhr springt 3:00→2:00, Atom schwingt, Zähler rast auf 9.192.631.770       | Handy         | Ende Okt / Ende März |
 | ★ Touchscreen                              | „Dein Bildschirm spürt deinen Finger, ohne dass du drückst.“                                                                                                    | Finger nähert sich, das Feld im Glas verbiegt sich, Tipp leuchtet         | Handy         | –                    |
 | ★ Glätteisen                               | „Dein Glätteisen bricht die Wasser-Brücken in deinen Haaren.“                                                                                                   | Haarsträhne in Nahaufnahme, Brücken zwischen den Ketten knacken auf       | Beauty        | –                    |
-| ★ Smartwatch-Puls                          | „Deine Uhr misst deinen Puls mit grünem Licht – sie schaut in dein Blut.“                                                                                       | Grünes Licht dringt in die Haut, Blut pumpt, Kurve springt mit            | Sport         | –                    |
 | ★ Haartrockner                             | „Dein Föhn schaltet sich selbst ab, bevor deine Haare brennen.“                                                                                                 | Heizdraht glüht, Bimetall biegt sich, _klack_, aus                        | Beauty        | –                    |
 | Induktionsherd                             | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                      | Küche         | –                    |
 | Blitzer                                    | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ                   | Straße / Auto | –                    |
@@ -202,6 +201,7 @@ are always 10+ open topics per format.
 | Eiswürfel                                  | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt     | Küche         | Sommer               |
 | Türklingel                                 | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe      | Zuhause       | –                    |
 | ★ Sonnencreme                              | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                                                       | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                | Beauty        | Sommer               |
+| ★ Bluetooth-Kopfhörer                      | „Deine Kopfhörer springen 1.600-mal pro Sekunde den Funkkanal.“ (Frequenzsprung, Zahl prüfen)                                                                   | Funkwellen hüpfen zwischen Kanälen, Störer wird umgangen                  | Handy         | –                    |
 | Wasserkocher                               | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus          | Küche         | –                    |
 
 ## Offen — Detail-Rätsel (Format A)
@@ -302,9 +302,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                                 | Format | Datum      | Chat                |
-| ----------------------------------------------------- | ------ | ---------- | ------------------- |
-| … eine ganze Nacht gar nicht schläfst? (Schlafentzug) | B      | 2026-10-31 | Video: Schlafentzug |
+| Thema           | Format | Datum      | Chat              |
+| --------------- | ------ | ---------- | ----------------- |
+| Smartwatch-Puls | A      | 2026-11-01 | Video: Smartwatch |
 
 ## Verwendet
 
