@@ -291,19 +291,18 @@ ask for go in here.
 | ★ … eine geschüttelte Cola aufmachst?                                | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                   | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
 | … vom 10-Meter-Brett springst?                                       | Du knallst mit rund 50 km/h aufs Wasser                                                         | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt                 | Hinweis „nur mit Aufsicht“   | Sport     |
 | 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                 | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
-| … eine Münze vom Hochhaus fallen lässt?                              | Sie tötet niemanden – sie wird nie schnell genug (Fakten prüfen); trotzdem nie machen           | Münze trudelt, Luftwiderstand-Pfeile bremsen sie                           | Warnung „nie machen“         | Stadt     |
 | … mit offenen Augen niest?                                           | Deine Augen fliegen nicht raus – sie gehen per Reflex zu (Fakten prüfen)                        | Nies-Wolke in Zeitlupe, Augenlider klappen zu                              | harmlos                      | Körper    |
 | ★ … eine Dose Cola im Gefrierfach vergisst?                          | Sie platzt – gefrierendes Wasser dehnt sich um rund 9 % aus, die Dose gibt nach (Fakten prüfen) | Dose beult sich in Zeitlupe, Deckel reißt, Eis-Fontäne friert fest         | harmlos, Hinweis             | Essen     |
 | 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)   | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                   | unmöglich                    | Natur     |
 | 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                            | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
 | ★ … 24 Stunden nur Energydrinks trinkst?                             | Kein Turbo – nach dem Hoch kommt der Absturz, das Herz rast (Fakten prüfen)                     | Dose zischt, Herzschlag-Anzeige springt, Licht flackert                    | Hinweis, harmlos erklärt     | Körper    |
 | ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)  | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz | harmlos, Fangbremse erwähnen | Stadt     |
+| 🔥 … auf dem Mond einen Fußball schießt?                             | Er fliegt sechsmal so weit – und landet nie im Netz, weil keine Luft ihn bremst (Fakten prüfen) | Ball fliegt in Zeitlupe über die Kraterlandschaft, Erde im Hintergrund     | unmöglich                    | Weltall   |
 
 ## Reserviert (in Arbeit)
 
-| Thema              | Format | Datum      | Chat         |
-| ------------------ | ------ | ---------- | ------------ |
-| Münze vom Hochhaus | B      | 2026-11-02 | Video: Münze |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
