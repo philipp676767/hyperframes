@@ -4,10 +4,13 @@ Feedback on episode 1 (fridge) from an experienced creator: the script was
 flat, the hook weak, nothing kept people watching. v2 writes for **watch
 time**: a hook that wins the first 2 seconds, an open loop that is only
 closed at the end, re-hooks in the middle, and a CTA that makes people
-comment. The build-it-yourself frame stays in the Du-Form ("Du brauchst
-…", "Lass ihn uns bauen") — but the spoken line **"Schau dich an. Du hast
-gerade X gebaut." is gone for good** (user's rule, 2026-10-23): it told
-viewers "fertig" right before the bonus fact and the CTA.
+comment. The explanation stays in the Du-Form, but **"Lass ihn / es uns
+bauen." is gone for good** (user's rule, 2026-11-02: it is the old style),
+and so is **"Schau dich an. Du hast gerade X gebaut."** (2026-10-23: it
+told viewers "fertig" right before the bonus fact and the CTA). The
+picture still assembles the thing in x-ray; the words go straight from
+the hook's Haken into the first part ("Unter dem Glas liegt ein
+Gitter …").
 
 **Format B „Was passiert, wenn …?“** (alternates with this
 one, SKILL.md step 0) uses this file too, with the differences in
@@ -90,8 +93,8 @@ bauen" is not a reason to stay. So the hook has two jobs:
    said as a fact or a question _about the thing itself_: "Er klaut sie –
    und schmeißt sie hinten raus." / "Und das Verrückte: Er braucht dafür
    nicht mal Strom." / "Trotzdem verbrennst du dich nie." The open
-   question is the reason to stay — not an announcement. Then
-   (optionally) "Lass ihn uns bauen."
+   question is the reason to stay — not an announcement. **Never
+   "Lass ihn / es uns bauen."** (2026-11-02).
    **No promise phrases about the video** (user's rule, 2026-10-24): never
    "Gleich weißt du / erfährst du / siehst du …", "Am Ende …", "Bleib
    dran", "Pass auf", "Du wirst nicht glauben …" — and never a number of
@@ -151,8 +154,8 @@ Rules:
   an unbelievable fact, ask a question the viewer has _felt_ but never
   answered, or show stakes.
 - **Sentence 2 = the hook's Haken**: a second strange detail or the
-  stakes ("Er klaut sie – und schmeißt sie hinten raus.") — never only
-  "Lass ihn uns bauen." (that can follow as sentence 3), never a promise
+  stakes ("Er klaut sie – und schmeißt sie hinten raus.") — never "Lass
+  ihn / es uns bauen." (banned 2026-11-02), never a promise
   phrase ("Gleich …", "Am Ende …") or a number of seconds.
 - **Open a loop** the video closes at the end (a "why", a strange detail,
   a number) — viewers stay to get it.
@@ -175,7 +178,8 @@ real gain or danger.
 **House favourite before that: Mythos-Bruch + Haken.** The user picked it for the fridge v2
 (Hook A, `tiktok/skripte/kuehlschrank-v2.md`): break a belief in sentence
 1, name what really happens in sentence 2 ("Er klaut sie – und schmeißt
-sie hinten raus."), then "Lass ihn uns bauen."
+sie hinten raus."), then straight into beat 1 (no "Lass ihn uns bauen."
+any more, 2026-11-02).
 Make it the first (recommended) option every time; the other two hooks
 use different formulas so the user can compare. **Equally strong
 (2026-10-24): Deine Handlung + Folge** — a thing the viewer does, and why
@@ -436,7 +440,7 @@ and a soft "punch" sounds. Rules:
 ## Example — fridge rewritten in v2, approved by the user (129 words ≈ 47 s)
 
 ```text
-Dein Kühlschrank macht gar keine *Kälte*. Er *klaut* deiner Milch die Wärme – und schmeißt sie hinten raus. Lass ihn uns bauen.
+Dein Kühlschrank macht gar keine *Kälte*. Er *klaut* deiner Milch die Wärme – und schmeißt sie hinten raus.
 Du brauchst ein Rohr in der Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus *26* Grad kocht. Dabei saugt sie die Wärme aus deiner Milch. Das ist der *Verdampfer*.
 Jetzt hast du warmes Gas. Und hier kommt der *Trick*: Eine Pumpe quetscht es zusammen, bis es richtig *heiß* wird. Das ist der *Kompressor*.
 Das heiße Gas jagst du hinten durch ein *Zickzack-Rohr* – genau da landet die geklaute Wärme. Ein haarfeines Röhrchen macht es wieder *eiskalt*, und alles läuft im Kreis.
@@ -467,6 +471,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 
 ## Self-check before showing the user
 
+- [ ] No "Lass ihn / es uns bauen", no "Du hast gerade X gebaut"
 - [ ] Hook = spectacle the first frame shows + a Haken (second strange detail / stakes) — no "Gleich …", "Am Ende …", "Bleib dran", no seconds
 - [ ] Would a stranger stop scrolling for the first sentence alone?
 - [ ] Tone: cheeky friend for 18–34 (men and women), nothing school-like; hook title 2–3 words

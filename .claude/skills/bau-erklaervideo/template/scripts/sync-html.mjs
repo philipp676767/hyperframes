@@ -42,6 +42,11 @@ else if (words[cs].start < 12 || words[cs].start > 30)
     `WARNING: the comment question starts at ${words[cs].start.toFixed(1)} s — put it at ~15–28 s.`,
   );
 else console.log(`comment question at ${words[cs].start.toFixed(1)} s`);
+// banned old-style lines (2026-11-02 / 2026-10-23)
+const spoken = words.map((w) => w.w.toLowerCase()).join(" ");
+for (const bad of ["uns bauen", "du hast gerade"])
+  if (spoken.includes(bad))
+    console.warn(`WARNING: the script says „${bad} …“ — old style, cut that sentence.`);
 if (last > LENGTH - 3 && !fitted)
   console.warn(
     `WARNING: speech ends at ${last}s — too long for exactly ${LENGTH}s; rerun prepare-voice.sh`,

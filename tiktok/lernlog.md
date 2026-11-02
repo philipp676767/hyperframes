@@ -37,6 +37,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 - [ ] Alle 5–7 s ein Highlight (Zeitlupe, Blitz, Wackeln, Crash-Zoom, Reißschwenk) und 2–3 Money-Shots, die die spektakulären Behauptungen **zeigen**.
 - [ ] Klarheit: Objekt groß im Bild, Röntgen-Look max. ⅓ der Zeit, kaum Rand-Unschärfe, starker Farbkontrast.
 - [ ] Stimme mit 3–6 Regieanweisungen (`[excited]`, `[whispers]` …), damit Jan nicht monoton klingt.
+- [ ] **Kein „Lass es/ihn uns bauen“** (Nutzer, 2026-11-02, #48 Touchscreen: „alter Stil“). **Welt: andere Art von Ort** als die letzten 3 (nicht schon wieder Straße/Platz mit Hausfassaden), **kein Sockel/Podest** unter dem Objekt — es steht dort, wo es im Ort wirklich hingehört; Vergleichsbild mit den letzten 3 Videos.
 - [ ] **Kommentar-Frage in die Mitte** (eigene Zeile, ~19–23 s), danach sofort der nächste Haken; **Schluss = „Übrigens“ (stärkster Fakt) + schnelles „Folge für mehr Wissen.“**, Video endet ~0,7 s danach, kein ruhiger Outro-Schuss (Nutzer-Statistik 2026-11-01: vor der End-CTA noch ~20 %, danach 5 %).
 
 ## Einträge

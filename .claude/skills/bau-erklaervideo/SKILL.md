@@ -135,6 +135,24 @@ Draht") — replace it completely.
    specific (place + time of day + 2–3 details). **Never the place of one
    of the last 3 videos** (`tiktok/serie.md`, column `Set`), and no
    generic "park" / "island" when the topic has its own place.
+   **Vary the kind of place, not just its name** (user, 2026-11-02: #48
+   at a snowy tram stop still looked "like the old environment" —
+   grey paving, a row of lit town-house facades, the subject on a
+   plinth in the middle, like the videos before). Of the last 3 videos
+   at most one may be a street / square / town-house backdrop (Vienna
+   included); pick from other kinds: an interior up close (bathroom, car
+   inside, cinema seat, gym, kids' room), nature (forest, lake, mountain,
+   beach, field), an extreme place (cockpit, deep sea, desert, glacier,
+   space), a giant-scale world (inside a pocket, a desk seen as a
+   landscape). Also a different ground colour, time of day and camera
+   height than the last video.
+   **No stage, no plinth.** The subject never stands on a pedestal,
+   podium, plinth or round floor pad in the middle of an empty area —
+   that is the old look. It sits where it really lives in that place
+   (the phone in a gloved hand at the bench, the hair dryer on the
+   shelf, the can in the cinema seat's cup holder), scaled up if needed
+   but built into the scene, with world objects in front of it
+   (foreground layer) and behind it in most shots.
 2. **Light + palette.** An own sky (`setSky({ ...SKIES.morgen, top: … })`
    or a fully own palette, `sunDir`, `keyPos`, `fog`), a time of day that
    carries the mood, and one accent colour the subject stands out from.
@@ -168,6 +186,10 @@ Draht") — replace it completely.
    every large surface, ≥ 3 depth layers, light and palette fit the mood,
    nothing on the stage (`place()` warns) or tall on the outro line
    (x ≈ 0.6·z in front), and it reads as _that_ place in one glance.
+   **Then the "same as before?" test:** put one wide frame of this set
+   next to one of each of the last 3 videos (snapshot their folders) — if
+   ground, backdrop and layout look alike, change the kind of place, not
+   only details.
 5. **Reuse, don't repeat.** The kit (`environments.js`: `setSky`,
    `SKIES`, `terrain`, `discGeo`, `pathStrip`, `pond`, `sea`, `meadow`,
    `tree`, `pine`, `rocks`, `car`, `cloudPuffs`, `birds`, `lightString`,
