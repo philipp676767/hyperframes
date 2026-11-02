@@ -302,8 +302,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema              | Format | Datum      | Chat         |
+| ------------------ | ------ | ---------- | ------------ |
+| Münze vom Hochhaus | B      | 2026-11-02 | Video: Münze |
 
 ## Verwendet
 
