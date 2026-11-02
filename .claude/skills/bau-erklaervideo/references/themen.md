@@ -250,7 +250,7 @@ men).
 | ★ Latte Art / Milchschaum     | „Dein Milchschaum hält nur dank Eiweiß-Käfigen.“                                | „Zeig deinen Kaffee ☕👇“                  | Eiweiß legt sich um Luftblasen, Herz wird gegossen              |
 | ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Zeig deine Sneaker 👇“                    | Luftkammer im Röntgenblick, Schritt drückt sie zusammen         |
 | ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)               | „Zeig dein Auto 👇“                        | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt    |
-| ★ Katze schnurrt              | „Deine Katze schnurrt mit einem eingebauten Motor.“ (Fakten prüfen)             | „Zeig deine Katze 👇“                      | Kehlkopfmuskeln zucken, Schallwellen in Zeitlupe                |
+| ★ Hundenase                   | „Die Nase deines Hundes ist ein Fingerabdruck.“ (Fakten prüfen)                 | „Zeig deinen Hund 👇“                      | Riesige Hundenase, Rillenmuster leuchtet, Duftmoleküle strömen  |
 | ★ Gelnägel ablösen            | „Aceton frisst deine Gelnägel nicht – es lässt sie aufquellen.“ (Fakten prüfen) | „Team Gel oder Acryl? Bild 👇“             | Lösungsmittel kriecht ins Gel, Netz quillt auf, Schicht hebt ab |
 | ★ Protein-Shake               | „Dein Körper zerlegt dein Shake-Eiweiß komplett.“ (Fakten prüfen)               | „Welcher Shake ist deiner? 👇“             | Eiweißketten zerfallen in Bausteine, wandern in den Muskel      |
 
@@ -301,8 +301,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                             | Format           | Datum      | Chat         |
+| --------------------------------- | ---------------- | ---------- | ------------ |
+| Katze schnurrt (Kehlkopf-Polster) | A (Look & Hobby) | 2026-11-02 | Video: Katze |
 
 ## Verwendet
 
