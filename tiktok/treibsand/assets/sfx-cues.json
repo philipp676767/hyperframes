@@ -1,0 +1,334 @@
+[
+  {
+    "s": "schmatz",
+    "at": 0.02,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.68,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 1.067,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.58,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 1.8,
+    "why": "highlight shake"
+  },
+  {
+    "s": "schmatz",
+    "at": 1.9,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 3.043,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.733,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.683,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 9.818,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 9.818,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 9.818,
+    "why": "highlight shake"
+  },
+  {
+    "s": "schmatz",
+    "at": 9.818,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "blip",
+    "at": 9.868,
+    "why": "label flüssig"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.257,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.757,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "schmatz",
+    "at": 11.977,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 12.647,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 12.867,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "rauschen",
+    "at": 12.867,
+    "why": "beats.js",
+    "dur": 2.9509999999999987,
+    "db": -22
+  },
+  {
+    "s": "blip",
+    "at": 13.517,
+    "why": "label Wasser"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.598,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.973,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 18.193,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 18.193,
+    "why": "highlight flash"
+  },
+  {
+    "s": "blip",
+    "at": 18.243,
+    "why": "label wie Beton"
+  },
+  {
+    "s": "klack",
+    "at": 18.243,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 18.558,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 18.778,
+    "why": "comment pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 21.269,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.917,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.917,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.718,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 28.167,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 28.167,
+    "why": "highlight shake"
+  },
+  {
+    "s": "hit",
+    "at": 28.167,
+    "why": "highlight flash"
+  },
+  {
+    "s": "pop",
+    "at": 28.167,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.717,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 30.179,
+    "why": "label Treibsand"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.434,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 31.654,
+    "why": "highlight"
+  },
+  {
+    "s": "klack",
+    "at": 31.854,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "blip",
+    "at": 32.004,
+    "why": "label Du"
+  },
+  {
+    "s": "whoosh",
+    "at": 32.638,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.517,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.162,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 36.382,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "schmatz",
+    "at": 36.966,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 37.394,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.845,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 39.065,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 39.065,
+    "why": "question answered"
+  },
+  {
+    "s": "blip",
+    "at": 39.115,
+    "why": "label Hüfte"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.809,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 40.029,
+    "why": "bonus fact"
+  },
+  {
+    "s": "rauschen",
+    "at": 40.329,
+    "why": "beats.js",
+    "dur": 4.2,
+    "db": -16
+  },
+  {
+    "s": "punch",
+    "at": 41.822,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 41.87,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 43.829,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 43.929,
+    "why": "highlight shake"
+  },
+  {
+    "s": "pop",
+    "at": 44.782,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 45.562,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 45.602,
+    "why": "gefolgt",
+    "db": -16
+  }
+]
