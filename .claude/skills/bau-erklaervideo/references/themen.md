@@ -303,9 +303,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema  | Format | Datum      | Chat          |
-| ------ | ------ | ---------- | ------------- |
-| Parfum | A      | 2026-11-03 | Video: Parfum |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
@@ -316,4 +315,4 @@ Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
 Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B),
 Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B),
-Fettbrand (B), Knicklicht, Treibsand (B).
+Fettbrand (B), Knicklicht, Treibsand (B), Parfum.

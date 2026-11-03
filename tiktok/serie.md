@@ -63,3 +63,4 @@ Umgebungen (insel, stadt, …).
 | 51  | Energydrinks (24 h)            | B      | `tiktok/energydrink`         | wg-schreibtisch-nacht       | 4 uhr nachts       | 45,0 s | 2026-11-03 |
 | 52  | Kuli-Deckel (Loch)             | A      | `tiktok/kuli`                | abi-turnhalle-pruefung      | vormittag          | 45,0 s | 2026-11-03 |
 | 53  | Treibsand (Hüfte)              | B      | `tiktok/treibsand`           | dschungelfluss-sandbank     | gewitternachmittag | 45,0 s | 2026-11-03 |
+| 54  | Parfum (Nase stumm)            | A      | `tiktok/parfum`              | s-bahn-waggon-morgensonne   | früher morgen      | 45,0 s | 2026-11-03 |
