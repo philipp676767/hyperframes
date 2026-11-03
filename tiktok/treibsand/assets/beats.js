@@ -46,6 +46,8 @@ export const SCALE = [0, 0, 30];
 export const shots = [
   // frame 0: you, sunk to the knees, arms flailing — fast push-in, jungle behind
   { at: 0, from: [1.6, 1.9, 5.6], to: [0.9, 1.55, 3.6], look: [0, 1.2, 0] },
+  // "Treibsand": first cut ≤ 1.5 s — from the other side, closer
+  { at: T.treibsand, from: [-1.7, 1.5, 3.2], to: [-1.2, 1.35, 2.6], look: [0, 1.15, 0] },
   // "Strampel bloß nicht": low on the sand, legs churning
   { at: T.strampel, from: [2.4, 0.9, 3.6], to: [1.9, 0.8, 3.0], look: [0, 0.75, 0], whip: 1 },
   // "Im Film …": only the hat is left (viewfinder)
@@ -81,7 +83,7 @@ export const shots = [
   // "Leg dich zurück": from above-front
   { at: T.leg, from: [1.8, 3.0, 4.6], to: [1.3, 2.4, 3.6], look: [0, 0.2, -0.2] },
   // "… und wackel die Beine langsam frei": slowmo close on the legs
-  { at: T.beine, from: [2.2, 0.7, 2.8], to: [1.7, 0.55, 2.2], look: [0, 0.15, 0.6] },
+  { at: T.beine, from: [3.6, 1.5, 1.6], to: [3.0, 1.25, 1.2], look: [0, 0.25, 0.2] },
   // payoff: x-ray cutaway, upright, stopped at the hip
   { at: T.darum, from: [0.3, 0.9, 7.2], to: [0.1, 0.6, 6.0], look: [0, -0.1, 0] },
   // Übrigens: the flood comes in around the sandbank (wide, high)
@@ -101,7 +103,7 @@ export const LABELS = [
 ];
 
 export const HIGHLIGHTS = [
-  { kind: "zoom", at: 0.9, amount: 0.3 }, // hook lands
+  { kind: "zoom", at: 0.25, amount: 0.25 }, // hook lands
   { kind: "shake", at: T.strampel, dur: 0.5, amp: 0.8 },
   { kind: "flash", at: T.fluessig },
   { kind: "shake", at: T.fluessig, dur: 0.45, amp: 1 },

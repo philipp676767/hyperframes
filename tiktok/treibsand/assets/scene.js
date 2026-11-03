@@ -695,7 +695,8 @@ function renderAt(t) {
     showPanel(pop(t, T.dicht, T.treibst), "TREIBSAND", "2× SO DICHT", LED.yellow);
   else if (t >= T.huefte && t < T.uebrigens)
     showPanel(pop(t, T.huefte, T.uebrigens), "ENDSTATION", "HÜFTE", LED.green);
-  else if (t >= T.flut - 0.2) showPanel(pop(t, T.flut - 0.2, 99), "GEFAHR", "FLUT", LED.red);
+  else if (t >= T.flut - 0.2 && t < T.folge)
+    showPanel(pop(t, T.flut - 0.2, T.folge), "GEFAHR", "FLUT", LED.red);
   else showPanel(0);
 
   labels(t, LAB);

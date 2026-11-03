@@ -551,9 +551,9 @@ fireflies(26, { area: [-12, 12, 0.6, 2.4, -12, 4], color: 0x7fe8ff, seed: SEED, 
     flies.forEach(({ g, wings, i }) => {
       const a = t * 0.35 + i * 2.1;
       g.position.set(
-        Math.cos(a) * (8 + i),
-        1.4 + Math.sin(t * 1.3 + i) * 0.4,
-        -2 + Math.sin(a) * 4,
+        Math.cos(a) * (9 + i),
+        1.6 + Math.sin(t * 1.3 + i) * 0.4,
+        -7 + Math.sin(a) * 1.8,
       );
       g.rotation.y = -a;
       const f = Math.sin(t * 22 + i) * 0.9;
