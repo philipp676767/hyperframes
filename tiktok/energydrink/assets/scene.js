@@ -563,7 +563,7 @@ scene.add(bull);
     bull,
   );
   // tuft of hair between the horns
-  mesh(F2(new THREE.IcosahedronGeometry(0.3, 0), flat(0x5a341c)), 0, 1.62, 0.15, bull);
+  mesh(F2(new THREE.IcosahedronGeometry(0.3, 0)), flat(0x5a341c), 0, 1.62, 0.15, bull);
   for (const sx of [-1, 1]) {
     const h = mesh(
       new THREE.ConeGeometry(0.14, 0.85, 8),
