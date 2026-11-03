@@ -295,15 +295,16 @@ ask for go in here.
 | ★ … eine Dose Cola im Gefrierfach vergisst?                          | Sie platzt – gefrierendes Wasser dehnt sich um rund 9 % aus, die Dose gibt nach (Fakten prüfen) | Dose beult sich in Zeitlupe, Deckel reißt, Eis-Fontäne friert fest         | harmlos, Hinweis             | Essen     |
 | 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)   | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                   | unmöglich                    | Natur     |
 | 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                            | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
-| ★ … 24 Stunden nur Energydrinks trinkst?                             | Kein Turbo – nach dem Hoch kommt der Absturz, das Herz rast (Fakten prüfen)                     | Dose zischt, Herzschlag-Anzeige springt, Licht flackert                    | Hinweis, harmlos erklärt     | Körper    |
 | ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)  | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz | harmlos, Fangbremse erwähnen | Stadt     |
 | 🔥 … auf dem Mond einen Fußball schießt?                             | Er fliegt sechsmal so weit – und landet nie im Netz, weil keine Luft ihn bremst (Fakten prüfen) | Ball fliegt in Zeitlupe über die Kraterlandschaft, Erde im Hintergrund     | unmöglich                    | Weltall   |
+| ★ … eine Woche lang kein Handy anfasst?                              | Das Gehirn sucht es weiter – Phantom-Vibrieren, dann schläfst du besser (Fakten prüfen)         | Hand greift ins Leere, Phantom-Summen, Schlafkurve steigt                  | harmlos                      | Handy     |
 
 ## Reserviert (in Arbeit)
 
-| Thema                             | Format           | Datum      | Chat         |
-| --------------------------------- | ---------------- | ---------- | ------------ |
-| Katze schnurrt (Kehlkopf-Polster) | A (Look & Hobby) | 2026-11-02 | Video: Katze |
+| Thema                             | Format           | Datum      | Chat               |
+| --------------------------------- | ---------------- | ---------- | ------------------ |
+| Katze schnurrt (Kehlkopf-Polster) | A (Look & Hobby) | 2026-11-02 | Video: Katze       |
+| Energydrinks 24 h (#51)           | B                | 2026-11-03 | Video: Energydrink |
 
 ## Verwendet
 
