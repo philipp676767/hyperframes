@@ -304,8 +304,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                        | Format            | Datum      | Chat                  |
+| ---------------------------- | ----------------- | ---------- | --------------------- |
+| Kugelschreiber-Deckel (Loch) | A (Detail-Rätsel) | 2026-11-03 | Video: Kugelschreiber |
 
 ## Verwendet
 
