@@ -46,7 +46,7 @@ const throatW = new THREE.Vector3();
 // bandage on the near front paw (from "Schmerzen")
 const bandage = new THREE.Group();
 {
-  const wrap = flat(0xfdfaf4, { roughness: 0.9 });
+  const wrap = flat(0x7fd0f0, { roughness: 0.9 });
   for (let i = 0; i < 3; i++) {
     const b = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 0.08, 12), wrap);
     b.rotation.z = Math.PI / 2;
@@ -305,14 +305,14 @@ function renderAt(t) {
     },
     {
       t: T.hand - 0.25,
-      pos: [2.0, 2.5, 0.4],
+      pos: [2.0, 2.2, 0.5],
       rot: [0.1, -Math.PI / 2, -Math.PI / 2],
       pose: "open",
     },
-    { t: T.kehle, pos: [1.2, 2.42, -0.06], rot: [0.1, -Math.PI / 2, -Math.PI / 2], pose: "open" },
+    { t: T.kehle, pos: [1.16, 1.98, 0.0], rot: [0.1, -Math.PI / 2, -Math.PI / 2], pose: "open" },
     {
       t: T.ein - 0.1,
-      pos: [1.18, 2.42, -0.06],
+      pos: [1.14, 1.98, 0.0],
       rot: [0.1, -Math.PI / 2, -Math.PI / 2],
       pose: "open",
     },

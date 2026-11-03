@@ -17,345 +17,345 @@
   },
   {
     "s": "punch",
-    "at": 1.058,
+    "at": 0.6,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 1.263,
+    "at": 0.86,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 1.263,
+    "at": 0.86,
     "why": "highlight zoom"
   },
   {
     "s": "whoosh",
-    "at": 3.105,
+    "at": 2.4,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 5.372,
+    "at": 4.1,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 5.372,
+    "at": 4.1,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 5.592,
+    "at": 4.32,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 7.417,
+    "at": 5.78,
     "why": "cut"
   },
   {
     "s": "schnurren",
-    "at": 8.997,
+    "at": 6.96,
     "why": "beats.js",
     "db": -11
   },
   {
     "s": "hit",
-    "at": 9.097,
+    "at": 7.06,
     "why": "highlight shake"
   },
   {
     "s": "whoosh",
-    "at": 9.561,
+    "at": 7.6,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 11.084,
+    "at": 9.28,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 11.8,
+    "at": 9.76,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 11.8,
+    "at": 9.76,
     "why": "highlight zoom"
   },
   {
     "s": "whoosh",
-    "at": 12.847,
+    "at": 10.96,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 13.954,
+    "at": 12.02,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 14.004,
+    "at": 12.07,
     "why": "label Kehlkopf"
   },
   {
     "s": "blip",
-    "at": 15.019,
+    "at": 13.23,
     "why": "label Stimmlippen"
   },
   {
     "s": "whoosh",
-    "at": 15.456,
+    "at": 13.64,
     "why": "cut"
   },
   {
     "s": "slowmo",
-    "at": 15.676,
+    "at": 13.86,
     "why": "highlight slowmo"
   },
   {
     "s": "brumm",
-    "at": 15.676,
+    "at": 13.86,
     "why": "beats.js",
-    "dur": 2.6919999999999984,
+    "dur": 3.0600000000000023,
     "db": -24
   },
   {
     "s": "whoosh",
-    "at": 18.148,
+    "at": 16.7,
     "why": "cut"
   },
   {
     "s": "hit",
-    "at": 18.368,
+    "at": 16.92,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 21.083,
+    "at": 19.28,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 21.303,
+    "at": 19.5,
     "why": "comment pill"
   },
   {
     "s": "whoosh",
-    "at": 25.155,
+    "at": 22.4,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 26.558,
+    "at": 23.78,
     "why": "highlight"
   },
   {
     "s": "pop",
-    "at": 26.658,
+    "at": 23.88,
     "why": "beats.js"
   },
   {
     "s": "blip",
-    "at": 26.758,
+    "at": 23.98,
     "why": "label Kehlkopf"
   },
   {
     "s": "whoosh",
-    "at": 28.288,
+    "at": 25.6,
     "why": "cut"
   },
   {
     "s": "klack",
-    "at": 28.608,
+    "at": 25.92,
     "why": "beats.js"
   },
   {
     "s": "whoosh",
-    "at": 29.751,
+    "at": 26.62,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 29.971,
+    "at": 26.84,
     "why": "highlight"
   },
   {
     "s": "hit",
-    "at": 29.971,
+    "at": 26.84,
     "why": "highlight flash"
   },
   {
     "s": "schnurren",
-    "at": 29.971,
+    "at": 26.84,
     "why": "beats.js",
     "db": -10
   },
   {
     "s": "whoosh",
-    "at": 31.852,
+    "at": 28.22,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 32.072,
+    "at": 28.44,
     "why": "highlight"
   },
   {
     "s": "pop",
-    "at": 32.172,
+    "at": 28.54,
     "why": "beats.js"
   },
   {
     "s": "blip",
-    "at": 32.222,
+    "at": 28.59,
     "why": "label Polster"
   },
   {
     "s": "whoosh",
-    "at": 35.468,
+    "at": 31.58,
     "why": "cut"
   },
   {
     "s": "klack",
-    "at": 36.038,
+    "at": 32.15,
     "why": "beats.js"
   },
   {
     "s": "blip",
-    "at": 36.138,
+    "at": 32.25,
     "why": "label Gewichte"
   },
   {
     "s": "whoosh",
-    "at": 37.643,
+    "at": 33.64,
     "why": "cut"
   },
   {
     "s": "slowmo",
-    "at": 37.863,
+    "at": 33.86,
     "why": "highlight slowmo"
   },
   {
     "s": "saite",
-    "at": 37.913,
+    "at": 33.91,
     "why": "beats.js",
     "db": -9
   },
   {
+    "s": "whoosh",
+    "at": 34.48,
+    "why": "cut"
+  },
+  {
     "s": "punch",
-    "at": 38.63,
+    "at": 34.7,
     "why": "highlight"
   },
   {
     "s": "hit",
-    "at": 38.63,
+    "at": 34.7,
     "why": "highlight shake"
   },
   {
-    "s": "whoosh",
-    "at": 39.152,
-    "why": "cut"
-  },
-  {
     "s": "pop",
-    "at": 39.672,
+    "at": 35.48,
     "why": "beats.js"
   },
   {
     "s": "punch",
-    "at": 40.823,
+    "at": 36.22,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 42.898,
+    "at": 38.12,
     "why": "cut"
   },
   {
     "s": "schnurren",
-    "at": 42.918,
+    "at": 38.14,
     "why": "beats.js",
     "db": -13
   },
   {
     "s": "punch",
-    "at": 43.118,
+    "at": 38.34,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 43.118,
+    "at": 38.34,
     "why": "question answered"
   },
   {
     "s": "whoosh",
-    "at": 44.167,
+    "at": 39.12,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 44.167,
+    "at": 39.12,
     "why": "highlight zoom"
   },
   {
     "s": "wow",
-    "at": 44.387,
+    "at": 39.34,
     "why": "bonus fact"
   },
   {
     "s": "pop",
-    "at": 44.507,
+    "at": 39.46,
     "why": "beats.js"
   },
   {
     "s": "whoosh",
-    "at": 46.468,
+    "at": 41.18,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 46.688,
+    "at": 41.4,
     "why": "highlight"
   },
   {
     "s": "bruellen",
-    "at": 46.738,
+    "at": 41.45,
     "why": "beats.js",
     "db": -9
   },
   {
     "s": "hit",
-    "at": 46.788,
+    "at": 41.5,
     "why": "highlight shake"
   },
   {
     "s": "whoosh",
-    "at": 47.309,
+    "at": 42.04,
     "why": "cut"
   },
   {
     "s": "schnurren",
-    "at": 47.529,
+    "at": 42.26,
     "why": "beats.js",
     "db": -10
   },
   {
     "s": "pop",
-    "at": 48.641,
+    "at": 43.44,
     "why": "follow pill"
   },
   {
     "s": "click",
-    "at": 49.421,
+    "at": 44.22,
     "why": "follow tap"
   },
   {
     "s": "ding",
-    "at": 49.461,
+    "at": 44.26,
     "why": "gefolgt",
     "db": -16
   }

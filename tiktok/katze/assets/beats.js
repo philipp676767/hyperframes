@@ -111,9 +111,9 @@ export const shots = [
   // "beruhigt": calm close-up, soft teal rings
   { at: T.beruhigt, from: [1.95, 2.95, 1.35], to: [1.6, 2.85, 1.0], look: HEAD },
   // "Übrigens": the lion appears next to her
-  { at: T.fakt, from: [-2.4, 3.2, 7.2], to: [-1.7, 2.9, 6.2], look: [1.4, 2.0, 1.0] },
+  { at: T.fakt, from: [-1.6, 4.6, 12.2], to: [-1.1, 4.1, 10.6], look: [1.0, 2.1, 0.8] },
   // "ein Löwe": the lion roars — no purr rings, ✕
-  { at: T.loewe, from: [0.2, 2.7, 5.9], to: [0.6, 2.5, 5.1], look: LION_HEAD },
+  { at: T.loewe, from: [-0.9, 3.0, 7.6], to: [-0.4, 2.8, 6.8], look: LION_HEAD },
   // "richtig schnurren": the cat, rings huge, until the end
   { at: T.richtig, from: [2.1, 3.0, 1.9], to: [1.6, 2.85, 1.25], look: HEAD },
 ];

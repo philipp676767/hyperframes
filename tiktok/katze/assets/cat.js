@@ -371,7 +371,7 @@ export function makeLarynx() {
       for (const { g, sx } of folds) g.position.set(sx * (0.08 + gap * 0.07), 0.02, 0);
       for (const p of pads) {
         p.visible = pad > 0.01;
-        p.scale.set(0.055 * pad, 0.05 * pad, 0.11 * pad);
+        p.scale.set(0.068 * pad, 0.06 * pad, 0.13 * pad);
       }
     },
   };
