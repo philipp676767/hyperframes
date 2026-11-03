@@ -17,7 +17,7 @@
   },
   {
     "s": "punch",
-    "at": 0.6,
+    "at": 0.62,
     "why": "highlight"
   },
   {
@@ -32,304 +32,294 @@
   },
   {
     "s": "whoosh",
-    "at": 2.4,
+    "at": 2.5,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 4.1,
+    "at": 4.12,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 4.1,
+    "at": 4.12,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 4.32,
+    "at": 4.34,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 5.78,
+    "at": 5.8,
     "why": "cut"
   },
   {
     "s": "schnurren",
-    "at": 6.96,
+    "at": 7,
     "why": "beats.js",
     "db": -11
   },
   {
     "s": "hit",
-    "at": 7.06,
+    "at": 7.1,
     "why": "highlight shake"
   },
   {
     "s": "whoosh",
-    "at": 7.6,
+    "at": 7.62,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 9.28,
+    "at": 9.32,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 9.76,
+    "at": 9.8,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 9.76,
+    "at": 9.8,
     "why": "highlight zoom"
   },
   {
     "s": "whoosh",
-    "at": 10.96,
+    "at": 11.02,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 12.02,
+    "at": 12.08,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 12.07,
+    "at": 12.13,
     "why": "label Kehlkopf"
   },
   {
     "s": "blip",
-    "at": 13.23,
+    "at": 13.27,
     "why": "label Stimmlippen"
   },
   {
     "s": "whoosh",
-    "at": 13.64,
+    "at": 13.68,
     "why": "cut"
   },
   {
     "s": "slowmo",
-    "at": 13.86,
+    "at": 13.9,
     "why": "highlight slowmo"
   },
   {
     "s": "brumm",
-    "at": 13.86,
+    "at": 13.9,
     "why": "beats.js",
-    "dur": 3.0600000000000023,
+    "dur": 3.08,
     "db": -24
   },
   {
     "s": "whoosh",
-    "at": 16.7,
+    "at": 16.76,
     "why": "cut"
   },
   {
     "s": "hit",
-    "at": 16.92,
+    "at": 16.98,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 19.28,
+    "at": 19.36,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 19.5,
+    "at": 19.58,
     "why": "comment pill"
   },
   {
     "s": "whoosh",
-    "at": 22.4,
+    "at": 22.3,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 23.78,
+    "at": 23.7,
     "why": "highlight"
   },
   {
-    "s": "pop",
-    "at": 23.88,
-    "why": "beats.js"
-  },
-  {
     "s": "blip",
-    "at": 23.98,
+    "at": 23.9,
     "why": "label Kehlkopf"
   },
   {
     "s": "whoosh",
-    "at": 25.6,
+    "at": 25.52,
     "why": "cut"
   },
   {
     "s": "klack",
-    "at": 25.92,
+    "at": 25.84,
     "why": "beats.js"
   },
   {
     "s": "whoosh",
-    "at": 26.62,
+    "at": 26.54,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 26.84,
+    "at": 26.76,
     "why": "highlight"
   },
   {
     "s": "hit",
-    "at": 26.84,
+    "at": 26.76,
     "why": "highlight flash"
   },
   {
     "s": "schnurren",
-    "at": 26.84,
+    "at": 26.76,
     "why": "beats.js",
     "db": -10
   },
   {
     "s": "whoosh",
-    "at": 28.22,
+    "at": 28.16,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 28.44,
+    "at": 28.38,
     "why": "highlight"
   },
   {
-    "s": "pop",
-    "at": 28.54,
-    "why": "beats.js"
-  },
-  {
     "s": "blip",
-    "at": 28.59,
+    "at": 28.53,
     "why": "label Polster"
   },
   {
     "s": "whoosh",
-    "at": 31.58,
+    "at": 31.52,
     "why": "cut"
   },
   {
     "s": "klack",
-    "at": 32.15,
+    "at": 32.09,
     "why": "beats.js"
   },
   {
     "s": "blip",
-    "at": 32.25,
+    "at": 32.19,
     "why": "label Gewichte"
   },
   {
     "s": "whoosh",
-    "at": 33.64,
+    "at": 33.6,
     "why": "cut"
   },
   {
     "s": "slowmo",
-    "at": 33.86,
+    "at": 33.82,
     "why": "highlight slowmo"
   },
   {
     "s": "saite",
-    "at": 33.91,
+    "at": 33.87,
     "why": "beats.js",
     "db": -9
   },
   {
     "s": "whoosh",
-    "at": 34.48,
+    "at": 34.44,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 34.7,
+    "at": 34.66,
     "why": "highlight"
   },
   {
     "s": "hit",
-    "at": 34.7,
+    "at": 34.66,
     "why": "highlight shake"
   },
   {
     "s": "pop",
-    "at": 35.48,
+    "at": 35.44,
     "why": "beats.js"
   },
   {
     "s": "punch",
-    "at": 36.22,
+    "at": 36.18,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 38.12,
+    "at": 38.1,
     "why": "cut"
   },
   {
     "s": "schnurren",
-    "at": 38.14,
+    "at": 38.12,
     "why": "beats.js",
     "db": -13
   },
   {
     "s": "punch",
-    "at": 38.34,
+    "at": 38.32,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 38.34,
+    "at": 38.32,
     "why": "question answered"
   },
   {
     "s": "whoosh",
-    "at": 39.12,
+    "at": 39.1,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 39.12,
+    "at": 39.1,
     "why": "highlight zoom"
   },
   {
     "s": "wow",
-    "at": 39.34,
+    "at": 39.32,
     "why": "bonus fact"
   },
   {
     "s": "pop",
-    "at": 39.46,
+    "at": 39.44,
     "why": "beats.js"
   },
   {
     "s": "whoosh",
-    "at": 41.18,
+    "at": 41.16,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 41.4,
+    "at": 41.38,
     "why": "highlight"
   },
   {
     "s": "bruellen",
-    "at": 41.45,
+    "at": 41.43,
     "why": "beats.js",
     "db": -9
   },
   {
     "s": "hit",
-    "at": 41.5,
+    "at": 41.48,
     "why": "highlight shake"
   },
   {

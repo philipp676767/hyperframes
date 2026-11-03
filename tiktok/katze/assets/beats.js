@@ -160,10 +160,8 @@ export const SFX = [
   { s: "schnurren", at: 0.0, db: -9 }, // frame 0: the purr itself
   { s: "schnurren", at: T.vibriert - 0.1, db: -11 },
   { s: "brumm", at: T.rate, dur: T.mal25 - T.rate, db: -24 },
-  { s: "pop", at: T.wien + 0.1 },
   { s: "klack", at: T.gehirn + 0.1 },
   { s: "schnurren", at: T.geschnurrt, db: -10 },
-  { s: "pop", at: T.polster + 0.1 },
   { s: "klack", at: T.gewichte + 0.35 },
   { s: "saite", at: T.saite + 0.05, db: -9 },
   { s: "pop", at: T.warum + 0.3 },
