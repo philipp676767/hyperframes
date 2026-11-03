@@ -304,9 +304,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                             | Format           | Datum      | Chat         |
-| --------------------------------- | ---------------- | ---------- | ------------ |
-| Katze schnurrt (Kehlkopf-Polster) | A (Look & Hobby) | 2026-11-02 | Video: Katze |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
