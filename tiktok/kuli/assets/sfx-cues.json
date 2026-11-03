@@ -1,0 +1,364 @@
+[
+  {
+    "s": "whoosh",
+    "at": 0,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "pfeifen",
+    "at": 0,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "punch",
+    "at": 0.2,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.24,
+    "why": "cut"
+  },
+  {
+    "s": "pfeifen",
+    "at": 1.66,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 2.74,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 4.04,
+    "why": "cut"
+  },
+  {
+    "s": "knacken",
+    "at": 5.01,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "knacken",
+    "at": 5.51,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "slowmo",
+    "at": 6.24,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "rauschen",
+    "at": 6.24,
+    "why": "beats.js",
+    "dur": 1,
+    "db": -15
+  },
+  {
+    "s": "whoosh",
+    "at": 6.98,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 7.2,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 7.2,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 7.65,
+    "why": "highlight shake"
+  },
+  {
+    "s": "pfeifen",
+    "at": 7.98,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "whoosh",
+    "at": 8.26,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 8.63,
+    "why": "label Luftröhre"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.08,
+    "why": "cut"
+  },
+  {
+    "s": "pfeifen",
+    "at": 9.9,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 10.96,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "blip",
+    "at": 11.23,
+    "why": "label Loch"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.56,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 13.04,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 13.93,
+    "why": "label Schaft-Loch"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.12,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 14.59,
+    "why": "beats.js"
+  },
+  {
+    "s": "punch",
+    "at": 15,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 15.1,
+    "why": "label Unterdruck"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.3,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 17.06,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.66,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 17.88,
+    "why": "comment pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.74,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.22,
+    "why": "cut"
+  },
+  {
+    "s": "pfeifen",
+    "at": 22.74,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "punch",
+    "at": 23.4,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 23.4,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.8,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.68,
+    "why": "cut"
+  },
+  {
+    "s": "pfeifen",
+    "at": 26.9,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "rauschen",
+    "at": 26.9,
+    "why": "beats.js",
+    "dur": 1.8,
+    "db": -19
+  },
+  {
+    "s": "punch",
+    "at": 27.38,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 27.38,
+    "why": "highlight flash"
+  },
+  {
+    "s": "pfeifen",
+    "at": 28.28,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "whoosh",
+    "at": 28.68,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 31,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 31.72,
+    "why": "beats.js"
+  },
+  {
+    "s": "punch",
+    "at": 31.96,
+    "why": "highlight"
+  },
+  {
+    "s": "klack",
+    "at": 31.96,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "whoosh",
+    "at": 32.58,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 34.12,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 34.17,
+    "why": "highlight shake"
+  },
+  {
+    "s": "boing",
+    "at": 34.17,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 36.3,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.4,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "pop",
+    "at": 37.57,
+    "why": "beats.js"
+  },
+  {
+    "s": "punch",
+    "at": 37.62,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 37.62,
+    "why": "question answered"
+  },
+  {
+    "s": "blip",
+    "at": 37.72,
+    "why": "label Schnorchel"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.22,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 38.44,
+    "why": "bonus fact"
+  },
+  {
+    "s": "pop",
+    "at": 38.79,
+    "why": "beats.js"
+  },
+  {
+    "s": "blip",
+    "at": 39.63,
+    "why": "label Lego-Kopf"
+  },
+  {
+    "s": "pfeifen",
+    "at": 40.56,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "pop",
+    "at": 43.16,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 43.94,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 43.98,
+    "why": "gefolgt",
+    "db": -16
+  }
+]
