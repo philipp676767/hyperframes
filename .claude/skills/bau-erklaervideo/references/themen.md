@@ -290,7 +290,6 @@ ask for go in here.
 | 🔥 … alle Menschen gleichzeitig hochspringen?                        | Gar nichts – die Erde bewegt sich weniger als ein Atom                                          | 8 Milliarden Low-Poly-Menschen springen, LED „0,00000…“                    | harmlos                      | Erde      |
 | 🔥 … der Mond verschwindet? ⚠️ zu allgemein                          | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                     | Mond verpufft, Meer flacht ab, Nacht wird schwarz                          | unmöglich                    | Weltall   |
 | 🔥 … im Weltall weinst?                                              | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                               | Träne wächst zur wackelnden Kugel vor dem Auge                             | unmöglich                    | Weltall   |
-| 🔥 … in Treibsand fällst?                                            | Du gehst nicht unter – du bleibst ungefähr bis zur Hüfte stecken (Studie prüfen)                | Beine sinken, Sandkörner in Röntgensicht, Stopp an der Hüfte               | Hinweis, harmlos erklärt     | Natur     |
 | ★ … eine geschüttelte Cola aufmachst?                                | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                   | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
 | … vom 10-Meter-Brett springst?                                       | Du knallst mit rund 50 km/h aufs Wasser                                                         | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt                 | Hinweis „nur mit Aufsicht“   | Sport     |
 | 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                 | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
@@ -304,9 +303,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema     | Format | Datum      | Chat             |
-| --------- | ------ | ---------- | ---------------- |
-| Treibsand | B      | 2026-11-03 | Video: Treibsand |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
@@ -317,4 +315,4 @@ Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
 Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B),
 Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B),
-Fettbrand (B), Knicklicht.
+Fettbrand (B), Knicklicht, Treibsand (B).
