@@ -61,3 +61,4 @@ Umgebungen (insel, stadt, …).
 | 49  | Münze vom Hochhaus (Cent)      | B      | `tiktok/muenze`              | bankenviertel-hochhausdach  | sonnenuntergang   | 45,0 s | 2026-11-02 |
 | 50  | Katze schnurrt (Kehlkopf)      | A      | `tiktok/katze`               | altbau-wohnzimmer-regen     | regenabend        | 45,0 s | 2026-11-03 |
 | 51  | Energydrinks (24 h)            | B      | `tiktok/energydrink`         | wg-schreibtisch-nacht       | 4 uhr nachts      | 45,0 s | 2026-11-03 |
+| 52  | Kuli-Deckel (Loch)             | A      | `tiktok/kuli`                | abi-turnhalle-pruefung      | vormittag         | 45,0 s | 2026-11-03 |

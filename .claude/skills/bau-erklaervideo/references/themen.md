@@ -218,7 +218,6 @@ short format. Counts as format A in the alternation.
 
 | Detail (Hook-Frage)                                                         | Die Auflösung (nur fürs Payoff!)                                                                     | Money-Shot                                                             | Kategorie |
 | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | --------- |
-| ★ Warum hat dein Kugelschreiber-Deckel ein Loch?                            | Damit man noch Luft bekommt, wenn ein Kind ihn verschluckt (Fakten prüfen)                           | Deckel im Röntgenblick in der Luftröhre, Luft strömt durchs Loch       | Alltag    |
 | 🔥 Warum haben Flugzeugfenster ein winziges Loch? (schon „Übrigens“ in #32) | Es gleicht den Druck zwischen den Scheiben aus – die äußere trägt die Last, die mittlere ist Reserve | Drei Scheiben im Schnitt, Druckpfeile, Luft zischt durchs Loch         | Reisen    |
 | Warum steht auf Flugzeugflügeln „No Step“?                                  | Der Flügel ist dort nur dünnes Blech über Rippen – ein Fuß würde eine Delle treten (Fakten prüfen)   | Riesiger Stiefel auf dem Flügel, Blech beult ein, Röntgen zeigt Rippen | Reisen    |
 | ★ Wofür ist der kleine Pfeil an deiner Tankanzeige?                         | Er zeigt, auf welcher Seite der Tankdeckel ist                                                       | Riesige Tankanzeige, Pfeil leuchtet, Auto dreht sich zur Säule         | Auto      |
@@ -230,6 +229,7 @@ short format. Counts as format A in the alternation.
 | Warum liegen Bahngleise auf Steinen?                                        | Der Schotter verteilt das Gewicht, lässt Wasser ablaufen und hält die Schwellen fest                 | Zug rollt, Gewichtspfeile verteilen sich, Regen versickert             | Reisen    |
 | Warum ist der Rand von Münzen geriffelt?                                    | Früher feilten Leute Silber vom Rand ab – die Riffel verrieten es (Fakten prüfen)                    | Feile schabt Silber ab, Riffel verschwinden                            | Geld      |
 | Wofür sind die zwei Metallklammern an deiner Steckdose?                     | Der Schutzkontakt: Bei einem Defekt fließt der Strom dort ab statt durch dich                        | Fehlerstrom im Röntgenblick, Strom biegt in die Klammer ab             | Zuhause   |
+| ★ Wofür ist das winzige Loch unten an deinem Handy?                         | Ein Mikrofon – meist das zweite, das Störgeräusche herausrechnet (Fakten prüfen)                     | Riesiges Handy, Schall strömt ins Loch, Röntgen zeigt die Membran      | Handy     |
 
 ## Offen — Dein Look & dein Hobby (Format A)
 
@@ -304,10 +304,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                        | Format            | Datum      | Chat                  |
-| ---------------------------- | ----------------- | ---------- | --------------------- |
-| Kugelschreiber-Deckel (Loch) | A (Detail-Rätsel) | 2026-11-03 | Video: Kugelschreiber |
-| Treibsand                    | B                 | 2026-11-03 | Video: Treibsand      |
+| Thema     | Format | Datum      | Chat             |
+| --------- | ------ | ---------- | ---------------- |
+| Treibsand | B      | 2026-11-03 | Video: Treibsand |
 
 ## Verwendet
 
