@@ -307,6 +307,7 @@ ask for go in here.
 | Thema                        | Format            | Datum      | Chat                  |
 | ---------------------------- | ----------------- | ---------- | --------------------- |
 | Kugelschreiber-Deckel (Loch) | A (Detail-Rätsel) | 2026-11-03 | Video: Kugelschreiber |
+| Treibsand                    | B                 | 2026-11-03 | Video: Treibsand      |
 
 ## Verwendet
 
