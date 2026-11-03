@@ -356,12 +356,18 @@ ask in the middle; 2026-10-30 to -31 both at the end again.
 - **A new question every video** (2026-10-27): the one that fits _this_
   topic best — personal, a bit cheeky — write three, take the best, never
   repeat the previous video's line. Answerable in 1–3 words: yes/no,
-  either/or, a number, a personal detail, a photo (Zeig-Frage), or **the
+  either/or, a number, a personal detail (Zeig-Frage), or **the
   viewer's guess at the open question** ("Was glaubst du – geht sie auf?
   Tipp in die Kommentare.") whose answer only comes in the payoff — that
   one both brings comments and holds them to the end.
 - 8–12 words incl. „Schreib's in die Kommentare.“ (or „Ab in die
-  Kommentare.“, „Bild in die Kommentare.“). No "folg" in it.
+  Kommentare.“). No "folg" in it.
+- **Never ask for a photo / picture / screenshot** („Bild in die
+  Kommentare“, „Zeig mir deine …“, „Beweisfoto“; user, 2026-11-03): the
+  photos come on their own when the question touches something the
+  viewer is proud of (#36: „Gel-Nägel oder lieber normaler Lack?“ — no
+  photo request, still full of nail photos). Ask about _their_ thing,
+  that's enough.
 - **It must not sound like an ending.** Right after it the next pull — the
   mid twist or a stranger fact — so the comment question is a short stop
   on the way, not the exit. Never right after a payoff-like sentence,
@@ -386,15 +392,15 @@ calm "it's over" picture is a swipe too). Keep cutting to the end.
 
 Comment-question patterns (for the middle):
 
-| Pattern                                                                                     | Example                                                                                  |
-| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| **Zeig-Frage** (best when the viewer has something to show — #36 went viral on nail photos) | "Zeig mir deine Nägel 👇" / "Welche Haarfarbe hattest du schon? Bild in die Kommentare." |
-| **Ja / Nein**                                                                               | "Hast du einen Airfryer? Schreib's in die Kommentare."                                   |
-| **Entweder-oder**                                                                           | "Team Treppe oder Team Aufzug? Ab in die Kommentare."                                    |
-| **Test zu Hause**                                                                           | "Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's mir."                        |
-| **Zahl / Schätzung**                                                                        | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare."                               |
-| **Tipp zur offenen Frage** (answer only in the payoff)                                      | "Was glaubst du – wie viele Leute müssten ziehen? Tipp in die Kommentare."               |
-| **Nächstes Thema**                                                                          | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare."                          |
+| Pattern                                                                                                                     | Example                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Zeig-Frage** (best when the viewer has something to show — #36 went viral on nail photos; never ask for the photo itself) | "Gel-Nägel oder lieber normaler Lack?" / "Welche Haarfarbe hattest du schon?" |
+| **Ja / Nein**                                                                                                               | "Hast du einen Airfryer? Schreib's in die Kommentare."                        |
+| **Entweder-oder**                                                                                                           | "Team Treppe oder Team Aufzug? Ab in die Kommentare."                         |
+| **Test zu Hause**                                                                                                           | "Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's mir."             |
+| **Zahl / Schätzung**                                                                                                        | "Wie viele Seile hat dein Aufzug? Tipp in die Kommentare."                    |
+| **Tipp zur offenen Frage** (answer only in the payoff)                                                                      | "Was glaubst du – wie viele Leute müssten ziehen? Tipp in die Kommentare."    |
+| **Nächstes Thema**                                                                                                          | "Was soll ich als Nächstes bauen? Schreib's in die Kommentare."               |
 
 ## Delivery tags — make Jan sound alive
 
