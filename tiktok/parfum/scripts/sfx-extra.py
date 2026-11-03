@@ -1,18 +1,13 @@
-# Per-video sound effects — the topic's own sounds (popcorn popping, a smoke
-# alarm, a till drawer …), synthesized with the helpers of make-sfx.py:
-#   t_of(dur), noise(dur), sine(freq, t), svf(x, cutoff, q, mode), env(t, a, d),
-#   write(name, x, peak_db=-3), rng (seeded), np
-# Each write("name", …) becomes assets/sfx-extra/name.wav, usable in beats.js
-# SFX like a kit sound: { s: "name", at: T.x }. Names must differ from the
-# house kit (whoosh, pop, ding …). build-sfx.mjs runs this file every time.
-# A sound file the user hands over can be added with scripts/add-sfx.sh.
+# Per-video sound effects of #54 "Parfum" (helpers from make-sfx.py:
+# t_of noise sine svf env write rng np).
 
-# Example (delete or replace): a candle wick catching fire — short crackle + soft whump
-t = t_of(0.7)
-crackle = np.zeros_like(t)
-for c in rng.uniform(0.0, 0.45, 9):
-    i = int(c * 44100)
-    n = min(len(t) - i, 200)
-    crackle[i : i + n] += rng.uniform(0.4, 1.0) * np.exp(-np.arange(n) / 30)
-whump = svf(noise(0.7), 260, q=0.8, mode="lp") * env(t, 0.03, 0.18)
-write("anzuenden", svf(crackle, 3500, q=0.8, mode="hp") + 1.5 * whump)
+# The atomizer: a short pump click, then a hissing air-and-mist burst
+# (bright band-passed noise, fast attack, ~0.4 s tail) with a soft
+# "pff" body under it.
+t = t_of(0.55)
+click = np.zeros_like(t)
+n = 180
+click[:n] = np.exp(-np.arange(n) / 22) * np.sin(np.arange(n) * 2 * np.pi * 2400 / 44100)
+hiss = svf(noise(0.55), 6500, q=0.7, mode="bp") * env(t - 0.015, 0.025, 0.34)
+air = svf(noise(0.55), 1400, q=0.6, mode="bp") * env(t - 0.012, 0.02, 0.16)
+write("spruehen", 0.5 * click + 1.4 * hiss + 0.6 * air)
