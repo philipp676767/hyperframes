@@ -59,3 +59,4 @@ Umgebungen (insel, stadt, …).
 | 47  | Muskelkater (bergab)           | A      | `tiktok/muskelkater`         | alpen-abstieg-holzstufen    | spätnachmittag    | 45,0 s | 2026-11-01 |
 | 48  | Touchscreen (Wurst)            | A      | `tiktok/touchscreen`         | wien-bim-haltestelle-schnee | winterabend       | 45,0 s | 2026-11-02 |
 | 49  | Münze vom Hochhaus (Cent)      | B      | `tiktok/muenze`              | bankenviertel-hochhausdach  | sonnenuntergang   | 45,0 s | 2026-11-02 |
+| 51  | Energydrinks (24 h)            | B      | `tiktok/energydrink`         | wg-schreibtisch-nacht       | 4 uhr nachts      | 45,0 s | 2026-11-03 |
