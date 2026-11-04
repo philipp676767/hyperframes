@@ -303,8 +303,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                           | Format | Datum      | Chat                 |
+| ------------------------------- | ------ | ---------- | -------------------- |
+| Fingerknacken (Arthrose-Mythos) | B      | 2026-11-04 | Video: Fingerknacken |
 
 ## Verwendet
 
