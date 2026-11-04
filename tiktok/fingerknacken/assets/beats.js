@@ -195,13 +195,7 @@ export const shots = [
     zoom: 1,
   },
   // like in a cola: the cap flies, the fizz shoots up
-  {
-    at: T.cola,
-    from: [-4.5, 4.7, 1.0],
-    to: [-4.15, 4.8, 0.65],
-    look: [-3.0, 4.55, -1.15],
-    zoom: 1,
-  },
+  { at: T.cola, from: [-6.0, 5.8, 2.6], to: [-5.4, 5.7, 2.1], look: [-3.0, 5.2, -1.15], zoom: 1 },
   // pressure drops — the gas pops out: KNACK (slow motion into the cut)
   {
     at: T.faellt,
