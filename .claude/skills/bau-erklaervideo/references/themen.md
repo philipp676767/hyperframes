@@ -298,7 +298,6 @@ ask for go in here.
 | 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                            | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
 | ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)  | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz | harmlos, Fangbremse erwähnen | Stadt     |
 | 🔥 … auf dem Mond einen Fußball schießt?                             | Er fliegt sechsmal so weit – und landet nie im Netz, weil keine Luft ihn bremst (Fakten prüfen) | Ball fliegt in Zeitlupe über die Kraterlandschaft, Erde im Hintergrund     | unmöglich                    | Weltall   |
-| ★ … eine Woche lang kein Handy anfasst?                              | Das Gehirn sucht es weiter – Phantom-Vibrieren, dann schläfst du besser (Fakten prüfen)         | Hand greift ins Leere, Phantom-Summen, Schlafkurve steigt                  | harmlos                      | Handy     |
 
 ## Reserviert (in Arbeit)
 
@@ -306,6 +305,7 @@ ask for go in here.
 | ------------------------------- | ------ | ---------- | ------------------------ |
 | Fingerknacken (Arthrose-Mythos) | B      | 2026-11-04 | Video: Fingerknacken     |
 | Kaffeevollautomat               | A      | 2026-11-04 | Video: Kaffeevollautomat |
+| Woche ohne Handy                | B      | 2026-11-04 | Video: Handy             |
 
 ## Verwendet
 
