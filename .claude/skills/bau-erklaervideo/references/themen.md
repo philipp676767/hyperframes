@@ -301,8 +301,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                               | Format | Datum      | Chat                 |
+| --------------------------------------------------- | ------ | ---------- | -------------------- |
+| … du mit Kontaktlinsen einschläfst? (Kontaktlinsen) | B      | 2026-11-04 | Video: Kontaktlinsen |
 
 ## Verwendet
 
