@@ -300,11 +300,10 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                               | Format | Datum      | Chat                 |
-| --------------------------------------------------- | ------ | ---------- | -------------------- |
-| … du mit Kontaktlinsen einschläfst? (Kontaktlinsen) | B      | 2026-11-04 | Video: Kontaktlinsen |
-| Bluetooth-Kopfhörer (Frequenzsprung)                | A      | 2026-11-04 | Video: Kopfhörer     |
-| … du mit offenen Augen niest? (Niesen)              | B      | 2026-11-04 | Video: Niesen        |
+| Thema                                  | Format | Datum      | Chat             |
+| -------------------------------------- | ------ | ---------- | ---------------- |
+| Bluetooth-Kopfhörer (Frequenzsprung)   | A      | 2026-11-04 | Video: Kopfhörer |
+| … du mit offenen Augen niest? (Niesen) | B      | 2026-11-04 | Video: Niesen    |
 
 ## Verwendet
 
