@@ -28,20 +28,19 @@ if (hookLen) {
     );
   else console.log(`hook ends at ${hookEnd.toFixed(2)} s (≤ 3 s)`);
 }
-// house rule (2026-11-01): the comment question is its own line in the middle
-// (~15–28 s), never at the end — that is where most viewers swiped away
-const cs = ctx.window.HF_CMT_START;
+// house rule (2026-11-04): „Folge für mehr Wissen.“ is its own line in the
+// middle (~15–28 s), the comment question is the last line
+const ctaStart = ctx.window.HF_CTA_START ?? words.length;
+const fw = words.slice(0, ctaStart).find((w) => /^folg/i.test(w.w));
 if (last <= LENGTH - 3) {
   // short demo / old episode: no position check
-} else if (cs == null)
+} else if (!fw)
+  console.warn("WARNING: no „Folge für mehr Wissen.“ line in the middle of the script.");
+else if (fw.start < 12 || fw.start > 30)
   console.warn(
-    "WARNING: no comment question line (a line with „Kommentare“ before the last line).",
+    `WARNING: „Folge für mehr Wissen.“ starts at ${fw.start.toFixed(1)} s — put it at ~15–28 s.`,
   );
-else if (words[cs].start < 12 || words[cs].start > 30)
-  console.warn(
-    `WARNING: the comment question starts at ${words[cs].start.toFixed(1)} s — put it at ~15–28 s.`,
-  );
-else console.log(`comment question at ${words[cs].start.toFixed(1)} s`);
+else console.log(`follow line at ${fw.start.toFixed(1)} s`);
 // banned old-style lines (2026-11-02 / 2026-10-23)
 const spoken = words.map((w) => w.w.toLowerCase()).join(" ");
 for (const bad of ["uns bauen", "du hast gerade"])

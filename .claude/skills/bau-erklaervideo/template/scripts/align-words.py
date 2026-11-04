@@ -60,8 +60,8 @@ count = lambda l: len([t for t in l.split() if t not in ("–", ">")])
 loop = lines[-1].lstrip().startswith(">")
 loop_len = count(lines[-1]) if loop else 0
 cta_len = count(lines[-2] if loop else lines[-1])
-# The comment question has its own line in the MIDDLE of the script (since
-# 2026-11-01 — at the end it made most viewers swipe away): the first line
+# The comment question has its own line in the MIDDLE of the script (only
+# 2026-11-01 to -03; since -04 it is the last line again and this is null): the first line
 # before the CTA line that says "Kommentar…" drives the "Kommentieren" pill.
 body = lines[: len(lines) - (2 if loop else 1)]
 ci = next((i for i, l in enumerate(body) if re.search("kommentar", l, re.I)), None)
