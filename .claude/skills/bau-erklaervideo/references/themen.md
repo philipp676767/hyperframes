@@ -197,7 +197,6 @@ are always 10+ open topics per format.
 | Heizkörper-Thermostat                      | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt                   | Zuhause       | Herbst/Winter        |
 | Rolltreppe                                 | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück      | Stadt         | –                    |
 | Schnellkochtopf                            | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100           | Küche         | –                    |
-| ★ Kaffeevollautomat                        | „Deine Kaffeemaschine drückt das Wasser mit mehr Druck durchs Pulver als in deinem Autoreifen.“ (~9 bar Brühdruck, Zahl prüfen)                                 | Wasser presst durch das Kaffeepulver, Crema schäumt in Zeitlupe           | Küche         | –                    |
 | Eiswürfel                                  | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt     | Küche         | Sommer               |
 | Türklingel                                 | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe      | Zuhause       | –                    |
 | ★ Sonnencreme                              | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                                                       | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                | Beauty        | Sommer               |
@@ -303,9 +302,10 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                           | Format | Datum      | Chat                 |
-| ------------------------------- | ------ | ---------- | -------------------- |
-| Fingerknacken (Arthrose-Mythos) | B      | 2026-11-04 | Video: Fingerknacken |
+| Thema                           | Format | Datum      | Chat                     |
+| ------------------------------- | ------ | ---------- | ------------------------ |
+| Fingerknacken (Arthrose-Mythos) | B      | 2026-11-04 | Video: Fingerknacken     |
+| Kaffeevollautomat               | A      | 2026-11-04 | Video: Kaffeevollautomat |
 
 ## Verwendet
 
