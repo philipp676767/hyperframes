@@ -1,0 +1,385 @@
+[
+  {
+    "s": "hit",
+    "at": 0,
+    "why": "highlight shake"
+  },
+  {
+    "s": "knack",
+    "at": 0,
+    "why": "beats.js",
+    "db": -3
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.115,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.265,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 1.335,
+    "why": "highlight"
+  },
+  {
+    "s": "knack",
+    "at": 1.485,
+    "why": "beats.js",
+    "db": -5
+  },
+  {
+    "s": "whoosh",
+    "at": 2.52,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 3.521,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 3.891,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 4.482,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 5.002,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.056,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.901,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "knack",
+    "at": 7.121,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "knack",
+    "at": 7.301,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "knack",
+    "at": 7.461,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "knack",
+    "at": 7.671,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 7.926,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 8.601,
+    "why": "label Knochen ✓"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.997,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.047,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 11.217,
+    "why": "highlight"
+  },
+  {
+    "s": "pop",
+    "at": 11.267,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "blip",
+    "at": 12.45,
+    "why": "label Gelenk"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.802,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.901,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 16.121,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 16.171,
+    "why": "label Gelenkkapsel"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.281,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 17.501,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "rauschen",
+    "at": 17.501,
+    "why": "beats.js",
+    "dur": 1.6,
+    "db": -24
+  },
+  {
+    "s": "whoosh",
+    "at": 19.862,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 20.082,
+    "why": "comment pill"
+  },
+  {
+    "s": "hit",
+    "at": 20.232,
+    "why": "highlight shake"
+  },
+  {
+    "s": "knack",
+    "at": 20.232,
+    "why": "beats.js",
+    "db": -5
+  },
+  {
+    "s": "whoosh",
+    "at": 23.749,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 25.056,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 26.663,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 27.687,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 27.687,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.514,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.901,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 31.121,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 31.171,
+    "why": "label Gelenkschmiere"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.073,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.223,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "pop",
+    "at": 33.393,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "zisch",
+    "at": 33.443,
+    "why": "beats.js",
+    "dur": 1.2,
+    "db": -14
+  },
+  {
+    "s": "slowmo",
+    "at": 33.841,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "hit",
+    "at": 35.676,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 35.676,
+    "why": "highlight shake"
+  },
+  {
+    "s": "knack",
+    "at": 35.676,
+    "why": "beats.js",
+    "db": -2
+  },
+  {
+    "s": "punch",
+    "at": 35.726,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.553,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.812,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 40.032,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 40.032,
+    "why": "question answered"
+  },
+  {
+    "s": "knack",
+    "at": 40.132,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "whoosh",
+    "at": 42.199,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 42.419,
+    "why": "bonus fact"
+  },
+  {
+    "s": "punch",
+    "at": 43.833,
+    "why": "highlight"
+  },
+  {
+    "s": "knack",
+    "at": 43.933,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "knack",
+    "at": 44.383,
+    "why": "beats.js",
+    "db": -13
+  },
+  {
+    "s": "knack",
+    "at": 44.833,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "knack",
+    "at": 45.283,
+    "why": "beats.js",
+    "db": -13
+  },
+  {
+    "s": "whoosh",
+    "at": 45.695,
+    "why": "cut"
+  },
+  {
+    "s": "knack",
+    "at": 45.733,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "whoosh",
+    "at": 46.684,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "pop",
+    "at": 47.526,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 48.306,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 48.346,
+    "why": "gefolgt",
+    "db": -16
+  }
+]
