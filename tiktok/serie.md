@@ -64,3 +64,4 @@ Umgebungen (insel, stadt, …).
 | 52  | Kuli-Deckel (Loch)             | A      | `tiktok/kuli`                | abi-turnhalle-pruefung      | vormittag          | 45,0 s | 2026-11-03 |
 | 53  | Treibsand (Hüfte)              | B      | `tiktok/treibsand`           | dschungelfluss-sandbank     | gewitternachmittag | 45,0 s | 2026-11-03 |
 | 54  | Parfum (Nase stumm)            | A      | `tiktok/parfum`              | s-bahn-waggon-morgensonne   | früher morgen      | 45,0 s | 2026-11-03 |
+| 55  | Fingerknacken (Arthrose?)      | B      | `tiktok/fingerknacken`       | büro-20-stock-abendsonne    | spätnachmittag     | 45,0 s | 2026-11-04 |
