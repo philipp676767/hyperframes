@@ -885,7 +885,7 @@ function renderAt(t) {
   // ---------------- x-ray windows (medium shots only, ~⅓ of the runtime)
   const xr =
     smooth(ramp(t, T.sofort, T.sofort + 0.35)) * (1 - ramp(t, T.doch - 0.05, T.doch)) +
-    smooth(ramp(t, T.also, T.also + 0.3)) * (1 - ramp(t, T.espresso1 - 0.05, T.espresso1)) +
+    smooth(ramp(t, T.also, T.also + 0.3)) * (1 - ramp(t, T.folge - 0.05, T.folge)) +
     smooth(ramp(t, T.der2, T.der2 + 0.3)) * (1 - ramp(t, T.schlaegt - 0.05, T.schlaegt));
   setXray(shellMats, clamp01(xr));
   lid.material.opacity = lerp(0.75, 0.3, clamp01(xr));
@@ -930,21 +930,21 @@ function renderAt(t) {
 
   // ---------------- water: pump, heater, flow
   const pumping =
-    (t >= T.pumpe - 0.2 && t < T.espresso1) ||
+    (t >= T.pumpe - 0.2 && t < T.folge) ||
     (t >= T.der2 && t < T.kein) ||
     t < T.stell ||
     (t >= T.genau && t < T.fakt);
   pump.position.x = 0.28 + (pumping ? Math.sin(t * 120) * 0.006 : 0);
   const hot = smooth(ramp(t, T.kochendes - 0.3, T.kochendes + 0.4));
   heatMat2.emissiveIntensity =
-    (t < T.stell ? 0.6 : 1.4 * hot) * (t >= T.espresso1 && t < T.der2 ? 0.3 : 1);
+    (t < T.stell ? 0.6 : 1.4 * hot) * (t >= T.folge && t < T.der2 ? 0.3 : 1);
   heatLight.intensity = 2 * heatMat2.emissiveIntensity;
-  waterFlow(t, Math.max(pop(t, T.pumpe, T.espresso1), pop(t, T.der2, T.schlaegt)), 0.5);
+  waterFlow(t, Math.max(pop(t, T.pumpe, T.folge), pop(t, T.der2, T.schlaegt)), 0.5);
   coffeeFlow(t, Math.max(pop(t, T.oelen - 0.2, T.schlaegt), t < T.er ? 1 : 0), 0.7);
   animateArrows(
     pressArrows,
     t,
-    Math.max(pop(t, T.neun - 0.2, T.espresso1), pop(t, T.der2, T.schlaegt)),
+    Math.max(pop(t, T.neun - 0.2, T.folge), pop(t, T.der2, T.schlaegt)),
   );
 
   // gas + oil torn out of the puck (x-ray macro)
@@ -1054,10 +1054,10 @@ function renderAt(t) {
     clumps.visible = fillB > 0.2;
   }
   // ---------------- (2) trio
-  const vt = pop(t, T.espresso1 - 0.1, T.rate - 0.12);
+  const vt = 0; // trio unused since the CTA swap (2026-11-04)
   trio.visible = vt > 0.01;
   if (trio.visible) {
-    trioEsp.group.scale.copy(squash(t, T.espresso1, 0.6, 1.5));
+    trioEsp.group.scale.copy(squash(t, T.folge, 0.6, 1.5));
     capp.scale.copy(squash(t, T.cappuccino, 0.6));
     latte.scale.copy(squash(t, T.hafer, 0.6));
   }
@@ -1126,7 +1126,7 @@ function renderAt(t) {
   diverBubbles.instanceMatrix.needsUpdate = true;
 
   // ---------------- HUD + LED
-  gauge("bar", pop(t, T.kochendes - 0.3, T.espresso1), {
+  gauge("bar", pop(t, T.kochendes - 0.3, T.folge), {
     label: "Brühdruck",
     value: Math.round(9 * smooth(ramp(t, T.kochendes - 0.2, T.neun + 0.15)) * 10) / 10,
     max: 15,

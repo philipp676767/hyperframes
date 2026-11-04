@@ -26,7 +26,7 @@ export const T = {
   pumpe: W("Pumpe"),
   kochendes: W("kochendes"),
   neun: W("neun"),
-  espresso1: W("Espresso", 1),
+  cmt: W("Espresso", 2),
   cappuccino: W("Cappuccino"),
   hafer: W("Hafer-Latte"),
   kommentare: W("Kommentare"),
@@ -120,15 +120,8 @@ export const shots = [
     look: [0, 1.25, 0.05],
     zoom: 1.3,
   },
-  // comment question: three cups
-  {
-    at: T.espresso1,
-    rel: SPOT_A,
-    from: [0.6, 1.45, 3.0],
-    to: [0.45, 1.25, 2.6],
-    look: [0.15, 0.3, 0],
-    zoom: 1.85,
-  },
+  // follow line: the whole machine, solid again
+  { at: T.folge, from: [-2.0, 2.1, 3.4], to: [-1.5, 1.8, 2.8], look: [0, 1.45, 0.3], zoom: 1.65 },
   // rate mal: a diver sinking (camera follows him)
   {
     at: T.rate - 0.12,
@@ -217,10 +210,7 @@ export const SFX = [
   { s: "rauschen", at: T.wasser1 - 0.1, dur: 1.2, db: -18 }, // kettle pours
   { s: "boing", at: T.gibt + 0.15, db: -12 },
   { s: "klack", at: T.quetscht + 0.25 },
-  { s: "brumm", at: T.pumpe - 0.2, dur: T.espresso1 - T.pumpe, db: -17 },
-  { s: "pop", at: T.espresso1 + 0.05 },
-  { s: "pop", at: T.cappuccino + 0.05 },
-  { s: "pop", at: T.hafer + 0.05 },
+  { s: "brumm", at: T.pumpe - 0.2, dur: T.folge - T.pumpe, db: -17 },
   { s: "rauschen", at: T.rate - 0.1, dur: 2.8, db: -20 }, // under water
   { s: "brumm", at: T.der2, dur: 2.0, db: -19 },
   { s: "plaetschern", at: T.schlaegt + 0.1, db: -12 },
