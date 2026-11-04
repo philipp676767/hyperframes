@@ -301,10 +301,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema             | Format | Datum      | Chat                     |
-| ----------------- | ------ | ---------- | ------------------------ |
-| Kaffeevollautomat | A      | 2026-11-04 | Video: Kaffeevollautomat |
-| Woche ohne Handy  | B      | 2026-11-04 | Video: Handy             |
+| Thema            | Format | Datum      | Chat         |
+| ---------------- | ------ | ---------- | ------------ |
+| Woche ohne Handy | B      | 2026-11-04 | Video: Handy |
 
 ## Verwendet
 
