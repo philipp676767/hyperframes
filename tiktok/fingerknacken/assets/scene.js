@@ -484,7 +484,7 @@ function jointAt(t) {
     gap = 0.35 + 0.95 * lit * (1 - back);
     bub = 0.66 * outBack(lit) * (1 - back);
     cap = smooth(ramp(t, T.beutel, T.beutel + 0.6));
-    pull = smooth(ramp(t, T.ziehst + 0.1, T.platz + 0.4));
+    pull = smooth(ramp(t, T.ziehst + 0.05, T.ziehst + 0.85));
     gap += pull * 1.05;
   } else if (t < T.cola) {
     // visit 2: the bubble hangs in the joint, slowly dissolving

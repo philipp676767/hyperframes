@@ -271,7 +271,7 @@ export const HIGHLIGHTS = [
   { kind: "shake", at: T.cracks[2], dur: 0.35, amp: 0.6 },
   { kind: "flash", at: T.zwanzig },
   { kind: "zoom", at: T.cap, amount: 0.3 },
-  { kind: "slowmo", at: T.faellt, until: T.arthrose2, speed: 0.5 },
+  { kind: "slowmo", at: T.pop, until: T.arthrose2, speed: 0.4 },
   { kind: "flash", at: T.pop },
   { kind: "shake", at: T.pop, dur: 0.6, amp: 1.0 },
   { kind: "zoom", at: T.harmlos, amount: 0.3 },

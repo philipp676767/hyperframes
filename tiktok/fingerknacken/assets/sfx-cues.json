@@ -17,368 +17,373 @@
   },
   {
     "s": "whoosh",
-    "at": 1.115,
+    "at": 0.6,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 1.265,
+    "at": 0.75,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 1.335,
+    "at": 0.82,
     "why": "highlight"
   },
   {
     "s": "knack",
-    "at": 1.485,
+    "at": 0.97,
     "why": "beats.js",
     "db": -5
   },
   {
     "s": "whoosh",
-    "at": 2.52,
+    "at": 2.36,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 3.521,
+    "at": 3.4,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 3.891,
+    "at": 3.77,
     "why": "beats.js",
     "db": -8
   },
   {
     "s": "whoosh",
-    "at": 4.482,
+    "at": 4.52,
     "why": "cut"
   },
   {
     "s": "hit",
-    "at": 5.002,
+    "at": 5.04,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 6.056,
+    "at": 6.12,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 6.901,
+    "at": 6.97,
     "why": "highlight zoom"
   },
   {
     "s": "knack",
-    "at": 7.121,
+    "at": 7.19,
     "why": "beats.js",
     "db": -9
   },
   {
     "s": "knack",
-    "at": 7.301,
+    "at": 7.37,
     "why": "beats.js",
     "db": -11
   },
   {
     "s": "knack",
-    "at": 7.461,
+    "at": 7.53,
     "why": "beats.js",
     "db": -10
   },
   {
     "s": "knack",
-    "at": 7.671,
+    "at": 7.74,
     "why": "beats.js",
     "db": -12
   },
   {
     "s": "whoosh",
-    "at": 7.926,
+    "at": 7.92,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 8.601,
+    "at": 8.55,
     "why": "label Knochen ✓"
   },
   {
     "s": "whoosh",
-    "at": 10.997,
+    "at": 10.52,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 11.047,
+    "at": 10.57,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 11.217,
+    "at": 10.74,
     "why": "highlight"
   },
   {
     "s": "pop",
-    "at": 11.267,
+    "at": 10.79,
     "why": "beats.js",
     "db": -6
   },
   {
     "s": "blip",
-    "at": 12.45,
+    "at": 12.09,
     "why": "label Gelenk"
   },
   {
     "s": "whoosh",
-    "at": 12.802,
+    "at": 12.36,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 15.901,
+    "at": 15.02,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 16.121,
+    "at": 15.24,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 16.171,
+    "at": 15.29,
     "why": "label Gelenkkapsel"
   },
   {
     "s": "whoosh",
-    "at": 17.281,
+    "at": 16.3,
     "why": "cut"
   },
   {
     "s": "slowmo",
-    "at": 17.501,
+    "at": 16.52,
     "why": "highlight slowmo"
   },
   {
     "s": "rauschen",
-    "at": 17.501,
+    "at": 16.52,
     "why": "beats.js",
     "dur": 1.6,
     "db": -24
   },
   {
     "s": "whoosh",
-    "at": 19.862,
+    "at": 18.42,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 20.082,
+    "at": 18.64,
     "why": "comment pill"
   },
   {
     "s": "hit",
-    "at": 20.232,
+    "at": 18.79,
     "why": "highlight shake"
   },
   {
     "s": "knack",
-    "at": 20.232,
+    "at": 18.79,
     "why": "beats.js",
     "db": -5
   },
   {
     "s": "whoosh",
-    "at": 23.749,
+    "at": 21.64,
     "why": "cut"
   },
   {
     "s": "klack",
-    "at": 25.056,
+    "at": 22.82,
     "why": "beats.js",
     "db": -10
   },
   {
     "s": "whoosh",
-    "at": 26.663,
+    "at": 24.26,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 27.687,
+    "at": 25.02,
     "why": "highlight"
   },
   {
     "s": "hit",
-    "at": 27.687,
+    "at": 25.02,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 28.514,
+    "at": 26.16,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 30.901,
+    "at": 27.88,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 31.121,
+    "at": 28.1,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 31.171,
+    "at": 28.15,
     "why": "label Gelenkschmiere"
   },
   {
     "s": "whoosh",
-    "at": 33.073,
+    "at": 29.92,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 33.223,
+    "at": 30.07,
     "why": "highlight zoom"
   },
   {
     "s": "pop",
-    "at": 33.393,
+    "at": 30.24,
     "why": "beats.js",
     "db": -6
   },
   {
     "s": "zisch",
-    "at": 33.443,
+    "at": 30.29,
     "why": "beats.js",
     "dur": 1.2,
     "db": -14
   },
   {
     "s": "slowmo",
-    "at": 33.841,
+    "at": 32.27,
     "why": "highlight slowmo"
   },
   {
     "s": "hit",
-    "at": 35.676,
+    "at": 32.27,
     "why": "highlight flash"
   },
   {
     "s": "hit",
-    "at": 35.676,
+    "at": 32.27,
     "why": "highlight shake"
   },
   {
     "s": "knack",
-    "at": 35.676,
+    "at": 32.27,
     "why": "beats.js",
     "db": -2
   },
   {
     "s": "punch",
-    "at": 35.726,
+    "at": 32.32,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 36.553,
+    "at": 32.88,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 39.812,
+    "at": 35.1,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 35.76,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 40.032,
+    "at": 35.98,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 40.032,
+    "at": 35.98,
     "why": "question answered"
   },
   {
     "s": "knack",
-    "at": 40.132,
+    "at": 36.08,
     "why": "beats.js",
     "db": -6
   },
   {
     "s": "whoosh",
-    "at": 42.199,
+    "at": 38.46,
     "why": "cut"
   },
   {
     "s": "wow",
-    "at": 42.419,
+    "at": 38.68,
     "why": "bonus fact"
   },
   {
     "s": "punch",
-    "at": 43.833,
+    "at": 40.26,
     "why": "highlight"
   },
   {
     "s": "knack",
-    "at": 43.933,
+    "at": 40.36,
     "why": "beats.js",
     "db": -11
   },
   {
     "s": "knack",
-    "at": 44.383,
+    "at": 40.81,
     "why": "beats.js",
     "db": -13
   },
   {
     "s": "knack",
-    "at": 44.833,
+    "at": 41.26,
     "why": "beats.js",
     "db": -11
   },
   {
     "s": "knack",
-    "at": 45.283,
+    "at": 41.71,
     "why": "beats.js",
     "db": -13
   },
   {
     "s": "whoosh",
-    "at": 45.695,
+    "at": 41.96,
     "why": "cut"
   },
   {
     "s": "knack",
-    "at": 45.733,
+    "at": 42.16,
     "why": "beats.js",
     "db": -11
   },
   {
     "s": "whoosh",
-    "at": 46.684,
+    "at": 42.7,
     "why": "highlight zoom"
   },
   {
     "s": "pop",
-    "at": 47.526,
+    "at": 43.52,
     "why": "follow pill"
   },
   {
     "s": "click",
-    "at": 48.306,
+    "at": 44.3,
     "why": "follow tap"
   },
   {
     "s": "ding",
-    "at": 48.346,
+    "at": 44.34,
     "why": "gefolgt",
     "db": -16
   }
