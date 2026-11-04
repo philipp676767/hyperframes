@@ -1,0 +1,384 @@
+[
+  {
+    "s": "spruehen",
+    "at": 0,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.08,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 0.7,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.02,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 1.29,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.24,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 5,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.24,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "pop",
+    "at": 6.36,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "punch",
+    "at": 6.46,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.84,
+    "why": "cut"
+  },
+  {
+    "s": "spruehen",
+    "at": 7.11,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 8.66,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.66,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 8.88,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.48,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.9,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 11.17,
+    "why": "label Pore"
+  },
+  {
+    "s": "punch",
+    "at": 12.44,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 12.44,
+    "why": "highlight flash"
+  },
+  {
+    "s": "blip",
+    "at": 12.49,
+    "why": "label Aluminiumsalz"
+  },
+  {
+    "s": "whoosh",
+    "at": 13.44,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.88,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 15.1,
+    "why": "highlight"
+  },
+  {
+    "s": "slowmo",
+    "at": 15.1,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "pop",
+    "at": 15.15,
+    "why": "beats.js"
+  },
+  {
+    "s": "hit",
+    "at": 15.22,
+    "why": "highlight shake"
+  },
+  {
+    "s": "blip",
+    "at": 15.65,
+    "why": "label Pfropfen"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.02,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.7,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 17.92,
+    "why": "follow pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 19,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 19,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 19.04,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 19.9,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.46,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 21.36,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 21.58,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 21.68,
+    "why": "label Bakterien"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.68,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 23.4,
+    "why": "highlight shake"
+  },
+  {
+    "s": "boing",
+    "at": 23.45,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 23.92,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.26,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 27.62,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 27.72,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "rauschen",
+    "at": 27.89,
+    "why": "beats.js",
+    "dur": 1.8199999999999996,
+    "db": -15
+  },
+  {
+    "s": "whoosh",
+    "at": 29.24,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 29.82,
+    "why": "beats.js",
+    "dur": 1,
+    "db": -15
+  },
+  {
+    "s": "punch",
+    "at": 31.2,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 31.2,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 31.2,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.6,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 32.87,
+    "why": "label Schweißdrüse"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.2,
+    "why": "cut"
+  },
+  {
+    "s": "spruehen",
+    "at": 33.92,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 34,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 34.22,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 34.22,
+    "why": "question answered"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.92,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 35.14,
+    "why": "beats.js",
+    "dur": 1.8599999999999994,
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 36.78,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 37,
+    "why": "bonus fact"
+  },
+  {
+    "s": "punch",
+    "at": 37.68,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 37.68,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.52,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 39.89,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 40.8,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 41.2,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 41.5,
+    "why": "comment pill"
+  },
+  {
+    "s": "pop",
+    "at": 41.55,
+    "why": "beats.js"
+  },
+  {
+    "s": "pop",
+    "at": 42.17,
+    "why": "beats.js"
+  },
+  {
+    "s": "pop",
+    "at": 42.73,
+    "why": "beats.js"
+  }
+]
