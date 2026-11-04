@@ -66,3 +66,4 @@ Umgebungen (insel, stadt, …).
 | 54  | Parfum (Nase stumm)            | A      | `tiktok/parfum`              | s-bahn-waggon-morgensonne   | früher morgen      | 45,0 s | 2026-11-03 |
 | 55  | Fingerknacken (Arthrose?)      | B      | `tiktok/fingerknacken`       | büro-20-stock-abendsonne    | spätnachmittag     | 45,0 s | 2026-11-04 |
 | 56  | Kaffeevollautomat (Crema)      | A      | `tiktok/kaffeevollautomat`   | buero-teekueche-skyline     | montagmorgen       | 45,0 s | 2026-11-04 |
+| 57  | Woche ohne Handy (Phantom)     | B      | `tiktok/handy-weg`           | bergsee-steg-detoxhuette    | herbstmorgen       | 45,0 s | 2026-11-04 |
