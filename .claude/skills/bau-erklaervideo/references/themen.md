@@ -243,17 +243,18 @@ don't flood:** about every third video at most, and alternate between
 topics for women, men and everyone (the audience is 51 % women, 45 %
 men).
 
-| Thema                         | Hook (≤ 9 Wörter)                                                               | Zeig-Frage (Kommentar)             | Money-Shot                                                      |
-| ----------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- | --------------------------------------------------------------- |
-| ★ Selbstbräuner               | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)                  | „Schon mal orange geworden?“       | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun    |
-| ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)                | „Natur oder geliftet?“             | Bindungen im Haar knacken auf, Form, neu verknüpft              |
-| ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                                  | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                 |
-| ★ Latte Art / Milchschaum     | „Dein Milchschaum hält nur dank Eiweiß-Käfigen.“                                | „Hafer- oder Kuhmilch?“            | Eiweiß legt sich um Luftblasen, Herz wird gegossen              |
-| ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen         |
-| ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)               | „Wäschst du dein Auto selbst?“     | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt    |
-| ★ Hundenase                   | „Die Nase deines Hundes ist ein Fingerabdruck.“ (Fakten prüfen)                 | „Wie heißt dein Hund?“             | Riesige Hundenase, Rillenmuster leuchtet, Duftmoleküle strömen  |
-| ★ Gelnägel ablösen            | „Aceton frisst deine Gelnägel nicht – es lässt sie aufquellen.“ (Fakten prüfen) | „Team Gel oder Acryl?“             | Lösungsmittel kriecht ins Gel, Netz quillt auf, Schicht hebt ab |
-| ★ Protein-Shake               | „Dein Körper zerlegt dein Shake-Eiweiß komplett.“ (Fakten prüfen)               | „Welcher Shake ist deiner?“        | Eiweißketten zerfallen in Bausteine, wandern in den Muskel      |
+| Thema                         | Hook (≤ 9 Wörter)                                                               | Zeig-Frage (Kommentar)             | Money-Shot                                                       |
+| ----------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------- |
+| ★ Selbstbräuner               | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)                  | „Schon mal orange geworden?“       | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun     |
+| ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)                | „Natur oder geliftet?“             | Bindungen im Haar knacken auf, Form, neu verknüpft               |
+| ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                                  | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                  |
+| ★ Latte Art / Milchschaum     | „Dein Milchschaum hält nur dank Eiweiß-Käfigen.“                                | „Hafer- oder Kuhmilch?“            | Eiweiß legt sich um Luftblasen, Herz wird gegossen               |
+| ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen          |
+| ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)               | „Wäschst du dein Auto selbst?“     | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt     |
+| ★ Hundenase                   | „Die Nase deines Hundes ist ein Fingerabdruck.“ (Fakten prüfen)                 | „Wie heißt dein Hund?“             | Riesige Hundenase, Rillenmuster leuchtet, Duftmoleküle strömen   |
+| ★ Gelnägel ablösen            | „Aceton frisst deine Gelnägel nicht – es lässt sie aufquellen.“ (Fakten prüfen) | „Team Gel oder Acryl?“             | Lösungsmittel kriecht ins Gel, Netz quillt auf, Schicht hebt ab  |
+| ★ Protein-Shake               | „Dein Körper zerlegt dein Shake-Eiweiß komplett.“ (Fakten prüfen)               | „Welcher Shake ist deiner?“        | Eiweißketten zerfallen in Bausteine, wandern in den Muskel       |
+| ★ Trockenshampoo              | „Trockenshampoo wäscht nichts – es saugt dein Fett auf.“ (Fakten prüfen)        | „Wie oft wäschst du deine Haare?“  | Stärke-Körnchen saugen Talg vom Haar, Strähne wird wieder locker |
 
 ## Offen — Format B „Was passiert, wenn …?“
 
@@ -300,9 +301,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                 | Format | Datum      | Chat       |
-| --------------------- | ------ | ---------- | ---------- |
-| Deo (Antitranspirant) | A      | 2026-11-04 | Video: Deo |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
