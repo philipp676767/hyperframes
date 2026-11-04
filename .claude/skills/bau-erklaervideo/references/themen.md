@@ -200,7 +200,6 @@ are always 10+ open topics per format.
 | Eiswürfel                                  | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt     | Küche         | Sommer               |
 | Türklingel                                 | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe      | Zuhause       | –                    |
 | ★ Sonnencreme                              | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                                                       | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                | Beauty        | Sommer               |
-| ★ Bluetooth-Kopfhörer                      | „Deine Kopfhörer springen 1.600-mal pro Sekunde den Funkkanal.“ (Frequenzsprung, Zahl prüfen)                                                                   | Funkwellen hüpfen zwischen Kanälen, Störer wird umgangen                  | Handy         | –                    |
 | Wasserkocher                               | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus          | Küche         | –                    |
 
 ## Offen — Detail-Rätsel (Format A)
@@ -304,6 +303,7 @@ ask for go in here.
 | Thema                                               | Format | Datum      | Chat                 |
 | --------------------------------------------------- | ------ | ---------- | -------------------- |
 | … du mit Kontaktlinsen einschläfst? (Kontaktlinsen) | B      | 2026-11-04 | Video: Kontaktlinsen |
+| Bluetooth-Kopfhörer (Frequenzsprung)                | A      | 2026-11-04 | Video: Kopfhörer     |
 
 ## Verwendet
 
