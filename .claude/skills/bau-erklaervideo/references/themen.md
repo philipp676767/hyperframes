@@ -300,9 +300,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                      | Format | Datum      | Chat                |
-| -------------------------- | ------ | ---------- | ------------------- |
-| Sneaker-Sohle (Luftkissen) | A      | 2026-11-05 | TikTok #62: Sneaker |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
