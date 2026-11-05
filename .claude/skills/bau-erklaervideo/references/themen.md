@@ -300,9 +300,10 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                  | Format | Datum      | Chat          |
-| -------------------------------------- | ------ | ---------- | ------------- |
-| … du mit offenen Augen niest? (Niesen) | B      | 2026-11-04 | Video: Niesen |
+| Thema                                  | Format | Datum      | Chat           |
+| -------------------------------------- | ------ | ---------- | -------------- |
+| … du mit offenen Augen niest? (Niesen) | B      | 2026-11-04 | Video: Niesen  |
+| Sneaker-Sohle (Luftkissen)             | A      | 2026-11-05 | Video: Sneaker |
 
 ## Verwendet
 
