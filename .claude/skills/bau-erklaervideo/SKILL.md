@@ -79,23 +79,29 @@ idea, money shot and two alternatives. On "ok": reserve it in
 go on. If the user names a topic, take theirs — but still run the check
 and say so if it was done before.
 
-### 0a. Name the chat — "Video: <Thema>"
+### 0a. Name the chat — "TikTok #<Nr>: <Thema>"
 
-The user wants every video chat named the same way (Einheit): **`Video:
-<Thema in einem Wort>`**, e.g. `Video: Kühlschrank`, `Video: Mikrowelle`,
-`Video: Tesla` (for "Fliegender Tesla" pick the one word people search
-for). German noun, capitalised, umlauts written out as ä/ö/ü. As soon as
-the topic is known — before the script — rename the chat:
+The user wants every video chat named the same way (2026-11-05):
+**`TikTok #<Nr>: <Thema>`**, e.g. `TikTok #48: Touchscreen`,
+`TikTok #24: Erde hört auf, sich zu drehen`. Thema = the short name
+people search for (1–4 words, German, umlauts as ä/ö/ü). **Nr** = the
+episode number: the highest `#` in `tiktok/serie.md` + 1, plus one for
+every older row of the **Reserviert** table in `themen.md` that is not in
+`serie.md` yet (parallel chats). Put the same title in the `Chat` column
+of your reservation. As soon as the topic is reserved — before the
+script — rename the chat:
 
 - If `set_session_title` is available (claude-code-remote tools; check
   with ToolSearch `select:mcp__claude-code-remote__get_session,mcp__claude-code-remote__set_session_title`):
   `get_session` without `session_id` gives this chat's id, then
   `set_session_title` with that id and the title.
-- Most video chats **don't** have that tool. Then the very first line of
-  your first reply is: **„Bitte benenne diesen Chat in „Video: <Thema>“
-  um.“** — exactly that title, so the user can copy it.
+- Without that tool, the very first line of your reply is: **„Bitte
+  benenne diesen Chat in „TikTok #<Nr>: <Thema>“ um.“** — exactly that
+  title, so the user can copy it.
 
-If the topic changes, rename again.
+When you append the episode to `serie.md` at the end and its number
+turned out different (another chat finished first), rename again. If the
+topic changes, rename again.
 
 ### 0b. Read the learning log first
 
