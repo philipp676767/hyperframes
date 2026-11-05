@@ -70,3 +70,4 @@ Umgebungen (insel, stadt, …).
 | 58  | Deo (abends auftragen)         | A      | `tiktok/deo`                 | achsel-landschaft-riesig    | morgen → nacht     | 45,0 s | 2026-11-04 |
 | 59  | Kontaktlinsen (eingeschlafen)  | B      | `tiktok/kontaktlinsen`       | schlafzimmer-kissenhoehe    | nacht, mondlicht   | 45,0 s | 2026-11-04 |
 | 60  | Bluetooth-Kopfhörer (Sprung)   | A      | `tiktok/kopfhoerer`          | keller-gym-spiegelwand      | montagabend        | 45,0 s | 2026-11-04 |
+| 61  | Niesen (offene Augen)          | B      | `tiktok/niesen`              | blumenwiese-picknick        | goldener morgen    | 45,0 s | 2026-11-05 |
