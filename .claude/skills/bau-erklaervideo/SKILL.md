@@ -31,6 +31,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Ending       | **No loop** (2026-10-24), **no outro** (2026-11-01): the video ends ~0.7 s after the comment question — no calm drone pull-back, no `> …` line, no cut back to frame 0                                                                                                                                                                                                                                                                                                                                                                               |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Beschreibung | **Every video gets a TikTok description** (step 6c): a keyword line **≤ 60 characters, strongest search words first, one emoji at the end, no dash** + **3–5 hashtags that fit the topic and are really watched** (topic tag first; never `#fyp`, `#viral`, `#lernenmittiktok`); saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                      |
+| YouTube      | **Every video is also posted as a YouTube Short** (2026-11-05, step 6d): `tiktok/<slug>/youtube.txt` with title (40–60 characters, keywords first), description (+ „Folge für mehr Wissen.“ + 3–5 hashtags incl. `#shorts`), tags, and the upload settings (not for kids, synthetic content: yes, category Bildung …), sent with the video like the TikTok description                                                                                                                                                                               |
 | Serienformat | **Always alternating A „Bauen“ ↔ B „Was passiert, wenn …?“** (user's rule, 2026-10-23) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                                                                                                                                               |
 | Payoff       | The hook's question answered in one punchy line (the on-screen question fades out). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                                                                                                                                            |
@@ -457,18 +458,85 @@ Geldautomat erkennt Falschgeld in 1 Sekunde 💶
 #geldautomat #falschgeld #technik #wissen
 ```
 
-### 6d. Ask for the numbers — learning log
+### 6d. YouTube Shorts — upload details, every video
+
+The user also posts every video as a **YouTube Short** (2026-11-05). So
+every finished video gets, next to `beschreibung.txt`, a
+**`tiktok/<slug>/youtube.txt`** with all the fields YouTube asks for,
+and it goes **into the delivery message as copy-paste blocks**, right
+after the TikTok description. The same video file and `cover.png` are
+used (9:16, 45 s, so YouTube files it as a Short on its own).
+
+Fields, in the order YouTube asks for them:
+
+1. **Titel** (required, max 100 characters; **aim for 40–60**, phones cut
+   it off around 50): the most-searched words first, then the hook as a
+   curiosity gap, German, max one emoji at the end, no hashtags in the
+   title, no clickbait the video doesn't answer. Unlike TikTok, YouTube
+   search leans hard on the title, so it must name the thing exactly
+   ("Warum Flugzeugtüren im Flug nicht aufgehen ✈️",
+   "Taschenwärmer: Warum flüssiges Salz heiß wird").
+2. **Beschreibung** (max 5,000 characters; only the first ~100 show
+   before "mehr"):
+   - Line 1–2: one or two plain sentences with the main keywords and what
+     the video answers (no spoiler of the payoff).
+   - Line 3: „Folge für mehr Wissen.“ (the channel's ask, same wording).
+   - Last line: **3–5 hashtags**, the topic tags of `beschreibung.txt`
+     plus `#shorts` (YouTube shows the first 3 above the title; more
+     than 15 makes YouTube ignore all of them). Same never-list as TikTok
+     (no `#fyp`, `#viral` …).
+3. **Tags** (optional, max 500 characters in total): 6–10 comma-separated
+   search words: the thing's names and spellings, common misspellings
+   and English names when people search them ("taschenwärmer,
+   taschenwaermer, handwärmer, natriumacetat, hand warmer"). YouTube
+   says tags matter little — keep them quick.
+4. **Titelbild**: `cover.png` if the upload screen offers a custom
+   thumbnail, else pick the frame with the hook title (~0.5 s).
+5. **Playlist**: „Du hast gerade X gebaut“ for format A, „Was passiert,
+   wenn …?“ for format B (create once if missing).
+6. **Zielgruppe**: „Nein, nicht speziell für Kinder“ (required question —
+   our videos are for 18–34; "made for kids" would switch off comments).
+7. **Altersbeschränkung**: nein.
+8. **Bezahlte Werbung**: nein (tick only if a brand paid for it).
+9. **Veränderte oder synthetische Inhalte**: **ja** — the voice is
+   AI-generated (ElevenLabs) and narrates like a real person; for
+   animated, clearly unreal pictures YouTube only shows the note in the
+   expanded description, so it costs nothing and keeps the channel safe.
+10. **Sprache**: Deutsch (video language and title/description language).
+11. **Kategorie**: Bildung.
+12. **Kommentare**: an, sorted by „Top“; **Remixen**: erlauben.
+13. **Sichtbarkeit**: Öffentlich (or a time if the user wants to post later).
+
+Format of `youtube.txt` (the same blocks go into the message):
+
+```text
+TITEL
+Warum Flugzeugtüren im Flug nicht aufgehen ✈️
+
+BESCHREIBUNG
+Kann man die Flugzeugtür mitten im Flug öffnen? Hier siehst du, welche Kraft sie in 10 km Höhe zuhält.
+Folge für mehr Wissen.
+#flugzeug #fliegen #physik #wissen #shorts
+
+TAGS
+flugzeugtür, flugzeug tür öffnen, notausgang flugzeug, kabinendruck, plug door, airplane door
+
+EINSTELLUNGEN
+Titelbild: cover.png · Playlist: Was passiert, wenn …? · Nicht für Kinder · Altersbeschränkung: nein · Bezahlte Werbung: nein · Synthetische Inhalte: ja · Sprache: Deutsch · Kategorie: Bildung · Kommentare: an · Remixen: erlauben · Öffentlich
+```
+
+### 6e. Ask for the numbers — learning log
 
 In the delivery message ask the user to tell you, 1–2 days after posting:
 views, average watch time / % watched to the end, likes, comments, and
-any feedback they got. When they do, add the episode to
+any feedback they got — for TikTok and, when posted, for YouTube Shorts. When they do, add the episode to
 `tiktok/lernlog.md` (numbers, what worked, what didn't, and **one**
 concrete "Nächstes Mal" item), turn lasting lessons into rules in this
 skill, and commit both on `main`.
 
 ### 7. Save — always on `main`
 
-Commit `tiktok/<slug>/` (incl. `cover.png` and `beschreibung.txt`) and `tiktok/serie.md` **directly on `main`**
+Commit `tiktok/<slug>/` (incl. `cover.png`, `beschreibung.txt` and `youtube.txt`) and `tiktok/serie.md` **directly on `main`**
 (`git pull origin main` first) and push. Same for any change to this
 skill. Other chats start on `main`: an episode or skill change left on a
 side branch is invisible to them (the music bed once sat on a branch for
