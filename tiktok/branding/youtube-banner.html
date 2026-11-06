@@ -1,0 +1,576 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #000;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: 800;
+        src: url("../../.claude/skills/bau-erklaervideo/template/assets/fonts/montserrat-800.woff2")
+          format("woff2");
+      }
+      #wrap {
+        position: relative;
+        width: 2560px;
+        height: 1440px;
+        overflow: hidden;
+      }
+      canvas {
+        display: block;
+        width: 2560px;
+        height: 1440px;
+      }
+      /* YouTube safe area: 1546 x 423, centred (x 507-2053, y 508-931) —
+         name and text stay inside it, the rest only shows on TV / desktop */
+      #text {
+        position: absolute;
+        left: 1000px;
+        top: 508px;
+        width: 1030px;
+        height: 423px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        color: #fff;
+        -webkit-text-stroke: 14px rgba(40, 20, 50, 0.75);
+        paint-order: stroke fill;
+        text-shadow: 0 10px 30px rgba(60, 20, 60, 0.35);
+      }
+      #name {
+        font-size: 150px;
+        line-height: 1;
+        letter-spacing: -4px;
+        text-transform: uppercase;
+      }
+      #name em {
+        font-style: normal;
+        color: #ffd23f;
+      }
+      #tag {
+        margin-top: 22px;
+        font-size: 58px;
+        line-height: 1.1;
+        -webkit-text-stroke: 10px rgba(40, 20, 50, 0.7);
+      }
+      #pill {
+        align-self: flex-start;
+        margin-top: 26px;
+        padding: 14px 34px;
+        border-radius: 999px;
+        background: #ffd23f;
+        color: #2a1a30;
+        font-size: 40px;
+        -webkit-text-stroke: 0;
+        text-shadow: none;
+        box-shadow: 0 10px 28px rgba(60, 20, 60, 0.3);
+      }
+      #guide {
+        position: absolute;
+        left: 507px;
+        top: 508px;
+        width: 1546px;
+        height: 423px;
+        outline: 4px dashed #00e0ff;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <canvas id="c"></canvas>
+      <div id="text">
+        <div id="name">Erklär<em>bär</em></div>
+        <div id="tag">Wie Alltagsdinge wirklich funktionieren</div>
+        <div id="pill">Jeden Tag neue Shorts</div>
+      </div>
+      <div id="guide"></div>
+    </div>
+    <script type="module">
+      import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
+
+      // YouTube banner: 2560 x 1440 (16:9); ?guide shows the safe area
+      const W = 2560;
+      const H = 1440;
+      if (location.search.includes("guide"))
+        document.getElementById("guide").style.display = "block";
+      const canvas = document.getElementById("c");
+      const renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        preserveDrawingBuffer: true,
+      });
+      renderer.setPixelRatio(1);
+      renderer.setSize(W, H, false);
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(30, W / H, 0.1, 800);
+      camera.position.set(0.0, 0.8, 27);
+      camera.lookAt(0, 0.8, 0);
+
+      const V = (x, y, z) => new THREE.Vector3(x, y, z);
+      function jitter(geom, amt, seed = 1) {
+        const p = geom.attributes.position;
+        for (let i = 0; i < p.count; i++) {
+          const x = p.getX(i),
+            y = p.getY(i),
+            z = p.getZ(i);
+          const h = (k) => {
+            const s =
+              Math.sin(
+                Math.round(x * 100) * 12.9898 +
+                  Math.round(y * 100) * 78.233 +
+                  Math.round(z * 100) * 37.719 +
+                  k * 11.1 +
+                  seed,
+              ) * 43758.5453;
+            return (s - Math.floor(s)) * 2 - 1;
+          };
+          p.setXYZ(i, x + h(1) * amt, y + h(2) * amt, z + h(3) * amt);
+        }
+        geom.computeVertexNormals();
+        return geom;
+      }
+      const flat = (color, extra = {}) =>
+        new THREE.MeshStandardMaterial({ color, flatShading: true, roughness: 0.8, ...extra });
+      const mesh = (geo, mat, x = 0, y = 0, z = 0, parent = scene) => {
+        const m = new THREE.Mesh(geo, mat);
+        m.position.set(x, y, z);
+        m.castShadow = true;
+        m.receiveShadow = true;
+        parent.add(m);
+        return m;
+      };
+
+      // ---- sunset sky (same palette as the videos), sun glow behind the head
+      const sunDir = V(0.0, 0.32, -1).normalize();
+      scene.add(
+        new THREE.Mesh(
+          new THREE.SphereGeometry(300, 48, 24),
+          new THREE.ShaderMaterial({
+            side: THREE.BackSide,
+            depthWrite: false,
+            uniforms: { sunDir: { value: sunDir } },
+            vertexShader: `varying vec3 vDir; void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+            fragmentShader: `uniform vec3 sunDir; varying vec3 vDir;
+          void main(){
+            vec3 d = normalize(vDir); float h = d.y;
+            vec3 top = vec3(0.43, 0.36, 0.82); vec3 mid = vec3(0.93, 0.56, 0.76); vec3 hor = vec3(1.0, 0.70, 0.47);
+            vec3 c = mix(hor, mid, smoothstep(-0.05, 0.25, h)); c = mix(c, top, smoothstep(0.2, 0.6, h));
+            float s = clamp(dot(d, sunDir), 0.0, 1.0);
+            c += vec3(1.0, 0.86, 0.6) * (pow(s, 40.0) * 0.7 + pow(s, 6.0) * 0.25);
+            gl_FragColor = vec4(c, 1.0);
+          }`,
+          }),
+        ),
+      );
+
+      // low-poly clouds
+      const cloudMat = new THREE.MeshLambertMaterial({
+        color: 0xffe6ef,
+        emissive: 0xffb8d2,
+        emissiveIntensity: 0.35,
+        flatShading: true,
+      });
+      const cloud = (x, y, z, s, seed) => {
+        const g = new THREE.Group();
+        for (let k = 0; k < 4; k++) {
+          const m = new THREE.Mesh(
+            jitter(new THREE.IcosahedronGeometry(1, 1), 0.08, seed + k),
+            cloudMat,
+          );
+          m.scale.set(s * (1.3 - k * 0.12), s * 0.75, s);
+          m.position.set((k - 1.5) * s * 1.3, (k % 2) * s * 0.35, 0);
+          g.add(m);
+        }
+        g.position.set(x, y, z);
+        scene.add(g);
+      };
+      cloud(-19, 9.5, -14, 1.8, 1);
+      cloud(4, 10.5, -18, 1.6, 9);
+      cloud(20, 6.5, -16, 1.9, 17);
+      cloud(-22, -4.5, -18, 1.6, 23);
+      cloud(23, -6.8, -15, 1.4, 31);
+      cloud(-6, -9.5, -20, 1.3, 37);
+
+      // low-poly hills along the bottom edge
+      const hillMat = flat(0x6fae4a);
+      const hillMat2 = flat(0x5a9a3c);
+      for (let i = 0; i < 9; i++) {
+        const h = new THREE.Mesh(
+          jitter(new THREE.IcosahedronGeometry(1, 1), 0.12, 50 + i),
+          i % 2 ? hillMat : hillMat2,
+        );
+        h.scale.set(9 + (i % 3) * 2, 4.5 + (i % 4), 6);
+        h.position.set(-40 + i * 10, -17.5 + (i % 3) * 0.8, -40);
+        h.receiveShadow = true;
+        scene.add(h);
+      }
+
+      // ---- lights
+      scene.add(new THREE.HemisphereLight(0xffe9f2, 0x8a6a7a, 1.4));
+      const key = new THREE.DirectionalLight(0xffe2c4, 2.7);
+      key.position.set(4, 7, 8);
+      key.castShadow = true;
+      key.shadow.mapSize.set(2048, 2048);
+      Object.assign(key.shadow.camera, {
+        left: -4,
+        right: 4,
+        top: 5,
+        bottom: -2,
+        near: 1,
+        far: 30,
+      });
+      key.shadow.bias = -0.0005;
+      scene.add(key);
+      const rim = new THREE.DirectionalLight(0xff9ec4, 1.4);
+      rim.position.set(-5, 3, -6);
+      scene.add(rim);
+
+      // ---- the bear
+      const fur = flat(0xa8693a);
+      const furDark = flat(0x8a5430);
+      const light = flat(0xecc49a);
+      const black = flat(0x231a1c, { roughness: 0.35 });
+      const white = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const blush = flat(0xff8fa3, { transparent: true, opacity: 0.85 });
+      const bear = new THREE.Group();
+      scene.add(bear);
+
+      // body / bust
+      const body = mesh(
+        jitter(new THREE.IcosahedronGeometry(1.25, 2), 0.04, 3),
+        fur,
+        0,
+        -0.25,
+        0,
+        bear,
+      );
+      body.scale.set(1.15, 1.0, 0.9);
+      const belly = mesh(
+        jitter(new THREE.IcosahedronGeometry(0.75, 2), 0.03, 4),
+        light,
+        0,
+        -0.45,
+        0.55,
+        bear,
+      );
+      belly.scale.set(1.0, 1.0, 0.55);
+      // arms (paws resting in front)
+      for (const s of [-1, 1]) {
+        const arm = mesh(
+          jitter(new THREE.CapsuleGeometry(0.32, 0.55, 3, 8), 0.03, 6 + s),
+          furDark,
+          s * 1.08,
+          -0.2,
+          0.35,
+          bear,
+        );
+        arm.rotation.set(0.5, 0, s * 0.35);
+        const paw = mesh(
+          jitter(new THREE.IcosahedronGeometry(0.3, 1), 0.02, 8 + s),
+          light,
+          s * 0.88,
+          -0.62,
+          0.78,
+          bear,
+        );
+        paw.scale.set(1, 0.8, 0.9);
+      }
+
+      // head
+      const head = new THREE.Group();
+      head.position.set(0, 1.45, 0.15);
+      head.rotation.set(-0.06, 0.1, 0.05);
+      bear.add(head);
+      const skull = mesh(
+        jitter(new THREE.IcosahedronGeometry(1.0, 2), 0.035, 11),
+        fur,
+        0,
+        0,
+        0,
+        head,
+      );
+      skull.scale.set(1.12, 0.98, 0.95);
+      for (const s of [-1, 1]) {
+        const ear = mesh(
+          jitter(new THREE.IcosahedronGeometry(0.33, 1), 0.02, 12 + s),
+          fur,
+          s * 0.78,
+          0.7,
+          -0.05,
+          head,
+        );
+        ear.scale.set(1, 1, 0.6);
+        const inner = mesh(
+          new THREE.IcosahedronGeometry(0.19, 1),
+          light,
+          s * 0.78,
+          0.69,
+          0.1,
+          head,
+        );
+        inner.scale.set(1, 1, 0.4);
+        const cheek = mesh(new THREE.CircleGeometry(0.15, 10), blush, s * 0.62, -0.22, 0.86, head);
+        cheek.rotation.y = s * 0.55;
+        cheek.castShadow = false;
+      }
+      const snout = mesh(
+        jitter(new THREE.IcosahedronGeometry(0.45, 2), 0.02, 14),
+        light,
+        0,
+        -0.28,
+        0.78,
+        head,
+      );
+      snout.scale.set(1.15, 0.8, 0.75);
+      const nose = mesh(new THREE.IcosahedronGeometry(0.15, 1), black, 0, -0.14, 1.12, head);
+      nose.scale.set(1.35, 0.85, 0.8);
+      mesh(new THREE.SphereGeometry(0.045, 8, 6), white, -0.06, -0.08, 1.24, head).castShadow =
+        false;
+      // smile
+      const smile = mesh(
+        new THREE.TorusGeometry(0.13, 0.025, 6, 16, Math.PI),
+        black,
+        0,
+        -0.38,
+        1.08,
+        head,
+      );
+      smile.rotation.set(0.2, 0, Math.PI);
+      // eyes
+      for (const s of [-1, 1]) {
+        const eye = mesh(new THREE.SphereGeometry(0.11, 14, 10), black, s * 0.36, 0.12, 0.86, head);
+        eye.scale.set(1, 1.15, 0.7);
+        mesh(
+          new THREE.SphereGeometry(0.035, 8, 6),
+          white,
+          s * 0.36 + 0.035,
+          0.17,
+          0.95,
+          head,
+        ).castShadow = false;
+      }
+      // round glasses
+      const frame = flat(0x2b2440, { roughness: 0.3, metalness: 0.3 });
+      for (const s of [-1, 1]) {
+        const ring = mesh(
+          new THREE.TorusGeometry(0.24, 0.035, 8, 28),
+          frame,
+          s * 0.36,
+          0.12,
+          0.98,
+          head,
+        );
+        ring.rotation.y = s * 0.12;
+        const lens = mesh(
+          new THREE.CircleGeometry(0.23, 24),
+          new THREE.MeshStandardMaterial({
+            color: 0xcfeaff,
+            transparent: true,
+            opacity: 0.22,
+            roughness: 0.05,
+          }),
+          s * 0.36,
+          0.12,
+          0.985,
+          head,
+        );
+        lens.castShadow = false;
+      }
+      mesh(new THREE.TorusGeometry(0.1, 0.03, 6, 12, Math.PI), frame, 0, 0.13, 1.0, head);
+
+      // yellow hard hat
+      const hatMat = flat(0xffc928, { roughness: 0.45 });
+      const hat = new THREE.Group();
+      hat.position.set(0, 0.62, -0.02);
+      hat.rotation.set(-0.12, 0, -0.08);
+      head.add(hat);
+      const dome = mesh(
+        jitter(new THREE.SphereGeometry(0.86, 16, 10, 0, Math.PI * 2, 0, Math.PI / 2), 0.015, 21),
+        hatMat,
+        0,
+        0,
+        0,
+        hat,
+      );
+      dome.scale.set(1.08, 0.82, 1.0);
+      const brim = mesh(
+        new THREE.CylinderGeometry(1.02, 1.06, 0.07, 24),
+        hatMat,
+        0,
+        0.02,
+        0.1,
+        hat,
+      );
+      brim.scale.set(1.0, 1, 1.05);
+      // ridge running front to back over the dome
+      const ridge = mesh(
+        new THREE.TorusGeometry(0.88, 0.075, 6, 28, Math.PI),
+        flat(0xffe27a, { roughness: 0.45 }),
+        0,
+        0,
+        0.02,
+        hat,
+      );
+      ridge.rotation.y = Math.PI / 2;
+      ridge.scale.set(1.0, 0.83, 1.02);
+
+      bear.position.set(-5.6, -0.15, 0);
+      bear.rotation.y = 0.18;
+      bear.scale.setScalar(0.88);
+
+      // ---- floating topics of the series (outside the safe area: TV / desktop)
+      const icons = new THREE.Group();
+      scene.add(icons);
+      const put = (g, x, y, z, rx, ry, rz, s = 1) => {
+        g.position.set(x, y, z);
+        g.rotation.set(rx, ry, rz);
+        g.scale.setScalar(s);
+        g.traverse((o) => {
+          if (o.isMesh) o.castShadow = o.receiveShadow = true;
+        });
+        icons.add(g);
+      };
+      const grp = (...ms) => {
+        const g = new THREE.Group();
+        ms.forEach((m) => g.add(m));
+        return g;
+      };
+      const M = (geo, mat, x = 0, y = 0, z = 0) => {
+        const m = new THREE.Mesh(geo, mat);
+        m.position.set(x, y, z);
+        return m;
+      };
+      // light bulb
+      put(
+        grp(
+          M(
+            new THREE.SphereGeometry(0.7, 16, 12),
+            flat(0xfff1a8, { emissive: 0xffd23f, emissiveIntensity: 0.9 }),
+            0,
+            0.4,
+            0,
+          ),
+          M(
+            new THREE.CylinderGeometry(0.32, 0.36, 0.55, 10),
+            flat(0xb9c2cc, { metalness: 0.5 }),
+            0,
+            -0.35,
+            0,
+          ),
+        ),
+        -10.8,
+        4.6,
+        1,
+        0,
+        0,
+        0.35,
+        1.1,
+      );
+      // phone
+      const phone = grp(
+        M(new THREE.BoxGeometry(1.1, 2.1, 0.14), flat(0x232b3a, { roughness: 0.4 })),
+        M(
+          new THREE.PlaneGeometry(0.96, 1.92),
+          flat(0x3fb7ff, { emissive: 0x2a7fd0, emissiveIntensity: 0.7 }),
+          0,
+          0,
+          0.075,
+        ),
+      );
+      put(phone, 10.3, 4.4, 0, 0.1, -0.35, -0.25, 1.05);
+      // rocket
+      const fin = flat(0xe8463a);
+      const rocket = grp(
+        M(new THREE.CylinderGeometry(0.42, 0.42, 1.6, 12), flat(0xf4f1ec)),
+        M(new THREE.ConeGeometry(0.42, 0.8, 12), fin, 0, 1.2, 0),
+        M(new THREE.SphereGeometry(0.18, 12, 8), flat(0x3fb7ff, { roughness: 0.2 }), 0, 0.3, 0.38),
+        M(
+          new THREE.ConeGeometry(0.3, 0.6, 10),
+          flat(0xffa83a, { emissive: 0xff6a1f, emissiveIntensity: 1 }),
+          0,
+          -1.1,
+          0,
+        ),
+      );
+      for (let i = 0; i < 3; i++) {
+        const f = M(new THREE.BoxGeometry(0.08, 0.55, 0.5), fin);
+        const a = (i / 3) * Math.PI * 2;
+        f.position.set(Math.sin(a) * 0.45, -0.6, Math.cos(a) * 0.45);
+        f.rotation.y = a;
+        rocket.add(f);
+      }
+      rocket.children[3].rotation.x = Math.PI;
+      put(rocket, 11.6, -3.6, 0, 0, 0, -0.6, 1.05);
+      // gear
+      const gear = grp(
+        M(
+          new THREE.CylinderGeometry(0.75, 0.75, 0.3, 16),
+          flat(0x9aa6b4, { metalness: 0.5, roughness: 0.4 }),
+        ),
+      );
+      for (let i = 0; i < 10; i++) {
+        const tth = M(
+          new THREE.BoxGeometry(0.28, 0.3, 0.3),
+          flat(0x9aa6b4, { metalness: 0.5, roughness: 0.4 }),
+        );
+        const a = (i / 10) * Math.PI * 2;
+        tth.position.set(Math.sin(a) * 0.85, 0, Math.cos(a) * 0.85);
+        tth.rotation.y = a;
+        gear.add(tth);
+      }
+      gear.add(M(new THREE.CylinderGeometry(0.25, 0.25, 0.34, 12), flat(0x5b6673)));
+      put(gear, -11.6, -3.4, 0, 1.2, 0.2, 0.3, 1.1);
+      // lightning bolt
+      const bolt = new THREE.Shape();
+      [
+        [0.1, 1],
+        [-0.45, 0],
+        [-0.05, 0],
+        [-0.25, -1],
+        [0.45, 0.15],
+        [0.05, 0.15],
+        [0.3, 1],
+      ].forEach(([x, y], i) => (i ? bolt.lineTo(x, y) : bolt.moveTo(x, y)));
+      put(
+        grp(
+          M(
+            new THREE.ExtrudeGeometry(bolt, { depth: 0.22, bevelEnabled: false }),
+            flat(0xffd23f, { emissive: 0xffb000, emissiveIntensity: 0.5 }),
+          ),
+        ),
+        -3.2,
+        5.4,
+        -2,
+        0,
+        0.3,
+        -0.2,
+        1.1,
+      );
+      // airplane
+      const planeWhite = flat(0xf4f1ec);
+      const plane = grp(
+        M(new THREE.CapsuleGeometry(0.28, 1.8, 4, 10), planeWhite),
+        M(new THREE.BoxGeometry(2.2, 0.08, 0.55), planeWhite, 0, 0.05, 0),
+        M(new THREE.BoxGeometry(0.8, 0.06, 0.3), planeWhite, 0, 0.05, -0.0),
+        M(new THREE.BoxGeometry(0.06, 0.5, 0.35), flat(0x3fb7ff), 0, 0.35, 0),
+      );
+      plane.children[0].rotation.x = Math.PI / 2;
+      plane.children[2].position.set(0, 0.05, -1.0);
+      plane.children[3].position.set(0, 0.3, -1.05);
+      put(plane, 5.2, -5.2, -1, 0.5, -0.9, 0.3, 1.1);
+      await document.fonts.ready;
+      renderer.render(scene, camera);
+      window.__done = true;
+    </script>
+  </body>
+</html>
