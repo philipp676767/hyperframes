@@ -37,6 +37,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 - [ ] Alle 5–7 s ein Highlight (Zeitlupe, Blitz, Wackeln, Crash-Zoom, Reißschwenk) und 2–3 Money-Shots, die die spektakulären Behauptungen **zeigen**.
 - [ ] Klarheit: Objekt groß im Bild, Röntgen-Look max. ⅓ der Zeit, kaum Rand-Unschärfe, starker Farbkontrast.
 - [ ] Stimme mit 3–6 Regieanweisungen (`[excited]`, `[whispers]` …), damit Jan nicht monoton klingt.
+- [ ] **Noch realistischer** (Nutzer, 2026-11-06): Hauptobjekt + Nahes mit `real.*`-Materialien, `roundedBox()`, glatter Geometrie, echten Farben, echter Größe und 3–6 Details; Kamera-Look mit Tiefenschärfe nach Entfernung, Neutral-Tonemapping, leichtem Filmkorn (automatisch).
 - [ ] **Jedes Video auch als YouTube Short** (Nutzer, 2026-11-05): `youtube.txt` mit Titel, Beschreibung, Tags und Einstellungen wird wie die TikTok-Beschreibung mitgeliefert (SKILL.md 6d).
 - [ ] **Nie nach Fotos fragen** („Bild in die Kommentare“, „Zeig mir …“) — die Fotos kommen von allein, wenn die Frage das eigene Ding betrifft (Nutzer, 2026-11-03).
 - [ ] **Kein „Lass es/ihn uns bauen“** (Nutzer, 2026-11-02, #48 Touchscreen: „alter Stil“). **Welt: andere Art von Ort** als die letzten 3 (nicht schon wieder Straße/Platz mit Hausfassaden), **kein Sockel/Podest** unter dem Objekt — es steht dort, wo es im Ort wirklich hingehört; Vergleichsbild mit den letzten 3 Videos.

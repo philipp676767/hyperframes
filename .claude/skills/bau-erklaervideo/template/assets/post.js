@@ -13,6 +13,9 @@
 //   grade       gentle colour grade: a soft S-curve, a touch more colour,
 //               warm highlights and cool shadows — the "photographed
 //               miniature" finish
+//   dof         depth of field by real distance: the look-at point is sharp,
+//               the far background and anything very close go soft
+//   grain       a fine, moving film grain — reads as a photographed scene
 //   vignette    slightly darker corners pull the eye to the centre
 //   dither      tiny ordered noise so sky gradients don't band
 // Blur and glow run at quarter resolution, AO at half. world.js renderFrame()
@@ -22,12 +25,19 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.181.2/+esm";
 // Tweak per video (scene.js: `LOOK.tilt = 0.6`) or per shot (`{ tilt: 0 }`).
 export const LOOK = {
   // kept gentle: a strong miniature blur makes the picture look smeared on a phone
-  tilt: 0.45, // 0 = everything sharp, 1 = full miniature blur at the frame edges
+  // the real depth of field below replaced most of it (2026-11-06)
+  tilt: 0.12, // 0 = everything sharp, 1 = full miniature blur at the frame edges
   focus: 0.5, // sharp band centre, 0 = bottom, 1 = top of the frame
   band: 0.28, // half height of the fully sharp band
   glow: 0.35, // glow strength
   glowFrom: 0.95, // brightness (linear) where glow starts
   vignette: 0.22,
+  // depth of field like a real camera lens (2026-11-06): what is nearer or
+  // farther than the shot's look-at point goes soft, by its real distance
+  dof: 0.7, // 0 = off
+  dofRange: 0.35, // relative distance from the focus where the blur starts
+  grain: 0.018, // fine film grain (0 = off), changes every frame
+  exposure: 1.0, // renderer tone-mapping exposure (Neutral tone mapping)
   ao: 0.75, // ambient occlusion strength (0 = off)
   aoRadius: 0.45, // world units around a point that can shade it
   clarity: 0.22, // local contrast inside the sharp band (0 = off)
@@ -116,6 +126,8 @@ void main(){
 
 const FINAL = /* glsl */ `uniform sampler2D tScene; uniform sampler2D tSoft; uniform sampler2D tGlow;
 uniform sampler2D tAO; uniform float aoAmt;
+uniform sampler2D tGeo; uniform float dof; uniform float focusDist; uniform float dofRange;
+uniform float grain; uniform float seed;
 uniform float tilt; uniform float focus; uniform float band; uniform float glow;
 uniform float vignette; uniform float clarity; uniform float contrast; uniform float saturation;
 uniform float split; varying vec2 vUv;
@@ -126,6 +138,10 @@ void main(){
   vec3 soft = texture2D(tSoft, vUv).rgb;
   float d = abs(vUv.y - focus);
   float k = smoothstep(band, band + 0.28, d) * tilt;
+  // depth of field: circle of confusion from the real view depth (sky = far)
+  float z = texture2D(tGeo, vUv).a;
+  float coc = z <= 0.0 ? 1.0 : abs(z - focusDist) / max(z, focusDist);
+  k = max(k, smoothstep(dofRange * 0.5, dofRange + 0.45, coc) * dof);
   // clarity against the wide blur, kept off the blurred edges and the darkest darks
   c = max(c + (c - soft) * clarity * (1.0 - k), c * 0.6);
   c = mix(c, soft, k * 0.8);
@@ -139,6 +155,9 @@ void main(){
   float l = dot(o, vec3(0.2126, 0.7152, 0.0722));
   o = mix(vec3(l), o, saturation);
   o += split * (l - 0.5) * vec3(1.0, 0.15, -1.0);
+  // film grain, strongest in the mid tones (deterministic: seeded by the frame)
+  float h = fract(sin(dot(gl_FragCoord.xy + seed * 17.13, vec2(12.9898, 78.233))) * 43758.5453);
+  o += (h - 0.5) * grain * (1.0 - abs(l - 0.5) * 1.2);
   // 4x4 ordered dither, ±0.5 of an 8-bit step
   vec2 p = mod(floor(gl_FragCoord.xy), 4.0);
   float b = mod(p.x * 4.0 + p.y * 11.0, 16.0) / 16.0 - 0.5;
@@ -192,6 +211,12 @@ export function createPost(renderer, width, height) {
     tGlow: { value: g[0].texture },
     tAO: { value: ao[0].texture },
     aoAmt: { value: 0 },
+    tGeo: { value: geo.texture },
+    dof: { value: 0 },
+    focusDist: { value: 10 },
+    dofRange: { value: 0.35 },
+    grain: { value: 0 },
+    seed: { value: 0 },
     tilt: { value: 1 },
     focus: { value: 0.5 },
     band: { value: 0.17 },
@@ -256,9 +281,10 @@ export function createPost(renderer, width, height) {
 
   return {
     // scene → look → canvas; `overlay` (LED panel …) is drawn sharp on top
-    render(scene, camera, overlay, shotTilt = 1) {
+    render(scene, camera, overlay, shotTilt = 1, focusDist = 10, frame = 0) {
+      const needGeo = LOOK.ao > 0 || LOOK.dof > 0;
+      if (needGeo) geoPass(scene, camera);
       if (LOOK.ao > 0) {
-        geoPass(scene, camera);
         const th = Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2);
         aoMat.uniforms.tanHalf.value.set(th * camera.aspect, th);
         aoMat.uniforms.radius.value = LOOK.aoRadius;
@@ -287,6 +313,11 @@ export function createPost(renderer, width, height) {
       u.glow.value = LOOK.glow;
       u.vignette.value = LOOK.vignette;
       u.aoAmt.value = LOOK.ao;
+      u.dof.value = needGeo ? LOOK.dof * shotTilt : 0;
+      u.focusDist.value = focusDist;
+      u.dofRange.value = LOOK.dofRange;
+      u.grain.value = LOOK.grain;
+      u.seed.value = frame % 97;
       u.clarity.value = LOOK.clarity;
       u.contrast.value = LOOK.contrast;
       u.saturation.value = LOOK.saturation;

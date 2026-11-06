@@ -1,7 +1,8 @@
 # Visual style
 
-The look (toy low-poly, flat colours, soft shadows, pastel light, captions,
-CTA) is fixed. **The world is not: there are no fixed environments** — every
+The look (a stylised but **realistic** diorama: real-looking, smooth
+objects up close in a low-poly world, a real lens, soft shadows, captions,
+CTA — see "Realism", 2026-11-06) is fixed. **The world is not: there are no fixed environments** — every
 video builds a new, high-quality place for its topic in `assets/set.js`
 (SKILL.md 1b: concept, own light, layers, quality check). What each video
 designs is the **world**, the **subject**, its **build-up**, and the
@@ -9,8 +10,9 @@ designs is the **world**, the **subject**, its **build-up**, and the
 
 ## The world (set.js on the set kit)
 
-What every world shares, whatever the place: faceted low-poly shapes, flat
-saturated-pastel colours, soft shadows, a gradient sky with a sun glow,
+What every world shares, whatever the place: faceted low-poly shapes in
+the middle and far layers (near props in the realistic finish, see
+"Realism"), natural colours, soft shadows, a gradient sky with a sun glow,
 puffy low-poly cumulus with flat undersides, gentle fog into the
 distance. The subject always stands at the origin on a clear stage.
 
@@ -77,9 +79,10 @@ max 2 at once, never over the captions.
 
 ## Subject
 
-- Built from simple primitives (boxes, extrusions of `roundedRect`,
-  cylinders, lathes, tubes), flat-shaded, clean bright colors; the main body
-  slightly glossy. ~2–3 units tall, standing at the origin, front = +z.
+- Built from primitives (rounded boxes, extrusions of `roundedRect`,
+  cylinders, lathes, tubes) **in the realistic finish below** — smooth
+  shading, real materials, rounded edges. ~2–3 units tall, standing at the
+  origin, front = +z.
 - Readable silhouette first; detail only where the script points at it.
 - **Build-up:** the subject pops in on the first "Also …". Every
   component the script names appears exactly on its word: tubes grow
@@ -222,6 +225,49 @@ Highlights"_ and the most spectacular claims were only told, never shown
 - **Pace changes:** a slow, quiet moment right before the biggest
   highlight makes it hit harder.
 
+## Realism — the "photographed real object" finish (2026-11-06)
+
+User: _"Lass die zukünftigen Videos noch realistischer aussehen."_ The
+world keeps its low-poly character in the distance, but **everything the
+camera comes close to looks like a real, manufactured thing photographed
+with a real lens**:
+
+- **Hero subject and near props: smooth, no facets.** Use the `real.*`
+  materials (`world.js`: `plastic`, `gloss`, `metal`, `rubber`, `fabric`,
+  `skin`, `ceramic`, `wood`, `glass`) on indexed geometry with enough
+  segments (spheres 48+, cylinders 48+, lathes 64+). Never `facet()` or
+  `flat()` on the hero.
+- **Rounded edges everywhere close up:** `roundedBox(w, h, d, r)` instead
+  of `BoxGeometry` (r ≈ 4–10 % of the smallest side), `roundedRect`
+  extrusions with `bevelEnabled`. The thin highlight on the rim is what
+  makes a thing look manufactured.
+- **Real-world colours and materials:** the colours real products have
+  (phone: graphite / silver / one muted colour; a coffee machine: brushed
+  steel + black plastic), not toy-bright primaries. One accent colour per
+  scene. Metal reflects its surroundings — give it something to reflect
+  (a bright wall, a window, the sky), or it looks like grey plastic.
+- **Surface detail the eye expects:** seams and gaps between parts
+  (a 0.01–0.02 dark gap), screws, buttons, a logo plate, a label, rubber
+  feet, a cable — 3–6 small details on the hero, where the camera goes.
+  Slight wear or dirt only where it is real (soles, tyres, a grill).
+- **True scale and proportions:** door 2 m, cup 9 cm, hand 19 cm — in the
+  same ratio to each other. A giant object stays an exact copy, just big.
+- **Light like a photo:** one clear key light from a motivated direction
+  (the sun, the window, the lamp), soft fill, and practical lights that
+  glow (`emissive`) where the place has them (screens, lamps, LEDs).
+  Contact shadows (AO) stay on.
+- **The lens does the rest (automatic, post.js):** depth of field by real
+  distance (`LOOK.dof` 0.7 — the look-at point is sharp, background and
+  very near things soft; a shot can set its focus distance with
+  `focus: <units>`, e.g. when the look-at point is not the subject), Neutral
+  tone mapping (highlights roll off instead of clipping; `LOOK.exposure`),
+  fine film grain (`LOOK.grain`). Tilt-shift is only a hint now
+  (`LOOK.tilt` 0.12).
+- **Check:** in the 4-camera set check and the snapshot contact sheet,
+  ask of every close shot: "could this be a photo of a real thing?" If a
+  part looks like a toy block (hard edges, one flat colour, no detail),
+  fix that part first.
+
 ## Clarity — nothing may look smeared
 
 Feedback: _"Qualität noch besser, nicht so ineinander verschwimmen."_
@@ -231,8 +277,10 @@ Feedback: _"Qualität noch besser, nicht so ineinander verschwimmen."_
 - **X-ray at most ~⅓ of the runtime**, only while the inside is
   explained; the money shots and the outro are solid. Inner parts are
   saturated, opaque colours so they read through the glass.
-- Tilt-shift stays gentle (`LOOK.tilt` 0.45 default) — raise it only for
-  the wide drone outro.
+- Blur comes from the lens (`LOOK.dof`, by real distance, see "Realism");
+  if the subject itself goes soft, the shot's look-at point is off — move
+  it onto the subject or set `focus` on the shot. Tilt-shift stays a hint
+  (`LOOK.tilt` 0.12).
 - Strong colour contrast between subject and background (red car on
   green meadow, not light-blue glass on white sky).
 

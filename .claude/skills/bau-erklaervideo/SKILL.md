@@ -129,7 +129,7 @@ credits or building. Apply their edits verbatim.
 
 The user's rule (2026-10-24): **there are no fixed environments.** Every
 video gets a **new, high-quality world designed for its topic**, in the
-same toy low-poly style, written in the project's `assets/set.js`. The
+same style (low-poly far away, realistic up close — visual-style.md "Realism"), written in the project's `assets/set.js`. The
 template's `set.js` is a demo (a town park at blue hour for "Licht aus
 Draht") — replace it completely.
 
@@ -277,6 +277,12 @@ fact) and regenerate the voice; never pad with silence or music.
 `SFX_DB=-3 node scripts/build-sfx.mjs` (shifts all), or `db:` on one cue.
 
 ### 4. Build the subject (`assets/scene.js` + `assets/beats.js`)
+
+**Realistic finish** (user, 2026-11-06): the subject and everything near
+the camera are built with `real.*` materials, `roundedBox()` and smooth
+geometry, real colours, true scale and 3–6 small surface details —
+`references/visual-style.md` "Realism". The low-poly facets stay for the
+far world only.
 
 Format B has no build-up from parts: the scenario plays out in one
 diorama, the viewer's hand does the act from frame 0, every Folge is a

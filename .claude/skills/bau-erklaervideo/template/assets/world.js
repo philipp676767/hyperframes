@@ -164,6 +164,10 @@ renderer.setPixelRatio(1);
 renderer.setSize(WIDTH, HEIGHT, false);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+// highlights roll off like a camera instead of clipping; Neutral keeps the
+// palette's colours (2026-11-06)
+renderer.toneMapping = THREE.NeutralToneMapping;
+renderer.toneMappingExposure = LOOK.exposure;
 const post = createPost(renderer, WIDTH, HEIGHT);
 
 export const scene = new THREE.Scene();
@@ -182,6 +186,109 @@ export const flat = (color, extra = {}) =>
     metalness: 0,
     ...extra,
   });
+// Realistic surfaces (2026-11-06, "noch realistischer"): for the hero
+// subject and everything close to the camera. Smooth shading (no facets),
+// physical materials that catch the sky light like the real thing. Use them
+// on indexed geometry (primitives, roundedBox(), LatheGeometry …), never on
+// facet() geometry. The far world may stay faceted low-poly.
+export const real = {
+  // matte-to-satin plastic: housings, buttons, toys, bottles
+  plastic: (color, o = {}) =>
+    new THREE.MeshPhysicalMaterial({
+      color,
+      roughness: 0.42,
+      clearcoat: 0.25,
+      clearcoatRoughness: 0.45,
+      ...o,
+    }),
+  // lacquer / car paint / phone back / nail polish: deep, mirror-like coat
+  gloss: (color, o = {}) =>
+    new THREE.MeshPhysicalMaterial({
+      color,
+      roughness: 0.3,
+      metalness: 0.1,
+      clearcoat: 1,
+      clearcoatRoughness: 0.06,
+      ...o,
+    }),
+  // brushed / polished metal (roughness 0.15 polished … 0.45 brushed)
+  metal: (color = 0xc9ced6, o = {}) =>
+    new THREE.MeshPhysicalMaterial({ color, metalness: 1, roughness: 0.3, ...o }),
+  rubber: (color = 0x2a2a2e, o = {}) =>
+    new THREE.MeshPhysicalMaterial({ color, roughness: 0.92, ...o }),
+  // cloth, upholstery, sofa, sneakers' upper: soft sheen at grazing angles
+  fabric: (color, o = {}) =>
+    new THREE.MeshPhysicalMaterial({
+      color,
+      roughness: 1,
+      sheen: 1,
+      sheenRoughness: 0.55,
+      sheenColor: new THREE.Color(color).lerp(new THREE.Color(0xffffff), 0.45),
+      ...o,
+    }),
+  // skin: soft, a warm sheen on the rim instead of a plastic highlight
+  skin: (color = 0xe8b394, o = {}) =>
+    new THREE.MeshPhysicalMaterial({
+      color,
+      roughness: 0.58,
+      sheen: 0.35,
+      sheenRoughness: 0.4,
+      sheenColor: new THREE.Color(0xffc9b0),
+      ...o,
+    }),
+  // glazed ceramic, tiles, enamel
+  ceramic: (color = 0xf4f1ec, o = {}) =>
+    new THREE.MeshPhysicalMaterial({
+      color,
+      roughness: 0.18,
+      clearcoat: 0.6,
+      clearcoatRoughness: 0.1,
+      ...o,
+    }),
+  wood: (color = 0xb07a4a, o = {}) =>
+    new THREE.MeshPhysicalMaterial({ color, roughness: 0.7, ...o }),
+  // clear glass (cheap: no transmission pass) — for x-ray use xrayMaterial()
+  glass: (color = 0xdfeff7, o = {}) =>
+    new THREE.MeshPhysicalMaterial({
+      color,
+      roughness: 0.04,
+      metalness: 0,
+      transparent: true,
+      opacity: 0.28,
+      envMapIntensity: 1.6,
+      depthWrite: false,
+      ...o,
+    }),
+};
+
+// A box with rounded edges and corners (radius r): real objects never have
+// razor edges — the rounded rim catches a thin highlight, which is most of
+// what makes a thing look manufactured instead of modelled.
+export function roundedBox(w, h, d, r = 0.06, seg = 4) {
+  r = Math.min(r, w / 2, h / 2, d / 2);
+  const s = Math.max(2, seg * 2);
+  const g = new THREE.BoxGeometry(w, h, d, s, s, s);
+  const pos = g.attributes.position;
+  const nor = g.attributes.normal;
+  const v = new THREE.Vector3();
+  const inner = new THREE.Vector3(w / 2 - r, h / 2 - r, d / 2 - r);
+  const c = new THREE.Vector3();
+  for (let i = 0; i < pos.count; i++) {
+    v.fromBufferAttribute(pos, i);
+    c.set(
+      Math.max(-inner.x, Math.min(inner.x, v.x)),
+      Math.max(-inner.y, Math.min(inner.y, v.y)),
+      Math.max(-inner.z, Math.min(inner.z, v.z)),
+    );
+    v.sub(c).normalize();
+    nor.setXYZ(i, v.x, v.y, v.z);
+    v.multiplyScalar(r).add(c);
+    pos.setXYZ(i, v.x, v.y, v.z);
+  }
+  nor.needsUpdate = true;
+  return g;
+}
+
 export const M = {
   grass: flat(0x79c24a),
   grassDark: flat(0x5f9f37),
@@ -493,6 +600,8 @@ export function showPanel(k, label = "", value = "", color = LED.red) {
 // tighter on the word and eases back over ~0.5 s.
 const FOV = 48;
 let shotTilt = 1;
+// distance from the camera to the shot's look-at point = the lens focus
+let focusDist = 10;
 
 // ---------------------------------------------------------------- highlights
 // The big moments of a video (beats.js HIGHLIGHTS), so it never runs at one
@@ -614,6 +723,8 @@ export function shotCamera(shots, defaultZoom = 1.7) {
     p.x += Math.sin(t * 0.83 + 1.3) * 0.012 + Math.sin(t * 1.91) * 0.006;
     p.y += Math.sin(t * 0.67 + 0.4) * 0.01 + Math.sin(t * 2.3 + 2.1) * 0.004;
     shotTilt = s.tilt ?? 1;
+    // s.focus: focus distance for this shot (default: the look-at point)
+    focusDist = s.focus ?? p.distanceTo(l);
     camera.position.copy(p);
     camera.lookAt(l);
     camera.fov = FOV / (1 + 0.11 * punch(t) + fxZoom(realT));
@@ -746,8 +857,10 @@ export function renderFrame() {
     camera.position.set(...window.__cam.p);
     camera.lookAt(...window.__cam.l);
     camera.updateMatrixWorld();
+    focusDist = camera.position.distanceTo(V(...window.__cam.l));
   }
-  post.render(scene, camera, overlay, shotTilt);
+  renderer.toneMappingExposure = LOOK.exposure;
+  post.render(scene, camera, overlay, shotTilt, focusDist, Math.round(realT * 30));
   drawLabels();
 }
 
