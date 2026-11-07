@@ -37,6 +37,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 - [ ] Alle 5–7 s ein Highlight (Zeitlupe, Blitz, Wackeln, Crash-Zoom, Reißschwenk) und 2–3 Money-Shots, die die spektakulären Behauptungen **zeigen**.
 - [ ] Klarheit: Objekt groß im Bild, Röntgen-Look max. ⅓ der Zeit, kaum Rand-Unschärfe, starker Farbkontrast.
 - [ ] Stimme mit 3–6 Regieanweisungen (`[excited]`, `[whispers]` …), damit Jan nicht monoton klingt.
+- [ ] **Kein Flüstern im Hook** (Nutzer, 2026-11-07): Zeile 1 und der Satz danach laut und klar (`[excited]`, `[curious]` oder ohne Tag), `[whispers]` erst ab ~5 s.
 - [ ] **Noch realistischer** (Nutzer, 2026-11-06): Hauptobjekt + Nahes mit `real.*`-Materialien, `roundedBox()`, glatter Geometrie, echten Farben, echter Größe und 3–6 Details; Kamera-Look mit Tiefenschärfe nach Entfernung, Neutral-Tonemapping, leichtem Filmkorn (automatisch).
 - [ ] **Jedes Video auch als YouTube Short** (Nutzer, 2026-11-05): `youtube.txt` mit Titel, Beschreibung, Tags und Einstellungen wird wie die TikTok-Beschreibung mitgeliefert (SKILL.md 6d).
 - [ ] **Nie nach Fotos fragen** („Bild in die Kommentare“, „Zeig mir …“) — die Fotos kommen von allein, wenn die Frage das eigene Ding betrifft (Nutzer, 2026-11-03).

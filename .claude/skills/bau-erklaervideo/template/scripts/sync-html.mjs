@@ -46,6 +46,16 @@ const spoken = words.map((w) => w.w.toLowerCase()).join(" ");
 for (const bad of ["uns bauen", "du hast gerade"])
   if (spoken.includes(bad))
     console.warn(`WARNING: the script says „${bad} …“ — old style, cut that sentence.`);
+// no whispering in the hook (2026-11-07): line 1 and the first sentence of line 2
+const scriptLines = fs
+  .readFileSync(new URL("script.txt", root), "utf8")
+  .split("\n")
+  .filter((l) => l.trim());
+const hookText = (scriptLines[0] ?? "") + " " + (scriptLines[1] ?? "").split(/[.!?]/)[0];
+if (/\[whisper/i.test(hookText))
+  console.warn(
+    "WARNING: [whispers] in the hook — the first seconds must be loud: use [excited] / [curious] or no tag.",
+  );
 if (last > LENGTH - 3 && !fitted)
   console.warn(
     `WARNING: speech ends at ${last}s — too long for exactly ${LENGTH}s; rerun prepare-voice.sh`,

@@ -395,13 +395,18 @@ Comment-question patterns (last line):
 Jan runs on `eleven_v3`, which performs bracketed tags. Use **3–6 per
 video** so the voice has highs and lows instead of one flat tone:
 
-| Tag                       | Where                                                     |
-| ------------------------- | --------------------------------------------------------- |
-| `[excited]`               | the hook's claim, the payoff, the bonus fact              |
-| `[whispers]`              | the re-hook / secret ("[whispers] Und jetzt passiert's:") |
-| `[curious]`               | a question to the viewer                                  |
-| `[laughs]` / `[chuckles]` | after a joke — at most once per video                     |
-| `[surprised]`             | an unbelievable number                                    |
+| Tag                       | Where                                                                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `[excited]`               | the hook's claim, the payoff, the bonus fact                                                                               |
+| `[whispers]`              | the re-hook / secret ("[whispers] Und jetzt passiert's:") — **never in the hook** (line 1 and the sentence right after it) |
+| `[curious]`               | a question to the viewer                                                                                                   |
+| `[laughs]` / `[chuckles]` | after a joke — at most once per video                                                                                      |
+| `[surprised]`             | an unbelievable number                                                                                                     |
+
+**No whispering in the hook** (user's rule, 2026-11-07): the first
+seconds must be loud and clear — `[excited]`, `[curious]`, `[surprised]`
+or no tag on line 1 and on the sentence right after it. `[whispers]` only
+from ~5 s on (re-hook, secret, mid twist). `sync-html.mjs` warns.
 
 Put the tag right before the words it colours, never two in a row. Tags are not words: they don't count towards the
 word budget, they're removed from the captions automatically, and they
@@ -483,6 +488,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] 130–142 words incl. „Folge für mehr Wissen.“, fact and comment question (≤ 148, ≥ 124) → exactly 45 s; no `> …` loop line
 - [ ] Hook = line 1, ≤ 9 words, ≤ 3 s (sync-html checks); within it the viewer knows why to watch to the end (gain / danger / burning question) — true, not clickbait
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
+- [ ] No `[whispers]` in the hook (line 1 or the sentence after it)
 - [ ] 45-s shape: beat 1 → beat 2 → „Folge für mehr Wissen.“ (~20 s) → mid twist → beat 3 → payoff (≥ 34 s) → Übrigens (strongest fact) → comment question
 - [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes
 - [ ] Escalation: a new "Was?!" every 6–8 s, weakest first, strongest in beat 3 / payoff; one "Rate mal" moment after ~13 s
