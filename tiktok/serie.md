@@ -72,3 +72,4 @@ Umgebungen (insel, stadt, …).
 | 60  | Bluetooth-Kopfhörer (Sprung)   | A      | `tiktok/kopfhoerer`          | keller-gym-spiegelwand      | montagabend        | 45,0 s | 2026-11-04 |
 | 61  | Niesen (offene Augen)          | B      | `tiktok/niesen`              | blumenwiese-picknick        | goldener morgen    | 45,0 s | 2026-11-05 |
 | 62  | Sneaker-Sohle (Luftkissen)     | A      | `tiktok/sneaker`             | dach-basketballplatz        | sonnenuntergang    | 45,0 s | 2026-11-05 |
+| 65  | 10-Meter-Turm (Bauchklatscher) | B      | `tiktok/zehn-meter-turm`     | hallenbad-sprungturm        | novemberabend      | 45,0 s | 2026-11-10 |

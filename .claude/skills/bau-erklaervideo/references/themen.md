@@ -289,7 +289,7 @@ ask for go in here.
 | 🔥 … der Mond verschwindet? ⚠️ zu allgemein                          | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                             | Mond verpufft, Meer flacht ab, Nacht wird schwarz                          | unmöglich                    | Weltall   |
 | 🔥 … im Weltall weinst?                                              | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                                       | Träne wächst zur wackelnden Kugel vor dem Auge                             | unmöglich                    | Weltall   |
 | ★ … eine geschüttelte Cola aufmachst?                                | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                           | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
-| … vom 10-Meter-Brett springst?                                       | Du knallst mit rund 50 km/h aufs Wasser                                                                 | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt                 | Hinweis „nur mit Aufsicht“   | Sport     |
+| ★ … mit vollem Magen schwimmen gehst?                                | Mythos: Krämpfe und Ertrinken – Studien finden kaum ein Risiko, nur ein Völlegefühl (Fakten prüfen)     | Bauch voller Essen, Low-Poly-Schwimmer, LED „1 STUNDE WARTEN?“ ✕           | harmlos                      | Körper    |
 | 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                         | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
 | 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)           | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                   | unmöglich                    | Natur     |
 | 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                                    | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
@@ -303,7 +303,6 @@ ask for go in here.
 | ------------------------ | ------ | ---------- | ------------------------------- |
 | Cola-Dose im Gefrierfach | B      | 2026-11-10 | TikTok #63: Cola im Gefrierfach |
 | Blitzer                  | A      | 2026-11-10 | TikTok #64: Blitzer             |
-| 10-Meter-Turm (Sprung)   | B      | 2026-11-10 | TikTok #65: 10-Meter-Turm       |
 
 ## Verwendet
 
