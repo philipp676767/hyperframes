@@ -292,7 +292,6 @@ ask for go in here.
 | ★ … eine geschüttelte Cola aufmachst?                                | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                           | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
 | … vom 10-Meter-Brett springst?                                       | Du knallst mit rund 50 km/h aufs Wasser                                                                 | Sprung in Zeitlupe, LED-Tacho springt hoch, Wasser spritzt                 | Hinweis „nur mit Aufsicht“   | Sport     |
 | 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                         | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
-| ★ … eine Dose Cola im Gefrierfach vergisst?                          | Sie platzt – gefrierendes Wasser dehnt sich um rund 9 % aus, die Dose gibt nach (Fakten prüfen)         | Dose beult sich in Zeitlupe, Deckel reißt, Eis-Fontäne friert fest         | harmlos, Hinweis             | Essen     |
 | 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)           | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                   | unmöglich                    | Natur     |
 | 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                                    | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
 | ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)          | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz | harmlos, Fangbremse erwähnen | Stadt     |
@@ -301,8 +300,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                    | Format | Datum      | Chat                            |
+| ------------------------ | ------ | ---------- | ------------------------------- |
+| Cola-Dose im Gefrierfach | B      | 2026-11-10 | TikTok #63: Cola im Gefrierfach |
 
 ## Verwendet
 
