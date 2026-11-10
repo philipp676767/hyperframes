@@ -52,7 +52,7 @@ Extrem-Physik): they are impossible, so they're also the safest. Keep at
 least half of each list 🔥 and add new ideas the same way. Facts stay
 correct — the wilder the claim, the more carefully it's checked.
 
-**Scorecard — every proposal** (user's wish 2026-10-24: „Themen noch
+**Scorecard — every candidate** (user's wish 2026-10-24: „Themen noch
 passender und interessanter“). Score the open candidates of the format 0–2
 on its six criteria below **plus these four**, and propose the best one
 plus two alternatives **with their scores** (max 20; propose nothing under
@@ -110,7 +110,7 @@ Format A — score each open candidate on these six (+ the two above):
    ★ in the list fit best — pick those first.
 
 Also: vary the category from the last 2 episodes (kitchen → street →
-money/tech → nature …), run the **Trend-Check** (2b — trends are the exception, max one of three proposals) and use the **Saison** column only as a hint (Silvester in late
+money/tech → nature …), run the **Trend-Check** (2b — trends are the exception, max one of three candidates you compare) and use the **Saison** column only as a hint (Silvester in late
 December, Heizung / Taschenwärmer in winter, Klimaanlage / Ventilator in
 summer). Before writing the script, check the key facts and numbers of
 the topic (web search if available) and phrase anything uncertain safely.
@@ -123,7 +123,7 @@ the Taschenwärmer when it got cold. **But only when it fits:** never dig
 up some news item nobody cares about just to be current. An evergreen
 topic that scores high always beats a weak trend.
 
-Before every proposal, check two things (2 minutes, not a research
+Before every candidate, check two things (2 minutes, not a research
 project):
 
 1. **Right now** (web search when available, else what you know of the
@@ -155,16 +155,17 @@ topics; that is exactly what he did _not_ want):
   recognise without context (a viral clip, a launch, the first snow
   storm, Silvester night) gets **+2** — and still needs ≥ 12 / 16, the
   duplicate check and the format that is due.
-- **At most one** of the three proposals may be a trend or season topic;
+- **At most one** of the three candidates you compare may be a trend or season topic;
   the other two are the best evergreen topics, **from three different
   categories** (never three times Kälte / Küche / Handy).
 - **At most one seasonal topic in any three videos in a row**
   (`tiktok/serie.md`): after a cold topic (Taschenwärmer, Heizung …) the
   next two are not about cold — unless a genuinely hot trend comes up.
-- No real trend this week → no trend topic, and the proposal says "Kein
+- No real trend this week → no trend topic, and the reservation line says "Kein
   echter Trend gerade — bestes Dauerthema". That is the normal case.
 - A trend that only fits the other format: take the best evergreen
-  topic, or ask the user once whether to swap the order. A video on a hot
+  topic (autopilot: never ask — the trend can go into the next video of
+  the other format if it is still hot). A video on a hot
   trend should go out **within 1–3 days**; say so.
 
 ## 3. Reserve it right away

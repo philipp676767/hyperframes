@@ -493,9 +493,10 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes
 - [ ] Escalation: a new "Was?!" every 6–8 s, weakest first, strongest in beat 3 / payoff; one "Rate mal" moment after ~13 s
 
-## What to show the user for approval
+## Your own plan before the voice (autopilot — nobody approves it)
 
-The script (one part per paragraph), word count (→ exactly 45 s), the
+Write down for yourself (and put the script + hook title into the
+delivery message at the end): the script (one part per paragraph), word count (→ exactly 45 s), the
 **loop map** (e.g. "0–47 s: Warum ist er hinten warm? · 13–24 s: Wohin
 mit der Wärme? · 30–41 s: Warum kocht es bei −26 °C?"), the hook title,
 the winning hook + **two alternative hooks with their scores**, the

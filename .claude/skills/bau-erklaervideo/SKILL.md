@@ -48,7 +48,24 @@ Talk to the user in German. Keep them posted in short lines while working.
 
 ## Workflow
 
-### 0. Pick the format — always alternating — then the topic
+### Autopilot — no questions, no waiting (user's rule, 2026-11-10)
+
+The user starts a video chat and wants the finished video back **without
+confirming anything**. So the whole workflow below runs straight through:
+pick format and topic yourself, **reserve the topic as the very first
+thing** (so the user can open the next chat right away), write and
+self-check the script, voice, world, scene, render, cover, descriptions,
+save — and only then talk to the user, with the delivery message. Never
+end a turn with a question or "Soll ich …?"; where the steps below once
+said "show the user" or "wait for OK", decide with the skill's rules and
+go on. Short status lines while working are fine (what you picked, what
+you are building), but they never wait for an answer.
+
+Stop and ask only when you truly cannot go on: no ElevenLabs access or no
+credits, a push that keeps failing, a broken tool you cannot work around.
+If the user names a topic or gives an instruction, take it.
+
+### 0. Pick the format — always alternating — then the topic — reserve it FIRST
 
 **Format first** (user's rule, 2026-10-23: "Immer abwechselnd"). After
 `git pull origin main`, look at the newest episode: the last row of
@@ -57,7 +74,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 slot) — the newest of them by number / date decides. The new video takes
 the **other** format: after A „Bauen“ comes B „Was passiert, wenn …?“,
 after B comes A. A row without a `Format` value counts as A (#1–#23 are
-all A). Say it in the topic proposal ("Diesmal Format B: Was passiert,
+all A). Say it in the reservation line ("Diesmal Format B: Was passiert,
 wenn …?"). If the user explicitly asks for a format or names a topic
 that only fits one, take theirs — the next video goes on alternating
 from it.
@@ -65,20 +82,30 @@ from it.
 **Then the topic** — the user leaves it to you (2026-10-23). **Topical
 when it fits** (2026-10-26): run the Trend-Check in `themen.md` 2b — a
 real trend of this week gives a bonus (a season does not), at most one of
-the three proposals is topical, the three come from different categories,
+the three candidates you compare is topical, the three come from different categories,
 and never a weak topic just to be current. Follow
 `references/themen.md`: **duplicate check first** (`tiktok/serie.md`,
 every folder in `tiktok/`, the reserved list, remote branches), then pick
-the best open topic **of that format's list** by its criteria (format A
+**yourself** the best open topic **of that format's list** by its criteria (format A
 also takes **Detail-Rätsel** — one small odd detail everyone has seen —
 and **Dein Look & dein Hobby** — the science behind what viewers show
 off, `themen.md`). The scorecard rates the **sweet spot** (one concrete
 thing of a huge group — not too broad, not too niche) and the
-**Zeig-Faktor** (can viewers post a photo of their own?) and propose it with its hook
-idea, money shot and two alternatives. On "ok": reserve it in
-`themen.md`, commit + push on `main` right away (parallel chats!), then
-go on. If the user names a topic, take theirs — but still run the check
-and say so if it was done before.
+**Zeig-Faktor** (can viewers post a photo of their own?) — take the
+highest score, no proposal, no alternatives to choose from.
+
+**Reserve it immediately — the first commit of the chat**, before the
+learning log, the script or anything else (the user opens the next video
+chat as soon as this one has reserved, 2026-11-10): add the row to the
+**Reserviert** table in `themen.md` (with the chat title of 0a), commit
+
+- push on `main` right away (parallel chats! on a rejected push: pull,
+  re-check that nobody took the topic or the number meanwhile, push
+  again). Then rename the chat (0a) and post one short line, e.g.
+  „Reserviert: TikTok #63 Sneaker (Format A). Du kannst schon den nächsten
+  Chat starten.“ — and go on without waiting. If the user names a topic,
+  take theirs — still run the duplicate check and mention it in that line
+  if it was done before.
 
 ### 0a. Name the chat — "TikTok #<Nr>: <Thema>"
 
@@ -108,22 +135,25 @@ topic changes, rename again.
 
 Open `tiktok/lernlog.md` before writing anything. Every entry under
 "Nächstes Mal" that isn't ticked off is a rule for this video, and the
-approval message says which one(s) this video improves. The series gets
+delivery message says which one(s) this video improves. The series gets
 better one concrete step per video.
 
-### 1. Script → user approval (always first)
+### 1. Script → self-check (no approval round any more)
 
 Format B: write it with `references/format-was-passiert.md` (question
 hook, 3 Folgen, outcome as payoff) on top of script-formel.md — same
-length, same approval message. Format A:
+length, same checks. Format A:
 write the German script with `references/script-formel.md` (v2): hook
 (+ on-screen hook title), 3 beats with one re-hook, payoff (answers the
 hook) + "Übrigens" bonus fact, **„Folge für mehr Wissen.“ as its own line in the middle (~19–23 s)** and the **comment question as the last line** (no loop) — in the **45-second shape** (script-formel.md "Shape": open-loop chain, follow line → mid twist at ~23 s, a "Rate mal" moment). **130–142 words including all of it** (Jan at 3.1 words/s → ~45 s), never more than **148** or fewer than **124**
-(`prepare-voice.sh` fits that range to exactly 45 s). **The hook is line 1 of the script, ≤ 9 words / ≤ 3 s** (2026-10-29) — within it the viewer must know why to watch to the end; `sync-html.mjs` warns if the spoken hook runs longer. Run the hook lab and the self-check in that file. Show the user the
-script, word count, the **loop map** (which question is open when), the hook title with its score, **two alternative hooks** (scored), the
-cover title, and a one-line visual idea per beat **incl. the highlight of each beat**
-(money shots, slowmo, flash …), and **wait for their OK** before spending
-credits or building. Apply their edits verbatim.
+(`prepare-voice.sh` fits that range to exactly 45 s). **The hook is line 1 of the script, ≤ 9 words / ≤ 3 s** (2026-10-29) — within it the viewer must know why to watch to the end; `sync-html.mjs` warns if the spoken hook runs longer. Run the hook lab and the self-check in that file and fix every point that
+fails **before** spending credits — you are the only reviewer now. Plan
+for yourself (no need to show it): word count, the **loop map** (which
+question is open when), the hook title with its score, the cover title,
+and a one-line visual idea per beat **incl. the highlight of each beat**
+(money shots, slowmo, flash …). Then go straight on to the world and the
+voice. (Until 2026-11-09 the user approved every script; since 2026-11-10
+everything runs automatically.)
 
 ### 1b. Build the world — a new one for every video
 
@@ -206,7 +236,7 @@ Draht") — replace it completely.
    village with chimney smoke, farm, moon rock with the Earth, deep sea,
    cloud sea, kitchen worktop) — a cookbook to copy techniques and pieces
    from, **never a whole set unchanged**.
-6. **Approval + log.** The approval message gets one line "Bühnenbild:
+6. **Log.** The delivery message gets one line "Bühnenbild:
    …" (place, light, hero piece, 2–3 props). After the video, log the
    set in `tiktok/serie.md` (`Set` = 2–4 words, `Licht` = time of day).
 
@@ -322,7 +352,7 @@ The house kit stays in every video (whooshes, pops, dings, CTA clicks …).
 On top, a video **may** get 1–3 sounds of its own — **only where it really fits**: the topic has a characteristic, recognisable sound and the picture shows the thing making it right then. **None is fine and often right**; never invent a sound for something silent or just to have one. Examples of a good fit: popcorn popping, a smoke alarm
 shrieking, coins rattling in an ATM, a lighter's spark click, ice
 cracking, a car engine roaring. Plan them with the visual plan (name them
-in the approval message, or say "keine eigenen Sounds" when nothing fits) and put them where the picture shows the thing.
+in your plan, or "keine eigenen Sounds" when nothing fits) and put them where the picture shows the thing.
 They are **synthesized, free — like the house kit** (user's decision
 2026-10-23: no ElevenLabs sound effects): write them in
 `scripts/sfx-extra.py` with the kit's own helpers (`t_of noise sine svf
@@ -604,7 +634,8 @@ render"` after any restart notice and start it again (clear
   stopped. Starting the next piece without polling in between avoids most
   429s. Fix used: cut 2 weak sentences from the finished take (no new
   credits) and `BASE=1.28 bash scripts/prepare-voice.sh` (≈ 3.0 words/s
-  after the cut) — ask the user first. A piece that comes back `failed`
+  after the cut) — decide it yourself (autopilot), mention it in the
+  delivery message. A piece that comes back `failed`
   ("Free Tier access disabled") is not charged-for audio: regenerate it.
 - **Voice speed (Jan):** on `eleven_v3` he reads slowly with ~0.5 s
   breaths (≈ 2.7 words/s after the pauses are cut to 0.12 s by
