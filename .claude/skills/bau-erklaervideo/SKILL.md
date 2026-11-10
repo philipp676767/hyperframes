@@ -31,7 +31,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Ending       | **No loop** (2026-10-24), **no outro** (2026-11-01): the video ends ~0.7 s after the comment question — no calm drone pull-back, no `> …` line, no cut back to frame 0                                                                                                                                                                                                                                                                                                                                                                               |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Beschreibung | **Every video gets a TikTok description** (step 6c): a keyword line **≤ 60 characters, strongest search words first, one emoji at the end, no dash** + **3–5 hashtags that fit the topic and are really watched** (topic tag first; never `#fyp`, `#viral`, `#lernenmittiktok`); saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                      |
-| YouTube      | **Every video is also posted as a YouTube Short** (2026-11-05, step 6d): `tiktok/<slug>/youtube.txt` with title (40–60 characters, keywords first), description (+ „Folge für mehr Wissen.“ + 3–5 hashtags incl. `#shorts`), tags, and the upload settings (TikTok cover, not for kids, synthetic content: yes, category Bildung …; no playlist), sent with the video like the TikTok description                                                                                                                                                    |
+| YouTube      | **Every video is also posted as a YouTube Short** (2026-11-05, step 6d): `tiktok/<slug>/youtube.txt` with title (40–60 characters, keywords first, always ending in `#shorts`), description (+ „Folge für mehr Wissen.“ + 3–5 hashtags incl. `#shorts`), tags, and the upload settings (TikTok cover, not for kids, synthetic content: yes, category Bildung …; no playlist), sent with the video like the TikTok description                                                                                                                        |
 | Serienformat | **Always alternating A „Bauen“ ↔ B „Was passiert, wenn …?“** (user's rule, 2026-10-23) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                                                                                                                                               |
 | Payoff       | The hook's question answered in one punchy line (the on-screen question fades out). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                                                                                                                                            |
@@ -505,13 +505,14 @@ used (9:16, 45 s, so YouTube files it as a Short on its own).
 
 Fields, in the order YouTube asks for them:
 
-1. **Titel** (required, max 100 characters; **aim for 40–60**, phones cut
-   it off around 50): the most-searched words first, then the hook as a
-   curiosity gap, German, max one emoji at the end, no hashtags in the
-   title, no clickbait the video doesn't answer. Unlike TikTok, YouTube
-   search leans hard on the title, so it must name the thing exactly
-   ("Warum Flugzeugtüren im Flug nicht aufgehen ✈️",
-   "Taschenwärmer: Warum flüssiges Salz heiß wird").
+1. **Titel** (required, max 100 characters; **aim for 40–60 before the
+   tag**, phones cut it off around 50): the most-searched words first,
+   then the hook as a curiosity gap, German, max one emoji, no clickbait
+   the video doesn't answer, and **always ` #shorts` at the very end**
+   (user's rule, 2026-11-10 — the only hashtag in the title). Unlike
+   TikTok, YouTube search leans hard on the title, so it must name the
+   thing exactly ("Warum Flugzeugtüren im Flug nicht aufgehen ✈️ #shorts",
+   "Taschenwärmer: Warum flüssiges Salz heiß wird #shorts").
 2. **Beschreibung** (max 5,000 characters; only the first ~100 show
    before "mehr"):
    - Line 1–2: one or two plain sentences with the main keywords and what
@@ -545,7 +546,7 @@ Format of `youtube.txt` (the file keeps the headings):
 
 ```text
 TITEL
-Warum Flugzeugtüren im Flug nicht aufgehen ✈️
+Warum Flugzeugtüren im Flug nicht aufgehen ✈️ #shorts
 
 BESCHREIBUNG
 Kann man die Flugzeugtür mitten im Flug öffnen? Hier siehst du, welche Kraft sie in 10 km Höhe zuhält.
@@ -578,7 +579,7 @@ Flugzeugtür im Flug öffnen: geht das? ✈️
 **YouTube-Titel**
 
 ```text
-Warum Flugzeugtüren im Flug nicht aufgehen ✈️
+Warum Flugzeugtüren im Flug nicht aufgehen ✈️ #shorts
 ```
 
 **YouTube-Beschreibung**
