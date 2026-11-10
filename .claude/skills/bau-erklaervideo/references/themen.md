@@ -187,7 +187,7 @@ are always 10+ open topics per format.
 | 🔥 Blitzableiter                           | „Ein Blitz ist heißer als die Sonnenoberfläche – und ein Draht leitet ihn sicher in die Erde.“                                                                  | Blitz schlägt ins Dach, rast den Draht runter, verpufft im Boden          | Zuhause       | Sommer               |
 | 🔥 Teilchenbeschleuniger ⚠️ zu nischig     | „Unter der Grenze zur Schweiz rasen Teilchen fast so schnell wie das Licht im Kreis – 11.000 Runden pro Sekunde.“ (Fakten prüfen)                               | Teilchen rasen durch den Ring, prallen frontal zusammen, Funkenregen      | Extrem        | –                    |
 | 🔥 Zeitumstellung / Atomuhr                | „Dein Handy weiß gar nicht, wie spät es ist – und stellt sich trotzdem selbst um.“ (Quarz driftet, Zeitserver, Cäsium 9,19 Mrd. Hz, GPS-Uhren laufen schneller) | Uhr springt 3:00→2:00, Atom schwingt, Zähler rast auf 9.192.631.770       | Handy         | Ende Okt / Ende März |
-| ★ Glätteisen                               | „Dein Glätteisen bricht die Wasser-Brücken in deinen Haaren.“                                                                                                   | Haarsträhne in Nahaufnahme, Brücken zwischen den Ketten knacken auf       | Beauty        | –                    |
+| ★ Haarspray                                | „Haarspray klebt deine Haare mit winzigen Plastik-Tropfen fest.“ (Fakten prüfen)                                                                                | Sprühnebel trifft Strähnen, Tropfen werden zu Schweißpunkten              | Beauty        | –                    |
 | ★ Haartrockner                             | „Dein Föhn schaltet sich selbst ab, bevor deine Haare brennen.“                                                                                                 | Heizdraht glüht, Bimetall biegt sich, _klack_, aus                        | Beauty        | –                    |
 | Induktionsherd                             | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                      | Küche         | –                    |
 | Ampel-Kontaktschleife                      | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün      | Straße / Auto | –                    |
@@ -301,7 +301,6 @@ ask for go in here.
 
 | Thema          | Format | Datum      | Chat                       |
 | -------------- | ------ | ---------- | -------------------------- |
-| Glätteisen     | A      | 2026-11-10 | TikTok #66: Glätteisen     |
 | Kabellos laden | A      | 2026-11-10 | TikTok #68: Kabellos laden |
 
 ## Verwendet
