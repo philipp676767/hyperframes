@@ -1,150 +1,386 @@
 [
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
-  },
-  {
     "s": "hit",
     "at": 0.05,
     "why": "hook title"
   },
   {
-    "s": "whoosh",
-    "at": 1.189,
-    "why": "cut"
+    "s": "muenze",
+    "at": 0.13,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "hit",
+    "at": 0.15,
+    "why": "highlight flash"
+  },
+  {
+    "s": "zisch",
+    "at": 0.4,
+    "why": "beats.js",
+    "dur": 1.2,
+    "db": -20
   },
   {
     "s": "whoosh",
-    "at": 1.189,
+    "at": 0.58,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 1.409,
+    "at": 0.7,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 3.93,
+    "at": 1.08,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 3.48,
+    "why": "highlight shake"
+  },
+  {
+    "s": "ladeton",
+    "at": 3.53,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "whoosh",
+    "at": 3.78,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 4.3,
+    "at": 4.1,
     "why": "beats.js"
   },
   {
-    "s": "hit",
-    "at": 4.45,
-    "why": "highlight shake"
-  },
-  {
-    "s": "punch",
-    "at": 5.028,
-    "why": "highlight"
+    "s": "whoosh",
+    "at": 5.2,
+    "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 6.065,
+    "at": 6.2,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 7.14,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "punch",
+    "at": 7.54,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 7.59,
+    "why": "label Kupferspule"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.2,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.54,
+    "why": "cut"
+  },
+  {
+    "s": "surr",
+    "at": 9.76,
+    "why": "beats.js",
+    "dur": 9.9,
+    "db": -24
+  },
+  {
+    "s": "hit",
+    "at": 10.01,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 10.01,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.9,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 6.335,
-    "why": "label Draht"
+    "at": 12.43,
+    "why": "label Spule im Handy"
+  },
+  {
+    "s": "whoosh",
+    "at": 13.1,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.56,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 15.78,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 15.83,
+    "why": "label Akku"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.18,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.48,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 16.7,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 16.75,
+    "why": "label Induktion"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.22,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 17.44,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 19.44,
+    "why": "cut"
   },
   {
     "s": "pop",
-    "at": 6.87,
+    "at": 19.66,
     "why": "follow pill"
   },
   {
+    "s": "whoosh",
+    "at": 20.7,
+    "why": "cut"
+  },
+  {
     "s": "click",
-    "at": 7.95,
+    "at": 20.74,
     "why": "follow tap"
   },
   {
     "s": "ding",
-    "at": 7.99,
+    "at": 20.78,
     "why": "gefolgt",
     "db": -16
   },
   {
+    "s": "whoosh",
+    "at": 22.58,
+    "why": "cut"
+  },
+  {
     "s": "punch",
-    "at": 9.294,
+    "at": 22.8,
     "why": "highlight"
   },
   {
-    "s": "slowmo",
-    "at": 9.294,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 9.294,
-    "why": "beats.js",
-    "dur": 3.942,
-    "db": -21
-  },
-  {
     "s": "hit",
-    "at": 10.144,
+    "at": 22.8,
     "why": "highlight flash"
   },
   {
+    "s": "hit",
+    "at": 22.8,
+    "why": "highlight shake"
+  },
+  {
+    "s": "surr",
+    "at": 22.8,
+    "why": "beats.js",
+    "dur": 1.2,
+    "db": -18
+  },
+  {
     "s": "whoosh",
-    "at": 11.202,
+    "at": 24.02,
+    "why": "cut"
+  },
+  {
+    "s": "muenze",
+    "at": 25.34,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "whoosh",
+    "at": 25.64,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 11.202,
+    "at": 28.8,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 29,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 11.422,
+    "at": 29.22,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 11.472,
-    "why": "label Glühfaden"
+    "at": 29.27,
+    "why": "label Wirbelströme"
   },
   {
     "s": "whoosh",
-    "at": 13.016,
+    "at": 29.92,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 13.892,
+    "at": 30.72,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 30.72,
+    "why": "highlight shake"
+  },
+  {
+    "s": "zisch",
+    "at": 30.72,
+    "why": "beats.js",
+    "dur": 1.4,
+    "db": -17
+  },
+  {
+    "s": "hit",
+    "at": 30.77,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.12,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 32.1,
+    "why": "beats.js"
+  },
+  {
+    "s": "piep",
+    "at": 32.15,
+    "why": "beats.js",
+    "dur": 0.9,
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 32.5,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 34.28,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 13.892,
+    "at": 34.28,
     "why": "question answered"
   },
   {
     "s": "whoosh",
-    "at": 14.451,
+    "at": 34.86,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 35.23,
+    "why": "beats.js"
+  },
+  {
+    "s": "zisch",
+    "at": 35.68,
+    "why": "beats.js",
+    "dur": 1.2,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 36.36,
     "why": "cut"
   },
   {
     "s": "wow",
-    "at": 14.671,
+    "at": 36.58,
     "why": "bonus fact"
   },
   {
+    "s": "ladeton",
+    "at": 36.68,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 39.12,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.12,
+    "why": "highlight zoom"
+  },
+  {
     "s": "punch",
-    "at": 17,
+    "at": 39.34,
     "why": "highlight"
   },
   {
+    "s": "whoosh",
+    "at": 40.88,
+    "why": "cut"
+  },
+  {
     "s": "pop",
-    "at": 18.999,
+    "at": 41.1,
     "why": "comment pill"
+  },
+  {
+    "s": "pop",
+    "at": 41.46,
+    "why": "beats.js",
+    "db": -8
   }
 ]

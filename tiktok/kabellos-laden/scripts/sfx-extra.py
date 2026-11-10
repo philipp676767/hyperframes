@@ -1,18 +1,23 @@
-# Per-video sound effects — the topic's own sounds (popcorn popping, a smoke
-# alarm, a till drawer …), synthesized with the helpers of make-sfx.py:
-#   t_of(dur), noise(dur), sine(freq, t), svf(x, cutoff, q, mode), env(t, a, d),
-#   write(name, x, peak_db=-3), rng (seeded), np
-# Each write("name", …) becomes assets/sfx-extra/name.wav, usable in beats.js
-# SFX like a kit sound: { s: "name", at: T.x }. Names must differ from the
-# house kit (whoosh, pop, ding …). build-sfx.mjs runs this file every time.
-# A sound file the user hands over can be added with scripts/add-sfx.sh.
+# #68 Kabellos laden — the video's own sounds (synthesized, no samples):
+#   muenze  — a euro coin dropping onto a hard plastic tray: a bright metallic
+#             strike (inharmonic partials of a thin disc) + two small bounces
+#   ladeton — the soft two-note "charging started" chime of a phone
+def coin_strike(t, t0, amp):
+    out = np.zeros_like(t)
+    tt = np.clip(t - t0, 0, None)
+    on = (t >= t0).astype(float)
+    for f, a, d in [(2350, 1.0, 0.09), (3730, 0.7, 0.07), (5210, 0.5, 0.05), (6890, 0.35, 0.035), (1480, 0.25, 0.12)]:
+        out += a * np.sin(2 * np.pi * f * tt) * np.exp(-tt / d)
+    click = svf(noise(len(t) / 44100), 6000, q=0.7, mode="hp") * np.exp(-tt / 0.004)
+    return amp * on * (out + 0.6 * click)
 
-# Example (delete or replace): a candle wick catching fire — short crackle + soft whump
-t = t_of(0.7)
-crackle = np.zeros_like(t)
-for c in rng.uniform(0.0, 0.45, 9):
-    i = int(c * 44100)
-    n = min(len(t) - i, 200)
-    crackle[i : i + n] += rng.uniform(0.4, 1.0) * np.exp(-np.arange(n) / 30)
-whump = svf(noise(0.7), 260, q=0.8, mode="lp") * env(t, 0.03, 0.18)
-write("anzuenden", svf(crackle, 3500, q=0.8, mode="hp") + 1.5 * whump)
+t = t_of(0.6)
+write("muenze", coin_strike(t, 0.0, 1.0) + coin_strike(t, 0.11, 0.45) + coin_strike(t, 0.19, 0.2), peak_db=-4)
+
+t = t_of(0.9)
+chime = np.zeros_like(t)
+for t0, f in [(0.0, 1046.5), (0.13, 1568.0)]:
+    tt = np.clip(t - t0, 0, None)
+    on = (t >= t0).astype(float)
+    chime += on * (np.sin(2 * np.pi * f * tt) + 0.25 * np.sin(2 * np.pi * 2 * f * tt)) * (1 - np.exp(-tt / 0.004)) * np.exp(-tt / 0.28)
+write("ladeton", chime, peak_db=-5)
