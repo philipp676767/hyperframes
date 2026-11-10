@@ -299,9 +299,10 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema          | Format | Datum      | Chat                       |
-| -------------- | ------ | ---------- | -------------------------- |
-| Kabellos laden | A      | 2026-11-10 | TikTok #68: Kabellos laden |
+| Thema             | Format | Datum      | Chat                          |
+| ----------------- | ------ | ---------- | ----------------------------- |
+| Kabellos laden    | A      | 2026-11-10 | TikTok #68: Kabellos laden    |
+| Im Weltall weinen | B      | 2026-11-10 | TikTok #69: Weinen im Weltall |
 
 ## Verwendet
 
