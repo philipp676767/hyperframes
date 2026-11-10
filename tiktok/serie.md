@@ -77,4 +77,5 @@ Umgebungen (insel, stadt, …).
 | 65  | 10-Meter-Turm (Bauchklatscher) | B      | `tiktok/zehn-meter-turm`     | hallenbad-sprungturm          | novemberabend      | 45,0 s | 2026-11-10 |
 | 66  | Glätteisen (nasses Haar)       | A      | `tiktok/glaetteisen`         | schminktisch-hollywoodspiegel | regenmorgen        | 45,0 s | 2026-11-10 |
 | 67  | Einen Tag nichts trinken       | B      | `tiktok/nichts-trinken`      | festival-campingplatz         | heißer nachmittag  | 45,0 s | 2026-11-10 |
+| 68  | Kabellos laden (Münze)         | A      | `tiktok/kabellos-laden`      | auto-mittelkonsole-autobahn   | goldene stunde     | 45,0 s | 2026-11-10 |
 | 70  | Hundenase (Fingerabdruck)      | A      | `tiktok/hundenase`           | herbstwald-weg-nebel          | nebliger morgen    | 45,0 s | 2026-11-10 |

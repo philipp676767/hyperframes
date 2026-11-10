@@ -193,7 +193,6 @@ are always 10+ open topics per format.
 | Ampel-Kontaktschleife                      | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün      | Straße / Auto | –                    |
 | Türschloss                                 | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht        | Zuhause       | –                    |
 | Silvesterrakete                            | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild                   | Natur / Fest  | Ende Dezember        |
-| ★ Kabellos laden                           | „Dein Handy lädt ohne Kabel – zwei Spulen reden durch die Luft.“                                                                                                | Magnetfeld-Linien springen von Spule zu Spule, Akku füllt sich            | Geld / Tech   | –                    |
 | Heizkörper-Thermostat                      | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt                   | Zuhause       | Herbst/Winter        |
 | Rolltreppe                                 | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück      | Stadt         | –                    |
 | Schnellkochtopf                            | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100           | Küche         | –                    |
@@ -301,7 +300,6 @@ ask for go in here.
 
 | Thema                      | Format | Datum      | Chat                                   |
 | -------------------------- | ------ | ---------- | -------------------------------------- |
-| Kabellos laden             | A      | 2026-11-10 | TikTok #68: Kabellos laden             |
 | Im Weltall weinen          | B      | 2026-11-10 | TikTok #69: Weinen im Weltall          |
 | Alle springen gleichzeitig | B      | 2026-11-10 | TikTok #71: Alle springen gleichzeitig |
 
