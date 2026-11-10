@@ -303,6 +303,7 @@ ask for go in here.
 | ----------------- | ------ | ---------- | ----------------------------- |
 | Kabellos laden    | A      | 2026-11-10 | TikTok #68: Kabellos laden    |
 | Im Weltall weinen | B      | 2026-11-10 | TikTok #69: Weinen im Weltall |
+| Hundenase         | A      | 2026-11-10 | TikTok #70: Hundenase         |
 
 ## Verwendet
 
