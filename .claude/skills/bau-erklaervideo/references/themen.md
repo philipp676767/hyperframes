@@ -299,8 +299,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema      | Format | Datum      | Chat                   |
+| ---------- | ------ | ---------- | ---------------------- |
+| Glätteisen | A      | 2026-11-10 | TikTok #66: Glätteisen |
 
 ## Verwendet
 
