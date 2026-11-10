@@ -299,9 +299,10 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema      | Format | Datum      | Chat                   |
-| ---------- | ------ | ---------- | ---------------------- |
-| Glätteisen | A      | 2026-11-10 | TikTok #66: Glätteisen |
+| Thema          | Format | Datum      | Chat                       |
+| -------------- | ------ | ---------- | -------------------------- |
+| Glätteisen     | A      | 2026-11-10 | TikTok #66: Glätteisen     |
+| Kabellos laden | A      | 2026-11-10 | TikTok #68: Kabellos laden |
 
 ## Verwendet
 
