@@ -299,9 +299,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                    | Format | Datum      | Chat                            |
-| ------------------------ | ------ | ---------- | ------------------------------- |
-| Cola-Dose im Gefrierfach | B      | 2026-11-10 | TikTok #63: Cola im Gefrierfach |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
