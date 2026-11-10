@@ -299,11 +299,12 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema             | Format | Datum      | Chat                          |
-| ----------------- | ------ | ---------- | ----------------------------- |
-| Kabellos laden    | A      | 2026-11-10 | TikTok #68: Kabellos laden    |
-| Im Weltall weinen | B      | 2026-11-10 | TikTok #69: Weinen im Weltall |
-| Hundenase         | A      | 2026-11-10 | TikTok #70: Hundenase         |
+| Thema                      | Format | Datum      | Chat                                   |
+| -------------------------- | ------ | ---------- | -------------------------------------- |
+| Kabellos laden             | A      | 2026-11-10 | TikTok #68: Kabellos laden             |
+| Im Weltall weinen          | B      | 2026-11-10 | TikTok #69: Weinen im Weltall          |
+| Hundenase                  | A      | 2026-11-10 | TikTok #70: Hundenase                  |
+| Alle springen gleichzeitig | B      | 2026-11-10 | TikTok #71: Alle springen gleichzeitig |
 
 ## Verwendet
 
