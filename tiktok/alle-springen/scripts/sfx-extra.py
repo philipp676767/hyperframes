@@ -1,18 +1,16 @@
-# Per-video sound effects — the topic's own sounds (popcorn popping, a smoke
-# alarm, a till drawer …), synthesized with the helpers of make-sfx.py:
-#   t_of(dur), noise(dur), sine(freq, t), svf(x, cutoff, q, mode), env(t, a, d),
-#   write(name, x, peak_db=-3), rng (seeded), np
-# Each write("name", …) becomes assets/sfx-extra/name.wav, usable in beats.js
-# SFX like a kit sound: { s: "name", at: T.x }. Names must differ from the
-# house kit (whoosh, pop, ding …). build-sfx.mjs runs this file every time.
-# A sound file the user hands over can be added with scripts/add-sfx.sh.
+# Own sounds of #71 "Alle springen gleichzeitig":
+#   wumms — thousands of feet landing at once: deep thump + short rumble
+#   jubel — a stadium crowd roaring (many voices = band-passed noise with slow swells)
+t = t_of(1.4)
+f = 70 * np.exp(-t * 3.0) + 32
+phase = 2 * np.pi * np.cumsum(f) / 44100
+body = np.sin(phase) * env(t, 0.004, 0.32)
+rumble = svf(noise(1.4), 180, q=0.7, mode="lp") * env(t, 0.01, 0.55)
+slap = svf(noise(1.4), 1800, q=0.6, mode="bp") * env(t, 0.002, 0.05)
+write("wumms", 1.4 * body + 0.9 * rumble + 0.35 * slap)
 
-# Example (delete or replace): a candle wick catching fire — short crackle + soft whump
-t = t_of(0.7)
-crackle = np.zeros_like(t)
-for c in rng.uniform(0.0, 0.45, 9):
-    i = int(c * 44100)
-    n = min(len(t) - i, 200)
-    crackle[i : i + n] += rng.uniform(0.4, 1.0) * np.exp(-np.arange(n) / 30)
-whump = svf(noise(0.7), 260, q=0.8, mode="lp") * env(t, 0.03, 0.18)
-write("anzuenden", svf(crackle, 3500, q=0.8, mode="hp") + 1.5 * whump)
+t = t_of(3.0)
+roar = svf(noise(3.0), 900, q=0.5, mode="bp") + 0.5 * svf(noise(3.0), 2600, q=0.9, mode="bp")
+swell = 0.75 + 0.25 * np.sin(2 * np.pi * 0.9 * t + 1.3) * np.sin(2 * np.pi * 0.37 * t)
+fadeio = np.minimum(1, t / 0.15) * np.minimum(1, (3.0 - t) / 0.9)
+write("jubel", roar * swell * fadeio)

@@ -1,8 +1,24 @@
 [
   {
-    "s": "anzuenden",
-    "at": 0.02,
+    "s": "klack",
+    "at": 0,
     "why": "beats.js"
+  },
+  {
+    "s": "jubel",
+    "at": 0,
+    "why": "beats.js",
+    "db": -15
+  },
+  {
+    "s": "hit",
+    "at": 0.02,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.03,
+    "why": "highlight zoom"
   },
   {
     "s": "hit",
@@ -10,141 +26,317 @@
     "why": "hook title"
   },
   {
-    "s": "whoosh",
-    "at": 1.189,
-    "why": "cut"
+    "s": "wumms",
+    "at": 0.225,
+    "why": "beats.js",
+    "db": -11
   },
   {
     "s": "whoosh",
-    "at": 1.189,
-    "why": "highlight zoom"
+    "at": 0.98,
+    "why": "cut"
+  },
+  {
+    "s": "wumms",
+    "at": 1.125,
+    "why": "beats.js",
+    "db": -14
   },
   {
     "s": "punch",
-    "at": 1.409,
+    "at": 1.2,
     "why": "highlight"
-  },
-  {
-    "s": "whoosh",
-    "at": 3.93,
-    "why": "cut"
-  },
-  {
-    "s": "pop",
-    "at": 4.3,
-    "why": "beats.js"
   },
   {
     "s": "hit",
-    "at": 4.45,
+    "at": 1.2,
     "why": "highlight shake"
   },
   {
-    "s": "punch",
-    "at": 5.028,
-    "why": "highlight"
+    "s": "wumms",
+    "at": 2.025,
+    "why": "beats.js",
+    "db": -14
   },
   {
     "s": "whoosh",
-    "at": 6.065,
+    "at": 2.1,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.98,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 3.92,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 3.92,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 3.92,
+    "why": "highlight shake"
+  },
+  {
+    "s": "wumms",
+    "at": 3.92,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 5.32,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.42,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.56,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 6.335,
-    "why": "label Draht"
+    "at": 8.95,
+    "why": "label Wien"
+  },
+  {
+    "s": "blip",
+    "at": 9.53,
+    "why": "label Rio"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.78,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 10.11,
+    "why": "label Tokio"
+  },
+  {
+    "s": "slowmo",
+    "at": 10.94,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "punch",
+    "at": 12.38,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.6,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.98,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 15.2,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 16.64,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 16.64,
+    "why": "highlight shake"
+  },
+  {
+    "s": "wumms",
+    "at": 16.64,
+    "why": "beats.js",
+    "db": -5
+  },
+  {
+    "s": "jubel",
+    "at": 16.94,
+    "why": "beats.js",
+    "db": -17
+  },
+  {
+    "s": "whoosh",
+    "at": 17.84,
+    "why": "cut"
   },
   {
     "s": "pop",
-    "at": 6.87,
+    "at": 18.06,
     "why": "follow pill"
   },
   {
+    "s": "whoosh",
+    "at": 19.06,
+    "why": "cut"
+  },
+  {
     "s": "click",
-    "at": 7.95,
+    "at": 19.14,
     "why": "follow tap"
   },
   {
     "s": "ding",
-    "at": 7.99,
+    "at": 19.18,
     "why": "gefolgt",
     "db": -16
   },
   {
-    "s": "punch",
-    "at": 9.294,
-    "why": "highlight"
-  },
-  {
-    "s": "slowmo",
-    "at": 9.294,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 9.294,
-    "why": "beats.js",
-    "dur": 3.942,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 10.144,
-    "why": "highlight flash"
-  },
-  {
     "s": "whoosh",
-    "at": 11.202,
+    "at": 21.36,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 11.202,
+    "at": 21.5,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 11.422,
+    "at": 21.72,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.68,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 24.15,
+    "why": "label alle Menschen"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.62,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 24.84,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.42,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 27.02,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 11.472,
-    "why": "label Glühfaden"
+    "at": 27.07,
+    "why": "label Australien"
+  },
+  {
+    "s": "hit",
+    "at": 29.6,
+    "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 13.016,
+    "at": 31.08,
     "why": "cut"
   },
   {
+    "s": "whoosh",
+    "at": 32.78,
+    "why": "highlight zoom"
+  },
+  {
     "s": "punch",
-    "at": 13.892,
+    "at": 33,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 13.892,
+    "at": 33,
     "why": "question answered"
   },
   {
+    "s": "pop",
+    "at": 33,
+    "why": "beats.js"
+  },
+  {
+    "s": "blip",
+    "at": 33.05,
+    "why": "label Atom"
+  },
+  {
     "s": "whoosh",
-    "at": 14.451,
+    "at": 34.78,
     "why": "cut"
   },
   {
     "s": "wow",
-    "at": 14.671,
+    "at": 35,
     "why": "bonus fact"
   },
   {
-    "s": "punch",
-    "at": 17,
-    "why": "highlight"
+    "s": "jubel",
+    "at": 35,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "hit",
+    "at": 35.2,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.2,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.56,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 39.58,
+    "why": "highlight shake"
+  },
+  {
+    "s": "wumms",
+    "at": 39.68,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 40.9,
+    "why": "cut"
   },
   {
     "s": "pop",
-    "at": 18.999,
+    "at": 41.12,
     "why": "comment pill"
   }
 ]
