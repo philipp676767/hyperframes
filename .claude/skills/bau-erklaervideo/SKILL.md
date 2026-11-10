@@ -499,7 +499,7 @@ Geldautomat erkennt Falschgeld in 1 Sekunde 💶
 The user also posts every video as a **YouTube Short** (2026-11-05). So
 every finished video gets, next to `beschreibung.txt`, a
 **`tiktok/<slug>/youtube.txt`** with all the fields YouTube asks for,
-and it goes **into the delivery message as copy-paste blocks**, right
+and it goes **into the delivery message as one code block per field** (see below), right
 after the TikTok description. The same video file and `cover.png` are
 used (9:16, 45 s, so YouTube files it as a Short on its own).
 
@@ -541,7 +541,7 @@ Fields, in the order YouTube asks for them:
 11. **Kommentare**: an, sorted by „Top“; **Remixen**: erlauben.
 12. **Sichtbarkeit**: Öffentlich (or a time if the user wants to post later).
 
-Format of `youtube.txt` (the same blocks go into the message):
+Format of `youtube.txt` (the file keeps the headings):
 
 ```text
 TITEL
@@ -558,6 +558,44 @@ flugzeugtür, flugzeug tür öffnen, notausgang flugzeug, kabinendruck, plug doo
 EINSTELLUNGEN
 Titelbild: cover.png (das von TikTok) · Nicht für Kinder · Altersbeschränkung: nein · Bezahlte Werbung: nein · Synthetische Inhalte: ja · Sprache: Deutsch · Kategorie: Bildung · Kommentare: an · Remixen: erlauben · Öffentlich
 ```
+
+**In the delivery message every field is its own code block** (user,
+2026-11-10: one tap = one field, nothing to cut apart): a bold label
+line, then a code block holding **only the text that goes into that
+field** — no heading, no label, no empty lines inside the block. Three
+blocks: **Titel**, **Beschreibung** (its 2–3 lines incl. hashtags), **Tags**.
+The settings are not copied, so they come as a short bullet list after
+the blocks. The TikTok description works the same way: its own block
+right before them. Like this:
+
+**TikTok-Beschreibung**
+
+```text
+Flugzeugtür im Flug öffnen: geht das? ✈️
+#flugzeug #fliegen #physik #wissen
+```
+
+**YouTube-Titel**
+
+```text
+Warum Flugzeugtüren im Flug nicht aufgehen ✈️
+```
+
+**YouTube-Beschreibung**
+
+```text
+Kann man die Flugzeugtür mitten im Flug öffnen? Hier siehst du, welche Kraft sie in 10 km Höhe zuhält.
+Folge für mehr Wissen.
+#flugzeug #fliegen #physik #wissen #shorts
+```
+
+**YouTube-Tags**
+
+```text
+flugzeugtür, flugzeug tür öffnen, notausgang flugzeug, kabinendruck, plug door, airplane door
+```
+
+**YouTube-Einstellungen:** Titelbild = TikTok-Cover · nicht für Kinder · Altersbeschränkung nein · bezahlte Werbung nein · synthetische Inhalte ja · Deutsch · Bildung · Kommentare an · Remixen erlauben · öffentlich
 
 ### 6e. Ask for the numbers — learning log
 

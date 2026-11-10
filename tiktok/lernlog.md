@@ -37,6 +37,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 - [ ] Alle 5–7 s ein Highlight (Zeitlupe, Blitz, Wackeln, Crash-Zoom, Reißschwenk) und 2–3 Money-Shots, die die spektakulären Behauptungen **zeigen**.
 - [ ] Klarheit: Objekt groß im Bild, Röntgen-Look max. ⅓ der Zeit, kaum Rand-Unschärfe, starker Farbkontrast.
 - [ ] Stimme mit 3–6 Regieanweisungen (`[excited]`, `[whispers]` …), damit Jan nicht monoton klingt.
+- [ ] **Jede Beschreibung ein eigener Kopier-Block** (Nutzer, 2026-11-10): TikTok-Beschreibung, YouTube-Titel, -Beschreibung, -Tags je ein Code-Block nur mit dem Text fürs Feld; Einstellungen als Liste.
 - [ ] **Autopilot** (Nutzer, 2026-11-10): nichts bestätigen lassen — Thema selbst wählen und **als Allererstes reservieren + pushen**, dann alles bis zum fertigen Video durchziehen; Fragen nur, wenn es wirklich nicht weitergeht.
 - [ ] **Kein Flüstern im Hook** (Nutzer, 2026-11-07): Zeile 1 und der Satz danach laut und klar (`[excited]`, `[curious]` oder ohne Tag), `[whispers]` erst ab ~5 s.
 - [ ] **Noch realistischer** (Nutzer, 2026-11-06): Hauptobjekt + Nahes mit `real.*`-Materialien, `roundedBox()`, glatter Geometrie, echten Farben, echter Größe und 3–6 Details; Kamera-Look mit Tiefenschärfe nach Entfernung, Neutral-Tonemapping, leichtem Filmkorn (automatisch).
