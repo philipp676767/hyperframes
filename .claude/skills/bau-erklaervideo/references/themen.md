@@ -190,7 +190,6 @@ are always 10+ open topics per format.
 | ★ Glätteisen                               | „Dein Glätteisen bricht die Wasser-Brücken in deinen Haaren.“                                                                                                   | Haarsträhne in Nahaufnahme, Brücken zwischen den Ketten knacken auf       | Beauty        | –                    |
 | ★ Haartrockner                             | „Dein Föhn schaltet sich selbst ab, bevor deine Haare brennen.“                                                                                                 | Heizdraht glüht, Bimetall biegt sich, _klack_, aus                        | Beauty        | –                    |
 | Induktionsherd                             | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                      | Küche         | –                    |
-| Blitzer                                    | „Der Blitzer weiß in Sekundenbruchteilen, wie schnell du bist.“                                                                                                 | Funkwellen prallen vom Auto ab, werden gestaucht, BLITZ                   | Straße / Auto | –                    |
 | Ampel-Kontaktschleife                      | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün      | Straße / Auto | –                    |
 | Türschloss                                 | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht        | Zuhause       | –                    |
 | Silvesterrakete                            | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild                   | Natur / Fest  | Ende Dezember        |
@@ -303,6 +302,7 @@ ask for go in here.
 | Thema                    | Format | Datum      | Chat                            |
 | ------------------------ | ------ | ---------- | ------------------------------- |
 | Cola-Dose im Gefrierfach | B      | 2026-11-10 | TikTok #63: Cola im Gefrierfach |
+| Blitzer                  | A      | 2026-11-10 | TikTok #64: Blitzer             |
 
 ## Verwendet
 
