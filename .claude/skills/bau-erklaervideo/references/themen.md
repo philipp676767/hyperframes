@@ -302,7 +302,6 @@ ask for go in here.
 | Thema                    | Format | Datum      | Chat                            |
 | ------------------------ | ------ | ---------- | ------------------------------- |
 | Cola-Dose im Gefrierfach | B      | 2026-11-10 | TikTok #63: Cola im Gefrierfach |
-| Blitzer                  | A      | 2026-11-10 | TikTok #64: Blitzer             |
 
 ## Verwendet
 
