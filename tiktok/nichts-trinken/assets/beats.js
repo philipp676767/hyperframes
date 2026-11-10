@@ -3,6 +3,7 @@
 import { W } from "./timing.js";
 
 export const T = {
+  einzigen: W("einzigen"),
   schluck: W("Schluck"),
   kaffee: W("Kaffee"),
   harmlos: W("harmlos"),
@@ -51,6 +52,14 @@ export const DIXI = [-6.8, 0, -8.2];
 export const shots = [
   // frame 0: the hand flicks the full glass — water flies, fast push-in
   { at: 0, from: [0.25, 1.95, 2.35], to: [0.7, 1.78, 1.85], look: [1.25, 1.62, 1.05], zoom: 1.0 },
+  // macro: the glass lies in its puddle, drops still landing
+  {
+    at: T.einzigen,
+    from: [0.25, 1.78, 0.95],
+    to: [0.45, 1.72, 1.0],
+    look: [1.15, 1.56, 1.05],
+    zoom: 1.0,
+  },
   // the coffee is shoved away too
   {
     at: T.schluck + 0.25,
@@ -76,7 +85,13 @@ export const shots = [
     whip: -1,
   },
   // breath leaves the mouth (side view)
-  { at: T.atemzug, from: [1.4, 3.1, 0.6], to: [1.2, 3.05, 0.95], look: [0, 3.0, 0.4], zoom: 1.0 },
+  {
+    at: T.atemzug,
+    from: [1.3, 3.15, 1.7],
+    to: [1.1, 3.1, 1.45],
+    look: [0.15, 3.0, 0.6],
+    zoom: 1.0,
+  },
   // noon: dry lips, the colour scale slides to dark (2nd money shot)
   { at: T.mittag, from: [-2.2, 2.6, 3.4], to: [-1.8, 2.4, 2.9], look: [-0.9, 2.0, 0.3], zoom: 1.2 },
   // afternoon: blood thickens (x-ray chest)
@@ -84,14 +99,14 @@ export const shots = [
   // the heart races
   { at: T.herz, from: [-1.0, 2.6, 2.1], to: [-0.8, 2.5, 1.8], look: [0.1, 2.4, 0], zoom: 1.0 },
   // the brain shrinks (slowmo)
-  { at: T.gehirn, orbit: { c: [0, 3.1, 0], r: 1.25, y: 3.35, a0: 0.9, a1: 0.35 }, zoom: 1.0 },
+  { at: T.gehirn, orbit: { c: [0, 2.82, 0], r: 1.45, y: 3.3, a0: 0.9, a1: 0.35 }, zoom: 1.0 },
   // the head pounds
   { at: T.haemmert, from: [0, 3.1, 2.4], to: [0, 3.1, 1.7], look: [0, 3.0, 0], zoom: 1.1 },
   // follow line: medium, body above the pill
   { at: T.folge, from: [2.6, 3.0, 4.6], to: [2.2, 2.9, 4.0], look: [0.4, 2.3, 0], zoom: 1.2 },
   // guess: breath streams into a big glass
   { at: T.rate, from: [2.6, 3.0, 3.0], to: [2.2, 2.85, 2.6], look: [0.65, 2.55, 0.75], zoom: 1.0 },
-  { at: T.glas, from: [2.4, 2.2, 2.9], to: [2.15, 2.35, 2.5], look: [1.15, 2.3, 1.25], zoom: 1.0 },
+  { at: T.glas, from: [3.0, 2.5, 3.5], to: [2.7, 2.55, 3.1], look: [0.9, 2.45, 1.0], zoom: 1.0 },
   // kidneys from behind (x-ray)
   {
     at: T.nieren,
@@ -101,7 +116,7 @@ export const shots = [
     zoom: 1.0,
   },
   // brain dims — concentration drops
-  { at: T.kopf2, orbit: { c: [0, 3.1, 0], r: 1.35, y: 3.35, a0: -0.5, a1: 0.1 }, zoom: 1.0 },
+  { at: T.kopf2, orbit: { c: [0, 2.82, 0], r: 1.5, y: 3.3, a0: -0.5, a1: 0.1 }, zoom: 1.0 },
   // whip to the driving simulator
   {
     at: T.forscher,

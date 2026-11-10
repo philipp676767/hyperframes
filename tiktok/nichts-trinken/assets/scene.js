@@ -623,6 +623,7 @@ simTex.colorSpace = THREE.SRGBColorSpace;
     real.metal(0x6a6f78),
   );
   stand.position.set(0, 0.95, -1.5);
+  stand.visible = false; // hid the road picture in the over-the-shoulder shots
   sim.add(stand);
   const scr = new THREE.Mesh(
     new THREE.CylinderGeometry(2.0, 2.0, 0.85, 64, 1, true, Math.PI - 0.6, 1.2),
@@ -867,7 +868,7 @@ function renderAt(t) {
   sparks.instanceMatrix.needsUpdate = true;
   // kidneys glow and hold drops back
   const kid = pop(t, T.nieren, T.forscher);
-  kidMat.emissiveIntensity = kid * (0.6 + 0.4 * Math.sin(t * 6));
+  kidMat.emissiveIntensity = kid * (1.2 + 0.6 * Math.sin(t * 6));
   kdrops.visible = kid > 0.01;
   for (let i = 0; i < KD; i++) {
     const s = i % 2 ? -1 : 1;
@@ -886,7 +887,7 @@ function renderAt(t) {
     r.visible = pain > 0.01;
     r.scale.setScalar(0.7 + ph * 0.9);
     r.material.opacity = pain * (1 - ph) * 0.9;
-    r.rotation.x = Math.PI / 2;
+    r.rotation.x = 0; // facing the camera, rings around the head
   });
   // sweat drops slide down
   const sw = pop(t, T.schwitzen, T.atemzug + 0.5);
@@ -917,7 +918,7 @@ function renderAt(t) {
       vS.setScalar((0.025 + 0.03 * Math.sin(ph * Math.PI)) * br2);
     } else {
       vP.set(Math.sin(i * 2.1) * 0.05 * ph, 3.0 + Math.sin(i) * 0.03 * ph, 0.3 + ph * 0.6);
-      vS.setScalar((0.02 + 0.06 * ph) * br1 * (1 - ph));
+      vS.setScalar((0.035 + 0.1 * ph) * br1 * (1 - ph));
     }
     m4.compose(vP, q, vS);
     breath.setMatrixAt(i, m4);
@@ -946,10 +947,10 @@ function renderAt(t) {
   driver.g.rotation.z = Math.sin(t * 1.7) * 0.04 * err;
   showNope(
     Math.max(pop(t, s1 + 0.9, T.harmlos) > 0 ? 0 : 0, pop(t, T.fehler, T.faehrst)),
-    SIM[0],
-    2.6,
-    SIM[2] - 0.6,
-    0.45,
+    SIM[0] + 0.45,
+    2.0,
+    SIM[2] - 1.0,
+    0.35,
   );
   if (pop(t, s1 + 0.9, T.harmlos) > 0)
     showNope(pop(t, s1 + 0.9, T.harmlos), CUP[0] + 0.1, CUP[1] + 0.45, CUP[2] - 0.2, 0.25);
@@ -1005,8 +1006,8 @@ function renderAt(t) {
     showPanel(pop(t, T.glas, T.nieren), "NUR DURCHS ATMEN", "1 GLAS/TAG", LED.blue);
   } else if (t >= T.prozent && t < T.forscher) {
     showPanel(pop(t, T.prozent, T.forscher), "WENIGER WASSER", "−2 %", LED.red);
-  } else if (t >= T.betrunken && t < T.fakt) {
-    showPanel(pop(t, T.betrunken, T.fakt), "WIE MIT", "0,8 ‰", LED.red);
+  } else if (t >= T.betrunken + 0.6 && t < T.fakt) {
+    showPanel(pop(t, T.betrunken + 0.6, T.fakt), "WIE MIT", "0,8 ‰", LED.red);
   } else if (t >= T.mengen && t < T.wie) {
     showPanel(pop(t, T.mengen, T.wie), "KAFFEE", "ZÄHLT MIT", LED.green);
   } else {
