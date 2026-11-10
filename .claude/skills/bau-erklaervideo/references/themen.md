@@ -286,7 +286,6 @@ ask for go in here.
 | 🔥 … ein Teelöffel Neutronenstern auf der Erde landet? ⚠️ zu nischig | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                           | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden             | unmöglich                    | Weltall   |
 | 🔥 … alle Menschen gleichzeitig hochspringen?                        | Gar nichts – die Erde bewegt sich weniger als ein Atom                                                | 8 Milliarden Low-Poly-Menschen springen, LED „0,00000…“                    | harmlos                      | Erde      |
 | 🔥 … der Mond verschwindet? ⚠️ zu allgemein                          | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                           | Mond verpufft, Meer flacht ab, Nacht wird schwarz                          | unmöglich                    | Weltall   |
-| 🔥 … im Weltall weinst?                                              | Die Träne fällt nicht – sie klebt als Wasserkugel auf deinem Auge                                     | Träne wächst zur wackelnden Kugel vor dem Auge                             | unmöglich                    | Weltall   |
 | ★ … eine geschüttelte Cola aufmachst?                                | Draufklopfen bringt nichts (Studie prüfen) – nur Warten hilft                                         | Bläschen wachsen in Zeitlupe, Fontäne schießt raus                         | harmlos                      | Essen     |
 | ★ … mit vollem Magen schwimmen gehst?                                | Mythos: Krämpfe und Ertrinken – Studien finden kaum ein Risiko, nur ein Völlegefühl (Fakten prüfen)   | Bauch voller Essen, Low-Poly-Schwimmer, LED „1 STUNDE WARTEN?“ ✕           | harmlos                      | Körper    |
 | 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                       | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
@@ -300,7 +299,6 @@ ask for go in here.
 
 | Thema                      | Format | Datum      | Chat                                   |
 | -------------------------- | ------ | ---------- | -------------------------------------- |
-| Im Weltall weinen          | B      | 2026-11-10 | TikTok #69: Weinen im Weltall          |
 | Alle springen gleichzeitig | B      | 2026-11-10 | TikTok #71: Alle springen gleichzeitig |
 
 ## Verwendet
