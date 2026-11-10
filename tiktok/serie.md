@@ -75,3 +75,4 @@ Umgebungen (insel, stadt, …).
 | 63  | Cola im Gefrierfach (platzt)   | B      | `tiktok/cola-gefrierfach`    | gefrierfach-schublade-riesig | kaltes led-licht   | 45,0 s | 2026-11-10 |
 | 64  | Blitzer (Bremsen zu spät)      | A      | `tiktok/blitzer`             | landstrasse-nacht-windraeder | nacht, mondlicht   | 45,0 s | 2026-11-10 |
 | 65  | 10-Meter-Turm (Bauchklatscher) | B      | `tiktok/zehn-meter-turm`     | hallenbad-sprungturm         | novemberabend      | 45,0 s | 2026-11-10 |
+| 67  | Einen Tag nichts trinken       | B      | `tiktok/nichts-trinken`      | festival-campingplatz        | heißer nachmittag  | 45,0 s | 2026-11-10 |
