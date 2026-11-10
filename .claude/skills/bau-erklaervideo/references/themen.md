@@ -250,7 +250,7 @@ men).
 | ★ Latte Art / Milchschaum     | „Dein Milchschaum hält nur dank Eiweiß-Käfigen.“                                | „Hafer- oder Kuhmilch?“            | Eiweiß legt sich um Luftblasen, Herz wird gegossen               |
 | ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen          |
 | ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)               | „Wäschst du dein Auto selbst?“     | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt     |
-| ★ Hundenase                   | „Die Nase deines Hundes ist ein Fingerabdruck.“ (Fakten prüfen)                 | „Wie heißt dein Hund?“             | Riesige Hundenase, Rillenmuster leuchtet, Duftmoleküle strömen   |
+| ★ Katzenzunge                 | „Die Zunge deiner Katze ist eine Bürste aus Haken.“ (Fakten prüfen)             | „Wie heißt deine Katze?“           | Zunge im Makro, hohle Häkchen ziehen Speichel durchs Fell        |
 | ★ Gelnägel ablösen            | „Aceton frisst deine Gelnägel nicht – es lässt sie aufquellen.“ (Fakten prüfen) | „Team Gel oder Acryl?“             | Lösungsmittel kriecht ins Gel, Netz quillt auf, Schicht hebt ab  |
 | ★ Protein-Shake               | „Dein Körper zerlegt dein Shake-Eiweiß komplett.“ (Fakten prüfen)               | „Welcher Shake ist deiner?“        | Eiweißketten zerfallen in Bausteine, wandern in den Muskel       |
 | ★ Trockenshampoo              | „Trockenshampoo wäscht nichts – es saugt dein Fett auf.“ (Fakten prüfen)        | „Wie oft wäschst du deine Haare?“  | Stärke-Körnchen saugen Talg vom Haar, Strähne wird wieder locker |
@@ -303,7 +303,6 @@ ask for go in here.
 | -------------------------- | ------ | ---------- | -------------------------------------- |
 | Kabellos laden             | A      | 2026-11-10 | TikTok #68: Kabellos laden             |
 | Im Weltall weinen          | B      | 2026-11-10 | TikTok #69: Weinen im Weltall          |
-| Hundenase                  | A      | 2026-11-10 | TikTok #70: Hundenase                  |
 | Alle springen gleichzeitig | B      | 2026-11-10 | TikTok #71: Alle springen gleichzeitig |
 
 ## Verwendet
