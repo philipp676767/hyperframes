@@ -37,6 +37,7 @@ Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 - [ ] Alle 5–7 s ein Highlight (Zeitlupe, Blitz, Wackeln, Crash-Zoom, Reißschwenk) und 2–3 Money-Shots, die die spektakulären Behauptungen **zeigen**.
 - [ ] Klarheit: Objekt groß im Bild, Röntgen-Look max. ⅓ der Zeit, kaum Rand-Unschärfe, starker Farbkontrast.
 - [ ] Stimme mit 3–6 Regieanweisungen (`[excited]`, `[whispers]` …), damit Jan nicht monoton klingt.
+- [ ] **Token sparen ohne Qualitätsverlust** (Nutzer, 2026-11-10): Render-Monitor nur bei ~50 % und am Ende, Dateien nur gezielt lesen, Befehlsausgaben kurz, Kontaktbögen statt Einzelbilder, einmal schreiben + gezielt ändern, Werkzeuge bündeln (SKILL.md „Token budget“).
 - [ ] **YouTube-Titel endet immer mit „#shorts“** (Nutzer, 2026-11-10).
 - [ ] **Jede Beschreibung ein eigener Kopier-Block** (Nutzer, 2026-11-10): TikTok-Beschreibung, YouTube-Titel, -Beschreibung, -Tags je ein Code-Block nur mit dem Text fürs Feld; Einstellungen als Liste.
 - [ ] **Autopilot** (Nutzer, 2026-11-10): nichts bestätigen lassen — Thema selbst wählen und **als Allererstes reservieren + pushen**, dann alles bis zum fertigen Video durchziehen; Fragen nur, wenn es wirklich nicht weitergeht.

@@ -65,6 +65,43 @@ Stop and ask only when you truly cannot go on: no ElevenLabs access or no
 credits, a push that keeps failing, a broken tool you cannot work around.
 If the user names a topic or gives an instruction, take it.
 
+### Token budget — same quality, far fewer tokens (user's rule, 2026-11-10)
+
+A video chat grows to ~400 k tokens of context, and **every turn and
+every wake-up re-reads all of it**. #61 used ~40 M tokens: the ten
+"30 % … 90 %" render pings alone cost ~4 M (≈ 390 k each). So the rule
+is: **fewer turns, smaller context** — never fewer checks.
+
+1. **Render: two wake-ups, not ten.** One `Monitor` that prints only at
+   ~50 % and when the render process ends (or on an error), with the
+   longest timeout the tool allows; re-arm silently on expiry. No status
+   text in between ("Ich beobachte weiter …" is a full re-read too).
+2. **Read little, and only once.** `SKILL.md` is loaded already; read a
+   reference file only for the step that needs it, once. Never read
+   `references/set-beispiele.js` (10 k tokens) or the template's
+   `world.js` / `environments.js` / `props.js` / `post.js` whole:
+   `scene-api.md` lists the API; for details `grep -n "export function"`
+   and `sed -n 'a,bp'` the one function you need. Don't re-read a file
+   you just wrote or edited.
+3. **Quiet commands.** Every command's output goes to a file or through
+   `| tail -n 5` (render, npm/bun install, ffmpeg with `-v error`,
+   ElevenLabs downloads, git). Never dump a whole log, JSON or
+   `words.js` into the chat; grep what you need.
+4. **Look at pictures as contact sheets.** Small tiles (270×480, up to 12
+   per sheet) instead of single 1080×1920 frames; a full-size frame or
+   crop only to judge one detail. Planned looks: one sheet for the set
+   check (4 cameras), one after the first full scene pass, one of the
+   final render — plus one per real fix round, not per small tweak.
+5. **Write once, then edit.** Plan the whole scene (beats, shots, set)
+   first, write `set.js` / `scene.js` / `beats.js` in one go each, then
+   fix with small `Edit`s — never rewrite a whole file for a small change.
+   Collect several fixes from one contact sheet and apply them together.
+6. **Batch.** Independent tool calls go out together in one turn
+   (several files, several checks); no single-step turns. No
+   "Zwischenstand" messages that end a turn while you still work.
+7. **Voice in one take** whenever ElevenLabs allows it (pieces = many
+   extra turns); poll a generation no more often than `poll_after_seconds`.
+
 ### 0. Pick the format — always alternating — then the topic — reserve it FIRST
 
 **Format first** (user's rule, 2026-10-23: "Immer abwechselnd"). After
@@ -399,7 +436,7 @@ Fix and re-snapshot. Expect 2–3 rounds.
 ```bash
 # ~1.5 h for 45 s (full 1080p + AO, software WebGL, ~4 s/frame) — ALWAYS detached (see Gotchas "Render detached"):
 HYPERFRAMES_RENDER_DETACHED=1 setsid nohup npx hyperframes render -o renders/<slug>.mp4 > /tmp/render.log 2>&1 < /dev/null & disown
-tail --pid=$(pgrep -f "hyperframes render -o renders/<slug>.mp4" | head -1) -f /dev/null   # run_in_background: notifies when done
+# then ONE Monitor: print only at ~50 % and when the render ends (token budget, rule 1)
 bash scripts/finish-audio.sh renders/<slug>.mp4   # -> renders/<slug>-final.mp4 at -14 LUFS (picture untouched)
 ffprobe -v error -show_entries stream=codec_type,duration -of compact renders/<slug>-final.mp4
 ```
@@ -645,8 +682,9 @@ render"` after any restart notice and start it again (clear
   `renders/work-*` and `renders/.<slug>.hf-transaction-*` first). The
   container is also reclaimed when the chat sits idle for a while (#37
   lost a render at 53 % overnight): keep the turn alive while rendering
-  with a `Monitor` that prints progress every 10 % and re-arm it on expiry,
-  instead of ending the turn and waiting for a notification.
+  with a `Monitor` that prints only at ~50 % and when the render ends
+  (every printed line wakes the chat and re-reads ~400 k tokens — #61's
+  ten 10 % pings cost ~4 M, 2026-11-10); re-arm it on expiry.
 - **X-ray glass:** use `xrayMaterial()` + `setXray()`. Never toggle
   `material.transparent` at runtime — three.js keeps the opaque shader and
   the shell stays solid in sequential renders.
