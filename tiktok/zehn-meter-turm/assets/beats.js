@@ -108,7 +108,7 @@ export const shots = [
   // "Unten bist du so schnell …": low at the water, looking up at you coming
   { at: T.unten, from: [2.0, -2.8, 2.8], to: [1.6, -2.3, 2.3], look: [0, -0.4, 0], rel: "you" },
   // "wie ein Auto in der Stadt": close side, speed lines
-  { at: T.auto, from: [-2.4, 0.6, 0.8], to: [-2.2, 0.5, 0.7], look: [0, 0.2, 0], rel: "you" },
+  { at: T.auto, from: [-3.6, 0.7, 1.6], to: [-3.3, 0.6, 1.4], look: [0, 0.1, 0.1], rel: "you" },
   // "50 km/h": low front, gauge maxed
   { at: T.k50, from: [1.3, -1.7, 3.4], to: [1.0, -1.3, 2.8], look: [0, -0.3, 0], rel: "you" },
   // "Dein ganzer Bauch klatscht gleichzeitig auf": water level side, slowmo impact

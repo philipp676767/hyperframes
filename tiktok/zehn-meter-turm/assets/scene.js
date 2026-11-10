@@ -580,7 +580,7 @@ const beads = new THREE.InstancedMesh(
 beads.frustumCulled = false;
 beads.userData.noAO = true;
 scene.add(beads);
-const bHot = new THREE.Color(0xffd23f);
+const bHot = new THREE.Color(0xff8a2a);
 const bCold = new THREE.Color(0x3aa8ff);
 function updateBeads(t) {
   // which window: belly (rate..haut) or the pro's hole (denn..übrigens)
@@ -598,6 +598,7 @@ function updateBeads(t) {
   // pro: beads flow slowly around the hole
   const part = atPro ? smooth(ramp(t, T.loch + 0.2, T.zeit + 0.8)) : 0;
   beadMat.color.copy(bCold).lerp(bHot, squeeze * (1 - squirt) * 0.85);
+  beadMat.emissive.setHex(0x0a3a80).lerp(bHot, squeeze * (1 - squirt) * 0.7);
   BEADS.forEach((b, i) => {
     const top = clamp01(1 + b.y / 0.5); // 1 at the surface
     const side = Math.sign(b.x) || 1;
@@ -659,8 +660,8 @@ const BUB = Array.from({ length: NB }, (_, i) => {
   return {
     x: n[0],
     z: n[1],
-    ph: r() * 3,
-    sp: 1.3 + r() * 1.1,
+    ph: r() * 1.6,
+    sp: 2.2 + r() * 1.4,
     s: 0.035 + r() * 0.065,
     w: r() * 6.28,
   };
@@ -670,15 +671,15 @@ const bubMat = new THREE.MeshPhysicalMaterial({
   roughness: 0.02,
   clearcoat: 1,
   transparent: true,
-  opacity: 0.75,
-  emissive: 0x9fe8ff,
-  emissiveIntensity: 0.25,
+  opacity: 0.88,
+  emissive: 0xbff2ff,
+  emissiveIntensity: 0.55,
 });
 const bubbles = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 16, 12), bubMat, NB);
 bubbles.frustumCulled = false;
 bubbles.userData.noAO = true;
 scene.add(bubbles);
-const B0 = T.uebrigens - 0.15;
+const B0 = T.uebrigens - 0.9;
 // foam on the surface
 const NF = 340;
 const FOAM = Array.from({ length: NF }, (_, i) => {
@@ -848,10 +849,11 @@ function renderAt(t) {
 
   // ---- HUD
   const fallK = pop(t, T.nichts, T.ganzer, 0.2);
-  const fallen = Math.max(0, PLATFORM.y + FEET - 0.75 - youPos.y);
   gauge("tempo", fallK, {
     label: "Tempo",
-    value: Math.min(50, Math.round(Math.sqrt(2 * 9.81 * fallen * 1.0) * 3.6)),
+    value: Math.round(
+      50 * Math.pow(clamp01((t - T.nichts + 0.6) / (T.k50 - T.nichts + 0.6)), 0.75),
+    ),
     max: 60,
     unit: "km/h",
     x: 60,
