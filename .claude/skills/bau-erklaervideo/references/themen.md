@@ -303,6 +303,7 @@ ask for go in here.
 | ------------------------ | ------ | ---------- | ------------------------------- |
 | Cola-Dose im Gefrierfach | B      | 2026-11-10 | TikTok #63: Cola im Gefrierfach |
 | Blitzer                  | A      | 2026-11-10 | TikTok #64: Blitzer             |
+| 10-Meter-Turm (Sprung)   | B      | 2026-11-10 | TikTok #65: 10-Meter-Turm       |
 
 ## Verwendet
 
