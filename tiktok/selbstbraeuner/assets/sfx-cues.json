@@ -1,0 +1,341 @@
+[
+  {
+    "s": "reiben",
+    "at": 0,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.16,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.9,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 1.63,
+    "why": "beats.js",
+    "dur": 0.5,
+    "db": -16
+  },
+  {
+    "s": "punch",
+    "at": 1.68,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 1.68,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.72,
+    "why": "cut"
+  },
+  {
+    "s": "reiben",
+    "at": 3.04,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 3.98,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 4.86,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 5.08,
+    "why": "beats.js",
+    "dur": 1.2,
+    "db": -20
+  },
+  {
+    "s": "hit",
+    "at": 6.06,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.32,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.8,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.52,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 9.99,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.94,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 11.16,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.7,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 13.17,
+    "why": "label Tote Zellen"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.96,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 15.72,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 15.72,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.02,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.54,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 17.76,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 18.84,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 18.88,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 18.94,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 19.46,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "surr",
+    "at": 19.51,
+    "why": "beats.js",
+    "dur": 1.9399999999999984,
+    "db": -24
+  },
+  {
+    "s": "whoosh",
+    "at": 21.06,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 21.4,
+    "why": "highlight"
+  },
+  {
+    "s": "toaster",
+    "at": 21.42,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "hit",
+    "at": 21.45,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 21.45,
+    "why": "highlight shake"
+  },
+  {
+    "s": "blip",
+    "at": 23.33,
+    "why": "label Zucker"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.54,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 24.65,
+    "why": "label Eiweiß"
+  },
+  {
+    "s": "whoosh",
+    "at": 25.88,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 26.1,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 27.18,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.4,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 29.08,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 29.3,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.74,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.8,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 32.22,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "hit",
+    "at": 32.4,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.28,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 34.28,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.74,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 35.72,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 35.72,
+    "why": "question answered"
+  },
+  {
+    "s": "hit",
+    "at": 35.72,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.1,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.3,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 37.52,
+    "why": "bonus fact"
+  },
+  {
+    "s": "rauschen",
+    "at": 37.52,
+    "why": "beats.js",
+    "dur": 3.799999999999997,
+    "db": -15
+  },
+  {
+    "s": "whoosh",
+    "at": 40.36,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 40.58,
+    "why": "highlight"
+  },
+  {
+    "s": "slowmo",
+    "at": 40.58,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "pop",
+    "at": 41.32,
+    "why": "comment pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 42.18,
+    "why": "cut"
+  }
+]
