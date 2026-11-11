@@ -296,8 +296,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                      | Format | Datum      | Chat                                   |
+| -------------------------- | ------ | ---------- | -------------------------------------- |
+| Mit vollem Magen schwimmen | B      | 2026-11-11 | TikTok #73: Mit vollem Magen schwimmen |
 
 ## Verwendet
 
