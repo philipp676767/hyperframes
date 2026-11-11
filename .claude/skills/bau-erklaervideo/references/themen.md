@@ -194,7 +194,6 @@ are always 10+ open topics per format.
 | Türschloss                                 | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht        | Zuhause       | –                    |
 | Silvesterrakete                            | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild                   | Natur / Fest  | Ende Dezember        |
 | Heizkörper-Thermostat                      | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt                   | Zuhause       | Herbst/Winter        |
-| Rolltreppe                                 | „Die Stufen der Rolltreppe verschwinden nicht – sie fahren unten kopfüber zurück.“                                                                              | Röntgenblick: Stufen klappen flach und laufen unter dem Boden zurück      | Stadt         | –                    |
 | Schnellkochtopf                            | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100           | Küche         | –                    |
 | Eiswürfel                                  | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt     | Küche         | Sommer               |
 | Türklingel                                 | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe      | Zuhause       | –                    |
@@ -297,8 +296,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                        | Format | Datum      | Chat                   |
+| ---------------------------- | ------ | ---------- | ---------------------- |
+| Rolltreppe (Bürsten am Rand) | A      | 2026-11-11 | TikTok #72: Rolltreppe |
 
 ## Verwendet
 
