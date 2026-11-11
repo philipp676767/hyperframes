@@ -296,9 +296,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                        | Format | Datum      | Chat                   |
-| ---------------------------- | ------ | ---------- | ---------------------- |
-| Rolltreppe (Bürsten am Rand) | A      | 2026-11-11 | TikTok #72: Rolltreppe |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
