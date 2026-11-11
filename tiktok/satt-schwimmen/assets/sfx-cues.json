@@ -1,0 +1,346 @@
+[
+  {
+    "s": "whoosh",
+    "at": 0,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.18,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 1.25,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 1.25,
+    "why": "highlight shake"
+  },
+  {
+    "s": "platsch",
+    "at": 1.25,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "punch",
+    "at": 2.02,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.54,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 3.01,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 4.68,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 4.9,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 4.95,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.5,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.4,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.42,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 7.79,
+    "why": "label Magen"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.76,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.76,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 9.98,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 10.13,
+    "why": "label Blut"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.96,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.86,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.2,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 14.42,
+    "why": "beats.js",
+    "dur": 2.42,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 15.3,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 16,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.62,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 16.84,
+    "why": "highlight flash"
+  },
+  {
+    "s": "blip",
+    "at": 17.91,
+    "why": "label Wade"
+  },
+  {
+    "s": "punch",
+    "at": 18.6,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 18.6,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.74,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 18.96,
+    "why": "follow pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 19.98,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 20.04,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 20.08,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "click",
+    "at": 20.6,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "click",
+    "at": 21.6,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "click",
+    "at": 22.6,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "click",
+    "at": 23.5,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 24.32,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.32,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 24.54,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 24.59,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.78,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 27.8,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "blip",
+    "at": 28.07,
+    "why": "label Muskeln"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.9,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 30.48,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.96,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 31.33,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 32.08,
+    "why": "cut"
+  },
+  {
+    "s": "plaetschern",
+    "at": 32.3,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 33.7,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 33.92,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 33.92,
+    "why": "question answered"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.34,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 35.44,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "klack",
+    "at": 35.56,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "punch",
+    "at": 35.66,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.14,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 36.36,
+    "why": "bonus fact"
+  },
+  {
+    "s": "pop",
+    "at": 36.71,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 39.76,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 40.92,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 41.02,
+    "why": "comment pill"
+  }
+]
