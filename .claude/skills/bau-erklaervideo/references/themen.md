@@ -300,6 +300,7 @@ ask for go in here.
 | -------------------------- | ------ | ---------- | -------------------------------------- |
 | Mit vollem Magen schwimmen | B      | 2026-11-11 | TikTok #73: Mit vollem Magen schwimmen |
 | Milchschaum (Latte Art)    | A      | 2026-11-11 | TikTok #74: Milchschaum                |
+| Eine Woche ohne Zucker     | B      | 2026-11-11 | TikTok #75: Woche ohne Zucker          |
 
 ## Verwendet
 
