@@ -323,7 +323,7 @@ numbers). So:
 
 Close the hook's loop explicitly and with punch — this is the moment the
 on-screen question is answered and fades, so the `answer` word in `hf-config` sits
-here: "Und genau deshalb ist die Rückseite _warm_." / "Darum bleibt echtes
+here: "Deshalb ist die Rückseite _warm_." / "Darum bleibt echtes
 Geld _dunkel_." **Never** "Schau dich an. Du hast gerade X gebaut." (or
 any other "fertig"-line) — go straight on to "Übrigens".
 
@@ -428,6 +428,34 @@ and a soft "punch" sounds. Rules:
 - Only around one word, punctuation outside: `*Kompressor*.` The stars
   never reach the voice (strip them before ElevenLabs).
 
+## No filler words (user's rule, 2026-11-11)
+
+Every word must carry something. Cut the padding, keep the punch:
+
+| Instead of                         | Write                  |
+| ---------------------------------- | ---------------------- |
+| „Und genau das rettet dich.“       | „Das rettet dich.“     |
+| „Und genau deshalb ist er warm.“   | „Deshalb ist er warm.“ |
+| „Das ist eigentlich ganz einfach.“ | (cut — say the thing)  |
+| „Und dann passiert Folgendes:“     | (cut — show it)        |
+| „Es ist so, dass die Luft drückt.“ | „Die Luft drückt.“     |
+| „Du musst dir vorstellen, …“       | „Stell dir vor: …“     |
+
+- **Strike on sight:** „und genau“, „genau das / die / der“ as a lead-in,
+  „eigentlich“, „wirklich“, „einfach“, „halt“, „quasi“, „sozusagen“,
+  „ja“, „mal“, „nämlich“, „dann“ at the start of a sentence, „Es ist so,
+  dass“, „Das Ding ist:“, „Und zwar“, a sentence-opening „Und“ when it
+  adds nothing. Keep one only where it really carries meaning or rhythm
+  (a real contrast „Und trotzdem …“, the B-format „Und der Pilot?“).
+- **Short sentences, active verbs:** subject — verb — the strange thing.
+  Max ~12 words per sentence.
+- **The words you save go into content**, not into a shorter video: one
+  more concrete fact, a sharper comparison, a second money-shot line —
+  the length stays 130–142 words / 45 s.
+- `sync-html.mjs` warns about the worst fillers it finds in the script.
+- Self-check: read every sentence and try deleting each word. If the
+  sentence still works, the word goes.
+
 ## Other rules
 
 - Du-Form throughout; the viewer builds it.
@@ -443,7 +471,7 @@ Dein Kühlschrank macht gar keine *Kälte*. Er *klaut* deiner Milch die Wärme �
 Du brauchst ein Rohr in der Rückwand, gefüllt mit einer Flüssigkeit, die schon bei minus *26* Grad kocht. Dabei saugt sie die Wärme aus deiner Milch. Das ist der *Verdampfer*.
 Jetzt hast du warmes Gas. Und hier kommt der *Trick*: Eine Pumpe quetscht es zusammen, bis es richtig *heiß* wird. Das ist der *Kompressor*.
 Das heiße Gas jagst du hinten durch ein *Zickzack-Rohr* – genau da landet die geklaute Wärme. Ein haarfeines Röhrchen macht es wieder *eiskalt*, und alles läuft im Kreis.
-Und genau deshalb ist er hinten *warm*.
+Deshalb ist er hinten *warm*.
 Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare – und folg mir für mehr.
 ```
 
@@ -457,7 +485,7 @@ comment question is the last line, 2026-11-04.) For the fridge:
 … (beat 2)
 Folge für mehr Wissen.
 [whispers] Denn eigentlich müsste er da eiskalt sein. … (mid twist, beat 3)
-Und genau deshalb ist er hinten *warm*. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
+Deshalb ist er hinten *warm*. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
 Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's in die Kommentare.
 ```
 
@@ -470,6 +498,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 ## Self-check before showing the user
 
 - [ ] No "Lass ihn / es uns bauen", no "Du hast gerade X gebaut"
+- [ ] No filler words („und genau“, „eigentlich“, „einfach“, „halt“ …) — every word carries something
 - [ ] Hook = spectacle the first frame shows + a Haken (second strange detail / stakes) — no "Gleich …", "Am Ende …", "Bleib dran", no seconds
 - [ ] Would a stranger stop scrolling for the first sentence alone?
 - [ ] Tone: cheeky friend for 18–34 (men and women), nothing school-like; hook title 2–3 words

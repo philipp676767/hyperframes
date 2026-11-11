@@ -46,6 +46,20 @@ const spoken = words.map((w) => w.w.toLowerCase()).join(" ");
 for (const bad of ["uns bauen", "du hast gerade"])
   if (spoken.includes(bad))
     console.warn(`WARNING: the script says „${bad} …“ — old style, cut that sentence.`);
+// filler words (2026-11-11): every word must carry something
+const fillers = [
+  "und genau",
+  "eigentlich",
+  "sozusagen",
+  "quasi",
+  "halt",
+  "und zwar",
+  "es ist so dass",
+  "das ding ist",
+];
+const found = fillers.filter((f) => ` ${spoken} `.includes(` ${f} `));
+if (found.length)
+  console.warn(`WARNING: filler words: ${found.map((f) => `„${f}“`).join(", ")} — cut them.`);
 // no whispering in the hook (2026-11-07): line 1 and the first sentence of line 2
 const scriptLines = fs
   .readFileSync(new URL("script.txt", root), "utf8")

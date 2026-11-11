@@ -76,8 +76,8 @@ hook lab, gain / danger for the viewer when it is real).
 
 ### Consequences — the differences
 
-- **3 Folgen instead of 3 build beats.** Each one ends with a pull ("… und
-  genau das wird jetzt dein Problem."), each one is bigger than the one
+- **3 Folgen instead of 3 build beats.** Each one ends with a pull ("…
+  das wird dein Problem."), each one is bigger than the one
   before.
 - The **real mechanism** comes in Folge 3, not earlier (max 3 terms in
   total, still none before ~15 s, no numbers before ~15 s — the
@@ -152,8 +152,8 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 
 ```text
 [curious] Du reißt mitten im Flug an der *Tür*.
-Und der Pilot? Bleibt völlig *ruhig*. Dabei hängt dein Leben an genau dieser Tür.
-Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Darum pumpt das Flugzeug Luft rein – und genau die wird dein Problem.
+Und der Pilot? Bleibt völlig *ruhig*. Dabei hängt dein Leben an dieser Tür.
+Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Darum pumpt das Flugzeug Luft rein – die wird dein Problem.
 [whispers] Sie drückt von innen gegen die Tür. Auf jedem Quadratmeter lastet so viel wie ein *Elefant*.
 Folge für mehr Wissen.
 [curious] Rate mal: Wie viele Leute müssten ziehen? [surprised] Rund *hundert*. Viel Spaß im Gang.
