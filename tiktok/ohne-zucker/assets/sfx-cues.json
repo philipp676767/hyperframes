@@ -1,0 +1,442 @@
+[
+  {
+    "s": "whoosh",
+    "at": 0,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "knister",
+    "at": 0,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "pop",
+    "at": 0.38,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "pop",
+    "at": 0.6,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "punch",
+    "at": 0.72,
+    "why": "highlight"
+  },
+  {
+    "s": "pop",
+    "at": 0.82,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 1.08,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 1.12,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 1.12,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 1.12,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "whoosh",
+    "at": 2.41,
+    "why": "cut"
+  },
+  {
+    "s": "boing",
+    "at": 2.83,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "boing",
+    "at": 3.74,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 4.26,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 4.58,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.74,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.96,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 7.18,
+    "why": "highlight"
+  },
+  {
+    "s": "pop",
+    "at": 7.18,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "blip",
+    "at": 7.23,
+    "why": "label Würfelzucker"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.97,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 9.66,
+    "why": "highlight shake"
+  },
+  {
+    "s": "brumm",
+    "at": 9.66,
+    "why": "beats.js",
+    "dur": 1,
+    "db": -15
+  },
+  {
+    "s": "whoosh",
+    "at": 11.14,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.76,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "boing",
+    "at": 12.03,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "hit",
+    "at": 12.08,
+    "why": "highlight shake"
+  },
+  {
+    "s": "boing",
+    "at": 12.28,
+    "why": "beats.js",
+    "db": -13
+  },
+  {
+    "s": "whoosh",
+    "at": 12.39,
+    "why": "cut"
+  },
+  {
+    "s": "boing",
+    "at": 12.76,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 13.77,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 15.66,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 15.71,
+    "why": "label Belohnung"
+  },
+  {
+    "s": "hit",
+    "at": 15.76,
+    "why": "highlight flash"
+  },
+  {
+    "s": "wow",
+    "at": 15.76,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 16.07,
+    "why": "cut"
+  },
+  {
+    "s": "surr",
+    "at": 16.34,
+    "why": "beats.js",
+    "dur": 1.9800000000000004,
+    "db": -22
+  },
+  {
+    "s": "punch",
+    "at": 17.34,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 17.39,
+    "why": "label Dopamin"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.05,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 19.74,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.03,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 20.3,
+    "why": "follow pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 21.03,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 21.38,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 21.42,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "zuckerwuerfel",
+    "at": 21.6,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 23.68,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 23.9,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 23.9,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.97,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 25.56,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.69,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.15,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.2,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 28.42,
+    "why": "highlight"
+  },
+  {
+    "s": "pop",
+    "at": 28.42,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "blip",
+    "at": 28.47,
+    "why": "label Leber"
+  },
+  {
+    "s": "rauschen",
+    "at": 28.82,
+    "why": "beats.js",
+    "dur": 1.6399999999999992,
+    "db": -24
+  },
+  {
+    "s": "whoosh",
+    "at": 30.19,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 32.29,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 32.61,
+    "why": "label Geschmackszellen"
+  },
+  {
+    "s": "slowmo",
+    "at": 33.85,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "punch",
+    "at": 34,
+    "why": "highlight"
+  },
+  {
+    "s": "pop",
+    "at": 34,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "ding",
+    "at": 34.58,
+    "why": "payoff"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.59,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 35.06,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 36.2,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.38,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 37.6,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 37.6,
+    "why": "question answered"
+  },
+  {
+    "s": "hit",
+    "at": 37.6,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.83,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 38.1,
+    "why": "bonus fact"
+  },
+  {
+    "s": "pop",
+    "at": 38.25,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 38.78,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 39,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 39.05,
+    "why": "label Orangensaft"
+  },
+  {
+    "s": "zuckerwuerfel",
+    "at": 39.1,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 41.42,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 41.6,
+    "why": "comment pill"
+  }
+]
