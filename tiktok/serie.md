@@ -82,6 +82,6 @@ Umgebungen (insel, stadt, …).
 | 70  | Hundenase (Fingerabdruck)      | A      | `tiktok/hundenase`           | herbstwald-weg-nebel          | nebliger morgen       | 45,0 s | 2026-11-10 |
 | 71  | Alle springen gleichzeitig     | B      | `tiktok/alle-springen`       | stadion-flutlicht-konzert     | nacht, flutlicht      | 45,0 s | 2026-11-10 |
 | 72  | Rolltreppe (Bürsten am Rand)   | A      | `tiktok/rolltreppe`          | u-bahn-station-bahnsteig      | neonlicht, feierabend | 45,0 s | 2026-11-11 |
+| 73  | Mit vollem Magen schwimmen     | B      | `tiktok/satt-schwimmen`      | bergsee-holzsteg-badehaus     | sonniger mittag       | 45,0 s | 2026-11-11 |
 | 74  | Milchschaum (Latte Art)        | A      | `tiktok/milchschaum`         | roesterei-espressobar         | morgensonne           | 45,0 s | 2026-11-11 |
 | 75  | Eine Woche ohne Zucker         | B      | `tiktok/ohne-zucker`         | wg-wohnzimmer-nacht           | nacht, lampe + tv     | 45,0 s | 2026-11-11 |
-| 73  | Mit vollem Magen schwimmen     | B      | `tiktok/satt-schwimmen`      | bergsee-holzsteg-badehaus     | sonniger mittag       | 45,0 s | 2026-11-11 |
