@@ -18,6 +18,36 @@ one, SKILL.md step 0) uses this file too, with the differences in
 happening (no spoken "Was passiert, wenn …?"), 3 Folgen instead of 3 build
 beats, the outcome as payoff.
 
+## Simple first — one idea per video (user's rule, 2026-11-11)
+
+User: _"Ich finde die Videos etwas zu kompliziert."_ Example of too much:
+#56 Kaffeevollautomat packed Mahlwerk, Puck, Kolben, Pumpe, 9 bar,
+90 m Tauchtiefe, Kohlendioxid, Öle, Bläschen, Crema and Koffein into
+45 s — eleven things to remember. A scroller keeps **one**.
+
+- **One core idea, one sentence.** Before writing, finish this line:
+  „Der Trick ist: \_\_\_.“ (≤ 12 words, no technical term — e.g. „Das Handy
+  spürt das Salzwasser in deinem Finger.“). Everything in the script
+  serves that sentence; every fact that doesn't goes, however cool. The
+  core idea is said clearly once in the middle and **once again in the
+  payoff in the same simple words**.
+- **The mechanism in max 3 steps**, each one a picture the viewer
+  already knows (Druck = „wie ein Fußball, der zu prall ist“, Strom = „wie
+  Wasser im Schlauch“). No side mechanisms, no "and also …".
+- **Max 2 technical terms** per video (was 3), only if the viewer needs
+  the word; each one explained in the same sentence with an everyday
+  comparison. If a plain word works, use the plain word („Sensorgitter“
+  → „ein Gitter aus hauchdünnen Drähten“).
+- **Max 2 numbers** per video (the "Übrigens" fact may be one of them),
+  each with a comparison people can picture („so viel wie ein Elefant“).
+- **One sentence = one piece of information.** Never two new things in
+  one sentence.
+- **The 12-year-old test:** after reading the script once, could a
+  12-year-old explain the core idea to a friend in one sentence? If not,
+  cut until they could.
+- The words you save go into **showing**, not into more facts: one more
+  money-shot sentence, a sharper comparison, a moment of humour.
+
 ## Length — exactly 45 seconds
 
 Every video is **exactly 45.0 s** (user's rule, 2026-10-28; 60 s from
@@ -276,7 +306,8 @@ numbers). So:
   Part names and numbers come after that.
 
 - **3 beats + the mid twist.** Each beat: problem → fix ("Also …" / "Du brauchst …") →
-  the term ("Das ist der X.") — max **3 technical terms** per video.
+  the term ("Das ist der X.") — max **2 technical terms** per video, max 2
+  numbers (see "Simple first").
 - **Every beat ends with a pull** into the next: a problem ("Aber jetzt
   ist das Gas warm."), a question, or a teaser.
 - **A visual highlight every 5–7 s** (plan it with the script, see
@@ -419,7 +450,7 @@ Mark the word of each sentence the viewer must remember — `*Kompressor*`,
 `minus *26* Grad`, `der *Trick*`, the hook's key noun. The caption turns yellow + bigger and pops, the camera punches in
 and a soft "punch" sounds. Rules:
 
-- **~1 per sentence, 8–12 per video**, never two in a row (the punches
+- **6–9 per video**, never two in a row (the punches
   must stay a surprise).
 - Always: each technical term where it is named (`Das ist der
 *Verdampfer*.`), the hook's twist word, the re-hook (`der *Trick*`),
@@ -508,12 +539,12 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] A concrete second reason to stay before 10 s; none of the banned phrases ("Jetzt der Trick" …)
 - [ ] 0–15 s: spectacle + mystery, max 1 term, no numbers
 - [ ] 3 beats, each ending with a pull; one re-hook; one home moment
-- [ ] ≤ 3 technical terms; no sentence that needs a breath
+- [ ] Simple first: one core idea in one sentence (said in the middle and again in the payoff), mechanism in ≤ 3 steps, ≤ 2 terms, ≤ 2 numbers, one piece of information per sentence, 12-year-old test passed
 - [ ] No "Schau dich an. Du hast gerade X gebaut." — the payoff answers the question, then straight to "Übrigens"
 - [ ] Bonus fact starts with "Übrigens", 10–15 words, true, surprising
 - [ ] Humor: 0–2 small, situational moments that fit — none forced, none in serious topics
 - [ ] „Folge für mehr Wissen.“ = its own line at ~19–21 s between two pulls, no other "folg…" word before it; last line = the comment question (new, 1–3-word answer, no photo request)
-- [ ] 8–12 `*keywords*`: every term, the twist, the trick, every panel number
+- [ ] 6–9 `*keywords*`: the terms, the twist, the core idea, the panel numbers
 - [ ] 130–142 words incl. „Folge für mehr Wissen.“, fact and comment question (≤ 148, ≥ 124) → exactly 45 s; no `> …` loop line
 - [ ] Hook = line 1, ≤ 9 words, ≤ 3 s (sync-html checks); within it the viewer knows why to watch to the end (gain / danger / burning question) — true, not clickbait
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores

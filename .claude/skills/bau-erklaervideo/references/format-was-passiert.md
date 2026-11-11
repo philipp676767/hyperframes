@@ -79,7 +79,9 @@ hook lab, gain / danger for the viewer when it is real).
 - **3 Folgen instead of 3 build beats.** Each one ends with a pull ("…
   das wird dein Problem."), each one is bigger than the one
   before.
-- The **real mechanism** comes in Folge 3, not earlier (max 3 terms in
+- The **real mechanism** comes in Folge 3, not earlier, as **one simple
+  idea** (script-formel.md "Simple first": one core sentence, ≤ 3 steps,
+  max 2 terms and 2 numbers in
   total, still none before ~15 s, no numbers before ~15 s — the
   "höher als der Everest"-kind of comparison is fine).
 - The banned phrases of script-formel.md apply here too; also never

@@ -22,6 +22,7 @@ früher galt und geändert wurde, steht unten unter „Überholt“ und ist
 
 - [ ] Hook-Frage erst im Payoff beantworten, vor 10 s ein zweiter Grund zu bleiben, 10–15 s zweiter Money-Shot, bis 15 s keine Fachbegriffe / Zahlen (Absprung bei ~13 s).
 - [ ] Keine Füllwörter (Nutzer, 2026-11-11): „das rettet dich“ statt „und genau das rettet dich“; „eigentlich“, „einfach“, „halt“, „und zwar“ … streichen, gesparte Wörter gehen in Inhalt.
+- [ ] **Einfacher** (Nutzer, 2026-11-11: „etwas zu kompliziert“; Beispiel #56 Kaffee mit 11 Dingen zum Merken): eine Kernidee in einem Satz (Mitte + Payoff), Mechanismus in ≤ 3 Schritten mit Alltagsvergleichen, ≤ 2 Fachbegriffe, ≤ 2 Zahlen, ein Satz = eine Info; im Bild eins nach dem anderen (1 Schild / Anzeige pro Bild, 3–4 Schilder pro Video). Vergleichen: Ø Wiedergabe und Anteil bis zum Ende.
 - [ ] Alle 5–7 s ein Highlight, 2–3 Money-Shots, die die Behauptungen **zeigen**; Stimme mit 3–6 Regieanweisungen.
 - [ ] Genau 45 s, 130–142 Wörter, Jan mit 3,1 Wörtern/s, 0–2 passende Humor-Momente, keine Musik, kein Loop, kein Outro.
 - [ ] „Folge für mehr Wissen.“ als eigene Zeile in der Mitte (~19–21 s), Kommentar-Frage als letzte Zeile (jedes Mal neu, nie nach Fotos fragen), Video endet ~0,7 s danach.

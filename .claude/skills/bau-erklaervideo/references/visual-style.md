@@ -102,7 +102,7 @@ max 2 at once, never over the captions.
 - **Analogy mini-sets** (sweat on skin, bike pump …) stand on the stage
   at about x = ±5, z = 2 and get their own close shot when the comparison
   is spoken.
-- **LED panel** (`showPanel`) for every number: short label + big value,
+- **LED panel** (`showPanel`) for the video's 1–2 numbers: short label + big value,
   red = hot/off/danger, blue = cold, green = on/ok, yellow = force/weight.
   Max one at a time.
 - **Orange ✕** (`showNope`) when a primitive version fails, or any "das
@@ -110,8 +110,8 @@ max 2 at once, never over the captions.
 - **Name tags** (`LABELS` in beats.js → `labels()`): white pill with a
   yellow border, Montserrat 52 px, and a yellow arrow (dark outline) that
   grows from the tag to the part. On the word that names the part, ~2.5 s,
-  max 2 at once. Every technical term gets one; also a key part the voice
-  points at ("das Seil", "die Pumpe"). Tag goes away from the frame centre
+  **one at a time** (2026-11-11, "zu kompliziert"). Only the 1–2 terms
+  and at most 2 key parts — **3–4 tags per video**, not one per part. Tag goes away from the frame centre
   by default; set `side` so it never sits on the subject.
 - **Hook visual:** frame 1 already shows what the hook talks about, in
   motion (the warm back of the fridge glowing, the car dropping, the
@@ -225,6 +225,24 @@ Highlights"_ and the most spectacular claims were only told, never shown
   fails" moment (the part breaks, the car falls, ✕).
 - **Pace changes:** a slow, quiet moment right before the biggest
   highlight makes it hit harder.
+
+## Simple to look at — one thing at a time (2026-11-11)
+
+The picture is as simple as the script ("Simple first" in
+script-formel.md): **one thing happens per shot** and the eye knows where
+to look.
+
+- One moving focus per shot: the part being explained moves / glows,
+  everything else is still or dimmed. No two animations competing.
+- Per frame at most **one** extra layer on top of the scene: a name tag
+  **or** the LED panel **or** a device display — never two of them, and
+  never together with a mini-set in the same shot.
+- X-ray only for the core idea's step (one stretch, ≤ ⅓ of the video),
+  and only the 1–3 parts that matter are inside — no full machinery.
+- Arrows / particles: one kind at a time (heat **or** force **or**
+  flow), few and big rather than many and small.
+- Test on the contact sheet: cover the captions — can you tell in one
+  second per tile what to look at? If a tile is busy, take something out.
 
 ## Realism — the "photographed real object" finish (2026-11-06)
 
