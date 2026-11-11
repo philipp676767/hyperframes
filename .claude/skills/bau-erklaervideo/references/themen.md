@@ -294,8 +294,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema         | Format | Datum      | Chat                      |
+| ------------- | ------ | ---------- | ------------------------- |
+| Selbstbräuner | A      | 2026-11-11 | TikTok #76: Selbstbräuner |
 
 ## Verwendet
 
