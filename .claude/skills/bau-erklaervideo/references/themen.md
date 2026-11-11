@@ -299,6 +299,7 @@ ask for go in here.
 | Thema                      | Format | Datum      | Chat                                   |
 | -------------------------- | ------ | ---------- | -------------------------------------- |
 | Mit vollem Magen schwimmen | B      | 2026-11-11 | TikTok #73: Mit vollem Magen schwimmen |
+| Milchschaum (Latte Art)    | A      | 2026-11-11 | TikTok #74: Milchschaum                |
 
 ## Verwendet
 
