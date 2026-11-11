@@ -4,49 +4,57 @@ Vor jedem neuen Video lesen (Skill `bau-erklaervideo`, Schritt 0b). Nach jedem
 Upload: Zahlen + Feedback eintragen, **eine** konkrete Verbesserung fürs nächste
 Video festhalten. Was dauerhaft gilt, wandert als Regel in den Skill.
 
-## Nächstes Mal (offen)
+## Nächstes Mal (offen) — nur was heute gilt
 
-- [ ] **„Folge für mehr Wissen.“ wieder ans Ende, schnell gesprochen** (Nutzer, 2026-10-30): letzte Zeile = Kommentar-Frage + „Folge für mehr Wissen.“; prepare-voice beschleunigt den letzten Satz ×1,3.
-- [ ] **Sweet Spot + Zeig-Faktor** (aus #36 UV-Nagellampe, viral, 2026-10-30): Themen = ein konkretes Ding einer riesigen Gruppe (nicht „Licht“, nicht „Teilchenbeschleuniger“); wenn möglich etwas, das Zuschauer selbst zeigen können, und eine Zeig-Frage („Zeig mir deine Nägel 👇“). Neue Liste „Dein Look & dein Hobby“, höchstens jedes 3. Video, Themen für Frauen, Männer und alle abwechseln.
-- [ ] **Hook max. 3 Sekunden** (Nutzer, 2026-10-29): Zeile 1 = Hook, ≤ 9 Wörter, ≤ 3 s gesprochen (sync-html prüft); darin muss klar sein, warum man bis zum Ende schaut (Nutzen / Gefahr / brennende Frage). Vergleichen: Absprung in den ersten 3 s.
-- [ ] **Format B ohne gesprochenes „Was passiert, wenn …?“** (Nutzer, 2026-10-29): Start direkt mit der Hook — die Handlung läuft schon („Du ziehst mitten im Flug an der Notausgangstür.“) oder die Warnung zuerst.
-- [ ] **Zurück auf 45 s, Nutzen/Warnung im Hook, „Folge für mehr Wissen.“** (Nutzer, 2026-10-28): 130–142 Wörter; Satz 1 (spätestens 2) sagt, was der Zuschauer gewinnt oder riskiert („Deshalb darfst du niemals …“, „Dieser Trick spart dir Geld“); Folgen-Zeile exakt „Folge für mehr Wissen.“ Vergleichen: 45 s vs. 60 s (Ø Wiedergabe, Anteil bis zum Ende).
-- [ ] **Hashtags wieder drin** (Nutzer, 2026-10-27): 3–5 passende, viel gesehene Tags (Thema zuerst, dann Fachgebiet, optional #wissen / #wusstestdu), nie #fyp / #viral / #lernenmittiktok. Hinweis: das bisher beste Video (#18 Taschenwärmer, 13K) hatte 5 Hashtags. Vergleichen: Aufrufe mit vs. ohne Hashtags.
-- [ ] **Format B ohne „eigentlich“, Schlussfrage jedes Mal neu, Beschreibung ≤ 60 Zeichen mit starken Suchwörtern + 1 Emoji am Ende, ohne Gedankenstrich** (Nutzer, 2026-10-27).
-- [ ] **Trends nur als Ausnahme** (Nutzer-Korrektur, 2026-10-26: eine Vorschlagsrunde hatte nur Kälte-Themen): Jahreszeit gibt keinen Bonus, höchstens 1 von 3 Vorschlägen ist ein Trend-/Saison-Thema, die 3 Vorschläge aus 3 verschiedenen Kategorien, höchstens 1 Saison-Thema in 3 Videos.
-- [ ] **Jan mit 3,1 Wörtern/s, etwas Humor, keine Musik** (Nutzer, 2026-10-26): +15 % Tempo (174–190 Wörter), 0–2 kleine passende Humor-Momente, nur Stimme + Soundeffekte. Beobachten: Ø Wiedergabezeit und Kommentare im Vergleich zu vorher.
-- [ ] **Trend-Themen, wenn es passt** (Nutzer, 2026-10-26): Trend-Check vor jedem Vorschlag (aktuell + Kalender), Trend = Bonus, nie ein uninteressantes Thema erzwingen. Vergleichen: Aufrufe von Trend- vs. Dauerthemen (Tesla und Taschenwärmer waren Trend-Themen).
-- [ ] **Bild 0 = Höhepunkt, nicht Start** (#18 Taschenwärmer, 2026-10-25: 13K Aufrufe, trotzdem Absprung bei 0:01): Bild 0 zeigte das ganze Pad, aber noch klar-blau, die Kristallwelle startete erst bei 0,25 s, das Glühen bei ~2,6 s. Ab jetzt läuft in Bild 0 schon der krasseste Moment (glüht / explodiert / fliegt) mit starkem Kontrast. Der Aufbau kommt erst danach. Vergleichen: Anteil der Zuschauer, die bei 0:01 noch dabei sind.
-- [ ] **Bild 0 = das Cover-Motiv** (#23 Face ID, 2026-10-25: 6.100 Aufrufe, aber die meisten weg bei 0:01): das stärkste, nächste Bild (Gesicht/Objekt groß + Spektakel, wie das Titelbild) schon als Bild 0, die erklärende Totale erst nach dem ersten Schnitt. Wenn möglich ein Gesicht oder eine Hand im Bild 0 — bei Face ID hat das Gesicht + „Dein …“-Hook die Reichweite getragen.
-- [ ] **Bild 0 mit hartem Kontrast** (#19 Popcorn, 2026-10-25: Absprung bei 0:01, weißes Popcorn vor fast weißem Himmel): hinter dem Motiv in Bild 0 nie heller Himmel oder Weiß – Kamera tiefer/seitlich, so dass dunkle oder kräftige Flächen (Meer, Boden, dunkle Bühne) hinter ihm liegen; ein helles Motiv bekommt einen dunklen Grund, ein dunkles einen hellen. Test: Bild 0 in Graustufen und Handygröße – hebt sich das Spektakel klar ab?
-- [ ] **Cold Open mit Knall** (#17 Geldautomat, 2026-10-25: Ø 17,0 s statt ~12 s bei #11/#15/#16, aber wieder Absprung bei 0:01): ganzes Objekt in Bild 0 hat geholfen, doch es passierte zu wenig (ein Schein gleitet langsam in den Schlitz). Die ersten 1–1,5 s zeigen den **Höhepunkt der Story** mit Geräusch (bei #17 wäre das gewesen: Alarm blinkt rot, der Schein knallt ins Fach), dann harter Schnitt zum Anfang. Vergleichen: Absprung bei 0:01 und Ø Wiedergabe gegenüber #17.
-- [ ] **Bild 0 = das ganze Ding, sofort erkennbar** (#11 Mikrowelle, 2026-10-25: Absprung bei 0:01 trotz Funken ab Bild 0): keine Makro-Nahaufnahme vom Innenraum, sondern das Objekt als klare Silhouette (die ganze Mikrowelle von vorn) **plus** das Spektakel groß und kontrastreich (Blitze hell auf dunkel, nicht blassblau auf grau). Test vor dem Rendern: Standbild 0 in Handygröße – erkennt ein Fremder in 0,5 s, _was_ das ist und _dass_ etwas Krasses passiert? Vergleichen: Absprung bei 0:01. **Bestätigt durch #15 Wassersprudler (neu)** (gleicher Absprung bei 0:01: Bild 0 = Flasche im roten Kasten, Kopf angeschnitten, Blasen hell auf hell, erster Schnitt erst bei 3,1 s). Beide Videos sind vor den 3-Sekunden-Regeln entstanden und gelten als Vorher-Werte; das nächste Video nach den Regeln ist der Test.
-- [ ] **Bild 0 = der unmöglichste Moment, schon in voller Bewegung** (#16 Tesla neu, 2026-10-25: Absprung bei 0:01, obwohl das ganze Auto ab Bild 0 klar zu sehen war): der stärkste Money-Shot gehört an den Anfang (Tesla kopfüber an der Tunneldecke lief erst bei 27 s), nicht ein ruhiger Schwebe-Moment mit leichtem Wippen. Dazu Kontrast: weiße Strahlen auf hellgrauem Platz gingen unter. Test vor dem Rendern: Standbild 0 in Handygröße – sieht man in 0,5 s, dass hier etwas _Unmögliches_ passiert? Vergleichen: Absprung bei 0:01.
-- [ ] **Aus erfolgreichen Videos (2026-10-24):** Detail-Rätsel als Themenart, Hook „Deine Handlung + Folge“ + Umdeutung bis ~10 s, „Stell dir vor, du …“-Szene als roter Faden, Geräte-Anzeigen (`hud.js`), dunkle Bühne als Alternative. Beobachten, welche davon die Zahlen verbessern.
-- [ ] **Kein Loop mehr** (Nutzer, 2026-10-24): das Video endet nach der Kommentar-Frage auf einem starken letzten Bild. Beobachten: Wiederholungen / Ø Wiedergabezeit gegenüber den Loop-Videos.
-- [ ] **Genau 60 s** (Nutzer, 2026-10-24): 152–166 Wörter, 60-s-Aufbau mit Fragen-Kette, Wendung bei ~30 s und 1–2 „Rate mal“-Momenten; Hook-Labor (6 Hooks, Punkte ≥ 10/12), Themen-Punkte (≥ 12/16, mind. 5 „Was?!“-Fakten). Vergleichen: Ø Wiedergabezeit und Absprung bei 13 s / 30 s gegenüber den 45-s-Videos.
-- [ ] **Folgen-Aufruf in der Mitte** (Nutzer, 2026-10-24): „Folg mir, wenn du noch mehr lernen willst.“ als eigene Zeile nach Beat 2 (≈ 12–20 s), am Ende nur noch die Kommentar-Frage. Vergleichen: neue Follower pro 1.000 Aufrufe vorher/nachher.
-- [ ] **Abgefahrenere Themen** (Nutzer, 2026-10-23): nur Themen mit „Was?!“-Moment, 🔥 in themen.md zuerst (Weltall, Tiefsee, Erde, Extrem-Physik, wilde Maschinen). Vergleichen, ob 🔥-Themen mehr Aufrufe und Wiedergabe bringen.
-- [ ] **Zwei Formate im Wechsel (ab 2026-10-23):** A „Bauen“ und B „Was passiert, wenn …?“ immer abwechselnd. Bei jedem Eintrag das Format notieren; nach 2–3 Videos pro Format vergleichen (Wiedergabe nach 1–3 s, Absprung bei ~13 s, Anteil bis zum Ende, Kommentare).
-- [ ] **Für die echte Zielgruppe (18–34, m/w, Zufalls-Scroller):** Alltagsthemen (★ in themen.md), frecher Ton, Bild 0 mit Geräusch + 2–3 Riesen-Wörtern + Hand, die etwas tut.
-- [ ] **Test ab jetzt: Beschreibung nur 1 Satz, keine Hashtags** (Nutzer, 2026-10-23: die meisten wischen nach 0,1 s weg → vermutlich falsches Publikum). Nach 2–3 Videos vergleichen: Wiedergabe nach 1–3 s, Aufrufe, Anteil bis zum Ende.
-- [ ] **Kein „Schau dich an. Du hast gerade … gebaut.“ mehr** (Nutzer, 2026-10-23): die Auflösung der Hook-Frage geht direkt in „Übrigens“ über.
-- [ ] **Absprung bei ~13 s verhindern:** Hook-Frage erst im Payoff beantworten (Frage bleibt bis dahin oben stehen), vor 10 s ein zweiter konkreter Grund zu bleiben, 10–15 s zweiter Money-Shot, keine Floskel „Jetzt der Trick“, bis 15 s keine Fachbegriffe/Zahlen. ~~Fortschrittsbalken~~ gestrichen (wirkte wie Werbung, Nutzer 2026-10-23); die Frage steht oben als normale Creator-Schrift ohne Box und Symbole.
-- [ ] **Die ersten 3 Sekunden** (wichtigster Punkt!): Titel ab Bild 0, Bewegung ab Bild 0, Spektakel in der 1. Sekunde, erster Schnitt ≤ 1,5 s, kein Röntgen am Anfang, Twist in den ersten 4 Wörtern. Die CTA bleibt unverändert.
-- [ ] Hook: Spektakel zeigen + ein Haken (zweites seltsames Detail / was auf dem Spiel steht) — **keine Ankündigungen** wie „Gleich weißt du …“, „Am Ende …“, „Bleib dran“ (Nutzer, 2026-10-24), nie eine Sekundenzahl, nie nur „Lass ihn uns bauen.“
-- [ ] Alle 5–7 s ein Highlight (Zeitlupe, Blitz, Wackeln, Crash-Zoom, Reißschwenk) und 2–3 Money-Shots, die die spektakulären Behauptungen **zeigen**.
-- [ ] Klarheit: Objekt groß im Bild, Röntgen-Look max. ⅓ der Zeit, kaum Rand-Unschärfe, starker Farbkontrast.
-- [ ] Stimme mit 3–6 Regieanweisungen (`[excited]`, `[whispers]` …), damit Jan nicht monoton klingt.
-- [ ] **Token sparen ohne Qualitätsverlust** (Nutzer, 2026-11-10): Render-Monitor nur bei ~50 % und am Ende, Dateien nur gezielt lesen, Befehlsausgaben kurz, Kontaktbögen statt Einzelbilder, einmal schreiben + gezielt ändern, Werkzeuge bündeln (SKILL.md „Token budget“).
-- [ ] **YouTube-Titel endet immer mit „#shorts“** (Nutzer, 2026-11-10).
-- [ ] **Jede Beschreibung ein eigener Kopier-Block** (Nutzer, 2026-11-10): TikTok-Beschreibung, YouTube-Titel, -Beschreibung, -Tags je ein Code-Block nur mit dem Text fürs Feld; Einstellungen als Liste.
-- [ ] **Autopilot** (Nutzer, 2026-11-10): nichts bestätigen lassen — Thema selbst wählen und **als Allererstes reservieren + pushen**, dann alles bis zum fertigen Video durchziehen; Fragen nur, wenn es wirklich nicht weitergeht.
-- [ ] **Kein Flüstern im Hook** (Nutzer, 2026-11-07): Zeile 1 und der Satz danach laut und klar (`[excited]`, `[curious]` oder ohne Tag), `[whispers]` erst ab ~5 s.
-- [ ] **Noch realistischer** (Nutzer, 2026-11-06): Hauptobjekt + Nahes mit `real.*`-Materialien, `roundedBox()`, glatter Geometrie, echten Farben, echter Größe und 3–6 Details; Kamera-Look mit Tiefenschärfe nach Entfernung, Neutral-Tonemapping, leichtem Filmkorn (automatisch).
-- [ ] **Jedes Video auch als YouTube Short** (Nutzer, 2026-11-05): `youtube.txt` mit Titel, Beschreibung, Tags und Einstellungen wird wie die TikTok-Beschreibung mitgeliefert (SKILL.md 6d).
-- [ ] **Nie nach Fotos fragen** („Bild in die Kommentare“, „Zeig mir …“) — die Fotos kommen von allein, wenn die Frage das eigene Ding betrifft (Nutzer, 2026-11-03).
-- [ ] **Kein „Lass es/ihn uns bauen“** (Nutzer, 2026-11-02, #48 Touchscreen: „alter Stil“). **Welt: andere Art von Ort** als die letzten 3 (nicht schon wieder Straße/Platz mit Hausfassaden), **kein Sockel/Podest** unter dem Objekt — es steht dort, wo es im Ort wirklich hingehört; Vergleichsbild mit den letzten 3 Videos.
-- [ ] **Seit 2026-11-04 (Nutzer): „Folge für mehr Wissen.“ als eigene Zeile in der Mitte (~19–21 s), Kommentar-Frage als letzte Zeile**, Video endet ~0,7 s danach, kein Outro. (2026-11-01 bis -03 war es umgekehrt.)
+Aufgeräumt am 2026-11-11: Hier stehen nur noch die aktuellen Punkte. Was
+früher galt und geändert wurde, steht unten unter „Überholt“ und ist
+**keine Regel mehr**.
+
+**Die ersten 3 Sekunden (wichtigster Punkt — in jeder Statistik „die meisten hörten bei 0:01 auf“):**
+
+- [ ] Bild 0 = der krasseste Moment des Videos, schon in voller Bewegung, mit Geräusch (glüht / explodiert / fliegt) — nicht der Start des Aufbaus (#16, #17, #18).
+- [ ] Bild 0 = das Cover-Motiv: das ganze Ding sofort erkennbar, groß und nah, wenn möglich Gesicht oder Hand im Bild (#11, #15, #23).
+- [ ] Bild 0 mit hartem Kontrast: nie hell auf hell; Test in Graustufen und Handygröße (#19).
+- [ ] Titel ab Bild 0, erster Schnitt ≤ 1,5 s, kein Röntgen am Anfang, Twist in den ersten 4 Wörtern.
+- [ ] Hook = Zeile 1, ≤ 9 Wörter, ≤ 3 s; darin steht, was der Zuschauer gewinnt oder riskiert. Kein Flüstern im Hook. Keine Ankündigungen („Gleich …“, „Am Ende …“, „Bleib dran“), kein „Lass es uns bauen“.
+
+**Dranbleiben:**
+
+- [ ] Hook-Frage erst im Payoff beantworten, vor 10 s ein zweiter Grund zu bleiben, 10–15 s zweiter Money-Shot, bis 15 s keine Fachbegriffe / Zahlen (Absprung bei ~13 s).
+- [ ] Alle 5–7 s ein Highlight, 2–3 Money-Shots, die die Behauptungen **zeigen**; Stimme mit 3–6 Regieanweisungen.
+- [ ] Genau 45 s, 130–142 Wörter, Jan mit 3,1 Wörtern/s, 0–2 passende Humor-Momente, keine Musik, kein Loop, kein Outro.
+- [ ] „Folge für mehr Wissen.“ als eigene Zeile in der Mitte (~19–21 s), Kommentar-Frage als letzte Zeile (jedes Mal neu, nie nach Fotos fragen), Video endet ~0,7 s danach.
+
+**Themen:**
+
+- [ ] Sweet Spot + Zeig-Faktor (#36 viral): ein konkretes Ding einer riesigen Gruppe; am besten etwas, das Zuschauer selbst haben und zeigen. Alltag am Körper / Handy zieht (#23, #18).
+- [ ] Formate A und B immer abwechselnd; Trends nur als Ausnahme, Jahreszeit ohne Bonus.
+- [ ] Ein Suchwort an vier Stellen: gesprochen in den ersten ~5 s, als Schrift im Bild, erstes Wort der Beschreibung, erster Hashtag / YouTube-Titel.
+
+**Bild:**
+
+- [ ] Realistisch: Hauptobjekt + Nahes mit `real.*`-Materialien, runden Kanten, echten Farben und Größen, 3–6 Details.
+- [ ] Welt: andere Art von Ort als die letzten 3, kein Sockel, kein Podest, keine Bodenplatte. Objekt groß im Bild, Röntgen max. ⅓ der Zeit.
+
+**Ablauf:**
+
+- [ ] Autopilot: Thema zuerst reservieren + pushen, dann alles ohne Rückfrage bis zum fertigen Video.
+- [ ] Mitliefern: TikTok-Beschreibung (≤ 60 Zeichen + 3–5 Hashtags), YouTube-Titel (endet mit „#shorts“), -Beschreibung, -Tags — jedes Feld ein eigener Kopier-Block; dazu ein Kommentar zum Anpinnen.
+- [ ] Token sparen: Render-Meldung nur bei ~50 % und am Ende, gezielt lesen, Kontaktbögen, Werkzeuge bündeln.
+
+**Offene Vergleiche (brauchen Zahlen vom Nutzer):** 45 s vs. 60 s · Kommentar-Frage am Ende vs. in der Mitte (Anteil bis zum Ende, Kommentare) · Format A vs. B · mit vs. ohne Hashtags · neue Follower seit „Folge für mehr Wissen.“ in der Mitte · realistischer Look seit 2026-11-06.
+
+## Überholt (keine Regeln mehr, nur Verlauf)
+
+- 60 s (2026-10-24 bis -27) → wieder 45 s.
+- Loop am Ende → gestrichen 2026-10-24. Fortschrittsbalken / Fragen-Banner → gestrichen 2026-10-23.
+- „Schau dich an. Du hast gerade X gebaut.“ → gestrichen 2026-10-23. „Lass es uns bauen.“ → gestrichen 2026-11-02.
+- Beschreibung ohne Hashtags (Test ab 2026-10-23) → Hashtags wieder drin seit 2026-10-27.
+- Folgen-Aufruf: Ende → Mitte (10-24) → Ende (10-30) → Ende allein (11-01) → **Mitte (11-04, gilt)**.
+- Musikbett → keine Musik seit 2026-10-26.
+- Feste Umgebungen, Sockel, karierte Bodenplatte, Drohnen-Rückzug als Outro → gestrichen.
+- Skript vom Nutzer freigeben lassen → Autopilot seit 2026-11-10.
+- „Zeig mir … / Bild in die Kommentare“ → gestrichen 2026-11-03.
 
 ## Einträge
 

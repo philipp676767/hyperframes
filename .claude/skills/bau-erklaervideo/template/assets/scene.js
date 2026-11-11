@@ -16,7 +16,6 @@ import {
   xrayMaterial,
   xrayEdges,
   setXray,
-  addFloor,
   showNope,
   makeArrowSet,
   animateArrows,
@@ -39,7 +38,6 @@ highlights(HIGHLIGHTS);
 // The world of this video (sky, ground, props, hero piece, life) is built
 // in set.js — new for every video (SKILL.md 1b). Optional floor pad under
 // the subject:
-addFloor(3.2, "#f3e9dc", "#d9c9b6");
 
 // ---------------------------------------------------------------- hook prop
 // The primitive version from the hook ("Kerze in einem Glas").

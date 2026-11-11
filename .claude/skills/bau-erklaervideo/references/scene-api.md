@@ -163,8 +163,7 @@ scatter((i) => bush(i), 6, { rMin: 9, rMax: 16, seed: 24 });
 
 A new environment is one builder function in `ENV_BUILDERS` plus a
 `DEFAULT_SKY` entry. Rules: big ground (radius ~75) or a closed shape,
-nothing on the stage (|x| < 6.5, -5 < z < 4.5), nothing tall on the outro
-line (x ≈ 0.6·z in front), seeded randomness only (`rng(n)`), animated
+room for the subject and the camera around the origin, seeded randomness only (`rng(n)`), animated
 details through `onFrame`.
 
 ## Shots
@@ -196,7 +195,7 @@ function renderAt(t) {
   // 5. animateArrows(set, t, pop(t, a, b)) for each arrow set
   // 6. analogy sets: animate only while their shot is on screen
   // 7. one showPanel(...) branch per fact, else showPanel(0)
-  // 8. outro: x-ray off, a small "it works" moment (door opens, light on, car arrives …)
+  // 8. payoff: x-ray off, a small "it works" moment; last shot = the "Übrigens" money shot (no outro)
   // 9. labels(t, LABELS);
   applyCamera(t);
   renderFrame();

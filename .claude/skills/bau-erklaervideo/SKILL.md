@@ -170,8 +170,10 @@ topic changes, rename again.
 
 ### 0b. Read the learning log first
 
-Open `tiktok/lernlog.md` before writing anything. Every entry under
-"Nächstes Mal" that isn't ticked off is a rule for this video, and the
+Open `tiktok/lernlog.md` before writing anything (only the part down to
+"## Einträge" — `sed -n '1,/^## Einträge/p'`; the table below it is for
+this skill chat). Every entry under "Nächstes Mal" is a rule for this
+video ("Überholt" is history, not rules), and the
 delivery message says which one(s) this video improves. The series gets
 better one concrete step per video.
 
@@ -258,8 +260,8 @@ Draht") — replace it completely.
    `[4.5, 1.6, 7]→[0, 1.4, -4]`, top `[0, 22, 20]→[0, 0, -4]`, and the hook
    shot) and fix until: no big empty flat area, facets + colour patches on
    every large surface, ≥ 3 depth layers, light and palette fit the mood,
-   nothing on the stage (`place()` warns) or tall on the outro line
-   (x ≈ 0.6·z in front), and it reads as _that_ place in one glance.
+   nothing standing where the subject and the camera moves need room,
+   and it reads as _that_ place in one glance.
    **Then the "same as before?" test:** put one wide frame of this set
    next to one of each of the last 3 videos (snapshot their folders) — if
    ground, backdrop and layout look alike, change the kind of place, not
@@ -360,8 +362,9 @@ subject: hook visual (the strange thing the hook names — mid-action from
 frame 1, or the primitive version that fails) → subject pops in when the
 build starts → each component
 appears/animates on the word that names it → x-ray while explaining → one
-analogy mini-set per 1–2 beats → LED panel facts → outro x-ray off + drone
-pull-back. Anchor every beat on a spoken word with `W("Wort", n)`; never
+analogy mini-set per 1–2 beats → LED panel facts → x-ray off for the
+payoff → the "Übrigens" money shot as the last picture (no outro, no drone
+pull-back). Anchor every beat on a spoken word with `W("Wort", n)`; never
 hard-code seconds.
 
 **Device-style displays** (`assets/hud.js`, learned from successful
@@ -478,6 +481,14 @@ hands it the **exact words people search for**, the hashtags put the video
 into the feeds of people who follow that topic. Save it as
 `tiktok/<slug>/beschreibung.txt` and put it **in the delivery message as
 a copy-paste block** (with the video and the cover).
+
+**One search word, four places** (2026-11-11): TikTok and YouTube sort a
+video by what is **said**, **shown as text** and **written**. Pick the
+one name people type for this topic (`Flugzeugtür`, `Gel-Nägel`,
+`Touchscreen`) and make sure it is (1) spoken in the first ~5 s, (2) on
+screen in the hook title or the question text, (3) the first word of the
+description, (4) the first hashtag and in the YouTube title. Same
+spelling everywhere.
 
 **Line 1 — the keyword line**
 
@@ -635,7 +646,24 @@ flugzeugtür, flugzeug tür öffnen, notausgang flugzeug, kabinendruck, plug doo
 
 **YouTube-Einstellungen:** Titelbild = TikTok-Cover · nicht für Kinder · Altersbeschränkung nein · bezahlte Werbung nein · synthetische Inhalte ja · Deutsch · Bildung · Kommentare an · Remixen erlauben · öffentlich
 
-### 6e. Ask for the numbers — learning log
+### 6e. Posting checklist — in every delivery message
+
+Three short lines after the copy blocks (what the user does while
+posting — it costs nothing and feeds the first hour, which decides the
+reach):
+
+- **Kommentar anpinnen:** give one ready comment to post and pin right
+  after uploading — the video's comment question in other words, or the
+  user's own answer to it ("Ich: Team Gel 💅 Und du?"). Its own copy
+  block. (#16 had 0 comments: the question came late and nothing was
+  pinned.)
+- **Erste Stunde:** answer every comment in the first hour, with a
+  question back where it fits.
+- **Kommentar-Wunsch = nächstes Video:** if a viewer asks "und wie geht
+  X?", tell the user it can be the next topic (+2 on the scorecard) and
+  that TikTok's "Mit Video antworten" links it to that comment.
+
+### 6f. Ask for the numbers — learning log
 
 In the delivery message ask the user to tell you, 1–2 days after posting:
 views, average watch time / % watched to the end, likes, comments, and
@@ -769,8 +797,6 @@ pull origin main`; if `git branch -r` shows `tiktok/*` branches that
   Fix: `git lfs install --local && git lfs pull`.
 - **Never `pkill -f` a pattern that appears in your own command line** — it
   kills the shell running it. Use `pkill -f "render -o render[s]"` style.
-- **Outro corridor:** the drone pull-back flies out towards +x/+z; any new
-  environment must keep tall scenery off that line (x ≈ 0.6·z, z > 4).
 - **Fresh container:** the pre-commit hook builds the workspace, so run `bun install` once before
   the first commit (then `git checkout bun.lock` if it changed).
 - **Quality over speed (user's choice 2026-10-22):** the 3D renders at the

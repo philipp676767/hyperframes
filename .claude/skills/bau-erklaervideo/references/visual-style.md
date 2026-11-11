@@ -14,7 +14,8 @@ What every world shares, whatever the place: faceted low-poly shapes in
 the middle and far layers (near props in the realistic finish, see
 "Realism"), natural colours, soft shadows, a gradient sky with a sun glow,
 puffy low-poly cumulus with flat undersides, gentle fog into the
-distance. The subject always stands at the origin on a clear stage.
+distance. The subject sits near the origin, built into the place (no
+stage, no plinth, no floor pad — SKILL.md 1b).
 
 **Realistic, still a toy** (from the kit): the scene is lit by its own sky
 (image-based light) — glossy parts mirror the real sky, matte facets take
@@ -61,8 +62,8 @@ deep sea with corals and light shafts, sea of clouds, kitchen worktop;
 the template demo: town park at blue hour with fairy lights and a
 bandstand. Never repeat one of the last three.
 
-Optional checkered floor pad under the subject (`addFloor`) for indoor
-things (kitchen tiles, workshop floor) — skip it outdoors.
+No checkered floor pad under the subject any more (`addFloor` is the old
+look, 2026-11-02) — an indoor floor is part of the set (tiles, planks).
 
 **Dark stage** (option, `darkStage()` + `SKIES.studio`, learned from
 successful videos 2026-10-24): near-black surroundings, one warm spotlight
@@ -93,7 +94,7 @@ max 2 at once, never over the captions.
   ground. Parts that pop in one after another get staggered by
   0.08–0.15 s, never all on one frame.
 - **X-ray:** the shell turns to light-blue glass with glowing edges while the
-  inside is explained, solid again for the outro.
+  inside is explained, solid again for the payoff and the last shot.
 - **Flow / energy:** particles streaming along paths (cold = blue
   `#2f9bff`, hot = red/orange `#ff3d1f`/`#ffa83a`), wavy arrows for heat/air
   (`heatMat`, `coldMat`), straight yellow arrows for forces (`forceMat`,
@@ -273,7 +274,7 @@ with a real lens**:
 Feedback: _"Qualität noch besser, nicht so ineinander verschwimmen."_
 
 - The subject fills **≥ 40 % of the frame height** in most shots; the
-  checkered floor pad is optional and small — never half the frame.
+  ground never takes half the frame.
 - **X-ray at most ~⅓ of the runtime**, only while the inside is
   explained; the money shots and the outro are solid. Inner parts are
   saturated, opaque colours so they read through the glass.
