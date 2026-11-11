@@ -242,7 +242,7 @@ men).
 
 | Thema                         | Hook (≤ 9 Wörter)                                                               | Zeig-Frage (Kommentar)             | Money-Shot                                                       |
 | ----------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------- |
-| ★ Selbstbräuner               | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)                  | „Schon mal orange geworden?“       | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun     |
+| ✓ Selbstbräuner (#76)         | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)                  | „Schon mal orange geworden?“       | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun     |
 | ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)                | „Natur oder geliftet?“             | Bindungen im Haar knacken auf, Form, neu verknüpft               |
 | ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                                  | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                  |
 | ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen          |
@@ -294,9 +294,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema         | Format | Datum      | Chat                      |
-| ------------- | ------ | ---------- | ------------------------- |
-| Selbstbräuner | A      | 2026-11-11 | TikTok #76: Selbstbräuner |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 

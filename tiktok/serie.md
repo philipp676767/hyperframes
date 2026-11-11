@@ -85,3 +85,4 @@ Umgebungen (insel, stadt, …).
 | 73  | Mit vollem Magen schwimmen     | B      | `tiktok/satt-schwimmen`      | bergsee-holzsteg-badehaus     | sonniger mittag       | 45,0 s | 2026-11-11 |
 | 74  | Milchschaum (Latte Art)        | A      | `tiktok/milchschaum`         | roesterei-espressobar         | morgensonne           | 45,0 s | 2026-11-11 |
 | 75  | Eine Woche ohne Zucker         | B      | `tiktok/ohne-zucker`         | wg-wohnzimmer-nacht           | nacht, lampe + tv     | 45,0 s | 2026-11-11 |
+| 76  | Selbstbräuner (orange Knie)    | A      | `tiktok/selbstbraeuner`      | hotel-poolterrasse-meer       | blaue stunde → nacht  | 45,0 s | 2026-11-11 |
