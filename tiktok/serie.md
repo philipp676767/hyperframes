@@ -80,3 +80,4 @@ Umgebungen (insel, stadt, …).
 | 68  | Kabellos laden (Münze)         | A      | `tiktok/kabellos-laden`      | auto-mittelkonsole-autobahn   | goldene stunde     | 45,0 s | 2026-11-10 |
 | 69  | Weinen im Weltall              | B      | `tiktok/weinen-weltall`      | roboterarm-tagseite-erde      | grelle orbit-sonne | 45,0 s | 2026-11-10 |
 | 70  | Hundenase (Fingerabdruck)      | A      | `tiktok/hundenase`           | herbstwald-weg-nebel          | nebliger morgen    | 45,0 s | 2026-11-10 |
+| 71  | Alle springen gleichzeitig     | B      | `tiktok/alle-springen`       | stadion-flutlicht-konzert     | nacht, flutlicht   | 45,0 s | 2026-11-10 |

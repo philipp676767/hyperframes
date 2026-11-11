@@ -297,9 +297,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                      | Format | Datum      | Chat                                   |
-| -------------------------- | ------ | ---------- | -------------------------------------- |
-| Alle springen gleichzeitig | B      | 2026-11-10 | TikTok #71: Alle springen gleichzeitig |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
