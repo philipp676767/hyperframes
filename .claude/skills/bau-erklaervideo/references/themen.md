@@ -245,7 +245,6 @@ men).
 | ★ Selbstbräuner               | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)                  | „Schon mal orange geworden?“       | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun     |
 | ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)                | „Natur oder geliftet?“             | Bindungen im Haar knacken auf, Form, neu verknüpft               |
 | ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                                  | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                  |
-| ★ Latte Art / Milchschaum     | „Dein Milchschaum hält nur dank Eiweiß-Käfigen.“                                | „Hafer- oder Kuhmilch?“            | Eiweiß legt sich um Luftblasen, Herz wird gegossen               |
 | ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen          |
 | ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)               | „Wäschst du dein Auto selbst?“     | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt     |
 | ★ Katzenzunge                 | „Die Zunge deiner Katze ist eine Bürste aus Haken.“ (Fakten prüfen)             | „Wie heißt deine Katze?“           | Zunge im Makro, hohle Häkchen ziehen Speichel durchs Fell        |
@@ -299,7 +298,6 @@ ask for go in here.
 | Thema                      | Format | Datum      | Chat                                   |
 | -------------------------- | ------ | ---------- | -------------------------------------- |
 | Mit vollem Magen schwimmen | B      | 2026-11-11 | TikTok #73: Mit vollem Magen schwimmen |
-| Milchschaum (Latte Art)    | A      | 2026-11-11 | TikTok #74: Milchschaum                |
 | Eine Woche ohne Zucker     | B      | 2026-11-11 | TikTok #75: Woche ohne Zucker          |
 
 ## Verwendet
