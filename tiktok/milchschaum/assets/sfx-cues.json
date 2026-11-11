@@ -1,0 +1,367 @@
+[
+  {
+    "s": "zisch",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 2.46,
+    "db": -11
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "blubb",
+    "at": 0.5,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 0.72,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 0.94,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 0.94,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 0.94,
+    "why": "highlight shake"
+  },
+  {
+    "s": "blubb",
+    "at": 1.04,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 2.34,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 2.56,
+    "why": "beats.js",
+    "dur": 11.36,
+    "db": -21
+  },
+  {
+    "s": "blip",
+    "at": 2.61,
+    "why": "label Dampfdüse"
+  },
+  {
+    "s": "whoosh",
+    "at": 3.7,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 3.7,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 3.92,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.78,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.88,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.88,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 9.32,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 9.54,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 9.69,
+    "why": "label Eiweiß"
+  },
+  {
+    "s": "slowmo",
+    "at": 10.42,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.1,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 13.7,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 13.92,
+    "why": "beats.js",
+    "dur": 4.42,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 14.96,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.96,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 15.18,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 15.23,
+    "why": "label Strudel"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.86,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 17.9,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 17.9,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.12,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 18.34,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 19.42,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 19.46,
+    "why": "gefolgt",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 19.52,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 19.89,
+    "why": "beats.js"
+  },
+  {
+    "s": "blip",
+    "at": 19.99,
+    "why": "label Kuhmilch"
+  },
+  {
+    "s": "pop",
+    "at": 20.19,
+    "why": "beats.js"
+  },
+  {
+    "s": "blip",
+    "at": 20.29,
+    "why": "label Hafermilch"
+  },
+  {
+    "s": "whoosh",
+    "at": 21.6,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 22.47,
+    "why": "label Barista"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.72,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "pop",
+    "at": 23.14,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 24.72,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 25.04,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 25.64,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.98,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 29.1,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 29.15,
+    "why": "label Crema"
+  },
+  {
+    "s": "whoosh",
+    "at": 29.54,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.22,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.22,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 31.44,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 31.44,
+    "why": "highlight flash"
+  },
+  {
+    "s": "zisch",
+    "at": 32.16,
+    "why": "beats.js",
+    "dur": 3.3600000000000065,
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 35.3,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 35.52,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 35.52,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.36,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 37.58,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 37.58,
+    "why": "question answered"
+  },
+  {
+    "s": "slowmo",
+    "at": 37.58,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "blubb",
+    "at": 37.63,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "wow",
+    "at": 38.2,
+    "why": "bonus fact"
+  },
+  {
+    "s": "zisch",
+    "at": 38.3,
+    "why": "beats.js",
+    "dur": 3.3999999999999986,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 41.38,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 41.6,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 41.98,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 42.2,
+    "why": "comment pill"
+  }
+]
