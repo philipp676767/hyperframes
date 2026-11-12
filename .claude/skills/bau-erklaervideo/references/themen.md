@@ -294,8 +294,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                                                      | Format | Datum      | Chat                    |
+| ---------------------------------------------------------- | ------ | ---------- | ----------------------- |
+| … mit nassen Haaren in die Kälte gehst? (Erkältung-Mythos) | B      | 2026-11-12 | TikTok #77: Nasse Haare |
 
 ## Verwendet
 
