@@ -297,6 +297,7 @@ ask for go in here.
 | Thema             | Format | Datum      | Chat                          |
 | ----------------- | ------ | ---------- | ----------------------------- |
 | Geschüttelte Cola | B      | 2026-11-12 | TikTok #79: Geschüttelte Cola |
+| Katzenzunge       | A      | 2026-11-12 | TikTok #80: Katzenzunge       |
 
 ## Verwendet
 
