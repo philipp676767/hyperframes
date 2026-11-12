@@ -193,7 +193,7 @@ are always 10+ open topics per format.
 | Ampel-Kontaktschleife                      | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün      | Straße / Auto | –                    |
 | Türschloss                                 | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht        | Zuhause       | –                    |
 | Silvesterrakete                            | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild                   | Natur / Fest  | Ende Dezember        |
-| Heizkörper-Thermostat                      | „Dein Heizungsregler hat keinen Strom – er denkt mit Wachs.“                                                                                                    | Wachs dehnt sich aus, drückt den Stift, Ventil schließt                   | Zuhause       | Herbst/Winter        |
+| Stoßlüften                                 | „Fenster kippen kühlt deine Wände aus – 5 Minuten weit auf nicht.“ (Fakten prüfen)                                                                              | Kipp-Fenster: Wand wird blau; weit offen: Luft tauscht, Wand bleibt warm  | Zuhause       | Winter               |
 | Schnellkochtopf                            | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100           | Küche         | –                    |
 | Eiswürfel                                  | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt     | Küche         | Sommer               |
 | Türklingel                                 | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe      | Zuhause       | –                    |
@@ -294,10 +294,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                 | Format | Datum      | Chat                           |
-| --------------------- | ------ | ---------- | ------------------------------ |
-| Heizkörper-Thermostat | A      | 2026-11-12 | TikTok #78: Heizungsthermostat |
-| Geschüttelte Cola     | B      | 2026-11-12 | TikTok #79: Geschüttelte Cola  |
+| Thema             | Format | Datum      | Chat                          |
+| ----------------- | ------ | ---------- | ----------------------------- |
+| Geschüttelte Cola | B      | 2026-11-12 | TikTok #79: Geschüttelte Cola |
 
 ## Verwendet
 
