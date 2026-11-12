@@ -1,0 +1,311 @@
+[
+  {
+    "s": "dehnen",
+    "at": 0.02,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.68,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.74,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 1.96,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.54,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 2.54,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 4.6,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 4.82,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 4.82,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.28,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 7.65,
+    "why": "label Tränenfilm"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.74,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 8.96,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "zisch",
+    "at": 8.96,
+    "why": "beats.js",
+    "dur": 3.3999999999999986,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 9.88,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 10.76,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.14,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 12.36,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 12.36,
+    "why": "highlight shake"
+  },
+  {
+    "s": "piep",
+    "at": 12.36,
+    "why": "beats.js",
+    "dur": 1.4,
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 13.24,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 15.82,
+    "why": "highlight"
+  },
+  {
+    "s": "tropfen",
+    "at": 16.02,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "tropfen",
+    "at": 16.57,
+    "why": "beats.js",
+    "db": -13
+  },
+  {
+    "s": "tropfen",
+    "at": 17.12,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 17.2,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.02,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.02,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 20.24,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 21.9,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.42,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 25.66,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 25.71,
+    "why": "label Hornhaut"
+  },
+  {
+    "s": "hit",
+    "at": 28,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.34,
+    "why": "cut"
+  },
+  {
+    "s": "tropfen",
+    "at": 28.71,
+    "why": "beats.js",
+    "db": -13
+  },
+  {
+    "s": "tropfen",
+    "at": 29.16,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 29.42,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.16,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 30.38,
+    "why": "highlight"
+  },
+  {
+    "s": "rauschen",
+    "at": 30.38,
+    "why": "beats.js",
+    "dur": 0.8,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 30.43,
+    "why": "label Lid"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.96,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 32.22,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 32.22,
+    "why": "question answered"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.28,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 33.58,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 33.58,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 33.58,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "whoosh",
+    "at": 34.9,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 35.12,
+    "why": "bonus fact"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.98,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 38.2,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.28,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 40.44,
+    "why": "comment pill"
+  },
+  {
+    "s": "pop",
+    "at": 43.4,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 44.18,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 44.22,
+    "why": "gefolgt",
+    "db": -16
+  }
+]
