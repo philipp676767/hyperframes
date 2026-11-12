@@ -405,11 +405,11 @@ function setLids(open, wide) {
 
 // ---------------------------------------------------------------- tears
 const tearMat = new THREE.MeshPhysicalMaterial({
-  color: 0xd6f1ff,
+  color: 0xa9dcff,
   roughness: 0.02,
   clearcoat: 1,
   transparent: true,
-  opacity: 0.75,
+  opacity: 0.88,
   envMapIntensity: 2.5,
 });
 // a tear pool along the lower lid edge
@@ -419,14 +419,14 @@ pool.scale.set(0.001, 0.001, 0.001);
 scene.add(pool);
 // the stream down the cheek into the sand
 const tearPath = new THREE.CatmullRomCurve3([
-  onEye(0.7, -2.0, R + 0.12),
-  V(-0.95, 0.75, 2.05),
-  V(-1.05, 0.38, 2.12),
-  V(-1.12, 0.12, 2.45),
-  V(-1.2, 0.05, 3.1),
+  V(-0.34, 0.55, 1.62),
+  V(-0.45, 0.48, 2.0),
+  V(-0.55, 0.45, 2.6),
+  V(-0.65, 0.36, 3.25),
+  V(-0.7, 0.08, 3.6),
 ]);
 const NT = 26;
-const drops = new THREE.InstancedMesh(new THREE.SphereGeometry(0.075, 14, 10), tearMat, NT);
+const drops = new THREE.InstancedMesh(new THREE.SphereGeometry(0.12, 14, 10), tearMat, NT);
 drops.frustumCulled = false;
 scene.add(drops);
 const wet = new THREE.Mesh(
@@ -439,7 +439,7 @@ const wet = new THREE.Mesh(
     opacity: 0.85,
   }),
 );
-wet.position.set(-1.2, 0.03, 3.15);
+wet.position.set(-0.7, 0.03, 3.65);
 ground.add(wet);
 // drops falling onto the cornea and soaking in ("Sie trinkt Tränen")
 const NF = 6;
@@ -543,12 +543,12 @@ const phone = new THREE.Group();
   const cam = new THREE.Mesh(roundedBox(0.4, 0.4, 0.05, 0.08), real.gloss(0x111317));
   cam.position.set(-0.32, 0.9, 0.07);
   phone.add(cam);
-  phone.position.set(0.35, 1.65, 4.5);
+  phone.position.set(0.3, 1.65, 3.9);
   phone.rotation.set(0.02, -0.08, 0.04);
   scene.add(phone);
 }
 const screenGlow = new THREE.PointLight(0xb98cff, 0, 5, 1.5);
-screenGlow.position.set(0.3, 1.6, 3.6);
+screenGlow.position.set(0.3, 1.6, 3.3);
 scene.add(screenGlow);
 
 // ---------------------------------------------------------------- hands
@@ -666,7 +666,7 @@ function renderAt(t) {
       let s = 0;
       const p = V(0, -50, 0);
       if (flood) {
-        const u = (t - T.traenen - 0.1) * 0.55 - i / NT;
+        const u = (t - T.traenen - 0.1) * 1.0 - i / NT;
         if (u > 0) {
           const f = u % 1;
           p.copy(tearPath.getPointAt(f));
@@ -701,9 +701,9 @@ function renderAt(t) {
 
   // ------------------------------------------------ puddle drying (analogy)
   const pd = smooth(ramp(t, T.pfuetze - 0.2, T.alarm - 0.05));
-  water.scale.set(Math.max(0.02, 1 - 0.92 * pd), 1, Math.max(0.02, 0.75 * (1 - 0.92 * pd)));
+  water.scale.set(1 - 0.75 * pd, 1, 0.75 * (1 - 0.75 * pd));
   water.material.opacity = 0.85 * (1 - 0.6 * pd);
-  const steamOn = t >= T.pfuetze - 0.3 && t < T.alarm + 0.2;
+  const steamOn = false;
   for (const [s, ph, r0] of steam) {
     s.visible = steamOn;
     if (!steamOn) continue;
@@ -714,7 +714,7 @@ function renderAt(t) {
       PUDDLE[2] + (ph - 0.5) * 1.2,
     );
     s.scale.setScalar(0.6 + u * 1.4);
-    s.material.opacity = 0.35 * Math.sin(Math.PI * u);
+    s.material.opacity = 0.18 * Math.sin(Math.PI * u);
   }
 
   // ------------------------------------------------ phone
@@ -723,10 +723,10 @@ function renderAt(t) {
   phone.scale.setScalar(Math.max(0.01, ph));
   screenGlow.intensity = 9 * ph;
   phoneHand.track(t, [
-    { t: T.handy - 0.3, pos: [1.6, 0.0, 5.6], rot: [-0.5, -2.6, 0.3], pose: "grab" },
-    { t: T.handy + 0.1, pos: [1.25, 0.55, 5.2], rot: [-0.5, -2.6, 0.3], pose: "grab" },
-    { t: T.warum - 0.05, pos: [1.25, 0.6, 5.2], rot: [-0.5, -2.6, 0.3], pose: "grab" },
-    { t: T.warum, pos: [1.25, 0.6, 5.2], rot: [-0.5, -2.6, 0.3], pose: "grab", out: true },
+    { t: T.handy - 0.3, pos: [1.6, 0.0, 5.0], rot: [-0.5, -2.6, 0.3], pose: "grab" },
+    { t: T.handy + 0.1, pos: [1.25, 0.55, 4.6], rot: [-0.5, -2.6, 0.3], pose: "grab" },
+    { t: T.warum - 0.05, pos: [1.25, 0.6, 4.6], rot: [-0.5, -2.6, 0.3], pose: "grab" },
+    { t: T.warum, pos: [1.25, 0.6, 4.6], rot: [-0.5, -2.6, 0.3], pose: "grab", out: true },
   ]);
 
   // ------------------------------------------------ POV blur

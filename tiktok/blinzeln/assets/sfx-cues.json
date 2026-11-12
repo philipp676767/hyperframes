@@ -178,6 +178,11 @@
     "why": "label Hornhaut"
   },
   {
+    "s": "whoosh",
+    "at": 26.32,
+    "why": "cut"
+  },
+  {
     "s": "hit",
     "at": 28,
     "why": "highlight flash"

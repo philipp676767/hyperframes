@@ -54,6 +54,7 @@ terrain(0xe8c38a, { seed: SEED, step: 2.2, height: dune, amt: 0.09, warm: 0.6, s
     const x = (r() - 0.5) * 26;
     const z = -2 + r() * 14;
     if (Math.abs(x) < 4.6 && z < 3.2) continue; // the face
+    if (Math.hypot(x - 3.6, z - 5) < 2.6) continue; // the puddle
     const len = 1.2 + r() * 2.4;
     q.setFromAxisAngle(V(0, 1, 0), 0.35 + Math.sin(x * 0.4) * 0.15);
     m4.compose(V(x, 0.015, z), q, V(len, 1, 1));

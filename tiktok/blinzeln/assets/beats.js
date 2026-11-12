@@ -36,7 +36,7 @@ export const T = {
 
 // eye centre and radius (scene.js builds the eye around it)
 export const E = [0, 1.5, 0.3];
-export const PUDDLE = [5, 0, 6];
+export const PUDDLE = [3.6, 0, 5.0];
 
 export const shots = [
   // frame 0: the hand holds the giant eye open — close, pushing in
@@ -57,19 +57,19 @@ export const shots = [
   // the tear film: macro over the glossy surface
   {
     at: T.traenenfilm,
-    from: [0.9, 2.45, 3.5],
-    to: [0.6, 2.15, 3.15],
+    from: [1.2, 2.6, 4.8],
+    to: [0.9, 2.3, 4.3],
     look: [0, 1.6, 1.8],
     zoom: 1,
   },
   // it tears open: dry spots
-  { at: T.reisst, from: [-0.7, 2.0, 3.35], to: [-0.45, 1.85, 3.05], look: [0, 1.52, 1.8], zoom: 1 },
+  { at: T.reisst, from: [-0.9, 2.1, 4.4], to: [-0.6, 1.9, 4.0], look: [0, 1.52, 1.8], zoom: 1 },
   // analogy: a puddle drying in the sun
   {
     at: T.pfuetze,
-    from: [7.6, 1.5, 9.4],
-    to: [6.9, 1.05, 8.5],
-    look: [5, 0.05, 6],
+    from: [5.6, 4.4, 8.8],
+    to: [5.2, 3.8, 8.0],
+    look: [3.6, 0.1, 5.0],
     zoom: 1,
   },
   // alarm: the whole eye, red
@@ -77,18 +77,17 @@ export const shots = [
   // the paradox: tears run down the cheek into the sand
   {
     at: T.paradox,
-    from: [-3.4, 1.4, 4.8],
-    to: [-2.8, 1.15, 4.1],
-    look: [-0.7, 0.8, 1.6],
+    from: [-2.2, 1.3, 5.6],
+    to: [-1.8, 1.1, 5.0],
+    look: [-0.4, 0.7, 1.8],
     zoom: 1,
-    whip: -1,
   },
   // POV: everything blurs
   {
     at: T.verschwimmt,
-    from: [0.15, 1.55, 2.2],
-    to: [0.1, 1.5, 2.5],
-    look: [2.2, 1.3, 12],
+    from: [-0.3, 1.6, 2.35],
+    to: [-0.4, 1.55, 2.5],
+    look: [-6, 0.8, 6],
     zoom: 1,
     focus: 0.6,
   },
@@ -97,14 +96,16 @@ export const shots = [
   // on the phone: over the phone's shoulder at the staring eye
   {
     at: T.handy,
-    from: [2.7, 2.6, 7.2],
-    to: [2.2, 2.3, 6.4],
-    look: [0, 1.6, 2.2],
+    from: [2.4, 2.1, 6.6],
+    to: [2.0, 1.95, 6.0],
+    look: [0.2, 1.6, 3.0],
     zoom: 1,
     whip: 1,
   },
   // the cornea in profile
   { at: T.warum, from: [3.6, 1.75, 2.7], to: [3.1, 1.65, 2.4], look: [0, 1.5, 1.75], zoom: 1 },
+  // the "what if": vessels + cloudy, seen from the front
+  { at: T.gefaesse, from: [1.2, 1.9, 5.2], to: [0.9, 1.8, 4.6], look: [0, 1.55, 1.8], zoom: 1 },
   // it drinks tears: high front
   { at: T.trinkt, from: [0.6, 3.0, 4.5], to: [0.45, 2.7, 4.0], look: [0, 1.5, 1.7], zoom: 1 },
   // the lid = windscreen wiper
@@ -124,11 +125,11 @@ export const LABELS = [
     text: "Tränenfilm",
     at: T.traenenfilm + 0.1,
     until: T.reisst + 0.6,
-    pos: [-0.35, 2.1, 1.75],
+    pos: [-0.45, 1.9, 1.75],
     side: -1,
   },
   { text: "Hornhaut", at: T.hornhaut, until: T.trinkt, pos: [0, 1.62, 1.86], side: 1 },
-  { text: "Lid", at: T.wischer, until: T.einen2, pos: [0.45, 2.55, 1.55], side: 1 },
+  { text: "Lid", at: T.wischer, until: T.einen2, pos: [0.2, 1.95, 1.85], side: 1 },
 ];
 
 export const HIGHLIGHTS = [
