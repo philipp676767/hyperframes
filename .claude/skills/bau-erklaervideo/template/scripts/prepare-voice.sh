@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # Build assets/voiceover.mp3 from the raw ElevenLabs take (whole script incl.
-# „Folge für mehr Wissen.“ in the middle and the comment question as the last
-# line, 2026-11-04) and fit it to the house length: every video is EXACTLY
-# 45 s (user's rule, 2026-10-28) and simply ends right after the comment
-# question (no loop line). FOLLOW_FAST=1.3 would speed up the last sentence
-# (used 2026-10-30 to -11-03 while the follow line was last; off by default). Jan always talks
+# the last line: comment question + „Folge für mehr Wissen.“, 2026-11-12 —
+# that last sentence is sped up a further x1.3, FOLLOW_FAST) and fit it to
+# the house length: every video is EXACTLY 45 s (user's rule, 2026-10-28)
+# and simply ends right after „Folge für mehr Wissen.“ (no loop line). Jan always talks
 # ~15 % faster than he reads (BASE 1.15, pitch kept — user's wish 2026-10-26:
 # 3.1 words/s). The speech ends ~0.7 s before 45 s (TARGET 44.3; was 43.8 —
 # a silent tail is a swipe, 2026-11-01):
@@ -34,9 +33,8 @@ join() { # $1 = pause length → $TMP/joined.wav
   else
     cp "$TMP/main.wav" "$TMP/joined.wav"
   fi
-  # optional: speed up the last sentence (off since 2026-11-04 — the last
-  # line is the comment question again)
-  python3 -I scripts/fast-tail.py "$TMP/joined.wav" "$TMP/fast.wav" "${FOLLOW_FAST:-1.0}" >&2
+  # the closing „Folge für mehr Wissen.“ is spoken quickly (2026-10-30, again since 2026-11-12)
+  python3 -I scripts/fast-tail.py "$TMP/joined.wav" "$TMP/fast.wav" "${FOLLOW_FAST:-1.3}" >&2
   mv "$TMP/fast.wav" "$TMP/joined.wav"
   ffprobe -v error -show_entries format=duration -of csv=p=0 "$TMP/joined.wav"
 }

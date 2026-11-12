@@ -28,19 +28,16 @@ if (hookLen) {
     );
   else console.log(`hook ends at ${hookEnd.toFixed(2)} s (≤ 3 s)`);
 }
-// house rule (2026-11-04): „Folge für mehr Wissen.“ is its own line in the
-// middle (~15–28 s), the comment question is the last line
+// house rule (2026-11-12): the whole CTA is the last line — comment question
+// + „Folge für mehr Wissen.“; no "folg…" word anywhere before it
 const ctaStart = ctx.window.HF_CTA_START ?? words.length;
-const fw = words.slice(0, ctaStart).find((w) => /^folg/i.test(w.w));
-if (last <= LENGTH - 3) {
-  // short demo / old episode: no position check
-} else if (!fw)
-  console.warn("WARNING: no „Folge für mehr Wissen.“ line in the middle of the script.");
-else if (fw.start < 12 || fw.start > 30)
+const early = words.slice(0, ctaStart).find((w) => /^folg/i.test(w.w));
+const inCta = words.slice(ctaStart).some((w) => /^folg/i.test(w.w));
+if (early)
   console.warn(
-    `WARNING: „Folge für mehr Wissen.“ starts at ${fw.start.toFixed(1)} s — put it at ~15–28 s.`,
+    `WARNING: „${early.w}“ at ${early.start.toFixed(1)} s — „Folge für mehr Wissen.“ belongs only in the last line, and no other "folg…" word may come before it.`,
   );
-else console.log(`follow line at ${fw.start.toFixed(1)} s`);
+if (!inCta) console.warn("WARNING: the last line has no „Folge für mehr Wissen.“");
 // banned old-style lines (2026-11-02 / 2026-10-23)
 const spoken = words.map((w) => w.w.toLowerCase()).join(" ");
 for (const bad of ["uns bauen", "du hast gerade"])

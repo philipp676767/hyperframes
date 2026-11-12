@@ -27,16 +27,15 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 
 ## Script shape (same length: exactly 45 s, 130–142 words)
 
-| Part                            | When       | Words | Job                                                                                                        |
-| ------------------------------- | ---------- | ----- | ---------------------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)               | 0–3 s      | ≤ 9   | Straight in, **max 3 s**: the act already happening ("Du reißt mitten im Flug an der Tür.") or the warning |
-| **Folge 1**                     | 3–13 s     | 28–34 | The first consequence / the condition that makes it strange; ends on the second money shot                 |
-| **Folge 2**                     | 13–19 s    | 16–20 | It escalates                                                                                               |
-| **Folge** (own line)            | ~19–21 s   | 4     | only „Folge für mehr Wissen.“ — between two pulls (script-formel.md §4)                                    |
-| **Mid twist**                   | ~21–26 s   | 10–14 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                |
-| **Folge 3**                     | 26–34 s    | 20–26 | The decisive consequence: the real mechanism, max 1–2 terms                                                |
-| **Payoff + Übrigens**           | 34–40 s    | 20–26 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …", the strongest fact          |
-| **Kommentar-Frage** (last line) | ~40–44.3 s | 8–12  | a **new comment question that fits this scenario** — the video ends ~0.7 s after it                        |
+| Part                  | When       | Words | Job                                                                                                                    |
+| --------------------- | ---------- | ----- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Hook** (line 1)     | 0–3 s      | ≤ 9   | Straight in, **max 3 s**: the act already happening ("Du reißt mitten im Flug an der Tür.") or the warning             |
+| **Folge 1**           | 3–13 s     | 28–34 | The first consequence / the condition that makes it strange; ends on the second money shot                             |
+| **Folge 2**           | 13–21 s    | 18–24 | It escalates                                                                                                           |
+| **Mid twist**         | ~21–25 s   | 10–14 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                            |
+| **Folge 3**           | 25–33 s    | 20–26 | The decisive consequence: the real mechanism, max 1–2 terms                                                            |
+| **Payoff + Übrigens** | 33–39 s    | 20–26 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …", the strongest fact                      |
+| **CTA** (last line)   | ~39–44.3 s | 12–16 | a **new comment question that fits this scenario** + „Folge für mehr Wissen.“ (quick) — the video ends ~0.7 s after it |
 
 The retention engine of script-formel.md (open-loop chain, escalation,
 mid twist, "Rate mal", hook lab) applies here too.
@@ -94,9 +93,9 @@ hook lab, gain / danger for the viewer when it is real).
   ziehen." The answer word must not be spoken earlier in the script (the
   on-screen question is answered on its first use after 6 s).
 - "Übrigens: …" exactly as in script-formel.md.
-- „Folge für mehr Wissen.“ is **its own line in the middle** (~19–21 s),
-  the comment question is the last line (script-formel.md §4, user's
-  swap 2026-11-04).
+- The whole CTA is the last line: comment question + „Schreib's in die
+  Kommentare.“ + „Folge für mehr Wissen.“ (script-formel.md §4, user's
+  rule 2026-11-12).
 - **The comment question is new every time** (user's rule, 2026-10-27) — never
   the stock "Was sollen wir als Nächstes passieren lassen?". Think of the
   line that fits _this_ scenario best: a personal, slightly cheeky
@@ -157,11 +156,10 @@ copy, and a wrong "harmless" claim can hurt someone. So:
 Und der Pilot? Bleibt völlig *ruhig*. Dabei hängt dein Leben an dieser Tür.
 Du fliegst höher als der *Everest*. Draußen ist die Luft so dünn, dass du *ohnmächtig* würdest. Darum pumpt das Flugzeug Luft rein – die wird dein Problem.
 [whispers] Sie drückt von innen gegen die Tür. Auf jedem Quadratmeter lastet so viel wie ein *Elefant*.
-Folge für mehr Wissen.
 [curious] Rate mal: Wie viele Leute müssten ziehen? [surprised] Rund *hundert*. Viel Spaß im Gang.
 Und selbst die hätten keine Chance: Die Tür ist ein *Stöpsel*, größer als das Loch. Sie geht zuerst nach *innen* auf – gegen den Druck.
 [excited] Darum bleibt sie oben *zu*. Übrigens: Draußen ist es kälter als minus *50* Grad – dein Atem würde sofort gefrieren.
-Würdest du dich jetzt noch an den Notausgang setzen? Schreib's in die Kommentare.
+Würdest du dich jetzt noch an den Notausgang setzen? Schreib's in die Kommentare. Folge für mehr Wissen.
 ```
 
 - Hook title `<em>Tür</em> auf?!`; `hf-config`: question
@@ -188,4 +186,4 @@ Würdest du dich jetzt noch an den Notausgang setzen? Schreib's in die Kommentar
 - [ ] The `answer` word is spoken only in the payoff
 - [ ] Safe: impossible / harmless / warning-only, no how-to, facts checked
 - [ ] Frame 0: the viewer's hand doing the act, with sound
-- [ ] „Folge für mehr Wissen.“ = own line at ~19–21 s; last line = the comment question (new for this scenario)
+- [ ] Last line = comment question (new for this scenario) + „Schreib's in die Kommentare.“ + „Folge für mehr Wissen.“

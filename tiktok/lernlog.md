@@ -25,7 +25,7 @@ früher galt und geändert wurde, steht unten unter „Überholt“ und ist
 - [ ] **Einfacher** (Nutzer, 2026-11-11: „etwas zu kompliziert“; Beispiel #56 Kaffee mit 11 Dingen zum Merken): eine Kernidee in einem Satz (Mitte + Payoff), Mechanismus in ≤ 3 Schritten mit Alltagsvergleichen, ≤ 2 Fachbegriffe, ≤ 2 Zahlen, ein Satz = eine Info; im Bild eins nach dem anderen (1 Schild / Anzeige pro Bild, 3–4 Schilder pro Video). Vergleichen: Ø Wiedergabe und Anteil bis zum Ende.
 - [ ] Alle 5–7 s ein Highlight, 2–3 Money-Shots, die die Behauptungen **zeigen**; Stimme mit 3–6 Regieanweisungen.
 - [ ] Genau 45 s, 130–142 Wörter, Jan mit 3,1 Wörtern/s, 0–2 passende Humor-Momente, keine Musik, kein Loop, kein Outro.
-- [ ] „Folge für mehr Wissen.“ als eigene Zeile in der Mitte (~19–21 s), Kommentar-Frage als letzte Zeile (jedes Mal neu, nie nach Fotos fragen), Video endet ~0,7 s danach.
+- [ ] **Ganze CTA ans Ende** (Nutzer, 2026-11-12): letzte Zeile = Kommentar-Frage (jedes Mal neu, nie nach Fotos fragen) + „Schreib's in die Kommentare.“ + schnelles „Folge für mehr Wissen.“; Video endet ~0,7 s danach. Davor das stärkste „Übrigens“.
 
 **Themen:**
 
@@ -52,7 +52,7 @@ früher galt und geändert wurde, steht unten unter „Überholt“ und ist
 - Loop am Ende → gestrichen 2026-10-24. Fortschrittsbalken / Fragen-Banner → gestrichen 2026-10-23.
 - „Schau dich an. Du hast gerade X gebaut.“ → gestrichen 2026-10-23. „Lass es uns bauen.“ → gestrichen 2026-11-02.
 - Beschreibung ohne Hashtags (Test ab 2026-10-23) → Hashtags wieder drin seit 2026-10-27.
-- Folgen-Aufruf: Ende → Mitte (10-24) → Ende (10-30) → Ende allein (11-01) → **Mitte (11-04, gilt)**.
+- Folgen-Aufruf: Ende → Mitte (10-24) → Ende (10-30) → Ende allein (11-01) → Mitte (11-04) → **ganz ans Ende mit der Kommentar-Frage (11-12, gilt)**.
 - Musikbett → keine Musik seit 2026-10-26.
 - Feste Umgebungen, Sockel, karierte Bodenplatte, Drohnen-Rückzug als Outro → gestrichen.
 - Skript vom Nutzer freigeben lassen → Autopilot seit 2026-11-10.

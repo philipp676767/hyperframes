@@ -335,7 +335,7 @@ CTA starts. Show the fact in the scene too (LED panel with the number, or
 a quick close-up) — never an empty shot under it.
 
 **Ending (no loop, 2026-10-24; no outro, 2026-11-01):** the video ends
-~0.7 s after the comment question, still on the "Übrigens" money shot
+~0.7 s after „Folge für mehr Wissen.“, still on the "Übrigens" money shot
 (the fact shown big). No calm wide outro, no cut back to frame 0.
 
 **Cover (Titelbild):** the scene frozen at one strong moment, no
@@ -343,14 +343,11 @@ captions / buttons / labels, dark gradient at the top, title Montserrat
 132 px white with a thick dark stroke, keyword yellow, tilted -2°,
 y ≈ 300 px (`scripts/make-cover.sh`).
 
-**Follow (own line in the middle, since 2026-11-04):** on "Folge" the red
-"+ Folgen" pill pops in low, under the captions (y ≈ 1230 px), is tapped
-1.0 s later, flips to grey "Gefolgt" and leaves 1.4 s after that. Keep
-the subject above it in that shot.
-
-**Comment question (last line):** when it starts, a white "Kommentieren"
-pill with a red speech bubble pops in at y ≈ 400 px, pulses and stays to
-the end.
+**CTA (last line, since 2026-11-12):** when the comment question starts,
+a white "Kommentieren" pill with a red speech bubble pops in at
+y ≈ 400 px and pulses; on "Folge" (the quick „Folge für mehr Wissen.“)
+the red "+ Folgen" pill pops in below it (y ≈ 560 px), is tapped 0.7 s
+later and flips to grey "Gefolgt" — both stay to the end.
 
 ## Sound effects
 

@@ -61,24 +61,25 @@ no sentence is there just to fill time.
 
 ## Shape (45 s)
 
-| Part                            | When       | Words | Job                                                                                                     |
-| ------------------------------- | ---------- | ----- | ------------------------------------------------------------------------------------------------------- |
-| **Hook** (line 1)               | 0–3 s      | ≤ 9   | **max 3 s**: the reason to watch to the end for _you_ (gain / danger) + twist; open loop 1              |
-| **Beat 1**                      | 3–13 s     | 26–34 | first part; ends on the **second money shot** (~10 s) and opens loop 2                                  |
-| **Beat 2**                      | 13–19 s    | 18–22 | second part, bigger than beat 1; closes loop 2, opens loop 3                                            |
-| **Folge** (own line)            | ~19–21 s   | 4     | only „Folge für mehr Wissen.“ — **in the middle** (§4), between two pulls; the open question stays open |
-| **Mid twist** (re-hook)         | ~21–26 s   | 10–14 | right after it: the obvious explanation is wrong / it's even crazier — or a "Rate mal"                  |
-| **Beat 3**                      | 26–34 s    | 22–28 | the decisive part (the real trick), the biggest money shot so far                                       |
-| **Payoff + Übrigens** (line)    | 34–40 s    | 20–26 | answer the hook's question (the question text fades) + "Übrigens: …", the strongest fact                |
-| **Kommentar-Frage** (last line) | ~40–44.3 s | 8–12  | the comment question + „Schreib's in die Kommentare.“ — the video ends ~0.7 s later, no loop, no outro  |
+| Part                         | When       | Words | Job                                                                                                                |
+| ---------------------------- | ---------- | ----- | ------------------------------------------------------------------------------------------------------------------ |
+| **Hook** (line 1)            | 0–3 s      | ≤ 9   | **max 3 s**: the reason to watch to the end for _you_ (gain / danger) + twist; open loop 1                         |
+| **Beat 1**                   | 3–13 s     | 26–34 | first part; ends on the **second money shot** (~10 s) and opens loop 2                                             |
+| **Beat 2**                   | 13–21 s    | 20–26 | second part, bigger than beat 1; closes loop 2, opens loop 3                                                       |
+| **Mid twist** (re-hook)      | ~21–25 s   | 10–14 | the obvious explanation is wrong / it's even crazier — or a "Rate mal"                                             |
+| **Beat 3**                   | 25–33 s    | 22–28 | the decisive part (the real trick), the biggest money shot so far                                                  |
+| **Payoff + Übrigens** (line) | 33–39 s    | 20–26 | answer the hook's question (the question text fades) + "Übrigens: …", the strongest fact                           |
+| **CTA** (last line)          | ~39–44.3 s | 12–16 | comment question + „Schreib's in die Kommentare.“ + „Folge für mehr Wissen.“ (quick) — the video ends ~0.7 s later |
 
 **CTA history:** until 2026-10-23 both at the end; 2026-10-24 to -29
 follow in the middle; 2026-10-30 to -31 both at the end; 2026-11-01 to -03
-comment question in the middle, follow at the end (the user's statistics:
-~20 % watched until the end-CTA, 5 % after it); **since 2026-11-04 (user's
-swap) follow in the middle, comment question at the end.** Keep the end
-short and personal so it doesn't feel like an outro: one question, no
-summary before it, cut ~0.7 s after it.
+comment question in the middle, follow at the end; 2026-11-04 to -11
+follow in the middle, comment question at the end; **since 2026-11-12
+(user's rule) the whole CTA at the very end again.** The user's statistics
+of 2026-11-01 (~20 % watched until the end-CTA, 5 % after it) still apply:
+keep the CTA line short (≤ 16 words), no summary before it, the
+"Übrigens" fact as strong as possible right before it, cut ~0.7 s after
+the last word.
 
 ## Retention engine — how 45 seconds hold
 
@@ -371,42 +372,44 @@ repeat of a beat, one `*keyword*`. It is **the last content of the video**
 strongest fact you have left — the one people repeat ("Krass!" / "Wusste
 ich nicht") — and never a soft one.
 
-### 4. CTA — „Folge für mehr Wissen.“ in the middle, comment question at the end
+### 4. CTA — the last line: comment question + „Folge für mehr Wissen.“
 
-Neither part may be dropped or shortened. Since 2026-11-04 (the user's
-swap; history above under "Shape"):
+Neither part may be dropped or shortened; **both stand at the very end**
+(user's rule, 2026-11-12; history above under "Shape").
 
-**„Folge für mehr Wissen.“ — its own line in the middle (~19–21 s):**
+**The last line** = comment question + „Schreib's in die Kommentare.“ +
+„Folge für mehr Wissen.“ — 12–16 words, one line in `script.txt`:
 
-- Exactly these four words (the user's wording, no variants), their own
-  line, between two pulls: after beat 2 ends on an open "warum?", and
-  straight on with the mid twist — so it is a short stop, not an exit.
-- The red "+ Folgen" pill pops low on "Folge", is tapped, says "Gefolgt",
-  leaves. **No other word starting with "folg"** (folgt, Folgen, Folge 2)
-  earlier in the script — the pill keys on the first one.
-- Spoken at Jan's normal pace (the x1.3 speed-up, `FOLLOW_FAST`, only
-  works on the last sentence and is off now).
+```text
+Gel-Nägel oder lieber normaler Lack? Schreib's in die Kommentare. Folge für mehr Wissen.
+```
 
-**Comment question — the last line:**
+**Comment question:**
 
 - **A new question every video** (2026-10-27): the one that fits _this_
   topic best — personal, a bit cheeky — write three, take the best, never
   repeat the previous video's line. Answerable in 1–3 words: yes/no,
   either/or, a number, a personal detail (Zeig-Frage).
-- 8–12 words incl. „Schreib's in die Kommentare.“ (or „Ab in die
-  Kommentare.“). No "folg" in it. The white "Kommentieren" pill pops when
-  the line starts and stays to the end.
 - **Never ask for a photo / picture / screenshot** („Bild in die
   Kommentare“, „Zeig mir deine …“, „Beweisfoto“; user, 2026-11-03): the
   photos come on their own when the question touches something the
   viewer is proud of (#36: „Gel-Nägel oder lieber normaler Lack?“ — no
   photo request, still full of nail photos). Ask about _their_ thing,
   that's enough.
+- The white "Kommentieren" pill pops when the line starts.
+
+**„Folge für mehr Wissen.“** — exactly these four words (the user's
+wording, no variants), as the very last sentence, **spoken quickly**:
+`prepare-voice.sh` speeds the last sentence up a further x1.3
+(`scripts/fast-tail.py`, `FOLLOW_FAST=1.3`). Full stop before it so the
+pause is found. The red "+ Folgen" pill pops on "Folge", is tapped, says
+"Gefolgt". **No other word starting with "folg"** anywhere in the script
+(the pill keys on it).
 
 ### 5. Ending — no loop, no outro
 
 **No loop bridge** (user's rule, 2026-10-24). The video ends ~0.7 s after
-the comment question, still on the "Übrigens" money shot — no summary,
+„Folge für mehr Wissen.“, still on the "Übrigens" money shot — no summary,
 no "Tschüss", no slow outro shot or drone pull-back (a calm "it's over"
 picture is a swipe). Keep cutting to the end.
 
@@ -509,15 +512,13 @@ Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib es in die Kommentare �
 Hook title: `Dein Kühlschrank <em>lügt</em>`. (Keyword marks added
 afterwards to show the density: 9 in 129 words.)
 
-(Today „Folge für mehr Wissen.“ is its own line in the middle and the
-comment question is the last line, 2026-11-04.) For the fridge:
+(Today the whole CTA is the last line, 2026-11-12.) For the fridge:
 
 ```text
 … (beat 2)
-Folge für mehr Wissen.
-[whispers] Denn eigentlich müsste er da eiskalt sein. … (mid twist, beat 3)
+[whispers] Dabei müsste er da eiskalt sein. … (mid twist, beat 3)
 Deshalb ist er hinten *warm*. Übrigens: In deinem Kühlschrank ist es *kälter* als am Nordpol im Sommer.
-Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's in die Kommentare.
+Fass mal hinter deinen Kühlschrank: Ist er warm? Schreib's in die Kommentare. Folge für mehr Wissen.
 ```
 
 What changed against v1: belief-breaking first line instead of "Wenn du
@@ -543,13 +544,13 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] No "Schau dich an. Du hast gerade X gebaut." — the payoff answers the question, then straight to "Übrigens"
 - [ ] Bonus fact starts with "Übrigens", 10–15 words, true, surprising
 - [ ] Humor: 0–2 small, situational moments that fit — none forced, none in serious topics
-- [ ] „Folge für mehr Wissen.“ = its own line at ~19–21 s between two pulls, no other "folg…" word before it; last line = the comment question (new, 1–3-word answer, no photo request)
+- [ ] Last line = comment question (new, 1–3-word answer, no photo request) + „Schreib's in die Kommentare.“ + „Folge für mehr Wissen.“; no other "folg…" word in the script
 - [ ] 6–9 `*keywords*`: the terms, the twist, the core idea, the panel numbers
 - [ ] 130–142 words incl. „Folge für mehr Wissen.“, fact and comment question (≤ 148, ≥ 124) → exactly 45 s; no `> …` loop line
 - [ ] Hook = line 1, ≤ 9 words, ≤ 3 s (sync-html checks); within it the viewer knows why to watch to the end (gain / danger / burning question) — true, not clickbait
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
 - [ ] No `[whispers]` in the hook (line 1 or the sentence after it)
-- [ ] 45-s shape: beat 1 → beat 2 → „Folge für mehr Wissen.“ (~20 s) → mid twist → beat 3 → payoff (≥ 34 s) → Übrigens (strongest fact) → comment question
+- [ ] 45-s shape: beat 1 → beat 2 → mid twist (~21 s) → beat 3 → payoff (≥ 33 s) → Übrigens (strongest fact) → comment question + „Folge für mehr Wissen.“
 - [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes
 - [ ] Escalation: a new "Was?!" every 6–8 s, weakest first, strongest in beat 3 / payoff; one "Rate mal" moment after ~13 s
 
