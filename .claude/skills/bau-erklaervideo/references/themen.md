@@ -294,8 +294,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                 | Format | Datum      | Chat                           |
+| --------------------- | ------ | ---------- | ------------------------------ |
+| Heizkörper-Thermostat | A      | 2026-11-12 | TikTok #78: Heizungsthermostat |
 
 ## Verwendet
 
