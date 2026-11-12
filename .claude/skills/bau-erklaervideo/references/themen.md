@@ -188,7 +188,7 @@ are always 10+ open topics per format.
 | 🔥 Teilchenbeschleuniger ⚠️ zu nischig     | „Unter der Grenze zur Schweiz rasen Teilchen fast so schnell wie das Licht im Kreis – 11.000 Runden pro Sekunde.“ (Fakten prüfen)                               | Teilchen rasen durch den Ring, prallen frontal zusammen, Funkenregen      | Extrem        | –                    |
 | 🔥 Zeitumstellung / Atomuhr                | „Dein Handy weiß gar nicht, wie spät es ist – und stellt sich trotzdem selbst um.“ (Quarz driftet, Zeitserver, Cäsium 9,19 Mrd. Hz, GPS-Uhren laufen schneller) | Uhr springt 3:00→2:00, Atom schwingt, Zähler rast auf 9.192.631.770       | Handy         | Ende Okt / Ende März |
 | ★ Haarspray                                | „Haarspray klebt deine Haare mit winzigen Plastik-Tropfen fest.“ (Fakten prüfen)                                                                                | Sprühnebel trifft Strähnen, Tropfen werden zu Schweißpunkten              | Beauty        | –                    |
-| ★ Haartrockner                             | „Dein Föhn schaltet sich selbst ab, bevor deine Haare brennen.“                                                                                                 | Heizdraht glüht, Bimetall biegt sich, _klack_, aus                        | Beauty        | –                    |
+| Heizdecke                                  | „Deine Heizdecke ist ein Draht, der sich selbst überwacht.“ (Fakten prüfen)                                                                                     | Draht glüht im Röntgenblick, Sensor-Faden schaltet ab                     | Zuhause       | Winter               |
 | Induktionsherd                             | „Dein Herd wird gar nicht heiß – der Topf heizt sich selbst.“                                                                                                   | Hand auf der kalten Platte, daneben kocht das Wasser                      | Küche         | –                    |
 | Ampel-Kontaktschleife                      | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün      | Straße / Auto | –                    |
 | Türschloss                                 | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht        | Zuhause       | –                    |
@@ -298,6 +298,7 @@ ask for go in here.
 | ----------------------- | ------ | ---------- | ----------------------------------- |
 | Induktionsherd          | A      | 2026-11-12 | TikTok #82: Induktionsherd          |
 | Kaffee auf leeren Magen | B      | 2026-11-12 | TikTok #83: Kaffee auf leeren Magen |
+| Föhn (Haartrockner)     | A      | 2026-11-12 | TikTok #84: Föhn                    |
 
 ## Verwendet
 
