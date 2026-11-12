@@ -278,24 +278,25 @@ Notausgangstür.“) — the words „Was passiert, wenn …?“ are not spoken
 (2026-10-29); the list keeps them only to name the scenario. Topics the comments
 ask for go in here.
 
-| Szenario („Was passiert, wenn du …?“)                                | Überraschender Ausgang (nur fürs Payoff!)                                                       | Money-Shot                                                                 | Sicherheit                   | Kategorie |
-| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------- | --------- |
-| 🔥 … die Sonne plötzlich ausgeht? ⚠️ zu allgemein                    | Du merkst es erst nach 8 Minuten – und die Erde fliegt geradeaus davon                          | Sonne erlischt, Licht-Welle rast zur Erde, Countdown 8:00                  | unmöglich                    | Weltall   |
-| 🔥 … ein Teelöffel Neutronenstern auf der Erde landet? ⚠️ zu nischig | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                     | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden             | unmöglich                    | Weltall   |
-| 🔥 … der Mond verschwindet? ⚠️ zu allgemein                          | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                     | Mond verpufft, Meer flacht ab, Nacht wird schwarz                          | unmöglich                    | Weltall   |
-| 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                 | Tropfen fliegt, glüht, zischt weg                                          | unmöglich                    | Weltall   |
-| 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)   | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                   | unmöglich                    | Natur     |
-| 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                            | Low-Poly-Astronaut wird lang und länger                                    | unmöglich                    | Weltall   |
-| ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)  | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz | harmlos, Fangbremse erwähnen | Stadt     |
-| 🔥 … auf dem Mond einen Fußball schießt?                             | Er fliegt sechsmal so weit – und landet nie im Netz, weil keine Luft ihn bremst (Fakten prüfen) | Ball fliegt in Zeitlupe über die Kraterlandschaft, Erde im Hintergrund     | unmöglich                    | Weltall   |
-| ★ … du jeden Morgen Kaffee auf leeren Magen trinkst?                 | Mythos Magenschaden: für die meisten harmlos, nur Sodbrennen bei manchen (Fakten prüfen)        | Kaffee rauscht in den leeren Magen, Säure-Pegel-LED, Magenwand bleibt heil | harmlos                      | Körper    |
+| Szenario („Was passiert, wenn du …?“)                                | Überraschender Ausgang (nur fürs Payoff!)                                                                         | Money-Shot                                                                   | Sicherheit                   | Kategorie |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------- | --------- |
+| 🔥 … die Sonne plötzlich ausgeht? ⚠️ zu allgemein                    | Du merkst es erst nach 8 Minuten – und die Erde fliegt geradeaus davon                                            | Sonne erlischt, Licht-Welle rast zur Erde, Countdown 8:00                    | unmöglich                    | Weltall   |
+| 🔥 … ein Teelöffel Neutronenstern auf der Erde landet? ⚠️ zu nischig | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                                       | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden               | unmöglich                    | Weltall   |
+| 🔥 … der Mond verschwindet? ⚠️ zu allgemein                          | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                                       | Mond verpufft, Meer flacht ab, Nacht wird schwarz                            | unmöglich                    | Weltall   |
+| 🔥 … einen Tropfen Wasser auf die Sonne wirfst? ⚠️ zu nischig        | Er verdampft schon lange vorher (Fakten prüfen)                                                                   | Tropfen fliegt, glüht, zischt weg                                            | unmöglich                    | Weltall   |
+| 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)                     | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                     | unmöglich                    | Natur     |
+| 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                                              | Low-Poly-Astronaut wird lang und länger                                      | unmöglich                    | Weltall   |
+| ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)                    | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz   | harmlos, Fangbremse erwähnen | Stadt     |
+| 🔥 … auf dem Mond einen Fußball schießt?                             | Er fliegt sechsmal so weit – und landet nie im Netz, weil keine Luft ihn bremst (Fakten prüfen)                   | Ball fliegt in Zeitlupe über die Kraterlandschaft, Erde im Hintergrund       | unmöglich                    | Weltall   |
+| ★ … du jeden Morgen Kaffee auf leeren Magen trinkst?                 | Mythos Magenschaden: für die meisten harmlos, nur Sodbrennen bei manchen (Fakten prüfen)                          | Kaffee rauscht in den leeren Magen, Säure-Pegel-LED, Magenwand bleibt heil   | harmlos                      | Körper    |
+| ★ … im Flugzeug auf dem Klo die Spülung drückst, während du sitzt?   | Mythos „festgesaugt“: Der Sog ist stark, aber dein Po dichtet nie ganz ab – du kommst wieder hoch (Fakten prüfen) | Vakuum-Pfeile ziehen am Klo, LED „VAKUUM“, Low-Poly-Mensch steht lachend auf | harmlos                      | Reisen    |
+| ★ … eine ganze Nacht mit Make-up schläfst?                           | Die Poren verstopfen kaum über Nacht – aber Mascara-Krümel im Auge und gereizte Haut (Fakten prüfen)              | Kissen mit Make-up-Abdruck, Pore wird von Puder-Brocken verstopft            | harmlos                      | Beauty    |
 
 ## Reserviert (in Arbeit)
 
-| Thema                    | Format | Datum      | Chat                       |
-| ------------------------ | ------ | ---------- | -------------------------- |
-| Einen Tag nicht blinzeln | B      | 2026-11-12 | TikTok #81: Nicht blinzeln |
-| Induktionsherd           | A      | 2026-11-12 | TikTok #82: Induktionsherd |
+| Thema          | Format | Datum      | Chat                       |
+| -------------- | ------ | ---------- | -------------------------- |
+| Induktionsherd | A      | 2026-11-12 | TikTok #82: Induktionsherd |
 
 ## Verwendet
 
