@@ -297,6 +297,7 @@ ask for go in here.
 | Thema                 | Format | Datum      | Chat                           |
 | --------------------- | ------ | ---------- | ------------------------------ |
 | Heizkörper-Thermostat | A      | 2026-11-12 | TikTok #78: Heizungsthermostat |
+| Geschüttelte Cola     | B      | 2026-11-12 | TikTok #79: Geschüttelte Cola  |
 
 ## Verwendet
 
