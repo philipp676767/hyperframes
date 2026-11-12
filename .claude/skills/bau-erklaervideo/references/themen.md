@@ -295,6 +295,7 @@ ask for go in here.
 | Thema                    | Format | Datum      | Chat                       |
 | ------------------------ | ------ | ---------- | -------------------------- |
 | Einen Tag nicht blinzeln | B      | 2026-11-12 | TikTok #81: Nicht blinzeln |
+| Induktionsherd           | A      | 2026-11-12 | TikTok #82: Induktionsherd |
 
 ## Verwendet
 
