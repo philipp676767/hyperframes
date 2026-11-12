@@ -88,3 +88,4 @@ Umgebungen (insel, stadt, …).
 | 76  | Selbstbräuner (orange Knie)     | A      | `tiktok/selbstbraeuner`      | hotel-poolterrasse-meer       | blaue stunde → nacht  | 45,0 s | 2026-11-11 |
 | 77  | Nasse Haare (Erkältung?)        | B      | `tiktok/nasse-haare`         | waldhuette-schnee-antarktis   | sonnenaufgang, frost  | 45,0 s | 2026-11-12 |
 | 78  | Heizkörper-Thermostat (Stufe 5) | A      | `tiktok/thermostat`          | altbau-heizkoerper-riesig     | wintermorgen, frost   | 45,0 s | 2026-11-12 |
+| 79  | Geschüttelte Cola (Klopfen)     | B      | `tiktok/cola`                | ubahn-waggon-sitzbank         | abend, neonlicht      | 45,0 s | 2026-11-12 |
