@@ -294,9 +294,10 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema          | Format | Datum      | Chat                       |
-| -------------- | ------ | ---------- | -------------------------- |
-| Induktionsherd | A      | 2026-11-12 | TikTok #82: Induktionsherd |
+| Thema                   | Format | Datum      | Chat                                |
+| ----------------------- | ------ | ---------- | ----------------------------------- |
+| Induktionsherd          | A      | 2026-11-12 | TikTok #82: Induktionsherd          |
+| Kaffee auf leeren Magen | B      | 2026-11-12 | TikTok #83: Kaffee auf leeren Magen |
 
 ## Verwendet
 
