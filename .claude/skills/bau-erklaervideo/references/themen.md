@@ -247,7 +247,7 @@ men).
 | ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                                  | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                  |
 | ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen          |
 | ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)               | „Wäschst du dein Auto selbst?“     | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt     |
-| ★ Katzenzunge                 | „Die Zunge deiner Katze ist eine Bürste aus Haken.“ (Fakten prüfen)             | „Wie heißt deine Katze?“           | Zunge im Makro, hohle Häkchen ziehen Speichel durchs Fell        |
+| ✓ Katzenzunge (#80)           | „Die Zunge deiner Katze ist eine Bürste aus Haken.“ (Fakten prüfen)             | „Wie heißt deine Katze?“           | Zunge im Makro, hohle Häkchen ziehen Speichel durchs Fell        |
 | ★ Gelnägel ablösen            | „Aceton frisst deine Gelnägel nicht – es lässt sie aufquellen.“ (Fakten prüfen) | „Team Gel oder Acryl?“             | Lösungsmittel kriecht ins Gel, Netz quillt auf, Schicht hebt ab  |
 | ★ Protein-Shake               | „Dein Körper zerlegt dein Shake-Eiweiß komplett.“ (Fakten prüfen)               | „Welcher Shake ist deiner?“        | Eiweißketten zerfallen in Bausteine, wandern in den Muskel       |
 | ★ Trockenshampoo              | „Trockenshampoo wäscht nichts – es saugt dein Fett auf.“ (Fakten prüfen)        | „Wie oft wäschst du deine Haare?“  | Stärke-Körnchen saugen Talg vom Haar, Strähne wird wieder locker |
@@ -297,7 +297,6 @@ ask for go in here.
 | Thema             | Format | Datum      | Chat                          |
 | ----------------- | ------ | ---------- | ----------------------------- |
 | Geschüttelte Cola | B      | 2026-11-12 | TikTok #79: Geschüttelte Cola |
-| Katzenzunge       | A      | 2026-11-12 | TikTok #80: Katzenzunge       |
 
 ## Verwendet
 
