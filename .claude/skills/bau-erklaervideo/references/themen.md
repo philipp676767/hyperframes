@@ -303,6 +303,7 @@ ask for go in here.
 | Haare färben            | A      | 2026-11-13 | TikTok #86: Haare färben            |
 | Mit Make-up schlafen    | B      | 2026-11-13 | TikTok #87: Mit Make-up schlafen    |
 | Türschloss              | A      | 2026-11-13 | TikTok #88: Türschloss              |
+| Ei in der Mikrowelle    | B      | 2026-11-13 | TikTok #89: Ei in der Mikrowelle    |
 
 ## Verwendet
 
