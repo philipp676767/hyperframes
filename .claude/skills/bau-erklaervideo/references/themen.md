@@ -304,6 +304,7 @@ ask for go in here.
 | Mit Make-up schlafen    | B      | 2026-11-13 | TikTok #87: Mit Make-up schlafen    |
 | Türschloss              | A      | 2026-11-13 | TikTok #88: Türschloss              |
 | Ei in der Mikrowelle    | B      | 2026-11-13 | TikTok #89: Ei in der Mikrowelle    |
+| Protein-Shake           | A      | 2026-11-13 | TikTok #90: Protein-Shake           |
 
 ## Verwendet
 
