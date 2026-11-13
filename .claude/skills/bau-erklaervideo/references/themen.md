@@ -302,6 +302,7 @@ ask for go in here.
 | Fußball auf dem Mond    | B      | 2026-11-13 | TikTok #85: Fußball auf dem Mond    |
 | Haare färben            | A      | 2026-11-13 | TikTok #86: Haare färben            |
 | Mit Make-up schlafen    | B      | 2026-11-13 | TikTok #87: Mit Make-up schlafen    |
+| Türschloss              | A      | 2026-11-13 | TikTok #88: Türschloss              |
 
 ## Verwendet
 
