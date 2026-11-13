@@ -299,6 +299,7 @@ ask for go in here.
 | Induktionsherd          | A      | 2026-11-12 | TikTok #82: Induktionsherd          |
 | Kaffee auf leeren Magen | B      | 2026-11-12 | TikTok #83: Kaffee auf leeren Magen |
 | Föhn (Haartrockner)     | A      | 2026-11-12 | TikTok #84: Föhn                    |
+| Fußball auf dem Mond    | B      | 2026-11-13 | TikTok #85: Fußball auf dem Mond    |
 
 ## Verwendet
 
