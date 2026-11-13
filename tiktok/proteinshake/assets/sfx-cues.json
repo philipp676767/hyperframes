@@ -1,0 +1,335 @@
+[
+  {
+    "s": "hit",
+    "at": 0,
+    "why": "highlight shake"
+  },
+  {
+    "s": "shaker",
+    "at": 0,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.33,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 0.568,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.143,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.947,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 3.373,
+    "why": "cut"
+  },
+  {
+    "s": "muenzen",
+    "at": 3.743,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "hit",
+    "at": 3.893,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.03,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 5.25,
+    "why": "beats.js",
+    "dur": 1.6,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 6.361,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 6.681,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.517,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 8.737,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 8.787,
+    "why": "label Molke"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.285,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.585,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "boing",
+    "at": 10.855,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 11.859,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 11.979,
+    "why": "beats.js",
+    "dur": 1,
+    "db": -20
+  },
+  {
+    "s": "pop",
+    "at": 12.801,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.053,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 15.723,
+    "why": "label Eiweiß"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.198,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 18.468,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "klack",
+    "at": 18.498,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "hit",
+    "at": 18.518,
+    "why": "highlight flash"
+  },
+  {
+    "s": "punch",
+    "at": 19.823,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.65,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 20.87,
+    "why": "beats.js",
+    "dur": 1.4,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 22.122,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 24.812,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 24.812,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.249,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 26.919,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "klack",
+    "at": 27.719,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "hit",
+    "at": 28.043,
+    "why": "highlight shake"
+  },
+  {
+    "s": "blip",
+    "at": 28.093,
+    "why": "label Muskelfaser"
+  },
+  {
+    "s": "whoosh",
+    "at": 29.443,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 32.345,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 32.565,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 32.565,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.577,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.158,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 38.3,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 38.3,
+    "why": "question answered"
+  },
+  {
+    "s": "hit",
+    "at": 38.55,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 38.55,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "whoosh",
+    "at": 38.591,
+    "why": "cut"
+  },
+  {
+    "s": "spuelung",
+    "at": 38.65,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
+    "s": "whoosh",
+    "at": 38.791,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "wow",
+    "at": 38.811,
+    "why": "bonus fact"
+  },
+  {
+    "s": "rauschen",
+    "at": 38.911,
+    "why": "beats.js",
+    "dur": 1.4,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 39.82,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 39.846,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 43.224,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 43.444,
+    "why": "comment pill"
+  },
+  {
+    "s": "shaker",
+    "at": 43.444,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "pop",
+    "at": 47.664,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 48.444,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 48.484,
+    "why": "gefolgt",
+    "db": -16
+  }
+]
