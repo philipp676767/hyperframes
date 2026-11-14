@@ -585,9 +585,9 @@ function renderAt(t) {
   const pk = pop(t, T.sauer - 0.4, T.manchen);
   pool.visible = pk > 0;
   pool.scale.setScalar(Math.max(0.01, pk));
-  const drop = smooth(ramp(t, T.sauer, T.sauer + 0.45));
+  const drop = smooth(ramp(t, T.sauer - 0.7, T.sauer - 0.15));
   const eat = ramp(t, T.sauer + 0.5, T.kein - 0.1);
-  steak.visible = t >= T.sauer - 0.05 && t < T.kein + 0.05;
+  steak.visible = t >= T.sauer - 0.75 && t < T.kein + 0.05;
   steak.position.y = lerp(3.9, 0.68, drop) - eat * 0.12;
   steak.rotation.y = 0.4 + drop * 0.3;
   steak.rotation.z = (1 - drop) * 0.5;
@@ -649,8 +649,9 @@ function renderAt(t) {
   column.position.y = 13.4 + ch / 2;
   columnTop.position.y = 13.4 + ch + 0.05 * Math.sin(t * 8);
   const glow = ramp(t, T.brennt - 0.2, T.brennt + 0.3) * (1 - ramp(t, T.rate - 0.2, T.rate));
-  gulletMat.emissive.setRGB(0.23 + glow * 0.77, 0.05 + glow * 0.07, 0.07 - glow * 0.06);
-  gulletMat.emissiveIntensity = 0.35 + glow * 4.5;
+  gulletMat.emissive.setRGB(0.23 + glow * 0.77, 0.05 + glow * 0.03, 0.07 - glow * 0.07);
+  gulletMat.emissiveIntensity = 0.35 + glow * 1.8;
+  gulletMat.color.setRGB(1 - glow * 0.55, 1 - glow * 0.85, 1 - glow * 0.85);
   animateArrows(heatArrows, t, glow);
 
   // ---------------------------------------------------- the gut

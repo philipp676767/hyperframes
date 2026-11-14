@@ -77,8 +77,8 @@ export const shots = [
   // 7 · strong enough for meat: the steak fizzes in the acid pool (slowmo)
   {
     at: T.sauer,
-    from: P(POOL, 1.6, 2.4, 3.6),
-    to: P(POOL, 1.1, 1.8, 2.5),
+    from: P(POOL, 1.4, 3.2, 3.4),
+    to: P(POOL, 1.0, 2.6, 2.6),
     look: P(POOL, 0, 0.6, 0),
   },
   // 8 · no meat: the empty pool, ✕
@@ -104,13 +104,13 @@ export const shots = [
   // 13 · it wakes up (crash zoom)
   {
     at: T.darm,
-    orbit: { c: P(GUT, 0, 1.0, -0.5), r: 4.6, y: P(GUT, 0, 3.2, 0)[1], a0: -0.5, a1: 0.25 },
+    orbit: { c: P(GUT, 0, 1.0, -0.5), r: 5.8, y: P(GUT, 0, 3.8, 0)[1], a0: -0.5, a1: 0.25 },
   },
   // 14 · ab aufs Klo: the toilet roll rolls in
   {
     at: T.klo1,
-    from: P(GUT, -3.4, 1.6, 3.8),
-    to: P(GUT, -2.8, 1.3, 3.4),
+    from: P(GUT, 4.8, 1.5, 3.6),
+    to: P(GUT, 4.2, 1.2, 3.4),
     look: P(GUT, 0.5, 0.5, 3.4),
   },
   // 15 · why does the wall take it? acid drops on the wall
@@ -144,7 +144,12 @@ export const shots = [
     whip: -1,
   },
   // 22 · … still off to the loo: the gut wriggles, the roll comes back
-  { at: T.klo2, from: P(GUT, 4.2, 2.6, 5.2), to: P(GUT, 3.3, 2.1, 4.2), look: P(GUT, 0, 1.0, 0) },
+  {
+    at: T.klo2,
+    from: P(GUT, 4.8, 3.4, 4.0),
+    to: P(GUT, 4.2, 3.0, 3.4),
+    look: P(GUT, 0.3, 0.9, 1.5),
+  },
   // 23 · last picture: the waterfall in the cave, still moving
   { at: T.cta, from: [-3.2, 1.4, 6.2], to: [-2.2, 2.0, 5.0], look: [0, 7, 0] },
 ];
