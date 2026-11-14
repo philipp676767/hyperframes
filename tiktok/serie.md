@@ -98,3 +98,4 @@ Umgebungen (insel, stadt, …).
 | 87  | Mit Make-up schlafen (Mascara)   | B      | `tiktok/make-up-schlafen`    | party-wohnzimmer-sofa         | morgengrauen, rosa        | 45,0 s | 2026-11-14 |
 | 86  | Haare färben (Schiff in Flasche) | A      | `tiktok/haare-faerben`       | kopfhaut-haarwald-riesig      | nacht, lampenlicht        | 45,0 s | 2026-11-14 |
 | 90  | Protein-Shake (Molke)            | A      | `tiktok/proteinshake`        | alm-sennhuette-kaesekessel    | herbstmorgen, klar        | 45,0 s | 2026-11-14 |
+| 88  | Türschloss (Zacken)              | A      | `tiktok/tuerschloss`         | altbau-treppenhaus-tuer       | nacht, wandlampe          | 45,0 s | 2026-11-14 |

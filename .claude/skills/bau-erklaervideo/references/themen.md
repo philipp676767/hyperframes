@@ -190,12 +190,12 @@ are always 10+ open topics per format.
 | ★ Haarspray                                | „Haarspray klebt deine Haare mit winzigen Plastik-Tropfen fest.“ (Fakten prüfen)                                                                                | Sprühnebel trifft Strähnen, Tropfen werden zu Schweißpunkten              | Beauty        | –                    |
 | Heizdecke                                  | „Deine Heizdecke ist ein Draht, der sich selbst überwacht.“ (Fakten prüfen)                                                                                     | Draht glüht im Röntgenblick, Sensor-Faden schaltet ab                     | Zuhause       | Winter               |
 | Ampel-Kontaktschleife                      | „Die Ampel weiß, dass du wartest. Im Asphalt liegt ein unsichtbarer Draht.“                                                                                     | Röntgenblick in die Straße, Auto fährt drauf, Ampel springt auf Grün      | Straße / Auto | –                    |
-| Türschloss                                 | „Nur dein Schlüssel passt – weil fünf winzige Stifte genau in einer Linie stehen müssen.“                                                                       | Schlüssel schiebt die Stifte hoch, alle rasten ein, Zylinder dreht        | Zuhause       | –                    |
 | Silvesterrakete                            | „Die Farben im Feuerwerk sind brennende Metalle.“                                                                                                               | Rakete steigt, Explosion, jede Farbe bekommt ein Schild                   | Natur / Fest  | Ende Dezember        |
 | Stoßlüften                                 | „Fenster kippen kühlt deine Wände aus – 5 Minuten weit auf nicht.“ (Fakten prüfen)                                                                              | Kipp-Fenster: Wand wird blau; weit offen: Luft tauscht, Wand bleibt warm  | Zuhause       | Winter               |
 | Schnellkochtopf                            | „Dein Schnellkochtopf kocht Wasser bei 120 Grad – weil er die Luft einsperrt.“                                                                                  | Ventil zischt, Dampf schießt raus, Thermometer springt über 100           | Küche         | –                    |
 | Eiswürfel                                  | „Eiswürfel frieren von außen nach innen – darum ist die Mitte trüb.“                                                                                            | Eis wächst von den Rändern, Luftbläschen werden in die Mitte gedrängt     | Küche         | Sommer               |
 | Türklingel                                 | „Deine Klingel hat keinen Lautsprecher – ein Magnet schlägt mit einem Hammer auf eine Glocke.“                                                                  | Spule zieht den Hammer an, Glocke vibriert, Schallwellen in Zeitlupe      | Zuhause       | –                    |
+| Reißverschluss                             | „Dein Reißverschluss hält nur, weil jeder Zahn ein winziger Haken ist.“ (Fakten prüfen)                                                                         | Schieber drückt die Zähne zusammen, Haken rastet in Mulde, Zahn für Zahn  | Kleidung      | –                    |
 | ★ Sonnencreme                              | „Sonnencreme ist ein Spiegel aus Staub – sie wirft UV-Strahlen zurück oder schluckt sie.“                                                                       | UV-Pfeile prallen an Mineral-Körnchen ab, Haut bleibt hell                | Beauty        | Sommer               |
 | Wasserkocher                               | „Dein Wasserkocher weiß, wann das Wasser kocht – ohne Thermometer und ohne Chip.“                                                                               | Dampf trifft ein Bimetall-Plättchen, es biegt sich, _klack_, aus          | Küche         | –                    |
 
@@ -294,7 +294,6 @@ ask for go in here.
 
 | Thema                | Format | Datum      | Chat                             |
 | -------------------- | ------ | ---------- | -------------------------------- |
-| Türschloss           | A      | 2026-11-13 | TikTok #88: Türschloss           |
 | Ei in der Mikrowelle | B      | 2026-11-13 | TikTok #89: Ei in der Mikrowelle |
 
 ## Verwendet
