@@ -72,7 +72,7 @@ export const shots = [
     zoom: Z,
   },
   // the room: party leftovers, dawn in the window
-  { at: T.sagen, from: [7.5, 3.4, 11.5], to: [5.8, 2.7, 9.6], look: [0, 1.6, -1.5], zoom: Z },
+  { at: T.sagen, from: [-6.5, 3.4, 11.0], to: [-5.0, 2.7, 9.2], look: [0.5, 1.4, -1.5], zoom: Z },
   {
     at: T.ruiniert,
     from: [-1.3, 1.7, 2.5],
@@ -85,7 +85,7 @@ export const shots = [
   // she presses half her face into it
   { at: T.drueckst, from: [1.9, 2.3, 3.3], to: [1.45, 1.95, 2.6], look: [0, 0.9, 0.45], zoom: Z },
   // top-down on the pillow: the stains appear (head lifted away)
-  { at: T.found1, from: [0.15, 4.5, 1.95], to: [0.05, 3.7, 1.5], look: [-0.1, 0.5, 0.75], zoom: Z },
+  { at: T.found1, from: [0.12, 3.7, 1.6], to: [0.05, 3.0, 1.3], look: [-0.1, 0.5, 0.75], zoom: Z },
   // back on the face, push into the cheek
   {
     at: T.doch,
@@ -115,8 +115,8 @@ export const shots = [
   {
     at: T.obendrauf,
     rel: SKIN_V,
-    from: [0.7, 1.7, 3.3],
-    to: [0.45, 1.25, 2.65],
+    from: [1.0, 2.0, 4.2],
+    to: [0.7, 1.6, 3.6],
     look: [0, 0, 1.0],
     zoom: Z,
   },
@@ -140,7 +140,7 @@ export const shots = [
     zoom: Z,
   },
   // payoff: the sleeper wakes, fine
-  { at: T.also, from: [3.6, 2.6, 5.6], to: [2.8, 2.15, 4.6], look: [0.3, 1.15, 0.2], zoom: Z },
+  { at: T.also, from: [-3.4, 2.6, 5.4], to: [-2.7, 2.2, 4.5], look: [0.3, 1.15, 0.2], zoom: Z },
   // every night: pimples on the cheek
   { at: T.jede, from: [1.0, 1.9, 2.0], to: [0.62, 1.7, 1.52], look: CHEEK_UP, zoom: Z },
   // Übrigens: the giant eye + lid cross-section, lumps of old mascara
@@ -161,7 +161,7 @@ export const shots = [
     zoom: Z,
   },
   // comment question: the room once more, morning light
-  { at: T.ehrlich, from: [5.2, 2.5, 7.2], to: [4.3, 2.15, 6.1], look: [0.3, 1.2, 0], zoom: Z },
+  { at: T.ehrlich, from: [-4.6, 2.5, 7.0], to: [-3.8, 2.15, 5.9], look: [0.4, 1.2, 0], zoom: Z },
 ];
 
 // ---------------------------------------------------------------- labels (one at a time)
@@ -169,7 +169,7 @@ export const LABELS = [
   { text: "Foundation", at: T.found1, until: T.rouge + 0.6, pos: [0.15, 0.52, 0.7], side: 1 },
   { text: "Pore", at: T.poren, until: T.obendrauf, pos: rel(SKIN, [0.0, -0.4, 1.3]), side: -1 },
   { text: "Wimperntusche", at: T.wimper + 0.1, until: T.trocknet + 0.9, pos: LASH_UP, side: -1 },
-  { text: "Klumpen", at: T.klumpen, until: T.ehrlich, pos: rel(LIDSET, [0, 1.62, 1.05]), side: -1 },
+  { text: "Klumpen", at: T.klumpen, until: T.ehrlich, pos: rel(LIDSET, [0.06, 1.2, 1.1]), side: 1 },
 ];
 
 // ---------------------------------------------------------------- highlights

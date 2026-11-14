@@ -279,10 +279,10 @@ export const blanketMat = real.fabric(0xe0a13a, { sheenRoughness: 0.6 });
     let x = p.getX(i);
     let y = p.getY(i);
     const z = p.getZ(i);
-    const ex = 1 - (Math.abs(x) / 4.5) ** 4;
+    const ex = 1 - (Math.abs(x) / 4.5) ** 8;
     const ez = 1 - (Math.abs(z) / 2.3) ** 2;
     if (y > 0) {
-      y = -1.1 + 2.2 * Math.max(0.05, ex * ez);
+      y = -1.1 + 2.7 * Math.max(0.04, ex * ez);
       for (const [bx, bz, h] of bumps) y += h * Math.exp(-((x - bx) ** 2 + (z - bz) ** 2) / 1.2);
     } else y = -1.1;
     // folds along x
@@ -290,9 +290,9 @@ export const blanketMat = real.fabric(0xe0a13a, { sheenRoughness: 0.6 });
     p.setXYZ(i, x, y, z);
   }
   g.computeVertexNormals();
-  put(g, blanketMat, 7.0, SEAT + 1.0, 0.0);
+  put(g, blanketMat, 5.6, SEAT + 1.05, 0.0);
   // a hanging fold over the seat edge
-  const fold = put(roundedBox(6, 2.4, 0.3, 0.14, 4), blanketMat, 7.6, SEAT - 0.9, 3.25);
+  const fold = put(roundedBox(6, 2.4, 0.3, 0.14, 4), blanketMat, 6.4, SEAT - 0.9, 3.25);
   fold.rotation.x = 0.12;
 }
 

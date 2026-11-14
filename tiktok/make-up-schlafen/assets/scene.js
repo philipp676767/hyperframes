@@ -374,6 +374,7 @@ const skinPlain = real.skin(0xe7ad8c);
     head,
   );
   sh.scale.set(0.9, 0.8, 0.7);
+  sh.visible = false; // under the blanket
 }
 // eyes: white ball, iris, pupil, red veins; upper lid with mascara lashes, lower lid
 const eyeWhite = real.ceramic(0xfbf8f4, { emissive: 0xff2030, emissiveIntensity: 0 });
@@ -972,13 +973,13 @@ for (let i = 0; i < 9; i++) {
 // the lumps: hard, black-grey, glinting — embedded in the lid's inner side
 const lumpDefs = (() => {
   const r = rng(25);
-  return Array.from({ length: 9 }, (_, i) => {
-    const a = (30 + r() * 62) * deg;
-    const rad = 1.7 + r() * 0.03;
-    const x = i === 0 ? -0.12 : -0.18 - r() * 1.3;
+  return Array.from({ length: 9 }, () => {
+    const a = (36 + r() * 40) * deg;
+    const rad = 1.64 + r() * 0.03;
+    const x = 0.02 + r() * 0.04;
     return {
       p: V(x, Math.sin(a) * rad, Math.cos(a) * rad),
-      s: 0.08 + r() * 0.06,
+      s: 0.09 + r() * 0.06,
       rot: V(r() * 6, r() * 6, r() * 6),
     };
   });
@@ -1025,7 +1026,7 @@ function updateLid(t) {
   const tGrab = T.aerzte + 0.55;
   const inK = smooth(ramp(t, T.aerzte, tGrab));
   const outK = smooth(ramp(t, tGrab + 0.25, T.klumpen + 0.8));
-  const tip = tip0.clone().addScaledVector(TWZ_OUT, lerp(2.4, 0, inK) + 1.4 * outK);
+  const tip = tip0.clone().addScaledVector(TWZ_OUT, lerp(2.4, 0, inK) + 0.7 * outK);
   tweezers.visible = t >= T.aerzte && t < T.ehrlich;
   tweezers.position.copy(tip);
   tweezers.quaternion.setFromUnitVectors(Yup, TWZ_OUT);
@@ -1058,7 +1059,7 @@ function poseHead(t) {
 
 function renderAt(t) {
   poseHead(t);
-  puff("land", t, 0.4, 0.2, 0.75, 0.9, 0.9);
+  puff("land", t, 0.4, 0.3, 0.6, 1.1, 0.35);
 
   // eyes: lids, redness, swelling, mascara drying
   const closed = closedAt(t);
