@@ -1,72 +1,103 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
+// Hook (0:00–0:27): the Eagle sinks toward the boulder field, the 1202 alarm
+// screams, the fuel runs out — then the DSKY, the viewer's phone, the felt-tip pen.
 import { W } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  kurz: W("kurz"),
+  alarm: W("Alarm"),
+  code: W("Code"),
+  den: W("Den"),
+  treib: W("Treibstoff"),
+  computer: W("Computer"),
+  speicher: W("Speicher"),
+  foto: W("Foto"),
+  handy: W("Handy", 1),
+  trotzdem: W("Trotzdem"),
+  handy2: W("Handy", 2),
+  wir: W("Wir"),
+  landung: W("Landung"),
+  filz: W("Filzstift"),
+  warum: W("Warum"),
 };
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
+// world points (set by the moon world): the Eagle's flight, the DSKY far above
+export const DSKY = [0, 400, 0];
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // frame 0: low and close under the Eagle, fast push-in, flame + alarm glow
+  { at: 0, from: [21, 31, 3], to: [15, 29, -6], look: [6, 26.5, -18], zoom: 1 },
+  // 1.3 s: from below-front, the Earth behind the cabin
+  { at: T.kurz, from: [17, 21, -1], to: [14.5, 22.5, -5], look: [6.2, 26.5, -18.4], zoom: 1 },
+  // the DSKY: 1202 blinking
+  {
+    at: T.code,
+    from: [0.25, 400.1, 1.15],
+    to: [0.05, 400.05, 0.8],
+    look: [0.05, 400.08, 0],
+    zoom: 1,
+    sfx: false,
+  },
+  // wide: the Eagle over the boulder field
+  { at: T.den, from: [-6, 25, 8], to: [-3, 25, 4], look: [10, 22, -24], zoom: 1, whip: 1 },
+  // the flame + dust, fuel running out
+  { at: T.treib, orbit: { c: [7.1, 22.5, -19], r: 18, y: 25, a0: 0.5, a1: 1.2 }, zoom: 1 },
+  // the computer: slow move across the keys
+  {
+    at: T.computer,
+    from: [-0.5, 400.15, 1.2],
+    to: [-0.3, 400.05, 1.0],
+    look: [0, 400, 0],
+    zoom: 1,
+  },
+  // the phone next to the DSKY
+  {
+    at: T.foto,
+    from: [0.75, 400.0, 0.9],
+    to: [0.6, 399.98, 0.75],
+    look: [0.48, 399.97, 0.15],
+    zoom: 1,
+  },
+  // up to the Earth: the road from launch to splashdown
+  {
+    at: T.wir,
+    from: [2, 6, 12],
+    to: [2, 9, 12],
+    look: [-70, 95, -230],
+    lookTo: [-70, 95, -230],
+    zoom: 1,
+    focus: 250,
+  },
+  // the pen spins in front of the Eagle
+  {
+    at: T.filz,
+    from: [0.25, 400.0, 0.5],
+    to: [0.18, 400.0, 0.38],
+    look: [0, 400, 0.12],
+    zoom: 1,
+    whip: -1,
+  },
+  // the question: the Eagle sinks into its own dust
+  { at: T.warum, from: [24, 4, 4], to: [20, 5, -2], look: [11, 9, -25], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
-export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
-];
+export const LABELS = [];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
 export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
+  { kind: "flash", at: 0.05 },
+  { kind: "shake", at: 0.05, dur: 1.0, amp: 0.9 },
+  { kind: "zoom", at: T.alarm, amount: 0.3 },
+  { kind: "zoom", at: T.code + 0.3, amount: 0.25 },
+  { kind: "shake", at: T.treib, dur: 0.8, amp: 0.5 },
+  { kind: "zoom", at: T.handy, amount: 0.3 },
+  { kind: "zoom", at: T.filz, amount: 0.3 },
+  { kind: "shake", at: T.warum, dur: 1.2, amp: 0.6 },
 ];
 
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "alarm1202", at: 0.02, db: -10 },
+  { s: "triebwerk", at: 0, dur: T.code, db: -18 },
+  { s: "alarm1202", at: T.code + 0.1, db: -14 },
+  { s: "triebwerk", at: T.den, dur: T.computer - T.den, db: -17 },
+  { s: "alarm1202", at: T.treib + 0.2, db: -16 },
+  { s: "quindar", at: T.wir - 0.25, db: -14 },
+  { s: "triebwerk", at: T.warum, dur: 3, db: -15 },
 ];
