@@ -97,3 +97,4 @@ Umgebungen (insel, stadt, …).
 | 84  | Föhn (Überhitzung)               | A      | `tiktok/foehn`               | alpenhuette-bad-handtuch      | sonniger morgen           | 45,0 s | 2026-11-14 |
 | 87  | Mit Make-up schlafen (Mascara)   | B      | `tiktok/make-up-schlafen`    | party-wohnzimmer-sofa         | morgengrauen, rosa        | 45,0 s | 2026-11-14 |
 | 86  | Haare färben (Schiff in Flasche) | A      | `tiktok/haare-faerben`       | kopfhaut-haarwald-riesig      | nacht, lampenlicht        | 45,0 s | 2026-11-14 |
+| 90  | Protein-Shake (Molke)            | A      | `tiktok/proteinshake`        | alm-sennhuette-kaesekessel    | herbstmorgen, klar        | 45,0 s | 2026-11-14 |
