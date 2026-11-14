@@ -288,7 +288,6 @@ ask for go in here.
 | ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)                    | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz   | harmlos, Fangbremse erwähnen | Stadt     |
 | ★ … du dir fest die Augen reibst?                                    | Du siehst Lichtblitze ganz ohne Licht: Druck reizt die Sehzellen (Fakten prüfen)                                  | Daumen drücken aufs Lid, bunte Funken explodieren im Dunkeln                 | Phosphene                    | Körper    |
 | ★ … im Flugzeug auf dem Klo die Spülung drückst, während du sitzt?   | Mythos „festgesaugt“: Der Sog ist stark, aber dein Po dichtet nie ganz ab – du kommst wieder hoch (Fakten prüfen) | Vakuum-Pfeile ziehen am Klo, LED „VAKUUM“, Low-Poly-Mensch steht lachend auf | harmlos                      | Reisen    |
-| ★ … eine ganze Nacht mit Make-up schläfst?                           | Die Poren verstopfen kaum über Nacht – aber Mascara-Krümel im Auge und gereizte Haut (Fakten prüfen)              | Kissen mit Make-up-Abdruck, Pore wird von Puder-Brocken verstopft            | harmlos                      | Beauty    |
 | ★ … im Flugzeug den Flugmodus nicht einschaltest?                    | Das Flugzeug stürzt nicht ab – aber die Piloten hören ein Brummen im Funk, und dein Akku ist leer (Fakten prüfen) | Handy sucht Netz, Funkwellen pulsen, Cockpit-Kopfhörer brummt                | harmlos                      | Reisen    |
 
 ## Reserviert (in Arbeit)
@@ -296,7 +295,6 @@ ask for go in here.
 | Thema                | Format | Datum      | Chat                             |
 | -------------------- | ------ | ---------- | -------------------------------- |
 | Haare färben         | A      | 2026-11-13 | TikTok #86: Haare färben         |
-| Mit Make-up schlafen | B      | 2026-11-13 | TikTok #87: Mit Make-up schlafen |
 | Türschloss           | A      | 2026-11-13 | TikTok #88: Türschloss           |
 | Ei in der Mikrowelle | B      | 2026-11-13 | TikTok #89: Ei in der Mikrowelle |
 | Protein-Shake        | A      | 2026-11-13 | TikTok #90: Protein-Shake        |

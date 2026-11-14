@@ -95,3 +95,4 @@ Umgebungen (insel, stadt, …).
 | 82  | Induktionsherd (Topf heizt sich) | A      | `tiktok/induktionsherd`      | wohnkueche-nacht-pendellicht  | nacht, pendellicht        | 45,0 s | 2026-11-14 |
 | 83  | Kaffee auf leeren Magen          | B      | `tiktok/kaffee-nuechtern`    | magenhoehle-riesig            | sonnenaufgang, magenlicht | 45,0 s | 2026-11-14 |
 | 84  | Föhn (Überhitzung)               | A      | `tiktok/foehn`               | alpenhuette-bad-handtuch      | sonniger morgen           | 45,0 s | 2026-11-14 |
+| 87  | Mit Make-up schlafen (Mascara)   | B      | `tiktok/make-up-schlafen`    | party-wohnzimmer-sofa         | morgengrauen, rosa        | 45,0 s | 2026-11-14 |
