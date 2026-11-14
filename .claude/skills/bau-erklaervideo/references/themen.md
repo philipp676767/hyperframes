@@ -292,9 +292,8 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema                | Format | Datum      | Chat                             |
-| -------------------- | ------ | ---------- | -------------------------------- |
-| Ei in der Mikrowelle | B      | 2026-11-13 | TikTok #89: Ei in der Mikrowelle |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
