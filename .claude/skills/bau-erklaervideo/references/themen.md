@@ -292,8 +292,9 @@ ask for go in here.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                         | Format | Datum      | Chat                  |
+| ----------------------------- | ------ | ---------- | --------------------- |
+| Flugmodus nicht eingeschaltet | B      | 2026-11-14 | TikTok #91: Flugmodus |
 
 ## Verwendet
 
