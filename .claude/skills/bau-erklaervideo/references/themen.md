@@ -243,7 +243,7 @@ men).
 | ----------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------- |
 | ✓ Selbstbräuner (#76)         | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)                  | „Schon mal orange geworden?“       | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun     |
 | ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)                | „Natur oder geliftet?“             | Bindungen im Haar knacken auf, Form, neu verknüpft               |
-| ★ Haare färben                | „Haarfarbe muss erst in dein Haar einbrechen.“                                  | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                  |
+| ✓ Haare färben (#86)          | „Haarfarbe muss erst in dein Haar einbrechen.“                                  | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                  |
 | ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen          |
 | ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)               | „Wäschst du dein Auto selbst?“     | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt     |
 | ✓ Katzenzunge (#80)           | „Die Zunge deiner Katze ist eine Bürste aus Haken.“ (Fakten prüfen)             | „Wie heißt deine Katze?“           | Zunge im Makro, hohle Häkchen ziehen Speichel durchs Fell        |
@@ -294,7 +294,6 @@ ask for go in here.
 
 | Thema                | Format | Datum      | Chat                             |
 | -------------------- | ------ | ---------- | -------------------------------- |
-| Haare färben         | A      | 2026-11-13 | TikTok #86: Haare färben         |
 | Türschloss           | A      | 2026-11-13 | TikTok #88: Türschloss           |
 | Ei in der Mikrowelle | B      | 2026-11-13 | TikTok #89: Ei in der Mikrowelle |
 | Protein-Shake        | A      | 2026-11-13 | TikTok #90: Protein-Shake        |
