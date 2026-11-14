@@ -286,22 +286,21 @@ ask for go in here.
 | 🔥 … einen Blitz in einer Flasche fangen könntest? ⚠️ zu nischig     | Er würde dein Handy nur ein paar Stunden laden – so wenig Energie steckt drin (Fakten prüfen)                     | Blitz zuckt in die Flasche, LED-Akku füllt sich kläglich                     | unmöglich                    | Natur     |
 | 🔥 … in ein Schwarzes Loch fällst? ⚠️ zu allgemein                   | Du wirst zur Spaghetti gezogen (bei kleinen Löchern – Fakten prüfen)                                              | Low-Poly-Astronaut wird lang und länger                                      | unmöglich                    | Weltall   |
 | ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)                    | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz   | harmlos, Fangbremse erwähnen | Stadt     |
-| ★ … du jeden Morgen Kaffee auf leeren Magen trinkst?                 | Mythos Magenschaden: für die meisten harmlos, nur Sodbrennen bei manchen (Fakten prüfen)                          | Kaffee rauscht in den leeren Magen, Säure-Pegel-LED, Magenwand bleibt heil   | harmlos                      | Körper    |
+| ★ … du dir fest die Augen reibst?                                    | Du siehst Lichtblitze ganz ohne Licht: Druck reizt die Sehzellen (Fakten prüfen)                                  | Daumen drücken aufs Lid, bunte Funken explodieren im Dunkeln                 | Phosphene                    | Körper    |
 | ★ … im Flugzeug auf dem Klo die Spülung drückst, während du sitzt?   | Mythos „festgesaugt“: Der Sog ist stark, aber dein Po dichtet nie ganz ab – du kommst wieder hoch (Fakten prüfen) | Vakuum-Pfeile ziehen am Klo, LED „VAKUUM“, Low-Poly-Mensch steht lachend auf | harmlos                      | Reisen    |
 | ★ … eine ganze Nacht mit Make-up schläfst?                           | Die Poren verstopfen kaum über Nacht – aber Mascara-Krümel im Auge und gereizte Haut (Fakten prüfen)              | Kissen mit Make-up-Abdruck, Pore wird von Puder-Brocken verstopft            | harmlos                      | Beauty    |
 | ★ … im Flugzeug den Flugmodus nicht einschaltest?                    | Das Flugzeug stürzt nicht ab – aber die Piloten hören ein Brummen im Funk, und dein Akku ist leer (Fakten prüfen) | Handy sucht Netz, Funkwellen pulsen, Cockpit-Kopfhörer brummt                | harmlos                      | Reisen    |
 
 ## Reserviert (in Arbeit)
 
-| Thema                   | Format | Datum      | Chat                                |
-| ----------------------- | ------ | ---------- | ----------------------------------- |
-| Kaffee auf leeren Magen | B      | 2026-11-12 | TikTok #83: Kaffee auf leeren Magen |
-| Föhn (Haartrockner)     | A      | 2026-11-12 | TikTok #84: Föhn                    |
-| Haare färben            | A      | 2026-11-13 | TikTok #86: Haare färben            |
-| Mit Make-up schlafen    | B      | 2026-11-13 | TikTok #87: Mit Make-up schlafen    |
-| Türschloss              | A      | 2026-11-13 | TikTok #88: Türschloss              |
-| Ei in der Mikrowelle    | B      | 2026-11-13 | TikTok #89: Ei in der Mikrowelle    |
-| Protein-Shake           | A      | 2026-11-13 | TikTok #90: Protein-Shake           |
+| Thema                | Format | Datum      | Chat                             |
+| -------------------- | ------ | ---------- | -------------------------------- |
+| Föhn (Haartrockner)  | A      | 2026-11-12 | TikTok #84: Föhn                 |
+| Haare färben         | A      | 2026-11-13 | TikTok #86: Haare färben         |
+| Mit Make-up schlafen | B      | 2026-11-13 | TikTok #87: Mit Make-up schlafen |
+| Türschloss           | A      | 2026-11-13 | TikTok #88: Türschloss           |
+| Ei in der Mikrowelle | B      | 2026-11-13 | TikTok #89: Ei in der Mikrowelle |
+| Protein-Shake        | A      | 2026-11-13 | TikTok #90: Protein-Shake        |
 
 ## Verwendet
 
