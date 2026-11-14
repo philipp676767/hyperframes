@@ -1,18 +1,28 @@
-# Per-video sound effects — the topic's own sounds (popcorn popping, a smoke
-# alarm, a till drawer …), synthesized with the helpers of make-sfx.py:
-#   t_of(dur), noise(dur), sine(freq, t), svf(x, cutoff, q, mode), env(t, a, d),
-#   write(name, x, peak_db=-3), rng (seeded), np
-# Each write("name", …) becomes assets/sfx-extra/name.wav, usable in beats.js
-# SFX like a kit sound: { s: "name", at: T.x }. Names must differ from the
-# house kit (whoosh, pop, ding …). build-sfx.mjs runs this file every time.
-# A sound file the user hands over can be added with scripts/add-sfx.sh.
+# #85 Fußball auf dem Mond — the video's own sounds, synthesized with the
+# helpers of make-sfx.py (t_of noise sine svf env write rng np).
 
-# Example (delete or replace): a candle wick catching fire — short crackle + soft whump
-t = t_of(0.7)
-crackle = np.zeros_like(t)
-for c in rng.uniform(0.0, 0.45, 9):
+# kick: a boot hitting a pumped leather ball — a short bright slap on top of
+# a deep thump whose pitch drops fast
+t = t_of(0.45)
+f = 140 * np.exp(-t * 18) + 55
+thump = np.sin(2 * np.pi * np.cumsum(f) / 44100) * env(t, 0.002, 0.16)
+slap = svf(noise(0.45), 2400, q=0.9, mode="bp") * env(t, 0.001, 0.035)
+write("kick", 1.0 * thump + 0.8 * slap)
+
+# tick: a stopwatch, four dry clicks per second (looped by build-sfx)
+t = t_of(1.0)
+x = np.zeros_like(t)
+for k in range(4):
+    i = int(k * 0.25 * 44100)
+    n = 600
+    x[i : i + n] += svf(noise(0.05), 5200, q=2.5, mode="bp")[:n] * np.exp(-np.arange(n) / 70)
+write("tick", x)
+
+# shutter: a phone camera — two quick mechanical clicks
+t = t_of(0.3)
+x = np.zeros_like(t)
+for c, a in ((0.0, 1.0), (0.085, 0.7)):
     i = int(c * 44100)
-    n = min(len(t) - i, 200)
-    crackle[i : i + n] += rng.uniform(0.4, 1.0) * np.exp(-np.arange(n) / 30)
-whump = svf(noise(0.7), 260, q=0.8, mode="lp") * env(t, 0.03, 0.18)
-write("anzuenden", svf(crackle, 3500, q=0.8, mode="hp") + 1.5 * whump)
+    n = 900
+    x[i : i + n] += a * svf(noise(0.05), 3800, q=1.6, mode="bp")[:n] * np.exp(-np.arange(n) / 120)
+write("shutter", x)
