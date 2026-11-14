@@ -66,7 +66,8 @@ and phrase anything uncertain safely („Forscher schätzen …“).
 
 ## 4. Reserve it right away — the first commit of the chat
 
-Add the row to **Reserviert** (topic, type, date, chat title), commit +
+Add the row to **Reserviert** (topic, type, date, chat title
+`YouTube #<Nr>: <Thema>` — Nr = the YouTube count, SKILL.md step 0a), commit +
 push on `main` immediately; on a rejected push: pull, re-check nobody took
 it, push again. When the video is logged in `youtube/serie.md`, delete the
 row here and move the topic out of **Offen**; keep **10+ open topics**.

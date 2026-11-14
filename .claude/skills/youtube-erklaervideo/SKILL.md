@@ -1,6 +1,6 @@
 ---
 name: youtube-erklaervideo
-description: 'Make a long German YouTube explainer (10–12 min, 16:9, 1920×1080) in the style of the TikTok series "Du hast gerade X gebaut": realistic 3D diorama worlds (one main world + side scenes), name tags, 2–4-word captions with yellow keywords, sound effects, no music, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3) a bit calmer (2.8 words/s). Retention-first structure: 30-s hook that proves the title/thumbnail promise, 6–9 chapters with mini-hooks and an open-loop chain, re-hook at ~55 %, answer + "Übrigens" + CTA at the end, 20-s end screen. Built and rendered chapter by chapter, joined with ffmpeg; delivers the video, 3 thumbnails, title, description with chapter marks, tags, settings and a pinned comment. Claude picks the topic (references/themen.md) and runs on autopilot. Use for "YouTube-Video", "langes Video", "langes Erklärvideo", "YouTube-Erklärvideo", "mach das nächste YouTube-Video" or a named long-form topic. NOT for 45-s TikToks / Shorts — those use bau-erklaervideo.'
+description: 'Make a long German YouTube explainer (10–12 min, 16:9, 1920×1080) in the style of the TikTok series "Du hast gerade X gebaut": realistic 3D diorama worlds (one main world + side scenes), name tags, 2–4-word captions with yellow keywords, sound effects, no music, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3) a bit calmer (2.8 words/s). Retention-first structure: 30-s hook that proves the title/thumbnail promise, 6–9 chapters with mini-hooks and an open-loop chain, re-hook at ~55 %, answer + "Übrigens" + CTA at the end, 20-s end screen. Built and rendered chapter by chapter, joined with ffmpeg; delivers the video, 3 thumbnails, title, description with chapter marks, tags, settings and a pinned comment. Claude picks the topic (references/themen.md) and runs on autopilot. Use ONLY when the prompt contains the word "YouTube" (e.g. "YouTube-Video", "neues YouTube-Video", "YouTube-Erklärvideo", "mach das nächste YouTube-Video", "YouTube-Video über X") — without "YouTube" in the prompt never use this skill. NOT for TikToks or YouTube Shorts ("Short", "Shorts", "TikTok") — those use bau-erklaervideo.'
 ---
 
 # YouTube-Erklärvideo (long form, 16:9)
@@ -13,6 +13,13 @@ thumbnails + chapters) and **chapter-wise production** (each chapter its
 own composition, rendered alone, joined at the end).
 
 Talk to the user in German. Keep them posted in short lines while working.
+
+**When this skill runs** (user's rule, 2026-11-14): only when the user's
+prompt contains the word **„YouTube“** („neues YouTube-Video“, „YouTube-Video
+über Mückenstiche“, „mach weiter mit dem YouTube-Video“). A prompt without
+„YouTube“ („neues Video“, „langes Video“, „mach das nächste Video“) is
+**not** for this skill; „YouTube Short(s)“ / „TikTok“ belong to
+`bau-erklaervideo`.
 
 ## Fixed house settings
 
@@ -56,7 +63,8 @@ or a new chat loses nothing.
 If the user says „mach weiter“ or names a video in progress: `git pull
 origin main`, read `youtube/<slug>/fortschritt.md` and `plan.md`, and
 continue at the first chapter whose status is not „gerendert“ (or with the
-render queue / joining / delivery). Don't redo finished chapters.
+render queue / joining / delivery). Don't redo finished chapters. Name the chat
+as that video (step 0a: `YouTube #<Nr>: <Thema>`, the Nr from its row).
 
 ### 0. Topic — reserve it FIRST
 
@@ -64,14 +72,38 @@ render queue / joining / delivery). Don't redo finished chapters.
 (`youtube/serie.md`, `youtube/*`, the Reserviert table, remote branches),
 the scorecard (incl. **fact inventory ≥ 15** and **thumbnail test**),
 take the best (≥ 12/16) — a strong TikTok topic as the long version is a
-good choice. **Reserve it immediately**: row in Reserviert, commit, push on
-`main` (rejected → pull, re-check, push). Then name the chat
-**`YouTube #<Nr>: <Thema>`** (Nr = rows in `youtube/serie.md` + reserved
-rows + 1; `set_session_title` via ToolSearch
-`select:mcp__claude-code-remote__get_session,mcp__claude-code-remote__set_session_title`,
-else ask the user to rename it in the first line) and post one line:
-„Reserviert: YouTube #2 Mond-Crash. Du kannst schon den nächsten Chat
-starten.“
+good choice. **Reserve it immediately**: row in Reserviert (with the chat
+title of 0a), commit, push on `main` (rejected → pull, re-check that nobody
+took the topic or the number meanwhile, push again). Then rename the chat
+(0a) and post one short line, e.g. „Reserviert: YouTube #2 Mond-Crash. Du
+kannst schon den nächsten Chat starten.“ — and go on without waiting.
+
+### 0a. Name the chat — "YouTube #<Nr>: <Thema>"
+
+Every video chat is named like the TikTok chats, marked as YouTube (user's
+rule, 2026-11-14): **`YouTube #<Nr>: <Thema>`**, e.g. `YouTube #1:
+Mond-Crash`, `YouTube #4: Taschenwärmer`.
+
+- **Nr = the number of the YouTube video** — its own count, independent of
+  the TikTok numbers: the highest `#` in `youtube/serie.md` + 1, plus one for
+  every row of the **Reserviert** table in `references/themen.md` that is not
+  in `serie.md` yet (parallel chats). The first long video is `#1`.
+- **Thema** = the short name people search for (1–4 words, German, umlauts
+  as ä/ö/ü) — not the full video title.
+- Put the same title in the `Chat` column of the reservation, and use the
+  same Nr in `youtube/serie.md` (`#` column) at the end.
+- Rename right after the reservation, before anything else:
+  - if `set_session_title` is available (ToolSearch
+    `select:mcp__claude-code-remote__get_session,mcp__claude-code-remote__set_session_title`):
+    `get_session` without `session_id` gives this chat's id, then
+    `set_session_title` with that id and the title;
+  - without that tool, the very first line of your reply is: **„Bitte
+    benenne diesen Chat in „YouTube #<Nr>: <Thema>“ um.“** — exactly that
+    title, so the user can copy it.
+- If another chat finished first and the number changed when you log the
+  video in `serie.md`, or the topic changed, rename again.
+- A chat that continues a video („Weitermachen“) keeps / takes the title of
+  that video (`Chat` column in `references/themen.md` or `youtube/serie.md`).
 
 ### 0b. Read the learning logs
 
