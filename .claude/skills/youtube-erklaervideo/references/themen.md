@@ -147,5 +147,6 @@ the search interest and the facts again when you pick.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Typ | Datum | Chat |
-| ----- | --- | ----- | ---- |
+| Thema                             | Typ           | Datum      | Chat                  |
+| --------------------------------- | ------------- | ---------- | --------------------- |
+| Die erste Mondlandung — Apollo 11 | Große Momente | 2026-11-14 | YouTube #1: Apollo 11 |
