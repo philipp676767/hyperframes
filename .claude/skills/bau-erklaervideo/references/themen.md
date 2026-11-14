@@ -295,7 +295,6 @@ ask for go in here.
 
 | Thema                | Format | Datum      | Chat                             |
 | -------------------- | ------ | ---------- | -------------------------------- |
-| Föhn (Haartrockner)  | A      | 2026-11-12 | TikTok #84: Föhn                 |
 | Haare färben         | A      | 2026-11-13 | TikTok #86: Haare färben         |
 | Mit Make-up schlafen | B      | 2026-11-13 | TikTok #87: Mit Make-up schlafen |
 | Türschloss           | A      | 2026-11-13 | TikTok #88: Türschloss           |
