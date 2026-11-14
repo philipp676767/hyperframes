@@ -54,7 +54,7 @@ export const shots = [
   // "Rate mal" — under the ball, the Earth behind it, stopwatch running
   { at: T.rate, rel: "ball", from: [-1.2, -0.5, 1.6], to: [-1.0, -0.4, 1.3], look: [0, 0, 0] },
   // "Zeit für ein Selfie" — the phone's view: astronaut + the ball in the sky
-  { at: T.zeit, from: [1.6, 2.3, 3.6], to: [1.4, 2.2, 3.1], look: [-0.3, 2.0, -6] },
+  { at: T.zeit, from: [0.5, 2.1, 3.2], to: [0.4, 2.0, 2.7], look: [-0.2, 2.3, -6] },
   // "Bananenflanke" — low behind the astronaut along the flight line
   { at: T.bananen, from: [2.4, 2.0, 4.8], to: [2.0, 1.8, 4.0], look: [-4, 2.5, -25], whip: -1 },
   // "Ohne Luft … geradeaus" — from above: straight line vs the curve
@@ -85,7 +85,6 @@ export const LABELS = [
 
 export const HIGHLIGHTS = [
   { kind: "shake", at: KICK, dur: 0.45, amp: 1.2 }, // the kick
-  { kind: "flash", at: KICK },
   { kind: "zoom", at: T.ball, amount: 0.3 },
   { kind: "slowmo", at: T.ball + 0.2, until: T.bein, speed: 0.45 }, // the ball spinning past
   { kind: "zoom", at: T.zieht, amount: 0.25 },

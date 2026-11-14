@@ -10,15 +10,15 @@
     "why": "highlight shake"
   },
   {
-    "s": "hit",
-    "at": 0.3,
-    "why": "highlight flash"
-  },
-  {
     "s": "kick",
     "at": 0.3,
     "why": "beats.js",
     "db": -6
+  },
+  {
+    "s": "punch",
+    "at": 0.78,
+    "why": "highlight"
   },
   {
     "s": "whoosh",
@@ -26,235 +26,230 @@
     "why": "cut"
   },
   {
-    "s": "punch",
-    "at": 1.178,
-    "why": "highlight"
-  },
-  {
     "s": "whoosh",
-    "at": 2.809,
+    "at": 2.6,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 2.809,
+    "at": 2.6,
     "why": "highlight zoom"
   },
   {
     "s": "slowmo",
-    "at": 3.229,
+    "at": 3.02,
     "why": "highlight slowmo"
   },
   {
     "s": "whoosh",
-    "at": 5.846,
+    "at": 4.76,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 7.161,
+    "at": 6,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 7.381,
+    "at": 6.22,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 8.513,
+    "at": 7.14,
     "why": "highlight zoom"
   },
   {
     "s": "blip",
-    "at": 8.783,
+    "at": 7.41,
     "why": "label Schwerkraft"
   },
   {
     "s": "whoosh",
-    "at": 11.242,
+    "at": 9.62,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 15.662,
+    "at": 14.14,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 15.882,
+    "at": 14.36,
     "why": "highlight"
   },
   {
     "s": "rauschen",
-    "at": 16.942,
+    "at": 14.87,
     "why": "beats.js",
     "dur": 1,
     "db": -20
   },
   {
     "s": "blip",
-    "at": 17.842,
+    "at": 15.77,
     "why": "label Erde"
   },
   {
     "s": "hit",
-    "at": 17.942,
+    "at": 15.87,
     "why": "highlight shake"
   },
   {
     "s": "kick",
-    "at": 17.942,
+    "at": 15.87,
     "why": "beats.js",
     "db": -16
   },
   {
     "s": "whoosh",
-    "at": 19.903,
+    "at": 17.54,
     "why": "cut"
   },
   {
     "s": "tick",
-    "at": 20.323,
+    "at": 17.96,
     "why": "beats.js",
-    "dur": 3.2339999999999973,
+    "dur": 2.9799999999999995,
     "db": -14
   },
   {
     "s": "whoosh",
-    "at": 22.715,
+    "at": 20.06,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 22.935,
+    "at": 20.28,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 23.337,
+    "at": 20.72,
     "why": "cut"
   },
   {
     "s": "shutter",
-    "at": 24.507,
+    "at": 21.76,
     "why": "beats.js",
     "db": -10
   },
   {
     "s": "hit",
-    "at": 24.537,
+    "at": 21.79,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 25.641,
+    "at": 22.72,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 25.861,
+    "at": 22.94,
     "why": "highlight"
   },
   {
     "s": "blip",
-    "at": 26.611,
+    "at": 23.69,
     "why": "label Bananenflanke"
   },
   {
     "s": "whoosh",
-    "at": 30.24,
+    "at": 27.4,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 31.14,
+    "at": 28.3,
     "why": "highlight zoom"
   },
   {
     "s": "whoosh",
-    "at": 32.313,
+    "at": 29.22,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 35.401,
+    "at": 32.55,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 35.971,
+    "at": 33.12,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 35.971,
+    "at": 33.12,
     "why": "question answered"
   },
   {
     "s": "hit",
-    "at": 36.221,
+    "at": 33.37,
     "why": "highlight shake"
   },
   {
     "s": "kick",
-    "at": 36.221,
+    "at": 33.37,
     "why": "beats.js",
     "db": -10
   },
   {
     "s": "whoosh",
-    "at": 36.974,
+    "at": 34.24,
     "why": "cut"
   },
   {
     "s": "wow",
-    "at": 37.194,
+    "at": 34.46,
     "why": "bonus fact"
   },
   {
     "s": "whoosh",
-    "at": 39.118,
+    "at": 36.16,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 39.338,
+    "at": 36.38,
     "why": "highlight"
   },
   {
     "s": "pop",
-    "at": 39.388,
+    "at": 36.43,
     "why": "beats.js"
   },
   {
     "s": "blip",
-    "at": 39.488,
+    "at": 36.53,
     "why": "label Golfbälle"
   },
   {
     "s": "whoosh",
-    "at": 41.598,
+    "at": 38.7,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 41.818,
+    "at": 38.92,
     "why": "comment pill"
   },
   {
     "s": "pop",
-    "at": 46.232,
+    "at": 43.02,
     "why": "follow pill"
   },
   {
     "s": "click",
-    "at": 47.012,
+    "at": 43.8,
     "why": "follow tap"
   },
   {
     "s": "ding",
-    "at": 47.052,
+    "at": 43.84,
     "why": "gefolgt",
     "db": -16
   }

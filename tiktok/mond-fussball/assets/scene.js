@@ -575,15 +575,6 @@ GOLF.y = heightAt(GOLF.x, GOLF.z);
     b.position.set(GOLF.x + x, heightAt(GOLF.x + x, GOLF.z + z) + 0.028 * s, GOLF.z + z);
     b.castShadow = true;
     scene.add(b);
-    // a short groove in the dust where it rolled
-    const gr = new THREE.Mesh(
-      new THREE.PlaneGeometry(0.035, 0.32),
-      new THREE.MeshStandardMaterial({ color: 0x6e6962, roughness: 1 }),
-    );
-    gr.rotation.set(-Math.PI / 2, 0, 0.5);
-    gr.position.set(GOLF.x + x + 0.08, GOLF.y + 0.004, GOLF.z + z + 0.14);
-    gr.receiveShadow = true;
-    scene.add(gr);
   }
   // the improvised club: a tool handle with an iron head, lying in the dust
   const club = new THREE.Group();
@@ -711,7 +702,12 @@ function renderAt(t) {
   applyCamera(t);
   camTmp.copy(camera.position);
   // camera-dependent bits only after the camera moved
-  trail.visible = t > 1.15 && t < T.fakt && camera.position.distanceTo(bp) > 9;
+  trail.visible =
+    t > 1.15 &&
+    t < T.fakt &&
+    !(t >= T.bein && t < T.mond2) &&
+    !(t >= T.zeit && t < T.bananen) &&
+    camera.position.distanceTo(bp) > 9;
   const dCam = camera.position.distanceTo(bp);
   const hv = clamp01((dCam - 6) / 10) * (t > KICK + 0.6 && t < T.fakt ? 1 : 0);
   halo.visible = hv > 0;
