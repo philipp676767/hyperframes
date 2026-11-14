@@ -235,6 +235,8 @@ const bubbles = new THREE.InstancedMesh(
     roughness: 0.1,
     transparent: true,
     opacity: 0.7,
+    emissive: 0x9fb8c8,
+    emissiveIntensity: 0.5,
   }),
   N_BUB,
 );
@@ -416,8 +418,8 @@ const fur = real.fabric(0xb07a45);
 const furLight = real.fabric(0xe8c79a);
 const black = real.gloss(0x111111);
 const head = add(new THREE.SphereGeometry(0.42, 32, 24).scale(1, 0.92, 1.0), fur, 0, 0.75, 0, dog);
-add(new THREE.SphereGeometry(0.24, 24, 16).scale(1, 0.8, 1.25), furLight, 0, 0.62, 0.36, dog);
-add(new THREE.SphereGeometry(0.075, 16, 12).scale(1.2, 0.85, 1), black, 0, 0.69, 0.66, dog);
+add(new THREE.SphereGeometry(0.24, 24, 16).scale(0.9, 0.75, 1.7), furLight, 0, 0.6, 0.42, dog);
+add(new THREE.SphereGeometry(0.075, 16, 12).scale(1.2, 0.85, 1), black, 0, 0.68, 0.82, dog);
 for (const s of [-1, 1]) {
   add(new THREE.SphereGeometry(0.06, 16, 12), black, s * 0.17, 0.86, 0.33, dog);
   add(
@@ -434,13 +436,13 @@ add(new THREE.CylinderGeometry(0.3, 0.36, 0.7, 24), fur, 0, 0.2, -0.12, dog); //
 const ears = [];
 for (const s of [-1, 1]) {
   const pivot = new THREE.Group();
-  pivot.position.set(s * 0.3, 1.05, -0.05);
+  pivot.position.set(s * 0.36, 0.98, -0.02);
   dog.add(pivot);
   const ear = add(
-    new THREE.SphereGeometry(0.2, 16, 12).scale(0.55, 1.25, 0.22),
+    new THREE.SphereGeometry(0.2, 16, 12).scale(0.6, 1.8, 0.25),
     real.fabric(0x7a4f2a),
     0,
-    -0.18,
+    -0.3,
     0,
     pivot,
   );
@@ -687,8 +689,8 @@ function renderAt(t) {
   const perk = smooth(ramp(t, T.hund - 0.1, T.hund + 0.2));
   const twitch = perk * Math.sin(t * 22) * 0.06 * (1 - ramp(t, T.hund + 0.8, T.hund + 1.5));
   for (const e of ears) {
-    e.pivot.rotation.z = e.s * (lerp(0.35, -0.25, perk) + twitch);
-    e.pivot.rotation.x = lerp(0.1, -0.35, perk);
+    e.pivot.rotation.z = e.s * (lerp(0.15, 1.9, perk) + twitch);
+    e.pivot.rotation.x = lerp(0.05, -0.2, perk);
     e.ear.scale.y = lerp(1.0, 0.85, perk);
   }
   head.rotation.z = Math.sin(t * 3) * 0.06 * perk;

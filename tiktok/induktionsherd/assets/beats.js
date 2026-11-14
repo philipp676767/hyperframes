@@ -61,7 +61,7 @@ export const shots = [
   // side: the pot lifts, the paper slides under
   { at: T.papier, from: [-1.6, 0.9, 2.3], to: [-1.25, 0.75, 1.9], look: [0.1, 0.35, 0.25] },
   // low close on the paper edge — no fire
-  { at: T.feuer, from: [1.2, 0.6, 1.5], to: [1.0, 0.48, 1.25], look: [0.1, 0.12, 0.35], zoom: 1.3 },
+  { at: T.feuer, from: [1.6, 0.95, 2.0], to: [1.4, 0.8, 1.7], look: [0.1, 0.15, 0.3] },
   // high angle, glass turns to x-ray: a ghost heating wire — nope
   { at: T.unter, from: [1.4, 2.6, 2.6], to: [1.2, 2.3, 2.2], look: [0.4, -0.1, 0.0] },
   // closer on the coil growing
@@ -107,7 +107,7 @@ export const shots = [
   { at: T.darum, from: [2.0, 1.2, 2.0], to: [1.8, 1.0, 1.75], look: [0.8, 0.15, 0.3] },
   // Übrigens: the hob whines, the dog's ears go up
   { at: T.fakt, from: [3.4, 1.7, 4.4], to: [3.1, 1.5, 4.0], look: [1.4, 0.6, 1.0] },
-  { at: T.hund, from: [3.4, 1.15, 3.6], to: [3.2, 1.05, 3.35], look: [2.4, 0.7, 2.0], zoom: 1.7 },
+  { at: T.hund, from: [3.4, 1.15, 3.6], to: [3.2, 1.05, 3.35], look: [2.4, 0.8, 2.0], zoom: 2.3 },
   // CTA: a magnet clacks onto the pot
   { at: T.haelt, from: [0.9, 0.7, 2.4], to: [0.6, 0.55, 2.0], look: [0, 0.35, 0.6], zoom: 1.3 },
 ];
