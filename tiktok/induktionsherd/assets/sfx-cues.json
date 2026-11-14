@@ -1,8 +1,10 @@
 [
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "blubbern",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 9.02,
+    "db": -14
   },
   {
     "s": "hit",
@@ -10,140 +12,261 @@
     "why": "hook title"
   },
   {
+    "s": "punch",
+    "at": 0.28,
+    "why": "highlight"
+  },
+  {
     "s": "whoosh",
-    "at": 1.189,
+    "at": 0.28,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.36,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 1.189,
+    "at": 2.74,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.2,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.62,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 7.89,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 7.89,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 8.28,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 8.28,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 1.409,
+    "at": 8.5,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 3.93,
+    "at": 11.28,
     "why": "cut"
   },
   {
-    "s": "pop",
-    "at": 4.3,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 4.45,
-    "why": "highlight shake"
-  },
-  {
     "s": "punch",
-    "at": 5.028,
+    "at": 11.5,
     "why": "highlight"
   },
   {
+    "s": "hit",
+    "at": 11.5,
+    "why": "highlight flash"
+  },
+  {
+    "s": "blip",
+    "at": 11.75,
+    "why": "label Spule"
+  },
+  {
     "s": "whoosh",
-    "at": 6.065,
+    "at": 14.02,
+    "why": "cut"
+  },
+  {
+    "s": "surr",
+    "at": 14.24,
+    "why": "beats.js",
+    "dur": 12.1,
+    "db": -22
+  },
+  {
+    "s": "slowmo",
+    "at": 16.04,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.54,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.78,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 19.64,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 19.64,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.82,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 6.335,
-    "why": "label Draht"
+    "at": 21.29,
+    "why": "label Magnetfeld"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.88,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.12,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.12,
+    "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 7.868,
+    "at": 26.34,
     "why": "highlight"
   },
   {
-    "s": "slowmo",
-    "at": 7.868,
-    "why": "highlight slowmo"
+    "s": "blip",
+    "at": 26.49,
+    "why": "label Eisen"
   },
   {
-    "s": "surr",
-    "at": 7.868,
+    "s": "whoosh",
+    "at": 28.12,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.5,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.52,
+    "why": "cut"
+  },
+  {
+    "s": "blubbern",
+    "at": 33.74,
     "why": "beats.js",
-    "dur": 3.942,
-    "db": -21
+    "dur": 3.280000000000001,
+    "db": -16
+  },
+  {
+    "s": "punch",
+    "at": 35.04,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 35.04,
+    "why": "question answered"
   },
   {
     "s": "hit",
-    "at": 8.718,
+    "at": 35.04,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 9.776,
-    "why": "cut"
-  },
-  {
-    "s": "whoosh",
-    "at": 9.776,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "punch",
-    "at": 9.996,
-    "why": "highlight"
-  },
-  {
-    "s": "blip",
-    "at": 10.046,
-    "why": "label Glühfaden"
-  },
-  {
-    "s": "whoosh",
-    "at": 11.59,
+    "at": 35.34,
     "why": "cut"
   },
   {
     "s": "punch",
-    "at": 12.466,
+    "at": 36.48,
     "why": "highlight"
   },
   {
-    "s": "ding",
-    "at": 12.466,
-    "why": "question answered"
-  },
-  {
     "s": "whoosh",
-    "at": 13.025,
+    "at": 36.8,
     "why": "cut"
   },
   {
     "s": "wow",
-    "at": 13.245,
+    "at": 37.02,
     "why": "bonus fact"
   },
   {
+    "s": "pfeifen",
+    "at": 37.98,
+    "why": "beats.js",
+    "dur": 2.2,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 39.86,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.86,
+    "why": "highlight zoom"
+  },
+  {
     "s": "punch",
-    "at": 15.574,
+    "at": 40.08,
     "why": "highlight"
   },
   {
     "s": "pop",
-    "at": 17.573,
+    "at": 40.78,
     "why": "comment pill"
   },
   {
+    "s": "hit",
+    "at": 41.23,
+    "why": "highlight shake"
+  },
+  {
+    "s": "klack",
+    "at": 41.23,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
     "s": "pop",
-    "at": 21.488,
+    "at": 43.46,
     "why": "follow pill"
   },
   {
     "s": "click",
-    "at": 22.268,
+    "at": 44.24,
     "why": "follow tap"
   },
   {
     "s": "ding",
-    "at": 22.308,
+    "at": 44.28,
     "why": "gefolgt",
     "db": -16
   }
