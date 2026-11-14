@@ -5,6 +5,13 @@ if the user names one, take theirs (still run the duplicate check and say
 if it was done before). A long video lives **10–12 minutes** — the topic
 must carry **at least 15 real, showable facts**, not three stretched ones.
 
+**Main type since 2026-11-14 (user's wish): „Große Momente“** — the story
+of a real moment of science and technology history everybody has heard of
+(the first Moon landing, the atomic bomb, the Titanic …), told as a thriller
+and explained: what really happened, how the technology worked, the
+moment it almost went wrong. Pick from **Offen — Große Momente** first;
+the other types (list below it) are the reserve, at most every third video.
+
 ## 1. Duplicate check — always, before picking
 
 A topic counts as **used for YouTube** if any of these matches it (same
@@ -20,6 +27,34 @@ YouTube — it is a candidate for the long version (bonus below), as long as
 the long video goes much deeper than the 45 s.
 
 ## 2. What works for long explainers (research: "Dinge Erklärt – Kurzgesagt" DE, 2026)
+
+**Große Momente (main type, story + science):** a real historic moment
+of science / technology, told chronologically like a thriller — the
+countdown, the people, the machine explained in x-ray, the second where
+it almost failed, what it changed for you today. It carries 10 min by
+itself (a story with stakes keeps people longer than a list of facts),
+the 3D diorama can rebuild the place and the machine, and the search word
+is a famous name („Apollo 11“, „Titanic“, „Tschernobyl“). Rules:
+
+- **Story frame:** hook = the most dramatic second (the alarm in the lunar
+  module, the flash in the desert), then back to how it came to that;
+  chapters in time order, each ending on a cliffhanger („Und dann geht im
+  Cockpit ein Alarm los, den keiner kennt.“). The re-hook is the moment it
+  almost went wrong.
+- **Explain the science in every chapter** — this is an explainer, not a
+  history lesson: how the rocket, the reactor, the bomb, the hull worked,
+  with everyday comparisons. Max 2 terms per chapter.
+- **„Was hat das mit dir zu tun?“** in the hook (10–20 s) and the finale:
+  what is in your phone, your kitchen, your life today because of it.
+- **Facts are checked** (dates, numbers, names); legends are called legends
+  („Angeblich …“, „Ob er das wirklich gesagt hat, ist umstritten.“).
+- **Serious topics with respect:** victims (Hiroshima, Tschernobyl,
+  Titanic, Challenger) are named with respect, no jokes, no gore, no
+  spectacle on people's suffering; the 3D shows machines, places and
+  scale, never dying people. Never a how-to (no bomb design, no
+  instructions) — the physics in plain principle only.
+- People appear as low-poly figures / silhouettes, never as a likeness of
+  a real person's face; no real logos.
 
 | Type                                                 | Examples with views                                                                                                                         | Why it carries 10 min                                                     |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -72,7 +107,28 @@ push on `main` immediately; on a rejected push: pull, re-check nobody took
 it, push again. When the video is logged in `youtube/serie.md`, delete the
 row here and move the topic out of **Offen**; keep **10+ open topics**.
 
-## Offen
+## Offen — Große Momente (main type, pick from here first)
+
+Scores: the 8 criteria of §3 (max 16) + bonus, estimated 2026-11-14 — check
+the search interest and the facts again when you pick.
+
+| Thema (Arbeitstitel)                                                 | Was?!-Fakten (Auswahl, prüfen)                                                                                                                           | Der Fast-schiefgegangen-Moment (Re-Hook)                                                         | Thumbnail-Idee                               | Score                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------- | ---------------------------------- |
+| Die erste Mondlandung — Apollo 11                                    | 1969; der Bordcomputer schwächer als ein Taschenrechner; Saturn V so hoch wie ein 36-stöckiges Haus; ~600 Mio. Zuschauer; Fußabdrücke sind noch heute da | „1202“-Alarm im Landeanflug, Armstrong landet von Hand, nur noch Sekunden Treibstoff             | Mondfähre über Kratern, Erde im Hintergrund  | 16                                 |
+| Die Atombombe — wie aus einer Formel eine Waffe wurde                | E = mc²; Uran-Kettenreaktion (nur Prinzip); Trinity-Test 1945 in der Wüste; heller als die Sonne; Hiroshima und Nagasaki                                 | Die Forscher wetteten, ob der Test die Atmosphäre in Brand setzt                                 | greller Blitz über der Wüste, winzige Bunker | 15                                 |
+| Titanic — warum das „unsinkbare“ Schiff sank                         | 1912; Eisberg-Warnungen ignoriert; Schotten nach oben offen; Rettungsboote für die Hälfte; Wasser −2 °C; das Wrack in 3.800 m Tiefe                      | Sie sah den Eisberg 37 Sekunden vorher — das Ausweichen machte es schlimmer (umstritten, prüfen) | Schiff kippt, Heck senkrecht, Sterne         | 15                                 |
+| Tschernobyl — die Nacht, in der der Reaktor explodierte              | 1986; ein Sicherheitstest; Steuerstäbe mit Graphitspitzen; Deckel 1.000 t flog hoch; Sperrzone heute; Wölfe in Prypjat                                   | Der Notaus-Knopf löste die Explosion erst aus                                                    | glühender offener Reaktor bei Nacht          | 15                                 |
+| Apollo 13 — „Houston, wir haben ein Problem“                         | Sauerstofftank explodiert 330.000 km von der Erde; Mondfähre als Rettungsboot; CO₂-Filter aus Klebeband gebaut; Kälte in der Kapsel                      | Der Wiedereintritt: 4 Minuten Funkstille, keiner weiß, ob sie leben                              | beschädigte Kapsel im All, Erde weit weg     | 15                                 |
+| Wie wurden die Pyramiden gebaut?                                     | 2,3 Mio. Blöcke; ~20 Jahre; Rampen-Theorien; Arbeiter, keine Sklaven; früher glatt und weiß                                                              | Ein Block alle paar Minuten — 20 Jahre lang (Rechnung prüfen)                                    | Riesen-Pyramide im Bau, winzige Arbeiter     | 15                                 |
+| Der erste Mensch im All — Juri Gagarin                               | 1961; 108 Minuten; landete per Fallschirm neben der Kapsel; Bauern auf dem Feld; Raumkapsel kleiner als ein Auto                                         | Die Bremsrakete versagt halb, die Kapsel taumelt beim Wiedereintritt                             | Kugel-Kapsel glüht über der Erde             | 14                                 |
+| Der erste Flug — die Gebrüder Wright                                 | 1903; 12 Sekunden, 37 m — kürzer als ein Airbus A380 lang ist; Fahrradmechaniker; selbstgebauter Windkanal                                               | Die ersten Versuche krachen — und dann hebt er ab                                                | Holzflieger über Dünen, Mensch läuft daneben | 14                                 |
+| Pompeji — der Tag, an dem der Vesuv ausbrach                         | 79 n. Chr.; Aschewolke 30 km hoch; Glutlawine mit über 100 km/h; Stadt 1.700 Jahre verschüttet; Brot im Ofen erhalten                                    | Die Leute hatten Stunden Zeit — und viele blieben                                                | Vulkan über der antiken Stadt, Aschesäule    | 14                                 |
+| Penicillin — der schmutzige Teller, der Millionen rettete            | 1928 Fleming; Schimmel tötet Bakterien; vorher starb man an einem Kratzer; Massenproduktion im Krieg; heute: resistente Keime                            | Fast vergessen: 10 Jahre lang tat niemand etwas damit                                            | Petrischale mit Schimmel-Kreis im Makro      | 14                                 |
+| Das Hindenburg-Unglück                                               | 1937; 245 m lang — größer als die Titanic war breit (prüfen); mit Wasserstoff gefüllt; in 34 Sekunden verbrannt; Ende der Luftschiffe                    | 62 von 97 Menschen überlebten — wie?                                                             | brennendes Luftschiff über dem Mast          | 13                                 |
+| Die Concorde — Überschall für alle, und warum es sie nicht mehr gibt | 2× Schallgeschwindigkeit; London–New York in 3,5 h; Rumpf wurde 20 cm länger vor Hitze; Überschallknall; Absturz 2000                                    | Ein Metallstreifen auf der Piste brachte sie zum Absturz                                         | weiße Concorde, Hitzeflimmern                | 13                                 |
+| Das erste iPhone — der Tag, der dein Leben verändert hat             | 2007; Prototypen stürzten auf der Bühne fast ab; Steve Jobs' festgelegte Reihenfolge; vorher Tasten-Handys                                               | Die Demo funktionierte nur, wenn er alles genau in der richtigen Reihenfolge machte              | Handy aus Licht über Tasten-Handys           | 13 (Logos/Personen nur angedeutet) |
+
+## Offen — weitere Typen (Reserve, höchstens jedes dritte Video)
 
 | Thema (Arbeitstitel)                                                                   | Typ                | Was?!-Fakten (Auswahl, prüfen)                                                                                               | Thumbnail-Idee                                | Score |
 | -------------------------------------------------------------------------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----- |

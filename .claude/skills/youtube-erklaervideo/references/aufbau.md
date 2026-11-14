@@ -21,6 +21,13 @@ more than clicks.
 
 ## Shape
 
+**„Große Momente“ (the main topic type)** use the same shape as a story:
+the hook opens on the most dramatic second, the chapters go in time
+order and end on cliffhangers, the re-hook is the moment it almost went
+wrong, the finale answers the main question and says what it means for
+the viewer today. Every chapter still explains the science (how the
+machine worked) — rules in `themen.md` §2 „Große Momente“.
+
 | Part                     | When                         | Job                                                                                                                                                                                                                                                     |
 | ------------------------ | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Hook** (chapter 0)     | 0:00–0:30                    | 0–10 s: prove the promise of title + thumbnail with a real example — the spectacle in frame 0. 10–20 s: why it concerns **you** (gain / danger). 20–30 s: in one concrete sentence what comes (no "Gleich erfährst du …"). Opens the **main question**. |
