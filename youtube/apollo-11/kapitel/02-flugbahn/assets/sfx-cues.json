@@ -6,11 +6,6 @@
     "db": -12
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
-  },
-  {
     "s": "pop",
     "at": 0.3,
     "why": "chapter tag",
@@ -18,119 +13,185 @@
   },
   {
     "s": "whoosh",
-    "at": 1.4,
-    "why": "cut"
-  },
-  {
-    "s": "whoosh",
-    "at": 1.4,
+    "at": 0.72,
     "why": "highlight zoom"
   },
   {
-    "s": "punch",
-    "at": 1.62,
-    "why": "highlight"
-  },
-  {
     "s": "whoosh",
-    "at": 4.46,
+    "at": 7.64,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 5.7,
-    "why": "label Draht"
-  },
-  {
     "s": "whoosh",
-    "at": 7.71,
+    "at": 10.9,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 8.08,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 8.23,
-    "why": "highlight shake"
-  },
-  {
-    "s": "punch",
-    "at": 8.94,
-    "why": "highlight"
-  },
-  {
-    "s": "punch",
-    "at": 11.21,
-    "why": "highlight"
-  },
-  {
-    "s": "slowmo",
-    "at": 11.21,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 11.21,
+    "at": 12.9,
     "why": "beats.js",
-    "dur": 4.209999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 12.19,
-    "why": "highlight flash"
+    "db": -10
   },
   {
     "s": "whoosh",
-    "at": 13.42,
+    "at": 16.54,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 13.42,
+    "at": 17.94,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 13.64,
-    "why": "highlight"
-  },
-  {
-    "s": "blip",
-    "at": 13.69,
-    "why": "label Glühfaden"
-  },
-  {
-    "s": "whoosh",
-    "at": 15.2,
-    "why": "cut"
-  },
-  {
-    "s": "punch",
-    "at": 16.19,
+    "at": 18.22,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 16.19,
+    "at": 18.22,
     "why": "question answered"
   },
   {
     "s": "whoosh",
-    "at": 16.84,
+    "at": 19.54,
     "why": "cut"
   },
   {
-    "s": "wow",
-    "at": 17.06,
-    "why": "bonus fact"
+    "s": "hit",
+    "at": 20.56,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 20.56,
+    "why": "highlight shake"
+  },
+  {
+    "s": "triebwerk",
+    "at": 20.56,
+    "why": "beats.js",
+    "dur": 5.1999999999999975,
+    "db": -15
   },
   {
     "s": "punch",
-    "at": 19.72,
+    "at": 23.02,
     "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 25.34,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 26.16,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 29.32,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.78,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 40.26,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 43.96,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 44.18,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 44.66,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 44.88,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 50.76,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 55.5,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 56.32,
+    "why": "beats.js",
+    "dur": 1.2,
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 59.28,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 60.4,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 62.36,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 62.36,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 62.58,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 62.63,
+    "why": "label Eagle"
+  },
+  {
+    "s": "punch",
+    "at": 64.18,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 64.23,
+    "why": "label Columbia"
+  },
+  {
+    "s": "whoosh",
+    "at": 65.14,
+    "why": "cut"
+  },
+  {
+    "s": "quindar",
+    "at": 70.06,
+    "why": "beats.js",
+    "db": -14
   }
 ]

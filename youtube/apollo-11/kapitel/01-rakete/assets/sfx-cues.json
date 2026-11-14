@@ -6,11 +6,6 @@
     "db": -12
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
-  },
-  {
     "s": "pop",
     "at": 0.3,
     "why": "chapter tag",
@@ -18,119 +13,197 @@
   },
   {
     "s": "whoosh",
-    "at": 1.4,
+    "at": 4.56,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 1.4,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "punch",
-    "at": 1.62,
-    "why": "highlight"
-  },
-  {
-    "s": "whoosh",
-    "at": 4.46,
+    "at": 7.98,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 5.7,
-    "why": "label Draht"
+    "at": 9.85,
+    "why": "label Saturn V"
   },
   {
     "s": "whoosh",
-    "at": 7.71,
+    "at": 13.42,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.74,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.86,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 18.26,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.74,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 8.08,
+    "at": 24.06,
     "why": "beats.js"
   },
   {
-    "s": "hit",
-    "at": 8.23,
-    "why": "highlight shake"
-  },
-  {
-    "s": "punch",
-    "at": 8.94,
-    "why": "highlight"
-  },
-  {
-    "s": "punch",
-    "at": 11.21,
-    "why": "highlight"
-  },
-  {
-    "s": "slowmo",
-    "at": 11.21,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 11.21,
+    "s": "zisch",
+    "at": 24.56,
     "why": "beats.js",
-    "dur": 4.209999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 12.19,
-    "why": "highlight flash"
+    "dur": 3.2,
+    "db": -18
   },
   {
     "s": "whoosh",
-    "at": 13.42,
-    "why": "cut"
-  },
-  {
-    "s": "whoosh",
-    "at": 13.42,
+    "at": 27.78,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 13.64,
-    "why": "highlight"
-  },
-  {
-    "s": "blip",
-    "at": 13.69,
-    "why": "label Glühfaden"
-  },
-  {
-    "s": "whoosh",
-    "at": 15.2,
-    "why": "cut"
-  },
-  {
-    "s": "punch",
-    "at": 16.19,
+    "at": 28,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 16.19,
+    "at": 28,
     "why": "question answered"
   },
   {
     "s": "whoosh",
-    "at": 16.84,
+    "at": 28.7,
     "why": "cut"
   },
   {
-    "s": "wow",
-    "at": 17.06,
-    "why": "bonus fact"
+    "s": "whoosh",
+    "at": 31.36,
+    "why": "cut"
+  },
+  {
+    "s": "piep",
+    "at": 31.88,
+    "why": "beats.js",
+    "dur": 2.6,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 33.88,
+    "why": "cut"
+  },
+  {
+    "s": "startdonner",
+    "at": 34.15,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 34.2,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 34.2,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.52,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 36.74,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.46,
+    "why": "cut"
+  },
+  {
+    "s": "triebwerk",
+    "at": 40.1,
+    "why": "beats.js",
+    "dur": 6.640000000000001,
+    "db": -14
   },
   {
     "s": "punch",
-    "at": 19.72,
+    "at": 42.52,
     "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 44.14,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 44.36,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 46.52,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 50.68,
+    "why": "highlight"
+  },
+  {
+    "s": "blip",
+    "at": 50.73,
+    "why": "label Stufe"
+  },
+  {
+    "s": "hit",
+    "at": 50.98,
+    "why": "highlight flash"
+  },
+  {
+    "s": "klack",
+    "at": 50.98,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "triebwerk",
+    "at": 51.18,
+    "why": "beats.js",
+    "dur": 6.18,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 53.34,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 57.14,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 57.14,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 61.24,
+    "why": "cut"
   }
 ]

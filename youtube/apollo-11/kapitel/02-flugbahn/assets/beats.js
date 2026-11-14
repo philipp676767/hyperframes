@@ -1,72 +1,87 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
+// Chapter 2 "Zielen ins Leere": aim where the Moon will be, the trans-lunar
+// burn, the barbecue roll, the figure-eight free-return path, docking.
 import { W } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
+  km: W("384.000"),
+  rast: W("rast"),
+  zielst: W("Zielst"),
+  kennst: W("Kennst"),
+  pass: W("Pass"),
+  apollo: W("Apollo"),
+  dritte: W("dritte"),
+  tempo: W("40.000"),
+  dann: W("Dann"),
+  drei: W("Drei"),
+  dabei: W("Dabei"),
+  sonst: W("Sonst"),
+  schrumpft: W("schrumpft"),
+  geniale: W("geniale"),
+  acht: W("Acht"),
+  faellt: W("Fällt"),
+  ohne: W("Ohne"),
+  ticket: W("Rückfahrticket"),
+  unterwegs2: W("Unterwegs", 2),
+  drehen2: W("drehen", 2),
+  docken: W("docken"),
+  ziehen: W("ziehen"),
+  eagle: W("Eagle"),
+  columbia: W("Columbia"),
+  triffst: W("triffst"),
   aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
 };
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
+// places: diagram (Earth at 0), close-up set (CLOSE), football pitch (FOOT)
+export const CLOSE = [0, 0, 3000];
+export const FOOT = [0, 0, -3000];
+const c = (x, y, z) => [CLOSE[0] + x, CLOSE[1] + y, CLOSE[2] + z];
+const f = (x, y, z) => [FOOT[0] + x, FOOT[1] + y, FOOT[2] + z];
+
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  { at: 0, from: [-14, 30, 70], to: [-4, 34, 58], look: [20, 0, -10], zoom: 1 },
+  { at: T.zielst, from: [10, 60, 40], to: [14, 62, 34], look: [18, 0, -14], zoom: 1 },
+  { at: T.kennst, from: f(14, 8, 16), to: f(11, 7, 13), look: f(1, 0, 0), zoom: 1, whip: 1 },
+  { at: T.apollo, from: [24, 52, 50], to: [30, 50, 44], look: [28, 0, -4], zoom: 1 },
+  { at: T.dritte, from: c(64, 6, 88), to: c(52, 12, 74), look: c(0, -3, 0), zoom: 1 },
+  { at: T.dann, from: [-6, 28, 58], to: [6, 30, 52], look: [24, 0, 0], zoom: 1 },
+  { at: T.dabei, orbit: { c: c(0, -2, 0), r: 78, y: CLOSE[1] + 14, a0: 0.4, a1: 1.1 }, zoom: 1 },
+  { at: T.schrumpft, from: [17, 3.5, 8], to: [44, 8, 15], look: [0, 0, 0], zoom: 1 },
+  { at: T.geniale, from: [25, 70, 40], to: [25, 62, 34], look: [25, 0, 0], zoom: 1 },
+  {
+    at: T.faellt,
+    from: [40, 22, 22],
+    to: [52, 18, 14],
+    look: [46, 0, 0],
+    lookTo: [40, 0, 0],
+    zoom: 1,
+  },
+  { at: T.ohne, from: [25, 62, 34], to: [25, 58, 30], look: [25, 0, 0], zoom: 1 },
+  { at: T.unterwegs2, from: c(62, 22, 72), to: c(54, 26, 62), look: c(0, 6, 0), zoom: 1, whip: -1 },
+  { at: T.docken, from: c(46, 18, 50), to: c(42, 20, 46), look: c(0, 10, 0), zoom: 1 },
+  { at: T.eagle, from: c(34, 18, 38), to: c(30, 20, 34), look: c(0, 16, 0), zoom: 1 },
+  { at: T.triffst, from: [10, 64, 46], to: [18, 60, 40], look: [25, 0, 0], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Eagle", at: T.eagle, until: T.columbia - 0.1, pos: c(0, 11.2, 0), side: -1 },
+  { text: "Columbia", at: T.columbia, until: T.triffst - 0.2, pos: c(0, 21, 1.95), side: 1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
 export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
+  { kind: "zoom", at: T.km, amount: 0.2 },
+  { kind: "zoom", at: T.apollo + 1.4, amount: 0.25 },
+  { kind: "flash", at: T.dritte + 0.8 },
+  { kind: "shake", at: T.dritte + 0.8, dur: 1.2, amp: 0.6 },
+  { kind: "zoom", at: T.acht, amount: 0.3 },
+  { kind: "slowmo", at: T.faellt, until: T.ohne, speed: 0.6 },
+  { kind: "zoom", at: T.eagle, amount: 0.25 },
 ];
 
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "triebwerk", at: T.dritte + 0.8, dur: T.dann - T.dritte - 0.6, db: -15 },
+  { s: "klack", at: T.dann + 0.6, db: -12 },
+  { s: "pop", at: T.pass + 0.1, db: -10 },
+  { s: "zisch", at: T.unterwegs2 + 0.6, dur: 1.2, db: -18 },
+  { s: "klack", at: T.docken + 0.9, db: -8 },
+  { s: "quindar", at: T.aber - 0.3, db: -14 },
 ];

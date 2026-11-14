@@ -1,72 +1,91 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
+// Chapter 3 "Ein Hirn aus Draht": the guidance computer + DSKY, 4 KB vs the
+// phone, core rope memory (wire through a ring = 1, past it = 0), woven by
+// hand, Hamilton's priority list.
 import { W } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  bord: W("Apollo-Bordcomputer"),
+  koffer: W("Aktenkoffer"),
+  speicher: W("Arbeitsspeicher"),
+  kb: W("Kilobyte"),
+  bildschirm: W("Bildschirm"),
+  befehle: W("Befehle"),
+  handy: W("Handy"),
+  foto: W("Handyfoto"),
+  rate: W("Rate"),
+  chip: W("Chip"),
+  gewebt: W("gewebt"),
+  ringe: W("Eisenringe"),
+  eins: W("Eins"),
+  null: W("Null"),
+  monate: W("Monatelang"),
+  fehler: W("Fehler"),
+  software: W("Software"),
+  rang: W("Rangliste", 1),
+  wichtig: W("wichtig"),
+  viel: W("Wird"),
+  wirft: W("wirft"),
+  klingt: W("Klingt"),
+  so: W("rechnet", 2),
+  doch: W("Doch"),
 };
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
+// the rig is scaled x4 (scene.js): 1 m real = 4 units
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  { at: 0, from: [3.5, 2.6, 6.5], to: [2.2, 2.2, 5.0], look: [-0.4, 1.0, 0], zoom: 1 },
+  { at: T.speicher, from: [-3.6, 2.0, 3.4], to: [-3.0, 1.8, 2.8], look: [-2.2, 0.5, 0], zoom: 1 },
+  { at: T.bildschirm, from: [1.4, 1.7, 4.6], to: [1.0, 1.5, 4.0], look: [0.6, 1.35, 0], zoom: 1 },
+  {
+    at: T.handy,
+    from: [3.6, 1.3, 3.6],
+    to: [3.3, 1.2, 3.2],
+    look: [2.2, 0.55, 0.5],
+    zoom: 1,
+    whip: 1,
+  },
+  { at: T.rate, from: [0, 3.2, 6.2], to: [0, 2.6, 5.4], look: [0, 0.4, 2.4], zoom: 1 },
+  { at: T.ringe, from: [-0.4, 1.0, 4.3], to: [0.3, 0.9, 3.9], look: [0, 0.48, 2.4], zoom: 1 },
+  { at: T.monate, from: [1.8, 1.4, 4.4], to: [1.2, 1.2, 4.0], look: [0.4, 0.5, 2.4], zoom: 1 },
+  {
+    at: T.software,
+    from: [6.6, 2.4, 6.6],
+    to: [6.0, 2.2, 6.0],
+    look: [3.6, 0.8, 2.4],
+    zoom: 1,
+    whip: -1,
+  },
+  { at: T.viel, from: [6.8, 2.4, 7.2], to: [6.4, 2.3, 6.8], look: [3.6, 1.1, 2.4], zoom: 1 },
+  { at: T.klingt, from: [3.4, 2.4, 6.4], to: [2.0, 2.2, 5.6], look: [0.6, 1.2, 0], zoom: 1 },
+  { at: T.doch, from: [0, 2.0, 7.5], to: [0, 2.6, 6.0], look: [0, 3.5, -10], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  {
+    text: "Bordcomputer",
+    at: T.bord + 0.1,
+    until: T.speicher - 0.2,
+    pos: [-2.2, 0.7, 0.2],
+    side: -1,
+  },
+  { text: "1", at: T.eins - 0.1, until: T.null - 0.3, pos: [-0.6, 0.48, 2.4], side: -1 },
+  { text: "0", at: T.null - 0.1, until: T.monate - 0.1, pos: [0.6, 0.48, 2.4], side: 1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
 export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
+  { kind: "zoom", at: T.kb, amount: 0.3 },
+  { kind: "zoom", at: T.handy + 1.0, amount: 0.3 },
+  { kind: "flash", at: T.gewebt },
+  { kind: "zoom", at: T.rang, amount: 0.3 },
+  { kind: "shake", at: T.viel + 0.3, dur: 0.6, amp: 0.6 },
 ];
 
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "click", at: T.befehle + 0.4, db: -12 },
+  { s: "click", at: T.befehle + 0.8, db: -12 },
+  { s: "click", at: T.befehle + 1.2, db: -12 },
+  { s: "pop", at: T.handy - 0.1 },
+  { s: "surr", at: T.gewebt, dur: 7, db: -24 },
+  { s: "klack", at: T.viel + 0.3, db: -10 },
+  { s: "whoosh", at: T.wirft + 0.3, db: -12 },
+  { s: "quindar", at: T.doch - 0.3, db: -14 },
 ];
