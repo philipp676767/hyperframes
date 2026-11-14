@@ -91,3 +91,4 @@ Umgebungen (insel, stadt, …).
 | 79  | Geschüttelte Cola (Klopfen)     | B      | `tiktok/cola`                | ubahn-waggon-sitzbank         | abend, neonlicht      | 45,0 s | 2026-11-12 |
 | 80  | Katzenzunge (Haarballen)        | A      | `tiktok/katzenzunge`         | wintergarten-katzenkorb       | herbstmorgen, sonne   | 45,0 s | 2026-11-12 |
 | 81  | Nicht blinzeln (Tränenfilm)     | B      | `tiktok/blinzeln`            | wueste-gesicht-in-duene       | mittag, grelle sonne  | 45,0 s | 2026-11-12 |
+| 85  | Fußball auf dem Mond            | B      | `tiktok/mond-fussball`       | mondebene-erdaufgang          | tiefe sonne, schwarz  | 45,0 s | 2026-11-14 |
