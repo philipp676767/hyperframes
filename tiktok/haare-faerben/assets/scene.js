@@ -24,11 +24,13 @@ import {
   renderFrame,
   start,
   roundedBox,
+  LOOK,
 } from "./world.js";
 import { forest } from "./set.js";
 import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
 
 highlights(HIGHLIGHTS);
+LOOK.exposure = 1.25;
 
 const R = 0.55; // hair radius
 const BROWN = new THREE.Color(0x6e4428);
@@ -163,7 +165,7 @@ function blob(b, t, t0, fallFrom) {
 
 // ---------------------------------------------------------------- ammonia cloud
 const ammoMat = new THREE.MeshStandardMaterial({
-  color: 0xe4f2a8,
+  color: 0xdfeec0,
   roughness: 1,
   transparent: true,
   opacity: 0,
@@ -178,10 +180,10 @@ const puffs = [];
     scene.add(m);
     puffs.push({
       m,
-      a: r() * Math.PI * 2,
-      d: 1.1 + r() * 2.2,
-      y: 0.3 + r() * 1.6,
-      s: 0.4 + r() * 0.5,
+      a: 1.2 + r() * 3.9,
+      d: 1.0 + r() * 1.4,
+      y: 0.25 + r() * 1.0,
+      s: 0.22 + r() * 0.28,
       p: r(),
     });
   }
@@ -283,6 +285,7 @@ const bubbles = [];
 // ---------------------------------------------------------------- analogy: pine cone
 const coneG = new THREE.Group();
 coneG.position.set(4.8, 0, 2.6);
+coneG.scale.setScalar(1.45);
 scene.add(coneG);
 const CONE_ROWS = 16;
 const CONE_N = 9;
@@ -436,7 +439,7 @@ function renderAt(t) {
 
   // ammonia cloud
   const ammo = pop(t, T.stinkt, T.verrueckte, 0.6);
-  ammoMat.opacity = 0.42 * ammo;
+  ammoMat.opacity = 0.34 * ammo;
   for (const p of puffs) {
     p.m.visible = ammo > 0.01;
     const roll = ramp(t, T.stinkt, T.verrueckte);
