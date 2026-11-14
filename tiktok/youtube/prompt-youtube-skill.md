@@ -55,4 +55,8 @@ Erstelle einen zweiten Skill `youtube-erklaervideo` (in `.claude/skills/youtube-
 
 Fertiges Video, 3 Thumbnails, Titel, Beschreibung mit Kapiteln, Tags, Einstellungen, Kommentar zum Anpinnen — jeweils zum Kopieren.
 
+## Auslösen
+
+Die `description` des neuen Skills muss klar sagen: Verwenden bei „neues YouTube-Video“, „YouTube-Video“, „langes Video“, „YouTube-Folge“ — NICHT bei „TikTok“ / „neues Video“ ohne YouTube (das bleibt beim TikTok-Skill `bau-erklaervideo`, dessen description schon entsprechend abgrenzt). Aufruf direkt mit `/youtube-erklaervideo`.
+
 Baue den Skill, teste die Querformat-Vorlage mit einem kurzen Demo-Kapitel (Standbilder prüfen) und zeig mir zum Schluss eine Übersicht, was der Skill macht.
