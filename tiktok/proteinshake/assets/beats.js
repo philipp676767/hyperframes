@@ -69,7 +69,7 @@ export const shots = [
   // 8: the protein chain rises out of the shaker
   { at: T.eiweiss, from: [0.9, 4.3, 4.6], to: [0.4, 4.0, 3.7], look: [0, 3.5, 0] },
   // 9: snip — the chain falls apart
-  { at: T.zerschneidet, orbit: { c: [0, 3.55, 0], r: 2.3, y: 3.9, a0: -0.5, a1: 0.35 }, zoom: 1.5 },
+  { at: T.zerschneidet, orbit: { c: [0, 3.55, 0], r: 2.6, y: 4.9, a0: -0.5, a1: 0.35 }, zoom: 1.5 },
   // 10: the beads ride the blood to the muscle
   { at: T.blut, from: [1.0, 3.6, 8.0], to: [1.8, 3.2, 6.9], look: [2.3, 2.6, 0.8] },
   // 11: guess: how many kinds?
@@ -77,7 +77,7 @@ export const shots = [
   // 12: training — dumbbell reps, tiny tears glow
   { at: T.training, from: [6.6, 2.5, 4.9], to: [5.9, 2.1, 3.9], look: MUS, zoom: 1.35 },
   // 13: repair: beads fill the tears, the fibre gets thicker
-  { at: T.flicken, orbit: { c: MUS, r: 3.2, y: 2.4, a0: 0.7, a1: 0.1 }, zoom: 1.6 },
+  { at: T.flicken, orbit: { c: MUS, r: 4.0, y: 2.9, a0: 0.7, a1: 0.15 }, zoom: 1.6 },
   // 14: payoff: the muscle only takes what it needs
   { at: T.nimmt, from: [2.0, 3.1, 7.4], to: [2.6, 2.8, 6.4], look: [3.2, 2.0, 0.8] },
   // 15: the rest flies into the outhouse
