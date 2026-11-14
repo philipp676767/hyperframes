@@ -1,0 +1,60 @@
+[
+  {
+    "s": "whoosh",
+    "at": 0,
+    "why": "chapter cut",
+    "db": -12
+  },
+  {
+    "s": "pop",
+    "at": 0.3,
+    "why": "chapter tag",
+    "db": -13
+  },
+  {
+    "s": "punch",
+    "at": 1.35,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.77,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 1.99,
+    "why": "bonus fact"
+  },
+  {
+    "s": "punch",
+    "at": 4.65,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.07,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 5.29,
+    "why": "comment pill"
+  },
+  {
+    "s": "pop",
+    "at": 13.76,
+    "why": "subscribe pill"
+  },
+  {
+    "s": "click",
+    "at": 14.54,
+    "why": "subscribe tap"
+  },
+  {
+    "s": "ding",
+    "at": 14.58,
+    "why": "abonniert",
+    "db": -16
+  }
+]

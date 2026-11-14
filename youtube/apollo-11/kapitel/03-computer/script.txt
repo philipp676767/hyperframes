@@ -1,0 +1,16 @@
+An Bord sitzt der Apollo-*Bordcomputer*. So groß wie ein Aktenkoffer, 32 Kilo schwer.
+Sein Arbeitsspeicher: rund *4* Kilobyte.
+Er hat keinen Bildschirm, nur grün leuchtende Ziffern und eine Tastatur. Befehle tippen die Astronauten als Zahlencodes ein.
+[surprised] Dein Handy hat über eine *Million* Mal mehr.
+Ein einziges Handyfoto braucht rund tausendmal so viel Platz.
+[curious] Rate mal, wie sein Programm gespeichert war.
+Nicht auf einem Chip. Es war in Kupferdraht *gewebt*.
+Winzige Eisenringe, dazwischen Draht. Läuft der Draht durch einen Ring, ist das eine Eins. Läuft er vorbei, eine Null.
+Monatelang haben Arbeiterinnen in einer Fabrik das Programm so von Hand eingefädelt. Ein Fehler – und das Stück muss neu.
+Die Software schreibt ein Team um die Programmiererin Margaret Hamilton.
+Ihr wichtigster Einfall: Der Computer bekommt eine *Rangliste*.
+Er weiß, welche Aufgabe wichtig ist und welche warten kann.
+Wird es zu viel, wirft er das Unwichtige weg und rechnet mit dem Wichtigen weiter.
+[chuckles] Klingt langweilig. Es wird die Landung retten.
+So rechnet 1969: wenig Speicher, gewebter Draht – und eine Rangliste.
+[curious] Doch hinter dem Mond beginnt der gefährlichste Teil. Und wer bleibt dort ganz allein zurück?

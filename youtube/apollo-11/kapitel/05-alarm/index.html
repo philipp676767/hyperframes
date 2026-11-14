@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Alarm 1202</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="assets/words.js"></script>
+    <script src="assets/kapitel.js"></script>
+    <style>
+      /* 16:9 layout (skill youtube-erklaervideo, references/bild-16-9.md):
+         title-safe x 96–1824 / y 54–1026; captions bottom centre (y ≈ 880–960);
+         question / hook title / fact badge top centre; chapter tag and the CTA
+         pills top left / top right; the middle (y 260–760) stays free of text
+         in the end chapter's last 20 s (YouTube end screen). */
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/montserrat-800.woff2") format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #1c1c22;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #1c1c22;
+      }
+      #stage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .txt {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        color: #ffffff;
+        -webkit-text-stroke: 7px rgba(20, 12, 30, 0.55);
+        paint-order: stroke fill;
+        text-shadow:
+          0 0 3px rgba(0, 0, 0, 0.55),
+          0 3px 6px rgba(0, 0, 0, 0.45),
+          0 0 18px rgba(0, 0, 0, 0.25);
+      }
+      .txt em,
+      .cap .hl {
+        font-style: normal;
+        color: #ffd23f;
+      }
+      /* captions: 2–4 words per line, bottom centre */
+      #captions {
+        position: absolute;
+        left: 160px;
+        right: 160px;
+        top: 872px;
+        height: 96px;
+      }
+      .cap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+        font-size: 64px;
+        line-height: 96px;
+        white-space: nowrap;
+        opacity: 0;
+      }
+      .cap span {
+        display: inline-block;
+        margin: 0 9px;
+      }
+      .cap .hl {
+        margin: 0 24px;
+        font-size: 74px;
+        -webkit-text-stroke: 9px rgba(20, 12, 30, 0.65);
+      }
+      /* hook title (chapter 0): 2–3 huge words on frame 0 */
+      #hook-title {
+        position: absolute;
+        left: 200px;
+        right: 200px;
+        top: 70px;
+        text-align: center;
+        font-size: 138px;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        opacity: 0;
+        -webkit-text-stroke: 14px rgba(20, 12, 30, 0.7);
+        text-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      }
+      /* chapter tag (chapters 1 …), top left, the first ~3.5 s */
+      #chapter {
+        position: absolute;
+        left: 96px;
+        top: 64px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        opacity: 0;
+      }
+      #chapter-nr {
+        padding: 10px 22px;
+        border-radius: 14px;
+        background: #ffd23f;
+        color: #1c1c22;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 34px;
+        letter-spacing: 3px;
+        box-shadow: 0 10px 30px rgba(20, 10, 30, 0.35);
+      }
+      #chapter-title {
+        font-size: 58px;
+      }
+      /* the chapter's open question, top centre */
+      #question {
+        position: absolute;
+        left: 360px;
+        right: 360px;
+        top: 62px;
+        text-align: center;
+        font-size: 56px;
+        line-height: 1.12;
+        opacity: 0;
+      }
+      #fact {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 64px;
+        display: flex;
+        justify-content: center;
+      }
+      #fact-badge {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 38px 16px 18px;
+        border-radius: 999px;
+        background: #ffd23f;
+        box-shadow: 0 14px 40px rgba(60, 10, 40, 0.3);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 48px;
+        color: #1c1c22;
+        opacity: 0;
+      }
+      #fact-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #1c1c22;
+        color: #ffd23f;
+        font-size: 42px;
+        line-height: 56px;
+        text-align: center;
+      }
+      /* CTA pills (end chapter): comment top left, subscribe top right */
+      #cmt,
+      #cta {
+        position: absolute;
+        top: 70px;
+      }
+      #cmt {
+        left: 96px;
+      }
+      #cta {
+        right: 96px;
+      }
+      .pill {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 18px 40px 18px 26px;
+        border-radius: 999px;
+        box-shadow: 0 14px 40px rgba(60, 10, 40, 0.3);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 46px;
+        opacity: 0;
+      }
+      #cmt-btn {
+        background: #ffffff;
+        color: #1c1c22;
+      }
+      #cmt-icon {
+        position: relative;
+        width: 52px;
+        height: 40px;
+        border-radius: 12px;
+        background: #ff0033;
+      }
+      #cmt-icon::after {
+        content: "";
+        position: absolute;
+        left: 9px;
+        bottom: -11px;
+        border-left: 12px solid #ff0033;
+        border-bottom: 12px solid transparent;
+      }
+      #cta-btn {
+        background: #ff0033;
+        color: #ffffff;
+      }
+      #cta-bell {
+        position: relative;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #ffffff;
+      }
+      #cta-bell::before {
+        content: "";
+        position: absolute;
+        left: 15px;
+        top: 11px;
+        width: 22px;
+        height: 22px;
+        border-radius: 11px 11px 3px 3px;
+        background: #ff0033;
+      }
+      #cta-bell::after {
+        content: "";
+        position: absolute;
+        left: 22px;
+        top: 35px;
+        width: 8px;
+        height: 6px;
+        border-radius: 0 0 4px 4px;
+        background: #ff0033;
+      }
+      #cta-label-done {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="24.3"
+      data-width="1920"
+      data-height="1080"
+    >
+      <canvas id="stage" width="1920" height="1080"></canvas>
+      <div id="captions"></div>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="24.3" data-track-index="4" data-volume="1"></audio>
+      <div id="question" class="txt"></div>
+      <div id="hook-title" class="txt"></div>
+      <div id="chapter">
+        <div id="chapter-nr"></div>
+        <div id="chapter-title" class="txt"></div>
+      </div>
+      <div id="fact">
+        <div id="fact-badge">
+          <div id="fact-icon">!</div>
+          <span>WUSSTEST DU?</span>
+        </div>
+      </div>
+      <div id="cmt">
+        <div id="cmt-btn" class="pill">
+          <div id="cmt-icon"></div>
+          <span>Kommentieren</span>
+        </div>
+      </div>
+      <div id="cta">
+        <div id="cta-btn" class="pill">
+          <div id="cta-bell"></div>
+          <span id="cta-label">Abonnieren</span><span id="cta-label-done">Abonniert</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Captions in groups of 2–4 words, hard swap, bottom centre. Timing rules
+      // for the pills are mirrored in assets/timing.js ctaTimes() (sound cues).
+      (function () {
+        const words = window.HF_WORDS;
+        const K = window.HF_KAPITEL || {};
+        const tl = gsap.timeline({ paused: true });
+        const box = document.getElementById("captions");
+
+        // ------------------------------------------------ caption groups
+        // a group closes after 4 words, at a sentence / phrase end, at ~24
+        // characters or before a pause ≥ 0.45 s
+        const groups = [];
+        let cur = [];
+        words.forEach((w, i) => {
+          cur.push(w);
+          const next = words[i + 1];
+          const chars = cur.reduce((n, x) => n + x.w.length + 1, 0);
+          if (
+            !next ||
+            cur.length >= 4 ||
+            w.br ||
+            chars + next.w.length > 25 ||
+            next.start - w.end > 0.45
+          ) {
+            groups.push(cur);
+            cur = [];
+          }
+        });
+        groups.forEach((g, i) => {
+          const el = document.createElement("div");
+          el.className = "cap txt";
+          g.forEach((w) => {
+            const s = document.createElement("span");
+            if (w.hl) s.className = "hl";
+            s.textContent = w.w;
+            el.appendChild(s);
+            // keywords punch in when spoken (the camera punches with them, world.js)
+            if (w.hl)
+              tl.fromTo(
+                s,
+                { scale: 1.18, y: -6 },
+                { scale: 1, y: 0, duration: 0.18, ease: "back.out(3)" },
+                w.start,
+              );
+          });
+          box.appendChild(el);
+          const next = groups[i + 1];
+          const last = g[g.length - 1];
+          const off = next ? Math.min(next[0].start, last.end + 0.7) : last.end + 0.8;
+          tl.set(el, { opacity: 1 }, g[0].start);
+          tl.set(el, { opacity: 0 }, off);
+        });
+
+        // ------------------------------------------------ chapter 0: hook title
+        let topFree = 0.2;
+        if (!K.nr && K.hookTitel) {
+          const el = document.getElementById("hook-title");
+          el.innerHTML = K.hookTitel;
+          // already fully visible on frame 0, settles with a punch, gone at 3 s
+          tl.fromTo(
+            el,
+            { opacity: 1, scale: 1.07 },
+            { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" },
+            0,
+          );
+          tl.to(el, { opacity: 0, scale: 1.08, duration: 0.25, ease: "power2.in" }, 3.0);
+          topFree = 3.3;
+        }
+        // ------------------------------------------------ chapters: tag
+        if (K.nr) {
+          document.getElementById("chapter-nr").textContent = K.ende ? "FINALE" : `KAPITEL ${K.nr}`;
+          document.getElementById("chapter-title").textContent = K.titel || "";
+          tl.fromTo(
+            "#chapter",
+            { opacity: 0, x: -60 },
+            { opacity: 1, x: 0, duration: 0.35, ease: "back.out(2)" },
+            0.25,
+          );
+          tl.to("#chapter", { opacity: 0, x: -40, duration: 0.25, ease: "power2.in" }, 3.6);
+          topFree = 3.9;
+        }
+
+        // ------------------------------------------------ CTA + fact moments
+        const ci = window.HF_CTA_START;
+        const ctaWords = ci != null ? words.slice(ci) : [];
+        const ctaT = ctaWords.length ? ctaWords[0].start : null;
+        let factT = null;
+        words.forEach((w, i) => {
+          if (/^übrigens$/i.test(w.w) && (ci == null || i < ci)) factT = w.start;
+        });
+        const nrm = (s) => s.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+        const ansW = K.antwort
+          ? words.find((w) => w.start >= 3 && nrm(w.w) === nrm(K.antwort))
+          : null;
+        const ansT = ansW ? ansW.start : null;
+
+        // ------------------------------------------------ the open question
+        // shown ~6 s after the tag / hook title, back for a moment (nudge)
+        // when the answer word is spoken; never under the fact badge or the CTA
+        if (K.frage) {
+          const q = document.getElementById("question");
+          q.innerHTML = K.frage;
+          const stops = [factT, ctaT].filter((x) => x != null);
+          const clear = (t) =>
+            Math.min(t, ...stops.map((s) => (s > topFree ? s - 0.25 : Infinity)));
+          const outA = clear(topFree + 6.5);
+          if (outA > topFree + 1) {
+            tl.fromTo(q, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.25 }, topFree);
+            tl.to(q, { opacity: 0, duration: 0.3 }, outA);
+          }
+          if (ansT != null && ansT > outA + 0.6) {
+            const outB = clear(ansT + 1.6);
+            if (outB > ansT + 0.6) {
+              tl.fromTo(
+                q,
+                { opacity: 0, scale: 1.12 },
+                { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(3)" },
+                ansT,
+              );
+              tl.to(q, { opacity: 0, duration: 0.25 }, outB);
+            }
+          }
+        }
+
+        // ------------------------------------------------ bonus fact badge
+        if (factT != null) {
+          const f1 = ctaT ?? factT + 5;
+          tl.fromTo(
+            "#fact-badge",
+            { opacity: 0, scale: 0.4, rotation: -8 },
+            { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "back.out(2.4)" },
+            factT,
+          );
+          tl.to(
+            "#fact-badge",
+            { opacity: 0, scale: 0.8, duration: 0.2, ease: "power2.in" },
+            f1 - 0.2,
+          );
+        }
+
+        // ------------------------------------------------ CTA (end chapter)
+        // comment pill when the line starts, subscribe pill on "Folge",
+        // tapped 0.7 s later → "Abonniert"; both leave after the line so the
+        // end screen (last 20 s) has a quiet picture without text
+        if (ctaWords.length) {
+          const fw = ctaWords.find((w) => /^folg/i.test(w.w));
+          const t0 = fw ? fw.start : ctaT + 1.2;
+          const tap = t0 + 0.7;
+          const out = Math.max(tap + 1.4, ctaWords[ctaWords.length - 1].end + 0.4);
+          tl.fromTo(
+            "#cmt-btn",
+            { opacity: 0, scale: 0.4, y: -30 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
+            ctaT,
+          );
+          tl.to(
+            "#cmt-btn",
+            { scale: 1.06, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 3 },
+            ctaT + 0.6,
+          );
+          tl.fromTo(
+            "#cta-btn",
+            { opacity: 0, scale: 0.4, y: -30 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
+            t0,
+          );
+          tl.to("#cta-btn", { scale: 0.9, duration: 0.12, ease: "power2.in" }, tap);
+          tl.set("#cta-btn", { backgroundColor: "#3a3a46" }, tap + 0.12);
+          tl.set("#cta-label", { display: "none" }, tap + 0.12);
+          tl.set("#cta-label-done", { display: "inline" }, tap + 0.12);
+          tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, tap + 0.12);
+          tl.to(
+            ["#cmt-btn", "#cta-btn"],
+            { opacity: 0, scale: 0.85, duration: 0.25, ease: "power2.in" },
+            out,
+          );
+        }
+        tl.set({}, {}, 24.3);
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+
+    <script type="module" src="assets/scene.js"></script>
+  </body>
+</html>
