@@ -131,6 +131,7 @@ packages/studio/data/
 !.claude/skills/captions-overlay
 !.claude/skills/oversized-cursor
 !.claude/skills/bau-erklaervideo
+!.claude/skills/youtube-erklaervideo
 
 .agents/*
 !.agents/skills

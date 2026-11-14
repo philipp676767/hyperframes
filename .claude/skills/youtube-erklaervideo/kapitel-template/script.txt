@@ -1,0 +1,5 @@
+[excited] Diese Kerze ist deine *Lampe*. Und nach einer Stunde ist sie aus.
+Aber ein dünner Draht leuchtet tausend Stunden lang. Also schickst du *Strom* hindurch.
+Der Draht wird so *heiß*, dass er glüht. Das ist der *Glühfaden*.
+Er glüht nur, weil er so *dünn* ist. Übrigens: Eine alte Glühbirne macht fast nur *Wärme*.
+Und warum leuchtet dann eine LED, ohne heiß zu werden?
