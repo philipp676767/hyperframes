@@ -107,8 +107,8 @@ export const shots = [
   {
     at: T.fett,
     rel: SKIN_V,
-    from: [1.3, 0.1, 3.7],
-    to: [0.8, -0.1, 3.0],
+    from: [1.6, 0.3, 4.6],
+    to: [1.1, 0.1, 4.0],
     look: [0, -0.9, 1.3],
     zoom: Z,
   },

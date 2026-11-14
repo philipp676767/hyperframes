@@ -310,7 +310,7 @@ const skinPlain = real.skin(0xe7ad8c);
     lp.z + 0.03,
     head,
   );
-  up.scale.set(1.45, 0.3, 0.4);
+  up.scale.set(1.45, 0.3, 0.26);
   const lo = put(
     new THREE.SphereGeometry(0.1, 32, 16),
     lipMat,
@@ -319,7 +319,7 @@ const skinPlain = real.skin(0xe7ad8c);
     lp.z + 0.025,
     head,
   );
-  lo.scale.set(1.3, 0.36, 0.45);
+  lo.scale.set(1.3, 0.36, 0.3);
   // hair: a dark brown cap + long strands spilling over the pillow (head-local +y → toward the armrest)
   const hairMat = real.fabric(0x3a2318, {
     sheenRoughness: 0.3,
@@ -450,8 +450,8 @@ const eyes = EYES.map((d, ei) => {
   for (let i = 0; i < 18; i++) {
     const b = Math.PI * (0.12 + (i / 17) * 0.76);
     const base = V(Math.cos(b) * 0.119, 0, Math.sin(b) * 0.103);
-    const dir = V(Math.cos(b) * 0.45, 0.25, Math.sin(b)).normalize();
-    const len = 0.07 + 0.03 * Math.sin((i / 17) * Math.PI);
+    const dir = V(Math.cos(b) * 0.15, 0.35, Math.sin(b)).normalize();
+    const len = 0.055 + 0.02 * Math.sin((i / 17) * Math.PI);
     const cone = new THREE.ConeGeometry(0.0055, len, 6);
     cone.translate(0, len / 2, 0);
     const lash = put(cone, lashMat, base.x, base.y, base.z, lid, false);
