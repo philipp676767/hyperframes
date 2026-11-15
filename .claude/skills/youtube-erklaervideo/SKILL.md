@@ -138,7 +138,8 @@ search word. The intro's cold open shows exactly this promise in its first secon
 Write all chapters with `references/aufbau.md` (structure, intro) and
 **`references/sprechstil.md`** (how a YouTube narrator talks — read the
 before/after example first; the TikTok `script-formel.md` sentence rules do
-not apply here). Fill the chapter table + threads + re-hook + money shots
+not apply here; **`references/beispiel-skript.md`** is a whole script in
+this style — read it once). Fill the chapter table + threads + re-hook + money shots
 in `plan.md`. Count the words (1.500–1.750). Read every chapter aloud in
 your head: does it sound like a documentary or like captions? Run the
 self-checks in both files and fix every point — you are the only reviewer.
