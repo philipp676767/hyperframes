@@ -5,5 +5,6 @@ aus `references/themen.md` (Szenario, Extremer Ort, Dein Körper, Wie funktionie
 Minute für Minute, Wahrheit über). `Welt` = Hauptwelt in 2–4 Wörtern, `Neben` =
 Nebenschauplätze. Nie die Hauptwelt eines der letzten drei Videos.
 
-| #   | Thema | Typ | Ordner | Titel | Länge | Kapitel | Welt | Neben | Datum |
-| --- | ----- | --- | ------ | ----- | ----- | ------- | ---- | ----- | ----- |
+| #   | Thema     | Typ           | Ordner              | Titel                                            | Länge | Kapitel | Welt                       | Neben                                                             | Datum      |
+| --- | --------- | ------------- | ------------------- | ------------------------------------------------ | ----- | ------- | -------------------------- | ----------------------------------------------------------------- | ---------- |
+| 1   | Apollo 11 | Große Momente | `youtube/apollo-11` | Apollo 11: Die Mondlandung wäre fast gescheitert | 10:22 | 10      | Meer der Ruhe, tiefe Sonne | Startrampe, Weltall, Bordcomputer-Bühne, Kontrollzentrum, Pazifik | 2026-11-15 |
