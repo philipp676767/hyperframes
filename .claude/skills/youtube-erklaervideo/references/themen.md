@@ -81,7 +81,7 @@ video (YouTube Shorts: „Ähnliches Video“ → the long one).
 3. **Trägt 10 Minuten** — write the **fact inventory first**: 2 = **15+**
    true, showable facts that escalate (one per ~40 s), 1 = 10–14, 0 = fewer.
 4. **Thumbnail-tauglich** — 2 = one object / face big, a clear contrast,
-   ≤ 3 words make you curious (the Moon an inch above the Earth; a hand
+   2–5 words that name the topic make you curious (the Moon an inch above the Earth; a hand
    with a glowing nail), 1 = needs explaining, 0 = no single picture.
 5. **Kapitel-Struktur von selbst** — 2 = it has natural stages (timeline,
    journey, layers, a fight in rounds), 1 = has to be invented, 0 = one

@@ -24,28 +24,62 @@ YouTube tests up to three thumbnails against each other and keeps the one
 with the most watch time — so every video ships **3 really different
 variants**, not three colourings of one picture.
 
-Rules for each:
+### Rule 1 — a stranger knows the topic in one second (user, 2026-11-15)
+
+YouTube #1 Apollo 11 had „NOCH 30 SEK.“, „WAS IST 1202?“ and „111 METER“:
+details that only mean something **after** watching the video. A viewer in
+the feed saw a lander, a keypad, a rocket — and no word saying _Mondlandung_.
+The user: _„Die Sprüche auf den Titelbildern sagen überhaupt nichts aus und
+sagen dem Zuschauer überhaupt nicht, um was es geht.“_ Thumbnail guides say
+the same: viewers should never have to guess what a video covers;
+**clarity about the subject, curiosity only in the angle**.
+
+- **The thumbnail text names the topic or the claim in words everyone
+  knows** — the famous name or event + what is surprising about it:
+  „MONDLANDUNG FAST GESCHEITERT“, „DIE TITANIC SANK ANDERS“,
+  „DER MOND STÜRZT AB“, „WARUM MÜCKENSTICHE JUCKEN“. Never an
+  insider detail from inside the video (a code, a time, a measurement) on
+  its own — „1202“, „30 SEK.“, „111 METER“ are only allowed **next to** the
+  known name („MONDLANDUNG: NOCH 30 SEKUNDEN“).
+- **The picture shows the iconic, recognisable subject** — the thing
+  people picture when they hear the name (the lunar module on the Moon with
+  the Earth in the sky, the Titanic tilting, the mushroom cloud), big and
+  clear. A detail (a keypad, a valve, a cell) only as variant B, and then
+  the text must name the topic.
+- **The one-second test** (do it for each variant, write the result in
+  `plan.md`): cover the title, look at the thumbnail at 246×138 for one
+  second, and finish the sentence „Das Video handelt von \_\_\_.“ — if the
+  answer is not the topic, change text or picture.
+- **Text + title = one message from two sides**, never the same words, but
+  both understandable alone: title „Apollo 11: Die Mondlandung wäre fast
+  gescheitert“ + thumbnail „FAST ABGESTÜRZT“ over the lander on the Moon —
+  or title „Warum die Mondlandung fast scheiterte“ + thumbnail „APOLLO 11:
+  12 MINUTEN PANIK“.
+- **2–5 words** (was „max 3“ — clarity beats shortness), huge, max 2
+  lines, keyword yellow in `<em>`.
+
+### Rule 2 — readable on a phone
 
 - **1280×720** (`scripts/make-thumbnail.sh` in any chapter: renders the 3D
   scene at one moment, optional camera override, text + dark gradient,
   hides captions, labels and the LED panel).
-- **One object or face, big** (≥ ⅓ of the frame), the strange thing
-  happening; **strong contrast** (bright subject on dark, warm on cold);
-  one accent colour.
-- **Max 3 words**, huge (the script sets 176 px uppercase, yellow keyword
-  in `<em>`), on the side away from the subject (`links` / `rechts`) or
-  across `oben` / `unten`.
-- **Phone test:** scale it to 246×138 (the size in the mobile feed) and
-  look — readable? subject clear in 0.5 s? Else bigger subject, fewer words.
-- Not a copy of the title; together they make one question.
+- **One object or face, big** (≥ ⅓ of the frame), **strong contrast**
+  (bright subject on dark, warm on cold), one accent colour.
+- Text on the side away from the subject (`links` / `rechts`) or across
+  `oben` / `unten`.
+- **Phone test:** scale it to 246×138 (the size in the mobile feed) —
+  readable? subject clear? topic clear (rule 1)?
 
-The three variants differ in **one big decision** each:
+### The three variants — same topic, three angles
 
-| Variant                                 | Idea                                                                                      |
-| --------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **A — the spectacle**                   | the money shot of the promise (the Moon cracking above the city) + 2–3 words („ZU NAH“)   |
-| **B — the close-up / the face or hand** | macro of the key detail or the viewer's hand doing it, a different text („Wir sind tot?“) |
-| **C — the number / the contrast**       | a size or number comparison (tiny human vs. giant wave, „1.000 BAR“), other colours       |
+All three say what the video is about (rule 1); they differ in **one big
+decision** each:
+
+| Variant                                      | Idea                                                                           | Apollo 11 (how it should have been)                                                         |
+| -------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| **A — the iconic subject + the claim**       | the famous picture of the topic, in its most dramatic moment, + the main claim | lander a few metres above the Moon, dust, Earth in the sky — „MONDLANDUNG FAST GESCHEITERT“ |
+| **B — the human / the detail + the name**    | a face, a hand or the key detail big, the topic named in the text              | astronaut's visor reflecting the Moon — „APOLLO 11: DER ALARM“                              |
+| **C — the number / the contrast + the name** | a size or number comparison, the topic named                                   | tiny lander vs. the computer of a phone — „MONDLANDUNG MIT 4 KB“                            |
 
 Save them as `youtube/<slug>/thumb-a.png`, `-b.png`, `-c.png` (commit; LFS).
 

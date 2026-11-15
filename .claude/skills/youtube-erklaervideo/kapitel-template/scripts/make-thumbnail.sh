@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # YouTube thumbnail (1280×720) from this chapter's 3D scene: the scene frozen
-# at one strong moment + max 3 huge words — no captions, pills or labels.
+# at one strong moment + 2–5 huge words that NAME THE TOPIC (references/
+# verpackung.md rule 1) — no captions, pills or labels. The text shrinks
+# until it fits (max 3 lines).
 #   bash scripts/make-thumbnail.sh <seconds> "<TEXT, keyword in <em>>" <layout> <name> ['<cam json>']
 #     layout: links | rechts  (text on that side, subject on the other)
 #             oben | unten    (text across the top / bottom, subject in the middle)
 #     cam:    optional camera override, e.g. '{"p":[3,2,6],"l":[0,1.2,0]}'
-#   e.g. make-thumbnail.sh 4.2 "Er <em>klaut</em> Wärme" rechts a
+#   e.g. make-thumbnail.sh 4.2 "Mondlandung <em>fast gescheitert</em>" rechts a
 #   -> renders/thumb-a.png (1280×720, < 2 MB, as YouTube wants it)
 # Works on a temporary copy of the chapter; index.html stays untouched.
 set -euo pipefail
@@ -55,6 +57,24 @@ html = html.replace(
     f'<div id="captions"></div>\n      <div id="thumb-shade"></div>\n      <div id="thumb-text"><span>{text}</span></div>',
     1,
 )
+# 2–5 words that name the topic: shrink the text until it fits its box in
+# at most 3 lines (176 px down to 96 px)
+fit = """<script>
+      (function () {
+        const el = document.getElementById("thumb-text");
+        const span = el.firstElementChild;
+        span.style.display = "inline-block";
+        const box = () => el.clientWidth;
+        let size = 176;
+        const ok = () => span.scrollWidth <= box() + 2 && span.offsetHeight <= size * 0.98 * 3 + 4;
+        const go = () => {
+          for (size = 176; size > 96 && (el.style.fontSize = size + "px", !ok()); size -= 4);
+        };
+        go();
+        document.fonts.load('800 176px "Montserrat"').then(go);
+      })();
+    </script>"""
+html = html.replace("</body>", f"  {fit}\n  </body>", 1)
 open(path, "w", encoding="utf8").write(html)
 PY
 

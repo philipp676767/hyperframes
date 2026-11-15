@@ -6,7 +6,7 @@
 
 - **Titel** (≤ 60 Zeichen, Suchwort vorn):
 - **Versprechen in einem Satz** (das der Hook in 0–10 s beweist):
-- **Thumbnail A** — Moment / Kamera / Text (≤ 3 Wörter) / Layout:
+- **Thumbnail A** — Moment / Kamera / Text (2–5 Wörter, **nennt das Thema**) / Layout / Ein-Sekunden-Test („Das Video handelt von …“):
 - **Thumbnail B** —
 - **Thumbnail C** —
 - **Hauptfrage** (offen bis zur Auflösung im Finale):

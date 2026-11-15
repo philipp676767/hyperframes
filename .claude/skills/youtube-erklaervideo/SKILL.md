@@ -130,7 +130,7 @@ Creates `youtube/<slug>/` with `plan.md`, `fortschritt.md`, `welt.js`,
 `kapitel/`. In `plan.md` (`references/verpackung.md`): five titles → the
 best (≤ 60 chars, search word first), the **promise in one sentence**, the
 **3 thumbnail ideas** (A spectacle, B close-up / hand / face, C number /
-contrast — moment, camera, ≤ 3 words, layout), the main question, the
+contrast — moment, camera, 2–5 words that **name the topic** so a stranger knows in one second what the video is about, layout; `verpackung.md` rule 1), the main question, the
 search word. The intro's cold open shows exactly this promise in its first seconds.
 
 ### 3. Script — the whole video, then self-check
@@ -240,7 +240,8 @@ bash scripts/make-thumbnail.sh <s> "<TEXT mit <em>Wort</em>>" <links|rechts|oben
 ```
 
 → copy `renders/thumb-{a,b,c}.png` to `youtube/<slug>/`, phone test at
-246×138. Write `youtube/<slug>/upload.txt` (`references/verpackung.md`:
+246×138 and the **one-second test** (cover the title: „Das Video handelt
+von \_\_\_“ must be the topic — `verpackung.md` rule 1). Write `youtube/<slug>/upload.txt` (`references/verpackung.md`:
 title, description with the chapter marks from `kapitelmarken.txt`, tags,
 pinned comment, settings).
 
@@ -301,5 +302,6 @@ facets, shader colours). In addition:
   chat idles; the Monitor on `queue.log` keeps it alive. If a chapter
   failed twice (`FAIL … gave up`), read its `renders/render.log` tail, fix,
   start the queue again.
-- **Thumbnail text** is uppercase 176 px at 1920 → ~117 px at 1280: more
-  than 3 words or long words won't fit — shorten, never shrink.
+- **Thumbnail text** starts at 176 px uppercase and shrinks to fit (down to
+  96 px, max 3 lines): 2–5 words that name the topic fit; more don't —
+  shorten the words, keep the topic name.

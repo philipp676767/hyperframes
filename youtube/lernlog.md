@@ -7,6 +7,7 @@ Regel in den Skill. Für Zuschauer-Wissen aus der TikTok-Serie: `tiktok/lernlog.
 
 ## Nächstes Mal (offen) — gilt für jedes Video
 
+- [ ] **Thumbnail-Text sagt, worum es geht** (Nutzer, 2026-11-15, nach #1: „NOCH 30 SEK.“, „WAS IST 1202?“, „111 METER“ sagen ohne Video nichts): 2–5 Wörter mit dem bekannten Namen / Ereignis + der Behauptung („MONDLANDUNG FAST GESCHEITERT“), Bild = das bekannte Motiv; Ein-Sekunden-Test „Das Video handelt von …“ (`references/verpackung.md` Regel 1).
 - [ ] **Wie ein YouTube-Video sprechen, nicht wie ein langes TikTok** (Nutzer, 2026-11-15, nach #1 Apollo 11): ruhiger Doku-Erzähler, fließende Sätze (Ø 12–18 Wörter) in Absätzen, wenige Fragen, Überleitungen, 2,5 Wörter/s, 0–2 Regieanweisungen pro Kapitel. Intro = Cold Open + warum es wichtig ist + konkreter Fahrplan + „Aber mal von vorne.“ + Titelkarte. Keine Zoom-Punches, kein Whoosh bei jedem Schnitt, kein Titel auf Bild 0 (`references/sprechstil.md`, `aufbau.md`).
 - [ ] Intro: das Versprechen aus Titel + Thumbnail in den ersten Sekunden als Szene zeigen (Cold Open), dann Fahrplan. Keine Begrüßung, kein Logo, kein „Abonniert“. Ziel: ≥ 70 % nach 30 s.
 - [ ] Jedes Kapitel als Erzählabschnitt: Kontext → Ereignis → Wissenschaft (eine Analogie) → Bedeutung → Überleitung. Hauptfrage offen bis zum Finale.
