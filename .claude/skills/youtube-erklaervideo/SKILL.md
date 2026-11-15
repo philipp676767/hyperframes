@@ -30,7 +30,7 @@ prompt contains the word **„YouTube“** („neues YouTube-Video“, „YouTub
 | Words      | **1.500–1.750** in total; intro 90–130, chapters 150–300 each, finale 120–180                                                                                                                                                                                                                                                                                                                                                               |
 | Structure  | Intro 35–55 s (**cold open** in the most tense moment → why it matters → **road map** of the video → „Aber mal von vorne.“ + title card) → **6–9 chapters à 60–120 s** as story segments (context → event → the science → meaning → bridge) → re-hook at ~50–60 % → finale: answer + what it means today + CTA → 20-s end screen (`references/aufbau.md`)                                                                                   |
 | Language   | **YouTube narrator, not a long TikTok** (user, 2026-11-15, after YouTube #1): flowing sentences of 12–18 words in paragraphs, few questions, signposting, historic present for stories, analogies played out, dry humour — `references/sprechstil.md`. The TikTok `script-formel.md` sentence rules do **not** apply. Kept: Du-Form when the viewer is addressed, one idea at a time, ≤ 2 terms per chapter, no filler words, facts checked |
-| CTA        | Only at the end (finale's last line): comment question + „Schreib's in die Kommentare.“ + pointer to the next video + **„Folge für mehr Wissen.“** (quick). No intro, no greeting, no logo, no "Abonniert" at the start; no other word starting with "folg"                                                                                                                                                                                 |
+| CTA        | **In the middle, not at the end** (user, 2026-11-15: few viewers are left at the end): one „**abonniere** den Kanal …“ at ~35–55 % right after a payoff (red „Abonnieren“ pill → „Abonniert“), one comment question + „Schreib's in die Kommentare.“ at ~50–70 %; the finale only points to the next video (end screen). Never „Folge für mehr Wissen“ (TikTok wording). No greeting, no logo, no subscribe ask in the intro                |
 | Look       | TikTok look (`bau-erklaervideo/references/visual-style.md`): realistic diorama, `real.*` materials, rounded edges, depth of field, a new world per topic, name tags, sound effects, **no music**. 16:9 layout + camera: `references/bild-16-9.md`                                                                                                                                                                                           |
 | Captions   | **2–4 words per line, bottom centre**, keywords `*Wort*` yellow but quiet (no pop, no camera punch, no punch sound; ≈ one every 20–30 s). No TikTok title on frame 0 — a calm title card after the intro                                                                                                                                                                                                                                    |
 | Packaging  | Title ≤ 60 chars (search word first), **3 thumbnails** 1280×720 (Test & Compare), description with **chapter marks**, tags, settings, a pinned comment — fixed **before** the script (`references/verpackung.md`)                                                                                                                                                                                                                           |
@@ -290,9 +290,11 @@ facets, shader colours). In addition:
   changed.
 - **Voice reads slowly in pieces** (TikTok #36): `prepare-voice.sh` stops
   above x1.32 — regenerate in one piece, or `BASE=1.32` and say so.
-- **Same "Folge" rule as TikTok:** the subscribe pill keys on the first
-  "folg…" word of the finale's last line; `sync-html.mjs` warns about any
-  other. Write „Konsequenz“, „danach“, „Schritt“ instead of „Folge“.
+- **CTA keys on words:** the subscribe pill pops on the first word
+  starting with „abonnier“, the comment pill with the sentence before
+  „… Kommentare“ — in whichever chapter they are spoken. `sync-html.mjs`
+  warns when „abonniere“ is in the intro or the finale, more than once, or
+  when „Folge für mehr Wissen“ (TikTok) slips in.
 - **Answer word per chapter:** `antwort` in `kapitel.js` must be spoken
   after 3 s and not earlier in that chapter in another sense.
 - **The end screen:** the finale is `ende: true`; its length is the CTA line

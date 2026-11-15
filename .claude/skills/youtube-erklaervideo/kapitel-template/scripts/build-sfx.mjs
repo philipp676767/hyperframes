@@ -3,8 +3,8 @@
 // Automatic cues (long form, calm): whoosh only on shots marked `whoosh: true`
 // / whip pans, a whoosh on the title card (chapter 0) and on each chapter
 // cut, blip per label, ding when the chapter's question is
-// answered, wow on the bonus fact ("Übrigens"), CTA pops + click + ding (end
-// chapter). Plus beats.js SFX.
+// answered, wow on the bonus fact ("Übrigens"), CTA pops + click + ding (wherever
+// „abonniere“ / „Kommentare“ is spoken — the middle of the video). Plus beats.js SFX.
 // Writes assets/sfx-cues.json (what landed where) for checking.
 // Run after align-words.py (real timings), before sync-html.mjs.
 //   node scripts/build-sfx.mjs            SFX_DB=-2 shifts every level
@@ -94,9 +94,9 @@ void HL;
 for (const l of LABELS) add("blip", l.at + 0.05, `label ${l.text}`);
 add("ding", answerTime(), "question answered");
 const cta = ctaTimes();
-if (cta) {
-  add("pop", cta.cmt, "comment pill");
-  add("pop", cta.follow, "subscribe pill");
+if (cta?.cmt != null) add("pop", cta.cmt, "comment pill");
+if (cta?.sub != null) {
+  add("pop", cta.sub, "subscribe pill");
   add("click", cta.tap + 0.08, "subscribe tap");
   add("ding", cta.flip, "abonniert", { db: -16 });
 }

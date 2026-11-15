@@ -97,7 +97,7 @@ the search words.
 …
 11:02 <Finale>
 
-Folge für mehr Wissen.
+Abonniere den Kanal für mehr Geschichten wie diese.
 
 #<thema> #<feld> #wissen
 ```
@@ -107,7 +107,7 @@ Folge für mehr Wissen.
   then YouTube shows them as chapters in the progress bar. Titles **short
   and curious** (2–5 words, from `kapitel.js titel`): „Der erste Riss“,
   „Die Monster-Flut“, „Die Antwort“ — never „Kapitel 3“ or „Einleitung“.
-- „Folge für mehr Wissen.“ — the channel's ask, same wording.
+- „Abonniere den Kanal für mehr Geschichten wie diese.“ — the channel's ask (YouTube wording, never „Folge …“).
 - **3–5 hashtags**: topic first, a field tag, `#wissen` or `#wissenschaft`;
   never `#fyp`, `#viral`; no `#shorts` (this is long form).
 - If there is a matching Short / TikTok: one line „Kurzversion: <Titel>“.

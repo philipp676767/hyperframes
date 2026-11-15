@@ -13,8 +13,6 @@
 #     series runs him at x1.15–1.28), x0.97 slower; outside
 #     that it stops and says why (a piece-wise take that reads very slowly →
 #     regenerate, or set BASE by hand);
-#   - in the end chapter the closing „Folge für mehr Wissen.“ is spoken
-#     at the normal pace (FOLLOW_FAST 1.0; TikTok rushes it x1.3);
 #   - a short LEAD of silence (default 0.25 s) before the first word, so a
 #     chapter cut never clips a breath;
 #   - loudness -14 LUFS (the joined video is normalised again at the end).
@@ -29,10 +27,6 @@ TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
 python3 -I scripts/tighten-pauses.py "$MAIN" "$TMP/main.wav" "$PAUSE"
-if tail -n 1 script.txt | grep -qi "folge für mehr wissen"; then
-  python3 -I scripts/fast-tail.py "$TMP/main.wav" "$TMP/fast.wav" "${FOLLOW_FAST:-1.0}" >&2
-  mv "$TMP/fast.wav" "$TMP/main.wav"
-fi
 D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$TMP/main.wav")
 N=$(node -e '
   const fs = require("fs");

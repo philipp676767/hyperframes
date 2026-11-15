@@ -40,10 +40,13 @@ what is different in landscape and in long form.
 - **Question** (`kapitel.js frage`, optional, mostly empty in long form): top centre, ~6.5 s after the tag, back
   for a moment with a ding when its `antwort` word is spoken.
 - **WUSSTEST DU?** badge top centre on „Übrigens“.
-- **CTA pills** (end chapter): white „Kommentieren“ top left when the CTA
-  line starts, red „Abonnieren“ top right on „Folge“ → tapped → „Abonniert“;
-  both leave after the line. Then ~11–15 s of calm, moving picture with
-  nothing written in y 260–760 (end-screen elements go there).
+- **CTA pills** (mid-video, wherever they are spoken): white „Kommentieren“
+  top left with the question before „Schreib's in die Kommentare.“; red
+  „Abonnieren“ top right on „abonniere“ → tapped → „Abonniert“; each leaves
+  after its sentence.
+- **End screen** (finale): from its last line (the next-video pointer) on,
+  ~20 s of calm, moving picture with nothing written in y 260–760
+  (end-screen elements go there).
 - **Labels:** the tag sits beside the part (±280 px), never below y 800 or
   above y 170. **HUD panels** in the left or right third (`hud.js` header).
   **LED panel** upper right.

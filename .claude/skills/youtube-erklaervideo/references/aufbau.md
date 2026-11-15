@@ -75,6 +75,30 @@ what it means → bridge into the next chapter.
 - **The viewer's world** a few times per video, not every 30 s: „Dein
   Handy rechnet heute zwei Millionen Mal schneller.“
 
+## CTA — in the middle, never only at the very end (user, 2026-11-15)
+
+Few viewers are still there in the last minute (the TikTok data showed
+the same: ~20 % before the end CTA, 5 % after it), so the asks go where
+most viewers still watch, **right after a payoff** — when the viewer has
+just got something and the next thread is already open:
+
+- **Subscribe ask — once, at ~35–55 %**, at the end of a chapter after its
+  mini-resolution, in one or two natural sentences in the narrator's
+  voice, keeping the open thread alive: „Bevor wir zum Mond fliegen: Wenn
+  dir solche Geschichten gefallen, abonniere den Kanal — die zwölf Minuten
+  über dem Mond kommen gleich.“ The word is **„abonniere“** (YouTube's
+  button says „Abonnieren“) — never TikTok's „Folge für mehr Wissen“. The
+  red „Abonnieren“ pill pops on „abonniere“ and flips to „Abonniert“.
+- **Comment question — once, at ~50–70 %**, right after the most
+  debatable moment (a decision, a „what would you do“): „Hättest du an
+  Bales' Stelle abgebrochen? Schreib's in die Kommentare.“ — the question
+  directly before „Schreib's in die Kommentare.“ (the „Kommentieren“ pill
+  pops with the question). An opinion or the viewer's own experience,
+  answerable in a few words.
+- Never in the intro (no „Abonniert“ before the viewer got anything),
+  never more than once each, never both in the same sentence.
+- The finale only points to the next video (end screen).
+
 ## Finale
 
 1. **The answer to the main question** — the moment resolved, clearly and
@@ -83,11 +107,9 @@ what it means → bridge into the next chapter.
    line to the viewer's life; the „Übrigens“ bonus fact fits here as one
    surprising last fact, said naturally („Übrigens: Die Fußabdrücke sind
    heute noch da.“) — keep the badge or drop it, but not as a TikTok punch.
-3. **The last line (CTA):** a real question to the viewers about the topic
-   (an opinion or their experience, like Terra X: „Könntet ihr euch
-   vorstellen, …?“) + „Schreib's in die Kommentare.“ + the pointer to the
-   next video on the end screen („Wie …, siehst du in diesem Video.“) +
-   „Folge für mehr Wissen.“ (spoken calmly, not rushed — `FOLLOW_FAST=1`).
+3. **The last line = the pointer to the next video** on the end screen
+   („Wie Apollo 13 trotzdem heimkam, siehst du in diesem Video.“). No
+   subscribe ask and no comment question here — they came in the middle.
 4. **20-s end screen:** calm, moving picture without text in the middle.
 
 ## Picture rhythm (with `bild-16-9.md`)
@@ -116,7 +138,8 @@ what it means → bridge into the next chapter.
 - [ ] Sounds like a documentary narrator read aloud (`sprechstil.md` self-check): flowing sentences, paragraphs, few questions, signposting
 - [ ] Every chapter: context → event → science (one analogy) → meaning → bridge; threads always open, main question open until the finale
 - [ ] Re-hook at ~50–60 % announced with weight
-- [ ] Finale: answer → what it means today (+ Übrigens) → question to the viewers + „Schreib's in die Kommentare.“ + next-video pointer + „Folge für mehr Wissen.“; no other "folg…" word
+- [ ] CTA in the middle: one „abonniere …“ at ~35–55 % after a payoff, one comment question + „Schreib's in die Kommentare.“ at ~50–70 %; none in the intro; no „Folge für mehr Wissen“
+- [ ] Finale: answer → what it means today (+ Übrigens) → pointer to the next video (end screen)
 - [ ] Facts: ≥ 15 checked facts in `plan.md` with a source; uncertain things phrased safely; quotes marked as quotes
 - [ ] ≤ 2 terms per chapter, each explained in the sentence; numbers with a scale
 - [ ] 0–2 delivery tags per chapter

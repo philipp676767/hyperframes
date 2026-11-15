@@ -3,7 +3,7 @@
 The reference for `sprechstil.md` and `aufbau.md`: the whole script of a
 10–12-min video, written after the user's feedback on YouTube #1 („wirkt
 wie ein langes TikTok“). Read it before writing a new script — for the
-voice, the intro, the chapter shape and the finale. Do not copy sentences
+voice, the intro, the chapter shape, the CTA in the middle and the finale. Do not copy sentences
 into other topics. Facts checked against NASA sources (2026-11-15); the
 remaining fuel at touchdown is phrased as the crew saw it, because later
 analyses found a little more.
@@ -47,13 +47,14 @@ Der eigentliche Kniff steckt aber in ihrem Aufbau. Die Rakete besteht aus drei S
 Was die wenigsten der Zuschauer an den Fernsehern wissen: Gesteuert wird der Flug nicht von den Astronauten allein, sondern von einem Computer, der für seine Zeit ein kleines Wunder ist.
 ```
 
-### 03 — Ein Computer aus Draht
+### 03 — Ein Computer aus Draht (ends with the subscribe ask, ~42 %)
 
 ```text
 Computer sind in den Sechzigern so groß wie ganze Räume. Für Apollo aber muss einer in ein Raumschiff passen, kaum größer als ein Aktenkoffer, und er muss zuverlässiger sein als alles, was es bis dahin gab. Gebaut wird er am MIT in Boston, und die Software dafür entwickelt ein Team unter der Leitung einer jungen Programmiererin namens Margaret Hamilton.
 Der Apollo Guidance Computer hat einen Arbeitsspeicher von rund 4 Kilobyte. Dein Handy hat heute ungefähr eine Million Mal so viel. Sein Programm steckt nicht auf einer Festplatte, sondern in sogenanntem Seilspeicher: Kupferdrähte, die von Hand durch winzige Magnetringe gefädelt werden. Führt ein Draht durch einen Ring, ist das eine Eins, führt er daran vorbei, eine Null.
 Gewebt wird das monatelang von Frauen, die vorher oft in Textilfabriken gearbeitet haben, und jeder falsch gefädelte Draht wäre ein Fehler, der sich nie mehr löschen lässt.
 Hamiltons Team denkt deshalb an etwas, das damals kaum jemand für nötig hält: Was passiert, wenn der Computer mehr Arbeit bekommt, als er schaffen kann? Ihre Antwort ist eine feste Rangordnung. Wird es zu viel, wirft er alles Unwichtige weg und macht nur noch, was das Leben der Crew sichert. Genau diese Entscheidung wird vier Tage nach dem Start alles retten.
+Bevor wir zum Mond fliegen, eine kurze Bitte: Wenn dir solche Geschichten gefallen, abonniere den Kanal, denn die zwölf Minuten über dem Mond kommen gleich.
 ```
 
 ### 04 — Drei Tage durch die Leere
@@ -65,13 +66,14 @@ Den Mond trifft man dabei nicht, indem man auf ihn zielt. Die Crew fliegt dorthi
 Am 20. Juli steigen Armstrong und Aldrin in die Eagle um. Die Wände der Fähre sind an manchen Stellen dünner als ein Fingernagel, denn jedes Kilo zählt. Dann trennen sich die beiden Raumschiffe, und Eagle beginnt den Abstieg zur Oberfläche.
 ```
 
-### 05 — Zwölf-null-zwei (Re-Hook, ~55 %)
+### 05 — Zwölf-null-zwei (re-hook ~55 %, comment question ~62 %)
 
 ```text
 [serious] Jetzt kommen wir zu den zwölf Minuten, in denen die Mission fast gescheitert wäre. Eagle ist noch rund zehn Kilometer über dem Mond, als der Warnton aus dem Intro losgeht. Armstrong fragt nach Houston, was der Alarm Zwölf-null-zwei bedeutet, denn im Training ist er nie aufgetaucht.
 Im Kontrollzentrum sitzt Steve Bales, 26 Jahre alt, verantwortlich für die Navigation. Er hat Sekunden, um zu entscheiden, ob die Landung abgebrochen wird. In einem Raum dahinter blättert ein noch jüngerer Ingenieur, Jack Garman, durch seine handgeschriebene Liste aller Alarmcodes und findet die Zeile, die er braucht.
 Was passiert ist: Ein Radar, das nur für den Rückflug gedacht war, ist eingeschaltet geblieben und stiehlt dem Computer ständig Rechenzeit. Der Computer ist überlastet, startet in Sekundenbruchteilen neu und tut genau das, wofür Hamiltons Team ihn gebaut hat: Er wirft alles Unwichtige weg und rechnet nur noch die Landung.
-Garmans Urteil ist knapp. Solange der Alarm nicht ununterbrochen kommt, darf Eagle weiterfliegen. Bales gibt das Go, und in den nächsten Minuten kommen noch weitere Alarme, jedes Mal mit derselben Antwort. Doch kaum ist das Problem mit dem Computer gelöst, sieht Armstrong aus dem Fenster etwas, das deutlich gefährlicher ist.
+Garmans Urteil ist knapp. Solange der Alarm nicht ununterbrochen kommt, darf Eagle weiterfliegen. Bales gibt das Go, und in den nächsten Minuten kommen noch weitere Alarme, jedes Mal mit derselben Antwort.
+Hättest du an Bales' Stelle abgebrochen oder weitergemacht? Schreib's in die Kommentare. Denn kaum ist das Problem mit dem Computer gelöst, sieht Armstrong aus dem Fenster etwas, das deutlich gefährlicher ist.
 ```
 
 ### 06 — Die letzten Sekunden
@@ -107,19 +109,19 @@ Am 24. Juli tritt die Kapsel mit fast 40.000 Kilometern pro Stunde in die Atmosp
 Wie also konnte die Landung gelingen, obwohl so viel schiefging? Nicht, weil alles perfekt lief, sondern weil hunderttausende Menschen vorher an genau diese Fehler gedacht hatten: an einen überlasteten Computer, an einen Piloten, der im letzten Moment selbst steuern muss, und an Ansagen, die jede Sekunde Treibstoff mitzählen.
 Vieles davon steckt heute in deinem Alltag: Die Idee, dass ein Programm bei Überlastung das Wichtigste zuerst erledigt, findest du in jedem Handy.
 Übrigens: Die Spiegel, die Armstrong und Aldrin aufgestellt haben, werden bis heute mit Lasern von der Erde angepeilt. So wissen wir, dass sich der Mond jedes Jahr um knapp vier Zentimeter von uns entfernt.
-Würdest du heute einen Platz in einer Mondfähre annehmen, wenn er dir angeboten würde? Schreib's in die Kommentare. Wie Apollo 13 nach einer Explosion im All trotzdem heimkam, siehst du in diesem Video. Folge für mehr Wissen.
+Und wie Apollo 13 nach einer Explosion mitten im All trotzdem heimkam, siehst du in diesem Video.
 ```
 
 ## What the self-check caught in the first draft (now fixed above)
 
-| Where | Problem                                                                         | Fix                                                               |
-| ----- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| 01    | „in den folgenden Jahren“ — a "folg…" word (the subscribe pill keys on „Folge“) | „in den Jahren danach“                                            |
-| 08    | „heißer als die Oberfläche der Sonne“ — wrong (shield ~2.700 °C, Sun ~5.500 °C) | „rund 2.700 Grad, etwa halb so heiß wie die Oberfläche der Sonne“ |
-| 04    | „ein halbes Jahr mit dem Auto“ — 384.000 km at 120 km/h ≈ 4½ months             | „mehr als vier Monate“                                            |
-| 04    | quarterback — a US picture                                                      | the football pass into the run                                    |
-| 02    | „eigentlich“ — filler                                                           | cut                                                               |
+| Where | Problem                                                                              | Fix                                                               |
+| ----- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| 01    | „in den folgenden Jahren“ — fine now, but a "folg…" word was the TikTok pill trigger | „in den Jahren danach“                                            |
+| 08    | „heißer als die Oberfläche der Sonne“ — wrong (shield ~2.700 °C, Sun ~5.500 °C)      | „rund 2.700 Grad, etwa halb so heiß wie die Oberfläche der Sonne“ |
+| 04    | „ein halbes Jahr mit dem Auto“ — 384.000 km at 120 km/h ≈ 4½ months                  | „mehr als vier Monate“                                            |
+| 04    | quarterback — a US picture                                                           | the football pass into the run                                    |
+| 02    | „eigentlich“ — filler                                                                | cut                                                               |
 
 ## Numbers
 
-1.726 words · intro 129 (52 s) · chapters 135–204 · finale 142 → at 2.5 words/s ≈ 11:30 + the 20-s end screen. Sentences average 14–20 words. Questions: 0–2 per chapter. Delivery tags: 2 in the whole video. Keywords: 1 (more are fine, quietly).
+1746 words → at 2.5 words/s ≈ 11:38 + the 20-s end screen. Sentences average 14–20 words. Questions: 0–2 per chapter. Delivery tags: 2 in the whole video. Subscribe ask at ~42 % (end of chapter 3), comment question at ~62 % (chapter 5), the finale only points to the next video.

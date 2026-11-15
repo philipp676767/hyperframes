@@ -85,7 +85,7 @@ the same kind of topics (2026-11-15):
 
 ## Banned TikTok-isms in long form (`sync-html.mjs` warns)
 
-„Rate mal“, „Zack“, „Krass“, „Der Trick:“ / „Hier kommt der Trick“, „Stell
+„Folge für mehr Wissen“ (say „abonniere“), „Rate mal“, „Zack“, „Krass“, „Der Trick:“ / „Hier kommt der Trick“, „Stell
 dir vor“ more than once per video, chains of 1–4-word sentences, a question
 as the last sentence of most paragraphs, `[excited]` on line 1 of every
 chapter, keywords in every second sentence.

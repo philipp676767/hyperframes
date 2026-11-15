@@ -15,7 +15,6 @@ const {
   DURATION: dur,
   KAPITEL: K,
   LAST,
-  CTA,
 } = await import(new URL("assets/timing.js", root));
 const warn = (m) => console.warn(`WARNING: ${m}`);
 const real = fs.existsSync(new URL("assets/voiceover.mp3", root));
@@ -37,21 +36,31 @@ if (K.nr === 0) {
   if (!K.titelBei || !words.some((w) => nrmT(w.w) === nrmT(K.titelBei)))
     warn("intro: kapitel.js `titelBei` is no spoken word — the title card would not appear.");
 } else if (K.ende) {
-  if (CTA == null) warn("end chapter: the last line has no „Folge für mehr Wissen.“");
+  if (!/video/i.test(plain(scriptLines[scriptLines.length - 1] ?? "")))
+    warn(
+      "end chapter: the last line should point to the next video (it opens the 20-s end screen).",
+    );
 } else if (real && (LAST < 55 || LAST > 125)) {
   warn(`chapter speaks ${LAST.toFixed(1)} s — aim for 60–120 s (≈ 150–300 words).`);
 }
 console.log(`chapter ${K.nr} „${K.titel}“: ${n} words, speech ${LAST.toFixed(1)} s`);
 
 // ---------------------------------------------------------------- rules
-// „Folge für mehr Wissen.“ only in the last line of the end chapter; no
-// other "folg…" word anywhere (the subscribe pill keys on it)
-const ctaStart = ctx.window.HF_CTA_START ?? n;
-const early = words.slice(0, ctaStart).find((w) => /^folg/i.test(w.w));
-if (early)
+// CTA (2026-11-15): „abonniere“, never TikTok's „Folge für mehr Wissen“;
+// subscribe ask + comment question in the MIDDLE of the video (~35–60 %,
+// right after a payoff), never in the intro, never only at the very end
+if (/folge für mehr wissen|folg (mir|uns)/.test(spoken))
+  warn("„Folge …“ is the TikTok wording — on YouTube say „abonniere den Kanal“.");
+const subs = words.filter((w) => /^abonnier/i.test(w.w)).length;
+if (subs && K.nr === 0)
   warn(
-    `„${early.w}“ at ${early.start.toFixed(1)} s — no "folg…" word outside the end chapter's last line (write „Konsequenz“, „danach“ …).`,
+    "subscribe ask in the intro — it belongs in the middle of the video, after a payoff (~35–60 %).",
   );
+if (subs && K.ende)
+  warn(
+    "subscribe ask in the finale — few viewers are left there; move it to a chapter at ~35–60 %.",
+  );
+if (subs > 1) warn(`${subs}× „abonnier…“ in one chapter — ask once per video.`);
 // no greeting / channel intro / subscribe ask, and none of the TikTok-isms
 // that made YouTube #1 sound like a long TikTok (references/sprechstil.md)
 const banned = [
@@ -61,7 +70,6 @@ const banned = [
   "willkommen",
   "herzlich",
   "bleib dran",
-  "abonnier",
   "jetzt der trick",
   "hier kommt der trick",
   "der trick",

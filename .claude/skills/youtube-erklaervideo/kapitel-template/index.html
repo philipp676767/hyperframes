@@ -172,7 +172,8 @@
         line-height: 56px;
         text-align: center;
       }
-      /* CTA pills (end chapter): comment top left, subscribe top right */
+      /* CTA pills (where „Kommentare“ / „abonniere“ is spoken, mid-video):
+         comment top left, subscribe top right */
       #cmt,
       #cta {
         position: absolute;
@@ -371,13 +372,24 @@
         }
 
         // ------------------------------------------------ CTA + fact moments
-        const ci = window.HF_CTA_START;
-        const ctaWords = ci != null ? words.slice(ci) : [];
-        const ctaT = ctaWords.length ? ctaWords[0].start : null;
+        // end chapter: its last line (pointer to the next video) opens the end screen
+        const ci = K.ende ? window.HF_CTA_START : null;
+        const ctaT = ci != null ? words[ci].start : null;
         let factT = null;
         words.forEach((w, i) => {
           if (/^übrigens$/i.test(w.w) && (ci == null || i < ci)) factT = w.start;
         });
+        // CTA pills (mirrors timing.js ctaTimes): wherever „abonniere“ /
+        // „Kommentare“ is spoken — in the middle of the video (2026-11-15)
+        const sentenceOf = (i) => {
+          let a = i;
+          while (a > 0 && words[a - 1].br !== 2) a--;
+          let b = i;
+          while (b < words.length - 1 && words[b].br !== 2) b++;
+          return [words[a].start, words[b].end];
+        };
+        const subI = words.findIndex((w) => /^abonnier/i.test(w.w));
+        const cmtI = words.findIndex((w) => /^kommentar/i.test(w.w));
         const nrm = (s) => s.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
         const ansW = K.antwort
           ? words.find((w) => w.start >= 3 && nrm(w.w) === nrm(K.antwort))
@@ -414,7 +426,7 @@
 
         // ------------------------------------------------ bonus fact badge
         if (factT != null) {
-          const f1 = ctaT ?? factT + 5;
+          const f1 = ctaT ?? factT + 6;
           tl.fromTo(
             "#fact-badge",
             { opacity: 0, scale: 0.4, rotation: -8 },
@@ -428,26 +440,33 @@
           );
         }
 
-        // ------------------------------------------------ CTA (end chapter)
-        // comment pill when the line starts, subscribe pill on "Folge",
-        // tapped 0.7 s later → "Abonniert"; both leave after the line so the
-        // end screen (last 20 s) has a quiet picture without text
-        if (ctaWords.length) {
-          const fw = ctaWords.find((w) => /^folg/i.test(w.w));
-          const t0 = fw ? fw.start : ctaT + 1.2;
-          const tap = t0 + 0.7;
-          const out = Math.max(tap + 1.4, ctaWords[ctaWords.length - 1].end + 0.4);
+        // ------------------------------------------------ CTA pills
+        if (cmtI >= 0) {
+          // pops with the question right before „Schreib's in die Kommentare.“
+          const [a0, e] = sentenceOf(cmtI);
+          const k = words.findIndex((w) => w.start >= a0);
+          const a = k > 0 ? sentenceOf(k - 1)[0] : a0;
           tl.fromTo(
             "#cmt-btn",
             { opacity: 0, scale: 0.4, y: -30 },
             { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
-            ctaT,
+            a,
           );
           tl.to(
             "#cmt-btn",
             { scale: 1.06, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 3 },
-            ctaT + 0.6,
+            a + 0.6,
           );
+          tl.to(
+            "#cmt-btn",
+            { opacity: 0, scale: 0.85, duration: 0.25, ease: "power2.in" },
+            Math.max(a + 2.5, e + 1.2),
+          );
+        }
+        if (subI >= 0) {
+          const t0 = words[subI].start;
+          const [, e] = sentenceOf(subI);
+          const tap = t0 + 0.7;
           tl.fromTo(
             "#cta-btn",
             { opacity: 0, scale: 0.4, y: -30 },
@@ -460,9 +479,9 @@
           tl.set("#cta-label-done", { display: "inline" }, tap + 0.12);
           tl.to("#cta-btn", { scale: 1, duration: 0.3, ease: "back.out(3)" }, tap + 0.12);
           tl.to(
-            ["#cmt-btn", "#cta-btn"],
+            "#cta-btn",
             { opacity: 0, scale: 0.85, duration: 0.25, ease: "power2.in" },
-            out,
+            Math.max(tap + 1.6, e + 0.6),
           );
         }
         tl.set({}, {}, 20);

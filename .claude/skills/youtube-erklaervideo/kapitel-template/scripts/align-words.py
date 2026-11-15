@@ -76,8 +76,8 @@ for tk, (st, en) in zip(toks, times):
     w = dict(tk)
     w["start"], w["end"] = round(st, 3), round(en, 3)
     words.append({k: w[k] for k in ("w", "start", "end", "hl", "br") if k in w})
-# the CTA line exists only in the end chapter (last line with „Folge für mehr Wissen.“)
-cta_len = len(tokenize(lines[-1])) if re.search("folge für mehr wissen", lines[-1], re.I) else 0
+# HF_CTA_START = first word of the last line (the end chapter's end-screen line)
+cta_len = len(tokenize(lines[-1]))
 (root / "assets" / "words.js").write_text(
     "window.HF_WORDS = " + json.dumps(words, ensure_ascii=False) + ";\n"
     + f"window.HF_CTA_START = {len(words) - cta_len if cta_len else 'null'};\n"

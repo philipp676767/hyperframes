@@ -24,15 +24,16 @@ export function tokenize(script) {
   });
   return out;
 }
-// The CTA line exists only in the end chapter: the last line, containing
-// „Folge für mehr Wissen.“. The hook = the first line (chapter 0).
+// HF_CTA_START = the first word of the last line (used by the end chapter:
+// its last line points to the next video and opens the 20-s end screen).
+// HF_HOOK_LEN = the words of the first line.
 export function meta(script, words) {
   const lines = script
     .trim()
     .split("\n")
     .filter((l) => l.trim());
   const last = lines[lines.length - 1];
-  const ctaLen = /folge für mehr wissen/i.test(last) ? tokenize(last).length : 0;
+  const ctaLen = tokenize(last).length;
   return (
     "window.HF_WORDS = " +
     JSON.stringify(words) +
