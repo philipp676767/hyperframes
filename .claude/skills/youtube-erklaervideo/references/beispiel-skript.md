@@ -23,7 +23,7 @@ analyses found a little more.
 ### 00 — Intro (`hookTitel`: „Apollo 11: <em>Fast gescheitert</em>“, `titelBei`: „vorne“)
 
 ```text
-Es ist der 20. Juli 1969, und die Mondfähre Eagle sinkt dem Mond entgegen, als mitten im Landeanflug ein Warnton losgeht. Auf dem kleinen Display erscheint eine Zahl, die keiner der beiden je gesehen hat: Zwölf-null-zwei.
+Es ist der 20. Juli 1969, und die Mondfähre Eagle sinkt dem Mond entgegen, als mitten im Landeanflug ein Warnton losgeht. Auf dem kleinen Display erscheint eine Zahl, die weder Neil Armstrong noch Buzz Aldrin je gesehen haben: Zwölf-null-zwei.
 In Houston verfolgen hunderte Ingenieure jede Sekunde dieses Anflugs, und in diesem Moment weiß niemand von ihnen, ob die erste *Mondlandung* abgebrochen werden muss. Dabei hängt alles an einem Computer, der weniger Arbeitsspeicher hat als ein einziges Foto auf deinem Handy.
 Dass Eagle trotzdem landet, ist kein Glück, sondern das Ergebnis von acht Jahren, in denen fast alles schiefgehen konnte. Genau diese acht Jahre schauen wir uns heute an: von der größten Rakete, die je gebaut wurde, über einen Computer aus gewebtem Kupferdraht bis zu den letzten Sekunden Treibstoff.
 Aber mal von vorne.
