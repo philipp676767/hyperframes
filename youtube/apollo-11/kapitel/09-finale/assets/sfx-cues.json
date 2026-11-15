@@ -12,48 +12,141 @@
     "db": -13
   },
   {
+    "s": "whoosh",
+    "at": 3.74,
+    "why": "highlight zoom"
+  },
+  {
     "s": "punch",
-    "at": 1.35,
+    "at": 4.24,
+    "why": "highlight"
+  },
+  {
+    "s": "ding",
+    "at": 4.24,
+    "why": "question answered"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.24,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 5.86,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 7.24,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.22,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.32,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.32,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.3,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 21.88,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 25.14,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 1.77,
+    "at": 27.02,
     "why": "cut"
   },
   {
     "s": "wow",
-    "at": 1.99,
+    "at": 27.24,
     "why": "bonus fact"
   },
   {
+    "s": "blip",
+    "at": 28.29,
+    "why": "label Spiegel"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.8,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 31.22,
+    "why": "highlight flash"
+  },
+  {
+    "s": "surr",
+    "at": 31.22,
+    "why": "beats.js",
+    "dur": 3,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 32.98,
+    "why": "cut"
+  },
+  {
     "s": "punch",
-    "at": 4.65,
+    "at": 34.82,
     "why": "highlight"
   },
   {
     "s": "whoosh",
-    "at": 5.07,
+    "at": 37.46,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.46,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.44,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 5.29,
+    "at": 38.66,
     "why": "comment pill"
   },
   {
     "s": "pop",
-    "at": 13.76,
+    "at": 45.06,
     "why": "subscribe pill"
   },
   {
     "s": "click",
-    "at": 14.54,
+    "at": 45.84,
     "why": "subscribe tap"
   },
   {
     "s": "ding",
-    "at": 14.58,
+    "at": 45.88,
     "why": "abonniert",
     "db": -16
   }
