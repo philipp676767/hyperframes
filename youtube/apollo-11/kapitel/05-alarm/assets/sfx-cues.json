@@ -6,9 +6,11 @@
     "db": -12
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "triebwerk",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 3.5,
+    "db": -18
   },
   {
     "s": "pop",
@@ -18,119 +20,232 @@
   },
   {
     "s": "whoosh",
-    "at": 1.4,
+    "at": 2.3,
     "why": "cut"
-  },
-  {
-    "s": "whoosh",
-    "at": 1.4,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "punch",
-    "at": 1.62,
-    "why": "highlight"
-  },
-  {
-    "s": "whoosh",
-    "at": 4.46,
-    "why": "cut"
-  },
-  {
-    "s": "blip",
-    "at": 5.7,
-    "why": "label Draht"
-  },
-  {
-    "s": "whoosh",
-    "at": 7.71,
-    "why": "cut"
-  },
-  {
-    "s": "pop",
-    "at": 8.08,
-    "why": "beats.js"
   },
   {
     "s": "hit",
-    "at": 8.23,
-    "why": "highlight shake"
-  },
-  {
-    "s": "punch",
-    "at": 8.94,
-    "why": "highlight"
-  },
-  {
-    "s": "punch",
-    "at": 11.21,
-    "why": "highlight"
-  },
-  {
-    "s": "slowmo",
-    "at": 11.21,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 11.21,
-    "why": "beats.js",
-    "dur": 4.209999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 12.19,
+    "at": 2.52,
     "why": "highlight flash"
   },
   {
+    "s": "alarm1202",
+    "at": 2.52,
+    "why": "beats.js",
+    "db": -9
+  },
+  {
     "s": "whoosh",
-    "at": 13.42,
+    "at": 3.28,
     "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 13.42,
+    "at": 3.88,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 5.56,
+    "why": "cut"
+  },
+  {
+    "s": "quindar",
+    "at": 5.58,
+    "why": "beats.js",
+    "db": -13
+  },
+  {
+    "s": "whoosh",
+    "at": 9.2,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.18,
+    "why": "cut"
+  },
+  {
+    "s": "piep",
+    "at": 12.4,
+    "why": "beats.js",
+    "dur": 2.2,
+    "db": -26
+  },
+  {
+    "s": "blip",
+    "at": 12.45,
+    "why": "label Steve Bales"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.34,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 19.28,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.94,
     "why": "highlight zoom"
   },
   {
     "s": "punch",
-    "at": 13.64,
-    "why": "highlight"
-  },
-  {
-    "s": "blip",
-    "at": 13.69,
-    "why": "label Glühfaden"
-  },
-  {
-    "s": "whoosh",
-    "at": 15.2,
-    "why": "cut"
-  },
-  {
-    "s": "punch",
-    "at": 16.19,
+    "at": 21.16,
     "why": "highlight"
   },
   {
     "s": "ding",
-    "at": 16.19,
+    "at": 21.16,
     "why": "question answered"
   },
   {
     "s": "whoosh",
-    "at": 16.84,
+    "at": 21.88,
     "why": "cut"
   },
   {
-    "s": "wow",
-    "at": 17.06,
-    "why": "bonus fact"
+    "s": "click",
+    "at": 22.3,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "blip",
+    "at": 22.45,
+    "why": "label Radar"
+  },
+  {
+    "s": "whoosh",
+    "at": 25.2,
+    "why": "cut"
+  },
+  {
+    "s": "zisch",
+    "at": 25.72,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
+  },
+  {
+    "s": "pop",
+    "at": 28,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "pop",
+    "at": 28.3,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "hit",
+    "at": 28.6,
+    "why": "highlight shake"
+  },
+  {
+    "s": "pop",
+    "at": 28.6,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 30.2,
+    "why": "cut"
   },
   {
     "s": "punch",
-    "at": 19.72,
+    "at": 31.1,
     "why": "highlight"
+  },
+  {
+    "s": "klack",
+    "at": 32.98,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "hit",
+    "at": 33.08,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.52,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 40.7,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 40.92,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 44.9,
+    "why": "cut"
+  },
+  {
+    "s": "quindar",
+    "at": 45.52,
+    "why": "beats.js",
+    "db": -11
+  },
+  {
+    "s": "punch",
+    "at": 45.78,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 45.78,
+    "why": "highlight flash"
+  },
+  {
+    "s": "alarm1202",
+    "at": 46.54,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 49.98,
+    "why": "cut"
+  },
+  {
+    "s": "triebwerk",
+    "at": 50.2,
+    "why": "beats.js",
+    "dur": 11.799999999999997,
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 53.48,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 57.78,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 58,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 60.42,
+    "why": "cut"
   }
 ]

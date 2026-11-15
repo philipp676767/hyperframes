@@ -1,4 +1,4 @@
-// This chapter's place: the video's main world (youtube/<slug>/welt.js, copied
-// in by new-chapter.sh / sync-kit.sh). For a side scene of its own, replace
-// this import with the side world, built the same way (set kit).
-import "./welt.js";
+// Chapter 5: the Sea of Tranquility from above (main world); Mission
+// Control, the radar switch and the kitchen are built in scene.js.
+import { buildMoon } from "./welt.js";
+export const MOON = buildMoon();
