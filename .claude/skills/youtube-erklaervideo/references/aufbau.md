@@ -1,132 +1,122 @@
-# Aufbau — the long script (10–12 min, retention first)
+# Aufbau — the long script (10–12 min)
 
-The TikTok script formula (`.claude/skills/bau-erklaervideo/references/script-formel.md`)
-still holds sentence by sentence: Du-Form, cheeky friend, no filler words,
-the banned phrases, keywords, delivery tags, "Simple first", humour rules,
-facts checked. This file says what a **10–12-minute YouTube video** adds and
-changes. Research basis (YouTube retention, 2026): YouTube measures how
-many viewers are still there after **30 s** (aim ≥ 70 %), the typical
-drop at **~50–60 %** (the middle sag), and rewards average view duration
-more than clicks.
+How the video is **built**; how it **talks** is `sprechstil.md` (read both
+before writing — the TikTok `script-formel.md` sentence rules do not apply
+here). Research basis (2026): YouTube measures how many viewers are still
+there after **30 s** and rewards average view duration; the openings that
+hold are the ones that **confirm the click** (the viewer sees and hears at
+once what title and thumbnail promised), set the stakes, and then **say
+plainly what the video will do** — successful German explainers
+(Kurzgesagt, Terra X, Simplicissimus) all do that, in a calm narrator's
+voice, without greeting or channel intro. A long-form intro is a short
+scene + a promise, not a 3-second TikTok hook.
 
 ## Length and pace
 
-- **1.700–1.950 words** in total (Jan calmer than on TikTok: **2.7–2.9
-  words/s**, `prepare-voice.sh` brings every chapter to 2.8) → 10–12 min
-  plus the 20-s end screen.
-- **Hook chapter (0:00–0:30): 70–85 words.** Chapters: **170–330 words
-  (60–120 s)**. Finale: payoff + Übrigens + CTA, 80–150 words.
-- One chapter = one composition with its own `script.txt` (one part per
-  line, the last line of a normal chapter = the open question).
+- **1.500–1.750 words** in total at **2.5 words/s** (`prepare-voice.sh`
+  RATE 2.5, pauses 0.3 s) → 10–12 min plus the 20-s end screen.
+- **Intro (chapter 0): 90–130 words, 35–55 s.** Chapters: **150–300 words
+  (60–120 s)**. Finale: 120–180 words.
+- One chapter = one composition with its own `script.txt`: **one paragraph
+  per line** (3–6 sentences).
 
-## Shape
+## The intro (chapter 0) — cold open, promise, title
 
-**„Große Momente“ (the main topic type)** use the same shape as a story:
-the hook opens on the most dramatic second, the chapters go in time
-order and end on cliffhangers, the re-hook is the moment it almost went
-wrong, the finale answers the main question and says what it means for
-the viewer today. Every chapter still explains the science (how the
-machine worked) — rules in `themen.md` §2 „Große Momente“.
+Three parts, 35–55 s together:
 
-| Part                     | When                         | Job                                                                                                                                                                                                                                                     |
-| ------------------------ | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Hook** (chapter 0)     | 0:00–0:30                    | 0–10 s: prove the promise of title + thumbnail with a real example — the spectacle in frame 0. 10–20 s: why it concerns **you** (gain / danger). 20–30 s: in one concrete sentence what comes (no "Gleich erfährst du …"). Opens the **main question**. |
-| **Chapters 1 … n** (6–9) | 60–120 s each                | Mini-hook (a question) → explanation (one core idea) → mini-resolution → **an open question that pulls into the next chapter** (the last line, ends with "?").                                                                                          |
-| **Re-hook**              | ~50–60 % (chapter ≈ n/2 + 1) | The most surprising twist of the whole video, said as a statement about the thing ("Und dann merkst du: Das war erst die harmlose Hälfte."). Opens the biggest loop.                                                                                    |
-| **Finale** (`ende`)      | last 1–2 min                 | The answer to the main question (only now!) → "Übrigens: …" bonus fact → last line: comment question + „Schreib's in die Kommentare.“ + pointer to the next video + „Folge für mehr Wissen.“ → 20-s end screen.                                         |
+1. **Cold open (≈ 0–25 s):** drop the viewer into the most tense / most
+   spectacular moment of the story — a place, a time, people, what happens
+   right now — told in the present tense, with concrete detail. It _is_ the
+   thumbnail come true (confirm the click in the first seconds). It ends on
+   the open tension, not on the answer. (Simplicissimus: the plant, the
+   broken centrifuges, „unmöglich, hier reinzukommen — oder vielleicht doch
+   nicht?“)
+   — or, for „Was passiert, wenn …?“ / „Wie funktioniert …?“: the
+   **question stated plainly** in a calm, witty way (Kurzgesagt: „Heute
+   wollen wir eine uralte, sehr wissenschaftliche und superwichtige Frage
+   klären: …“).
+2. **Why it matters + the promise (≈ 25–45 s):** one or two sentences on
+   why this is bigger than it looks / what it has to do with the viewer,
+   then **say what the video does** — concretely, naming 2–3 stations as
+   curiosities: „Genau diese acht Jahre schauen wir uns heute an: von der
+   größten Rakete, die je gebaut wurde, über einen Computer aus gewebtem
+   Kupferdraht bis zu den letzten Sekunden Treibstoff.“ / „Hier kommen die
+   Gründe, warum …“. This road map is wanted on YouTube (it tells the
+   viewer the video is worth 10 minutes) — it is not a TikTok "promise
+   phrase".
+3. **Title + „Aber mal von vorne.“ (≈ 45–55 s):** a short bridge
+   sentence, then the **title card** (the video title calm and centred for
+   ~3 s, `kapitel.js titelBei` = the word where it appears, a soft sound),
+   and chapter 1 starts with the context.
 
-### Hook — the first 30 seconds decide the video
+Never: „Hallo“, „Willkommen“, „Ich bin …“, channel name, „Abonniert“ /
+„Lass ein Like da“ at the start, a sponsor before the promise, a recap of
+the title word for word. The search word is spoken in the first ~15 s.
 
-- **No intro, no logo, no greeting, no "Abonniert", no "In diesem Video …",
-  no channel name.** Sentence 1 is the claim with the spectacle already
-  happening (`sync-html.mjs` warns: first sentence ≤ 3.5 s).
-- **0–10 s = the thumbnail come true.** Whatever the title and thumbnail
-  promise ("Der Mond kracht in die Erde"), the viewer sees and hears it at
-  once — a concrete example, not a summary. The search word is spoken in
-  the first 10 s.
-- **10–20 s = "dein"**: what the viewer gains or risks (money, safety,
-  health, the everyday thing in their hand) — true, never clickbait.
-- **20–30 s = the road map in ONE concrete sentence** that names the
-  stations as curiosities, not as a table of contents: „Wir gehen von der
-  ersten Sekunde bis zum letzten Menschen auf der Erde – und eine Stelle
-  davon ist schlimmer als der Einschlag.“ Never "Gleich erfährst du …",
-  "Bleib dran", "Am Ende …".
-- Hook lab as on TikTok (six hooks, six formulas, score ≥ 10/12), plus:
-  _does 0–10 s show exactly what the thumbnail shows?_
-- No `[whispers]` in the hook; `[excited]` / `[curious]` / `[surprised]`.
+## Chapters (6–9) — story segments, not 60-s TikToks
 
-### Chapters — the open-loop chain
+Shape of each chapter (`sprechstil.md` „Chapter shape“): bridge / context
+→ what happens → how it works (the science, one analogy played out) →
+what it means → bridge into the next chapter.
 
-- **Every chapter starts with its mini-hook** — a question or a strange
-  fact in the first sentence („Warum wird es nach dem Einschlag erst mal
-  _dunkel_?“). It goes into `kapitel.js` `frage` (on screen, ≤ 7 words) and
-  its answer word into `antwort`.
-- **One core idea per chapter, in one sentence** („Der Trick ist: \_\_\_.“),
-  explained with an everyday comparison, max **2 technical terms** and ~2–3
-  numbers per chapter, each number with a comparison.
-- **Mini-resolution** before the chapter ends — the chapter's own question
-  is answered (ding + nudge on screen).
-- **Last line = the open question** that the next chapter answers — never
-  all questions closed at once. The main question stays open until the
-  finale. Keep a **loop map** in `plan.md`: which question is open from
-  when to when; at every moment at least one loop is open, a new one opens
-  _before_ the last one closes.
-- **Escalation**: every chapter bigger than the one before; the strongest
-  facts go to the re-hook and the finale, the weakest first.
-- **The viewer's life** every ~30–40 s ("dein Handy", "wenn du morgen …").
-- **"Rate mal" moments**: 2–3 per video, answered 3–5 s later with a
-  display + highlight — they drive comments.
-- **No end signal** before the finale: no summary, no "fertig", no
-  "zusammengefasst".
-- **Humour** 1 small moment per 2–3 chapters, as on TikTok.
+- **Open threads instead of question cliffhangers.** The main question of
+  the intro stays open until the finale; every chapter opens at least one
+  new thread before it closes the old one — mostly as a statement („Was in
+  Houston in diesem Moment niemand weiß: Der Computer ist längst
+  überlastet.“), sometimes as a question (≤ 2–3 questions per chapter).
+- **Escalation:** each chapter raises the stakes; the strongest moment
+  goes to the re-hook and the finale.
+- **Re-hook at ~50–60 %:** the moment it almost went wrong / the biggest
+  surprise, announced with weight („Und jetzt kommen wir zu den zwölf
+  Minuten, in denen die Mission fast gescheitert wäre.“).
+- **Chapter titles** (`kapitel.js titel`, also the YouTube chapter marks):
+  short and concrete, like a documentary's — „Die größte Rakete der Welt“,
+  „Ein Computer aus Draht“, „Zwölf-null-zwei“.
+- **The viewer's world** a few times per video, not every 30 s: „Dein
+  Handy rechnet heute zwei Millionen Mal schneller.“
 
-### Picture rhythm (plan it with the script)
+## Finale
 
-- **Every 8–20 s something changes in the picture**: a cut, a camera move,
-  a new object, a slowmo, a display, a label. A shot never stands longer
-  than 20 s; most last 5–12 s.
-- **Every 2–3 min a big money shot** (the spectacle the chapter promised,
-  shown — not told): 4–6 per video, one of them in frame 0, one at the
-  re-hook, one in the finale.
-- Keywords `*Wort*`: about one every 15–20 s (sync-html checks per chapter).
-- Labels: one at a time, 1–3 per chapter.
+1. **The answer to the main question** — the moment resolved, clearly and
+   with calm weight (the `antwort` word).
+2. **Outlook: what it means today** (1 paragraph) — for history topics the
+   line to the viewer's life; the „Übrigens“ bonus fact fits here as one
+   surprising last fact, said naturally („Übrigens: Die Fußabdrücke sind
+   heute noch da.“) — keep the badge or drop it, but not as a TikTok punch.
+3. **The last line (CTA):** a real question to the viewers about the topic
+   (an opinion or their experience, like Terra X: „Könntet ihr euch
+   vorstellen, …?“) + „Schreib's in die Kommentare.“ + the pointer to the
+   next video on the end screen („Wie …, siehst du in diesem Video.“) +
+   „Folge für mehr Wissen.“ (spoken calmly, not rushed — `FOLLOW_FAST=1`).
+4. **20-s end screen:** calm, moving picture without text in the middle.
 
-### Finale
+## Picture rhythm (with `bild-16-9.md`)
 
-- The **answer to the main question** in one clear, punchy sentence with the
-  `antwort` word; then straight to „Übrigens: …“ (the strongest fact you
-  have left, true, 10–15 words).
-- **The last line** (one line in `script.txt`):
-  comment question (new, 1–3-word answer, never a photo request)
-  - „Schreib's in die Kommentare.“ + one sentence pointing to the next
-    video („Wie X funktioniert, siehst du in diesem Video.“ — it plays on the
-    end screen) + **„Folge für mehr Wissen.“** as the very last words (spoken
-    quickly). No other word starting with "folg" anywhere in the video
-    (write „Konsequenz“, „danach“).
-- After the line: **~11–15 s of calm, moving picture without text** (the
-  end chapter is long enough that the CTA line plus this picture = the
-  last 20 s, `timing.js ENDSCREEN`). YouTube's end-screen elements sit in
-  the middle (y 260–760 px): nothing written there.
+- A change in the picture every **8–20 s** (a cut, a camera move, a new
+  object); calmer shots are fine while the narrator explains.
+- A **money shot every 2–3 min**; let it breathe (slow camera, sound),
+  don't cut away after 2 s.
+- **No TikTok editing:** no zoom-punch on keywords, no whoosh on every cut,
+  no big text pops. Keywords stay yellow in the captions, quietly.
 
-## Word count, in one table for `plan.md`
+## Word count for `plan.md`
 
-| Chapter                    | Words           | Speech (2.8 w/s)  |
+| Part                       | Words           | Speech (2.5 w/s)  |
 | -------------------------- | --------------- | ----------------- |
-| Hook                       | 70–85           | 25–30 s           |
-| 7 chapters                 | 7 × 210–240     | 7 × 75–86 s       |
-| Finale (+ 20-s end screen) | 100–140         | 36–50 s + ~12 s   |
-| **Sum**                    | **1.700–1.950** | **≈ 10:15–11:50** |
+| Intro                      | 90–130          | 35–55 s           |
+| 7 chapters                 | 7 × 170–200     | 7 × 68–80 s       |
+| Finale (+ 20-s end screen) | 120–180         | 48–72 s + ~12 s   |
+| **Sum**                    | **1.500–1.750** | **≈ 10:15–11:45** |
 
 ## Self-check before the voice (every chapter + once for the whole)
 
-- [ ] Whole: 1.700–1.950 words; hook ≤ 30 s; 6–9 chapters of 60–120 s; finale with the 20-s end screen
-- [ ] Hook: 0–10 s proves the title/thumbnail promise with a shown example; 10–20 s „dein“ gain / danger; 20–30 s one concrete road-map sentence; no intro, greeting, logo, "Abonniert", "Gleich erfährst du"
-- [ ] Search word spoken in the first 10 s, in the title, first word of the description
-- [ ] Every chapter: mini-hook question first, one core idea, mini-resolution, last line = open question (ends with "?")
-- [ ] Loop map: always ≥ 1 open loop; the main question open until the finale
-- [ ] Re-hook at ~50–60 % with the most surprising twist
-- [ ] A picture change every 8–20 s planned; a money shot every 2–3 min
-- [ ] ≤ 2 terms per chapter, numbers with comparisons, one information per sentence, no filler words, no banned phrases
-- [ ] Finale: answer → „Übrigens“ → comment question + „Schreib's in die Kommentare.“ + next-video pointer + „Folge für mehr Wissen.“; no other "folg…" word
-- [ ] Facts: ≥ 15 checked facts in `plan.md` with a source; uncertain things phrased safely
-- [ ] 3–6 delivery tags per chapter, never two in a row, no `[whispers]` in the hook
+- [ ] Whole: 1.500–1.750 words; intro 35–55 s; 6–9 chapters of 60–120 s; finale with the 20-s end screen
+- [ ] Intro: cold open in the present tense (or the plain question) that shows the thumbnail promise at once → why it matters → a concrete road map with 2–3 stations → „Aber mal von vorne.“ + title card. No greeting, channel intro or subscribe ask
+- [ ] Search word spoken in the first ~15 s, in the title, first word of the description
+- [ ] Sounds like a documentary narrator read aloud (`sprechstil.md` self-check): flowing sentences, paragraphs, few questions, signposting
+- [ ] Every chapter: context → event → science (one analogy) → meaning → bridge; threads always open, main question open until the finale
+- [ ] Re-hook at ~50–60 % announced with weight
+- [ ] Finale: answer → what it means today (+ Übrigens) → question to the viewers + „Schreib's in die Kommentare.“ + next-video pointer + „Folge für mehr Wissen.“; no other "folg…" word
+- [ ] Facts: ≥ 15 checked facts in `plan.md` with a source; uncertain things phrased safely; quotes marked as quotes
+- [ ] ≤ 2 terms per chapter, each explained in the sentence; numbers with a scale
+- [ ] 0–2 delivery tags per chapter

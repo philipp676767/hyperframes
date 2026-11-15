@@ -30,18 +30,16 @@ const plain = (l) => l.replace(/\[[^\]\n]*\]/g, " ").replace(/\*/g, "");
 // ---------------------------------------------------------------- length
 const n = words.length;
 if (K.nr === 0) {
-  // the hook: 0:00–0:30; its first sentence (the claim / the spectacle) ≤ 3.5 s
-  const first = words.find((w) => w.br === 2) ?? words[n - 1];
-  if (first.end > 3.5)
-    warn(
-      `the first sentence of the hook ends at ${first.end.toFixed(2)} s — max 3.5 s (≤ 9 words): shorten it.`,
-    );
-  if (real && (LAST < 22 || LAST > 34))
-    warn(`the hook chapter speaks ${LAST.toFixed(1)} s — aim for 25–32 s (0:00–0:30).`);
+  // the intro: cold open + why it matters + road map + title card, 35–55 s
+  if (real && (LAST < 30 || LAST > 60))
+    warn(`the intro speaks ${LAST.toFixed(1)} s — aim for 35–55 s (90–130 words).`);
+  const nrmT = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+  if (!K.titelBei || !words.some((w) => nrmT(w.w) === nrmT(K.titelBei)))
+    warn("intro: kapitel.js `titelBei` is no spoken word — the title card would not appear.");
 } else if (K.ende) {
   if (CTA == null) warn("end chapter: the last line has no „Folge für mehr Wissen.“");
 } else if (real && (LAST < 55 || LAST > 125)) {
-  warn(`chapter speaks ${LAST.toFixed(1)} s — aim for 60–120 s (≈ 170–330 words).`);
+  warn(`chapter speaks ${LAST.toFixed(1)} s — aim for 60–120 s (≈ 150–300 words).`);
 }
 console.log(`chapter ${K.nr} „${K.titel}“: ${n} words, speech ${LAST.toFixed(1)} s`);
 
@@ -54,27 +52,29 @@ if (early)
   warn(
     `„${early.w}“ at ${early.start.toFixed(1)} s — no "folg…" word outside the end chapter's last line (write „Konsequenz“, „danach“ …).`,
   );
-// no intro, no greeting, no subscribe ask at the start, no promise phrases
+// no greeting / channel intro / subscribe ask, and none of the TikTok-isms
+// that made YouTube #1 sound like a long TikTok (references/sprechstil.md)
 const banned = [
   "uns bauen",
   "du hast gerade",
   "hallo",
   "willkommen",
   "herzlich",
-  "gleich erfährst du",
-  "gleich siehst du",
-  "gleich weißt du",
   "bleib dran",
   "abonnier",
   "jetzt der trick",
   "hier kommt der trick",
+  "der trick",
   "jetzt wird's verrückt",
+  "rate mal",
+  "zack",
+  "krass",
 ];
 // „in diesem Video“ only as the pointer to the next video in the end chapter
 if (!K.ende) banned.push("in diesem video");
 for (const bad of banned)
-  if (` ${spoken} `.includes(` ${bad}`))
-    warn(`the script says „${bad} …“ — banned phrase, cut it.`);
+  if (` ${spoken} `.includes(` ${bad} `) || ` ${spoken} `.includes(` ${bad}`))
+    warn(`the script says „${bad} …“ — banned in long form, rewrite it.`);
 const fillers = [
   "und genau",
   "eigentlich",
@@ -87,27 +87,43 @@ const fillers = [
 ];
 const found = fillers.filter((f) => ` ${spoken} `.includes(` ${f} `));
 if (found.length) warn(`filler words: ${found.map((f) => `„${f}“`).join(", ")} — cut them.`);
-// no whispering in the hook: chapter 0, line 1 and the first sentence of line 2
-if (K.nr === 0) {
-  const hookText = (scriptLines[0] ?? "") + " " + (scriptLines[1] ?? "").split(/[.!?]/)[0];
-  if (/\[whisper/i.test(hookText))
-    warn(
-      "[whispers] in the hook — the first seconds must be loud: [excited] / [curious] or no tag.",
-    );
-}
-// every chapter but the last ends on an open question (the open-loop chain)
-if (!K.ende) {
-  const last = plain(scriptLines[scriptLines.length - 1] ?? "").trim();
-  if (!/\?\s*$/.test(last))
-    warn(
-      "the chapter's last sentence is no question — end on the open question that pulls into the next chapter.",
-    );
-}
-// keywords: about one every 15–20 s
+// the narrator's voice (sprechstil.md): flowing sentences, paragraphs, few
+// questions, few delivery tags
+const text = scriptLines.map(plain).join(" ");
+const sentences = text.split(/(?<=[.!?…])\s+/).filter((x) => x.trim());
+const wps = sentences.map((x) => x.split(/\s+/).filter((w) => w && w !== "–" && w !== "—").length);
+const avg = wps.reduce((a, b) => a + b, 0) / Math.max(1, wps.length);
+if (avg < 10)
+  warn(
+    `sentences average ${avg.toFixed(1)} words — that is TikTok rhythm. A narrator averages 12–18: join short ones with „weil“, „während“, „als“, „doch“.`,
+  );
+const shortRun = wps.some((c, i) => c <= 4 && (wps[i + 1] ?? 9) <= 4);
+if (shortRun)
+  warn("two very short sentences (≤ 4 words) in a row — at most one punch sentence per paragraph.");
+const questions = sentences.filter((x) => /\?\s*$/.test(x.trim())).length;
+if (questions > 3)
+  warn(
+    `${questions} questions in this chapter — max 2–3; turn the rest into statements / signposting.`,
+  );
+const endsQ = scriptLines.filter((l) => /\?\s*$/.test(plain(l).trim())).length;
+if (scriptLines.length >= 3 && endsQ / scriptLines.length > 0.4)
+  warn("most paragraphs end on a question — vary the bridges (statements, time markers).");
+const shortLines = scriptLines.filter(
+  (l) =>
+    plain(l)
+      .split(/[.!?…]/)
+      .filter((x) => x.trim()).length < 2,
+).length;
+if (scriptLines.length >= 4 && shortLines / scriptLines.length > 0.5)
+  warn("most lines hold one sentence — one line = one paragraph of 3–6 sentences.");
+const voiceTags = scriptLines.join(" ").match(/\[[^\]\n]*\]/g) ?? [];
+if (voiceTags.length > 2)
+  warn(`${voiceTags.length} delivery tags — long form keeps a calm base tone: 0–2 per chapter.`);
+// keywords: few and quiet (yellow only) — about one per 20–30 s
 const hl = words.filter((w) => w.hl).length;
-const want = Math.max(2, Math.round(LAST / 18));
-if (real && (hl < want - 2 || hl > want + 3))
-  warn(`${hl} *keywords* — aim for ~${want} in this chapter (one every 15–20 s).`);
+const want = Math.max(1, Math.round(LAST / 25));
+if (real && (hl < want - 2 || hl > want + 2))
+  warn(`${hl} *keywords* — aim for ~${want} in this chapter (one every 20–30 s).`);
 
 // ---------------------------------------------------------------- html
 const htmlUrl = new URL("index.html", root);

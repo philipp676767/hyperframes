@@ -1,6 +1,6 @@
 ---
 name: youtube-erklaervideo
-description: 'Make a long German YouTube explainer (10–12 min, 16:9, 1920×1080) in the style of the TikTok series "Du hast gerade X gebaut": realistic 3D diorama worlds (one main world + side scenes), name tags, 2–4-word captions with yellow keywords, sound effects, no music, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3) a bit calmer (2.8 words/s). Retention-first structure: 30-s hook that proves the title/thumbnail promise, 6–9 chapters with mini-hooks and an open-loop chain, re-hook at ~55 %, answer + "Übrigens" + CTA at the end, 20-s end screen. Built and rendered chapter by chapter, joined with ffmpeg; delivers the video, 3 thumbnails, title, description with chapter marks, tags, settings and a pinned comment. Main topic type: great moments of science and technology history (first Moon landing, the atomic bomb, Titanic …) told as a thriller and explained. Claude picks the topic (references/themen.md) and runs on autopilot. Use ONLY when the prompt contains the word "YouTube" (e.g. "YouTube-Video", "neues YouTube-Video", "YouTube-Erklärvideo", "mach das nächste YouTube-Video", "YouTube-Video über X") — without "YouTube" in the prompt never use this skill. NOT for TikToks or YouTube Shorts ("Short", "Shorts", "TikTok") — those use bau-erklaervideo.'
+description: 'Make a long German YouTube explainer (10–12 min, 16:9, 1920×1080) in the style of the TikTok series "Du hast gerade X gebaut": realistic 3D diorama worlds (one main world + side scenes), name tags, 2–4-word captions with yellow keywords, sound effects, no music, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3) as a calm documentary narrator (2.5 words/s) — YouTube storytelling, not a long TikTok (references/sprechstil.md). Structure: cold-open intro with a road map and a title card, 6–9 chapters as story segments with open threads, re-hook at ~55 %, answer + outlook + CTA at the end, 20-s end screen. Built and rendered chapter by chapter, joined with ffmpeg; delivers the video, 3 thumbnails, title, description with chapter marks, tags, settings and a pinned comment. Main topic type: great moments of science and technology history (first Moon landing, the atomic bomb, Titanic …) told as a thriller and explained. Claude picks the topic (references/themen.md) and runs on autopilot. Use ONLY when the prompt contains the word "YouTube" (e.g. "YouTube-Video", "neues YouTube-Video", "YouTube-Erklärvideo", "mach das nächste YouTube-Video", "YouTube-Video über X") — without "YouTube" in the prompt never use this skill. NOT for TikToks or YouTube Shorts ("Short", "Shorts", "TikTok") — those use bau-erklaervideo.'
 ---
 
 # YouTube-Erklärvideo (long form, 16:9)
@@ -23,21 +23,21 @@ prompt contains the word **„YouTube“** („neues YouTube-Video“, „YouTub
 
 ## Fixed house settings
 
-| What       | Value                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format     | **1920×1080, 30 fps, 10–12 min** (+ the 20-s end screen inside the finale)                                                                                                                                                                                                                                                                                                                                                                     |
-| Voice      | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`**, `generations_count: 1` — same voice and settings for every chapter. **2.8 words/s** (2.7–2.9; calmer than TikTok's 3.1): `prepare-voice.sh` cuts pauses to 0.2 s and sets the tempo per chapter so all chapters sound like one take. Delivery tags (`[excited]`, `[curious]`, `[surprised]`, `[whispers]` …), **no whispering in the hook** |
-| Words      | **1.700–1.950** in total; hook 70–85, chapters 170–330 each, finale 100–150                                                                                                                                                                                                                                                                                                                                                                    |
-| Structure  | Hook 0:00–0:30 → **6–9 chapters à 60–120 s** (mini-hook question, one core idea, mini-resolution, open question into the next) → re-hook at ~50–60 % → finale: answer + „Übrigens“ + CTA → 20-s end screen (`references/aufbau.md`)                                                                                                                                                                                                            |
-| Language   | Du-Form, cheeky friend, simple: one core idea per chapter, everyday comparisons, ≤ 2 terms per chapter, no filler words — TikTok `script-formel.md` sentence rules                                                                                                                                                                                                                                                                             |
-| CTA        | Only at the end (finale's last line): comment question + „Schreib's in die Kommentare.“ + pointer to the next video + **„Folge für mehr Wissen.“** (quick). No intro, no greeting, no logo, no "Abonniert" at the start; no other word starting with "folg"                                                                                                                                                                                    |
-| Look       | TikTok look (`bau-erklaervideo/references/visual-style.md`): realistic diorama, `real.*` materials, rounded edges, depth of field, a new world per topic, name tags, sound effects, **no music**. 16:9 layout + camera: `references/bild-16-9.md`                                                                                                                                                                                              |
-| Captions   | **2–4 words per line, bottom centre**, keywords `*Wort*` yellow (≈ one every 15–20 s)                                                                                                                                                                                                                                                                                                                                                          |
-| Packaging  | Title ≤ 60 chars (search word first), **3 thumbnails** 1280×720 (Test & Compare), description with **chapter marks**, tags, settings, a pinned comment — fixed **before** the script (`references/verpackung.md`)                                                                                                                                                                                                                              |
-| Production | `youtube/<slug>/kapitel/NN-name/` = one composition each; `render-queue.sh` renders them one after the other (detached, ~4 s/frame → ≈ 20–25 h for 12 min); `join-chapters.sh` joins without re-encoding the picture, -14 LUFS                                                                                                                                                                                                                 |
-| Progress   | `youtube/<slug>/fortschritt.md` — so a new chat can continue (step „Weitermachen“)                                                                                                                                                                                                                                                                                                                                                             |
-| Logs       | `youtube/serie.md` (finished videos), `youtube/lernlog.md` (CTR, 30-s retention, average view duration, drop-off points → rules)                                                                                                                                                                                                                                                                                                               |
-| Topics     | Main type **„Große Momente“** — real moments of science / tech history (Apollo 11, the atomic bomb, Titanic …) told as a thriller and explained; `references/themen.md` (scorecard, duplicate check, reservation)                                                                                                                                                                                                                              |
+| What       | Value                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Format     | **1920×1080, 30 fps, 10–12 min** (+ the 20-s end screen inside the finale)                                                                                                                                                                                                                                                                                                                                                                  |
+| Voice      | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`**, `generations_count: 1` — same voice and settings for every chapter. **2.5 words/s, a calm documentary narrator** (2026-11-15; was 2.8): `prepare-voice.sh` cuts pauses to 0.3 s and sets the tempo per chapter so all chapters sound like one take. **0–2 delivery tags per chapter**, calm base tone                                    |
+| Words      | **1.500–1.750** in total; intro 90–130, chapters 150–300 each, finale 120–180                                                                                                                                                                                                                                                                                                                                                               |
+| Structure  | Intro 35–55 s (**cold open** in the most tense moment → why it matters → **road map** of the video → „Aber mal von vorne.“ + title card) → **6–9 chapters à 60–120 s** as story segments (context → event → the science → meaning → bridge) → re-hook at ~50–60 % → finale: answer + what it means today + CTA → 20-s end screen (`references/aufbau.md`)                                                                                   |
+| Language   | **YouTube narrator, not a long TikTok** (user, 2026-11-15, after YouTube #1): flowing sentences of 12–18 words in paragraphs, few questions, signposting, historic present for stories, analogies played out, dry humour — `references/sprechstil.md`. The TikTok `script-formel.md` sentence rules do **not** apply. Kept: Du-Form when the viewer is addressed, one idea at a time, ≤ 2 terms per chapter, no filler words, facts checked |
+| CTA        | Only at the end (finale's last line): comment question + „Schreib's in die Kommentare.“ + pointer to the next video + **„Folge für mehr Wissen.“** (quick). No intro, no greeting, no logo, no "Abonniert" at the start; no other word starting with "folg"                                                                                                                                                                                 |
+| Look       | TikTok look (`bau-erklaervideo/references/visual-style.md`): realistic diorama, `real.*` materials, rounded edges, depth of field, a new world per topic, name tags, sound effects, **no music**. 16:9 layout + camera: `references/bild-16-9.md`                                                                                                                                                                                           |
+| Captions   | **2–4 words per line, bottom centre**, keywords `*Wort*` yellow but quiet (no pop, no camera punch, no punch sound; ≈ one every 20–30 s). No TikTok title on frame 0 — a calm title card after the intro                                                                                                                                                                                                                                    |
+| Packaging  | Title ≤ 60 chars (search word first), **3 thumbnails** 1280×720 (Test & Compare), description with **chapter marks**, tags, settings, a pinned comment — fixed **before** the script (`references/verpackung.md`)                                                                                                                                                                                                                           |
+| Production | `youtube/<slug>/kapitel/NN-name/` = one composition each; `render-queue.sh` renders them one after the other (detached, ~4 s/frame → ≈ 20–25 h for 12 min); `join-chapters.sh` joins without re-encoding the picture, -14 LUFS                                                                                                                                                                                                              |
+| Progress   | `youtube/<slug>/fortschritt.md` — so a new chat can continue (step „Weitermachen“)                                                                                                                                                                                                                                                                                                                                                          |
+| Logs       | `youtube/serie.md` (finished videos), `youtube/lernlog.md` (CTR, 30-s retention, average view duration, drop-off points → rules)                                                                                                                                                                                                                                                                                                            |
+| Topics     | Main type **„Große Momente“** — real moments of science / tech history (Apollo 11, the atomic bomb, Titanic …) told as a thriller and explained; `references/themen.md` (scorecard, duplicate check, reservation)                                                                                                                                                                                                                           |
 
 ## Workflow
 
@@ -131,18 +131,21 @@ Creates `youtube/<slug>/` with `plan.md`, `fortschritt.md`, `welt.js`,
 best (≤ 60 chars, search word first), the **promise in one sentence**, the
 **3 thumbnail ideas** (A spectacle, B close-up / hand / face, C number /
 contrast — moment, camera, ≤ 3 words, layout), the main question, the
-search word. The hook will prove exactly this promise in 0–10 s.
+search word. The intro's cold open shows exactly this promise in its first seconds.
 
 ### 3. Script — the whole video, then self-check
 
-Write all chapters with `references/aufbau.md` (and the TikTok
-`script-formel.md` for the sentence-level rules — hook lab, banned
-phrases, keywords, delivery tags, no filler words, humour). Fill the
-chapter table + loop map + re-hook + money shots in `plan.md`. Count the
-words (1.700–1.950). Run the self-check in `aufbau.md` and fix every point
-— you are the only reviewer. Each chapter's `script.txt`: one part per
-line, keywords `*Wort*`, delivery tags inline, a normal chapter's **last
-line = the open question**, the finale's last line = the CTA line.
+Write all chapters with `references/aufbau.md` (structure, intro) and
+**`references/sprechstil.md`** (how a YouTube narrator talks — read the
+before/after example first; the TikTok `script-formel.md` sentence rules do
+not apply here). Fill the chapter table + threads + re-hook + money shots
+in `plan.md`. Count the words (1.500–1.750). Read every chapter aloud in
+your head: does it sound like a documentary or like captions? Run the
+self-checks in both files and fix every point — you are the only reviewer.
+Each chapter's `script.txt`: **one paragraph (3–6 sentences) per line**,
+few keywords `*Wort*`, 0–2 delivery tags; the finale's last line = the CTA
+line. `sync-html.mjs` warns about TikTok rhythm (short sentences, many
+questions, many tags, banned phrases).
 
 ### 4. The main world (+ side scenes)
 
@@ -165,18 +168,20 @@ bash .claude/skills/youtube-erklaervideo/scripts/new-chapter.sh <slug> <n> final
 
 Per chapter, in order (and commit + push + `fortschritt.md` after each):
 
-1. **`script.txt`** + **`assets/kapitel.js`**: `titel` (short, curious —
-   also the YouTube chapter name), `frage` (≤ 7 words, keyword in `<em>`),
-   `antwort` (the word that answers it), chapter 0: `hookTitel` (2–3
-   words). Then `node scripts/fake-words.mjs && node scripts/build-sfx.mjs
-&& node scripts/sync-html.mjs` (estimated timings; read its warnings).
+1. **`script.txt`** + **`assets/kapitel.js`**: `titel` (short, concrete —
+   also the YouTube chapter name); chapter 0: `hookTitel` (the video title
+   for the title card, keyword in `<em>`) and `titelBei` (the spoken word it
+   appears on, usually „vorne“ in „Aber mal von vorne.“); `frage` /
+   `antwort` optional (long form mostly leaves them empty). Then `node
+scripts/fake-words.mjs && node scripts/build-sfx.mjs && node
+scripts/sync-html.mjs` (estimated timings; read its warnings).
 2. **Voice** (as TikTok step 3): the chapter's `script.txt` joined to one
    paragraph, every `*` removed, tags kept → `creative_generate_speech`
    (Jan, `eleven_v3`, `generations_count: 1`) → poll → `curl` to
    `assets/vo_takes/main.mp3` right away. 429 on the first try → short
    pieces (TikTok Gotchas „ElevenLabs 429“, `scripts/join-voice.sh`). Then:
    ```bash
-   bash scripts/prepare-voice.sh       # pauses 0.2 s, tempo → 2.8 words/s, -14 LUFS
+   bash scripts/prepare-voice.sh       # pauses 0.3 s, tempo → 2.5 words/s, -14 LUFS
    python3 -I scripts/align-words.py   # Whisper timings + caption flags → assets/words.js
    node scripts/build-sfx.mjs && node scripts/sync-html.mjs
    ```
@@ -185,15 +190,17 @@ Per chapter, in order (and commit + push + `fortschritt.md` after each):
    the subject in the realistic finish, beats anchored on spoken words
    (`W("Wort", n)`), shots for 16:9 (`bild-16-9.md` „Camera“: a change every
    8–20 s, a money shot every 2–3 min), 1–3 labels, highlights, own sounds
-   only where they fit. The hook chapter follows TikTok's „first 3
+   only where they fit. The intro opens on its cold-open scene (moving, the
+   thumbnail moment) — not TikTok's „first 3
    seconds“ rules; the finale's last shot is the calm, moving end-screen
    picture (`kapitel-template/demo-ende/` is the pattern).
 4. **Check**: `npx --yes hyperframes@0.8.181 lint` (0 errors), then a
    contact sheet: `npx --yes hyperframes@0.8.181 snapshot --at <one time per
 shot> --no-end --describe false -o <scratch>` — subject readable,
    captions free, tags on their parts, nothing written in the end-screen
-   band of the finale's last 20 s. Hook chapter: snapshot 0, 0.5, 1, 1.5, 2,
-   3, 10, 20, 29 s against the hook rules. 2–3 fix rounds.
+   band of the finale's last 20 s. Intro: snapshot 0, 2, 10, 25, the road map
+   and the title card (`titelBei` + 1 s) against `aufbau.md` „The intro“.
+   2–3 fix rounds.
 
 ### 6. Render — the queue, detached
 
@@ -222,7 +229,7 @@ bash .claude/skills/youtube-erklaervideo/scripts/join-chapters.sh <slug>
 
 Check: one video + one audio stream, 10–12 min, the chapter seams (snapshot
 ± 0.2 s around each with ffmpeg: no black frame, no jump in the sound).
-Watch it honestly as a stranger: contact sheet every ~30 s + the hook frames
+Watch it honestly as a stranger: contact sheet every ~30 s + the intro frames
 — would I stay after 30 s? Is there a change every 8–20 s? Fix before
 sending.
 

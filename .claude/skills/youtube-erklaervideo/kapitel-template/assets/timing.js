@@ -31,9 +31,15 @@ export const CTA = CTA_START != null ? WORDS[CTA_START].start : null;
 // started ENDSCREEN s ago (calm, moving picture under YouTube's end screen).
 // rounded up to 0.1 s = 3 whole frames, a clean number in index.html
 const frames = (s) => Math.ceil(s * 10 - 1e-6) / 10;
+// the intro's title card (kapitel.js titelBei) stays ~3.2 s and fades out
+const normT = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+export const TITLE =
+  !KAPITEL.nr && KAPITEL.titelBei
+    ? (WORDS.find((w) => normT(w.w) === normT(KAPITEL.titelBei))?.start ?? null)
+    : null;
 export const DURATION = KAPITEL.ende
   ? frames(Math.max(LAST + 3, (CTA ?? LAST) + ENDSCREEN))
-  : frames(LAST + (KAPITEL.tail ?? 0.6));
+  : frames(Math.max(LAST + (KAPITEL.tail ?? 0.6), TITLE != null ? TITLE + 4 : 0));
 export const END = DURATION;
 // start of the end screen (null in normal chapters)
 export const ENDSCREEN_FROM = KAPITEL.ende ? DURATION - ENDSCREEN : null;

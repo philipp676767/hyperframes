@@ -602,6 +602,7 @@ export function showPanel(k, label = "", value = "", color = LED.red) {
 // 30° vertical in 16:9 = about the portrait template's 48° turned on its side
 // (≈ 51° across), so shots written for the TikTok template frame the same way.
 const FOV = 30;
+const PUNCH = 0;
 let shotTilt = 1;
 // distance from the camera to the shot's look-at point = the lens focus
 let focusDist = 10;
@@ -730,7 +731,8 @@ export function shotCamera(shots, defaultZoom = 2.0) {
     focusDist = s.focus ?? p.distanceTo(l);
     camera.position.copy(p);
     camera.lookAt(l);
-    camera.fov = FOV / (1 + 0.11 * punch(t) + fxZoom(realT));
+    // long form: no zoom-punch on keywords (PUNCH 0, 2026-11-15; TikTok 0.11)
+    camera.fov = FOV / (1 + PUNCH * punch(t) + fxZoom(realT));
     camera.updateProjectionMatrix();
     camera.updateMatrixWorld();
   };

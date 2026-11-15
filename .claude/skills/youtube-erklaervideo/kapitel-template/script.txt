@@ -1,5 +1,5 @@
-[excited] Diese Kerze ist deine *Lampe*. Und nach einer Stunde ist sie aus.
-Aber ein dünner Draht leuchtet tausend Stunden lang. Also schickst du *Strom* hindurch.
-Der Draht wird so *heiß*, dass er glüht. Das ist der *Glühfaden*.
-Er glüht nur, weil er so *dünn* ist. Übrigens: Eine alte Glühbirne macht fast nur *Wärme*.
-Und warum leuchtet dann eine LED, ohne heiß zu werden?
+Diese Kerze ist für lange Zeit die einzige *Lampe*, die Menschen nach Sonnenuntergang haben.
+Aber sie flackert, sie rußt, und nach einer Stunde ist sie aus. Also suchen Erfinder nach etwas, das länger hält, und landen bei einem hauchdünnen *Draht*.
+Schickt man *Strom* hindurch, wird der Draht so heiß, dass er glüht. So entsteht der *Glühfaden*, das Herz jeder alten Glühbirne.
+Er leuchtet nur, weil er so dünn ist. Übrigens: Eine alte Glühbirne macht fast nur Wärme, gerade mal fünf Prozent werden zu Licht.
+Wie man dieses Problem gelöst hat und warum eine LED kalt bleibt, schauen wir uns heute an. Aber mal von vorne.

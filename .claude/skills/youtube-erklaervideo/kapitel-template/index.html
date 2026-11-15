@@ -90,19 +90,20 @@
         -webkit-text-stroke: 9px rgba(20, 12, 30, 0.65);
       }
       /* hook title (chapter 0): 2–3 huge words on frame 0 */
+      /* title card (chapter 0): the video title, calm, centred, after the
+         cold open (kapitel.js titelBei) — not a TikTok title on frame 0 */
       #hook-title {
         position: absolute;
         left: 200px;
         right: 200px;
-        top: 70px;
+        top: 430px;
         text-align: center;
-        font-size: 138px;
-        line-height: 1;
-        text-transform: uppercase;
-        letter-spacing: -2px;
+        font-size: 96px;
+        line-height: 1.05;
+        letter-spacing: -1px;
         opacity: 0;
-        -webkit-text-stroke: 14px rgba(20, 12, 30, 0.7);
-        text-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        -webkit-text-stroke: 10px rgba(20, 12, 30, 0.6);
+        text-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
       }
       /* chapter tag (chapters 1 …), top left, the first ~3.5 s */
       #chapter {
@@ -324,14 +325,7 @@
             if (w.hl) s.className = "hl";
             s.textContent = w.w;
             el.appendChild(s);
-            // keywords punch in when spoken (the camera punches with them, world.js)
-            if (w.hl)
-              tl.fromTo(
-                s,
-                { scale: 1.18, y: -6 },
-                { scale: 1, y: 0, duration: 0.18, ease: "back.out(3)" },
-                w.start,
-              );
+            // keywords are only coloured — no pop, no camera punch (long form, 2026-11-15)
           });
           box.appendChild(el);
           const next = groups[i + 1];
@@ -341,20 +335,26 @@
           tl.set(el, { opacity: 0 }, off);
         });
 
-        // ------------------------------------------------ chapter 0: hook title
+        // ------------------------------------------------ chapter 0: title card
+        // Long form (2026-11-15): no TikTok title on frame 0. The video title
+        // appears calmly in the middle after the cold open + promise, on the
+        // word kapitel.js `titelBei` (usually „Aber mal von vorne.“), ~3.2 s.
         let topFree = 0.2;
-        if (!K.nr && K.hookTitel) {
+        const nrmT = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+        const titleW =
+          !K.nr && K.hookTitel && K.titelBei
+            ? words.find((w) => nrmT(w.w) === nrmT(K.titelBei))
+            : null;
+        if (titleW) {
           const el = document.getElementById("hook-title");
           el.innerHTML = K.hookTitel;
-          // already fully visible on frame 0, settles with a punch, gone at 3 s
           tl.fromTo(
             el,
-            { opacity: 1, scale: 1.07 },
-            { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" },
-            0,
+            { opacity: 0, scale: 0.96, y: 10 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "power2.out" },
+            titleW.start,
           );
-          tl.to(el, { opacity: 0, scale: 1.08, duration: 0.25, ease: "power2.in" }, 3.0);
-          topFree = 3.3;
+          tl.to(el, { opacity: 0, duration: 0.6, ease: "power2.in" }, titleW.start + 3.2);
         }
         // ------------------------------------------------ chapters: tag
         if (K.nr) {

@@ -1,8 +1,8 @@
 // Build assets/sfx.mp3: every sound effect of the video on one track, placed
 // from the same beats the picture uses (assets/beats.js + words.js).
-// Automatic cues: whoosh on each camera cut, hit on the hook title (chapter
-// 0) or whoosh + pop on the chapter tag (chapters 1 …), punch on each
-// *highlighted* word, blip per label, ding when the chapter's question is
+// Automatic cues (long form, calm): whoosh only on shots marked `whoosh: true`
+// / whip pans, a whoosh on the title card (chapter 0) and on each chapter
+// cut, blip per label, ding when the chapter's question is
 // answered, wow on the bonus fact ("Übrigens"), CTA pops + click + ding (end
 // chapter). Plus beats.js SFX.
 // Writes assets/sfx-cues.json (what landed where) for checking.
@@ -17,7 +17,7 @@ const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(new URL("assets/words.js", root), "utf8"), ctx);
 vm.runInNewContext(fs.readFileSync(new URL("assets/kapitel.js", root), "utf8"), ctx);
 globalThis.window = ctx.window;
-const { DURATION, HL, KAPITEL, ctaTimes, answerTime, factTime } = await import(
+const { WORDS, DURATION, HL, KAPITEL, ctaTimes, answerTime, factTime } = await import(
   new URL("assets/timing.js", root)
 );
 const {
@@ -72,19 +72,25 @@ const add = (s, at, why, extra = {}) => {
 };
 
 let lastCut = -9;
+// long form (2026-11-15): no whoosh on every cut — only on shots marked
+// `whoosh: true` (a jump to another place / time) and on whip pans
 for (const sh of shots.slice(1)) {
-  if (sh.sfx === false || sh.at - lastCut < 0.8) continue;
+  if (!(sh.whoosh || sh.whip) || sh.sfx === false || sh.at - lastCut < 0.8) continue;
   add("whoosh", sh.at, "cut");
   lastCut = sh.at;
 }
-if (!KAPITEL.nr) add("hit", 0.05, "hook title");
-else {
-  // the cut into a new chapter + its tag (index.html)
-  add("whoosh", 0.22, "chapter cut", { db: -12 });
-  add("pop", 0.3, "chapter tag", { db: -13 });
+if (!KAPITEL.nr) {
+  // the title card after the cold open (kapitel.js titelBei)
+  const nrm = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+  const tw = KAPITEL.titelBei && WORDS.find((w) => nrm(w.w) === nrm(KAPITEL.titelBei));
+  if (tw) add("whoosh", tw.start, "title card", { db: -12 });
+} else {
+  // the cut into a new chapter + its tag (index.html): one soft whoosh
+  add("whoosh", 0.22, "chapter cut", { db: -14 });
 }
 add("wow", factTime(), "bonus fact");
-for (const h of HL) add("punch", h, "highlight");
+// keywords: no punch sound in long form (HL kept for the captions only)
+void HL;
 for (const l of LABELS) add("blip", l.at + 0.05, `label ${l.text}`);
 add("ding", answerTime(), "question answered");
 const cta = ctaTimes();

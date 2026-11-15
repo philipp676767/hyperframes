@@ -2,9 +2,11 @@
 # Build assets/voiceover.mp3 for ONE chapter from the raw ElevenLabs take
 # (assets/vo_takes/main.mp3). Long-form pace (skill youtube-erklaervideo):
 # Jan a little calmer than on TikTok — every chapter is brought to the same
-# speaking rate RATE (default 2.8 words/s, allowed 2.7–2.9), so the chapters
+# speaking rate RATE (default 2.5 words/s — a calm documentary narrator,
+# 2026-11-15; was 2.8), so the chapters
 # sound like one take when they are joined:
-#   - pauses (found at -30 dB) are cut to PAUSE s (default 0.2; TikTok 0.12);
+#   - pauses (found at -30 dB) are cut to PAUSE s (default 0.3 — room to
+#     breathe between sentences; TikTok 0.12);
 #   - the rest is sped up / slowed down (pitch kept) until the chapter speaks
 #     RATE words per second — at most x1.32 faster (Jan on eleven_v3 reads
 #     ≈ 2.2–2.4 words/s with 0.2-s breaths, so ~x1.2 is normal; the TikTok
@@ -12,7 +14,7 @@
 #     that it stops and says why (a piece-wise take that reads very slowly →
 #     regenerate, or set BASE by hand);
 #   - in the end chapter the closing „Folge für mehr Wissen.“ is spoken
-#     quickly (x FOLLOW_FAST, default 1.3), as on TikTok;
+#     at the normal pace (FOLLOW_FAST 1.0; TikTok rushes it x1.3);
 #   - a short LEAD of silence (default 0.25 s) before the first word, so a
 #     chapter cut never clips a breath;
 #   - loudness -14 LUFS (the joined video is normalised again at the end).
@@ -20,15 +22,15 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 MAIN=${1:-assets/vo_takes/main.mp3}
-RATE=${RATE:-2.8}
-PAUSE=${PAUSE:-0.2}
+RATE=${RATE:-2.5}
+PAUSE=${PAUSE:-0.3}
 LEAD=${LEAD:-0.25}
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
 python3 -I scripts/tighten-pauses.py "$MAIN" "$TMP/main.wav" "$PAUSE"
 if tail -n 1 script.txt | grep -qi "folge für mehr wissen"; then
-  python3 -I scripts/fast-tail.py "$TMP/main.wav" "$TMP/fast.wav" "${FOLLOW_FAST:-1.3}" >&2
+  python3 -I scripts/fast-tail.py "$TMP/main.wav" "$TMP/fast.wav" "${FOLLOW_FAST:-1.0}" >&2
   mv "$TMP/fast.wav" "$TMP/main.wav"
 fi
 D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$TMP/main.wav")

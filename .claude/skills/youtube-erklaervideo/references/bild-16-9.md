@@ -27,14 +27,17 @@ what is different in landscape and in long form.
 ```
 
 - **Captions:** 2–4 words per line, bottom centre (Montserrat 800, 64 px,
-  keyword yellow 74 px, it pops when spoken). Groups break at a sentence /
+  keyword yellow 74 px — quietly: no pop, no camera punch, no punch sound;
+  long form, 2026-11-15). Groups break at a sentence /
   phrase end, after 4 words, at ~24 characters or before a pause — the
   one-word TikTok style is too hectic for 16:9.
-- **Hook title** (chapter 0 only): 2–3 huge words top centre, on frame 0,
-  gone at 3 s.
+- **Title card** (chapter 0 only): the video title, calm and centred, after
+  the cold open + road map (`kapitel.js titelBei`, usually „vorne“ in „Aber
+  mal von vorne.“), fades in, ~3.2 s, a soft whoosh. **No text on frame 0**
+  — the cold open is a picture, like a documentary.
 - **Chapter tag** (chapters 1 …): „KAPITEL n“ + the chapter title, top left,
   0.25–3.6 s; the finale says „FINALE“.
-- **Question** (`kapitel.js frage`): top centre, ~6.5 s after the tag, back
+- **Question** (`kapitel.js frage`, optional, mostly empty in long form): top centre, ~6.5 s after the tag, back
   for a moment with a ding when its `antwort` word is spoken.
 - **WUSSTEST DU?** badge top centre on „Übrigens“.
 - **CTA pills** (end chapter): white „Kommentieren“ top left when the CTA
@@ -55,9 +58,13 @@ what is different in landscape and in long form.
   analogy mini-set or the display on the other third; slow lateral dollies
   and orbits read better in 16:9 than pushes.
 - **Rhythm (long form):** a change in the picture every **8–20 s**; most
-  shots 5–12 s, never > 20 s; the hook chapter cuts like TikTok (first cut
-  ≤ 1.5 s, spectacle in frame 0, a highlight before 1.5 s). A **money shot
-  every 2–3 min** (4–6 per video), highlights every ~20–30 s.
+  shots 5–15 s, slow camera moves while the narrator explains; let money
+  shots breathe. **No TikTok editing** (2026-11-15): no zoom-punch on
+  keywords (`PUNCH = 0` in world.js), **whoosh only on shots marked
+  `whoosh: true`** (a jump to another place / time) or whip pans, not on
+  every cut; the intro's cold open moves calmly into the scene, no
+  1.5-s first cut rule. A **money shot every 2–3 min** (4–6 per video),
+  highlights sparingly.
 - X-ray at most ⅓ of each chapter; frame 0 of the hook never x-ray.
 
 ## Worlds — one main world + side scenes
