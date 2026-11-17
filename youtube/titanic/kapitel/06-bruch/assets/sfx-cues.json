@@ -4,5 +4,72 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "meer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 17.065,
+    "db": -20
+  },
+  {
+    "s": "wind",
+    "at": 6.6,
+    "why": "beats.js",
+    "dur": 10.465000000000002,
+    "db": -22
+  },
+  {
+    "s": "hit",
+    "at": 8.635,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 16.845,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 27.285,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 27.985,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 28.205,
+    "why": "beats.js",
+    "dur": 58.995000000000005,
+    "db": -20
+  },
+  {
+    "s": "bruch",
+    "at": 41.4,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "hit",
+    "at": 41.5,
+    "why": "highlight shake"
+  },
+  {
+    "s": "rauschen",
+    "at": 47.64,
+    "why": "beats.js",
+    "dur": 7.935000000000002,
+    "db": -16
+  },
+  {
+    "s": "wind",
+    "at": 56.935,
+    "why": "beats.js",
+    "dur": 30.265,
+    "db": -24
   }
 ]

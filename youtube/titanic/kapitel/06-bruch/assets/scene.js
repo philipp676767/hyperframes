@@ -1,157 +1,152 @@
-// TEMPLATE scene (demo chapter, 16:9): a tiny working story (candle -> light
-// bulb) that shows the pattern. Replace the subject here and the beats (T), shots, labels and
-// sounds in beats.js for the new topic; keep the structure. World,
-// captions, panel, arrows, labels and camera come from world.js.
-// Full-size reference: tiktok/kuehlschrank/assets/scene.js
+// Chapter 6 "Das Schiff bricht": the trim grows, the stern lifts its
+// propellers out of the sea, a ruler bends over a table edge, the load on the
+// middle glows, the lights die, the hull tears, the stern stands up and goes.
 import {
   THREE,
-  ramp,
-  smooth,
-  inBack,
-  pop,
   V,
   scene,
-  flat,
-  M,
-  xrayMaterial,
-  xrayEdges,
-  setXray,
-  showNope,
+  ground,
+  real,
+  roundedBox,
   makeArrowSet,
   animateArrows,
-  showPanel,
-  LED,
-  labels,
-  squash,
-  puff,
+  forceMat,
+  pop,
+  ramp,
+  smooth,
   highlights,
   shotCamera,
   renderFrame,
   start,
 } from "./world.js";
 import "./set.js";
-import { createHand } from "./hand.js";
-import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
+import {
+  makeTitanic,
+  makeSmoke,
+  makeLifeboat,
+  makePerson,
+  shipLights,
+  BREAK_X,
+  LIGHT,
+} from "./welt.js";
+import { T, TABLE, shots, HIGHLIGHTS } from "./beats.js";
 
 highlights(HIGHLIGHTS);
-
-// The world of this video (sky, ground, props, hero piece, life) is built
-// in set.js — new for every video (SKILL.md 1b). Optional floor pad under
-// the subject:
-
-// ---------------------------------------------------------------- hook prop
-// The primitive version from the hook ("Kerze in einem Glas").
-const hook = new THREE.Group();
-scene.add(hook);
-const flameMat = flat(0xffb02e, { emissive: 0xff7a10, emissiveIntensity: 1 });
-const flame = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.22, 8), flameMat);
-{
-  const jar = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.42, 0.42, 0.9, 20, 1, true),
-    new THREE.MeshStandardMaterial({ color: 0xdff4ff, transparent: true, opacity: 0.35 }),
-  );
-  jar.position.y = 0.49;
-  hook.add(jar);
-  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.5, 14), flat(0xfff3dc));
-  candle.position.y = 0.29;
-  candle.castShadow = true;
-  hook.add(candle);
-  flame.position.y = 0.66;
-  hook.add(flame);
-}
-
-// ---------------------------------------------------------------- subject
-// Big, readable, centred at the origin, ~2-3 units tall. Shell uses
-// xrayMaterial so the inside can be revealed.
-const bulb = new THREE.Group();
-scene.add(bulb);
-const glassMat = xrayMaterial(0xfff8e8);
-const glassGeo = new THREE.SphereGeometry(0.9, 24, 16);
-const glass = new THREE.Mesh(glassGeo, glassMat);
-glass.position.y = 1.9;
-bulb.add(glass);
-const glassEdges = xrayEdges(glassGeo);
-glassEdges.position.copy(glass.position);
-bulb.add(glassEdges);
-const base = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.7, 16), M.alu);
-base.position.y = 0.75;
-base.castShadow = true;
-bulb.add(base);
-const filamentMat = flat(0x6b6b6b, { emissive: 0xffa22e, emissiveIntensity: 0 });
-const coil = [];
-for (let k = 0; k <= 120; k++) {
-  const f = k / 120;
-  const a = f * Math.PI * 2 * 9;
-  coil.push(V(-0.35 + f * 0.7, 1.95 + Math.sin(a) * 0.06, Math.cos(a) * 0.06));
-}
-const filament = new THREE.Mesh(
-  new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coil), 240, 0.012, 6),
-  filamentMat,
+const ship = makeTitanic();
+ground.add(ship.group);
+const smoke = makeSmoke(ship);
+// a red band where the stress gathers (between funnels 3 and 4)
+const stress = new THREE.Mesh(
+  new THREE.CylinderGeometry(1.5, 1.5, 0.35, 32, 1, true),
+  new THREE.MeshBasicMaterial({
+    color: 0xff4b2b,
+    transparent: true,
+    opacity: 0,
+    side: THREE.DoubleSide,
+    toneMapped: false,
+    depthWrite: false,
+  }),
 );
-bulb.add(filament);
-const glow = new THREE.PointLight(0xffc46b, 0, 6, 1.5);
-glow.position.set(0, 1.95, 0);
-bulb.add(glow);
-const heatOut = makeArrowSet(
+stress.rotation.z = Math.PI / 2;
+stress.scale.set(1, 1, 0.9);
+stress.position.set(BREAK_X, 0.4, 0);
+ship.stern.add(stress);
+const weight = makeArrowSet(
   [
-    [V(0.3, 2.1, 0.3), V(1.4, 2.6, 0.9)],
-    [V(-0.3, 2.1, 0.3), V(-1.4, 2.6, 0.9)],
-    [V(0, 2.3, 0.4), V(0.1, 3.3, 1.0)],
+    [V(-9, 3.4, 0), V(-9, 1.6, 0)],
+    [V(-6, 3.4, 0), V(-6, 1.8, 0)],
   ],
-  { parent: bulb },
+  { parent: ship.stern, mat: forceMat, amp: 0, r: 0.12 },
 );
+// lifeboats on the water + the one that comes back
+const boats = [];
+for (let i = 0; i < 6; i++) {
+  const b = makeLifeboat({ cover: false });
+  b.position.set(6 + i * 3.2, 0.03, 9 + (i % 2) * 3);
+  b.rotation.y = i * 0.7;
+  ground.add(b);
+  boats.push(b);
+}
+const lantern = new THREE.PointLight(0xffc77a, 0.8, 4, 1.5);
+lantern.position.set(0, 0.25, 0);
+boats[1].add(lantern);
+for (let i = 0; i < 5; i++) {
+  const p = makePerson({ coat: 0x1a1f2b, cap: false, scale: 0.7 });
+  p.position.set(-0.25 + i * 0.12, 0.02, 0);
+  boats[1].add(p);
+}
+// the ruler over a table edge
+const table = new THREE.Group();
+table.position.set(...TABLE);
+scene.add(table);
+{
+  const top = new THREE.Mesh(roundedBox(1.4, 0.08, 1.0, 0.02), real.wood(0x8a5a32));
+  top.position.set(-0.7, -0.04, 0);
+  table.add(top);
+  const light = new THREE.PointLight(0xfff0dc, 4, 6, 1.4);
+  light.position.set(0.6, 1.2, 0.8);
+  table.add(light);
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(8, 8), real.plastic(0x1c1a18));
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = -0.9;
+  table.add(floor);
+}
+const rulerMat = real.plastic(0xf1d36a, { roughness: 0.4 });
+const inner = new THREE.Mesh(roundedBox(0.6, 0.012, 0.06, 0.004), rulerMat);
+const hinge = new THREE.Group();
+const outer = new THREE.Mesh(roundedBox(0.6, 0.012, 0.06, 0.004), rulerMat);
+outer.position.x = 0.3;
+hinge.add(outer);
+table.add(inner, hinge);
+const P = V(BREAK_X, 0, 0);
+const tmp = V(0, 0, 0);
+// place a half rotated by angle a (bow down = positive a) about the moving pivot q
+function pose(obj, a, q) {
+  obj.rotation.set(0, 0, -a);
+  tmp.copy(P).applyAxisAngle(V(0, 0, 1), -a);
+  obj.position.set(q.x - tmp.x, q.y - tmp.y, 0);
+}
 
 const applyCamera = shotCamera(shots);
-
-// the viewer's hand reaches in on frame 0 and taps the jar (visual-style.md
-// "The first 3 seconds": a hand doing something stops the scroll)
-const hand = createHand({ scale: 0.7 });
-
-// ---------------------------------------------------------------- render
 function renderAt(t) {
-  hand.track(t, [
-    // starts before 0 so the loop tail (t < 0) already shows it reaching in
-    { t: -0.6, pos: [1.7, 1.0, 1.4], rot: [0.2, -2.1, 0], pose: "open" },
-    { t: 0, pos: [1.2, 0.78, 0.98], rot: [0.25, -2.1, 0], pose: "open" },
-    { t: 0.45, pos: [0.86, 0.64, 0.7], rot: [0.3, -2.1, 0], pose: "press" },
-    { t: 0.9, pos: [0.94, 0.66, 0.76], rot: [0.3, -2.1, 0], pose: "point" },
-    { t: T.lampe1, pos: [1.7, 0.95, 1.4], rot: [0.2, -2.1, 0], pose: "open", out: true },
-  ]);
-  // hook: the candle burns down, then the "nope" X
-  const burn = ramp(t, T.aber, T.aus + 0.3);
-  flame.scale.setScalar(Math.max(0.001, 1 - smooth(burn)));
-  flame.rotation.z = Math.sin(t * 9) * 0.08;
-  showNope(pop(t, T.aus, T.also), 0, 1.4, 0.3);
-  const hookOut = inBack(ramp(t, T.also, T.also + 0.35));
-  hook.visible = hookOut < 1;
-  hook.scale.setScalar(Math.max(0.001, 1 - hookOut));
-
-  // subject pops in when the build starts, x-ray while explaining
-  // pop-ins: squash() for rubbery growth + a dust puff where it lands
-  bulb.visible = t >= T.also + 0.15;
-  bulb.scale.copy(squash(t, T.also + 0.15));
-  puff("bulb", t, T.also + 0.3, 0, 0.05, 0, 1.3);
-  setXray(
-    [glassMat],
-    smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.payoff, T.payoff + 0.5)),
-  );
-  const hot = smooth(ramp(t, T.heiss, T.gluet + 0.4));
-  filamentMat.emissiveIntensity = 2.5 * hot;
-  glow.intensity = 6 * hot;
-  animateArrows(heatOut, t, pop(t, T.gluet, T.payoff));
-
-  // LED panel: one fact per beat, max one at a time
-  if (t >= T.heiss && t < T.gluehfaden) {
-    showPanel(pop(t, T.heiss, T.gluehfaden), "DRAHT", "2500°C", LED.red);
+  smoke.userData.update(t, 0.2 * (1 - ramp(t, T.um, T.krachen)));
+  // before the break: one trim for both halves
+  const a0 = 0.12 + 0.2 * smooth(ramp(t, 0, T.krachen));
+  const broken = t >= T.krachen + 0.2;
+  if (!broken) {
+    pose(ship.bow, a0, V(BREAK_X, -0.15 - 0.5 * ramp(t, 0, T.krachen), 0));
+    pose(ship.stern, a0, V(BREAK_X, -0.15 - 0.5 * ramp(t, 0, T.krachen), 0));
   } else {
-    showPanel(0);
+    const k = ramp(t, T.krachen + 0.2, T.bug + 2);
+    pose(ship.bow, a0 + 0.5 * smooth(k), V(BREAK_X + 2 * k, -0.65 - 14 * k * k, 0));
+    // the stern falls back a little, then stands up and goes straight down
+    const up = smooth(ramp(t, T.bug, T.senkrecht + 1));
+    const down = ramp(t, T.senkrecht + 1, T.verschwindet + 0.5);
+    const as = a0 - 0.18 * smooth(ramp(t, T.krachen + 0.2, T.bug)) + (1.45 - a0 + 0.18) * up;
+    pose(ship.stern, as, V(BREAK_X, -0.6 - 4.5 * up - 14 * down * down, 0));
   }
-
-  // tags + arrows on the named parts
-  labels(t, LABELS);
-
+  ship.bow.visible = !broken || t < T.bug + 3;
+  ship.stern.visible = t < T.verschwindet + 0.6;
+  // the lights: on, flicker, out
+  const fl = t >= T.um && t < T.aus + 0.3 ? (Math.sin(t * 37) > 0.2 ? 1 : 0.2) : 1;
+  shipLights(t < T.aus + 0.3 ? fl : 0);
+  // stress + weight
+  stress.material.opacity = 0.6 * pop(t, T.last - 0.3, T.krachen + 0.4);
+  animateArrows(weight, t, pop(t, T.bei, T.um));
+  // the ruler slides out, bends, gives
+  const out = 0.05 + 0.5 * smooth(ramp(t, T.lineal, T.je + 1.5));
+  inner.position.set(-0.3, 0.006, 0);
+  hinge.position.set(0, 0.006, 0);
+  outer.scale.x = out / 0.6;
+  outer.position.x = out / 2;
+  const bend =
+    Math.pow(out, 2) * 0.9 +
+    (t >= T.nachgibt ? 1.2 * smooth(ramp(t, T.nachgibt, T.nachgibt + 0.3)) : 0);
+  hinge.rotation.z = -bend;
+  // the boats: the last one rows back towards the spot
+  boats[1].position.x = 9.2 - 4 * smooth(ramp(t, T.nur, T.end));
+  void LIGHT;
   applyCamera(t);
   renderFrame();
 }
-
 start(renderAt);
