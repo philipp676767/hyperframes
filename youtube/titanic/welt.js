@@ -69,7 +69,7 @@ export const MAT = {
   bronze: real.metal(0xb98a4a, { roughness: 0.32 }),
   wire: new THREE.MeshBasicMaterial({ color: 0x1a1c22 }),
   cut: real.plastic(0x2a2522, { roughness: 0.9 }),
-  rust: real.plastic(0x6b3a1f, { roughness: 0.95 }),
+  rust: real.plastic(0x4a2716, { roughness: 0.95 }),
   bulkhead: real.plastic(0xff8a3d, { roughness: 0.45, emissive: 0x401400 }),
   water: new THREE.MeshStandardMaterial({
     color: 0x2f9bff,
@@ -78,8 +78,8 @@ export const MAT = {
     transparent: true,
     opacity: 0.82,
   }),
-  ice: facetMat(flat(0xe2edf5, { roughness: 0.55, emissive: 0x16222f })),
-  iceDark: facetMat(flat(0x9fb6c8, { roughness: 0.6, emissive: 0x0b1420 })),
+  ice: facetMat(flat(0xd3dde6, { roughness: 0.6, emissive: 0x0c1219 })),
+  iceDark: facetMat(flat(0x8a9cad, { roughness: 0.65, emissive: 0x060a10 })),
 };
 // lit windows / portholes (glow through post.js); k scales them (2:17 the lights die)
 export const LIGHT = new THREE.MeshBasicMaterial({ color: 0xffd79a, toneMapped: false });
@@ -472,12 +472,12 @@ export function makeTitanic({ xray = false, seed = 12 } = {}) {
   }
   const nest = new THREE.Group();
   {
-    const n = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.1, 0.17, 32, 1, true), M_.white);
-    n.material = M_.white;
+    const n = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.1, 0.11, 32, 1, true), M_.mast);
+    n.material.side = THREE.DoubleSide;
     nest.add(n);
     const floor = new THREE.Mesh(new THREE.CircleGeometry(0.1, 24), M_.deck);
     floor.rotation.x = -Math.PI / 2;
-    floor.position.y = -0.07;
+    floor.position.y = -0.055;
     nest.add(floor);
     const bell = new THREE.Mesh(
       new THREE.SphereGeometry(0.025, 16, 10, 0, Math.PI * 2, 0, Math.PI / 1.7),
@@ -633,6 +633,13 @@ export function makeTitanic({ xray = false, seed = 12 } = {}) {
     }
   }
 
+  // warm light spilling from the promenades onto the white decks
+  for (const x of [5.5, 1.0, -4.5]) {
+    const pl = new THREE.PointLight(0xffc98a, 2.2, 7, 1.6);
+    pl.position.set(x, 2.15, 0);
+    add(pl, x);
+  }
+
   // the inside (x-ray chapters): bulkheads up to E deck + a water room per compartment
   let inside = null;
   if (xray) {
@@ -691,13 +698,29 @@ export function makeIceberg({ seed = 3, size = 2, len = 3, peaks = 3 } = {}) {
     m.rotation.y = r() * 3;
     g.add(m);
   }
+  // a pale ring where the berg meets the water
+  {
+    const ring = new THREE.Mesh(
+      new THREE.RingGeometry(len * 0.42, len * 0.62, 28, 1),
+      new THREE.MeshBasicMaterial({
+        color: 0x9fb2c4,
+        transparent: true,
+        opacity: 0.35,
+        depthWrite: false,
+      }),
+    );
+    ring.rotation.x = -Math.PI / 2;
+    ring.scale.set(1.3, 0.9, 1);
+    ring.position.y = 0.015;
+    g.add(noAO(ring));
+  }
   // the dark part under water
   const under = new THREE.Mesh(
     facet(jitter(new THREE.IcosahedronGeometry(1, 2), 0.25, seed + 50), 0.1, seed),
     MAT.iceDark,
   );
   under.scale.set(len * 0.75, size * 2.6, len * 0.55);
-  under.position.y = -size * 2.2;
+  under.position.y = -size * 2.85;
   g.add(under);
   shadowAll(g);
   return g;
@@ -806,7 +829,12 @@ export function makeFlare() {
 // Moonless, calm, cold. A mirror-dark sea with a slow swell close to the ship,
 // stars to the horizon, icebergs as pale shapes far out, a few faint lights
 // of the Californian on the horizon (chapters 2, 5).
-export function buildNight({ seed = 14, californian = true, bergs = true } = {}) {
+export function buildNight({
+  seed = 14,
+  californian = true,
+  bergs = true,
+  calPos = [-34, 0, -46],
+} = {}) {
   const r = rng(seed);
   setSky({
     top: [0.006, 0.01, 0.035],
@@ -819,7 +847,7 @@ export function buildNight({ seed = 14, californian = true, bergs = true } = {})
     hemi: [0x7f95d8, 0x0a0e18, 0.75],
     key: [0xa9bbff, 1.25],
     keyPos: [-8, 16, 10],
-    rim: [0x6f8cff, 0.9],
+    rim: [0x6f8cff, 0.25],
     stars: 1.6,
     noClouds: true,
     birds: false,
@@ -838,10 +866,10 @@ export function buildNight({ seed = 14, californian = true, bergs = true } = {})
   // no clearcoat: the key light would paint a bright blue streak on the water
   const seaMat = new THREE.MeshPhysicalMaterial({
     color: 0x02050b,
-    roughness: 0.22,
+    roughness: 0.1,
     metalness: 0.0,
-    specularIntensity: 0.35,
-    envMapIntensity: 2.6,
+    specularIntensity: 0.8,
+    envMapIntensity: 1.6,
   });
   const water = noAO(new THREE.Mesh(geo, seaMat));
   water.receiveShadow = true;
@@ -863,6 +891,33 @@ export function buildNight({ seed = 14, californian = true, bergs = true } = {})
   far.rotation.x = -Math.PI / 2;
   far.position.y = -0.03;
   ground.add(far);
+  // the stars mirrored in the glassy sea: faint glints that shimmer with the swell
+  {
+    const n = 900;
+    const gg = new THREE.PlaneGeometry(0.09, 0.09);
+    gg.rotateX(-Math.PI / 2);
+    const gm = new THREE.MeshBasicMaterial({
+      color: 0xaab8e0,
+      transparent: true,
+      opacity: 0.55,
+      depthWrite: false,
+      toneMapped: false,
+    });
+    const im = noAO(new THREE.InstancedMesh(gg, gm, n));
+    const d = new THREE.Object3D();
+    const ph = [];
+    for (let i = 0; i < n; i++) {
+      const a = r() * Math.PI * 2;
+      const rr = 14 + r() ** 0.6 * 110;
+      d.position.set(Math.cos(a) * rr, 0.02, Math.sin(a) * rr);
+      d.scale.set(0.5 + r() * 1.5, 1, 0.3 + r() * 0.6);
+      d.updateMatrix();
+      im.setMatrixAt(i, d.matrix);
+      ph.push(r() * 6.28);
+    }
+    ground.add(im);
+    onFrame((t) => (gm.opacity = 0.45 + 0.1 * Math.sin(t * 1.3)));
+  }
   const out = { water };
   if (bergs) {
     out.bergs = [];
@@ -877,9 +932,8 @@ export function buildNight({ seed = 14, californian = true, bergs = true } = {})
   }
   if (californian) {
     const c = makeSmallShip({ funnel: 0x1d1d1d, band: 0xb8442c });
-    c.position.set(-95, 0, -120);
+    c.position.set(...calPos);
     c.rotation.y = 0.6;
-    c.scale.setScalar(1.4);
     ground.add(c);
     out.californian = c;
   }
@@ -892,13 +946,13 @@ export function buildNight({ seed = 14, californian = true, bergs = true } = {})
 // foam along a moving hull: a bow wave + a fading wake behind (speed 0..1)
 export function makeWake(ship, { len = 26 } = {}) {
   const g = new THREE.Group();
-  const n = 260;
-  const geo = new THREE.CircleGeometry(0.06, 8);
+  const n = 520;
+  const geo = new THREE.CircleGeometry(0.035, 7);
   geo.rotateX(-Math.PI / 2);
   const mat = new THREE.MeshBasicMaterial({
-    color: 0xcfe0ff,
+    color: 0xb9c8e6,
     transparent: true,
-    opacity: 0.55,
+    opacity: 0.4,
     depthWrite: false,
   });
   const im = noAO(new THREE.InstancedMesh(geo, mat, n));
@@ -908,7 +962,7 @@ export function makeWake(ship, { len = 26 } = {}) {
   const d = new THREE.Object3D();
   g.userData.update = (t, speed = 1) => {
     im.visible = speed > 0.02;
-    mat.opacity = 0.5 * speed;
+    mat.opacity = 0.35 * speed;
     seeds.forEach(([a, b, s, c], i) => {
       const f = (a + t * 0.06 * speed) % 1; // 0 at the bow → 1 far behind
       const x = L2 - 0.2 - f * (2 * L2 + len);
@@ -916,7 +970,7 @@ export function makeWake(ship, { len = 26 } = {}) {
       const spread = x > -L2 ? 0.05 + b * 0.12 : (b - 0.5) * hw * 1.6;
       d.position.set(x, 0.012, x > -L2 ? s * (hw + spread) : spread);
       const sc = (0.6 + c) * (x > 10 ? 1.6 : 1) * (1 - Math.max(0, f - 0.6) / 0.4);
-      d.scale.set(sc * 2.2, 1, sc);
+      d.scale.set(sc * 1.6, 1, sc * 0.8);
       d.updateMatrix();
       im.setMatrixAt(i, d.matrix);
     });
@@ -1114,7 +1168,7 @@ export function buildRadioRoom() {
   const g = new THREE.Group();
   g.position.copy(RADIO);
   scene.add(g);
-  const wood = real.wood(0x5a3a22, { roughness: 0.65 });
+  const wood = real.wood(0x3e2818, { roughness: 0.7 });
   const wall = (w, h, x, y, z, ry) => {
     const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), wood);
     m.position.set(x, y, z);
@@ -1282,10 +1336,10 @@ export function buildRadioRoom() {
   const bulb = noAO(new THREE.Mesh(new THREE.SphereGeometry(0.025, 12, 8), LIGHT));
   bulb.position.set(-0.05, 0.76, -0.6);
   g.add(bulb);
-  const lamp = new THREE.PointLight(0xffc787, 6, 4, 1.6);
+  const lamp = new THREE.PointLight(0xffc787, 2.2, 4, 1.6);
   lamp.position.set(-0.05, 0.72, -0.5);
   g.add(lamp);
-  const fill = new THREE.PointLight(0x8090c0, 1.2, 5, 1.5);
+  const fill = new THREE.PointLight(0x8090c0, 0.8, 5, 1.5);
   fill.position.set(0.8, 1.3, 0.8);
   g.add(fill);
   // the two operators on stools (no faces)
@@ -1294,7 +1348,7 @@ export function buildRadioRoom() {
     [-0.25, 0x1e2433],
     [0.62, 0x252b3a],
   ]) {
-    const p = makePerson({ coat, cap: false, scale: 5.2 });
+    const p = makePerson({ coat, cap: false, scale: 5.4 });
     p.position.set(x, 0.0, -0.18);
     p.rotation.y = Math.PI;
     g.add(p);
@@ -1487,10 +1541,14 @@ export function rustify(group, { seed = 4, n = 220, x0 = -20, x1 = 20 } = {}) {
         o.material === MAT.white ? real.plastic(0x7a5a43, { roughness: 0.95 }) : MAT.rust;
     }
     if (o.isInstancedMesh) o.visible = false;
+    if (o.isMesh && o.material === LIGHT) o.visible = false;
+    if (o.isMesh && o.material && o.material.isMeshBasicMaterial && o.material.toneMapped === false)
+      o.visible = false;
+    if (o.isPointLight) o.visible = false;
   });
-  const geo = new THREE.ConeGeometry(0.02, 0.18, 6);
+  const geo = new THREE.ConeGeometry(0.012, 0.16, 6);
   geo.rotateX(Math.PI);
-  const im = noAO(new THREE.InstancedMesh(geo, real.plastic(0x8a3f1a, { roughness: 1 }), n));
+  const im = noAO(new THREE.InstancedMesh(geo, real.plastic(0x5a2a14, { roughness: 1 }), n));
   const d = new THREE.Object3D();
   for (let i = 0; i < n; i++) {
     const x = x0 + r() * (x1 - x0);
@@ -1513,9 +1571,17 @@ export function makeDeepVignette() {
   const g = new THREE.Group();
   g.position.copy(DEEP);
   scene.add(g);
+  // a dark-teal shell around the vignette hides the sky: it is pitch dark down here
+  const shell = noAO(
+    new THREE.Mesh(
+      new THREE.SphereGeometry(45, 32, 16),
+      new THREE.MeshBasicMaterial({ color: 0x01070a, side: THREE.BackSide, fog: false }),
+    ),
+  );
+  g.add(shell);
   const mud = new THREE.Mesh(
     new THREE.CircleGeometry(30, 64),
-    new THREE.MeshStandardMaterial({ color: 0x3c352d, roughness: 1 }),
+    new THREE.MeshStandardMaterial({ color: 0x5b4a3a, roughness: 1 }),
   );
   mud.rotation.x = -Math.PI / 2;
   mud.position.y = -DRAFT - 0.5;
@@ -1523,18 +1589,27 @@ export function makeDeepVignette() {
   const wreck = makeTitanic({ seed: 31 });
   wreck.group.remove(wreck.stern);
   rustify(wreck.bow, { x0: BREAK_X, x1: 12 });
-  wreck.group.rotation.set(0.04, -0.5, -0.025);
-  wreck.group.position.y = -0.55;
+  // the funnels broke away in the sinking; the boats are gone
+  wreck.bow.children
+    .filter((o) => o.userData.index !== undefined)
+    .forEach((o) => (o.visible = false));
+  wreck.boats.forEach((b) => (b.visible = false));
+  wreck.group.rotation.set(0.05, -0.5, -0.06);
+  wreck.group.position.y = -0.75;
   g.add(wreck.group);
-  const spot = new THREE.SpotLight(0xbfe6ff, 140, 40, 0.5, 0.7, 1.2);
-  spot.position.set(14, 10, 8);
-  spot.target.position.set(4, 0, 0);
+  const spot = new THREE.SpotLight(0xbfe6ff, 260, 45, 0.55, 0.6, 1.2);
+  spot.position.set(19, 7, 13);
+  spot.target.position.set(9, 0.3, 4.5);
   g.add(spot, spot.target);
   const fill = new THREE.PointLight(0x2f6f9f, 4, 30, 1.2);
   fill.position.set(-4, 4, 6);
   g.add(fill);
-  const snowGeo = new THREE.SphereGeometry(0.012, 6, 4);
-  const snowMat = new THREE.MeshBasicMaterial({ color: 0xbfd8e6, transparent: true, opacity: 0.6 });
+  const snowGeo = new THREE.SphereGeometry(0.02, 6, 4);
+  const snowMat = new THREE.MeshBasicMaterial({
+    color: 0x7f97a0,
+    transparent: true,
+    opacity: 0.45,
+  });
   const im = noAO(new THREE.InstancedMesh(snowGeo, snowMat, 220));
   g.add(im);
   const r = rng(12);

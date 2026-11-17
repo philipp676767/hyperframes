@@ -1,59 +1,98 @@
 [
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 2.37,
+    "db": -20
+  },
+  {
+    "s": "glocke",
+    "at": 0.1,
+    "why": "beats.js",
+    "db": -8
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
+    "at": 2,
+    "why": "cut"
   },
   {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
+    "s": "morse",
+    "at": 2.37,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 4.33,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 4.55,
+    "why": "beats.js",
+    "dur": 31.450000000000003,
+    "db": -20
+  },
+  {
+    "s": "maschine",
+    "at": 4.55,
+    "why": "beats.js",
+    "dur": 31.450000000000003,
+    "db": -26
+  },
+  {
+    "s": "wind",
+    "at": 18.98,
+    "why": "beats.js",
+    "dur": 9.86,
+    "db": -22
+  },
+  {
+    "s": "blip",
+    "at": 19.43,
+    "why": "label Frederick Fleet"
   },
   {
     "s": "hit",
-    "at": 12.1,
+    "at": 27.5,
     "why": "highlight shake"
   },
   {
     "s": "whoosh",
-    "at": 17.3,
+    "at": 35.98,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "tauchen",
+    "at": 36.2,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "dur": 4.519999999999996,
+    "db": -16
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 40.5,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 40.72,
+    "why": "beats.js",
+    "dur": 26.08,
+    "db": -20
+  },
+  {
+    "s": "maschine",
+    "at": 40.72,
+    "why": "beats.js",
+    "dur": 26.08,
+    "db": -26
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 54.19,
+    "why": "label Californian"
   }
 ]
