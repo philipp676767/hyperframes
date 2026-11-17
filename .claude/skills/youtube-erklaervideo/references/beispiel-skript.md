@@ -21,11 +21,11 @@ analyses found a little more.
 
 ## Skript (1 Zeile = 1 Absatz = 1 Zeile in `script.txt`)
 
-### 00 — Intro (`hookTitel`: „Apollo 11: <em>Fast gescheitert</em>“, `titelBei`: „Geschichte“)
+### 00 — Intro
 
 The documentary formula (`aufbau.md` „The intro“): archive voices → „Es
 ist …“ scene cut before the climax → thesis → three guiding questions →
-„Das ist die Geschichte …“ (title card) → the subscribe sentence. The `»`
+„Das ist die Geschichte …“ → the subscribe sentence. The `»`
 lines are the archive voice with `radio.sh funk` — the real radio calls of
 20 July 1969, in German translation.
 

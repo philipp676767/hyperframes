@@ -51,8 +51,8 @@ How tatsache, vince and Simplicissimus open every story video (transcripts
    are right).
 5. **„Das ist die Geschichte …“** — one framing sentence with the search
    word („Das ist die Geschichte der ersten Mondlandung — und der zwölf
-   Minuten, in denen sie fast gescheitert wäre.“). The **title card**
-   appears on it (`kapitel.js titelBei` = a word of this sentence).
+   Minuten, in denen sie fast gescheitert wäre.“). No title card — the
+   picture stays free of text (`bild-16-9.md`).
 6. **The subscribe ask (≈ 10 % of the video, see „CTA“)** — one friendly
    sentence right after the framing sentence, then chapter 1 starts with
    the background.
@@ -93,13 +93,11 @@ appeal:
   after „Das ist die Geschichte …“, one friendly sentence: „Wenn du keine
   dieser Geschichten verpassen willst, abonniere den Kanal.“ / „Wenn ihr
   auch in Zukunft keine Videos verpassen wollt, dann abonniert gerne.“ The
-  word is **„abonniere“** — never TikTok's „Folge für mehr Wissen“. The red
-  „Abonnieren“ pill pops on it and flips to „Abonniert“. (Second-best spot:
+  word is **„abonniere“** — never TikTok's „Folge für mehr Wissen“. (Second-best spot:
   after a payoff at 35–55 %, once.)
 - **Comment question — once, at ~50–70 %**, right after the most
   debatable moment (a decision, „what would you have done“): „Hättest du
-  an Bales' Stelle abgebrochen? Schreib's in die Kommentare.“ The
-  „Kommentieren“ pill pops with the question.
+  an Bales' Stelle abgebrochen? Schreib's in die Kommentare.“
 - Never more than once each, never both in one sentence, never in the
   finale.
 
@@ -126,8 +124,8 @@ How the documentary channels end (Simplicissimus, tatsache, Kurzgesagt):
   object); calmer shots are fine while the narrator explains.
 - A **money shot every 2–3 min**; let it breathe (slow camera, sound),
   don't cut away after 2 s.
-- **No TikTok editing:** no zoom-punch on keywords, no whoosh on every cut,
-  no big text pops. Keywords stay yellow in the captions, quietly.
+- **No TikTok editing:** no zoom-punch, no whoosh on every cut, **no text on
+  the picture** except name tags with arrows (`bild-16-9.md`).
 
 ## Word count for `plan.md`
 
@@ -141,7 +139,7 @@ How the documentary channels end (Simplicissimus, tatsache, Kurzgesagt):
 ## Self-check before the voice (every chapter + once for the whole)
 
 - [ ] Whole: 1.500–1.750 words; intro 40–70 s; 6–9 chapters of 60–120 s; finale with the 20-s end screen
-- [ ] Intro: archive voices → „Es ist <Wochentag>, der <Datum>.“ scene cut before the climax → thesis → 2–3 guiding questions → „Das ist die Geschichte …“ + title card → one subscribe sentence. No greeting or channel intro
+- [ ] Intro: archive voices → „Es ist <Wochentag>, der <Datum>.“ scene cut before the climax → thesis → 2–3 guiding questions → „Das ist die Geschichte …“ → one subscribe sentence. No greeting or channel intro
 - [ ] Search word spoken in the first ~15 s, in the title, first word of the description
 - [ ] Sounds like a documentary narrator read aloud (`sprechstil.md` self-check): flowing sentences, paragraphs, few questions, signposting
 - [ ] Every chapter: context → event → science (one analogy) → meaning → bridge; threads always open, main question open until the finale

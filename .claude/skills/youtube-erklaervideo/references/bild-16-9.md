@@ -13,44 +13,30 @@ what is different in landscape and in long form.
 
 ## Frame and safe areas (1920 × 1080, 30 fps)
 
-```text
- 0 ┌──────────────────────────────────────────────────────────────┐
-   │ [KAPITEL 3] Titel        Frage / Hook-Titel / WUSSTEST DU?   [Abonnieren]│  y 54–150: top line
-150│                                                              │
-   │   tags + hud panels            SUBJECT           LED panel   │  y 150–840: the picture
-   │   (left / right third)        (middle)          (upper right)│  end chapter, last 20 s:
-   │                                                              │  y 260–760 free of text
-840│                                                              │  (YouTube end screen)
-   │                 Untertitel: 2–4 Wörter, Mitte                │  y 872–968: captions
-1026└──────────────────────────────────────────────────────────────┘
-     title-safe x 96–1824
-```
+**No text on the picture** (user's rule, 2026-11-17): no captions, no
+title card, no chapter tag, no question, no „WUSSTEST DU?“ badge, no
+subscribe / comment pills, no LED panel, no HUD displays — like the
+documentary channels, the picture tells the story and the narrator
+speaks. YouTube's own subtitles (automatic, switchable) cover deaf and
+sound-off viewers; the chapters live in the description.
 
-- **Captions:** 2–4 words per line, bottom centre (Montserrat 800, 64 px,
-  keyword yellow 74 px — quietly: no pop, no camera punch, no punch sound;
-  long form, 2026-11-15). Groups break at a sentence /
-  phrase end, after 4 words, at ~24 characters or before a pause — the
-  one-word TikTok style is too hectic for 16:9.
-- **Title card** (chapter 0 only): the video title, calm and centred, after
-  the intro's framing sentence (`kapitel.js titelBei`, a word of „Das ist die
-  Geschichte …“), fades in, ~3.2 s, a soft whoosh. **No text on frame 0**
-  — the cold open is a picture, like a documentary.
-- **Chapter tag** (chapters 1 …): „KAPITEL n“ + the chapter title, top left,
-  0.25–3.6 s; the finale says „FINALE“.
-- **Question** (`kapitel.js frage`, optional, mostly empty in long form): top centre, ~6.5 s after the tag, back
-  for a moment with a ding when its `antwort` word is spoken.
-- **WUSSTEST DU?** badge top centre on „Übrigens“.
-- **CTA pills** (mid-video, wherever they are spoken): white „Kommentieren“
-  top left with the question before „Schreib's in die Kommentare.“; red
-  „Abonnieren“ top right on „abonniere“ → tapped → „Abonniert“; each leaves
-  after its sentence.
+The **one exception: a name tag with an arrow** that points at something
+and names or explains it (`LABELS` in beats.js → `labels()`): „Saturn V“,
+„Bordcomputer“, „Radreifen gebrochen“. 1–3 per chapter, one at a time,
+~2.5 s, the arrow touching its part.
+
+- **Numbers and readings** belong **in the 3D world**: the display of the
+  machine itself (the DSKY showing 1202, a speedometer in the cab, a clock
+  on the wall), built as part of the scene — never an overlay panel
+  (`showPanel()` and `hud.js` are switched off: `HF_NO_PANEL`, `HF_NO_HUD`
+  in index.html).
+- Name tags stay inside the title-safe area (x 96–1824, y 170–800), beside
+  the part (±280 px), never on the subject.
 - **End screen** (finale): from its last line (the next-video pointer) on,
-  ~20 s of calm, moving picture with nothing written in y 260–760
-  (end-screen elements go there).
-- **Labels:** the tag sits beside the part (±280 px), never below y 800 or
-  above y 170. **HUD panels** in the left or right third (`hud.js` header).
-  **LED panel** upper right.
-- One text layer at a time on top, as on TikTok.
+  ~20 s of calm, moving picture; no tag in y 260–760 (end-screen elements
+  go there).
+- Thumbnails are the exception to the exception: they keep their 2–5 words
+  (`verpackung.md`), because they are not part of the video.
 
 ## Camera
 

@@ -66,7 +66,7 @@ the same: viewers should never have to guess what a video covers;
 
 - **1280×720** (`scripts/make-thumbnail.sh` in any chapter: renders the 3D
   scene at one moment, optional camera override, text + dark gradient,
-  hides captions, labels and the LED panel).
+  hides the name tags; the video itself has no text, the thumbnail does).
 - **One object or face, big** (≥ ⅓ of the frame), **strong contrast**
   (bright subject on dark, warm on cold), one accent colour.
 - Text on the side away from the subject (`links` / `rechts`) or across
@@ -129,8 +129,9 @@ quick, but done.
 - **Zielgruppe:** „Nein, nicht speziell für Kinder“ · **Altersbeschränkung:** nein
 - **Bezahlte Werbung:** nein · **Veränderte oder synthetische Inhalte: ja**
   (AI voice)
-- **Sprache:** Deutsch · **Untertitel:** Deutsch (YouTube automatisch; the
-  burned-in captions stay)
+- **Sprache:** Deutsch · **Untertitel:** Deutsch, automatisch von YouTube
+  (the video itself has no text on the picture — check the auto subtitles
+  once and correct names / numbers in YouTube Studio)
 - **Kategorie:** Bildung · **Kommentare:** an, „Top“ · **Lizenz:** Standard
 - **Endbildschirm** (last 20 s, the picture is free of text there): left an
   element „Video — am besten für den Zuschauer“ or the named next video,

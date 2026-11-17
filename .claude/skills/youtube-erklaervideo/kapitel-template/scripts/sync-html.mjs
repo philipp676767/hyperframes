@@ -32,9 +32,6 @@ if (K.nr === 0) {
   // the intro: cold open + why it matters + road map + title card, 35–55 s
   if (real && (LAST < 35 || LAST > 75))
     warn(`the intro speaks ${LAST.toFixed(1)} s — aim for 40–70 s (110–170 words).`);
-  const nrmT = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
-  if (!K.titelBei || !words.some((w) => nrmT(w.w) === nrmT(K.titelBei)))
-    warn("intro: kapitel.js `titelBei` is no spoken word — the title card would not appear.");
 } else if (K.ende) {
   if (!/video/i.test(plain(scriptLines[scriptLines.length - 1] ?? "")))
     warn(
@@ -123,12 +120,6 @@ if (scriptLines.length >= 4 && shortLines / scriptLines.length > 0.5)
 const voiceTags = scriptLines.join(" ").match(/\[[^\]\n]*\]/g) ?? [];
 if (voiceTags.length > 2)
   warn(`${voiceTags.length} delivery tags — long form keeps a calm base tone: 0–2 per chapter.`);
-// keywords: few and quiet (yellow only) — about one per 20–30 s
-const hl = words.filter((w) => w.hl).length;
-const want = Math.max(1, Math.round(LAST / 25));
-if (real && (hl < want - 2 || hl > want + 2))
-  warn(`${hl} *keywords* — aim for ~${want} in this chapter (one every 20–30 s).`);
-
 // ---------------------------------------------------------------- html
 const htmlUrl = new URL("index.html", root);
 let html = fs.readFileSync(htmlUrl, "utf8");

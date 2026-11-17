@@ -21,7 +21,8 @@ import { onFrame, clamp01 } from "./world.js";
 const ACCENT = "#ffd23f";
 const layer = document.createElement("div");
 layer.id = "hud";
-layer.style.cssText = "position:absolute;inset:0;pointer-events:none;";
+// long form: no text displays on the picture (window.HF_NO_HUD, index.html)
+layer.style.cssText = `position:absolute;inset:0;pointer-events:none;${window.HF_NO_HUD ? "display:none;" : ""}`;
 document.getElementById("root").insertBefore(layer, document.getElementById("captions"));
 
 const pool = new Map();

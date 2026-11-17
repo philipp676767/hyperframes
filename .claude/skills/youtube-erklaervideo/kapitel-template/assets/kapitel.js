@@ -1,18 +1,10 @@
-// This chapter's settings (skill youtube-erklaervideo). Read by index.html
-// (chapter tag, question, hook title), assets/timing.js (length) and the
-// scripts (sounds, checks). Plain data, no DOM.
+// This chapter's settings (skill youtube-erklaervideo). Read by assets/timing.js
+// (length) and the scripts (checks, chapter marks). Plain data, no DOM.
+// No text is shown on the picture (2026-11-17) — `titel` is only the YouTube
+// chapter name in the description.
 window.HF_KAPITEL = {
-  nr: 0, // 0 = the hook (0:00–0:30), 1 … n = chapters; the end chapter has `ende: true`
+  nr: 0, // 0 = the intro, 1 … n = chapters; the end chapter has `ende: true`
   titel: "Licht aus Draht", // short + curious, also the YouTube chapter name in the description
-  // chapter 0 only: the title card (video title, keyword in <em>) and the
-  // spoken word it appears on — a word of the framing sentence „Das ist die
-  // Geschichte …“ (references/aufbau.md „The intro“; the demo uses „vorne“)
-  hookTitel: "Licht aus <em>Draht</em>",
-  titelBei: "vorne",
-  // optional: an open question shown at the top (≤ 7 words, keyword in <em>)
-  // and the spoken word that answers it — long form mostly leaves it empty
-  frage: "",
-  antwort: "",
-  ende: false, // true = end chapter: CTA pills + 20 s end-screen picture
+  ende: false, // true = end chapter: its last line opens the 20-s end-screen picture
   tail: 0.6, // seconds after the last word (normal chapters)
 };

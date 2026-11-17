@@ -1,10 +1,8 @@
 // Build assets/sfx.mp3: every sound effect of the video on one track, placed
 // from the same beats the picture uses (assets/beats.js + words.js).
-// Automatic cues (long form, calm): whoosh only on shots marked `whoosh: true`
-// / whip pans, a whoosh on the title card (chapter 0) and on each chapter
-// cut, blip per label, ding when the chapter's question is
-// answered, wow on the bonus fact ("Übrigens"), CTA pops + click + ding (wherever
-// „abonniere“ / „Kommentare“ is spoken — the middle of the video). Plus beats.js SFX.
+// Automatic cues (long form, calm, no on-screen text since 2026-11-17):
+// whoosh only on shots marked `whoosh: true` / whip pans and on each chapter
+// cut, blip per name tag (label with arrow). Plus beats.js SFX.
 // Writes assets/sfx-cues.json (what landed where) for checking.
 // Run after align-words.py (real timings), before sync-html.mjs.
 //   node scripts/build-sfx.mjs            SFX_DB=-2 shifts every level
@@ -17,9 +15,7 @@ const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(new URL("assets/words.js", root), "utf8"), ctx);
 vm.runInNewContext(fs.readFileSync(new URL("assets/kapitel.js", root), "utf8"), ctx);
 globalThis.window = ctx.window;
-const { WORDS, DURATION, HL, KAPITEL, ctaTimes, answerTime, factTime } = await import(
-  new URL("assets/timing.js", root)
-);
+const { DURATION, HL, KAPITEL } = await import(new URL("assets/timing.js", root));
 const {
   shots,
   LABELS = [],
@@ -79,27 +75,10 @@ for (const sh of shots.slice(1)) {
   add("whoosh", sh.at, "cut");
   lastCut = sh.at;
 }
-if (!KAPITEL.nr) {
-  // the title card after the cold open (kapitel.js titelBei)
-  const nrm = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
-  const tw = KAPITEL.titelBei && WORDS.find((w) => nrm(w.w) === nrm(KAPITEL.titelBei));
-  if (tw) add("whoosh", tw.start, "title card", { db: -12 });
-} else {
-  // the cut into a new chapter + its tag (index.html): one soft whoosh
-  add("whoosh", 0.22, "chapter cut", { db: -14 });
-}
-add("wow", factTime(), "bonus fact");
-// keywords: no punch sound in long form (HL kept for the captions only)
+if (KAPITEL.nr) add("whoosh", 0.22, "chapter cut", { db: -14 }); // the cut into a new chapter
+// keywords (*Wort*): no sound, no captions in long form — HL only kept for the engine
 void HL;
 for (const l of LABELS) add("blip", l.at + 0.05, `label ${l.text}`);
-add("ding", answerTime(), "question answered");
-const cta = ctaTimes();
-if (cta?.cmt != null) add("pop", cta.cmt, "comment pill");
-if (cta?.sub != null) {
-  add("pop", cta.sub, "subscribe pill");
-  add("click", cta.tap + 0.08, "subscribe tap");
-  add("ding", cta.flip, "abonniert", { db: -16 });
-}
 const FX_SOUND = { shake: "hit", flash: "hit", zoom: "whoosh", slowmo: "slowmo" };
 for (const h of HIGHLIGHTS) add(FX_SOUND[h.kind] ?? "hit", h.at, `highlight ${h.kind}`);
 for (const c of SFX) add(c.s, c.at, "beats.js", { dur: c.dur, db: c.db });
