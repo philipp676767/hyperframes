@@ -309,7 +309,7 @@ function sag(a, b, d = 0.15, n = 8) {
 // separate groups (pivot at the origin) so chapter 6 can break the hull at
 // BREAK_X. opts.xray: every shell material becomes an x-ray material
 // (setXray(ship.mats, k)) and the inside (15 bulkheads + 16 water rooms) is built.
-export function makeTitanic({ xray = false, seed = 12 } = {}) {
+export function makeTitanic({ xray = false, seed = 12, hullOnly = false } = {}) {
   const r = rng(seed);
   const group = new THREE.Group();
   const bow = new THREE.Group();
@@ -385,6 +385,10 @@ export function makeTitanic({ xray = false, seed = 12 } = {}) {
   );
   bow.add(cutB);
   stern.add(cutS);
+  if (hullOnly) {
+    shadowAll(group);
+    return { group, bow, stern, inside: null, mats, boats: [], props: [], masts: {}, nest: null };
+  }
 
   // superstructure: two white decks + the boat-deck houses, bridge and wings
   const block = (xa, xb, y0, y1, w, mat = M_.white) =>
@@ -1039,12 +1043,12 @@ export function buildShipyard({ seed = 9 } = {}) {
   // the yard: concrete and cinders, the slipway, the harbour water in front (+z)
   const yard = noAO(
     new THREE.Mesh(
-      new THREE.PlaneGeometry(220, 120, 1, 1),
+      new THREE.PlaneGeometry(220, 100, 1, 1),
       real.plastic(0x6f6a63, { roughness: 0.95 }),
     ),
   );
   yard.rotation.x = -Math.PI / 2;
-  yard.position.set(0, -1.12, -40);
+  yard.position.set(0, -1.12, -48);
   yard.receiveShadow = true;
   ground.add(yard);
   const slip = new THREE.Mesh(

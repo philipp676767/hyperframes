@@ -80,3 +80,19 @@ t = t_of(8)
 ping = np.sin(2 * np.pi * 1450 * t) * np.exp(-np.mod(t, 4.0) / 0.5) * 0.4
 hum = svf(noise(8), 90, q=0.8, mode="lp") * 1.5
 write("tauchen", ping + hum, peak_db=-10)
+
+# nieten: riveting hammers in the shipyard — fast metallic taps, two hammers
+t = t_of(6)
+taps = np.zeros_like(t)
+for start, rate, amp in [(0.0, 9.5, 1.0), (0.13, 7.0, 0.6)]:
+    for k in range(int(6 * rate)):
+        at = max(0.0, start + k / rate + rng.uniform(-0.01, 0.01))
+        if (k // 12) % 2 == 1:
+            continue
+        i = int(at * 44100)
+        n = min(len(t) - i, 2500)
+        if n <= 0:
+            continue
+        tt = np.arange(n) / 44100
+        taps[i : i + n] += amp * (np.sin(2 * np.pi * 2300 * tt) + 0.5 * np.sin(2 * np.pi * 3900 * tt)) * np.exp(-tt / 0.012)
+write("nieten", taps + 0.15 * svf(noise(6), 300, q=0.7, mode="lp"), peak_db=-6)

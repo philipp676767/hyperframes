@@ -309,7 +309,7 @@ function sag(a, b, d = 0.15, n = 8) {
 // separate groups (pivot at the origin) so chapter 6 can break the hull at
 // BREAK_X. opts.xray: every shell material becomes an x-ray material
 // (setXray(ship.mats, k)) and the inside (15 bulkheads + 16 water rooms) is built.
-export function makeTitanic({ xray = false, seed = 12 } = {}) {
+export function makeTitanic({ xray = false, seed = 12, hullOnly = false } = {}) {
   const r = rng(seed);
   const group = new THREE.Group();
   const bow = new THREE.Group();
@@ -385,6 +385,10 @@ export function makeTitanic({ xray = false, seed = 12 } = {}) {
   );
   bow.add(cutB);
   stern.add(cutS);
+  if (hullOnly) {
+    shadowAll(group);
+    return { group, bow, stern, inside: null, mats, boats: [], props: [], masts: {}, nest: null };
+  }
 
   // superstructure: two white decks + the boat-deck houses, bridge and wings
   const block = (xa, xb, y0, y1, w, mat = M_.white) =>

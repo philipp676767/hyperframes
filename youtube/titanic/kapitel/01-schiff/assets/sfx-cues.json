@@ -4,5 +4,102 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "nieten",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 10.4,
+    "db": -20
+  },
+  {
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 10.4,
+    "db": -26
+  },
+  {
+    "s": "whoosh",
+    "at": 10.18,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 10.4,
+    "why": "beats.js",
+    "dur": 23.82,
+    "db": -24
+  },
+  {
+    "s": "pop",
+    "at": 14.84,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "pop",
+    "at": 14.99,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "pop",
+    "at": 15.14,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "blip",
+    "at": 18.71,
+    "why": "label Attrappe"
+  },
+  {
+    "s": "whoosh",
+    "at": 33.7,
+    "why": "cut"
+  },
+  {
+    "s": "rauschen",
+    "at": 38.58,
+    "why": "beats.js",
+    "dur": 3.3599999999999994,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 41.72,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 46.34,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "klack",
+    "at": 46.84,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "blip",
+    "at": 48.27,
+    "why": "label Schotten"
+  },
+  {
+    "s": "rauschen",
+    "at": 51.16,
+    "why": "beats.js",
+    "dur": 2.2,
+    "db": -22
+  },
+  {
+    "s": "meer",
+    "at": 54.3,
+    "why": "beats.js",
+    "dur": 16.200000000000003,
+    "db": -24
   }
 ]
