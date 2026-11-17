@@ -4,5 +4,36 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "meer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 69.8,
+    "db": -22
+  },
+  {
+    "s": "maschine",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 14.05,
+    "db": -22
+  },
+  {
+    "s": "blip",
+    "at": 1.05,
+    "why": "label Carpathia"
+  },
+  {
+    "s": "wind",
+    "at": 14.05,
+    "why": "beats.js",
+    "dur": 22.09,
+    "db": -24
+  },
+  {
+    "s": "whoosh",
+    "at": 35.92,
+    "why": "cut"
   }
 ]
