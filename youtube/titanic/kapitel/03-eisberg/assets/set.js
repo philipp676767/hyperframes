@@ -1,4 +1,5 @@
-// This chapter's place: the video's main world (youtube/<slug>/welt.js, copied
-// in by new-chapter.sh / sync-kit.sh). For a side scene of its own, replace
-// this import with the side world, built the same way (set kit).
-import "./welt.js";
+// Chapter 3: the night sea (main world) + the radio-room desk (the glass of water)
+// and a small dark stage for the bicycle / freight-train comparison.
+import { buildNight, buildRadioRoom } from "./welt.js";
+export const NIGHT = buildNight();
+export const RADIO_ROOM = buildRadioRoom();

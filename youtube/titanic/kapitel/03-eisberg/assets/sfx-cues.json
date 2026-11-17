@@ -4,5 +4,111 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 18.39,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 0.65,
+    "why": "label Krähennest"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.17,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 18.39,
+    "why": "beats.js",
+    "dur": 17.634999999999998,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 35.805,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 36.025,
+    "why": "beats.js",
+    "dur": 23.190000000000005,
+    "db": -22
+  },
+  {
+    "s": "maschine",
+    "at": 36.025,
+    "why": "beats.js",
+    "dur": 11.125,
+    "db": -22
+  },
+  {
+    "s": "glocke",
+    "at": 38.58,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "blip",
+    "at": 44.535,
+    "why": "label William Murdoch"
+  },
+  {
+    "s": "klack",
+    "at": 46.75,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 58.995,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 59.415,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "brumm",
+    "at": 62.3,
+    "why": "beats.js",
+    "dur": 4.7450000000000045,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 66.825,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 67.045,
+    "why": "beats.js",
+    "dur": 16.455,
+    "db": -22
+  },
+  {
+    "s": "kratzen",
+    "at": 74.115,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "hit",
+    "at": 74.315,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 78.755,
+    "why": "cut"
   }
 ]
