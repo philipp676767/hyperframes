@@ -15,7 +15,7 @@ import {
   renderFrame,
   start,
 } from "./world.js";
-import "./set.js";
+import { DAWN } from "./set.js";
 import { makeSmallShip, makeLifeboat, makePerson, makeTitanic, shipLights } from "./welt.js";
 import { T, CARP, RULE, shots, LABELS } from "./beats.js";
 
@@ -76,6 +76,9 @@ for (const s of [big, small])
     rings.push(ring);
   }
 
+// keep the stage for the two ships clear of ice
+for (const b of DAWN.bergs)
+  if (Math.hypot(b.position.x - RULE[0], b.position.z - RULE[2]) < 20) b.visible = false;
 const applyCamera = shotCamera(shots);
 function renderAt(t) {
   shipLights(t < T.untersuchungen ? 0.6 : 0.25);

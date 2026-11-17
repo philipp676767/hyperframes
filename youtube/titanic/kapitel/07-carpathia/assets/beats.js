@@ -26,9 +26,9 @@ const ru = (x, y, z) => [RULE[0] + x, RULE[1] + y, RULE[2] + z];
 
 export const shots = [
   { at: 0, from: c(-22, 1.2, 14), to: c(-18, 1.1, 12), look: c(0, 1.0, 0), zoom: 1 },
-  { at: T.rostron, from: c(5, 1.6, 4), to: c(4, 1.5, 3.4), look: c(-0.2, 1.2, 0), zoom: 1 },
+  { at: T.rostron, from: c(9, 2.4, 8), to: c(8, 2.2, 7), look: c(0, 1.0, 0), zoom: 1 },
   { at: T.feld, from: [-30, 9, 40], to: [-20, 8, 34], look: [6, 1, 0], zoom: 1 },
-  { at: T.bis, from: c(4, 1.3, 7), to: c(3.2, 1.1, 6), look: c(0.5, 0.3, 2), zoom: 1 },
+  { at: T.bis, from: c(7, 1.8, 10), to: c(6, 1.6, 9), look: c(0.5, 0.4, 2), zoom: 1 },
   { at: T.ueber, from: [-8, 2.5, 16], to: [-6, 2.2, 14], look: [0, 0.3, 4], zoom: 1 },
   {
     at: T.untersuchungen,

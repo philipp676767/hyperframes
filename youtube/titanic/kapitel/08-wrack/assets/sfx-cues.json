@@ -4,5 +4,39 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "pop",
+    "at": 9.335,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "morse",
+    "at": 13.965,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 23.995,
+    "why": "cut"
+  },
+  {
+    "s": "tauchen",
+    "at": 24.215,
+    "why": "beats.js",
+    "dur": 51.185,
+    "db": -14
+  },
+  {
+    "s": "blip",
+    "at": 49.17,
+    "why": "label Bug"
+  },
+  {
+    "s": "blip",
+    "at": 54.95,
+    "why": "label Heck"
   }
 ]
