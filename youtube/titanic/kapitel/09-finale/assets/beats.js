@@ -18,7 +18,7 @@ export const T = {
   eispatrouille: W("Eispatrouille"),
   kranz: W("Kranz"),
   fast: W("Fast"),
-  und: W("Und", 2),
+  und: W("Mondlandung") - 0.8,
   end: END,
 };
 export const DEP = [0, -320, 0];
