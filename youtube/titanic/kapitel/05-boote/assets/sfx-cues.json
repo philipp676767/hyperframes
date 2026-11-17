@@ -4,5 +4,100 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "meer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 7.095,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 6.875,
+    "why": "cut"
+  },
+  {
+    "s": "morse",
+    "at": 8.595,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "morse",
+    "at": 15.145,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 19.585,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 19.805,
+    "why": "beats.js",
+    "dur": 12.065000000000001,
+    "db": -22
+  },
+  {
+    "s": "blip",
+    "at": 21.055,
+    "why": "label Carpathia"
+  },
+  {
+    "s": "maschine",
+    "at": 27.415,
+    "why": "beats.js",
+    "dur": 4.455000000000002,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 31.65,
+    "why": "cut"
+  },
+  {
+    "s": "rakete",
+    "at": 32.87,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "rakete",
+    "at": 39.095,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "blip",
+    "at": 40.77,
+    "why": "label Californian"
+  },
+  {
+    "s": "whoosh",
+    "at": 43.845,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 44.065,
+    "why": "beats.js",
+    "dur": 41.33500000000001,
+    "db": -24
+  },
+  {
+    "s": "meer",
+    "at": 44.065,
+    "why": "beats.js",
+    "dur": 41.33500000000001,
+    "db": -22
+  },
+  {
+    "s": "klack",
+    "at": 52.4,
+    "why": "beats.js",
+    "db": -14
   }
 ]
