@@ -123,7 +123,7 @@ the three candidates you compare is topical, the three come from different categ
 and never a weak topic just to be current. Follow
 `references/themen.md`: **duplicate check first** (`tiktok/serie.md`,
 every folder in `tiktok/`, the reserved list, remote branches), then pick
-**yourself** the best open topic **of that format's list** by its criteria — **first read „What our numbers say“ in `themen.md`** (2026-11-17: Look & Beauty and felt body moments win; health tips, myths, pet facts and small details flop) (format A
+**yourself** the best open topic **of that format's list** by its criteria — **first read „What our numbers say“ in `themen.md`** (2026-11-17: „Du-Themen“ the viewer has done or felt + a felt moment win — no beauty focus; health tips, myths, pet facts and small details flop) (format A
 also takes **Detail-Rätsel** — one small odd detail everyone has seen —
 and **Dein Look & dein Hobby** — the science behind what viewers show
 off, `themen.md`). The scorecard rates the **sweet spot** (one concrete

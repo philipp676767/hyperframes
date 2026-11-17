@@ -38,26 +38,33 @@ an old episode only when the user asks for one.
 | #70 Hundenase (A, Look list)       | a cute fact about the dog, not about **you** — nothing at stake, nothing to feel  |
 | #72 Rolltreppe (A, Detail-Rätsel)  | a small detail nobody cares about enough to stop scrolling                        |
 
-**Rules from it (they beat the rest of this file when in doubt):**
+**Rules from it (they beat the rest of this file when in doubt).** The
+user does **not** want a beauty channel (2026-11-17) — the lesson is not
+"beauty", it is **"about YOU"**: all three hits are about something the
+viewer has done or felt with their own body or their own things.
 
-1. **Look & Beauty is the main pillar.** Every second format-A video
-   comes from „Dein Look & dein Hobby“, with priority for beauty and
-   body treatments the viewer has done or wants (nails, hair, lashes,
-   skin, tan, make-up, piercing, laser, teeth). Men's topics (beard,
-   hair loss, gym) in between, but beauty first — it is what went viral.
-2. **Format B = the „Autsch“-scenario.** Pick scenarios with a body
-   moment the viewer physically feels while watching (falling, hitting
-   water, heat, cold, a sting, a jolt) and that most people nearly
-   experienced themselves. Warnings stay warnings (safety rules).
+1. **„Du-Thema“ first:** the topic is about something the viewer
+   **personally does, owns or has felt** — their body, their routine,
+   their stuff, their hobby (the tower in the pool, the salon chair, the
+   gym, the car, the phone in their hand, the kitchen, the club, the
+   plane seat). Not a fact about an animal, a machine part or the world
+   out there. Mix the fields widely: sport, food, tech, travel, body,
+   hobby, money, nature as you experience it. Look & Beauty stays one
+   list among many (about every 4th–5th video at most, women's and men's
+   topics alternating) — no focus on it.
+2. **A felt moment:** the best topics have a moment the viewer feels
+   while watching („Autsch“, the stomach drop, the cold, the heat, the
+   shock „erst orange“). Format B always picks scenarios with such a
+   body moment; format A looks for the feelable part of the thing.
 3. **Avoid:** health tips and old myths everyone already knows (drink
    enough, wait after eating, chewing gum …), cute pet / animal facts,
    small machine details (Detail-Rätsel) — unless the topic still scores
    2 on Was?!, Zielgruppen-Schärfe **and** Zeig-Faktor.
-4. **Scorecard bonus / malus:** Look & Beauty topic **+3**; B with a
-   felt body moment **+2**; health tip / old myth, pet fact, Detail-Rätsel
-   **−3**.
-5. **The test question:** „Is this about the viewer's own body or look —
-   or would they feel it?“ If neither, think twice.
+4. **Scorecard bonus / malus:** Du-Thema (own body / own routine / own
+   stuff) **+2**; a felt body moment **+2**; health tip / old myth, pet
+   fact, Detail-Rätsel **−3**. No bonus just for being beauty.
+5. **The test question:** „Has the viewer done or felt this themselves —
+   or would they feel it while watching?“ If neither, think twice.
 
 **The format comes first** (SKILL.md step 0, always alternating): for
 format A pick from **Offen — Format A „Bauen“**, **Offen —
@@ -270,10 +277,11 @@ tattoo, coffee, car, sneakers, cat. Sweet spot by nature (a concrete thing
 of a huge community) with a high Zeig-Faktor. The comment question
 asks about the viewer's own thing („Gel-Nägel oder lieber normaler
 Lack?“) — **never „Zeig mir …“ / „Bild in die Kommentare“**, the photos
-come on their own (user, 2026-11-03). Counts as format A. **Since
-2026-11-17 the main pillar** (#36 230 K, #46 30 K): every second format-A
-video comes from here, beauty and body treatments first; pets only when
-the topic is about the owner (not a cute fact — #70 Hundenase flopped).
+come on their own (user, 2026-11-03). Counts as format A. **One list
+among many — no beauty focus** (user, 2026-11-17): about every 4th–5th
+video at most, women's and men's topics and hobbies (gym, car, sneakers,
+coffee, gaming) alternating; pets only when the topic is about the owner
+(not a cute fact — #70 Hundenase flopped).
 
 | Thema                         | Hook (≤ 9 Wörter)                                                                         | Zeig-Frage (Kommentar)             | Money-Shot                                                       |
 | ----------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------- |

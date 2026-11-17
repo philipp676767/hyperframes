@@ -30,7 +30,7 @@ früher galt und geändert wurde, steht unten unter „Überholt“ und ist
 
 **Themen:**
 
-- [ ] **Aus den Zahlen 2026-11-17:** Top = #36 Nagellampe 230 K, #46 Blondieren 30 K, #65 10-Meter-Turm 30 K; Flops = nichts trinken, Hundenase, Rolltreppe, satt schwimmen. → Look & Beauty als Hauptsäule (jedes 2. A-Video), Format B mit spürbarem „Autsch“-Moment am eigenen Körper; keine Gesundheitstipps / alten Mythen, keine niedlichen Tierfakten, keine kleinen Detail-Rätsel (themen.md „What our numbers say“).
+- [ ] **Aus den Zahlen 2026-11-17:** Top = #36 Nagellampe 230 K, #46 Blondieren 30 K, #65 10-Meter-Turm 30 K; Flops = nichts trinken, Hundenase, Rolltreppe, satt schwimmen. → **„Du-Thema“**: etwas, das der Zuschauer selbst macht, hat oder gespürt hat (eigener Körper, Alltag, Hobby, Sachen) + ein spürbarer Moment. **Kein Beauty-Fokus** (Nutzer): Look & Beauty nur eine Liste unter vielen, höchstens jedes 4.–5. Video. Keine Gesundheitstipps / alten Mythen, keine niedlichen Tierfakten, keine kleinen Detail-Rätsel (themen.md „What our numbers say“).
 - [ ] Sweet Spot + Zeig-Faktor (#36 viral): ein konkretes Ding einer riesigen Gruppe; am besten etwas, das Zuschauer selbst haben und zeigen. Alltag am Körper / Handy zieht (#23, #18).
 - [ ] Formate A und B immer abwechselnd; Trends nur als Ausnahme, Jahreszeit ohne Bonus.
 - [ ] Ein Suchwort an vier Stellen: gesprochen in den ersten ~5 s, als Schrift im Bild, erstes Wort der Beschreibung, erster Hashtag / YouTube-Titel.
