@@ -4,5 +4,168 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "meer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 27.7,
+    "db": -22
+  },
+  {
+    "s": "maschine",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 27.7,
+    "db": -26
+  },
+  {
+    "s": "blip",
+    "at": 15.35,
+    "why": "label Kapitän Smith"
+  },
+  {
+    "s": "morse",
+    "at": 22.42,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "morse",
+    "at": 24.82,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 27.48,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 29.3,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "pop",
+    "at": 29.42,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "pop",
+    "at": 29.54,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "pop",
+    "at": 29.66,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "pop",
+    "at": 29.78,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "pop",
+    "at": 29.9,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 30.54,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 30.76,
+    "why": "beats.js",
+    "dur": 1.5999999999999979,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 32.14,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 37.17,
+    "why": "label Jack Phillips"
+  },
+  {
+    "s": "blip",
+    "at": 40.09,
+    "why": "label Harold Bride"
+  },
+  {
+    "s": "morse",
+    "at": 42.66,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 45.08,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 45.3,
+    "why": "beats.js",
+    "dur": 6.900000000000006,
+    "db": -22
+  },
+  {
+    "s": "blip",
+    "at": 46.15,
+    "why": "label Californian"
+  },
+  {
+    "s": "whoosh",
+    "at": 51.88,
+    "why": "cut"
+  },
+  {
+    "s": "morse",
+    "at": 55.3,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 61.14,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 63.48,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 64.84,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 65.06,
+    "why": "beats.js",
+    "dur": 8.239999999999995,
+    "db": -20
+  },
+  {
+    "s": "maschine",
+    "at": 65.06,
+    "why": "beats.js",
+    "dur": 8.239999999999995,
+    "db": -22
   }
 ]
