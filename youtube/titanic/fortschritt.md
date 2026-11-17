@@ -3,13 +3,23 @@
 Stand für einen neuen Chat (Skill `youtube-erklaervideo`, Schritt „Weitermachen“).
 Status je Kapitel: geplant → skript → stimme → szene → geprüft → gerendert.
 
-| Nr  | Ordner | Kapitel | Wörter | Sprechzeit | Status | Notiz |
-| --- | ------ | ------- | ------ | ---------- | ------ | ----- |
+| Nr  | Ordner       | Kapitel                    | Wörter | Sprechzeit | Status           | Notiz                                                  |
+| --- | ------------ | -------------------------- | ------ | ---------- | ---------------- | ------------------------------------------------------ |
+| 0   | 00-hook      | Eisberg voraus             | 166    | 66,8 s     | geprüft, rendert | O-Töne Volker (radio funk)                             |
+| 1   | 01-schiff    | Das größte Schiff der Welt | 175    | 70,5 s     | geprüft, Queue   | Werft Belfast, Fußballfelder, Schüssel, Röntgen        |
+| 2   | 02-warnungen | Sechs Warnungen            | 182    | 73,3 s     | geprüft, Queue   | Funkraum, Uhr 23:30, Californian                       |
+| 3   | 03-eisberg   | 37 Sekunden                | 189    | –          | skript           | Stimme: p01 p02 p04 p07 p09 da; p03 p05 p06 p08 fehlen |
+| 4   | 04-schotten  | Das Eiswürfel-Problem      | 188    | –          | skript           |                                                        |
+| 5   | 05-boote     | Halb leere Boote           | 192    | –          | skript           | O-Ton p03 = Hook raw/p02                               |
+| 6   | 06-bruch     | Das Schiff bricht          | 202    | –          | skript           |                                                        |
+| 7   | 07-carpathia | Die Rettung                | 156    | –          | skript           |                                                        |
+| 8   | 08-wrack     | 3.800 Meter tief           | 165    | –          | skript           |                                                        |
+| 9   | 09-finale    | Warum sie wirklich sank    | 155    | –          | skript           | + 20 s Endscreen                                       |
 
 ## Video
 
 - [x] Titel + 3 Thumbnail-Ideen (plan.md)
-- [ ] Hauptwelt (welt.js) geprüft
+- [x] Hauptwelt (welt.js) geprüft
 - [ ] Alle Kapitel gerendert
 - [ ] Zusammengefügt + Lautheit (-14 LUFS)
 - [ ] 3 Thumbnails
