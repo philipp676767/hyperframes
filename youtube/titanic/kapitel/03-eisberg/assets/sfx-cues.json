@@ -9,7 +9,7 @@
     "s": "wind",
     "at": 0,
     "why": "beats.js",
-    "dur": 18.39,
+    "dur": 15.34,
     "db": -20
   },
   {
@@ -19,96 +19,96 @@
   },
   {
     "s": "whoosh",
-    "at": 18.17,
+    "at": 15.12,
     "why": "cut"
   },
   {
     "s": "meer",
-    "at": 18.39,
+    "at": 15.34,
     "why": "beats.js",
-    "dur": 17.634999999999998,
+    "dur": 15.080000000000002,
     "db": -22
   },
   {
     "s": "whoosh",
-    "at": 35.805,
+    "at": 30.2,
     "why": "cut"
   },
   {
     "s": "meer",
-    "at": 36.025,
+    "at": 30.42,
     "why": "beats.js",
-    "dur": 23.190000000000005,
+    "dur": 23.5,
     "db": -22
   },
   {
     "s": "maschine",
-    "at": 36.025,
+    "at": 30.42,
     "why": "beats.js",
-    "dur": 11.125,
+    "dur": 11.279999999999994,
     "db": -22
   },
   {
     "s": "glocke",
-    "at": 38.58,
+    "at": 33.98,
     "why": "beats.js",
     "db": -8
   },
   {
     "s": "blip",
-    "at": 44.535,
+    "at": 38.89,
     "why": "label William Murdoch"
   },
   {
     "s": "klack",
-    "at": 46.75,
+    "at": 41.3,
     "why": "beats.js",
     "db": -12
   },
   {
     "s": "whoosh",
-    "at": 58.995,
+    "at": 53.7,
     "why": "cut"
   },
   {
     "s": "pop",
-    "at": 59.415,
+    "at": 54.12,
     "why": "beats.js",
     "db": -18
   },
   {
     "s": "brumm",
-    "at": 62.3,
+    "at": 56.84,
     "why": "beats.js",
-    "dur": 4.7450000000000045,
+    "dur": 4.759999999999998,
     "db": -22
   },
   {
     "s": "whoosh",
-    "at": 66.825,
+    "at": 61.38,
     "why": "cut"
   },
   {
     "s": "meer",
-    "at": 67.045,
+    "at": 61.6,
     "why": "beats.js",
-    "dur": 16.455,
+    "dur": 14.499999999999993,
     "db": -22
   },
   {
     "s": "kratzen",
-    "at": 74.115,
+    "at": 68.22,
     "why": "beats.js",
     "db": -6
   },
   {
     "s": "hit",
-    "at": 74.315,
+    "at": 68.42,
     "why": "highlight shake"
   },
   {
     "s": "whoosh",
-    "at": 78.755,
+    "at": 72.08,
     "why": "cut"
   }
 ]

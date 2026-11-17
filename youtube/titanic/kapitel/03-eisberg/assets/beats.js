@@ -64,7 +64,7 @@ export const shots = [
     whoosh: true,
   },
   { at: T.der2, from: [8.3, 2.25, 2.3], to: [8.0, 2.2, 2.0], look: [7.42, 1.95, 1.25], zoom: 1 },
-  { at: T.dann, from: [6, 32, 4], to: [8, 30, 3.5], look: [12, 0, 2], zoom: 1 },
+  { at: T.dann, from: [4, 46, 10], to: [6, 43, 9], look: [10, 0, 1.5], zoom: 1 },
   { at: T.wiegt, from: [-26, 3, 20], to: [-22, 2.6, 17], look: [0, 1.2, 0], zoom: 1 },
   {
     at: T.fahrrad,
@@ -75,7 +75,7 @@ export const shots = [
     whoosh: true,
   },
   { at: T.zug, from: rl(4, 1.3, 6), to: rl(2.5, 1.2, 5.5), look: rl(2, 0.4, -1.2), zoom: 1 },
-  { at: T.zug2, from: [8, 30, 6], to: [9, 29, 5], look: [12, 0, 2], zoom: 1, whoosh: true },
+  { at: T.zug2, from: [5, 44, 10], to: [6, 42, 9], look: [10, 0, 1.5], zoom: 1, whoosh: true },
   { at: T.verfehlt, from: [17, 1.0, 6.5], to: [14, 0.9, 6.0], look: [8, 0.4, 1.5], zoom: 1 },
   { at: T.wasserlinie, from: [5, 0.5, 5.5], to: [2, 0.45, 5.2], look: [4, 0.0, 1.5], zoom: 1 },
   {

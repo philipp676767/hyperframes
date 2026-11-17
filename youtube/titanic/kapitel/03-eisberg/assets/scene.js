@@ -43,15 +43,15 @@ murdoch.rotation.y = Math.PI / 2;
 ship.bow.add(murdoch);
 // the binocular cupboard on the bridge wing, locked
 {
-  const box = new THREE.Mesh(roundedBox(0.09, 0.14, 0.06, 0.01), real.wood(0x6a4226));
-  box.position.set(7.55, 1.89, 1.33);
+  const box = new THREE.Mesh(roundedBox(0.05, 0.07, 0.035, 0.006), real.wood(0x6a4226));
+  box.position.set(7.55, 1.855, 1.33);
   ship.bow.add(box);
   const hole = new THREE.Mesh(
     new THREE.CylinderGeometry(0.008, 0.008, 0.004, 16),
     real.metal(0xc9a75a, { roughness: 0.25 }),
   );
   hole.rotation.x = Math.PI / 2;
-  hole.position.set(7.55, 1.9, 1.362);
+  hole.position.set(7.55, 1.86, 1.349);
   ship.bow.add(hole);
 }
 const bell = ship.nest.children[2];
@@ -111,7 +111,7 @@ scene.add(rail);
     s.position.set(x, 0.02, -1.2);
     rail.add(s);
   }
-  const key = new THREE.PointLight(0xfff0dc, 30, 30, 1.3);
+  const key = new THREE.PointLight(0xfff0dc, 140, 40, 1.2);
   key.position.set(0, 6, 4);
   rail.add(key);
 }
