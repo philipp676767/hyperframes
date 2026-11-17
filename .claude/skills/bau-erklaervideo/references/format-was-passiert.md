@@ -34,7 +34,7 @@ lists what is **different** from `script-formel.md` and `visual-style.md`.
 | **Folge 2**           | 13–21 s    | 18–24 | It escalates                                                                                                           |
 | **Mid twist**         | ~21–25 s   | 10–14 | A "Rate mal" ("Was glaubst du, wie viele Leute …?") or the surprise that changes everything                            |
 | **Folge 3**           | 25–33 s    | 20–26 | The decisive consequence: the real mechanism, max 1–2 terms                                                            |
-| **Payoff + Übrigens** | 33–39 s    | 20–26 | The outcome in one punchy line (the question on screen fades) + "Übrigens: …", the strongest fact                      |
+| **Payoff + Übrigens** | 33–39 s    | 20–26 | The outcome in one punchy line + "Übrigens: …", the strongest fact                                                     |
 | **CTA** (last line)   | ~39–44.3 s | 12–16 | a **new comment question that fits this scenario** + „Folge für mehr Wissen.“ (quick) — the video ends ~0.7 s after it |
 
 The retention engine of script-formel.md (open-loop chain, escalation,
@@ -66,7 +66,7 @@ hook lab, gain / danger for the viewer when it is real).
   schütten." — then the act.
 - **Never reveal the outcome in the hook.** Not "Spoiler: sie geht nicht
   auf" — the outcome is the payoff; the open question stays on screen
-  (`hf-config` question, e.g. "Geht die <em>Tür</em> auf?") until then.
+  (spoken only — no question text on screen since 2026-11-17) until then.
 - Hook lab: the six hooks use the act, the warning, the myth ("Alle
   sagen, er bleibt sieben Jahre in dir.") and the stake as openings.
 
@@ -91,7 +91,7 @@ hook lab, gain / danger for the viewer when it is real).
 - **Payoff = the outcome**, answering the hook's question in one line with
   the `answer` word: "Darum bleibt sie _zu_, selbst wenn zehn Leute
   ziehen." The answer word must not be spoken earlier in the script (the
-  on-screen question is answered on its first use after 6 s).
+  ding sits on its first use after 6 s).
 - "Übrigens: …" exactly as in script-formel.md.
 - The whole CTA is the last line: comment question + „Schreib's in die
   Kommentare.“ + „Folge für mehr Wissen.“ (script-formel.md §4, user's

@@ -34,7 +34,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | YouTube      | **Every video is also posted as a YouTube Short** (2026-11-05, step 6d): `tiktok/<slug>/youtube.txt` with title (40–60 characters, keywords first, always ending in `#shorts`), description (+ „Folge für mehr Wissen.“ + 3–5 hashtags incl. `#shorts`), tags, and the upload settings (TikTok cover, not for kids, synthetic content: yes, category Bildung …; no playlist), sent with the video like the TikTok description                                                                                                                        |
 | Serienformat | **Always alternating A „Bauen“ ↔ B „Was passiert, wenn …?“** (user's rule, 2026-10-23) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                                                                                                                                               |
-| Payoff       | The hook's question answered in one punchy line (the on-screen question fades out). **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                                                                                                                                            |
+| Payoff       | The hook's question answered in one punchy line . **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                                                                                                                                                                              |
 | Music        | **No music** (user's rule, 2026-10-26): voice + sound effects only. Don't run `prepare-music.sh`, no `assets/bgm.mp3` (sync-html only adds a music tag if that file exists). The old calm bed stays in `assets/` for old episodes                                                                                                                                                                                                                                                                                                                    |
 | Setting      | **No fixed environments — a new, high-quality world for every video** (step 1b): own place, light, props, hero piece, life in `assets/set.js`; log it in `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                                                           |
 | Sound FX     | Synthesized house kit (`scripts/make-sfx.py`, no samples): whoosh on every cut, hit on the hook title, punch on highlighted words, blip per label, payoff ding, CTA pops + click. Placed from `assets/beats.js` by `scripts/build-sfx.mjs` → `assets/sfx.mp3`                                                                                                                                                                                                                                                                                        |
@@ -123,7 +123,7 @@ the three candidates you compare is topical, the three come from different categ
 and never a weak topic just to be current. Follow
 `references/themen.md`: **duplicate check first** (`tiktok/serie.md`,
 every folder in `tiktok/`, the reserved list, remote branches), then pick
-**yourself** the best open topic **of that format's list** by its criteria (format A
+**yourself** the best open topic **of that format's list** by its criteria — **first read „What our numbers say“ in `themen.md`** (2026-11-17: „Du-Themen“ the viewer has done or felt + a felt moment win — no beauty focus; health tips, myths, pet facts and small details flop) (format A
 also takes **Detail-Rätsel** — one small odd detail everyone has seen —
 and **Dein Look & dein Hobby** — the science behind what viewers show
 off, `themen.md`). The scorecard rates the **sweet spot** (one concrete
@@ -298,10 +298,10 @@ renders with labels and sound. Write the approved script into
 loop line, no "folg…" anywhere else),
 **keywords marked `*Wort*`** — and put the hook
 title (**2–3 words**) into `<div id="hook-title">` in `index.html` (keyword in `<em>`),
-and fill the `hf-config` block next to it: `question` (the hook's open
-question, ≤ 6 words) and `answer` (the spoken word that answers it, in the
-payoff) — they drive the question text at the top. \*\*No progress bar, no
-`steps`\*\* (it looked like an ad, 2026-10-23).
+and fill the `hf-config` block next to it: only `answer` (the spoken word
+that answers the hook, in the payoff — it gets the ding). **`question`
+stays empty: no question text at the top any more** (user's rule,
+2026-11-17). No progress bar, no `steps` (2026-10-23).
 Then run `node scripts/fake-words.mjs && node scripts/build-sfx.mjs && node scripts/sync-html.mjs`
 for estimated timings so the scene can be built before the voice exists.
 
@@ -378,7 +378,7 @@ information the way the machine would — `viewfinder` (camera frame,
 "CAM A · INFRARED"), `gauge` (speedometer / pressure), `stopwatch`,
 `counter` (a number that ticks up: "Paletten 33"), `readout`, `meter`.
 Max 2 at once, called every frame from `renderAt` with a `pop()`
-visibility, placed clear of captions and the question text. The LED panel
+visibility, placed clear of the captions. The LED panel
 stays for single facts without a device.
 
 All timing data lives in `assets/beats.js` (plain data, read by the scene
@@ -491,7 +491,7 @@ a copy-paste block** (with the video and the cover).
 video by what is **said**, **shown as text** and **written**. Pick the
 one name people type for this topic (`Flugzeugtür`, `Gel-Nägel`,
 `Touchscreen`) and make sure it is (1) spoken in the first ~5 s, (2) on
-screen in the hook title or the question text, (3) the first word of the
+screen in the hook title, (3) the first word of the
 description, (4) the first hashtag and in the YouTube title. Same
 spelling everywhere.
 

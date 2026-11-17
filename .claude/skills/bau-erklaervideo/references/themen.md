@@ -23,6 +23,49 @@ an old episode only when the user asks for one.
 
 ## 2. Pick — criteria
 
+### What our numbers say — read this first (user's statistics, 2026-11-17)
+
+| Top                                   | Views     | Why it worked                                                                               |
+| ------------------------------------- | --------- | ------------------------------------------------------------------------------------------- |
+| #36 UV-Nagellampe (A, Look)           | **230 K** | the viewer's own look, a treatment she knows from the studio, a community that shows itself |
+| #46 Blondieren (A, Look)              | **30 K**  | same: own hair, the salon, a shock everyone fears („erst orange“)                           |
+| #65 10-Meter-Turm (B, Bauchklatscher) | **30 K**  | a body moment you **feel** while watching („Autsch!“), everyone stood on that tower once    |
+
+| Flop (newest)                      | Why it failed                                                                     |
+| ---------------------------------- | --------------------------------------------------------------------------------- |
+| #67 Einen Tag nichts trinken (B)   | a health tip everyone has heard a hundred times — no surprise, no picture to feel |
+| #73 Mit vollem Magen schwimmen (B) | an old myth („Oma sagt …“) — „kenn ich“, low stakes                               |
+| #70 Hundenase (A, Look list)       | a cute fact about the dog, not about **you** — nothing at stake, nothing to feel  |
+| #72 Rolltreppe (A, Detail-Rätsel)  | a small detail nobody cares about enough to stop scrolling                        |
+
+**Rules from it (they beat the rest of this file when in doubt).** The
+user does **not** want a beauty channel (2026-11-17) — the lesson is not
+"beauty", it is **"about YOU"**: all three hits are about something the
+viewer has done or felt with their own body or their own things.
+
+1. **„Du-Thema“ first:** the topic is about something the viewer
+   **personally does, owns or has felt** — their body, their routine,
+   their stuff, their hobby (the tower in the pool, the salon chair, the
+   gym, the car, the phone in their hand, the kitchen, the club, the
+   plane seat). Not a fact about an animal, a machine part or the world
+   out there. Mix the fields widely: sport, food, tech, travel, body,
+   hobby, money, nature as you experience it. Look & Beauty stays one
+   list among many (about every 4th–5th video at most, women's and men's
+   topics alternating) — no focus on it.
+2. **A felt moment:** the best topics have a moment the viewer feels
+   while watching („Autsch“, the stomach drop, the cold, the heat, the
+   shock „erst orange“). Format B always picks scenarios with such a
+   body moment; format A looks for the feelable part of the thing.
+3. **Avoid:** health tips and old myths everyone already knows (drink
+   enough, wait after eating, chewing gum …), cute pet / animal facts,
+   small machine details (Detail-Rätsel) — unless the topic still scores
+   2 on Was?!, Zielgruppen-Schärfe **and** Zeig-Faktor.
+4. **Scorecard bonus / malus:** Du-Thema (own body / own routine / own
+   stuff) **+2**; a felt body moment **+2**; health tip / old myth, pet
+   fact, Detail-Rätsel **−3**. No bonus just for being beauty.
+5. **The test question:** „Has the viewer done or felt this themselves —
+   or would they feel it while watching?“ If neither, think twice.
+
 **The format comes first** (SKILL.md step 0, always alternating): for
 format A pick from **Offen — Format A „Bauen“**, **Offen —
 Detail-Rätsel** (one small odd detail) or **Offen — Dein Look & dein
@@ -234,22 +277,33 @@ tattoo, coffee, car, sneakers, cat. Sweet spot by nature (a concrete thing
 of a huge community) with a high Zeig-Faktor. The comment question
 asks about the viewer's own thing („Gel-Nägel oder lieber normaler
 Lack?“) — **never „Zeig mir …“ / „Bild in die Kommentare“**, the photos
-come on their own (user, 2026-11-03). Counts as format A. **Mix,
-don't flood:** about every third video at most, and alternate between
-topics for women, men and everyone (the audience is 51 % women, 45 %
-men).
+come on their own (user, 2026-11-03). Counts as format A. **One list
+among many — no beauty focus** (user, 2026-11-17): about every 4th–5th
+video at most, women's and men's topics and hobbies (gym, car, sneakers,
+coffee, gaming) alternating; pets only when the topic is about the owner
+(not a cute fact — #70 Hundenase flopped).
 
-| Thema                         | Hook (≤ 9 Wörter)                                                               | Zeig-Frage (Kommentar)             | Money-Shot                                                       |
-| ----------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------- |
-| ✓ Selbstbräuner (#76)         | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)                  | „Schon mal orange geworden?“       | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun     |
-| ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)                | „Natur oder geliftet?“             | Bindungen im Haar knacken auf, Form, neu verknüpft               |
-| ✓ Haare färben (#86)          | „Haarfarbe muss erst in dein Haar einbrechen.“                                  | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                  |
-| ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                   | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen          |
-| ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)               | „Wäschst du dein Auto selbst?“     | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt     |
-| ✓ Katzenzunge (#80)           | „Die Zunge deiner Katze ist eine Bürste aus Haken.“ (Fakten prüfen)             | „Wie heißt deine Katze?“           | Zunge im Makro, hohle Häkchen ziehen Speichel durchs Fell        |
-| ★ Gelnägel ablösen            | „Aceton frisst deine Gelnägel nicht – es lässt sie aufquellen.“ (Fakten prüfen) | „Team Gel oder Acryl?“             | Lösungsmittel kriecht ins Gel, Netz quillt auf, Schicht hebt ab  |
-| ✓ Protein-Shake (#90)         | „Dein Körper zerlegt dein Shake-Eiweiß komplett.“ (Fakten prüfen)               | „Welcher Shake ist deiner?“        | Eiweißketten zerfallen in Bausteine, wandern in den Muskel       |
-| ★ Trockenshampoo              | „Trockenshampoo wäscht nichts – es saugt dein Fett auf.“ (Fakten prüfen)        | „Wie oft wäschst du deine Haare?“  | Stärke-Körnchen saugen Talg vom Haar, Strähne wird wieder locker |
+| Thema                         | Hook (≤ 9 Wörter)                                                                         | Zeig-Frage (Kommentar)             | Money-Shot                                                       |
+| ----------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------- |
+| ✓ Selbstbräuner (#76)         | „Selbstbräuner bräunt dich wie ein Toastbrot.“ (Fakten prüfen)                            | „Schon mal orange geworden?“       | Zucker im Mittel reagiert mit der Hautoberfläche, wird braun     |
+| ★ Wimpernlifting / Dauerwelle | „Wimpernlifting bricht deine Wimpern innen auf.“ (Fakten prüfen)                          | „Natur oder geliftet?“             | Bindungen im Haar knacken auf, Form, neu verknüpft               |
+| ✓ Haare färben (#86)          | „Haarfarbe muss erst in dein Haar einbrechen.“                                            | „Welche Farbe trägst du gerade?“   | Schuppenschicht klappt auf, Farbe strömt hinein                  |
+| ★ Sneaker-Sohle               | „In deinen Sneakern steckt Luft unter Druck.“ (Fakten prüfen)                             | „Welche Sneaker trägst du gerade?“ | Luftkammer im Röntgenblick, Schritt drückt sie zusammen          |
+| ★ Keramik-Versiegelung (Auto) | „Wasser perlt ab, weil dein Lack jetzt Glas ist.“ (Fakten prüfen)                         | „Wäschst du dein Auto selbst?“     | Tropfen rollen in Zeitlupe vom Lack, Glas-Schicht im Schnitt     |
+| ✓ Katzenzunge (#80)           | „Die Zunge deiner Katze ist eine Bürste aus Haken.“ (Fakten prüfen)                       | „Wie heißt deine Katze?“           | Zunge im Makro, hohle Häkchen ziehen Speichel durchs Fell        |
+| ★ Gelnägel ablösen            | „Aceton frisst deine Gelnägel nicht – es lässt sie aufquellen.“ (Fakten prüfen)           | „Team Gel oder Acryl?“             | Lösungsmittel kriecht ins Gel, Netz quillt auf, Schicht hebt ab  |
+| ✓ Protein-Shake (#90)         | „Dein Körper zerlegt dein Shake-Eiweiß komplett.“ (Fakten prüfen)                         | „Welcher Shake ist deiner?“        | Eiweißketten zerfallen in Bausteine, wandern in den Muskel       |
+| ★ Trockenshampoo              | „Trockenshampoo wäscht nichts – es saugt dein Fett auf.“ (Fakten prüfen)                  | „Wie oft wäschst du deine Haare?“  | Stärke-Körnchen saugen Talg vom Haar, Strähne wird wieder locker |
+| ★ Wimperntusche wasserfest    | „Wasserfeste Mascara klebt wie ein Lack auf deinen Wimpern.“ (Fakten prüfen)              | „Wasserfest oder normal?“          | Wimper im Makro, Film zieht sich zusammen, Wasser perlt ab       |
+| ★ Lippenstift kussecht        | „Kussechter Lippenstift ist Farbe, die sich in die Haut krallt.“ (Fakten prüfen)          | „Welche Farbe trägst du?“          | Lippe im Makro, Farbstoff zieht ein, Kussabdruck bleibt leer     |
+| ★ Glätteisen                  | „Dein Glätteisen kocht das Wasser in deinem Haar.“ (Fakten prüfen)                        | „Glatt oder Locken?“               | Dampf zischt aus der Strähne, Haar richtet sich aus              |
+| ★ Laser-Haarentfernung        | „Der Laser zielt nicht aufs Haar – sondern auf seine Farbe.“ (Fakten prüfen)              | „Laser, Wachs oder Rasierer?“      | Lichtblitz, dunkle Wurzel glüht, Haar fällt raus                 |
+| ★ Waxing                      | „Beim Waxing reißt du das Haar samt Wurzel raus.“ (Fakten prüfen)                         | „Wachs oder Rasierer?“             | Streifen reißt ab in Zeitlupe, Haare mit Wurzel                  |
+| ★ Zahn-Bleaching              | „Bleaching macht deine Zähne nicht weiß – es bleicht die Farbe in ihnen.“ (Fakten prüfen) | „Schon mal gebleacht?“             | Zahn im Schnitt, Farbmoleküle zerfallen                          |
+| ★ Acryl-Nägel                 | „Acrylnägel sind Zahnarzt-Kunststoff auf deinen Fingern.“ (Fakten prüfen)                 | „Acryl oder Gel?“                  | Pulver + Flüssigkeit härten zur Spitze                           |
+| ★ Ohrloch / Piercing          | „Dein Ohrloch ist ein Tunnel aus neuer Haut.“ (Fakten prüfen)                             | „Wie viele Piercings hast du?“     | Nadel, Haut wächst als Röhre um den Stecker                      |
+| ★ Haarausfall (Männer)        | „Deine Haare fallen nicht aus – sie werden immer dünner.“ (Fakten prüfen)                 | „Schon Geheimratsecken?“           | Haarwurzel schrumpft Zyklus für Zyklus                           |
+| ★ Bart wächst schneller?      | „Rasieren macht deinen Bart nicht dicker – es täuscht dich.“ (Fakten prüfen)              | „Bart oder glatt?“                 | stumpfe Stoppel vs. spitzes Haar im Makro                        |
 
 ## Offen — Format B „Was passiert, wenn …?“
 
@@ -279,6 +333,12 @@ ask for go in here.
 
 | Szenario („Was passiert, wenn du …?“)                                | Überraschender Ausgang (nur fürs Payoff!)                                                                         | Money-Shot                                                                   | Sicherheit                   | Kategorie |
 | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------- | --------- |
+| ★ … mit der Zunge an einen eiskalten Laternenpfahl gehst?            | Sie friert in Sekunden fest – warmes Wasser löst sie, Ziehen reißt Haut ab (Fakten prüfen)                        | Zunge klebt, Eiskristalle wachsen, LED „−10 °C“                              | Warnung „nicht nachmachen“   | Körper    |
+| ★ … an einen Weidezaun fasst?                                        | Der Schlag ist kurz und stark, aber gepulst – darum lässt er dich wieder los (Fakten prüfen)                      | Hand am Draht, Blitz, Muskeln zucken                                         | Warnung                      | Körper    |
+| ★ … mit dem kleinen Zeh gegen den Bettpfosten knallst?               | Warum der kleinste Zeh am meisten wehtut (Fakten prüfen)                                                          | Zeitlupe, Nervenbahn leuchtet bis ins Hirn                                   | harmlos                      | Körper    |
+| ★ … zu schnell Eis isst (Hirnfrost)?                                 | Es ist nicht dein Hirn – es ist dein Gaumen, der Alarm schlägt (Fakten prüfen)                                    | Eis am Gaumen, Ader zieht sich zusammen, Schmerzwelle zur Stirn              | harmlos                      | Körper    |
+| ★ … auf einen Legostein trittst?                                     | Warum das mehr wehtut als ein Stein am Strand (Fakten prüfen)                                                     | Fuß senkt sich in Zeitlupe, Druck-Anzeige schießt hoch                       | harmlos                      | Körper    |
+| ★ … dir den Musikantenknochen stößt?                                 | Es ist kein Knochen – du triffst einen Nerv ohne Schutz (Fakten prüfen)                                           | Ellbogen im Röntgen, Nerv blitzt bis in den kleinen Finger                   | harmlos                      | Körper    |
 | 🔥 … die Sonne plötzlich ausgeht? ⚠️ zu allgemein                    | Du merkst es erst nach 8 Minuten – und die Erde fliegt geradeaus davon                                            | Sonne erlischt, Licht-Welle rast zur Erde, Countdown 8:00                    | unmöglich                    | Weltall   |
 | 🔥 … ein Teelöffel Neutronenstern auf der Erde landet? ⚠️ zu nischig | Er wiegt Milliarden Tonnen und fällt einfach durch die Erde (Fakten prüfen)                                       | Hand lässt den Löffel fallen, er schlägt glatt durch den Boden               | unmöglich                    | Weltall   |
 | 🔥 … der Mond verschwindet? ⚠️ zu allgemein                          | Ebbe und Flut werden viel schwächer, die Nächte stockdunkel (Fakten prüfen)                                       | Mond verpufft, Meer flacht ab, Nacht wird schwarz                            | unmöglich                    | Weltall   |

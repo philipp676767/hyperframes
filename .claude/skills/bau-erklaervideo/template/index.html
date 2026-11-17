@@ -254,12 +254,12 @@
     >
       <canvas id="stage" width="1080" height="1920"></canvas>
       <div id="captions"></div>
-      <!-- Per video: the hook's open question (≤ 6 words, keyword in <em>)
-           and the spoken word that answers it (in the payoff). Read by the
-           timeline below and by scripts/build-sfx.mjs. -->
+      <!-- Per video: the spoken word that answers the hook (in the payoff) —
+           it gets the "ding" (scripts/build-sfx.mjs). "question" stays EMPTY:
+           no question text on screen since 2026-11-17 (user's rule). -->
       <script id="hf-config" type="application/json">
         {
-          "question": "Warum <em>glüht</em> der Draht?",
+          "question": "",
           "answer": "dünn"
         }
       </script>
