@@ -9,94 +9,94 @@
     "s": "meer",
     "at": 0,
     "why": "beats.js",
-    "dur": 7.095,
+    "dur": 5.94,
     "db": -22
   },
   {
     "s": "whoosh",
-    "at": 6.875,
+    "at": 5.72,
     "why": "cut"
   },
   {
     "s": "morse",
-    "at": 8.595,
+    "at": 7.44,
     "why": "beats.js",
     "db": -12
   },
   {
     "s": "morse",
-    "at": 15.145,
+    "at": 13.78,
     "why": "beats.js",
     "db": -12
   },
   {
     "s": "whoosh",
-    "at": 19.585,
+    "at": 17.78,
     "why": "cut"
   },
   {
     "s": "meer",
-    "at": 19.805,
+    "at": 18,
     "why": "beats.js",
-    "dur": 12.065000000000001,
+    "dur": 10.36,
     "db": -22
   },
   {
     "s": "blip",
-    "at": 21.055,
+    "at": 19.25,
     "why": "label Carpathia"
   },
   {
     "s": "maschine",
-    "at": 27.415,
+    "at": 24.78,
     "why": "beats.js",
-    "dur": 4.455000000000002,
+    "dur": 3.5799999999999983,
     "db": -20
   },
   {
     "s": "whoosh",
-    "at": 31.65,
+    "at": 28.14,
     "why": "cut"
   },
   {
     "s": "rakete",
-    "at": 32.87,
+    "at": 29.36,
     "why": "beats.js",
     "db": -12
   },
   {
     "s": "rakete",
-    "at": 39.095,
+    "at": 35.06,
     "why": "beats.js",
     "db": -12
   },
   {
     "s": "blip",
-    "at": 40.77,
+    "at": 36.65,
     "why": "label Californian"
   },
   {
     "s": "whoosh",
-    "at": 43.845,
+    "at": 39.34,
     "why": "cut"
   },
   {
     "s": "wind",
-    "at": 44.065,
+    "at": 39.56,
     "why": "beats.js",
-    "dur": 41.33500000000001,
+    "dur": 37.739999999999995,
     "db": -24
   },
   {
     "s": "meer",
-    "at": 44.065,
+    "at": 39.56,
     "why": "beats.js",
-    "dur": 41.33500000000001,
+    "dur": 37.739999999999995,
     "db": -22
   },
   {
     "s": "klack",
-    "at": 52.4,
+    "at": 46.1,
     "why": "beats.js",
     "db": -14
   }
