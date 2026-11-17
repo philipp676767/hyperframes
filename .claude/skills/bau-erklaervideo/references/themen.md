@@ -43,6 +43,14 @@ user does **not** want a beauty channel (2026-11-17) — the lesson is not
 "beauty", it is **"about YOU"**: all three hits are about something the
 viewer has done or felt with their own body or their own things.
 
+0. **Sweet spot stays the first filter** (user, 2026-11-17: „nicht zu
+   allgemein, nicht zu nischig“): the topic is **one concrete thing with
+   its own name** — a device, product, treatment or place that millions
+   in AT/CH/DE used this month (UV-Nagellampe, Blondieren, 10-Meter-Turm,
+   Face ID, Taschenwärmer). A body phenomenon or feeling on its own
+   („Hirnfrost“, „Musikantenknochen“, „Übelkeit im Auto“) or a whole
+   field („Achterbahn“, „Strom“) is **not** a topic — it can only be the
+   felt moment inside one.
 1. **„Du-Thema“ first:** the topic is about something the viewer
    **personally does, owns or has felt** — their body, their routine,
    their stuff, their hobby (the tower in the pool, the salon chair, the
