@@ -68,7 +68,7 @@ no sentence is there just to fill time.
 | **Beat 2**                   | 13–21 s    | 20–26 | second part, bigger than beat 1; closes loop 2, opens loop 3                                                       |
 | **Mid twist** (re-hook)      | ~21–25 s   | 10–14 | the obvious explanation is wrong / it's even crazier — or a "Rate mal"                                             |
 | **Beat 3**                   | 25–33 s    | 22–28 | the decisive part (the real trick), the biggest money shot so far                                                  |
-| **Payoff + Übrigens** (line) | 33–39 s    | 20–26 | answer the hook's question (the question text fades) + "Übrigens: …", the strongest fact                           |
+| **Payoff + Übrigens** (line) | 33–39 s    | 20–26 | answer the hook's question + "Übrigens: …", the strongest fact                                                     |
 | **CTA** (last line)          | ~39–44.3 s | 12–16 | comment question + „Schreib's in die Kommentare.“ + „Folge für mehr Wissen.“ (quick) — the video ends ~0.7 s later |
 
 **CTA history:** until 2026-10-23 both at the end; 2026-10-24 to -29
@@ -291,8 +291,9 @@ numbers). So:
 - **The hook's question is answered at the end, not in beat 1.** The
   beats make the question _bigger_ (stakes, a second mystery, "und das
   ist erst Teil 1"), the answer comes with the payoff (last ~25 % before
-  the bonus fact). Put the question in `hf-config` (`question`), the word
-  that answers it (`answer`) — the question stays on screen until then.
+  the bonus fact). Put the word that answers it in `hf-config` (`answer`,
+  gets the ding); the question itself is only spoken — no question text
+  on screen since 2026-11-17.
 - **A second, concrete reason to stay before 10 s** — a new strange fact
   or a bigger question, said about the thing, never an announcement:
   "Und dein Wasser kocht dabei nicht mal." / "Fälscher kennen diesen Test
@@ -354,7 +355,7 @@ numbers). So:
 ### 3. Payoff
 
 Close the hook's loop explicitly and with punch — this is the moment the
-on-screen question is answered and fades, so the `answer` word in `hf-config` sits
+hook's question is answered, so the `answer` word in `hf-config` (ding) sits
 here: "Deshalb ist die Rückseite _warm_." / "Darum bleibt echtes
 Geld _dunkel_." **Never** "Schau dich an. Du hast gerade X gebaut." (or
 any other "fertig"-line) — go straight on to "Übrigens".

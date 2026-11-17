@@ -175,15 +175,14 @@ technology: bold, everyday, a bit cheeky — never "school film".
 Check: snapshot 0, 0.5, 1, 1.5, 2, 3 s — every image must look different,
 frame 0 must make you curious without sound.
 
-## The open question on screen (index.html, automatic)
+## No question text on screen (since 2026-11-17)
 
-Viewers left at ~13 s once the hook question felt answered. From 2.9 s
-(right after the hook title) the open question stays at the top as
-**plain creator text** — white Montserrat with a dark outline like the
-captions, keyword yellow (`hf-config.question`, ≤ 6 words, keyword in
-`<em>`). On the answer word it nudges once (+ ding) and fades out; it
-always clears before the "WUSSTEST DU?" badge and the CTA. The LED panel
-sits lower (≈ y 520–770 px) so it never collides.
+**The user removed the open question at the top** (2026-11-17: „die
+Frage, die oben steht, weglassen“). `hf-config.question` stays empty;
+after the hook title (gone at 2.8 s) the top of the frame belongs to the
+picture. The open loop lives in the **spoken** script only (the hook's
+question is still answered in the payoff, the `answer` word still gets
+the ding). Old episodes (2026-10-23 to 11-16) showed it as creator text.
 
 **No UI chrome** (user's call, 2026-10-23): no pill / box behind the
 question, no "?" or check-mark icons, **no progress bar or "1/3" counter**
