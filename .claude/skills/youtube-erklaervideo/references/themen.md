@@ -146,5 +146,6 @@ the search interest and the facts again when you pick.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Typ | Datum | Chat |
-| ----- | --- | ----- | ---- |
+| Thema                                        | Typ           | Datum      | Chat                |
+| -------------------------------------------- | ------------- | ---------- | ------------------- |
+| Titanic — warum das „unsinkbare“ Schiff sank | Große Momente | 2026-11-17 | YouTube #2: Titanic |
