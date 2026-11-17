@@ -9,55 +9,55 @@
     "s": "meer",
     "at": 0,
     "why": "beats.js",
-    "dur": 49.11,
+    "dur": 45.66,
     "db": -22
   },
   {
     "s": "blip",
-    "at": 5.71,
+    "at": 4.89,
     "why": "label Thomas Andrews"
   },
   {
     "s": "rauschen",
-    "at": 23.8,
+    "at": 23.7,
     "why": "beats.js",
-    "dur": 25.31,
+    "dur": 21.959999999999997,
     "db": -18
   },
   {
     "s": "blip",
-    "at": 45.445,
+    "at": 42.27,
     "why": "label Schotten"
   },
   {
     "s": "whoosh",
-    "at": 48.89,
+    "at": 45.44,
     "why": "cut"
   },
   {
     "s": "rauschen",
-    "at": 55.635,
+    "at": 51.38,
     "why": "beats.js",
-    "dur": 9.699999999999996,
+    "dur": 8.86,
     "db": -20
   },
   {
     "s": "whoosh",
-    "at": 65.115,
+    "at": 60.02,
     "why": "cut"
   },
   {
     "s": "meer",
-    "at": 65.335,
+    "at": 60.24,
     "why": "beats.js",
-    "dur": 18.065000000000012,
+    "dur": 15.46,
     "db": -22
   },
   {
     "s": "rauschen",
-    "at": 65.335,
+    "at": 60.24,
     "why": "beats.js",
-    "dur": 5.355000000000004,
+    "dur": 5.339999999999996,
     "db": -22
   }
 ]

@@ -1043,12 +1043,12 @@ export function buildShipyard({ seed = 9 } = {}) {
   // the yard: concrete and cinders, the slipway, the harbour water in front (+z)
   const yard = noAO(
     new THREE.Mesh(
-      new THREE.PlaneGeometry(220, 120, 1, 1),
+      new THREE.PlaneGeometry(220, 100, 1, 1),
       real.plastic(0x6f6a63, { roughness: 0.95 }),
     ),
   );
   yard.rotation.x = -Math.PI / 2;
-  yard.position.set(0, -1.12, -40);
+  yard.position.set(0, -1.12, -48);
   yard.receiveShadow = true;
   ground.add(yard);
   const slip = new THREE.Mesh(
@@ -1463,7 +1463,7 @@ export function buildDeep({ seed = 85 } = {}) {
   geo.rotateX(-Math.PI / 2);
   const gp = geo.attributes.position;
   const col = new Float32Array(gp.count * 3);
-  const base = new THREE.Color(0x5b5146);
+  const base = new THREE.Color(0x3a3229);
   for (let i = 0; i < gp.count; i++) {
     const x = gp.getX(i);
     const z = gp.getZ(i);

@@ -1463,7 +1463,7 @@ export function buildDeep({ seed = 85 } = {}) {
   geo.rotateX(-Math.PI / 2);
   const gp = geo.attributes.position;
   const col = new Float32Array(gp.count * 3);
-  const base = new THREE.Color(0x5b5146);
+  const base = new THREE.Color(0x3a3229);
   for (let i = 0; i < gp.count; i++) {
     const x = gp.getX(i);
     const z = gp.getZ(i);

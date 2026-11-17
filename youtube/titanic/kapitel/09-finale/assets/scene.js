@@ -1,112 +1,95 @@
-// TEMPLATE scene of the END chapter (demo, 16:9): the finished bulb glows while
-// the payoff, the CTA and the 20-s end screen run. Pattern from the demo chapter (candle -> light
-// bulb) that shows the pattern. Replace the subject here and the beats (T), shots, labels and
-// sounds in beats.js for the new topic; keep the structure. World,
-// captions, panel, arrows, labels and camera come from world.js.
-// Full-size reference: tiktok/kuehlschrank/assets/scene.js
+// Finale: the causes in a row (bow at speed, a sea without waves, the x-ray
+// bulkheads, the boats, the Californian), then the epilogue at dawn: the
+// upturned boat, the Carpathia, a tiny boat with a baby's blanket, a wreath on
+// the water — and the bow in the dark below for the end screen.
 import {
   THREE,
-  V,
-  scene,
-  flat,
-  M,
-  xrayMaterial,
-  xrayEdges,
+  ground,
+  real,
   setXray,
-  makeArrowSet,
-  animateArrows,
-  showPanel,
-  highlights,
+  pop,
+  ramp,
+  smooth,
   shotCamera,
   renderFrame,
   start,
 } from "./world.js";
 import "./set.js";
-import { shots, HIGHLIGHTS } from "./beats.js";
+import {
+  makeTitanic,
+  makeWake,
+  makeIceberg,
+  makeLifeboat,
+  makePerson,
+  makeSmallShip,
+  setWater,
+  shipLights,
+} from "./welt.js";
+import { T, CAL, WREATH, shots } from "./beats.js";
 
-highlights(HIGHLIGHTS);
-
-// The world of this video (sky, ground, props, hero piece, life) is built
-// in set.js — new for every video (SKILL.md 1b). Optional floor pad under
-// the subject:
-
-// ---------------------------------------------------------------- hook prop
-// The primitive version from the hook ("Kerze in einem Glas").
-const hook = new THREE.Group();
-hook.visible = false;
-scene.add(hook);
-const flameMat = flat(0xffb02e, { emissive: 0xff7a10, emissiveIntensity: 1 });
-const flame = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.22, 8), flameMat);
+const ship = makeTitanic();
+ground.add(ship.group);
+const wake = makeWake(ship);
+const xr = makeTitanic({ xray: true });
+ground.add(xr.group);
+const berg = makeIceberg({ seed: 5, size: 2.2, len: 3.2 });
+berg.position.set(30, 0, 1);
+ground.add(berg);
+const cal = makeSmallShip({ funnel: 0x1d1d1d, band: 0xb8442c });
+cal.position.set(...CAL);
+ground.add(cal);
+// epilogue props on the dawn sea
+const upturned = makeLifeboat({ cover: false });
+upturned.rotation.z = Math.PI;
+upturned.position.set(-8, 0.06, 20);
+ground.add(upturned);
+for (let i = 0; i < 4; i++) {
+  const p = makePerson({ coat: 0x1a1f2b, cap: false, scale: 0.8 });
+  p.position.set(-8.3 + i * 0.18, 0.12, 20);
+  ground.add(p);
+}
+const carp = makeSmallShip({ funnel: 0xc8462a, band: 0x151515 });
+carp.scale.setScalar(1.5);
+carp.position.set(-26, 0, 24);
+ground.add(carp);
+const small = makeLifeboat({ cover: false });
+small.position.set(-3.5, 0.03, 26);
+ground.add(small);
+const blanket = new THREE.Mesh(new THREE.SphereGeometry(0.035, 16, 12), real.fabric(0xf2e8d8));
+blanket.position.set(0, 0.08, 0);
+small.add(blanket);
+// the wreath: an evergreen ring with white flowers, set down on the water
+const wreath = new THREE.Group();
 {
-  const jar = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.42, 0.42, 0.9, 20, 1, true),
-    new THREE.MeshStandardMaterial({ color: 0xdff4ff, transparent: true, opacity: 0.35 }),
-  );
-  jar.position.y = 0.49;
-  hook.add(jar);
-  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.5, 14), flat(0xfff3dc));
-  candle.position.y = 0.29;
-  candle.castShadow = true;
-  hook.add(candle);
-  flame.position.y = 0.66;
-  hook.add(flame);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.35, 0.09, 12, 48), real.fabric(0x2f5a2c));
+  ring.rotation.x = Math.PI / 2;
+  wreath.add(ring);
+  for (let i = 0; i < 14; i++) {
+    const a = (i / 14) * Math.PI * 2;
+    const f = new THREE.Mesh(
+      new THREE.SphereGeometry(0.045, 12, 8),
+      real.fabric(i % 3 ? 0xf6f2ea : 0xc9302c),
+    );
+    f.position.set(Math.cos(a) * 0.35, 0.07, Math.sin(a) * 0.35);
+    wreath.add(f);
+  }
+  ground.add(wreath);
 }
-
-// ---------------------------------------------------------------- subject
-// Big, readable, centred at the origin, ~2-3 units tall. Shell uses
-// xrayMaterial so the inside can be revealed.
-const bulb = new THREE.Group();
-scene.add(bulb);
-const glassMat = xrayMaterial(0xfff8e8);
-const glassGeo = new THREE.SphereGeometry(0.9, 24, 16);
-const glass = new THREE.Mesh(glassGeo, glassMat);
-glass.position.y = 1.9;
-bulb.add(glass);
-const glassEdges = xrayEdges(glassGeo);
-glassEdges.position.copy(glass.position);
-bulb.add(glassEdges);
-const base = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.7, 16), M.alu);
-base.position.y = 0.75;
-base.castShadow = true;
-bulb.add(base);
-const filamentMat = flat(0x6b6b6b, { emissive: 0xffa22e, emissiveIntensity: 0 });
-const coil = [];
-for (let k = 0; k <= 120; k++) {
-  const f = k / 120;
-  const a = f * Math.PI * 2 * 9;
-  coil.push(V(-0.35 + f * 0.7, 1.95 + Math.sin(a) * 0.06, Math.cos(a) * 0.06));
-}
-const filament = new THREE.Mesh(
-  new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coil), 240, 0.012, 6),
-  filamentMat,
-);
-bulb.add(filament);
-const glow = new THREE.PointLight(0xffc46b, 0, 6, 1.5);
-glow.position.set(0, 1.95, 0);
-bulb.add(glow);
-const heatOut = makeArrowSet(
-  [
-    [V(0.3, 2.1, 0.3), V(1.4, 2.6, 0.9)],
-    [V(-0.3, 2.1, 0.3), V(-1.4, 2.6, 0.9)],
-    [V(0, 2.3, 0.4), V(0.1, 3.3, 1.0)],
-  ],
-  { parent: bulb },
-);
 
 const applyCamera = shotCamera(shots);
-
-// ---------------------------------------------------------------- render
 function renderAt(t) {
-  hook.visible = false;
-  bulb.visible = true;
-  bulb.scale.setScalar(1);
-  setXray([glassMat], 0);
-  filamentMat.emissiveIntensity = 2.5;
-  glow.intensity = 6;
-  animateArrows(heatOut, t, 1);
-  showPanel(0);
+  wake.userData.update(t, 1.2);
+  shipLights(0.4);
+  const xk = pop(t, T.schotten - 0.2, T.regeln, 0.5);
+  setXray(xr.mats, xk);
+  xr.group.visible = xk > 0.02;
+  ship.group.visible = t < T.kapitaen && xk < 0.98;
+  for (let i = 0; i < xr.inside.water.length; i++) setWater(xr, i, i < 6 ? 0.8 : 0);
+  // the wreath comes down onto the water and drifts
+  const w = smooth(ramp(t, T.kranz - 1.2, T.kranz + 0.6));
+  wreath.position.set(WREATH[0] + Math.sin(t * 0.2) * 0.1, 3 * (1 - w) + 0.04, WREATH[2]);
+  wreath.rotation.y = t * 0.05;
   applyCamera(t);
   renderFrame();
 }
-
 start(renderAt);

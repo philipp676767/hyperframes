@@ -51,7 +51,7 @@ export const shots = [
   { at: T.ballard, from: [14, -0.2, 9], to: [12.5, -0.3, 8], look: [9, -0.6, 3], zoom: 1 },
   { at: T.bug, from: [-6, 6, 14], to: [-10, 6, 13], look: [-12, -1.5, 3], zoom: 1 },
   { at: T.bug2, from: [16, -0.9, 4], to: [15, -0.8, 3.6], look: [10, 0.2, 0], zoom: 1 },
-  { at: T.heck2, from: [-24, 0.5, 13], to: [-25, 0.4, 12], look: [-30, -1, 6], zoom: 1 },
+  { at: T.heck2, from: [-17, 1.6, 12], to: [-18, 1.5, 11], look: [-28, -0.8, 5], zoom: 1 },
   { at: T.doch, from: [7, 0.4, 3.0], to: [6.4, 0.35, 2.7], look: [5.5, 0.2, 1.3], zoom: 1 },
   { at: T.forscher, from: [12, 1.2, 9], to: [10, 1.0, 8], look: [4, -0.2, 0], zoom: 1 },
 ];

@@ -41,7 +41,8 @@ for (let i = 0; i < 24; i++) {
   extra.push(b);
 }
 // the patrol: a tiny ship circling a tiny berg on the desk
-const berg = makeIceberg({ seed: 3, size: 0.06, len: 0.1 });
+const berg = makeIceberg({ seed: 3, size: 0.025, len: 0.05 });
+berg.children.slice(-2).forEach((c) => (c.visible = false));
 berg.position.set(RAD[0] - 0.45, RAD[1] + 0.45, RAD[2] - 0.45);
 scene.add(berg);
 const patrol = makeSmallShip({ funnel: 0xe8e8e8, band: 0xc8462a });
@@ -71,7 +72,14 @@ sternW.group.rotation.set(0.15, 0.6, 0.12);
 ground.add(sternW.group);
 const sub = makeSub();
 ground.add(sub.group);
-const lamp = new THREE.PointLight(0x9fd6ff, 3, 10, 1.4);
+const lamp = new THREE.PointLight(0x9fd6ff, 30, 16, 1.2);
+sub.spots.forEach((sp) => (sp.intensity = 160));
+const fillW = new THREE.PointLight(0x5f9fcf, 18, 40, 1.1);
+fillW.position.set(4, 6, 10);
+ground.add(fillW);
+const fillS = new THREE.PointLight(0x5f9fcf, 30, 30, 1.1);
+fillS.position.set(-26, 5, 14);
+ground.add(fillS);
 sub.group.add(lamp);
 void real;
 

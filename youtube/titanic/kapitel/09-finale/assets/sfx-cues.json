@@ -4,5 +4,48 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "meer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 21.125,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 20.905,
+    "why": "cut"
+  },
+  {
+    "s": "tauchen",
+    "at": 21.125,
+    "why": "beats.js",
+    "dur": 5.670000000000002,
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 26.575,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 26.795,
+    "why": "beats.js",
+    "dur": 26.009999999999998,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 52.585,
+    "why": "cut"
+  },
+  {
+    "s": "tauchen",
+    "at": 52.805,
+    "why": "beats.js",
+    "dur": 29.695,
+    "db": -16
   }
 ]
