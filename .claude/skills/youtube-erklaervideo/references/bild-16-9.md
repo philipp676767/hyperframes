@@ -32,8 +32,8 @@ what is different in landscape and in long form.
   phrase end, after 4 words, at ~24 characters or before a pause — the
   one-word TikTok style is too hectic for 16:9.
 - **Title card** (chapter 0 only): the video title, calm and centred, after
-  the cold open + road map (`kapitel.js titelBei`, usually „vorne“ in „Aber
-  mal von vorne.“), fades in, ~3.2 s, a soft whoosh. **No text on frame 0**
+  the intro's framing sentence (`kapitel.js titelBei`, a word of „Das ist die
+  Geschichte …“), fades in, ~3.2 s, a soft whoosh. **No text on frame 0**
   — the cold open is a picture, like a documentary.
 - **Chapter tag** (chapters 1 …): „KAPITEL n“ + the chapter title, top left,
   0.25–3.6 s; the finale says „FINALE“.

@@ -30,8 +30,8 @@ const plain = (l) => l.replace(/\[[^\]\n]*\]/g, " ").replace(/\*/g, "");
 const n = words.length;
 if (K.nr === 0) {
   // the intro: cold open + why it matters + road map + title card, 35–55 s
-  if (real && (LAST < 30 || LAST > 60))
-    warn(`the intro speaks ${LAST.toFixed(1)} s — aim for 35–55 s (90–130 words).`);
+  if (real && (LAST < 35 || LAST > 75))
+    warn(`the intro speaks ${LAST.toFixed(1)} s — aim for 40–70 s (110–170 words).`);
   const nrmT = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
   if (!K.titelBei || !words.some((w) => nrmT(w.w) === nrmT(K.titelBei)))
     warn("intro: kapitel.js `titelBei` is no spoken word — the title card would not appear.");
@@ -52,10 +52,6 @@ console.log(`chapter ${K.nr} „${K.titel}“: ${n} words, speech ${LAST.toFixed
 if (/folge für mehr wissen|folg (mir|uns)/.test(spoken))
   warn("„Folge …“ is the TikTok wording — on YouTube say „abonniere den Kanal“.");
 const subs = words.filter((w) => /^abonnier/i.test(w.w)).length;
-if (subs && K.nr === 0)
-  warn(
-    "subscribe ask in the intro — it belongs in the middle of the video, after a payoff (~35–60 %).",
-  );
 if (subs && K.ende)
   warn(
     "subscribe ask in the finale — few viewers are left there; move it to a chapter at ~35–60 %.",

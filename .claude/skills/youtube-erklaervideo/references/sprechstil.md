@@ -12,7 +12,8 @@ where the viewer is addressed, facts checked, no filler words, one idea at
 a time, everyday comparisons.)
 
 Research basis — transcripts of successful German long-form explainers on
-the same kind of topics (2026-11-15):
+the same kind of topics (2026-11-15; the full analysis of tatsache, vince,
+Simplicissimus and Kurzgesagt from 2026-11-17 is in `doku-vorbilder.md`):
 
 - **Dinge Erklärt – Kurzgesagt**, „Was passiert, wenn der Mond in die Erde
   kracht?“ (5,1 Mio., 12 min): opens „Heute wollen wir eine uralte, sehr
@@ -47,13 +48,15 @@ the same kind of topics (2026-11-15):
   verstehen, müssen wir kurz zurück ins Jahr 1961.“), „du“ when the viewer
   is addressed directly („Dein Handy hat heute zwei Millionen Mal mehr
   Speicher.“).
-- **Sentences that flow.** Average **12–18 words**, mixed lengths, joined
+- **Sentences that flow.** Measured on tatsache (2026-11-17): **median
+  10–12 words, mean 14–19**, only ~10 % of sentences ≤ 5 words. Mixed lengths, joined
   with „weil“, „während“, „als“, „doch“, „dadurch“, „sodass“. **Paragraphs
   of 3–6 sentences** around one thought (one paragraph = one line in
   `script.txt`). A short punch sentence (≤ 5 words) is a spice: at most one
   per paragraph, and never several in a row.
-- **Few questions.** A question is a turning point, not punctuation: **at
-  most 2–3 per chapter**, and when you ask, answer in the same paragraph or
+- **Few questions.** tatsache: 0–3 % of all sentences are questions — almost
+  all of them the 2–3 guiding questions of the intro. A question is a turning
+  point, not punctuation: **at most 2–3 per chapter**, and when you ask, answer in the same paragraph or
   the next one. Never a question at the end of every paragraph, never
   „Rate mal“.
 - **Signposting instead of cliffhanger-questions.** The viewer always knows
@@ -65,8 +68,21 @@ the same kind of topics (2026-11-15):
 - **Story beats for history topics:** historic present tense („Am 16. Juli
   1969 startet …“), concrete time and place, real people with name and role
   („Steve Bales, 26 Jahre alt, sitzt im Kontrollzentrum.“), what they see,
-  hear and decide, short quotes (spoken by Jan, introduced: „Armstrong funkt
-  nach Houston: …“), time markers as structure.
+  hear and decide, time markers as structure. The documentary devices of
+  `doku-vorbilder.md`:
+  - **„Es ist <Wochentag>, der <Datum>.“** + times to the minute („Um 10.33
+    Uhr verlässt der Zug Hannover.“).
+  - **Countdown markers:** „Zu diesem Zeitpunkt ist die Landung nur noch
+    zwei Minuten entfernt.“
+  - **Dramatic irony:** „Und keiner von ihnen ahnt, dass …“
+  - **Character in one detail:** age, habit, what they did a second ago
+    („Bis eben haben sie noch gedöst.“).
+  - **„Das hier ist …“** pointing at the 3D picture („Das hier ist die
+    Mondfähre Eagle.“).
+  - **O-Töne** in the archive voice (`»` lines, radio filter): 3–8 short
+    real quotes per video — radio calls, a news anchor, a witness. Never
+    invented as real; paraphrases are introduced by Jan („Armstrong funkt
+    sinngemäß: …“).
 - **Explain inside the story, with room.** A term is introduced in the
   sentence: „… ein sogenannter Zero-Day — eine Schwachstelle, die noch
   niemand kennt.“ An analogy may take **2–4 sentences** and be played out
@@ -80,6 +96,10 @@ the same kind of topics (2026-11-15):
   where the moment changes (`[serious]` / `[whispers]` before a tense
   moment, `[excited]` at the landing, `[laughs softly]` after a joke). No
   `[curious]` before every question.
+- **Tense and person:** present tense for the story, past tense only in the
+  epilogue; little „du“ (direct address only where it helps: the CTA
+  sentence, „dein Handy“ comparisons) — tatsache and Simplicissimus barely
+  use it; Kurzgesagt-style warmth and „du“ fit scenario / science topics.
 - **Pace:** **2.4–2.6 words/s** (`prepare-voice.sh` RATE 2.5, pauses 0.3 s
   — documentary narrators speak ~2.1–2.5 incl. breaths; TikTok 3.1).
 
@@ -100,13 +120,16 @@ Code Zwölf-null-zwei. Den kennt keiner an Bord. Und der Treibstoff reicht nur n
 Der Computer, der hier steuert, hat weniger Speicher als ein einziges Foto auf deinem *Handy*.
 ```
 
-YouTube style:
+YouTube style — the documentary formula (`aufbau.md` „The intro“, the whole
+script in `beispiel-skript.md`):
 
 ```text
-Es ist der 20. Juli 1969, und die Mondfähre Eagle sinkt dem Mond entgegen. Noch rund zehn Kilometer. Neil Armstrong und Buzz Aldrin stehen dicht nebeneinander in einer Kabine, die kaum größer ist als eine Telefonzelle, als plötzlich ein Warnton losgeht. Auf dem kleinen Display erscheint eine Zahl, die keiner der beiden je gesehen hat: Zwölf-null-zwei.
-In Houston verfolgen hunderte Ingenieure jede Sekunde dieses Landeanflugs, und keiner von ihnen weiß in diesem Moment, ob die Landung abgebrochen werden muss. Dabei ist der Computer, an dem gerade alles hängt, schwächer als jeder Taschenrechner, den du heute kaufen kannst.
-Dass die beiden trotzdem landen, ist kein Zufall — es ist das Ergebnis von acht Jahren, in denen fast alles schiefgehen konnte. Genau diese acht Jahre schauen wir uns heute an: von der größten Rakete, die je gebaut wurde, über einen Computer, der aus Kupferdraht gewebt war, bis zu den letzten Sekunden Treibstoff.
-Aber mal von vorne.
+»Programmalarm.« »Es ist ein Zwölf-null-zwei.«
+»Noch sechzig Sekunden.«
+Es ist Sonntag, der 20. Juli 1969. Die Mondfähre Eagle sinkt der Oberfläche des Mondes entgegen. An Bord stehen Neil Armstrong, 38 Jahre alt, und Buzz Aldrin, 39, in einer Kabine, die kaum größer ist als eine Telefonzelle. Bis eben lief alles nach Plan. Dann leuchtet eine Warnlampe auf, und auf dem Display erscheint eine Zahl, die keiner der beiden aus dem Training kennt.
+In Houston weiß in diesem Moment niemand, ob die erste *Mondlandung* abgebrochen werden muss. Dabei hängt alles an einem Computer, der weniger Arbeitsspeicher hat als ein einziges Foto auf deinem Handy.
+Es gibt Momente, nach denen die Welt eine andere ist. Dieser Sonntag im Juli 1969 ist so einer. Wie konnte eine Mission mit so wenig Rechenleistung überhaupt bis zum Mond kommen? Was bedeutete der Alarm, den niemand kannte? Und wie knapp war es am Ende wirklich?
+Das ist die Geschichte der ersten Mondlandung und der zwölf Minuten, in denen sie fast gescheitert wäre. Wenn du keine dieser Geschichten verpassen willst, abonniere den Kanal.
 ```
 
 ## Chapter shape (YouTube style)
@@ -123,7 +146,7 @@ Aber mal von vorne.
 
 ## Self-check (in addition to `aufbau.md`)
 
-- [ ] Read one chapter aloud: does it sound like a documentary narrator, or like captions? Average sentence 12–18 words, paragraphs of 3–6 sentences
+- [ ] Read one chapter aloud: does it sound like a documentary narrator, or like captions? Sentences median 10–12 / mean 14–19 words, paragraphs of 3–6 sentences
 - [ ] ≤ 2–3 questions per chapter, each answered; no question at the end of most paragraphs
 - [ ] Signposting at every chapter start and end; transitions varied
 - [ ] History topics: historic present, dates, places, names + roles, 1–3 short quotes per video

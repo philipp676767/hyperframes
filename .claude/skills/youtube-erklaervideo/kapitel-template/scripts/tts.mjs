@@ -16,6 +16,7 @@ const voice = process.argv[2] || "keqaIOtp0ePlmN5jgQfy";
 const main = fs
   .readFileSync(new URL("script.txt", root), "utf8")
   .replaceAll("*", "")
+  .replace(/[»«]/g, "")
   .replace(/^\s*>\s*/gm, "")
   .trim()
   .replace(/\s+/g, " ");

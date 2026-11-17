@@ -28,7 +28,7 @@ def tokenize(text):
             continue
         hl = bool(re.fullmatch(r"\*.*\*[.,:;!?…]*", r))
         br = 2 if re.search(r"[.!?…]\*?$", r) else 1 if re.search(r"[,:;]\*?$", r) else 0
-        w = re.sub(r"(?<!\d)[.,]|[.,](?!\d)|[:;!?…„“\"]", "", r.replace("*", ""))
+        w = re.sub(r"(?<!\d)[.,]|[.,](?!\d)|[:;!?…„“\"»«]", "", r.replace("*", ""))
         if not w:
             continue
         o = {"w": w}

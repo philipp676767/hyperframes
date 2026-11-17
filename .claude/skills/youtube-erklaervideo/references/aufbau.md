@@ -15,43 +15,50 @@ scene + a promise, not a 3-second TikTok hook.
 
 - **1.500–1.750 words** in total at **2.5 words/s** (`prepare-voice.sh`
   RATE 2.5, pauses 0.3 s) → 10–12 min plus the 20-s end screen.
-- **Intro (chapter 0): 90–130 words, 35–55 s.** Chapters: **150–300 words
+- **Intro (chapter 0): 110–170 words, 40–70 s** (archive voices + scene + thesis + questions + framing + subscribe ask). Chapters: **150–300 words
   (60–120 s)**. Finale: 120–180 words.
 - One chapter = one composition with its own `script.txt`: **one paragraph
   per line** (3–6 sentences).
 
-## The intro (chapter 0) — cold open, promise, title
+## The intro (chapter 0) — the documentary formula
 
-Three parts, 35–55 s together:
+How tatsache, vince and Simplicissimus open every story video (transcripts
+2026-11-17, `doku-vorbilder.md`), 40–70 s, in this order:
 
-1. **Cold open (≈ 0–25 s):** drop the viewer into the most tense / most
-   spectacular moment of the story — a place, a time, people, what happens
-   right now — told in the present tense, with concrete detail. It _is_ the
-   thumbnail come true (confirm the click in the first seconds). It ends on
-   the open tension, not on the answer. (Simplicissimus: the plant, the
-   broken centrifuges, „unmöglich, hier reinzukommen — oder vielleicht doch
-   nicht?“)
-   — or, for „Was passiert, wenn …?“ / „Wie funktioniert …?“: the
-   **question stated plainly** in a calm, witty way (Kurzgesagt: „Heute
-   wollen wir eine uralte, sehr wissenschaftliche und superwichtige Frage
+1. **Archive voices (≈ 0–10 s):** 1–3 short O-Töne that drop the viewer
+   into the event before any narration — a news anchor, a radio call, a
+   witness („Mindestens 100 Tote und über 200 Verletzte. Das ist die
+   vorläufige Schreckensbilanz …“ / „Houston, wir haben ein Problem.“).
+   Spoken by the **archive voice** (a second ElevenLabs voice, radio
+   filter, `scripts/radio.sh`; lines starting with `»` in `script.txt`).
+2. **„Es ist …“ — the scene (≈ 10–35 s):** „Es ist Mittwoch, der 3. Juni
+   1998.“ Weekday, date, exact times („Um 10.33 Uhr verlässt der Zug
+   Hannover.“), a place, ordinary people with name and age („der
+   31-jährige Jörg D.“), an ordinary moment → the disturbance → **cut right
+   before the climax** („Und dann geschieht zwei Minuten nach dem Knall das
+   Unvorstellbare.“). Present tense, sober, concrete. It shows what the
+   thumbnail promised.
+   — For „Was passiert, wenn …?“ / „Wie funktioniert …?“ topics instead
+   the Kurzgesagt opening: the question stated plainly, calm and a little
+   witty („Heute wollen wir eine uralte, sehr wissenschaftliche Frage
    klären: …“).
-2. **Why it matters + the promise (≈ 25–45 s):** one or two sentences on
-   why this is bigger than it looks / what it has to do with the viewer,
-   then **say what the video does** — concretely, naming 2–3 stations as
-   curiosities: „Genau diese acht Jahre schauen wir uns heute an: von der
-   größten Rakete, die je gebaut wurde, über einen Computer aus gewebtem
-   Kupferdraht bis zu den letzten Sekunden Treibstoff.“ / „Hier kommen die
-   Gründe, warum …“. This road map is wanted on YouTube (it tells the
-   viewer the video is worth 10 minutes) — it is not a TikTok "promise
-   phrase".
-3. **Title + „Aber mal von vorne.“ (≈ 45–55 s):** a short bridge
-   sentence, then the **title card** (the video title calm and centred for
-   ~3 s, `kapitel.js titelBei` = the word where it appears, a soft sound),
-   and chapter 1 starts with the context.
+3. **The thesis (1–2 sentences):** why this moment matters — „Es gibt
+   Momente, die alles in ein Vorher und Nachher teilen. Dieser Mittwoch
+   wird genau so einer sein.“
+4. **2–3 guiding questions** — the threads the video will answer, in one
+   breath: „Wie konnte …? Welche Rolle spielte …? Und was hat sich
+   seitdem verändert?“ (the only place where several questions in a row
+   are right).
+5. **„Das ist die Geschichte …“** — one framing sentence with the search
+   word („Das ist die Geschichte der ersten Mondlandung — und der zwölf
+   Minuten, in denen sie fast gescheitert wäre.“). The **title card**
+   appears on it (`kapitel.js titelBei` = a word of this sentence).
+6. **The subscribe ask (≈ 10 % of the video, see „CTA“)** — one friendly
+   sentence right after the framing sentence, then chapter 1 starts with
+   the background.
 
-Never: „Hallo“, „Willkommen“, „Ich bin …“, channel name, „Abonniert“ /
-„Lass ein Like da“ at the start, a sponsor before the promise, a recap of
-the title word for word. The search word is spoken in the first ~15 s.
+Never: „Hallo“, „Willkommen“, „Ich bin …“, the channel name, a recap of
+the title word for word. The search word is spoken in the first ~20 s.
 
 ## Chapters (6–9) — story segments, not 60-s TikToks
 
@@ -75,42 +82,43 @@ what it means → bridge into the next chapter.
 - **The viewer's world** a few times per video, not every 30 s: „Dein
   Handy rechnet heute zwei Millionen Mal schneller.“
 
-## CTA — in the middle, never only at the very end (user, 2026-11-15)
+## CTA — early and in the middle, never only at the very end (user, 2026-11-15/17)
 
-Few viewers are still there in the last minute (the TikTok data showed
-the same: ~20 % before the end CTA, 5 % after it), so the asks go where
-most viewers still watch, **right after a payoff** — when the viewer has
-just got something and the next thread is already open:
+Few viewers are left in the last minute. The big documentary channels
+ask early, when most viewers are still there (tatsache, ICE 884: right
+after the intro at 2:49 of 24:36 ≈ 11 %), and never close on a long
+appeal:
 
-- **Subscribe ask — once, at ~35–55 %**, at the end of a chapter after its
-  mini-resolution, in one or two natural sentences in the narrator's
-  voice, keeping the open thread alive: „Bevor wir zum Mond fliegen: Wenn
-  dir solche Geschichten gefallen, abonniere den Kanal — die zwölf Minuten
-  über dem Mond kommen gleich.“ The word is **„abonniere“** (YouTube's
-  button says „Abonnieren“) — never TikTok's „Folge für mehr Wissen“. The
-  red „Abonnieren“ pill pops on „abonniere“ and flips to „Abonniert“.
+- **Subscribe ask — once, at the end of the intro (≈ 8–12 %)**, right
+  after „Das ist die Geschichte …“, one friendly sentence: „Wenn du keine
+  dieser Geschichten verpassen willst, abonniere den Kanal.“ / „Wenn ihr
+  auch in Zukunft keine Videos verpassen wollt, dann abonniert gerne.“ The
+  word is **„abonniere“** — never TikTok's „Folge für mehr Wissen“. The red
+  „Abonnieren“ pill pops on it and flips to „Abonniert“. (Second-best spot:
+  after a payoff at 35–55 %, once.)
 - **Comment question — once, at ~50–70 %**, right after the most
-  debatable moment (a decision, a „what would you do“): „Hättest du an
-  Bales' Stelle abgebrochen? Schreib's in die Kommentare.“ — the question
-  directly before „Schreib's in die Kommentare.“ (the „Kommentieren“ pill
-  pops with the question). An opinion or the viewer's own experience,
-  answerable in a few words.
-- Never in the intro (no „Abonniert“ before the viewer got anything),
-  never more than once each, never both in the same sentence.
-- The finale only points to the next video (end screen).
+  debatable moment (a decision, „what would you have done“): „Hättest du
+  an Bales' Stelle abgebrochen? Schreib's in die Kommentare.“ The
+  „Kommentieren“ pill pops with the question.
+- Never more than once each, never both in one sentence, never in the
+  finale.
 
-## Finale
+## Finale — epilogue, not appeal
 
-1. **The answer to the main question** — the moment resolved, clearly and
-   with calm weight (the `antwort` word).
-2. **Outlook: what it means today** (1 paragraph) — for history topics the
-   line to the viewer's life; the „Übrigens“ bonus fact fits here as one
-   surprising last fact, said naturally („Übrigens: Die Fußabdrücke sind
-   heute noch da.“) — keep the badge or drop it, but not as a TikTok punch.
-3. **The last line = the pointer to the next video** on the end screen
-   („Wie Apollo 13 trotzdem heimkam, siehst du in diesem Video.“). No
-   subscribe ask and no comment question here — they came in the middle.
-4. **20-s end screen:** calm, moving picture without text in the middle.
+How the documentary channels end (Simplicissimus, tatsache, Kurzgesagt):
+
+1. **The answer** to the main question, clearly, with calm weight (the
+   `antwort` word).
+2. **Epilogue — what became of them:** one or two sentences per person
+   and per place („Neil Armstrong unterrichtet später als Professor und
+   gibt kaum Interviews.“ / „Heute steht an der Stelle ein Denkmal.“).
+3. **What remains today / what it means for you** (+ the „Übrigens“ fact,
+   said naturally).
+4. **A calm closing sentence** — an image or a thought, not a summary
+   („Aber immerhin können sie in der Zwischenzeit wunderschöne Ringe am
+   Himmel bewundern.“).
+5. **The last line = the pointer to the next video** (end screen), then
+   ~20 s of calm picture. No subscribe ask, no comment question here.
 
 ## Picture rhythm (with `bild-16-9.md`)
 
@@ -125,21 +133,21 @@ just got something and the next thread is already open:
 
 | Part                       | Words           | Speech (2.5 w/s)  |
 | -------------------------- | --------------- | ----------------- |
-| Intro                      | 90–130          | 35–55 s           |
+| Intro                      | 110–170         | 40–70 s           |
 | 7 chapters                 | 7 × 170–200     | 7 × 68–80 s       |
 | Finale (+ 20-s end screen) | 120–180         | 48–72 s + ~12 s   |
 | **Sum**                    | **1.500–1.750** | **≈ 10:15–11:45** |
 
 ## Self-check before the voice (every chapter + once for the whole)
 
-- [ ] Whole: 1.500–1.750 words; intro 35–55 s; 6–9 chapters of 60–120 s; finale with the 20-s end screen
-- [ ] Intro: cold open in the present tense (or the plain question) that shows the thumbnail promise at once → why it matters → a concrete road map with 2–3 stations → „Aber mal von vorne.“ + title card. No greeting, channel intro or subscribe ask
+- [ ] Whole: 1.500–1.750 words; intro 40–70 s; 6–9 chapters of 60–120 s; finale with the 20-s end screen
+- [ ] Intro: archive voices → „Es ist <Wochentag>, der <Datum>.“ scene cut before the climax → thesis → 2–3 guiding questions → „Das ist die Geschichte …“ + title card → one subscribe sentence. No greeting or channel intro
 - [ ] Search word spoken in the first ~15 s, in the title, first word of the description
 - [ ] Sounds like a documentary narrator read aloud (`sprechstil.md` self-check): flowing sentences, paragraphs, few questions, signposting
 - [ ] Every chapter: context → event → science (one analogy) → meaning → bridge; threads always open, main question open until the finale
 - [ ] Re-hook at ~50–60 % announced with weight
-- [ ] CTA in the middle: one „abonniere …“ at ~35–55 % after a payoff, one comment question + „Schreib's in die Kommentare.“ at ~50–70 %; none in the intro; no „Folge für mehr Wissen“
-- [ ] Finale: answer → what it means today (+ Übrigens) → pointer to the next video (end screen)
+- [ ] CTA: one „abonniere …“ at the end of the intro (≈ 10 %), one comment question + „Schreib's in die Kommentare.“ at ~50–70 %; nothing in the finale; no „Folge für mehr Wissen“
+- [ ] Finale: answer → epilogue (what became of the people / places) → what remains today (+ Übrigens) → calm closing sentence → pointer to the next video
 - [ ] Facts: ≥ 15 checked facts in `plan.md` with a source; uncertain things phrased safely; quotes marked as quotes
 - [ ] ≤ 2 terms per chapter, each explained in the sentence; numbers with a scale
 - [ ] 0–2 delivery tags per chapter

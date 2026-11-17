@@ -5,8 +5,8 @@ window.HF_KAPITEL = {
   nr: 0, // 0 = the hook (0:00–0:30), 1 … n = chapters; the end chapter has `ende: true`
   titel: "Licht aus Draht", // short + curious, also the YouTube chapter name in the description
   // chapter 0 only: the title card (video title, keyword in <em>) and the
-  // spoken word it appears on — after the cold open + promise, usually „von“
-  // in „Aber mal von vorne.“ (references/aufbau.md „The intro“)
+  // spoken word it appears on — a word of the framing sentence „Das ist die
+  // Geschichte …“ (references/aufbau.md „The intro“; the demo uses „vorne“)
   hookTitel: "Licht aus <em>Draht</em>",
   titelBei: "vorne",
   // optional: an open question shown at the top (≤ 7 words, keyword in <em>)

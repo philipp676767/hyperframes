@@ -13,6 +13,10 @@ On YouTube the click comes from **title + thumbnail**, the watch time from
   „Marianengraben: Was ganz unten wirklich lebt“, „Mückenstich: Darum juckt
   es wirklich“. Max one word in capitals for stress (`GROSSARTIG`), max one
   emoji, no "#shorts", no hashtags in the title.
+- The documentary channels' pattern (`doku-vorbilder.md` §5): a superlative
+  or strong claim + the concrete subject — „Die katastrophalen letzten
+  Minuten im ICE 884“, „Die genialste Flucht aus der DDR“, „Der Nazi, den
+  Hitler gefürchtet hat“, „Apollo 13: The Battle Against Time“.
 - Write **five**, score them (search word first? ≤ 60? curiosity? true?
   fits the thumbnail without repeating it?) and take the best. The
   thumbnail text and the title **complement** each other — never the same

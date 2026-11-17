@@ -15,7 +15,7 @@ export function tokenize(script) {
     const hl = /^\*.*\*[.,:;!?…]*$/.test(r);
     const br = /[.!?…]\*?$/.test(r) ? 2 : /[,:;]\*?$/.test(r) ? 1 : 0;
     // keep a dot / comma inside a number ("60.000", "1,5")
-    const w = r.replace(/\*/g, "").replace(/(?<!\d)[.,]|[.,](?!\d)|[:;!?…„“"]/g, "");
+    const w = r.replace(/\*/g, "").replace(/(?<!\d)[.,]|[.,](?!\d)|[:;!?…„“"»«]/g, "");
     if (!w) return;
     const o = { w };
     if (hl) o.hl = true;
