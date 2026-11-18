@@ -7,36 +7,36 @@
   },
   {
     "s": "pop",
-    "at": 9.335,
+    "at": 9,
     "why": "beats.js",
     "db": -18
   },
   {
     "s": "morse",
-    "at": 13.965,
+    "at": 13.12,
     "why": "beats.js",
     "db": -16
   },
   {
     "s": "whoosh",
-    "at": 23.995,
+    "at": 22.2,
     "why": "cut"
   },
   {
     "s": "tauchen",
-    "at": 24.215,
+    "at": 22.42,
     "why": "beats.js",
-    "dur": 51.185,
+    "dur": 44.480000000000004,
     "db": -14
   },
   {
     "s": "blip",
-    "at": 49.17,
+    "at": 45.55,
     "why": "label Bug"
   },
   {
     "s": "blip",
-    "at": 54.95,
+    "at": 49.85,
     "why": "label Heck"
   }
 ]
