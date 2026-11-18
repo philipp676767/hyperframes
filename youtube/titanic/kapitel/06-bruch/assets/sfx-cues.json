@@ -9,67 +9,67 @@
     "s": "meer",
     "at": 0,
     "why": "beats.js",
-    "dur": 17.065,
+    "dur": 14.8,
     "db": -20
   },
   {
     "s": "wind",
-    "at": 6.6,
+    "at": 6.24,
     "why": "beats.js",
-    "dur": 10.465000000000002,
+    "dur": 8.56,
     "db": -22
   },
   {
     "s": "hit",
-    "at": 8.635,
+    "at": 7.92,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 16.845,
+    "at": 14.58,
     "why": "cut"
   },
   {
     "s": "klack",
-    "at": 27.285,
+    "at": 25.38,
     "why": "beats.js",
     "db": -8
   },
   {
     "s": "whoosh",
-    "at": 27.985,
+    "at": 26.32,
     "why": "cut"
   },
   {
     "s": "meer",
-    "at": 28.205,
+    "at": 26.54,
     "why": "beats.js",
-    "dur": 58.995000000000005,
+    "dur": 54.46,
     "db": -20
   },
   {
     "s": "bruch",
-    "at": 41.4,
+    "at": 39.14,
     "why": "beats.js",
     "db": -4
   },
   {
     "s": "hit",
-    "at": 41.5,
+    "at": 39.24,
     "why": "highlight shake"
   },
   {
     "s": "rauschen",
-    "at": 47.64,
+    "at": 44.5,
     "why": "beats.js",
-    "dur": 7.935000000000002,
+    "dur": 8.020000000000003,
     "db": -16
   },
   {
     "s": "wind",
-    "at": 56.935,
+    "at": 53.7,
     "why": "beats.js",
-    "dur": 30.265,
+    "dur": 27.299999999999997,
     "db": -24
   }
 ]

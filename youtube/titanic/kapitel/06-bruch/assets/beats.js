@@ -12,7 +12,7 @@ export const T = {
   bei: W("Bei"),
   last: W("Last"),
   um: W("Um", 1),
-  aus: W("aus"),
+  aus: W("aus", 2),
   krachen: W("Krachen"),
   bug: W("Bug", 2),
   senkrecht: W("senkrecht"),
