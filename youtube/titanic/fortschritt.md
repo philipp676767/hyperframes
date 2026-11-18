@@ -6,15 +6,15 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 | Nr  | Ordner       | Kapitel                    | Wörter | Sprechzeit | Status           | Notiz                                           |
 | --- | ------------ | -------------------------- | ------ | ---------- | ---------------- | ----------------------------------------------- |
 | 0   | 00-hook      | Eisberg voraus             | 166    | 66,8 s     | gerendert        | O-Töne Volker (radio funk)                      |
-| 1   | 01-schiff    | Das größte Schiff der Welt | 175    | 70,5 s     | geprüft, rendert | Werft Belfast, Fußballfelder, Schüssel, Röntgen |
-| 2   | 02-warnungen | Sechs Warnungen            | 182    | 73,3 s     | geprüft, Queue   | Funkraum, Uhr 23:30, Californian                |
-| 3   | 03-eisberg   | 37 Sekunden                | 189    | 75,9 s     | geprüft, Queue   |                                                 |
-| 4   | 04-schotten  | Das Eiswürfel-Problem      | 188    | 75,5 s     | geprüft, Queue   |                                                 |
-| 5   | 05-boote     | Halb leere Boote           | 192    | 77,1 s     | geprüft, Queue   | O-Ton p03 = Hook raw/p02                        |
-| 6   | 06-bruch     | Das Schiff bricht          | 202    | 81,1 s     | geprüft          |                                                 |
-| 7   | 07-carpathia | Die Rettung                | 156    | –          | skript           |                                                 |
-| 8   | 08-wrack     | 3.800 Meter tief           | 165    | –          | skript           |                                                 |
-| 9   | 09-finale    | Warum sie wirklich sank    | 155    | –          | skript           | + 20 s Endscreen                                |
+| 1   | 01-schiff    | Das größte Schiff der Welt | 175    | 70,5 s     | gerendert        | Werft Belfast, Fußballfelder, Schüssel, Röntgen |
+| 2   | 02-warnungen | Sechs Warnungen            | 182    | 73,3 s     | gerendert        | Funkraum, Uhr 23:30, Californian                |
+| 3   | 03-eisberg   | 37 Sekunden                | 189    | 75,9 s     | gerendert        |                                                 |
+| 4   | 04-schotten  | Das Eiswürfel-Problem      | 188    | 75,5 s     | gerendert        |                                                 |
+| 5   | 05-boote     | Halb leere Boote           | 192    | 77,1 s     | gerendert        | O-Ton p03 = Hook raw/p02                        |
+| 6   | 06-bruch     | Das Schiff bricht          | 202    | 81,1 s     | geprüft, rendert |                                                 |
+| 7   | 07-carpathia | Die Rettung                | 156    | 62,7 s     | geprüft, Queue   |                                                 |
+| 8   | 08-wrack     | 3.800 Meter tief           | 165    | 66,7 s     | geprüft, Queue   |                                                 |
+| 9   | 09-finale    | Warum sie wirklich sank    | 155    | 62,3 s     | geprüft, Queue   | + 20 s Endscreen                                |
 
 ## Video
 
