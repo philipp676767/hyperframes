@@ -129,8 +129,11 @@ bash .claude/skills/youtube-erklaervideo/scripts/new-video.sh <slug> "<Titel>"
 Creates `youtube/<slug>/` with `plan.md`, `fortschritt.md`, `welt.js`,
 `kapitel/`. In `plan.md` (`references/verpackung.md`): five titles → the
 best (≤ 60 chars, search word first), the **promise in one sentence**, the
-**3 thumbnail ideas** (A spectacle, B close-up / hand / face, C number /
-contrast — moment, camera, 2–5 words that **name the topic** so a stranger knows in one second what the video is about, layout; `verpackung.md` rule 1), the main question, the
+**5–6 thumbnail ideas** in different archetypes (`references/thumbnail.md`:
+disaster moment + myth break, the overlooked detail with a pointer label,
+the number / time pressure, vince-minimal, before / after — each: moment,
+what the viewer wants to know after one second, 0–5 words that **name the
+topic or the claim**; `verpackung.md` rule 1), the main question, the
 search word. The intro's cold open shows exactly this promise in its first seconds.
 
 ### 3. Script — the whole video, then self-check
@@ -239,21 +242,31 @@ Watch it honestly as a stranger: contact sheet every ~30 s + the intro frames
 — would I stay after 30 s? Is there a change every 8–20 s? Fix before
 sending.
 
-Thumbnails (any chapter's folder, the moments from `plan.md`):
+**Thumbnails — read `references/thumbnail.md` first and take real time
+(user: „extrem viel Mühe“).** ≥ 12 hero-shot candidates from the chapters'
+folders, each with its own camera, poster light, grade and crop:
 
 ```bash
-bash scripts/make-thumbnail.sh <s> "<TEXT mit <em>Wort</em>>" <links|rechts|oben|unten> a ['{"p":[x,y,z],"l":[x,y,z]}']
+python3 -I scripts/make-thumbnail.py --at <s> --cam '{"p":[x,y,z],"l":[x,y,z]}' \
+  --licht 1.3 --grade eis --hell 0.05 --crop 150,190,1500 \
+  --style gelb --text "NICHT NUR DER|<em>EISBERG</em>" --pos oben-links --name a [--grid]
+# pointer label: --label "KEIN FERNGLAS" --label-box 600,150 --label-point 627,458
 ```
 
-→ copy `renders/thumb-{a,b,c}.png` to `youtube/<slug>/`, phone test at
-246×138 and the **one-second test** (cover the title: „Das Video handelt
-von \_\_\_“ must be the topic — `verpackung.md` rule 1). Write `youtube/<slug>/upload.txt` (`references/verpackung.md`:
+→ `renders/thumb-<name>.jpg` + `thumb-<name>-check.png` (feed, phone,
+greyscale). Pick 3 finals in **different archetypes**, copy them to
+`youtube/<slug>/thumb-{a,b,c}.jpg`, then the **competitor test**: 6–9
+results of the YouTube search into `youtube/<slug>/konkurrenz.txt` and
+`python3 -I .claude/skills/youtube-erklaervideo/scripts/thumb-vergleich.py <slug>`
+— ours must be the first thing you see on `renders/vergleich-*.png`, and
+pass the one-second test (`verpackung.md` rule 1) and the why-watch test.
+Write `youtube/<slug>/upload.txt` (`references/verpackung.md`:
 title, description with the chapter marks from `kapitelmarken.txt`, tags,
 pinned comment, settings).
 
 ### 8. Deliver
 
-`SendUserFile` the final video (display `render`) and the three thumbnails,
+`SendUserFile` the final video (display `render`) the three thumbnails and the competitor sheet,
 then in the message: Titel, Beschreibung (incl. chapter marks + hashtags),
 Tags, Kommentar zum Anpinnen — **each its own code block** (only the field's
 text) — the settings as a short list (end screen: video left, subscribe
@@ -313,6 +326,8 @@ facets, shader colours). In addition:
   chat idles; the Monitor on `queue.log` keeps it alive. If a chapter
   failed twice (`FAIL … gave up`), read its `renders/render.log` tail, fix,
   start the queue again.
-- **Thumbnail text** starts at 176 px uppercase and shrinks to fit (down to
-  96 px, max 3 lines): 2–5 words that name the topic fit; more don't —
-  shorten the words, keep the topic name.
+- **Thumbnail text** auto-fits (max 3 lines): 0–5 words fit; more don't —
+  shorten the words, keep the topic name. `--crop`, `--label-*` and
+  `--arrow` coordinates are in the final frame (after the crop); check
+  with `--grid`. Night scenes need `--licht 1.3–1.5`; YouTube refuses
+  thumbnails over 2 MB (the tool writes JPG).

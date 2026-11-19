@@ -174,6 +174,21 @@ const post = createPost(renderer, WIDTH, HEIGHT);
 export const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(0xe9a7c4, 30, 95);
 export const camera = new THREE.PerspectiveCamera(30, WIDTH / HEIGHT, 0.03, 500);
+// Thumbnails (make-thumbnail.py sets window.HF_THUMB): a movie-poster light
+// rig on top of the scene's own light, so the hero reads at phone size even
+// in night / dark scenes — key from the camera's upper left, a cool rim from
+// behind the subject, a soft fill. Strength: window.HF_THUMB_LIGHT (0 = off).
+const thumbRig = (() => {
+  const k = window.HF_THUMB ? (window.HF_THUMB_LIGHT ?? 1) : 0;
+  if (!k) return null;
+  const rig = {
+    key: new THREE.DirectionalLight(0xfff0dc, 2.4 * k),
+    rim: new THREE.DirectionalLight(0x9cc4ff, 3.2 * k),
+    fill: new THREE.HemisphereLight(0xbcd2ff, 0x1a1a24, 1.0 * k),
+  };
+  scene.add(rig.key, rig.key.target, rig.rim, rig.rim.target, rig.fill);
+  return rig;
+})();
 // Drawn after the camera look (post.js), so it stays sharp: the LED panel.
 const overlay = new THREE.Scene();
 overlay.add(new THREE.HemisphereLight(0xffffff, 0x8a8090, 2.2));
@@ -856,7 +871,24 @@ export function renderFrame() {
     focusDist = camera.position.distanceTo(V(...window.__cam.l));
   }
   nope.quaternion.copy(camera.quaternion);
-  // thumbnails (make-thumbnail.sh) hide the LED panel: max 3 words on a thumbnail
+  if (thumbRig) {
+    const dir = V(0, 0, 0);
+    camera.getWorldDirection(dir);
+    const tgt = camera.position.clone().addScaledVector(dir, focusDist);
+    const right = V(0, 0, 0).crossVectors(dir, camera.up).normalize();
+    thumbRig.key.position
+      .copy(camera.position)
+      .addScaledVector(right, -0.6 * focusDist)
+      .addScaledVector(camera.up, 0.7 * focusDist);
+    thumbRig.key.target.position.copy(tgt);
+    thumbRig.rim.position
+      .copy(tgt)
+      .addScaledVector(dir, focusDist)
+      .addScaledVector(camera.up, 0.6 * focusDist)
+      .addScaledVector(right, 0.5 * focusDist);
+    thumbRig.rim.target.position.copy(tgt);
+  }
+  // thumbnails (make-thumbnail.py) hide the LED panel: max 3 words on a thumbnail
   panel.visible = panelK > 0 && !window.HF_NO_PANEL;
   if (panelK > 0) {
     panel.quaternion.copy(camera.quaternion);

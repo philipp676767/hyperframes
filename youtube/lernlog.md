@@ -7,6 +7,7 @@ Regel in den Skill. Für Zuschauer-Wissen aus der TikTok-Serie: `tiktok/lernlog.
 
 ## Nächstes Mal (offen) — gilt für jedes Video
 
+- [ ] **Coverbild mit extrem viel Mühe** (Nutzer, 2026-11-19: „muss sofort zeigen, warum man das Video sehen muss“; `references/thumbnail.md`): spannendster Moment vor dem Ausgang, Motiv riesig (Crop), Poster-Licht, eisblau/kräftig statt dunkel, gelbe Balken oder Zeiger-Label, eine Botschaft, kein Röntgen-Blick; ≥ 12 Kandidaten, 3 Archetypen, Konkurrenz-Test mit `thumb-vergleich.py`.
 - [ ] **Kein Text im Bild** (Nutzer, 2026-11-17): keine Untertitel, Titelkarte, Kapitel-Schilder, Badges, Abo-Pillen, Panels — nur Namensschilder mit Pfeil, die etwas zeigen. Zahlen gehören auf Displays in der 3D-Welt.
 - [ ] **Doku-Formel der großen Kanäle** (Nutzer, 2026-11-17: Skripte von tatsache, vince, Simplicissimus, Kurzgesagt ansehen; `references/doku-vorbilder.md`): Intro = Archiv-O-Töne → „Es ist <Wochentag>, der <Datum>.“-Szene bis kurz vor den Höhepunkt → These → 2–3 Leitfragen → „Das ist die Geschichte …“ → **ein Abo-Satz (≈ 10 %)**; Kommentar-Frage bei ~50–70 %; Finale = Epilog („was aus ihnen wurde“) statt Aufruf. „abonniere“, nie „Folge“.
 - [ ] **Thumbnail-Text sagt, worum es geht** (Nutzer, 2026-11-15, nach #1: „NOCH 30 SEK.“, „WAS IST 1202?“, „111 METER“ sagen ohne Video nichts): 2–5 Wörter mit dem bekannten Namen / Ereignis + der Behauptung („MONDLANDUNG FAST GESCHEITERT“), Bild = das bekannte Motiv; Ein-Sekunden-Test „Das Video handelt von …“ (`references/verpackung.md` Regel 1).
@@ -15,7 +16,7 @@ Regel in den Skill. Für Zuschauer-Wissen aus der TikTok-Serie: `tiktok/lernlog.
 - [ ] Jedes Kapitel als Erzählabschnitt: Kontext → Ereignis → Wissenschaft (eine Analogie) → Bedeutung → Überleitung. Hauptfrage offen bis zum Finale.
 - [ ] Re-Hook bei ~50–60 % mit der überraschendsten Wendung (gegen den Absprung in der Mitte).
 - [ ] Alle 8–20 s ändert sich etwas im Bild, alle 2–3 min ein Money-Shot.
-- [ ] 3 wirklich verschiedene Thumbnails (Spektakel / Nahaufnahme / Zahl), Handy-Test bei 246×138.
+- [ ] 3 wirklich verschiedene Thumbnails (verschiedene Archetypen), Handy-Test bei 246×138, Konkurrenz-Test.
 - [ ] Erst Verpackung (Titel + Thumbnails), dann Skript.
 
 **Offene Vergleiche (brauchen Zahlen vom Nutzer):** welche Thumbnail-Art gewinnt (A/B/C) · 30-s-Wert je Hook-Art · Absprungstellen vs. Kapitelgrenzen · lange Version eines starken TikToks vs. neues Thema · Shorts als Trailer: wie viele Aufrufe kommen über „Ähnliches Video“.

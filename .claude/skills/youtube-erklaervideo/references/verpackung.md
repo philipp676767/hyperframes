@@ -24,6 +24,10 @@ On YouTube the click comes from **title + thumbnail**, the watch time from
 
 ## Thumbnails — always 3 variants (YouTube "Test & Compare")
 
+**The craft — channel analysis, archetypes, hero shots, poster light,
+lettering, competitor test — is in `thumbnail.md`; read it before making
+them.** This section holds the rules for what the thumbnail must say.
+
 YouTube tests up to three thumbnails against each other and keeps the one
 with the most watch time — so every video ships **3 really different
 variants**, not three colourings of one picture.
@@ -59,14 +63,17 @@ the same: viewers should never have to guess what a video covers;
   gescheitert“ + thumbnail „FAST ABGESTÜRZT“ over the lander on the Moon —
   or title „Warum die Mondlandung fast scheiterte“ + thumbnail „APOLLO 11:
   12 MINUTEN PANIK“.
-- **2–5 words** (was „max 3“ — clarity beats shortness), huge, max 2
-  lines, keyword yellow in `<em>`.
+- **0–5 words**, huge, max 2 lines, keyword highlighted in `<em>`. One
+  message per thumbnail: text **or** a pointer label (plus at most an
+  arrow) — not both fighting. No words only when the picture alone names
+  the topic (the Titanic sinking) and shows the twist.
 
 ### Rule 2 — readable on a phone
 
-- **1280×720** (`scripts/make-thumbnail.sh` in any chapter: renders the 3D
-  scene at one moment, optional camera override, text + dark gradient,
-  hides the name tags; the video itself has no text, the thumbnail does).
+- **1920×1080 JPG < 2 MB** (`scripts/make-thumbnail.py` in any chapter:
+  renders the 3D scene at one moment with its own camera and poster light,
+  grade + crop, then text / label / arrow; hides the name tags; the video
+  itself has no text, the thumbnail does).
 - **One object or face, big** (≥ ⅓ of the frame), **strong contrast**
   (bright subject on dark, warm on cold), one accent colour.
 - Text on the side away from the subject (`links` / `rechts`) or across
@@ -85,7 +92,7 @@ decision** each:
 | **B — the human / the detail + the name**    | a face, a hand or the key detail big, the topic named in the text              | astronaut's visor reflecting the Moon — „APOLLO 11: DER ALARM“                              |
 | **C — the number / the contrast + the name** | a size or number comparison, the topic named                                   | tiny lander vs. the computer of a phone — „MONDLANDUNG MIT 4 KB“                            |
 
-Save them as `youtube/<slug>/thumb-a.png`, `-b.png`, `-c.png` (commit; LFS).
+Save them as `youtube/<slug>/thumb-a.jpg`, `-b.jpg`, `-c.jpg` (commit; LFS), after the competitor test (`thumbnail.md`).
 
 ## Beschreibung
 
@@ -159,7 +166,7 @@ KOMMENTAR (anpinnen)
 …
 
 EINSTELLUNGEN
-Thumbnail: thumb-a.png (Test & Compare: a, b, c) · Nicht für Kinder · Altersbeschränkung: nein · Bezahlte Werbung: nein · Synthetische Inhalte: ja · Sprache: Deutsch · Kategorie: Bildung · Kommentare: an · Endbildschirm: Video links, Abonnieren rechts · Kapitel: an · Öffentlich
+Thumbnail: thumb-a.jpg (Test & Compare: a, b, c) · Nicht für Kinder · Altersbeschränkung: nein · Bezahlte Werbung: nein · Synthetische Inhalte: ja · Sprache: Deutsch · Kategorie: Bildung · Kommentare: an · Endbildschirm: Video links, Abonnieren rechts · Kapitel: an · Öffentlich
 ```
 
 In the delivery message every field is **its own code block** holding only

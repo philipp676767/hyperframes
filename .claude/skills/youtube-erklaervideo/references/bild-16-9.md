@@ -35,8 +35,8 @@ and names or explains it (`LABELS` in beats.js → `labels()`): „Saturn V“,
 - **End screen** (finale): from its last line (the next-video pointer) on,
   ~20 s of calm, moving picture; no tag in y 260–760 (end-screen elements
   go there).
-- Thumbnails are the exception to the exception: they keep their 2–5 words
-  (`verpackung.md`), because they are not part of the video.
+- Thumbnails are the exception to the exception: they keep their 0–5 words
+  (`verpackung.md`, `thumbnail.md`), because they are not part of the video.
 
 ## Camera
 
@@ -74,6 +74,7 @@ and names or explains it (`LABELS` in beats.js → `labels()`): „Saturn V“,
 
 ## Thumbnails
 
-`scripts/make-thumbnail.sh` (see `verpackung.md`): moment + text + layout +
-optional camera `'{"p":[x,y,z],"l":[x,y,z]}'`; the 3D look is the video's
-own, so thumbnail and video match.
+`scripts/make-thumbnail.py` (see `thumbnail.md`): moment + own camera
+`'{"p":[x,y,z],"l":[x,y,z]}'` + poster light + grade + crop + text / label;
+the 3D look is the video's own, so thumbnail and video match — but lit and
+framed like a film poster, not like the scene.

@@ -6,7 +6,8 @@
 
 - **Titel** (≤ 60 Zeichen, Suchwort vorn):
 - **Versprechen in einem Satz** (das der Hook in 0–10 s beweist):
-- **Thumbnail A** — Moment / Kamera / Text (2–5 Wörter, **nennt das Thema**) / Layout / Ein-Sekunden-Test („Das Video handelt von …“):
+- **Thumbnail-Ideen (5–6, `references/thumbnail.md`)** — je Archetyp / Moment / was will der Zuschauer nach 1 s wissen? / Text (0–5 Wörter, **nennt Thema oder Behauptung**):
+- **Thumbnail A** — Archetyp / Kapitel + `--at` / `--cam` / Licht, Grade, Crop / Text oder Label / Ein-Sekunden-Test („Das Video handelt von …“) / Warum-schauen-Test / Konkurrenz-Test:
 - **Thumbnail B** —
 - **Thumbnail C** —
 - **Hauptfrage** (offen bis zur Auflösung im Finale):

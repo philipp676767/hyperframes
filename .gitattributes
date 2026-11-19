@@ -61,3 +61,4 @@ tiktok/**/*.png filter=lfs diff=lfs merge=lfs -text
 youtube/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
 youtube/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
 youtube/**/*.png filter=lfs diff=lfs merge=lfs -text
+youtube/**/*.jpg filter=lfs diff=lfs merge=lfs -text
