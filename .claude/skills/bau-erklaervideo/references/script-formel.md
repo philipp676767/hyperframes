@@ -18,6 +18,10 @@ one, SKILL.md step 0) uses this file too, with the differences in
 happening (no spoken "Was passiert, wenn …?"), 3 Folgen instead of 3 build
 beats, the outcome as payoff.
 
+**Format C „Bauwerke“** (famous bridges, towers, buildings — third in
+the rotation A → B → C, 2026-11-20) uses this file too, with the
+differences in `format-bauwerke.md`.
+
 ## Simple first — one idea per video (user's rule, 2026-11-11)
 
 User: _"Ich finde die Videos etwas zu kompliziert."_ Example of too much:

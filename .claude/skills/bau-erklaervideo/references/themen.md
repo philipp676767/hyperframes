@@ -79,7 +79,8 @@ format A pick from **Offen — Format A „Bauen“**, **Offen —
 Detail-Rätsel** (one small odd detail) or **Offen — Dein Look & dein
 Hobby** (the science behind what viewers show off), for format B from
 **Offen — Format B „Was passiert, wenn …?“** (its own criteria are
-below that list). The duplicate check covers both lists: an object that
+below that list). For format C pick from **Offen — Format C
+„Bauwerke“** (criteria in `format-bauwerke.md`). The duplicate check covers both lists: an object that
 already had an A episode is used for B too, and the other way round,
 unless the question is clearly a different one (Aufzug was built in #3 →
 „… wenn das Seil reißt?“ only if the user wants it).
@@ -366,6 +367,29 @@ ask for go in here.
 | ★ … im abstürzenden Aufzug im letzten Moment hochspringst?           | Bringt nichts – du bist genauso schnell wie die Kabine, der Sprung bremst kaum (Fakten prüfen)                    | Kabine rast runter, Low-Poly-Mensch springt, LED-Tacho zeigt die Differenz   | harmlos, Fangbremse erwähnen | Stadt     |
 | ★ … du dir fest die Augen reibst?                                    | Du siehst Lichtblitze ganz ohne Licht: Druck reizt die Sehzellen (Fakten prüfen)                                  | Daumen drücken aufs Lid, bunte Funken explodieren im Dunkeln                 | Phosphene                    | Körper    |
 | ★ … im Flugzeug auf dem Klo die Spülung drückst, während du sitzt?   | Mythos „festgesaugt“: Der Sog ist stark, aber dein Po dichtet nie ganz ab – du kommst wieder hoch (Fakten prüfen) | Vakuum-Pfeile ziehen am Klo, LED „VAKUUM“, Low-Poly-Mensch steht lachend auf | harmlos                      | Reisen    |
+
+## Offen — Format C „Bauwerke“
+
+Criteria: `format-bauwerke.md` (famous by name and seen by millions, one
+trick in one sentence, a „Was?!“ number, a felt moment, AT/CH/DE first).
+The scorecard and "What our numbers say" apply too.
+
+| Bauwerk                            | Hook (Frage im Kopf)                                          | Der Trick (nur fürs Payoff, Fakten prüfen)                                             | Money-Shot                                                     |
+| ---------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| ★ Schiefer Turm von Pisa           | „Darum fällt der Turm von Pisa nicht um.“                     | weicher Boden, Schwerpunkt noch über dem Fundament; Erde unter der Nordseite abgesaugt | Turm kippt in Zeitlupe, Schwerpunkt-Lot, Bohrer saugen Erde ab |
+| ★ Eiffelturm                       | „Im Sommer wird der Eiffelturm größer.“                       | Stahl dehnt sich bei Hitze aus (Zentimeter, prüfen)                                    | Turm wächst sichtbar, LED „+15 cm“                             |
+| ★ Burj Khalifa                     | „Ganz oben im Burj Khalifa schwankt dein Kaffee.“             | Y-Grundriss bricht den Wind, Turm schwingt Meter weit (prüfen)                         | Windwirbel reißen ab, Spitze pendelt                           |
+| ★ Taipei 101                       | „In diesem Hochhaus hängt eine 660-Tonnen-Kugel.“             | Schwingungsdämpfer pendelt gegen den Sturm (prüfen)                                    | Riesen-Kugel schwingt gegen das Gebäude                        |
+| ★ Golden Gate Bridge               | „Die ganze Golden Gate hängt an nur zwei Kabeln.“             | zwei Hauptkabel aus zehntausenden Drähten tragen die Fahrbahn (prüfen)                 | Kabel im Röntgen, Drähte fächern auf                           |
+| ★ Gotthard-Basistunnel             | „Unter dir liegen 2.300 Meter Fels.“                          | 57 km, heißer Fels, Kühlung (prüfen)                                                   | Zug im Berg-Schnitt, LED „45 °C Fels“                          |
+| ★ Europabrücke (Brenner)           | „Du fährst 190 Meter über dem Tal – auf Stelzen.“             | hohe Pfeiler, Spannbeton (prüfen)                                                      | Lkw über der Brücke, Pfeiler im Schnitt                        |
+| ★ Stephansdom                      | „Dieses Dach hat 230.000 Ziegel – und keiner fällt runter.“   | steiles Dach, Ziegel gehängt (prüfen)                                                  | Ziegeldach im Sturm, Adler-Muster                              |
+| ★ Prater-Riesenrad                 | „Das Riesenrad dreht sich – und hängt dabei an Speichen.“     | Speichen ziehen statt drücken (prüfen)                                                 | Speichen-Spannung leuchtet, Gondel steigt                      |
+| ★ Kolosseum                        | „Unter dem Kolosseum war ein Aufzug für Löwen.“               | Hypogäum mit Lastenaufzügen (prüfen)                                                   | Boden klappt auf, Löwe fährt hoch                              |
+| ★ Pyramiden von Gizeh              | „Die Pyramide wurde ohne Kran gebaut.“                        | Rampen, Schlitten auf nassem Sand (prüfen)                                             | Steinblock gleitet, Wasser vor dem Schlitten                   |
+| ★ Glasboden-Skywalk (Grand Canyon) | „Du stehst auf Glas – 1.200 Meter über dem Nichts.“           | Verbundglas, auskragender Stahlrahmen (prüfen)                                         | Blick nach unten durch den Boden                               |
+| ★ Hoover Dam                       | „Dieser Damm hält einen ganzen See zurück – mit einem Bogen.“ | Bogenstaumauer drückt die Kraft in den Fels (prüfen)                                   | Wasserdruck-Pfeiler, Kraft fließt in die Felswände             |
+| ★ Elbphilharmonie                  | „In diesem Saal hörst du jedes Husten – überall gleich.“      | 10.000 gefräste Gipsplatten streuen den Schall (prüfen)                                | Schallwellen prallen an der Waben-Wand                         |
 
 ## Reserviert (in Arbeit)
 

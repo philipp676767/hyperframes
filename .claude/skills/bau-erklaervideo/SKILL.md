@@ -1,6 +1,6 @@
 ---
 name: bau-erklaervideo
-description: 'Make the next 45-s TikTok (9:16) of the German series "Du hast gerade X gebaut", also posted as a YouTube Short, in two formats that always take turns: A = how an everyday thing works, built up in x-ray; B = "Was passiert, wenn …?", a scenario played out as a chain of consequences (references/format-was-passiert.md). House style: realistic 3D diorama in a new world per topic, name tags, one-word captions with yellow keywords, sound effects, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3), retention-first script (hook, open loop, payoff, "Übrigens" fact, comment + follow CTA at the end), plus cover, TikTok description and YouTube Shorts details. Claude picks format and topic itself (references/themen.md) and runs on autopilot. Use for "neues TikTok", "TikTok-Video", "noch so ein Video", "neues Video", "mach das nächste Video" or a named topic. NOT for long 10-12 min YouTube videos ("YouTube-Video", "langes Video") — those use the skill youtube-erklaervideo.'
+description: 'Make the next 45-s TikTok (9:16) of the German series "Du hast gerade X gebaut", also posted as a YouTube Short, in three rotating formats: A = how an everyday thing works; B = "Was passiert, wenn …?" (references/format-was-passiert.md); C = famous bridges, towers and buildings (references/format-bauwerke.md). House style: realistic 3D diorama in a new world per topic, name tags, one-word captions with yellow keywords, sound effects, ElevenLabs voice "Jan – Social Media Creator" (eleven_v3), retention-first script (hook, open loop, payoff, "Übrigens" fact, comment + follow CTA at the end), plus cover, TikTok description and YouTube Shorts details. Claude picks format and topic itself (references/themen.md) and runs on autopilot. Use for "neues TikTok", "TikTok-Video", "noch so ein Video", "neues Video", "mach das nächste Video" or a named topic. NOT for long 10-12 min YouTube videos ("YouTube-Video", "langes Video") — those use the skill youtube-erklaervideo.'
 ---
 
 # Bau-Erklärvideo (TikTok series)
@@ -32,7 +32,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Beschreibung | **Every video gets a TikTok description** (step 6c): a keyword line **≤ 60 characters, strongest search words first, one emoji at the end, no dash** + **3–5 hashtags that fit the topic and are really watched** (topic tag first; never `#fyp`, `#viral`, `#lernenmittiktok`); saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                      |
 | YouTube      | **Every video is also posted as a YouTube Short** (2026-11-05, step 6d): `tiktok/<slug>/youtube.txt` with title (40–60 characters, keywords first, always ending in `#shorts`), description (+ „Folge für mehr Wissen.“ + 3–5 hashtags incl. `#shorts`), tags, and the upload settings (TikTok cover, not for kids, synthetic content: yes, category Bildung …; no playlist), sent with the video like the TikTok description                                                                                                                        |
-| Serienformat | **Always alternating A „Bauen“ ↔ B „Was passiert, wenn …?“** (user's rule, 2026-10-23) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Serienformat | **Three formats in rotation A → B → C → A …** (user's rules 2026-10-23 and 2026-11-20): A „Bauen“ (how an everyday thing works), B „Was passiert, wenn …?“ (`references/format-was-passiert.md`), C „Bauwerke“ (famous bridges, towers, buildings, `references/format-bauwerke.md`) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                     |
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                                                                                                                                               |
 | Payoff       | The hook's question answered in one punchy line . **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                                                                                                                                                                              |
 | Music        | **No music** (user's rule, 2026-10-26): voice + sound effects only. Don't run `prepare-music.sh`, no `assets/bgm.mp3` (sync-html only adds a music tag if that file exists). The old calm bed stays in `assets/` for old episodes                                                                                                                                                                                                                                                                                                                    |
@@ -102,18 +102,21 @@ is: **fewer turns, smaller context** — never fewer checks.
 7. **Voice in one take** whenever ElevenLabs allows it (pieces = many
    extra turns); poll a generation no more often than `poll_after_seconds`.
 
-### 0. Pick the format — always alternating — then the topic — reserve it FIRST
+### 0. Pick the format — always in rotation — then the topic — reserve it FIRST
 
-**Format first** (user's rule, 2026-10-23: "Immer abwechselnd"). After
+**Format first** (user's rules, 2026-10-23 "Immer abwechselnd", 2026-11-20
+third format C „Bauwerke“). After
 `git pull origin main`, look at the newest episode: the last row of
 `tiktok/serie.md` **and** the **Reserviert** table in
 `references/themen.md` (a parallel chat may already have taken the next
 slot) — the newest of them by number / date decides. The new video takes
-the **other** format: after A „Bauen“ comes B „Was passiert, wenn …?“,
-after B comes A. A row without a `Format` value counts as A (#1–#23 are
-all A). Say it in the reservation line ("Diesmal Format B: Was passiert,
+the **next** format in the rotation **A → B → C → A**: after A „Bauen“
+comes B „Was passiert, wenn …?“, after B comes C „Bauwerke“
+(`references/format-bauwerke.md`), after C comes A. (Until 2026-11-19 it
+was only A ↔ B: after a B, the next is C.) A row without a `Format` value
+counts as A (#1–#23 are all A). Say it in the reservation line ("Diesmal Format B: Was passiert,
 wenn …?"). If the user explicitly asks for a format or names a topic
-that only fits one, take theirs — the next video goes on alternating
+that only fits one, take theirs — the next video goes on in the rotation
 from it.
 
 **Then the topic** — the user leaves it to you (2026-10-23). **Topical
