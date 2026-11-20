@@ -1,4 +1,6 @@
-// This chapter's place: the video's main world (youtube/<slug>/welt.js, copied
-// in by new-chapter.sh / sync-kit.sh). For a side scene of its own, replace
-// this import with the side world, built the same way (set kit).
-import "./welt.js";
+// Chapter 7: a Bavarian forest in the rain (side scene) + the plant on a grey
+// day: ruin → sarcophagus → the New Safe Confinement; animals in the zone.
+import { V } from "./world.js";
+import { buildPlant, buildForest } from "./welt.js";
+export const PLANT = buildPlant({ time: "grau", state: "explodiert" });
+export const FOREST = buildForest(V(0, 300, 0));

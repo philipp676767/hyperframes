@@ -6,60 +6,80 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "regen",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 43.660000000000004,
+    "db": -14
+  },
+  {
+    "s": "geiger",
+    "at": 17.92,
+    "why": "beats.js",
+    "dur": 14.159999999999997,
+    "db": -22
+  },
+  {
+    "s": "blip",
+    "at": 18.37,
+    "why": "label Cäsium-137"
+  },
+  {
+    "s": "blip",
+    "at": 27.83,
+    "why": "label Hirschtrüffel"
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 43.44,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "wind",
+    "at": 43.66,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
-  },
-  {
-    "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "dur": 56.74,
+    "db": -18
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 50.21,
+    "why": "label Liquidatoren"
+  },
+  {
+    "s": "klack",
+    "at": 55.52,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "klack",
+    "at": 56.52,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "blip",
+    "at": 63.29,
+    "why": "label Sarkophag"
+  },
+  {
+    "s": "rollen",
+    "at": 65.58,
+    "why": "beats.js",
+    "dur": 15.720000000000013,
+    "db": -14
+  },
+  {
+    "s": "morgen",
+    "at": 86.12,
+    "why": "beats.js",
+    "dur": 14.280000000000001,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 90.65,
+    "why": "label Przewalski-Pferde"
   }
 ]

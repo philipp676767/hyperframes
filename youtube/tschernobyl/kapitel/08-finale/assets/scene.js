@@ -1,112 +1,74 @@
-// TEMPLATE scene of the END chapter (demo, 16:9): the finished bulb glows while
-// the payoff, the CTA and the 20-s end screen run. Pattern from the demo chapter (candle -> light
-// bulb) that shows the pattern. Replace the subject here and the beats (T), shots, labels and
-// sounds in beats.js for the new topic; keep the structure. World,
-// captions, panel, arrows, labels and camera come from world.js.
-// Full-size reference: tiktok/kuehlschrank/assets/scene.js
+// Finale: the core recap; empty Prypjat at dusk with a memorial; the yellow
+// Ferris wheel; a calm end-screen orbit.
 import {
   THREE,
-  V,
-  scene,
-  flat,
-  M,
-  xrayMaterial,
-  xrayEdges,
-  setXray,
-  makeArrowSet,
-  animateArrows,
-  showPanel,
-  highlights,
   shotCamera,
   renderFrame,
   start,
+  highlights,
+  labels,
+  ramp,
+  smooth,
+  ground,
+  real,
+  roundedBox,
+  rng,
 } from "./world.js";
-import "./set.js";
-import { shots, HIGHLIGHTS } from "./beats.js";
+import { P, CORE } from "./set.js";
+import { shadowAll } from "./welt.js";
+import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
 
 highlights(HIGHLIGHTS);
-
-// The world of this video (sky, ground, props, hero piece, life) is built
-// in set.js — new for every video (SKILL.md 1b). Optional floor pad under
-// the subject:
-
-// ---------------------------------------------------------------- hook prop
-// The primitive version from the hook ("Kerze in einem Glas").
-const hook = new THREE.Group();
-hook.visible = false;
-scene.add(hook);
-const flameMat = flat(0xffb02e, { emissive: 0xff7a10, emissiveIntensity: 1 });
-const flame = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.22, 8), flameMat);
-{
-  const jar = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.42, 0.42, 0.9, 20, 1, true),
-    new THREE.MeshStandardMaterial({ color: 0xdff4ff, transparent: true, opacity: 0.35 }),
-  );
-  jar.position.y = 0.49;
-  hook.add(jar);
-  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.5, 14), flat(0xfff3dc));
-  candle.position.y = 0.29;
-  candle.castShadow = true;
-  hook.add(candle);
-  flame.position.y = 0.66;
-  hook.add(flame);
-}
-
-// ---------------------------------------------------------------- subject
-// Big, readable, centred at the origin, ~2-3 units tall. Shell uses
-// xrayMaterial so the inside can be revealed.
-const bulb = new THREE.Group();
-scene.add(bulb);
-const glassMat = xrayMaterial(0xfff8e8);
-const glassGeo = new THREE.SphereGeometry(0.9, 24, 16);
-const glass = new THREE.Mesh(glassGeo, glassMat);
-glass.position.y = 1.9;
-bulb.add(glass);
-const glassEdges = xrayEdges(glassGeo);
-glassEdges.position.copy(glass.position);
-bulb.add(glassEdges);
-const base = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.7, 16), M.alu);
-base.position.y = 0.75;
-base.castShadow = true;
-bulb.add(base);
-const filamentMat = flat(0x6b6b6b, { emissive: 0xffa22e, emissiveIntensity: 0 });
-const coil = [];
-for (let k = 0; k <= 120; k++) {
-  const f = k / 120;
-  const a = f * Math.PI * 2 * 9;
-  coil.push(V(-0.35 + f * 0.7, 1.95 + Math.sin(a) * 0.06, Math.cos(a) * 0.06));
-}
-const filament = new THREE.Mesh(
-  new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coil), 240, 0.012, 6),
-  filamentMat,
-);
-bulb.add(filament);
-const glow = new THREE.PointLight(0xffc46b, 0, 6, 1.5);
-glow.position.set(0, 1.95, 0);
-bulb.add(glow);
-const heatOut = makeArrowSet(
-  [
-    [V(0.3, 2.1, 0.3), V(1.4, 2.6, 0.9)],
-    [V(-0.3, 2.1, 0.3), V(-1.4, 2.6, 0.9)],
-    [V(0, 2.3, 0.4), V(0.1, 3.3, 1.0)],
-  ],
-  { parent: bulb },
-);
-
 const applyCamera = shotCamera(shots);
-
-// ---------------------------------------------------------------- render
+// nobody lives here any more
+P.people.forEach((p) => (p.visible = false));
+P.buses.visible = false;
+// a memorial stone with red carnations on the square
+const mem = new THREE.Group();
+const stone = new THREE.Mesh(
+  roundedBox(0.22, 0.16, 0.06, 0.015),
+  real.plastic(0x4a4c4e, { roughness: 0.6 }),
+);
+stone.position.y = 0.08;
+mem.add(stone);
+const plate = new THREE.Mesh(
+  roundedBox(0.12, 0.06, 0.004, 0.002),
+  real.metal(0xb89a5a, { roughness: 0.3 }),
+);
+plate.position.set(0, 0.1, 0.031);
+mem.add(plate);
+const r = rng(4);
+for (let i = 0; i < 14; i++) {
+  const st = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.0015, 0.0015, 0.05, 4),
+    real.plastic(0x3a6a2a),
+  );
+  const x = (r() - 0.5) * 0.12;
+  st.position.set(x, 0.025, 0.06 + r() * 0.02);
+  st.rotation.z = (r() - 0.5) * 0.8;
+  mem.add(st);
+  const fl = new THREE.Mesh(new THREE.IcosahedronGeometry(0.007, 1), real.fabric(0xc81a1a));
+  fl.position.set(x + st.rotation.z * -0.02, 0.05, st.position.z);
+  mem.add(fl);
+}
+shadowAll(mem);
+mem.position.set(2.5, 0, 5);
+ground.add(mem);
 function renderAt(t) {
-  hook.visible = false;
-  bulb.visible = true;
-  bulb.scale.setScalar(1);
-  setXray([glassMat], 0);
-  filamentMat.emissiveIntensity = 2.5;
-  glow.intensity = 6;
-  animateArrows(heatOut, t, 1);
-  showPanel(0);
+  P.wheel.userData.update(0);
+  // the core recap: steam, brake released, tips glowing
+  const steam = smooth(ramp(t, T.der, T.seine));
+  const out = smooth(ramp(t, T.seine, T.und));
+  const tip = smooth(ramp(t, T.und, T.und + 1.5));
+  CORE.setCore(t, {
+    power: 0.6 + steam * 0.8 + tip * 3 * (1 - ramp(t, T.fach, T.akimow)),
+    ins: 0.6 - out * 0.55 + tip * 0.2,
+    voidK: 0.2 + steam * 0.5,
+    tipK: tip,
+    turbineSpeed: 0.5,
+  });
+  labels(t, LABELS);
   applyCamera(t);
   renderFrame();
 }
-
 start(renderAt);

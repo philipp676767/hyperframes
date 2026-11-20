@@ -4,5 +4,36 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "halle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 24.08,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 16.51,
+    "why": "label Graphitspitzen"
+  },
+  {
+    "s": "whoosh",
+    "at": 23.66,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 23.88,
+    "why": "beats.js",
+    "dur": 42.42,
+    "db": -18
+  },
+  {
+    "s": "morgen",
+    "at": 39.98,
+    "why": "beats.js",
+    "dur": 26.520000000000003,
+    "db": -26
   }
 ]

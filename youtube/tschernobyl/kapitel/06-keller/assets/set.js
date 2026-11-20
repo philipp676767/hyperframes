@@ -1,4 +1,7 @@
-// This chapter's place: the video's main world (youtube/<slug>/welt.js, copied
-// in by new-chapter.sh / sync-kit.sh). For a side scene of its own, replace
-// this import with the side world, built the same way (set kit).
-import "./welt.js";
+// Chapter 6: the ruin on a smoky day (helicopters), the core in x-ray with the
+// melt and the pool below, and the flooded basement.
+import { V } from "./world.js";
+import { buildPlant, buildCore, buildBasement } from "./welt.js";
+export const PLANT = buildPlant({ time: "rauch", state: "explodiert" });
+export const CORE = buildCore(V(0, -300, 0));
+export const BASE = buildBasement(V(60, -300, 0));

@@ -1,72 +1,144 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 0 "Der Knopf für den Notfall": the archive announcement over the
+// burning ruin, then Saturday 1:23 — the control room, the AZ-5 button, the
+// blast; the three questions; the framing sentence + subscribe.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  es: W("Es"),
+  im: W("Im", 2),
+  schicht: W("Schichtleiter"),
+  leistung: W("Leistung"),
+  drueckt: W("drückt"),
+  notaus: W("Not-Aus", 1),
+  er: W("Er"),
+  statt: W("Stattdessen"),
+  expl: W("explodiert"),
+  wie: W("Wie", 2),
+  warum: W("Warum"),
+  wild: W("Wildschweine"),
+  das: W("Das"),
+  wenn: W("Wenn"),
+  end: END,
 };
+const c = (x, y, z) => [x, 300 + y, z];
+const k = (x, y, z) => [x, -300 + y, z];
+const f = (x, y, z) => [x, 600 + y, z];
+export const BOOM = T.expl + 0.25;
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // cold open: the burning ruin at night, slow push
+  { at: 0, from: [30, 7, 34], to: [22, 6.2, 26], look: [3, 5, 0], zoom: 1 },
+  // Saturday, half past one: the intact plant, long and calm
+  {
+    at: T.es - 0.2,
+    from: [-46, 3.2, 40],
+    to: [-34, 3.0, 34],
+    look: [-10, 4, -2],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the control room
+  {
+    at: T.im - 0.1,
+    from: c(-2.8, 1.75, 5.2),
+    to: c(-1.2, 1.7, 4.4),
+    look: c(0, 1.7, -3),
+    zoom: 1,
+    whoosh: true,
+  },
+  // Akimov at the desk
+  {
+    at: T.schicht,
+    from: c(3.6, 1.75, 1.6),
+    to: c(3.1, 1.7, 1.1),
+    look: c(0.8, 1.35, -1.5),
+    zoom: 1,
+  },
+  // the power display climbing, the rod field
+  {
+    at: T.leistung - 0.2,
+    from: c(-1.4, 2.3, -0.6),
+    to: c(-1.6, 2.35, -0.9),
+    look: c(-1.3, 2.6, -4),
+    zoom: 1,
+  },
+  // the button
+  {
+    at: T.drueckt - 0.3,
+    from: c(1.15, 1.32, -0.95),
+    to: c(1.0, 1.25, -1.1),
+    look: c(0.62, 0.96, -1.85),
+    zoom: 1,
+  },
+  // the rods start to fall (x-ray)
+  {
+    at: T.er - 0.1,
+    from: k(-2, 6, 17),
+    to: k(0, 5, 15),
+    look: k(0, 3.6, -2),
+    zoom: 1,
+    whoosh: true,
+  },
+  // outside: block 4 — and the blast
+  {
+    at: T.statt - 0.2,
+    from: [24, 3.5, 26],
+    to: [23, 3.6, 25],
+    look: [3, 6, 0],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the questions over the burning ruin
+  { at: T.wie, orbit: { c: [3, 5, -0.5], r: 15, y: 9, a0: 0.9, a1: 0.45 } },
+  { at: T.warum, from: [-60, 4, 52], to: [-52, 4, 46], look: [-10, 5, -10], zoom: 1 },
+  // Bavaria: a wild boar in the forest
+  {
+    at: T.wild - 0.3,
+    from: f(2.6, 1.0, 3.6),
+    to: f(2.2, 0.9, 3.1),
+    look: f(0, 0.55, 0.3),
+    zoom: 1,
+    whoosh: true,
+  },
+  // the story of Tschernobyl: the ruin, the blue glow, pulling back
+  {
+    at: T.das - 0.2,
+    from: [10, 9, 14],
+    to: [20, 11, 24],
+    look: [3, 6, -0.5],
+    zoom: 1,
+    whoosh: true,
+  },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Block 4", at: T.statt + 0.1, until: BOOM - 0.1, pos: [5, 7.2, 1], side: -1 },
+  {
+    text: "Alexander Akimow",
+    at: T.schicht + 0.6,
+    until: T.schicht + 3.4,
+    pos: c(1.2, 1.7, -0.9),
+    side: 1,
+  },
+  { text: "Not-Aus", at: T.notaus - 0.5, until: T.er - 0.2, pos: c(0.62, 0.99, -1.85), side: -1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
 export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
+  { kind: "flash", at: BOOM },
+  { kind: "shake", at: BOOM, dur: 1.4, amp: 0.5 },
+  { kind: "shake", at: BOOM + 2.2, dur: 0.8, amp: 0.35 },
 ];
 
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "feuer", at: 0, dur: T.es, db: -18 },
+  { s: "nacht", at: T.es - 0.2, dur: T.im - T.es, db: -16 },
+  { s: "halle", at: T.im - 0.1, dur: T.er - T.im, db: -18 },
+  { s: "knopf", at: T.notaus - 0.15, db: -8 },
+  { s: "alarm", at: T.notaus + 0.3, dur: 3.5, db: -18 },
+  { s: "rumpeln", at: T.statt - 0.3, db: -10 },
+  { s: "explosion", at: BOOM, db: -4 },
+  { s: "feuer", at: T.wie, dur: T.wild - T.wie, db: -16 },
+  { s: "regen", at: T.wild - 0.3, dur: T.das - T.wild, db: -16 },
+  { s: "feuer", at: T.das - 0.2, dur: T.end - T.das, db: -18 },
+  { s: "wind", at: T.das - 0.2, dur: T.end - T.das, db: -20 },
 ];

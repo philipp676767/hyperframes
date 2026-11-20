@@ -6,60 +6,93 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "morgen",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 15.78,
+    "db": -16
+  },
+  {
+    "s": "blip",
+    "at": 8.97,
+    "why": "label Riesenrad"
+  },
+  {
+    "s": "blip",
+    "at": 14.09,
+    "why": "label Block 4"
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 15.36,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "wind",
+    "at": 15.58,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "dur": 15.1,
+    "db": -22
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "bus",
+    "at": 30.68,
+    "why": "beats.js",
+    "dur": 4.34,
+    "db": -16
+  },
+  {
+    "s": "wind",
+    "at": 33.22,
+    "why": "beats.js",
+    "dur": 4.200000000000003,
+    "db": -18
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 37.2,
+    "why": "cut"
+  },
+  {
+    "s": "halle",
+    "at": 37.42,
+    "why": "beats.js",
+    "dur": 12.479999999999997,
+    "db": -24
+  },
+  {
+    "s": "piep",
+    "at": 42.48,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "piep",
+    "at": 42.98,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "piep",
+    "at": 43.48,
+    "why": "beats.js",
+    "db": -10
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 44.05,
+    "why": "label Schuhe"
+  },
+  {
+    "s": "whoosh",
+    "at": 49.68,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 49.9,
+    "why": "beats.js",
+    "dur": 9.399999999999999,
+    "db": -16
   }
 ]

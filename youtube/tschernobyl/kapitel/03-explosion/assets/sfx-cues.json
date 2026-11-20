@@ -6,60 +6,158 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "halle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 23.54,
+    "db": -18
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 2.48,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
+    "at": 8.05,
+    "why": "label Dampfblasen"
   },
   {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
+    "s": "geiger",
+    "at": 18.18,
+    "why": "beats.js",
+    "dur": 5.359999999999999,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 23.12,
+    "why": "cut"
+  },
+  {
+    "s": "bus",
+    "at": 23.34,
+    "why": "beats.js",
+    "dur": 4.620000000000001,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 27.74,
+    "why": "cut"
+  },
+  {
+    "s": "halle",
+    "at": 27.96,
+    "why": "beats.js",
+    "dur": 30.720000000000002,
+    "db": -18
+  },
+  {
+    "s": "knopf",
+    "at": 32.05,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "alarm",
+    "at": 32.5,
+    "why": "beats.js",
+    "dur": 18.739999999999995,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 32.86,
+    "why": "cut"
   },
   {
     "s": "surr",
-    "at": 21.57,
+    "at": 33.58,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "db": -16
+  },
+  {
+    "s": "blip",
+    "at": 33.93,
+    "why": "label Steuerstäbe"
+  },
+  {
+    "s": "blip",
+    "at": 40.75,
+    "why": "label Graphitspitze"
+  },
+  {
+    "s": "geiger",
+    "at": 46.44,
+    "why": "beats.js",
+    "dur": 4.499999999999993,
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 50.52,
+    "why": "cut"
+  },
+  {
+    "s": "alarm",
+    "at": 50.94,
+    "why": "beats.js",
+    "dur": 3.960000000000001,
+    "db": -14
+  },
+  {
+    "s": "rumpeln",
+    "at": 51.94,
+    "why": "beats.js",
+    "db": -8
   },
   {
     "s": "hit",
-    "at": 22.72,
+    "at": 52.44,
+    "why": "highlight shake"
+  },
+  {
+    "s": "hit",
+    "at": 55.5,
     "why": "highlight flash"
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 57.86,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 58.88,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 58.88,
+    "why": "highlight shake"
+  },
+  {
+    "s": "explosion",
+    "at": 58.88,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "feuer",
+    "at": 60.88,
+    "why": "beats.js",
+    "dur": 8.619999999999997,
+    "db": -16
+  },
+  {
+    "s": "hit",
+    "at": 61.08,
+    "why": "highlight shake"
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 63.65,
+    "why": "label Deckel, 1.000 Tonnen"
   }
 ]

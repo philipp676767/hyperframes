@@ -1,72 +1,108 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 7 "Die Wolke und der Sarg": rain over Bavaria, caesium in the soil,
+// the deer truffle, the boar; liquidators, the sarcophagus, the new arch
+// rolling in, the zone with wolves and wild horses.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  wo: W("Wo"),
+  eltern: W("Eltern"),
+  was: W("Was"),
+  nach: W("Nach"),
+  ein: W("Teil", 1) - 0.3,
+  wild: W("Wildschweine"),
+  deshalb: W("Deshalb", 1),
+  teil2: W("Teil", 2) - 0.3,
+  und: W("Hunderttausende") - 1.3,
+  auf: W("Dach") - 0.4,
+  schaufeln: W("schaufeln"),
+  in: W("206") - 0.2,
+  er: W("Er"),
+  deshalb2: W("Deshalb", 2),
+  m108: W("108"),
+  sie: W("rollt") - 0.3,
+  rund: W("Sperrzone") - 2.1,
+  ohne: W("Ohne"),
+  woelfe: W("Wölfe"),
+  die: W("verschwunden") - 1.0,
+  end: END,
 };
+const f = (x, y, z) => [x, 300 + y, z];
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // rain over the forest canopy, sinking down
+  { at: 0, from: f(-6, 14, 16), to: f(-3, 6, 10), look: f(0, 1, -4), zoom: 1 },
+  { at: T.wo - 0.2, from: f(5, 1.2, 8), to: f(3, 1.0, 6.5), look: f(0, 0.4, -2), zoom: 1 },
+  // the empty sandbox
+  { at: T.eltern - 0.2, from: f(10.5, 1.4, 6.5), to: f(10, 1.2, 5.8), look: f(8, 0.2, 3), zoom: 1 },
+  // caesium in the soil
+  {
+    at: T.was - 0.2,
+    from: f(2.2, 0.8, 2.6),
+    to: f(1.8, 0.6, 2.2),
+    look: f(0.6, 0.0, 0.4),
+    zoom: 1,
+  },
+  {
+    at: T.ein - 0.2,
+    from: f(1.6, 0.45, 1.6),
+    to: f(1.4, 0.4, 1.4),
+    look: f(0.9, 0.05, 0.6),
+    zoom: 1,
+  },
+  // the boar digs it up
+  {
+    at: T.wild - 0.2,
+    from: f(3.2, 0.9, 2.6),
+    to: f(2.7, 0.8, 2.1),
+    look: f(0.4, 0.4, 0.4),
+    zoom: 1,
+  },
+  {
+    at: T.deshalb - 0.2,
+    from: f(-1.5, 0.7, 3.4),
+    to: f(-1.2, 0.65, 3.0),
+    look: f(0.3, 0.5, 0.4),
+    zoom: 1,
+  },
+  { at: T.teil2, from: f(-6, 3, 10), to: f(-4, 2.6, 9), look: f(0, 1, 0), zoom: 1 },
+  // Chernobyl: liquidators on the roof next to the ruin
+  { at: T.und, from: [30, 16, 34], to: [24, 14, 28], look: [0, 4, 0], zoom: 1, whoosh: true },
+  { at: T.auf - 0.2, from: [-4, 6.4, 8], to: [-3.5, 6.2, 7], look: [-5, 4.5, 0], zoom: 1 },
+  // the sarcophagus
+  { at: T.in, from: [26, 5, 26], to: [21, 5.5, 22], look: [3, 5, 0], zoom: 1 },
+  // the new arch rolls in on its rails
+  { at: T.er - 0.2, from: [-10, 10, 42], to: [-4, 10, 38], look: [-8, 5, 0], zoom: 1 },
+  { at: T.m108 - 0.2, from: [14, 0.8, 18], to: [12, 0.9, 16], look: [3, 8, 0], zoom: 1 },
+  { at: T.sie, from: [-12, 0.5, 15.5], to: [-8, 0.5, 15.0], look: [-6, 0.6, 12.5], zoom: 1 },
+  // the zone, 30 km around
+  { at: T.rund - 0.2, from: [-60, 40, 90], to: [-50, 44, 80], look: [0, 0, -10], zoom: 1 },
+  // wolves and wild horses by the abandoned houses
+  { at: T.ohne - 0.2, from: [46, 0.6, -40], to: [43, 0.65, -37], look: [30, 0.5, -27], zoom: 1 },
+  { at: T.die, from: [36, 0.4, -16], to: [34, 0.5, -15], look: [5, 6, 0], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Cäsium-137", at: T.was + 1.4, until: T.ein - 0.3, pos: f(0.4, 0.04, 0.9), side: -1 },
+  { text: "Hirschtrüffel", at: T.ein + 3.3, until: T.wild - 0.3, pos: f(0.9, 0.08, 0.6), side: 1 },
+  { text: "Liquidatoren", at: T.auf + 0.8, until: T.in - 0.4, pos: [-5, 4.65, 1.5], side: 1 },
+  { text: "Sarkophag", at: T.in + 3.6, until: T.er - 0.4, pos: [3, 7.8, 0.8], side: 1 },
+  {
+    text: "Przewalski-Pferde",
+    at: T.woelfe + 1.5,
+    until: T.die - 0.3,
+    pos: [30, 0.3, -27],
+    side: -1,
+  },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
+export const HIGHLIGHTS = [];
 
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "regen", at: 0, dur: T.und, db: -14 },
+  { s: "geiger", at: T.was + 1.0, dur: T.wild - T.was, db: -22 },
+  { s: "wind", at: T.und, dur: T.end - T.und, db: -18 },
+  { s: "klack", at: T.schaufeln + 0.3, db: -18 },
+  { s: "klack", at: T.schaufeln + 1.3, db: -18 },
+  { s: "rollen", at: T.er, dur: T.rund - T.er, db: -14 },
+  { s: "morgen", at: T.ohne, dur: T.end - T.ohne, db: -20 },
 ];

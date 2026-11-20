@@ -1,59 +1,136 @@
 [
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "feuer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 6.42,
+    "db": -18
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 6,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "nacht",
+    "at": 6.22,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "dur": 5.9,
+    "db": -16
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 12,
+    "why": "cut"
+  },
+  {
+    "s": "halle",
+    "at": 12.22,
+    "why": "beats.js",
+    "dur": 17.12,
+    "db": -18
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 20.59,
+    "why": "label Alexander Akimow"
+  },
+  {
+    "s": "blip",
+    "at": 27.63,
+    "why": "label Not-Aus"
+  },
+  {
+    "s": "knopf",
+    "at": 27.93,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "alarm",
+    "at": 28.38,
+    "why": "beats.js",
+    "dur": 3.5,
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 29.12,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.38,
+    "why": "cut"
+  },
+  {
+    "s": "rumpeln",
+    "at": 31.5,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "blip",
+    "at": 31.95,
+    "why": "label Block 4"
+  },
+  {
+    "s": "hit",
+    "at": 32.57,
+    "why": "highlight flash"
+  },
+  {
+    "s": "hit",
+    "at": 32.57,
+    "why": "highlight shake"
+  },
+  {
+    "s": "explosion",
+    "at": 32.57,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "hit",
+    "at": 34.77,
+    "why": "highlight shake"
+  },
+  {
+    "s": "feuer",
+    "at": 35.52,
+    "why": "beats.js",
+    "dur": 6.899999999999999,
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 41.9,
+    "why": "cut"
+  },
+  {
+    "s": "regen",
+    "at": 42.12,
+    "why": "beats.js",
+    "dur": 3.280000000000001,
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 45.28,
+    "why": "cut"
+  },
+  {
+    "s": "feuer",
+    "at": 45.5,
+    "why": "beats.js",
+    "dur": 8.399999999999999,
+    "db": -18
+  },
+  {
+    "s": "wind",
+    "at": 45.5,
+    "why": "beats.js",
+    "dur": 8.399999999999999,
+    "db": -20
   }
 ]

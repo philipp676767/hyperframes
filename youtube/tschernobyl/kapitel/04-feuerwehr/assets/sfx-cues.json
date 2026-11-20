@@ -6,60 +6,80 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
-  },
-  {
-    "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
+    "s": "alarm",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 11.92,
+    "db": -18
   },
   {
     "s": "hit",
-    "at": 12.1,
+    "at": 0.2,
     "why": "highlight shake"
   },
   {
     "s": "whoosh",
-    "at": 17.3,
+    "at": 11.5,
+    "why": "cut"
+  },
+  {
+    "s": "feuer",
+    "at": 11.72,
+    "why": "beats.js",
+    "dur": 20.380000000000003,
+    "db": -12
+  },
+  {
+    "s": "blip",
+    "at": 15.23,
+    "why": "label Graphit"
+  },
+  {
+    "s": "sirene",
+    "at": 17.1,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 17.88,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
+    "at": 22.51,
+    "why": "label Leutnant Wladimir Prawik"
   },
   {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "sirene",
+    "at": 22.6,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "db": -18
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "wind",
+    "at": 32.1,
+    "why": "beats.js",
+    "dur": 26.999999999999993,
+    "db": -20
   },
   {
-    "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "s": "geiger",
+    "at": 35.78,
+    "why": "beats.js",
+    "dur": 8.059999999999995,
+    "db": -12
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 36.43,
+    "why": "label Strahlung"
+  },
+  {
+    "s": "feuer",
+    "at": 43.84,
+    "why": "beats.js",
+    "dur": 15.46,
+    "db": -20
   }
 ]

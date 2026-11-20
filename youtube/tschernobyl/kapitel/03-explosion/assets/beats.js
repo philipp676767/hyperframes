@@ -1,72 +1,172 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 3 "1:23 Uhr": the test starts, steam bubbles, the design flaw (car
+// analogy), AZ-5 at 1:23:40, the graphite tips, the power surge, the blast,
+// the lid.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  pumpen: W("Pumpen"),
+  kanaelen: W("Kanälen"),
+  und: W("hier") - 0.25,
+  in: W("In", 2),
+  wird: W("Wird"),
+  es: W("Auto") - 0.7,
+  um2: W("Um", 2),
+  drueckt: W("drückt"),
+  notaus: W("Not-Aus"),
+  alle: W("Alle"),
+  spitze: W("Spitze"),
+  graphit: W("Graphit"),
+  fuer: W("Moment") - 0.4,
+  nach: W("Nach"),
+  brenn: W("Brennstäbe"),
+  zwei: W("zwei"),
+  deckel: W("Deckel"),
+  end: END,
 };
+export const BOOM = T.zwei - 0.4;
+const c = (x, y, z) => [x, 300 + y, z];
+const k = (x, y, z) => [x, -300 + y, z];
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // 1:23 — the clock in the control room
+  { at: 0, from: c(2.4, 2.9, -1.4), to: c(2.6, 3.0, -1.9), look: c(3.0, 3.3, -3.8), zoom: 1 },
+  // the core: less water, more bubbles
+  {
+    at: T.pumpen - 0.2,
+    from: k(-1, 5, 17),
+    to: k(1, 4.6, 15),
+    look: k(0, 3.6, -2),
+    zoom: 1,
+    whoosh: true,
+  },
+  {
+    at: T.kanaelen - 0.2,
+    from: k(1.4, 5.6, 2.4),
+    to: k(0.9, 5.2, 2.1),
+    look: k(0.4, 5, -1.5),
+    zoom: 1,
+  },
+  // the flaw: wide
+  { at: T.und - 0.2, orbit: { c: [0, -296.5, -2], r: 15, y: -293.5, a0: -0.5, a1: 0.3 } },
+  {
+    at: T.in - 0.2,
+    from: k(2.2, 2.6, 2.8),
+    to: k(1.5, 2.6, 2.4),
+    look: k(0.4, 2.6, -1.5),
+    zoom: 1,
+  },
+  { at: T.wird - 0.2, from: k(0, 6.5, 12), to: k(0, 5.5, 10), look: k(0, 4.5, -2), zoom: 1 },
+  // the car that gets faster the hotter its engine
+  {
+    at: T.es - 0.2,
+    from: [30, 0.55, 3.2],
+    to: [31.5, 0.5, 3.0],
+    look: [31, 0.15, -1.6],
+    zoom: 1,
+    whoosh: true,
+  },
+  // 1:23:40 — the button
+  {
+    at: T.um2 - 0.2,
+    from: c(1.15, 1.32, -0.95),
+    to: c(1.0, 1.25, -1.1),
+    look: c(0.62, 0.96, -1.85),
+    zoom: 1,
+    whoosh: true,
+  },
+  // all rods start to move (rod display + core)
+  {
+    at: T.alle - 0.2,
+    from: k(-4, 11, 11),
+    to: k(-3, 10, 10),
+    look: k(0, 6.5, -2),
+    zoom: 1,
+    whoosh: true,
+  },
+  // the graphite tip, close
+  {
+    at: T.spitze - 0.4,
+    from: k(1.5, 1.6, 2.0),
+    to: k(1.1, 1.8, 1.7),
+    look: k(0.5, 2.0, -1.3),
+    zoom: 1,
+  },
+  // gas instead of brake: the bottom of the core flares up
+  { at: T.fuer - 0.2, from: k(0, 2.5, 15), to: k(0, 2.0, 13), look: k(0, 1.6, -2), zoom: 1 },
+  // the power display explodes
+  {
+    at: T.nach - 0.2,
+    from: c(-1.2, 2.7, -1.6),
+    to: c(-1.4, 2.8, -2.4),
+    look: c(-2.3, 2.9, -3.8),
+    zoom: 1,
+    whoosh: true,
+  },
+  // the core bursts
+  { at: T.brenn - 0.2, from: k(0, 6, 18), to: k(0, 6.5, 20), look: k(0, 4, -2), zoom: 1 },
+  // outside: two explosions
+  {
+    at: BOOM - 0.8,
+    from: [24, 3.5, 26],
+    to: [23, 3.6, 25],
+    look: [3, 6, 0],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the lid falls back askew
+  { at: T.deckel - 0.2, from: [12, 13, 12], to: [10, 12.5, 10], look: [3, 5, -0.8], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  {
+    text: "Dampfblasen",
+    at: T.kanaelen + 0.8,
+    until: T.und - 0.3,
+    pos: k(0.43, 5.6, -0.3),
+    side: 1,
+  },
+  {
+    text: "Steuerstäbe",
+    at: T.alle + 0.6,
+    until: T.spitze - 0.6,
+    pos: k(-0.4, 8.6, -0.5),
+    side: -1,
+  },
+  {
+    text: "Graphitspitze",
+    at: T.graphit - 0.2,
+    until: T.fuer - 0.4,
+    pos: k(0.85, 2.0, -0.3),
+    side: 1,
+  },
+  {
+    text: "Deckel, 1.000 Tonnen",
+    at: T.deckel + 1.2,
+    until: T.end - 0.5,
+    pos: [2.7, 5.1, -0.6],
+    side: 1,
+  },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
 export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
+  { kind: "shake", at: T.nach + 1.5, dur: 2.5, amp: 0.25 },
+  { kind: "flash", at: T.brenn + 0.6 },
+  { kind: "flash", at: BOOM },
+  { kind: "shake", at: BOOM, dur: 1.4, amp: 0.5 },
+  { kind: "shake", at: BOOM + 2.2, dur: 0.8, amp: 0.35 },
 ];
 
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "halle", at: 0, dur: T.es, db: -18 },
+  { s: "geiger", at: T.wird, dur: T.es - T.wird, db: -20 },
+  { s: "bus", at: T.es - 0.2, dur: T.um2 - T.es, db: -22 },
+  { s: "halle", at: T.um2 - 0.2, dur: BOOM - T.um2, db: -18 },
+  { s: "knopf", at: T.notaus - 0.15, db: -8 },
+  { s: "alarm", at: T.notaus + 0.3, dur: T.nach - T.notaus, db: -20 },
+  { s: "surr", at: T.alle + 0.3, db: -16 },
+  { s: "geiger", at: T.fuer, dur: T.nach - T.fuer, db: -14 },
+  { s: "alarm", at: T.nach, dur: T.brenn - T.nach, db: -14 },
+  { s: "rumpeln", at: T.nach + 1.0, db: -8 },
+  { s: "explosion", at: BOOM, db: -4 },
+  { s: "feuer", at: BOOM + 2, dur: T.end - BOOM - 2, db: -16 },
 ];

@@ -6,60 +6,130 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "nacht",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 10.4,
+    "db": -16
+  },
+  {
+    "s": "halle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 22.6,
+    "db": -22
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
+    "at": 9.98,
+    "why": "cut"
   },
   {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
+    "s": "brumm",
+    "at": 10.4,
+    "why": "beats.js",
+    "dur": 3,
+    "db": -18
   },
   {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
+    "s": "blip",
+    "at": 11.05,
+    "why": "label Turbine"
   },
   {
     "s": "whoosh",
-    "at": 17.3,
+    "at": 13.82,
+    "why": "cut"
+  },
+  {
+    "s": "nacht",
+    "at": 14.04,
+    "why": "beats.js",
+    "dur": 8.360000000000001,
+    "db": -18
+  },
+  {
+    "s": "blip",
+    "at": 18.51,
+    "why": "label nach Kiew"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.18,
+    "why": "cut"
+  },
+  {
+    "s": "halle",
+    "at": 22.4,
+    "why": "beats.js",
+    "dur": 44.1,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 25.61,
+    "why": "label Anatoli Djatlow"
+  },
+  {
+    "s": "blip",
+    "at": 30.11,
+    "why": "label Leonid Toptunow"
+  },
+  {
+    "s": "piep",
+    "at": 36.78,
+    "why": "beats.js",
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 38.96,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
-    "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "at": 44.09,
+    "why": "label Xenon"
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 47.96,
+    "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "s": "klack",
+    "at": 50.46,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "klack",
+    "at": 51.16,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "klack",
+    "at": 51.86,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "klack",
+    "at": 52.56,
+    "why": "beats.js",
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 62.48,
+    "why": "cut"
+  },
+  {
+    "s": "nacht",
+    "at": 62.7,
+    "why": "beats.js",
+    "dur": 3.8000000000000043,
+    "db": -16
   }
 ]

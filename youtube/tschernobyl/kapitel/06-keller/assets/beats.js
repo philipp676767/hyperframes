@@ -1,72 +1,117 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 6 "Drei Männer im Keller" (re-hook): helicopters drop sand, the core
+// melts towards the water pool, three volunteers open the valves.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  hub: W("Hubschrauber"),
+  um: W("um", 1),
+  doch: W("Doch"),
+  kern: W("Kern"),
+  uran: W("Uran"),
+  die: W("langsam") - 0.3,
+  und: W("genau") - 0.2,
+  trifft: W("Trifft"),
+  jemand: W("Jemand"),
+  drei: W("Drei"),
+  ana: W("Ananenko"),
+  bes: W("Bespalow"),
+  bar: W("Baranow"),
+  mit: W("Mit"),
+  finden: W("finden"),
+  oft: W("Oft"),
+  haettest: W("Hättest"),
+  denn: W("Denn"),
+  end: END,
 };
+const k = (x, y, z) => [x, -300 + y, z];
+const b = (x, y, z) => [60 + x, -300 + y, z];
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // the smoking ruin by day, helicopters coming in
+  { at: 0, from: [40, 14, 46], to: [32, 13, 38], look: [3, 6, -1], zoom: 1 },
+  // a helicopter over the shaft, the load falls
+  { at: T.hub - 0.2, from: [12, 12, 10], to: [10, 12.5, 8], look: [3, 10, -1], zoom: 1 },
+  { at: T.um - 0.2, from: [-12, 8, 22], to: [-8, 9, 20], look: [3, 8, -1], zoom: 1 },
+  // below: the core melting
+  {
+    at: T.doch - 0.2,
+    from: k(-2, 4, 18),
+    to: k(0, 3, 16),
+    look: k(0, 1.5, -2),
+    zoom: 1,
+    whoosh: true,
+  },
+  { at: T.uran - 0.2, from: k(3.5, 1.2, 6), to: k(2.6, 0.6, 5), look: k(0, -0.5, -1.5), zoom: 1 },
+  // it eats its way down
+  { at: T.die - 0.2, from: k(0, -2, 17), to: k(0, -4, 16), look: k(0, -4.5, -2), zoom: 1 },
+  // the pool beneath
+  { at: T.und - 0.2, from: k(-8, -6.5, 14), to: k(-5, -7, 12), look: k(0, -10, -2), zoom: 1 },
+  { at: T.trifft - 0.2, from: k(0, -8.2, 11), to: k(0, -8.5, 9), look: k(0, -5, -2), zoom: 1 },
+  // the flooded basement
+  {
+    at: T.jemand - 0.2,
+    from: b(0.4, 1.6, 4),
+    to: b(0.2, 1.5, 2.5),
+    look: b(0, 1.0, -12),
+    zoom: 1,
+    whoosh: true,
+  },
+  // three volunteers
+  {
+    at: T.drei - 0.2,
+    from: b(1.2, 1.5, -4.5),
+    to: b(1.0, 1.45, -4.0),
+    look: b(0, 1.4, 0),
+    zoom: 1,
+  },
+  // wading with their lamps (camera ahead of them, backing away)
+  { at: T.mit - 0.2, from: b(0.5, 1.3, -5), to: b(0.4, 1.3, -10), look: b(0, 1.2, 0), zoom: 1 },
+  // the valves
+  {
+    at: T.finden - 0.2,
+    from: b(0.4, 1.5, -21.5),
+    to: b(0.3, 1.45, -22.2),
+    look: b(-1.25, 1.3, -22),
+    zoom: 1,
+  },
+  { at: T.oft - 0.2, from: b(1.0, 1.7, -14), to: b(0.8, 1.7, -15), look: b(0, 1.3, -22), zoom: 1 },
+  // would you have volunteered?
+  {
+    at: T.haettest - 0.2,
+    from: b(0.6, 1.5, -26),
+    to: b(0.5, 1.5, -25.4),
+    look: b(0, 1.4, -20),
+    zoom: 1,
+  },
+  // meanwhile the cloud drifts west
+  {
+    at: T.denn - 0.2,
+    from: [30, 30, 50],
+    to: [20, 34, 44],
+    look: [-20, 20, -10],
+    zoom: 1,
+    whoosh: true,
+  },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Kernschmelze", at: T.uran + 0.4, until: T.die - 0.4, pos: k(0, 1.5, -1.5), side: 1 },
+  { text: "Wasserbecken", at: T.und + 1.0, until: T.trifft - 0.3, pos: k(-4, -9.5, -2), side: -1 },
+  { text: "Alexei Ananenko", at: T.ana - 0.2, until: T.bes - 0.2, pos: b(-0.7, 1.75, 0), side: -1 },
+  { text: "Waleri Bespalow", at: T.bes - 0.2, until: T.bar - 0.4, pos: b(0, 1.75, -0.8), side: 1 },
+  { text: "Boris Baranow", at: T.bar - 0.2, until: T.mit - 0.3, pos: b(0.7, 1.75, -1.6), side: 1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
+export const HIGHLIGHTS = [];
 
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "hubschrauber", at: 0, dur: T.doch, db: -14 },
+  { s: "feuer", at: 0, dur: T.doch, db: -22 },
+  { s: "rumpeln", at: T.kern, db: -14 },
+  { s: "feuer", at: T.uran, dur: T.jemand - T.uran, db: -20 },
+  { s: "tropfen", at: T.jemand - 0.2, dur: T.denn - T.jemand, db: -16 },
+  { s: "waten", at: T.mit - 0.2, dur: T.finden - T.mit, db: -12 },
+  { s: "ventil", at: T.finden + 1.0, db: -10 },
+  { s: "ventil", at: T.finden + 2.4, db: -12 },
+  { s: "wind", at: T.denn - 0.2, dur: T.end - T.denn, db: -16 },
 ];

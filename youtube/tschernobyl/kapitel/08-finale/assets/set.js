@@ -1,4 +1,6 @@
-// This chapter's place: the video's main world (youtube/<slug>/welt.js, copied
-// in by new-chapter.sh / sync-kit.sh). For a side scene of its own, replace
-// this import with the side world, built the same way (set kit).
-import "./welt.js";
+// Finale: the reactor core in x-ray (the answer) + Prypjat at dusk today,
+// empty, the yellow Ferris wheel (epilogue + end screen).
+import { V } from "./world.js";
+import { buildPripyat, buildCore } from "./welt.js";
+export const P = buildPripyat({ time: "abend", plume: false });
+export const CORE = buildCore(V(0, -300, 0));

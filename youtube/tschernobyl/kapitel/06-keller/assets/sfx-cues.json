@@ -6,60 +6,103 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "hubschrauber",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 12.58,
+    "db": -14
+  },
+  {
+    "s": "feuer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 12.58,
+    "db": -22
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 12.16,
     "why": "cut"
+  },
+  {
+    "s": "rumpeln",
+    "at": 15.72,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "feuer",
+    "at": 17.12,
+    "why": "beats.js",
+    "dur": 18.56,
+    "db": -20
   },
   {
     "s": "blip",
     "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
-    "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
-  },
-  {
-    "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "why": "label Kernschmelze"
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 25.89,
+    "why": "label Wasserbecken"
+  },
+  {
+    "s": "whoosh",
+    "at": 35.26,
+    "why": "cut"
+  },
+  {
+    "s": "tropfen",
+    "at": 35.48,
+    "why": "beats.js",
+    "dur": 27.880000000000003,
+    "db": -16
+  },
+  {
+    "s": "blip",
+    "at": 42.75,
+    "why": "label Alexei Ananenko"
+  },
+  {
+    "s": "blip",
+    "at": 44.19,
+    "why": "label Waleri Bespalow"
+  },
+  {
+    "s": "blip",
+    "at": 45.93,
+    "why": "label Boris Baranow"
+  },
+  {
+    "s": "waten",
+    "at": 47.16,
+    "why": "beats.js",
+    "dur": 3.6199999999999974,
+    "db": -12
+  },
+  {
+    "s": "ventil",
+    "at": 51.98,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "ventil",
+    "at": 53.38,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "whoosh",
+    "at": 63.14,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 63.36,
+    "why": "beats.js",
+    "dur": 3.8400000000000034,
+    "db": -16
   }
 ]
