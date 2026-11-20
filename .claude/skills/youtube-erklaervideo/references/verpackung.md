@@ -148,7 +148,7 @@ quick, but done.
 - **Kapitel:** automatic from the time stamps in the description (on).
 - **Sichtbarkeit:** Öffentlich (or scheduled when the user wants).
 - **Kommentar anpinnen:** one ready comment (the comment question in other
-  words or Jan's own answer) — post and pin it right after the upload.
+  words or the channel's own answer) — post and pin it right after the upload.
 
 ## `upload.txt` — one file, one copy block per field in the delivery message
 

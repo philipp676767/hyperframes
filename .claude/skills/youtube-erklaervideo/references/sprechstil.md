@@ -81,7 +81,7 @@ Simplicissimus and Kurzgesagt from 2026-11-17 is in `doku-vorbilder.md`):
     Mondfähre Eagle.“).
   - **O-Töne** in the archive voice (`»` lines, radio filter): 3–8 short
     real quotes per video — radio calls, a news anchor, a witness. Never
-    invented as real; paraphrases are introduced by Jan („Armstrong funkt
+    invented as real; paraphrases are introduced by the narrator („Armstrong funkt
     sinngemäß: …“).
 - **Explain inside the story, with room.** A term is introduced in the
   sentence: „… ein sogenannter Zero-Day — eine Schwachstelle, die noch

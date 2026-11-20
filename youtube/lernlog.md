@@ -7,6 +7,7 @@ Regel in den Skill. Für Zuschauer-Wissen aus der TikTok-Serie: `tiktok/lernlog.
 
 ## Nächstes Mal (offen) — gilt für jedes Video
 
+- [ ] **Neue Stimme: Johannes Dokumentarfilm** (Nutzer, 2026-11-20, aus 10 Proben in `youtube/stimmen-casting/` gewählt, Nr. 09; `voice_id r8MyP4qUsq5WFFSkPdfV`, eleven_v3) statt Jan — klassischer Doku-Erzähler. Beim ersten Video mit ihm Tempo (2,5 Wörter/s) und Klang der Regieanweisungen prüfen; Archiv-Stimme muss deutlich anders klingen.
 - [ ] **Coverbild mit extrem viel Mühe** (Nutzer, 2026-11-19: „muss sofort zeigen, warum man das Video sehen muss“; `references/thumbnail.md`): spannendster Moment vor dem Ausgang, Motiv riesig (Crop), Poster-Licht, eisblau/kräftig statt dunkel, gelbe Balken oder Zeiger-Label, eine Botschaft, kein Röntgen-Blick; ≥ 12 Kandidaten, 3 Archetypen, Konkurrenz-Test mit `thumb-vergleich.py`.
 - [ ] **Kein Text im Bild** (Nutzer, 2026-11-17): keine Untertitel, Titelkarte, Kapitel-Schilder, Badges, Abo-Pillen, Panels — nur Namensschilder mit Pfeil, die etwas zeigen. Zahlen gehören auf Displays in der 3D-Welt.
 - [ ] **Doku-Formel der großen Kanäle** (Nutzer, 2026-11-17: Skripte von tatsache, vince, Simplicissimus, Kurzgesagt ansehen; `references/doku-vorbilder.md`): Intro = Archiv-O-Töne → „Es ist <Wochentag>, der <Datum>.“-Szene bis kurz vor den Höhepunkt → These → 2–3 Leitfragen → „Das ist die Geschichte …“ → **ein Abo-Satz (≈ 10 %)**; Kommentar-Frage bei ~50–70 %; Finale = Epilog („was aus ihnen wurde“) statt Aufruf. „abonniere“, nie „Folge“.
