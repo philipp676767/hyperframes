@@ -1,0 +1,32 @@
+# Fortschritt: Tschernobyl: Warum der Not-Aus den Reaktor sprengte
+
+Stand für einen neuen Chat (Skill `youtube-erklaervideo`, Schritt „Weitermachen“).
+Status je Kapitel: geplant → skript → stimme → szene → geprüft → gerendert.
+
+| Nr  | Ordner       | Kapitel                       | Wörter | Sprechzeit | Status | Notiz |
+| --- | ------------ | ----------------------------- | ------ | ---------- | ------ | ----- |
+| 0   | 00-hook      | Der Knopf für den Notfall     | 134    | 53.9 s     | stimme |       |
+| 1   | 01-reaktor   | Ein Reaktor wie kein anderer  | 164    | 65.9 s     | stimme |       |
+| 2   | 02-test      | Ein Test in der Nacht         | 165    | 66.3 s     | stimme |       |
+| 3   | 03-explosion | 1:23 Uhr                      | 172    | 69.1 s     | stimme |       |
+| 4   | 04-feuerwehr | Die Nacht der Feuerwehr       | 146    | 58.7 s     | stimme |       |
+| 5   | 05-prypjat   | Prypjat wird leer             | 147    | 59.1 s     | stimme |       |
+| 6   | 06-keller    | Drei Männer im Keller         | 167    | 67.1 s     | stimme |       |
+| 7   | 07-wolke     | Die Wolke und der Sarg        | 249    | 99.9 s     | stimme |       |
+| 8   | 08-finale    | Warum der Reaktor explodierte | 128    | 51.5 s     | stimme |       |
+
+## Video
+
+- [ ] Titel + 3 Thumbnail-Ideen (plan.md)
+- [ ] Hauptwelt (welt.js) geprüft
+- [ ] Alle Kapitel gerendert
+- [ ] Zusammengefügt + Lautheit (-14 LUFS)
+- [ ] 3 Thumbnails
+- [ ] Beschreibung mit Kapitel-Zeitmarken, Tags, Einstellungen, Kommentar (upload.txt)
+- [ ] youtube/serie.md eingetragen
+
+## Notizen
+
+- ElevenLabs: Gratis-Konto, Flow O22WbkAgicJPnim2zILc, ganze Kapitel in einem Stück gingen durch (2026-11-20). Verbraucht ~9.500 von 10.000 Zeichen — **kein Neu-Generieren mehr möglich bis zum Reset (~20.12.)**.
+- Erzähler Johannes `r8MyP4qUsq5WFFSkPdfV`; Archivstimme „Nexa – The System“ `HkESLncErpfXT5IWi6vH` (Durchsage Prypjat, `radio.sh funk`, raw in 00-hook/assets/vo_takes/raw/q-evak.mp3, in Kap. 5 wiederverwendet).
+- prepare-voice: Kap. 1 und Finale mit PAUSE=0.4 (Take schon schnell), Rest 0.3.

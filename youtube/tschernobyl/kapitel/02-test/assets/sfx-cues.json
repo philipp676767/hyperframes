@@ -1,0 +1,65 @@
+[
+  {
+    "s": "whoosh",
+    "at": 0,
+    "why": "chapter cut",
+    "db": -14
+  },
+  {
+    "s": "anzuenden",
+    "at": 0.02,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 3.095,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "pop",
+    "at": 11.95,
+    "why": "beats.js"
+  },
+  {
+    "s": "hit",
+    "at": 12.1,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.3,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 17.57,
+    "why": "label Draht"
+  },
+  {
+    "s": "slowmo",
+    "at": 21.57,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "surr",
+    "at": 21.57,
+    "why": "beats.js",
+    "dur": 7.539999999999999,
+    "db": -21
+  },
+  {
+    "s": "hit",
+    "at": 22.72,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 24.41,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "blip",
+    "at": 24.68,
+    "why": "label Glühfaden"
+  }
+]
