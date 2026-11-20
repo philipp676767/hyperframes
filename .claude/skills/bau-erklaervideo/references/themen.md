@@ -393,8 +393,9 @@ The scorecard and "What our numbers say" apply too.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Format | Datum | Chat |
-| ----- | ------ | ----- | ---- |
+| Thema                  | Format | Datum      | Chat                               |
+| ---------------------- | ------ | ---------- | ---------------------------------- |
+| Schiefer Turm von Pisa | C      | 2026-11-20 | TikTok #92: Schiefer Turm von Pisa |
 
 ## Verwendet
 
