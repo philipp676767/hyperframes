@@ -101,3 +101,4 @@ Umgebungen (insel, stadt, …).
 | 88  | Türschloss (Zacken)              | A      | `tiktok/tuerschloss`         | altbau-treppenhaus-tuer       | nacht, wandlampe          | 45,0 s | 2026-11-14 |
 | 89  | Ei in der Mikrowelle (Gabel)     | B      | `tiktok/ei-mikrowelle`       | fruehstueckskueche-mikrowelle | morgen, sonnenaufgang     | 45,0 s | 2026-11-14 |
 | 91  | Flugmodus vergessen (Pilot)      | B      | `tiktok/flugmodus`           | abendflug-alpenvorland        | goldene stunde            | 45,0 s | 2026-11-15 |
+| 92  | Schiefer Turm von Pisa           | C      | `tiktok/pisa`                | piazza-dei-miracoli-wiese     | später nachmittag, warm   | 45,0 s | 2026-11-20 |
