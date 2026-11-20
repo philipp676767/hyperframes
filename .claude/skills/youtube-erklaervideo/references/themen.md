@@ -145,5 +145,6 @@ the search interest and the facts again when you pick.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Typ | Datum | Chat |
-| ----- | --- | ----- | ---- |
+| Thema                                                   | Typ           | Datum      | Chat                    |
+| ------------------------------------------------------- | ------------- | ---------- | ----------------------- |
+| Tschernobyl — die Nacht, in der der Reaktor explodierte | Große Momente | 2026-11-20 | YouTube #3: Tschernobyl |
