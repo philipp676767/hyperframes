@@ -64,6 +64,9 @@ hook lab, gain / danger for the viewer when it is real).
 - Or **start with the warning / the gain** (script-formel.md "Nutzen /
   Warnung zuerst"): "Deshalb darfst du niemals Wasser ins heiße Fett
   schütten." — then the act.
+- **The hook leaves a question in the head** (script-formel.md §1,
+  2026-11-20): „Und dann?“ / „Warum passiert nichts?“ — the act plus a
+  hint that the result is not what you expect.
 - **Never reveal the outcome in the hook.** Not "Spoiler: sie geht nicht
   auf" — the outcome is the payoff; the open question stays on screen
   (spoken only — no question text on screen since 2026-11-17) until then.

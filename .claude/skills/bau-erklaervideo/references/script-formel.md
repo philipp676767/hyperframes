@@ -113,6 +113,36 @@ the last word.
 
 ### 1. Hook — the first sentence decides everything
 
+**The hook must put a question in the viewer's head that wants an answer**
+(user's rule, 2026-11-20 — the most important hook rule). The line makes
+a claim or shows a moment and **holds back the reason**, so the viewer's
+brain asks „Warum?!“ / „Wie?!“ / „Und dann?“ by itself and has to stay
+for the answer. The user's example: **„Darum solltest du im Winter nie …
+Auto fahren.“** → head: „Warum denn nicht?!“
+
+- **Claim + hidden reason**, never the reason itself: „Darum darfst du
+  dein Handy nie über Nacht laden.“ (not „… weil der Akku altert“).
+- **The question the viewer now has must be sayable in ≤ 4 words**
+  („Warum nicht?“, „Wie geht das?“, „Was passiert dann?“) — that is the
+  test. If no question comes up, the hook is a fact, not a hook: rewrite.
+- **It is about the viewer** (du / dein, their thing, their risk or
+  gain) and **true** — the video answers it fully, no clickbait.
+- The answer comes only in the payoff; until then the beats make the
+  question bigger, never answer it half-way.
+- Strong shapes (the hook lab uses them):
+  - „Darum solltest du nie / niemals … [Ding / Handlung].“ — „Darum
+    solltest du nie barfuß auf den Leih-Scooter.“
+  - „Warum dein … [macht etwas Seltsames].“ — „Warum dein Wasserkocher
+    kurz vor dem Kochen still wird.“
+  - „Dein … [tut heimlich etwas Krasses].“ — „Dein AirTag findet deinen
+    Schlüssel ohne GPS.“ (head: „Wie?!“)
+  - „Du [tust X] – und [unerwartete Folge].“ — „Du bremst am Scooter
+    vorne – und fliegst.“ (head: „Warum?!“)
+  - „Das passiert mit [deinem Ding], wenn …“ — only with a concrete,
+    strange result implied, never as an announcement.
+- Never a plain fact that answers itself („Eine Thermoskanne hat ein
+  Vakuum.“), never an announcement („Gleich erfährst du …“).
+
 Feedback on #10 (Fliegender Tesla, 2026-10-22): _"Warum sollte man das
 Video lange schauen? Das sollte am Anfang klar sein."_ "Lass ihn uns
 bauen" is not a reason to stay. So the hook has two jobs:
@@ -240,14 +270,14 @@ Hook formulas (the hook lab below writes six with them):
 stärker"). Write **six** hooks with six different formulas, score each
 0–2 on these six points and keep the best (≥ 10 of 12):
 
-| Point                          | 2 = …                                                                                                    |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| **≤ 3 s, reason inside**       | hook line ≤ 9 words / ≤ 3 s, twist in the first 4 words, and it's clear why to watch to the end          |
-| **Bild 0 zeigt es**            | frame 0 can _show_ exactly this (spoken line, 2–3-word title and picture say one thing)                  |
-| **Dein Nutzen / deine Gefahr** | sentence 1 or 2 names what the viewer gains or risks — money, safety, health, time (true, not clickbait) |
-| **Dein Alltag**                | "dein / du" + a thing the viewer touched today                                                           |
-| **Keine Vorkenntnis**          | a stranger at 1 a.m. gets it without context or a technical word                                         |
-| **Offene Frage**               | it raises a "Warum?! / Wie?!" the viewer can't answer — and the hook doesn't answer it                   |
+| Point                            | 2 = …                                                                                                                                                                               |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **≤ 3 s, reason inside**         | hook line ≤ 9 words / ≤ 3 s, twist in the first 4 words, and it's clear why to watch to the end                                                                                     |
+| **Bild 0 zeigt es**              | frame 0 can _show_ exactly this (spoken line, 2–3-word title and picture say one thing)                                                                                             |
+| **Dein Nutzen / deine Gefahr**   | sentence 1 or 2 names what the viewer gains or risks — money, safety, health, time (true, not clickbait)                                                                            |
+| **Dein Alltag**                  | "dein / du" + a thing the viewer touched today                                                                                                                                      |
+| **Keine Vorkenntnis**            | a stranger at 1 a.m. gets it without context or a technical word                                                                                                                    |
+| **Offene Frage** (counts double) | the viewer's head asks a „Warum?! / Wie?! / Und dann?“ in ≤ 4 words that they can't answer — and the hook doesn't answer it. **0 here = the hook is out**, whatever the rest scores |
 
 Show the user the winner and the next two **with their scores**. A
 winner under 10 is a sign the topic is weak — say so and offer another
@@ -549,6 +579,7 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] 6–9 `*keywords*`: the terms, the twist, the core idea, the panel numbers
 - [ ] 130–142 words incl. „Folge für mehr Wissen.“, fact and comment question (≤ 148, ≥ 124) → exactly 45 s; no `> …` loop line
 - [ ] Hook = line 1, ≤ 9 words, ≤ 3 s (sync-html checks); within it the viewer knows why to watch to the end (gain / danger / burning question) — true, not clickbait
+- [ ] The hook leaves a question in the viewer's head (≤ 4 words: „Warum nicht?“, „Wie?!“, „Und dann?“) and holds back the answer until the payoff
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
 - [ ] No `[whispers]` in the hook (line 1 or the sentence after it)
 - [ ] 45-s shape: beat 1 → beat 2 → mid twist (~21 s) → beat 3 → payoff (≥ 33 s) → Übrigens (strongest fact) → comment question + „Folge für mehr Wissen.“

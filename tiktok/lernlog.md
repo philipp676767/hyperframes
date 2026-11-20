@@ -17,6 +17,7 @@ früher galt und geändert wurde, steht unten unter „Überholt“ und ist
 - [ ] Bild 0 mit hartem Kontrast: nie hell auf hell; Test in Graustufen und Handygröße (#19).
 - [ ] Keine Frage-Schrift oben im Bild mehr (Nutzer, 2026-11-17); nur der Hook-Titel bis 2,8 s.
 - [ ] Titel ab Bild 0, erster Schnitt ≤ 1,5 s, kein Röntgen am Anfang, Twist in den ersten 4 Wörtern.
+- [ ] **Hook löst eine Frage im Kopf aus** (Nutzer, 2026-11-20): Behauptung + zurückgehaltener Grund, z. B. „Darum solltest du im Winter nie … Auto fahren.“ → „Warum nicht?!“. Test: Die Frage des Zuschauers passt in ≤ 4 Wörter; Antwort erst in der Auflösung.
 - [ ] Hook = Zeile 1, ≤ 9 Wörter, ≤ 3 s; darin steht, was der Zuschauer gewinnt oder riskiert. Kein Flüstern im Hook. Keine Ankündigungen („Gleich …“, „Am Ende …“, „Bleib dran“), kein „Lass es uns bauen“.
 
 **Dranbleiben:**
