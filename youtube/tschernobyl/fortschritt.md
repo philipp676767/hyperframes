@@ -6,7 +6,7 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 | Nr  | Ordner       | Kapitel                       | Wörter | Sprechzeit | Status    | Notiz |
 | --- | ------------ | ----------------------------- | ------ | ---------- | --------- | ----- |
 | 0   | 00-hook      | Der Knopf für den Notfall     | 134    | 53.9 s     | gerendert |       |
-| 1   | 01-reaktor   | Ein Reaktor wie kein anderer  | 164    | 65.9 s     | geprüft   |       |
+| 1   | 01-reaktor   | Ein Reaktor wie kein anderer  | 164    | 65.9 s     | gerendert |       |
 | 2   | 02-test      | Ein Test in der Nacht         | 165    | 66.3 s     | geprüft   |       |
 | 3   | 03-explosion | 1:23 Uhr                      | 172    | 69.1 s     | geprüft   |       |
 | 4   | 04-feuerwehr | Die Nacht der Feuerwehr       | 146    | 58.7 s     | geprüft   |       |
