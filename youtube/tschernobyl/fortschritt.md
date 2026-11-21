@@ -9,7 +9,7 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 | 1   | 01-reaktor   | Ein Reaktor wie kein anderer  | 164    | 65.9 s     | gerendert |       |
 | 2   | 02-test      | Ein Test in der Nacht         | 165    | 66.3 s     | gerendert |       |
 | 3   | 03-explosion | 1:23 Uhr                      | 172    | 69.1 s     | gerendert |       |
-| 4   | 04-feuerwehr | Die Nacht der Feuerwehr       | 146    | 58.7 s     | geprüft   |       |
+| 4   | 04-feuerwehr | Die Nacht der Feuerwehr       | 146    | 58.7 s     | gerendert |       |
 | 5   | 05-prypjat   | Prypjat wird leer             | 147    | 59.1 s     | geprüft   |       |
 | 6   | 06-keller    | Drei Männer im Keller         | 167    | 67.1 s     | geprüft   |       |
 | 7   | 07-wolke     | Die Wolke und der Sarg        | 249    | 99.9 s     | geprüft   |       |
