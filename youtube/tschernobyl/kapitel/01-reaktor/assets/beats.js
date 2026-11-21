@@ -32,7 +32,7 @@ export const shots = [
   // block 4, the newest
   { at: T.block - 0.1, from: [18, 4, 18], to: [15, 4.5, 15], look: [3, 5, 0], zoom: 1 },
   // Prypjat on the horizon
-  { at: T.drei - 0.2, from: [-4, 3.5, 14], to: [-8, 3.6, 13], look: [-120, 3, -95], zoom: 1 },
+  { at: T.drei - 0.2, from: [-3, 10, 15], to: [-7, 10.5, 14], look: [-120, 3, -95], zoom: 1 },
   // into the core: the kettle
   {
     at: T.grunde - 0.3,
