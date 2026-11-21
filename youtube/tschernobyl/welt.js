@@ -1286,7 +1286,7 @@ export function buildPlant({
   for (const s of [-1, 1]) {
     const ew2 = new THREE.Mesh(
       new THREE.ShapeGeometry(archFull),
-      real.metal(0x9aa0a6, { roughness: 0.5 }),
+      real.metal(0x9aa0a6, { roughness: 0.5, side: THREE.DoubleSide }),
     );
     ew2.rotation.y = Math.PI / 2;
     ew2.position.x = (s * len) / 2;
@@ -2218,21 +2218,30 @@ export function buildCore(o = V(0, -300, 0)) {
   g.add(poolRim);
   // corium (lava-like) flowing down through the floors (chapter 6)
   const coriumMat = new THREE.MeshStandardMaterial({
-    color: 0x2a1408,
-    emissive: 0xff5a10,
-    emissiveIntensity: 1.6,
-    roughness: 0.6,
+    color: 0x1a0a04,
+    emissive: 0xff3a00,
+    emissiveIntensity: 2.2,
+    roughness: 0.55,
+  });
+  const crustMat = new THREE.MeshStandardMaterial({
+    color: 0x2a1c16,
+    roughness: 0.9,
+    emissive: 0x401000,
+    emissiveIntensity: 0.6,
   });
   const corium = new THREE.Group();
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < 30; i++) {
     const b = new THREE.Mesh(
-      jitter(new THREE.IcosahedronGeometry(0.6 + r() * 0.8, 2), 0.12, i),
-      coriumMat,
+      jitter(new THREE.IcosahedronGeometry(0.3 + r() * 0.45, 2), 0.1, i),
+      i % 4 === 0 ? crustMat : coriumMat,
     );
-    b.position.set((r() - 0.5) * 6, -r() * 2, -r() * 3);
-    b.scale.y = 0.5;
+    b.position.set((r() - 0.5) * 5, -r() * 1.6, -0.5 - r() * 3);
+    b.scale.y = 0.45 + r() * 0.3;
     corium.add(b);
   }
+  const coriumLight = new THREE.PointLight(0xff5a10, 30, 10, 1.4);
+  coriumLight.position.set(0, 0.5, -1.5);
+  corium.add(coriumLight);
   corium.visible = false;
   g.add(corium);
   const coreLight = new THREE.PointLight(0xff8a3a, 10, 24, 1.3);
@@ -2503,7 +2512,7 @@ export function buildPripyat({ time = "morgen", seed = 12, plume = true } = {}) 
         line: "#bdb8ad",
         seed: sd,
         winRows: Array.from({ length: Math.round(h * 3.3) }, (_, k) => k),
-        winLit: time === "abend" ? 0.25 : 0,
+        winLit: 0,
         win: "#4a5660",
       },
       time === "abend",
@@ -2549,7 +2558,7 @@ export function buildPripyat({ time = "morgen", seed = 12, plume = true } = {}) 
     const x = Math.cos(a) * d;
     const z = Math.sin(a) * d * 0.7;
     if (Math.abs(z - 9) < 1.5) continue;
-    if (Math.abs(x) < 3.5 && Math.abs(z + 1) < 3) continue;
+    if (Math.hypot(x, z + 1) < 6.5) continue;
     const t = new THREE.Group();
     const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.06, 0.6, 6), real.wood(0x5a4330));
     tr.position.y = 0.3;
@@ -2847,7 +2856,7 @@ export function buildBasement(o = V(60, -300, 0)) {
         new THREE.MeshBasicMaterial({
           color: 0xfff0d0,
           transparent: true,
-          opacity: 0.06,
+          opacity: 0.12,
           depthWrite: false,
           side: THREE.DoubleSide,
           blending: THREE.AdditiveBlending,

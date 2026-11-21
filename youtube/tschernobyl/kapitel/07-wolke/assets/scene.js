@@ -37,11 +37,17 @@ const d0 = new THREE.Object3D();
 const liq = [];
 for (let i = 0; i < 9; i++) {
   const p = makePerson({ coat: 0x5a6a4a, legs: 0x3a4430, helmet: 0x5a6a4a });
-  p.position.set(-8.5 + i * 0.85, 4.4, 1 + (i % 3) * 0.9);
+  p.position.set(-8.3 + i * 0.55, 7.12, -1.2 + (i % 3) * 1.3);
   p.rotation.y = 0.3 * (i % 3);
   ground.add(p);
   liq.push(p);
 }
+// debris from the core on block 3's roof
+PLANT.ruinParts.chunks
+  .slice(0, 20)
+  .forEach((c, i) =>
+    c.position.set(-8.6 + (i % 10) * 0.55, 7.25, -1.6 + Math.floor(i / 10) * 2.4 + (i % 3) * 0.3),
+  );
 // abandoned houses + animals in the zone
 const houses = [];
 for (let i = 0; i < 4; i++) {

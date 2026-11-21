@@ -26,16 +26,16 @@ P.buses.visible = false;
 // a memorial stone with red carnations on the square
 const mem = new THREE.Group();
 const stone = new THREE.Mesh(
-  roundedBox(0.22, 0.16, 0.06, 0.015),
-  real.plastic(0x4a4c4e, { roughness: 0.6 }),
+  roundedBox(0.12, 0.3, 0.05, 0.01),
+  real.plastic(0x2e3032, { roughness: 0.35, clearcoat: 0.4 }),
 );
-stone.position.y = 0.08;
+stone.position.y = 0.15;
 mem.add(stone);
 const plate = new THREE.Mesh(
   roundedBox(0.12, 0.06, 0.004, 0.002),
   real.metal(0xb89a5a, { roughness: 0.3 }),
 );
-plate.position.set(0, 0.1, 0.031);
+plate.position.set(0, 0.2, 0.026);
 mem.add(plate);
 const r = rng(4);
 for (let i = 0; i < 14; i++) {
@@ -52,6 +52,7 @@ for (let i = 0; i < 14; i++) {
   mem.add(fl);
 }
 shadowAll(mem);
+mem.scale.setScalar(1.6);
 mem.position.set(2.5, 0, 5);
 ground.add(mem);
 function renderAt(t) {

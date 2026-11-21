@@ -65,7 +65,13 @@ export const shots = [
     zoom: 1,
   },
   // wading with their lamps (camera ahead of them, backing away)
-  { at: T.mit - 0.2, from: b(0.5, 1.3, -5), to: b(0.4, 1.3, -10), look: b(0, 1.2, 0), zoom: 1 },
+  {
+    at: T.mit - 0.2,
+    from: b(0.45, 1.35, -19.5),
+    to: b(0.4, 1.35, -19.0),
+    look: b(0, 1.2, -6),
+    zoom: 1,
+  },
   // the valves
   {
     at: T.finden - 0.2,

@@ -67,24 +67,36 @@ export const shots = [
   { at: T.teil2, from: f(-6, 3, 10), to: f(-4, 2.6, 9), look: f(0, 1, 0), zoom: 1 },
   // Chernobyl: liquidators on the roof next to the ruin
   { at: T.und, from: [30, 16, 34], to: [24, 14, 28], look: [0, 4, 0], zoom: 1, whoosh: true },
-  { at: T.auf - 0.2, from: [-4, 6.4, 8], to: [-3.5, 6.2, 7], look: [-5, 4.5, 0], zoom: 1 },
+  {
+    at: T.auf - 0.2,
+    from: [-1.2, 9.0, 7.5],
+    to: [-1.6, 8.8, 6.8],
+    look: [-5.8, 7.1, 0.6],
+    zoom: 1,
+  },
   // the sarcophagus
   { at: T.in, from: [26, 5, 26], to: [21, 5.5, 22], look: [3, 5, 0], zoom: 1 },
   // the new arch rolls in on its rails
   { at: T.er - 0.2, from: [-10, 10, 42], to: [-4, 10, 38], look: [-8, 5, 0], zoom: 1 },
   { at: T.m108 - 0.2, from: [14, 0.8, 18], to: [12, 0.9, 16], look: [3, 8, 0], zoom: 1 },
-  { at: T.sie, from: [-12, 0.5, 15.5], to: [-8, 0.5, 15.0], look: [-6, 0.6, 12.5], zoom: 1 },
+  { at: T.sie, from: [-34, 0.45, 13.6], to: [-29, 0.45, 13.4], look: [-8, 1.0, 12.4], zoom: 1 },
   // the zone, 30 km around
   { at: T.rund - 0.2, from: [-60, 40, 90], to: [-50, 44, 80], look: [0, 0, -10], zoom: 1 },
   // wolves and wild horses by the abandoned houses
-  { at: T.ohne - 0.2, from: [46, 0.6, -40], to: [43, 0.65, -37], look: [30, 0.5, -27], zoom: 1 },
+  {
+    at: T.ohne - 0.2,
+    from: [35.5, 0.38, -22.5],
+    to: [34.8, 0.36, -23.0],
+    look: [31, 0.22, -27.5],
+    zoom: 1,
+  },
   { at: T.die, from: [36, 0.4, -16], to: [34, 0.5, -15], look: [5, 6, 0], zoom: 1 },
 ];
 
 export const LABELS = [
   { text: "Cäsium-137", at: T.was + 1.4, until: T.ein - 0.3, pos: f(0.4, 0.04, 0.9), side: -1 },
   { text: "Hirschtrüffel", at: T.ein + 3.3, until: T.wild - 0.3, pos: f(0.9, 0.08, 0.6), side: 1 },
-  { text: "Liquidatoren", at: T.auf + 0.8, until: T.in - 0.4, pos: [-5, 4.65, 1.5], side: 1 },
+  { text: "Liquidatoren", at: T.auf + 0.8, until: T.in - 0.4, pos: [-6, 7.35, 1.0], side: 1 },
   { text: "Sarkophag", at: T.in + 3.6, until: T.er - 0.4, pos: [3, 7.8, 0.8], side: 1 },
   {
     text: "Przewalski-Pferde",

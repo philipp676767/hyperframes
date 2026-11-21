@@ -29,9 +29,9 @@ export const shots = [
   // epilogue: Prypjat at dusk, a memorial with carnations
   {
     at: T.akimow - 0.2,
-    from: [3.6, 0.35, 6.4],
-    to: [3.3, 0.33, 6.0],
-    look: [2.5, 0.15, 5],
+    from: [3.3, 0.3, 6.1],
+    to: [3.1, 0.28, 5.85],
+    look: [2.5, 0.22, 5],
     zoom: 1,
     whoosh: true,
   },
@@ -40,7 +40,7 @@ export const shots = [
   { at: T.das - 0.2, from: [-5, 0.6, 7], to: [-4, 0.7, 6], look: [0, 1.7, -1], zoom: 1 },
   { at: T.es, from: [2, 0.25, 3.2], to: [1.6, 0.25, 2.8], look: [0, 1.9, -1], zoom: 1 },
   // end screen: calm, slow orbit (no tags in the middle band)
-  { at: T.cta - 0.2, orbit: { c: [0, 1.5, -1], r: 7.5, y: 1.4, a0: 0.5, a1: 1.1 } },
+  { at: T.cta - 0.2, orbit: { c: [0, 1.4, -1], r: 5.6, y: 0.9, a0: 0.35, a1: 0.85 } },
 ];
 
 export const LABELS = [
