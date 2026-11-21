@@ -59,9 +59,10 @@ export const shots = [
   // the car that gets faster the hotter its engine
   {
     at: T.es - 0.2,
-    from: [31, 0.26, -0.5],
-    to: [31.2, 0.25, -0.55],
-    look: [31.2, 0.12, -1.6],
+    from: [26.6, 0.42, 0.9],
+    to: [29.8, 0.42, 0.9],
+    look: [26.4, 0.12, -1.6],
+    lookTo: [29.6, 0.12, -1.6],
     zoom: 1,
     whoosh: true,
   },

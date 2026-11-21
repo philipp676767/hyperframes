@@ -31,7 +31,7 @@ function renderAt(t) {
   blast(t, t - BOOM);
   // the car: accelerates while its engine glows hotter
   const tc = Math.max(0, t - (T.es - 0.2));
-  const x = 26 + tc * 0.4 + tc * tc * 0.35;
+  const x = 26 + tc * 0.3 + tc * tc * 0.12;
   car.position.set(x, 0.03, -1.6);
   car.userData.heatMat.emissiveIntensity = Math.min(3, tc * 0.6);
   car.userData.wheels.forEach((w) => (w.rotation.y = x * 8));
