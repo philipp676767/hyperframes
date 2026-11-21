@@ -29,7 +29,13 @@ export const shots = [
   // the plant at night, the turbine hall glowing
   { at: 0, from: [-70, 4, 26], to: [-56, 4, 24], look: [-30, 2, -6], zoom: 1 },
   // power lines leaving the plant
-  { at: T.wenn - 0.2, from: [-16, 3.0, -18], to: [-19, 3.2, -21], look: [-28, 3.6, -56], zoom: 1 },
+  {
+    at: T.wenn - 0.2,
+    from: [-44, 1.0, -19],
+    to: [-40, 1.1, -19.5],
+    look: [-30, 1.8, -10],
+    zoom: 1,
+  },
   // the turbine (x-ray) running down
   {
     at: T.koennen - 0.2,

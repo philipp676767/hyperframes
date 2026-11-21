@@ -21,7 +21,11 @@ const k = (x, y, z) => [x, -300 + y, z];
 export const shots = [
   // the answer: the core
   { at: 0, from: k(-3, 5, 19), to: k(0, 4.6, 16), look: k(0, 3.6, -2), zoom: 1 },
-  { at: T.weil - 0.2, orbit: { c: [0, -296.4, -2], r: 15, y: -294.5, a0: -0.7, a1: -0.2 } },
+  {
+    at: T.weil - 0.2,
+    orbit: { c: [0, -296.4, -2], r: 10, y: -294.5, a0: -0.7, a1: -0.2 },
+    zoom: 1,
+  },
   { at: T.der - 0.2, from: k(1.5, 5.6, 2.6), to: k(1.0, 5.3, 2.2), look: k(0.4, 5, -1.5), zoom: 1 },
   { at: T.seine - 0.2, from: k(-4, 11, 11), to: k(-3, 10.5, 10), look: k(0, 7, -2), zoom: 1 },
   { at: T.und - 0.2, from: k(0, 2.4, 14), to: k(0, 2.0, 12), look: k(0, 1.4, -2), zoom: 1 },

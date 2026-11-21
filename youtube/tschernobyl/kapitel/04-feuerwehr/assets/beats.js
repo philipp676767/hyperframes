@@ -45,9 +45,9 @@ export const shots = [
   // the fire engines racing in
   {
     at: TRUCK_T,
-    from: [21.5, 0.32, 0.6],
-    to: [20.5, 0.3, 0.4],
-    look: [30, 0.2, -1.6],
+    from: [15.5, 0.28, 0.8],
+    to: [15.2, 0.28, 0.6],
+    look: [26, 0.2, -1.6],
     zoom: 1,
     whoosh: true,
   },
@@ -62,16 +62,16 @@ export const shots = [
   // up on the roofs, in their normal uniforms
   {
     at: T.in - 0.2,
-    from: [3.4, 3.6, -5.6],
-    to: [3.0, 3.55, -5.9],
-    look: [1.2, 3.38, -7.6],
+    from: [1.5, 3.45, -6.4],
+    to: [1.35, 3.44, -6.5],
+    look: [0.5, 3.32, -7.3],
     zoom: 1,
   },
   {
     at: T.niemand - 0.2,
-    from: [-0.8, 3.5, -6.2],
-    to: [-0.4, 3.5, -6.4],
-    look: [1.6, 3.45, -7.8],
+    from: [-1.7, 3.45, -6.7],
+    to: [-1.55, 3.44, -6.8],
+    look: [-0.7, 3.32, -8.0],
     zoom: 1,
   },
   // the invisible danger: the open shaft, the blue glow

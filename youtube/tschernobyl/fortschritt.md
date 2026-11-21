@@ -7,13 +7,13 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 | --- | ------------ | ----------------------------- | ------ | ---------- | ------- | ----- |
 | 0   | 00-hook      | Der Knopf für den Notfall     | 134    | 53.9 s     | geprüft |       |
 | 1   | 01-reaktor   | Ein Reaktor wie kein anderer  | 164    | 65.9 s     | geprüft |       |
-| 2   | 02-test      | Ein Test in der Nacht         | 165    | 66.3 s     | szene   |       |
-| 3   | 03-explosion | 1:23 Uhr                      | 172    | 69.1 s     | szene   |       |
-| 4   | 04-feuerwehr | Die Nacht der Feuerwehr       | 146    | 58.7 s     | szene   |       |
-| 5   | 05-prypjat   | Prypjat wird leer             | 147    | 59.1 s     | szene   |       |
-| 6   | 06-keller    | Drei Männer im Keller         | 167    | 67.1 s     | szene   |       |
-| 7   | 07-wolke     | Die Wolke und der Sarg        | 249    | 99.9 s     | szene   |       |
-| 8   | 08-finale    | Warum der Reaktor explodierte | 128    | 51.5 s     | szene   |       |
+| 2   | 02-test      | Ein Test in der Nacht         | 165    | 66.3 s     | geprüft |       |
+| 3   | 03-explosion | 1:23 Uhr                      | 172    | 69.1 s     | geprüft |       |
+| 4   | 04-feuerwehr | Die Nacht der Feuerwehr       | 146    | 58.7 s     | geprüft |       |
+| 5   | 05-prypjat   | Prypjat wird leer             | 147    | 59.1 s     | geprüft |       |
+| 6   | 06-keller    | Drei Männer im Keller         | 167    | 67.1 s     | geprüft |       |
+| 7   | 07-wolke     | Die Wolke und der Sarg        | 249    | 99.9 s     | geprüft |       |
+| 8   | 08-finale    | Warum der Reaktor explodierte | 128    | 51.5 s     | geprüft |       |
 
 ## Video
 

@@ -1,6 +1,7 @@
 // Chapter 3: the test starts, bubbles grow, the car analogy, AZ-5, the rods
 // with graphite tips, the surge, the core bursts, block 4 explodes.
 import {
+  THREE,
   shotCamera,
   renderFrame,
   start,
@@ -19,6 +20,9 @@ const applyCamera = shotCamera(shots);
 const blast = makeBlast(PLANT);
 const car = makeCar();
 car.scale.setScalar(1.4);
+const carLight = new THREE.PointLight(0xffe0c0, 3, 3, 1.5);
+carLight.position.set(0, 0.6, 0.4);
+car.add(carLight);
 ground.add(car);
 function renderAt(t) {
   const ruined = t >= BOOM;

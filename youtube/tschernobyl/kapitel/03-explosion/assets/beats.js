@@ -47,7 +47,7 @@ export const shots = [
     zoom: 1,
   },
   // the flaw: wide
-  { at: T.und - 0.2, orbit: { c: [0, -296.5, -2], r: 15, y: -293.5, a0: -0.5, a1: 0.3 } },
+  { at: T.und - 0.2, orbit: { c: [0, -296.5, -2], r: 10, y: -293.8, a0: -0.5, a1: 0.3 }, zoom: 1 },
   {
     at: T.in - 0.2,
     from: k(2.2, 2.6, 2.8),
@@ -59,9 +59,9 @@ export const shots = [
   // the car that gets faster the hotter its engine
   {
     at: T.es - 0.2,
-    from: [30, 0.55, 3.2],
-    to: [31.5, 0.5, 3.0],
-    look: [31, 0.15, -1.6],
+    from: [31, 0.26, -0.5],
+    to: [31.2, 0.25, -0.55],
+    look: [31.2, 0.12, -1.6],
     zoom: 1,
     whoosh: true,
   },
