@@ -19,11 +19,11 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 
 - [ ] Titel + 3 Thumbnail-Ideen (plan.md)
 - [x] Hauptwelt (welt.js) geprüft
-- [ ] Alle Kapitel gerendert
-- [ ] Zusammengefügt + Lautheit (-14 LUFS)
-- [ ] 3 Thumbnails
-- [ ] Beschreibung mit Kapitel-Zeitmarken, Tags, Einstellungen, Kommentar (upload.txt)
-- [ ] youtube/serie.md eingetragen
+- [x] Alle Kapitel gerendert
+- [x] Zusammengefügt + Lautheit (-14 LUFS): 10:09
+- [x] 3 Thumbnails
+- [x] Beschreibung mit Kapitel-Zeitmarken, Tags, Einstellungen, Kommentar (upload.txt)
+- [x] youtube/serie.md eingetragen
 
 ## Notizen
 

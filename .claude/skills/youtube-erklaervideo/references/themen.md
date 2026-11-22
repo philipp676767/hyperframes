@@ -115,7 +115,6 @@ the search interest and the facts again when you pick.
 | Thema (Arbeitstitel)                                                 | Was?!-Fakten (Auswahl, prüfen)                                                                                                        | Der Fast-schiefgegangen-Moment (Re-Hook)                                            | Thumbnail-Idee                               | Score                              |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------- | ---------------------------------- |
 | Die Atombombe — wie aus einer Formel eine Waffe wurde                | E = mc²; Uran-Kettenreaktion (nur Prinzip); Trinity-Test 1945 in der Wüste; heller als die Sonne; Hiroshima und Nagasaki              | Die Forscher wetteten, ob der Test die Atmosphäre in Brand setzt                    | greller Blitz über der Wüste, winzige Bunker | 15                                 |
-| Tschernobyl — die Nacht, in der der Reaktor explodierte              | 1986; ein Sicherheitstest; Steuerstäbe mit Graphitspitzen; Deckel 1.000 t flog hoch; Sperrzone heute; Wölfe in Prypjat                | Der Notaus-Knopf löste die Explosion erst aus                                       | glühender offener Reaktor bei Nacht          | 15                                 |
 | Apollo 13 — „Houston, wir haben ein Problem“                         | Sauerstofftank explodiert 330.000 km von der Erde; Mondfähre als Rettungsboot; CO₂-Filter aus Klebeband gebaut; Kälte in der Kapsel   | Der Wiedereintritt: 4 Minuten Funkstille, keiner weiß, ob sie leben                 | beschädigte Kapsel im All, Erde weit weg     | 15                                 |
 | Wie wurden die Pyramiden gebaut?                                     | 2,3 Mio. Blöcke; ~20 Jahre; Rampen-Theorien; Arbeiter, keine Sklaven; früher glatt und weiß                                           | Ein Block alle paar Minuten — 20 Jahre lang (Rechnung prüfen)                       | Riesen-Pyramide im Bau, winzige Arbeiter     | 15                                 |
 | Der erste Mensch im All — Juri Gagarin                               | 1961; 108 Minuten; landete per Fallschirm neben der Kapsel; Bauern auf dem Feld; Raumkapsel kleiner als ein Auto                      | Die Bremsrakete versagt halb, die Kapsel taumelt beim Wiedereintritt                | Kugel-Kapsel glüht über der Erde             | 14                                 |
@@ -145,6 +144,5 @@ the search interest and the facts again when you pick.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                                   | Typ           | Datum      | Chat                    |
-| ------------------------------------------------------- | ------------- | ---------- | ----------------------- |
-| Tschernobyl — die Nacht, in der der Reaktor explodierte | Große Momente | 2026-11-20 | YouTube #3: Tschernobyl |
+| Thema | Typ | Datum | Chat |
+| ----- | --- | ----- | ---- |
