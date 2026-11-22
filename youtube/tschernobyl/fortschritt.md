@@ -13,7 +13,7 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 | 5   | 05-prypjat   | Prypjat wird leer             | 147    | 59.1 s     | gerendert |       |
 | 6   | 06-keller    | Drei Männer im Keller         | 167    | 67.1 s     | gerendert |       |
 | 7   | 07-wolke     | Die Wolke und der Sarg        | 249    | 99.9 s     | gerendert |       |
-| 8   | 08-finale    | Warum der Reaktor explodierte | 128    | 51.5 s     | geprüft   |       |
+| 8   | 08-finale    | Warum der Reaktor explodierte | 128    | 51.5 s     | gerendert |       |
 
 ## Video
 

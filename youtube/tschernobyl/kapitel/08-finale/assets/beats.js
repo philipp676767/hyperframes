@@ -44,7 +44,7 @@ export const shots = [
   { at: T.das - 0.2, from: [-5, 0.6, 7], to: [-4, 0.7, 6], look: [0, 1.7, -1], zoom: 1 },
   { at: T.es, from: [2, 0.25, 3.2], to: [1.6, 0.25, 2.8], look: [0, 1.9, -1], zoom: 1 },
   // end screen: calm, slow orbit (no tags in the middle band)
-  { at: T.cta - 0.2, orbit: { c: [0, 1.4, -1], r: 5.6, y: 0.9, a0: 0.35, a1: 0.85 } },
+  { at: T.cta - 0.2, orbit: { c: [0, 1.55, -1], r: 6.2, y: 0.85, a0: 0.35, a1: 0.85 }, zoom: 1 },
 ];
 
 export const LABELS = [
