@@ -1,72 +1,157 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 3 "Steine fallen vom Himmel": darkness at mid-afternoon, pumice
+// rain, people leaving through the gate, others staying, the weight of a
+// cubic metre, roofs giving way at night, the town under 3 m of pumice in
+// the morning, doors buried; a man is on his way to rescue them.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  aus: W("Aus"),
+  leicht: W("leicht", 1),
+  sie: W("Sie", 1),
+  rund: W("rund"),
+  viele: W("Viele"),
+  andere: W("Andere"),
+  alt: W("alt"),
+  oder2: W("oder", 2),
+  der: W("Steinregen") - 0.25,
+  doch: W("Doch"),
+  kubik: W("Kubikmeter"),
+  nacht: W("Nacht"),
+  ganze: W("Ganze"),
+  sterben: W("sterben"),
+  morgen: W("Morgen") - 0.15,
+  tueren: W("Türen"),
+  wer: W("Wer"),
+  dreissig: W("dreißig"),
+  end: END,
 };
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // darkness falls over the town (from the fields in the south)
+  { at: 0, from: [13, 4.2, 28], to: [11, 3.9, 24.5], look: [0, 5, -8], zoom: 1 },
+  // the stones start to fall: the main street
+  {
+    at: T.aus - 0.15,
+    from: [9.2, 0.24, 2.42],
+    to: [8.2, 0.24, 2.42],
+    look: [-4, 0.6, 2.3],
+    zoom: 1,
+  },
+  // light as polystyrene, small as a marble: stones on the paving, very low
+  {
+    at: T.leicht - 0.2,
+    from: [6.5, 0.09, 2.62],
+    to: [6.25, 0.08, 2.58],
+    look: [5.5, 0.03, 2.35],
+    zoom: 1,
+  },
+  // on roofs and streets
+  { at: T.sie - 0.2, from: [7.5, 1.6, 6.5], to: [6.8, 1.5, 5.6], look: [4.5, 0.3, 1.5], zoom: 1 },
+  // 15 cm an hour: the layer rises along a wall
+  {
+    at: T.rund - 0.2,
+    from: [5.9, 0.12, 2.9],
+    to: [5.7, 0.13, 2.8],
+    look: [5.0, 0.12, 2.12],
+    zoom: 1,
+  },
+  // many leave: through the south gate, bundles and torches
+  {
+    at: T.viele - 0.2,
+    from: [4.2, 0.55, 17.5],
+    to: [3.6, 0.5, 16.6],
+    look: [1.9, 0.25, 11.5],
+    zoom: 1,
+    whoosh: true,
+  },
+  // others stay: a doorway, a lamp inside
+  {
+    at: T.andere - 0.2,
+    from: [5.75, 0.24, 2.66],
+    to: [5.6, 0.23, 2.6],
+    look: [5.25, 0.14, 2.22],
+    zoom: 1,
+  },
+  {
+    at: T.alt - 0.6,
+    from: [4.75, 0.2, 2.6],
+    to: [4.85, 0.2, 2.55],
+    look: [5.25, 0.14, 2.22],
+    zoom: 1,
+  },
+  // the town in the dark, lightning in the cloud
+  { at: T.der - 0.2, from: [-22, 9, 22], to: [-19, 8.5, 18], look: [2, 4, -12], zoom: 1 },
+  // the weight: one cubic metre on a roof
+  {
+    at: T.doch - 0.2,
+    from: [6.42, 0.14, 2.46],
+    to: [6.36, 0.13, 2.45],
+    look: [6.0, 0.07, 2.38],
+    zoom: 1,
+  },
+  // the night: roofs heavy with pumice
+  { at: T.nacht - 0.3, from: [9.5, 1.8, 6.5], to: [8.8, 1.7, 5.6], look: [5.5, 0.4, 1.0], zoom: 1 },
+  {
+    at: T.ganze - 0.2,
+    from: [9.0, 1.2, 4.2],
+    to: [8.7, 1.15, 3.8],
+    look: [5.5, 0.4, 1.2],
+    zoom: 1,
+  },
+  // quiet: the empty town
+  { at: T.sterben - 0.3, from: [-6, 2.2, 14], to: [-5.4, 2.0, 12.4], look: [2, 0.6, 0], zoom: 1 },
+  // morning: almost 3 m of pumice
+  {
+    at: T.morgen,
+    from: [14, 6, 18],
+    to: [12, 5.6, 15.5],
+    look: [3, 0.2, 1],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the doors are buried
+  {
+    at: T.tueren - 0.2,
+    from: [6.6, 0.4, 2.6],
+    to: [6.3, 0.38, 2.55],
+    look: [5.0, 0.32, 2.12],
+    zoom: 1,
+  },
+  // out over the roofs
+  { at: T.wer - 0.2, from: [8.6, 1.0, 4.6], to: [8.2, 0.95, 4.1], look: [6.2, 0.7, 1.2], zoom: 1 },
+  // thirty kilometres away: ships on the bay
+  {
+    at: T.dreissig - 0.2,
+    from: [-52, 3.2, 40],
+    to: [-48, 3.0, 36],
+    look: [-40, 1, 24],
+    zoom: 1,
+    whoosh: true,
+  },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Bimsstein", at: T.leicht + 0.2, until: T.sie - 0.4, pos: [5.6, 0.02, 2.35], side: 1 },
+  {
+    text: "Ein Kubikmeter",
+    at: T.kubik - 0.1,
+    until: T.nacht - 0.6,
+    pos: [6.0, 0.16, 2.38],
+    side: -1,
+  },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
-
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "wind", at: 0, dur: T.aus, db: -18 },
+  { s: "saeule", at: 0, dur: T.morgen, db: -24 },
+  { s: "steinregen", at: T.aus, dur: T.viele - T.aus, db: -14 },
+  { s: "steinregen", at: T.viele, dur: T.morgen - T.viele, db: -18 },
+  { s: "grollen", at: T.der, db: -12 },
+  { s: "einsturz", at: T.ganze - 0.1, db: -6 },
+  { s: "einsturz", at: T.ganze + 1.1, db: -10 },
+  { s: "wind", at: T.morgen, dur: T.dreissig - T.morgen, db: -20 },
+  { s: "ruder", at: T.dreissig - 0.2, dur: T.end - T.dreissig, db: -16 },
+  { s: "meer", at: T.dreissig - 0.2, dur: T.end - T.dreissig, db: -18 },
 ];
+
+export const HIGHLIGHTS = [{ kind: "shake", at: T.ganze, dur: 1.2, amp: 0.5 }];

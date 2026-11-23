@@ -1,157 +1,119 @@
-// TEMPLATE scene (demo chapter, 16:9): a tiny working story (candle -> light
-// bulb) that shows the pattern. Replace the subject here and the beats (T), shots, labels and
-// sounds in beats.js for the new topic; keep the structure. World,
-// captions, panel, arrows, labels and camera come from world.js.
-// Full-size reference: tiktok/kuehlschrank/assets/scene.js
+// Chapter 4: Pliny's rescue voyage and the first flow (Herculaneum).
 import {
   THREE,
-  ramp,
-  smooth,
-  inBack,
-  pop,
-  V,
-  scene,
-  flat,
-  M,
-  xrayMaterial,
-  xrayEdges,
-  setXray,
-  showNope,
-  makeArrowSet,
-  animateArrows,
-  showPanel,
-  LED,
-  labels,
-  squash,
-  puff,
-  highlights,
   shotCamera,
   renderFrame,
   start,
+  highlights,
+  labels,
+  ramp,
+  smooth,
+  V,
+  real,
+  scene,
 } from "./world.js";
-import "./set.js";
-import { createHand } from "./hand.js";
-import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
+import { makePerson, makeShip, makePumice, HERC, makeFlow, slopePath } from "./welt.js";
+import { P } from "./set.js";
+import { T, shots, LABELS, HIGHLIGHTS, COLLAPSE } from "./beats.js";
 
 highlights(HIGHLIGHTS);
-
-// The world of this video (sky, ground, props, hero piece, life) is built
-// in set.js — new for every video (SKILL.md 1b). Optional floor pad under
-// the subject:
-
-// ---------------------------------------------------------------- hook prop
-// The primitive version from the hook ("Kerze in einem Glas").
-const hook = new THREE.Group();
-scene.add(hook);
-const flameMat = flat(0xffb02e, { emissive: 0xff7a10, emissiveIntensity: 1 });
-const flame = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.22, 8), flameMat);
-{
-  const jar = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.42, 0.42, 0.9, 20, 1, true),
-    new THREE.MeshStandardMaterial({ color: 0xdff4ff, transparent: true, opacity: 0.35 }),
-  );
-  jar.position.y = 0.49;
-  hook.add(jar);
-  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.5, 14), flat(0xfff3dc));
-  candle.position.y = 0.29;
-  candle.castShadow = true;
-  hook.add(candle);
-  flame.position.y = 0.66;
-  hook.add(flame);
-}
-
-// ---------------------------------------------------------------- subject
-// Big, readable, centred at the origin, ~2-3 units tall. Shell uses
-// xrayMaterial so the inside can be revealed.
-const bulb = new THREE.Group();
-scene.add(bulb);
-const glassMat = xrayMaterial(0xfff8e8);
-const glassGeo = new THREE.SphereGeometry(0.9, 24, 16);
-const glass = new THREE.Mesh(glassGeo, glassMat);
-glass.position.y = 1.9;
-bulb.add(glass);
-const glassEdges = xrayEdges(glassGeo);
-glassEdges.position.copy(glass.position);
-bulb.add(glassEdges);
-const base = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.7, 16), M.alu);
-base.position.y = 0.75;
-base.castShadow = true;
-bulb.add(base);
-const filamentMat = flat(0x6b6b6b, { emissive: 0xffa22e, emissiveIntensity: 0 });
-const coil = [];
-for (let k = 0; k <= 120; k++) {
-  const f = k / 120;
-  const a = f * Math.PI * 2 * 9;
-  coil.push(V(-0.35 + f * 0.7, 1.95 + Math.sin(a) * 0.06, Math.cos(a) * 0.06));
-}
-const filament = new THREE.Mesh(
-  new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coil), 240, 0.012, 6),
-  filamentMat,
-);
-bulb.add(filament);
-const glow = new THREE.PointLight(0xffc46b, 0, 6, 1.5);
-glow.position.set(0, 1.95, 0);
-bulb.add(glow);
-const heatOut = makeArrowSet(
-  [
-    [V(0.3, 2.1, 0.3), V(1.4, 2.6, 0.9)],
-    [V(-0.3, 2.1, 0.3), V(-1.4, 2.6, 0.9)],
-    [V(0, 2.3, 0.4), V(0.1, 3.3, 1.0)],
-  ],
-  { parent: bulb },
-);
-
 const applyCamera = shotCamera(shots);
+for (const p of P.people) p.visible = false;
 
-// the viewer's hand reaches in on frame 0 and taps the jar (visual-style.md
-// "The first 3 seconds": a hand doing something stops the scroll)
-const hand = createHand({ scale: 0.7 });
-
-// ---------------------------------------------------------------- render
-function renderAt(t) {
-  hand.track(t, [
-    // starts before 0 so the loop tail (t < 0) already shows it reaching in
-    { t: -0.6, pos: [1.7, 1.0, 1.4], rot: [0.2, -2.1, 0], pose: "open" },
-    { t: 0, pos: [1.2, 0.78, 0.98], rot: [0.25, -2.1, 0], pose: "open" },
-    { t: 0.45, pos: [0.86, 0.64, 0.7], rot: [0.3, -2.1, 0], pose: "press" },
-    { t: 0.9, pos: [0.94, 0.66, 0.76], rot: [0.3, -2.1, 0], pose: "point" },
-    { t: T.lampe1, pos: [1.7, 0.95, 1.4], rot: [0.2, -2.1, 0], pose: "open", out: true },
-  ]);
-  // hook: the candle burns down, then the "nope" X
-  const burn = ramp(t, T.aber, T.aus + 0.3);
-  flame.scale.setScalar(Math.max(0.001, 1 - smooth(burn)));
-  flame.rotation.z = Math.sin(t * 9) * 0.08;
-  showNope(pop(t, T.aus, T.also), 0, 1.4, 0.3);
-  const hookOut = inBack(ramp(t, T.also, T.also + 0.35));
-  hook.visible = hookOut < 1;
-  hook.scale.setScalar(Math.max(0.001, 1 - hookOut));
-
-  // subject pops in when the build starts, x-ray while explaining
-  // pop-ins: squash() for rubbery growth + a dust puff where it lands
-  bulb.visible = t >= T.also + 0.15;
-  bulb.scale.copy(squash(t, T.also + 0.15));
-  puff("bulb", t, T.also + 0.3, 0, 0.05, 0, 1.3);
-  setXray(
-    [glassMat],
-    smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.payoff, T.payoff + 0.5)),
+// the fleet: moored at Misenum, then rowing across the bay
+const ships = [0, 1, 2].map(() => makeShip());
+ships.forEach((s) => scene.add(s));
+// Pliny (red cloak) + helmsman on the lead ship's stern
+const pliny = makePerson({ coat: 0xe9e0cc, cloak: 0xa8432f, hair: 0xcfcac0 });
+const helm = makePerson({ coat: 0x8c5a3a });
+pliny.position.set(1.4, 0.32, 0.05);
+pliny.rotation.y = Math.PI;
+helm.position.set(1.8, 0.32, -0.1);
+helm.rotation.y = 0;
+ships[0].add(pliny, helm);
+// Pliny at the pier before boarding
+const onPier = makePerson({ coat: 0xe9e0cc, cloak: 0xa8432f, hair: 0xcfcac0 });
+onPier.position.set(-72.3, 0.2, 42.3);
+onPier.rotation.y = 2.2;
+scene.add(onPier);
+const pier = new THREE.Mesh(
+  new THREE.BoxGeometry(1.2, 0.2, 5),
+  real.plastic(0x9a8c74, { roughness: 0.95, clearcoat: 0 }),
+);
+pier.position.set(-72.6, 0.06, 43.2);
+pier.rotation.y = 0.6;
+scene.add(pier);
+const rain = makePumice({ n: 2000, size: 14, top: 6, scale: 1.4, seed: 5 });
+scene.add(rain);
+// a lit window at Stabiae
+const win = new THREE.PointLight(0xffb060, 0, 4, 1.5);
+win.position.set(31, 0.4, 17.4);
+scene.add(win);
+// torches in the boat houses (small warm lights, no figures)
+const torches = [];
+for (let i = 0; i < 4; i++) {
+  const m = new THREE.Mesh(
+    new THREE.SphereGeometry(0.02, 8, 6),
+    new THREE.MeshBasicMaterial({ color: 0xffb04a, toneMapped: false }),
   );
-  const hot = smooth(ramp(t, T.heiss, T.gluet + 0.4));
-  filamentMat.emissiveIntensity = 2.5 * hot;
-  glow.intensity = 6 * hot;
-  animateArrows(heatOut, t, pop(t, T.gluet, T.payoff));
+  P.herc.add(m);
+  m.position.set(-2.7 + i * 1.8, 0.25, 1.1);
+  torches.push(m);
+}
+const flow = makeFlow(slopePath(HERC.clone().add(V(1, 0, 1))), { width: 5 });
+scene.add(flow);
 
-  // LED panel: one fact per beat, max one at a time
-  if (t >= T.heiss && t < T.gluehfaden) {
-    showPanel(pop(t, T.heiss, T.gluehfaden), "DRAHT", "2500°C", LED.red);
-  } else {
-    showPanel(0);
+function shipAt(t, i) {
+  // moored → crossing (Misenum → Herculaneum coast) → Stabiae
+  if (t < T.er - 0.2) return { p: V(-74.5 + i * 2.2, -0.06, 41 - i * 1.6), r: 0.6, row: 0 };
+  if (t < T.kueste - 0.2) {
+    const u = t - (T.er - 0.2);
+    return { p: V(-41.5 + u * 0.25 - i * 2.6, -0.06, 22.5 - u * 0.12 + i * 2.4), r: 0.45, row: 1 };
   }
+  const u = t - (T.kueste - 0.2);
+  return { p: V(26.5 - i * 3 + u * 0.15, -0.06, 22.5 + i * 1.5 - u * 0.1), r: -0.3, row: 0.6 };
+}
 
-  // tags + arrows on the named parts
+function renderAt(t) {
+  // light: afternoon at Misenum, dark from the crossing on
+  const dark = t < T.er - 0.2 ? 0.25 : t < T.jetzt ? 0.85 : 0.9;
+  P.mood("dunkel", dark);
+  P.column.userData.update(t + 260, {
+    grow: 1,
+    k: 1,
+    drift: 1.2,
+    collapse: t >= COLLAPSE - 0.3 ? smooth(ramp(t, COLLAPSE - 0.3, COLLAPSE + 5)) * 0.8 : 0,
+    glow: t >= T.jetzt - 0.2 ? 0.22 : 0.05,
+  });
+  P.lightning.userData.update(t * 1.3, dark > 0.5 ? 1 : 0);
+  P.setPumice(0.1);
+  P.dust(0.8);
+  ships.forEach((s, i) => {
+    const st = shipAt(t, i);
+    s.position.copy(st.p);
+    s.rotation.y = st.r;
+    s.userData.row(t + i * 0.3, st.row);
+  });
+  onPier.visible = t < T.kurz;
+  // stone rain over the crossing
+  const shipC = ships[0].position;
+  rain.userData.update(
+    t,
+    t >= T.er - 0.2 && t < T.kueste - 0.2 ? 1 : 0,
+    V(shipC.x, 0, shipC.z),
+    -0.1,
+  );
+  P.pumice.userData.update(t, t >= T.denn - 0.2 ? 0.8 : 0, V(3, 0, 3));
+  win.intensity = t >= T.dort - 0.2 && t < T.jetzt ? 2.5 : 0;
+  // the flow: from the collapse down to Herculaneum
+  flow.userData.update(
+    t,
+    t >= T.was - 0.3 ? smooth(ramp(t, T.was - 0.3, T.dort2 + 2)) * 0.92 : 0,
+    1,
+  );
+  torches.forEach((m, i) => m.scale.setScalar(1 + Math.sin(t * 11 + i) * 0.2));
   labels(t, LABELS);
-
   applyCamera(t);
   renderFrame();
 }
-
 start(renderAt);

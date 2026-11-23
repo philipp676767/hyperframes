@@ -1,157 +1,93 @@
-// TEMPLATE scene (demo chapter, 16:9): a tiny working story (candle -> light
-// bulb) that shows the pattern. Replace the subject here and the beats (T), shots, labels and
-// sounds in beats.js for the new topic; keep the structure. World,
-// captions, panel, arrows, labels and camera come from world.js.
-// Full-size reference: tiktok/kuehlschrank/assets/scene.js
+// Chapter 2: inside the mountain, the bottle, the column, Misenum.
 import {
   THREE,
-  ramp,
-  smooth,
-  inBack,
-  pop,
-  V,
-  scene,
-  flat,
-  M,
-  xrayMaterial,
-  xrayEdges,
-  setXray,
-  showNope,
-  makeArrowSet,
-  animateArrows,
-  showPanel,
-  LED,
-  labels,
-  squash,
-  puff,
-  highlights,
   shotCamera,
   renderFrame,
   start,
+  highlights,
+  labels,
+  ramp,
+  smooth,
+  real,
+  scene,
+  facet,
+  facetMat,
+  flat,
+  jitter,
 } from "./world.js";
-import "./set.js";
-import { createHand } from "./hand.js";
+import { P, XR } from "./set.js";
+import { stonePine } from "./welt.js";
 import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
 
 highlights(HIGHLIGHTS);
-
-// The world of this video (sky, ground, props, hero piece, life) is built
-// in set.js — new for every video (SKILL.md 1b). Optional floor pad under
-// the subject:
-
-// ---------------------------------------------------------------- hook prop
-// The primitive version from the hook ("Kerze in einem Glas").
-const hook = new THREE.Group();
-scene.add(hook);
-const flameMat = flat(0xffb02e, { emissive: 0xff7a10, emissiveIntensity: 1 });
-const flame = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.22, 8), flameMat);
-{
-  const jar = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.42, 0.42, 0.9, 20, 1, true),
-    new THREE.MeshStandardMaterial({ color: 0xdff4ff, transparent: true, opacity: 0.35 }),
-  );
-  jar.position.y = 0.49;
-  hook.add(jar);
-  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.5, 14), flat(0xfff3dc));
-  candle.position.y = 0.29;
-  candle.castShadow = true;
-  hook.add(candle);
-  flame.position.y = 0.66;
-  hook.add(flame);
-}
-
-// ---------------------------------------------------------------- subject
-// Big, readable, centred at the origin, ~2-3 units tall. Shell uses
-// xrayMaterial so the inside can be revealed.
-const bulb = new THREE.Group();
-scene.add(bulb);
-const glassMat = xrayMaterial(0xfff8e8);
-const glassGeo = new THREE.SphereGeometry(0.9, 24, 16);
-const glass = new THREE.Mesh(glassGeo, glassMat);
-glass.position.y = 1.9;
-bulb.add(glass);
-const glassEdges = xrayEdges(glassGeo);
-glassEdges.position.copy(glass.position);
-bulb.add(glassEdges);
-const base = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.7, 16), M.alu);
-base.position.y = 0.75;
-base.castShadow = true;
-bulb.add(base);
-const filamentMat = flat(0x6b6b6b, { emissive: 0xffa22e, emissiveIntensity: 0 });
-const coil = [];
-for (let k = 0; k <= 120; k++) {
-  const f = k / 120;
-  const a = f * Math.PI * 2 * 9;
-  coil.push(V(-0.35 + f * 0.7, 1.95 + Math.sin(a) * 0.06, Math.cos(a) * 0.06));
-}
-const filament = new THREE.Mesh(
-  new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coil), 240, 0.012, 6),
-  filamentMat,
-);
-bulb.add(filament);
-const glow = new THREE.PointLight(0xffc46b, 0, 6, 1.5);
-glow.position.set(0, 1.95, 0);
-bulb.add(glow);
-const heatOut = makeArrowSet(
-  [
-    [V(0.3, 2.1, 0.3), V(1.4, 2.6, 0.9)],
-    [V(-0.3, 2.1, 0.3), V(-1.4, 2.6, 0.9)],
-    [V(0, 2.3, 0.4), V(0.1, 3.3, 1.0)],
-  ],
-  { parent: bulb },
-);
-
 const applyCamera = shotCamera(shots);
 
-// the viewer's hand reaches in on frame 0 and taps the jar (visual-style.md
-// "The first 3 seconds": a hand doing something stops the scroll)
-const hand = createHand({ scale: 0.7 });
-
-// ---------------------------------------------------------------- render
-function renderAt(t) {
-  hand.track(t, [
-    // starts before 0 so the loop tail (t < 0) already shows it reaching in
-    { t: -0.6, pos: [1.7, 1.0, 1.4], rot: [0.2, -2.1, 0], pose: "open" },
-    { t: 0, pos: [1.2, 0.78, 0.98], rot: [0.25, -2.1, 0], pose: "open" },
-    { t: 0.45, pos: [0.86, 0.64, 0.7], rot: [0.3, -2.1, 0], pose: "press" },
-    { t: 0.9, pos: [0.94, 0.66, 0.76], rot: [0.3, -2.1, 0], pose: "point" },
-    { t: T.lampe1, pos: [1.7, 0.95, 1.4], rot: [0.2, -2.1, 0], pose: "open", out: true },
-  ]);
-  // hook: the candle burns down, then the "nope" X
-  const burn = ramp(t, T.aber, T.aus + 0.3);
-  flame.scale.setScalar(Math.max(0.001, 1 - smooth(burn)));
-  flame.rotation.z = Math.sin(t * 9) * 0.08;
-  showNope(pop(t, T.aus, T.also), 0, 1.4, 0.3);
-  const hookOut = inBack(ramp(t, T.also, T.also + 0.35));
-  hook.visible = hookOut < 1;
-  hook.scale.setScalar(Math.max(0.001, 1 - hookOut));
-
-  // subject pops in when the build starts, x-ray while explaining
-  // pop-ins: squash() for rubbery growth + a dust puff where it lands
-  bulb.visible = t >= T.also + 0.15;
-  bulb.scale.copy(squash(t, T.also + 0.15));
-  puff("bulb", t, T.also + 0.3, 0, 0.05, 0, 1.3);
-  setXray(
-    [glassMat],
-    smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.payoff, T.payoff + 0.5)),
-  );
-  const hot = smooth(ramp(t, T.heiss, T.gluet + 0.4));
-  filamentMat.emissiveIntensity = 2.5 * hot;
-  glow.intensity = 6 * hot;
-  animateArrows(heatOut, t, pop(t, T.gluet, T.payoff));
-
-  // LED panel: one fact per beat, max one at a time
-  if (t >= T.heiss && t < T.gluehfaden) {
-    showPanel(pop(t, T.heiss, T.gluehfaden), "DRAHT", "2500°C", LED.red);
-  } else {
-    showPanel(0);
+// a single pumice stone, close up (pale, porous)
+const stone = new THREE.Group();
+{
+  const g = facet(jitter(new THREE.IcosahedronGeometry(0.9, 2), 0.12, 4), 0.06, 4);
+  stone.add(new THREE.Mesh(g, facetMat(flat(0xd8d0c0, { roughness: 1 }))));
+  const pm = new THREE.MeshStandardMaterial({ color: 0x5a5448, roughness: 1 });
+  for (let i = 0; i < 60; i++) {
+    const a = i * 2.39996;
+    const y = 1 - (i / 59) * 2;
+    const r = Math.sqrt(1 - y * y);
+    const h = new THREE.Mesh(new THREE.SphereGeometry(0.05 + (i % 5) * 0.02, 10, 8), pm);
+    h.position.set(Math.cos(a) * r * 0.86, y * 0.86, Math.sin(a) * r * 0.86);
+    h.scale.set(1, 1, 0.4);
+    h.lookAt(0, 0, 0);
+    stone.add(h);
   }
+  stone.position.set(-25, -195.6, 8);
+  stone.scale.setScalar(0.9);
+  scene.add(stone);
+  const l = new THREE.PointLight(0xfff0dc, 30, 12, 1.6);
+  l.position.set(-22, -193, 11);
+  scene.add(l);
+}
+// an airliner for scale (≈ 10 km = 1/3 of the column)
+const plane = new THREE.Group();
+{
+  const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.35, 3.2, 6, 16), real.plastic(0xf2f2f2));
+  body.rotation.z = Math.PI / 2;
+  plane.add(body);
+  const wing = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.06, 4.2), real.plastic(0xe0e0e4));
+  plane.add(wing);
+  const tail = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.9, 0.06), real.plastic(0xe0e0e4));
+  tail.position.set(1.6, 0.5, 0);
+  plane.add(tail);
+  plane.scale.setScalar(1.3);
+  scene.add(plane);
+}
 
-  // tags + arrows on the named parts
+// a stone pine framing the column ("die Krone eines Baumes")
+{
+  const pine = stonePine(1.5, 5);
+  pine.position.set(-18.2, 0, 2.6);
+  scene.add(pine);
+}
+
+function renderAt(t) {
+  // x-ray: pressure, then the release
+  const erupt = t >= T.genau - 0.2 ? smooth(ramp(t, T.genau, T.heraus)) : 0;
+  const bottle =
+    t >= T.oeffnest - 0.1 && t < T.genau ? ramp(t, T.oeffnest - 0.1, T.oeffnest + 2.5) : 0;
+  const colGrow = t >= T.heraus - 0.2 ? smooth(ramp(t, T.saeule - 0.4, T.sie)) : 0;
+  XR.userData.update(t, {
+    press: 1,
+    erupt: Math.max(erupt, t > T.in && t < T.so ? 0.15 : 0),
+    bottle,
+    colGrow,
+  });
+  stone.rotation.set(t * 0.15, t * 0.3, 0);
+  // main world: the column at full height, the umbrella drifting south-east
+  const drift = t >= T.was ? 0.6 + smooth(ramp(t, T.was, T.end)) * 0.6 : 0.6;
+  P.column.userData.update(t + 120, { grow: 1, k: 1, drift, glow: 0 });
+  plane.position.set(18 + (t - T.sie) * 1.2, 31, -40);
+  plane.visible = t >= T.sie - 0.3 && t < T.krone;
+  P.mood("morgen", smooth(ramp(t, T.was, T.end)) * 0.35);
   labels(t, LABELS);
-
   applyCamera(t);
   renderFrame();
 }
-
 start(renderAt);

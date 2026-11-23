@@ -1,4 +1,6 @@
-// This chapter's place: the video's main world (youtube/<slug>/welt.js, copied
-// in by new-chapter.sh / sync-kit.sh). For a side scene of its own, replace
-// this import with the side world, built the same way (set kit).
-import "./welt.js";
+// Chapter 0: Pompeii on its last afternoon (main world) + the bakery for a
+// short cut-away.
+import { V } from "./world.js";
+import { buildPompeji, buildBakery } from "./welt.js";
+export const P = buildPompeji({ time: "tag", state: "79" });
+export const BK = buildBakery(V(0, -120, 0));

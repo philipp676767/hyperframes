@@ -1,72 +1,118 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 2 "Was im Berg passiert": into the mountain — the magma chamber,
+// gas dissolved like in soda, the bottle opened, the same in the Vesuvius,
+// pumice, the column 30 km high (airliner for scale), the pine crown, the
+// young Pliny watching from Misenum, the wind pushing the cloud over Pompeii.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  berg: W("Berg"),
+  mehrere: W("Mehrere"),
+  kammer: W("Kammer"),
+  in: W("In", 2),
+  so: W("so", 1),
+  solange: W("Solange"),
+  wenn: W("Wenn"),
+  oeffnest: W("öffnest"),
+  genau: W("Genau"),
+  heraus: W("Heraus", 2),
+  saeule: W("Säule"),
+  bims: W("Bimsstein"),
+  sie: W("Sie"),
+  flug: W("Flugzeuge"),
+  krone: W("oben", 2) - 0.1,
+  von: W("Von"),
+  plinius: W("Plinius"),
+  was: W("Was", 2),
+  end: END,
 };
+const x = (a, y, z) => [a, y - 200, z];
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // on the mountain's flank, about to look inside
+  { at: 0, from: [0.5, 3.2, -14], to: [0.4, 3.6, -18], look: [0, 16, -62], zoom: 1 },
+  // the mountain cut open
+  {
+    at: T.berg - 0.1,
+    from: x(0, 7, 58),
+    to: x(0, 5.5, 50),
+    look: x(0, -1, 0),
+    zoom: 1,
+    whoosh: true,
+  },
+  // down to the magma chamber
+  { at: T.mehrere - 0.2, from: x(9, -2, 30), to: x(5, -5, 22), look: x(0, -8.5, 0), zoom: 1 },
+  // gas in the magma: bubbles
+  { at: T.in - 0.2, from: x(3, -6.8, 10), to: x(1.6, -7.2, 7.8), look: x(0, -8.5, 0.6), zoom: 1 },
+  // the soda bottle
+  {
+    at: T.so - 0.2,
+    from: x(32, 7.5, 15),
+    to: x(30, 7, 13),
+    look: x(26, 5, 4),
+    zoom: 1,
+    whoosh: true,
+  },
+  { at: T.wenn - 0.2, from: x(29.5, 6.2, 11), to: x(29, 6.4, 10.4), look: x(26, 6.5, 4), zoom: 1 },
+  // the same in the mountain: the conduit, bubbles tearing the magma apart
+  {
+    at: T.genau - 0.2,
+    from: x(7, 4, 22),
+    to: x(4.5, 6, 17),
+    look: x(0, 4, 0),
+    zoom: 1,
+    whoosh: true,
+  },
+  // no lava river but a column
+  { at: T.heraus - 0.2, from: x(0, 16, 80), to: x(0, 20, 70), look: x(0, 18, 0), zoom: 1 },
+  // pumice: a single stone, close
+  {
+    at: T.bims - 0.3,
+    from: x(-23.6, 4.6, 9.6),
+    to: x(-24.0, 4.55, 9.2),
+    look: x(-25, 4.4, 8),
+    zoom: 1,
+  },
+  // 30 km — three times as high as airliners fly
+  {
+    at: T.sie - 0.2,
+    from: [70, 12, 70],
+    to: [62, 14, 64],
+    look: [0, 50, -62],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the crown of a tree: a stone pine in front of the column
+  { at: T.krone, from: [-20, 1.4, 10], to: [-19.4, 1.4, 9.2], look: [0, 45, -62], zoom: 1 },
+  // the young Pliny at Misenum, across the bay
+  {
+    at: T.von - 0.2,
+    from: [-88.9, 4.25, 51.9],
+    to: [-88.5, 4.2, 51.4],
+    look: [0, 14, -62],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the wind pushes the umbrella over Pompeii
+  { at: T.was - 0.2, from: [-84, 30, 98], to: [-76, 32, 94], look: [8, 58, -30], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Magmakammer", at: T.kammer, until: T.in - 0.3, pos: [-3.5, -208.5, 1.2], side: -1 },
+  { text: "Bimsstein", at: T.bims, until: T.sie - 0.4, pos: [-25, -195.6, 8], side: 1 },
+  { text: "Flughöhe", at: T.flug - 0.2, until: T.krone - 0.3, pos: [18, 33, -40], side: 1 },
+  { text: "Plinius", at: T.plinius - 0.1, until: T.was - 0.4, pos: [-86.74, 3.95, 49.83], side: 1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
-
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "wind", at: 0, dur: T.berg, db: -20 },
+  { s: "grollen", at: T.mehrere, db: -12 },
+  { s: "grollen", at: T.in, db: -14 },
+  { s: "ausbruch", at: T.oeffnest - 0.05, db: -14 },
+  { s: "grollen", at: T.genau, db: -8 },
+  { s: "ausbruch", at: T.saeule - 0.5, db: -8 },
+  { s: "saeule", at: T.sie, dur: T.end - T.sie, db: -18 },
+  { s: "meer", at: T.von, dur: T.was - T.von, db: -20 },
+  { s: "wind", at: T.was, dur: T.end - T.was, db: -18 },
 ];
+
+export const HIGHLIGHTS = [{ kind: "shake", at: T.saeule - 0.4, dur: 0.8, amp: 0.5 }];

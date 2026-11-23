@@ -1,72 +1,126 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 0 "Der Berg reißt auf": cold open across the bay (the pine-shaped
+// cloud) and the darkness in the forum, then the afternoon: forum, bakery,
+// the mountain bursting open, the column, the questions, the framing line.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  nacht: W("Es", 1),
+  es: W("Es", 2),
+  in: W("Pompeji", 1) - 0.1,
+  liegen: W("liegen"),
+  dann: W("Dann"),
+  berg: W("Berg", 1),
+  und: W("und", 1),
+  die: W("Menschen", 1) - 0.25,
+  doch: W("doch"),
+  gibt: W("gibt"),
+  warum: W("Warum"),
+  was: W("Was"),
+  wie: W("wie", 3),
+  das: W("Geschichte", 1) - 1.0,
+  wenn: W("abonniere") - 2.6,
+  end: END,
 };
+export const BOOM = T.berg - 0.1;
+const b = (x, y, z) => [x, y - 120, z];
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // cold open: across the bay, the pine-shaped cloud over the mountain
+  { at: 0, from: [-158, 12, 136], to: [-146, 13, 124], look: [0, 50, -62], zoom: 1 },
+  // "Es wurde Nacht": the forum goes dark, stones begin to fall
+  {
+    at: T.nacht - 0.15,
+    from: [0.6, 0.5, 4.4],
+    to: [0.3, 0.5, 3.2],
+    look: [0, 1.6, -12],
+    zoom: 1,
+    whoosh: true,
+  },
+  // a Herbsttag, shortly after noon: the forum, the temple, the calm mountain
+  {
+    at: T.es - 0.1,
+    from: [-0.15, 0.4, 10.4],
+    to: [-0.15, 0.42, 8.2],
+    look: [-0.1, 3.0, -30],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the city on the gulf (aerial)
+  { at: T.in - 0.2, from: [-26, 13, 30], to: [-20, 11, 26], look: [1.5, 0, -1], zoom: 1 },
+  // the bakery: loaves in the oven
+  {
+    at: T.liegen - 0.25,
+    from: b(1.5, 1.15, 1.9),
+    to: b(1.1, 1.05, 1.3),
+    look: b(0.35, 0.8, -0.5),
+    zoom: 1,
+    whoosh: true,
+  },
+  // the forum again — the mountain bursts open
+  {
+    at: T.dann - 0.1,
+    from: [0.2, 0.36, 3.6],
+    to: [0.1, 0.38, 3.2],
+    look: [0, 4.5, -30],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the column climbs: wide from the fields in the south-east, tilting up
+  {
+    at: T.und - 0.1,
+    from: [34, 2.5, 22],
+    to: [30, 3, 18],
+    look: [0, 18, -62],
+    lookTo: [0, 55, -62],
+    zoom: 1,
+  },
+  // the people stop and look up
+  {
+    at: T.die - 0.15,
+    from: [0.45, 0.14, 1.6],
+    to: [0.35, 0.17, 1.1],
+    look: [-0.2, 1.4, -8],
+    zoom: 1,
+  },
+  // the empty street in the strange light
+  {
+    at: T.doch - 0.3,
+    from: [11.5, 0.22, 2.4],
+    to: [9.5, 0.24, 2.4],
+    look: [-6, 0.45, 2.4],
+    zoom: 1,
+  },
+  // high above the city: the column and the umbrella
+  { at: T.gibt - 0.2, from: [34, 16, 34], to: [28, 17, 36], look: [0, 22, -40], zoom: 1 },
+  // questions: the people, the mountain, the whole city
+  { at: T.warum - 0.2, from: [7.5, 0.2, 2.4], to: [6.0, 0.22, 2.4], look: [-6, 0.6, 2.0], zoom: 1 },
+  { at: T.was - 0.15, from: [10, 18, -30], to: [6, 20, -38], look: [0, 24, -62], zoom: 1 },
+  { at: T.wie - 0.15, from: [30, 34, 40], to: [26, 38, 36], look: [1.5, 0, 0], zoom: 1 },
+  // "Das ist die Geschichte von Pompeji": the temple, the mountain, the column
+  { at: T.das - 0.2, from: [0, 0.36, 4.6], to: [0, 0.4, 2.6], look: [0, 6.5, -30], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Pompeji", at: T.in + 0.2, until: T.liegen - 0.4, pos: [1.5, 1.2, 0], side: 1 },
+  { text: "Vesuv", at: T.dann + 0.1, until: BOOM + 0.6, pos: [3, 16, -62], side: 1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
-
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "saeule", at: 0, dur: T.nacht, db: -16 },
+  { s: "meer", at: 0, dur: T.nacht, db: -22 },
+  { s: "steinregen", at: T.nacht + 0.8, dur: T.es - T.nacht - 0.8, db: -16 },
+  { s: "saeule", at: T.nacht, dur: T.es - T.nacht, db: -24 },
+  { s: "stadt", at: T.es - 0.1, dur: T.liegen - T.es, db: -20 },
+  { s: "wind", at: T.in - 0.2, dur: T.liegen - T.in, db: -22 },
+  { s: "ofen", at: T.liegen - 0.25, dur: T.dann - T.liegen, db: -16 },
+  { s: "stadt", at: T.dann - 0.1, dur: BOOM - T.dann + 1.5, db: -21 },
+  { s: "grollen", at: T.dann, db: -10 },
+  { s: "ausbruch", at: BOOM, db: -4 },
+  { s: "saeule", at: BOOM + 2, dur: T.end - BOOM - 2, db: -19 },
+  { s: "wind", at: T.die, dur: T.end - T.die, db: -24 },
+];
+
+export const HIGHLIGHTS = [
+  { kind: "shake", at: BOOM, dur: 1.4, amp: 1.2 },
+  { kind: "flash", at: BOOM + 0.05 },
 ];

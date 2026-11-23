@@ -1,59 +1,124 @@
 [
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "saeule",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -16
+  },
+  {
+    "s": "meer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -22
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 3.63,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "saeule",
+    "at": 4,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "dur": 6,
+    "db": -24
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "steinregen",
+    "at": 4.8,
+    "why": "beats.js",
+    "dur": 5.2,
+    "db": -16
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 9.68,
+    "why": "cut"
+  },
+  {
+    "s": "stadt",
+    "at": 9.9,
+    "why": "beats.js",
+    "dur": 8.18,
+    "db": -20
+  },
+  {
+    "s": "wind",
+    "at": 14.82,
+    "why": "beats.js",
+    "dur": 3.16,
+    "db": -22
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 15.27,
+    "why": "label Pompeji"
+  },
+  {
+    "s": "whoosh",
+    "at": 17.71,
+    "why": "cut"
+  },
+  {
+    "s": "ofen",
+    "at": 17.93,
+    "why": "beats.js",
+    "dur": 1.8599999999999994,
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 19.72,
+    "why": "cut"
+  },
+  {
+    "s": "stadt",
+    "at": 19.94,
+    "why": "beats.js",
+    "dur": 2.759999999999998,
+    "db": -21
+  },
+  {
+    "s": "grollen",
+    "at": 20.04,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "blip",
+    "at": 20.19,
+    "why": "label Vesuv"
+  },
+  {
+    "s": "hit",
+    "at": 21.3,
+    "why": "highlight shake"
+  },
+  {
+    "s": "ausbruch",
+    "at": 21.3,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "hit",
+    "at": 21.35,
+    "why": "highlight flash"
+  },
+  {
+    "s": "saeule",
+    "at": 23.3,
+    "why": "beats.js",
+    "dur": 41.900000000000006,
+    "db": -19
+  },
+  {
+    "s": "wind",
+    "at": 28.15,
+    "why": "beats.js",
+    "dur": 37.050000000000004,
+    "db": -24
   }
 ]

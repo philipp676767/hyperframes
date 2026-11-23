@@ -6,60 +6,98 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "stadt",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 15.3,
+    "db": -19
+  },
+  {
+    "s": "blip",
+    "at": 9.07,
+    "why": "label Amphitheater"
+  },
+  {
+    "s": "wind",
+    "at": 15.1,
+    "why": "beats.js",
+    "dur": 21.220000000000002,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 32.13,
+    "why": "label Krater"
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 36.1,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "stadt",
+    "at": 36.32,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "dur": 3.0200000000000005,
+    "db": -20
+  },
+  {
+    "s": "grollen",
+    "at": 39.04,
+    "why": "beats.js",
+    "db": -8
   },
   {
     "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "at": 39.34,
+    "why": "highlight shake"
+  },
+  {
+    "s": "beben",
+    "at": 39.34,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "einsturz",
+    "at": 42.24,
+    "why": "beats.js",
+    "db": -6
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 44.72,
+    "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "s": "stadt",
+    "at": 44.94,
+    "why": "beats.js",
+    "dur": 8.36,
+    "db": -20
+  },
+  {
+    "s": "hit",
+    "at": 49.52,
+    "why": "highlight shake"
+  },
+  {
+    "s": "beben",
+    "at": 49.52,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "wind",
+    "at": 53.3,
+    "why": "beats.js",
+    "dur": 8.399999999999999,
+    "db": -22
+  },
+  {
+    "s": "grollen",
+    "at": 55.7,
+    "why": "beats.js",
+    "db": -10
   }
 ]

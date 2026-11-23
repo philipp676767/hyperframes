@@ -6,60 +6,100 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 3.42,
+    "db": -18
+  },
+  {
+    "s": "saeule",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 52.79,
+    "db": -24
+  },
+  {
+    "s": "steinregen",
+    "at": 3.42,
+    "why": "beats.js",
+    "dur": 11.14,
+    "db": -14
+  },
+  {
+    "s": "blip",
+    "at": 5.87,
+    "why": "label Bimsstein"
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 14.14,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "steinregen",
+    "at": 14.56,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "dur": 38.23,
+    "db": -18
+  },
+  {
+    "s": "grollen",
+    "at": 30.83,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "blip",
+    "at": 38.93,
+    "why": "label Ein Kubikmeter"
+  },
+  {
+    "s": "einsturz",
+    "at": 47.4,
+    "why": "beats.js",
+    "db": -6
   },
   {
     "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "at": 47.5,
+    "why": "highlight shake"
+  },
+  {
+    "s": "einsturz",
+    "at": 48.6,
+    "why": "beats.js",
+    "db": -10
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 52.57,
+    "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "s": "wind",
+    "at": 52.79,
+    "why": "beats.js",
+    "dur": 11.130000000000003,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 63.5,
+    "why": "cut"
+  },
+  {
+    "s": "ruder",
+    "at": 63.72,
+    "why": "beats.js",
+    "dur": 7.280000000000001,
+    "db": -16
+  },
+  {
+    "s": "meer",
+    "at": 63.72,
+    "why": "beats.js",
+    "dur": 7.280000000000001,
+    "db": -18
   }
 ]

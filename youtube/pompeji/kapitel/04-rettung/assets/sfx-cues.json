@@ -6,60 +6,112 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "meer",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 10.18,
+    "db": -18
+  },
+  {
+    "s": "saeule",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 75.4,
+    "db": -24
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 9.76,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "wind",
+    "at": 9.98,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "dur": 6.740000000000002,
+    "db": -20
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 16.5,
+    "why": "cut"
+  },
+  {
+    "s": "ruder",
+    "at": 16.72,
+    "why": "beats.js",
+    "dur": 9.087999999999997,
+    "db": -14
+  },
+  {
+    "s": "steinregen",
+    "at": 16.92,
+    "why": "beats.js",
+    "dur": 9.087999999999997,
+    "db": -18
+  },
+  {
+    "s": "whoosh",
+    "at": 25.588,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 25.808,
+    "why": "beats.js",
+    "dur": 13.312000000000001,
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 38.9,
+    "why": "cut"
+  },
+  {
+    "s": "grollen",
+    "at": 43.72,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 48.42,
+    "why": "highlight shake"
+  },
+  {
+    "s": "glut",
+    "at": 48.92,
+    "why": "beats.js",
+    "dur": 15.399999999999999,
+    "db": -10
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 53.05,
+    "why": "label Herculaneum"
+  },
+  {
+    "s": "meer",
+    "at": 56.38,
+    "why": "beats.js",
+    "dur": 14.740000000000002,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 57.63,
+    "why": "label Bootshäuser"
+  },
+  {
+    "s": "whoosh",
+    "at": 70.7,
+    "why": "cut"
+  },
+  {
+    "s": "steinregen",
+    "at": 71.12,
+    "why": "beats.js",
+    "dur": 4.280000000000001,
+    "db": -18
   }
 ]

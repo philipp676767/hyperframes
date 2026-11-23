@@ -6,60 +6,111 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 3.42,
+    "db": -20
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 3.1,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "grollen",
+    "at": 5.12,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "db": -12
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "blip",
+    "at": 7.87,
+    "why": "label Magmakammer"
+  },
+  {
+    "s": "grollen",
+    "at": 13.2,
+    "why": "beats.js",
+    "db": -14
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 16.36,
+    "why": "cut"
+  },
+  {
+    "s": "ausbruch",
+    "at": 24.77,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 30.76,
+    "why": "cut"
+  },
+  {
+    "s": "grollen",
+    "at": 31.18,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "ausbruch",
+    "at": 41.34,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 41.44,
+    "why": "highlight shake"
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 45.57,
+    "why": "label Bimsstein"
+  },
+  {
+    "s": "whoosh",
+    "at": 46.48,
+    "why": "cut"
+  },
+  {
+    "s": "saeule",
+    "at": 46.9,
+    "why": "beats.js",
+    "dur": 25.500000000000007,
+    "db": -18
+  },
+  {
+    "s": "blip",
+    "at": 50.91,
+    "why": "label Flughöhe"
+  },
+  {
+    "s": "whoosh",
+    "at": 55.64,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 56.06,
+    "why": "beats.js",
+    "dur": 9.039999999999992,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 61.65,
+    "why": "label Plinius"
+  },
+  {
+    "s": "wind",
+    "at": 65.1,
+    "why": "beats.js",
+    "dur": 7.300000000000011,
+    "db": -18
   }
 ]
