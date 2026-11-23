@@ -1,72 +1,148 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 5 "Die Glutlawine": the pyroclastic flow explained (column
+// collapse, the fountain analogy), running down the mountain, into the
+// streets; the morning flow at the walls; the end in the streets (no people
+// shown dying); Stabiae: pillows, a wild sea, Pliny the Elder; more flows
+// until Pompeii disappears; silence.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  sie: W("Sie", 1),
+  man: W("Man"),
+  druck: W("Druck"),
+  schiesst: W("schießt"),
+  weil: W("Weil"),
+  mit: W("mit", 1),
+  weg: W("Weglaufen"),
+  am: W("Am"),
+  erreicht: W("erreicht"),
+  wer: W("Wer"),
+  fuer: W("Für"),
+  stabiae: W("Stabiae") - 0.35,
+  dort: W("Dort"),
+  weitere: W("Weitere"),
+  danach: W("Danach"),
+  end: END,
 };
+const f = (x, y, z) => [x, y - 120, z];
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // the glowing avalanche runs down the mountain
+  { at: 0, from: [26, 9, -10], to: [23, 9, -13], look: [0, 9, -44], zoom: 1 },
+  // the column can no longer carry its weight
+  { at: T.sie - 0.2, from: [40, 18, 40], to: [36, 19, 36], look: [0, 40, -62], zoom: 1 },
+  // like a fountain without pressure
+  {
+    at: T.man - 0.2,
+    from: f(2.6, 1.6, 3.4),
+    to: f(2.2, 1.5, 3.0),
+    look: f(0, 0.9, 0),
+    zoom: 1,
+    whoosh: true,
+  },
+  {
+    at: T.schiesst - 0.3,
+    from: f(0.2, 2.6, 3.6),
+    to: f(0.1, 2.4, 3.2),
+    look: f(0, 0.1, 0),
+    zoom: 1,
+  },
+  // heavier than air: it flows down like water
+  {
+    at: T.weil - 0.2,
+    from: [-26, 10, -14],
+    to: [-22, 10, -17],
+    look: [0, 7, -40],
+    zoom: 1,
+    whoosh: true,
+  },
+  { at: T.mit - 0.2, from: [-4, 4.2, -26], to: [-3, 4, -24], look: [1.5, 3, -36], zoom: 1 },
+  // no running away; it gets through every door
+  {
+    at: T.weg - 0.2,
+    from: [-2.6, 0.45, 2.42],
+    to: [-1.6, 0.45, 2.42],
+    look: [14, 0.6, 2.4],
+    zoom: 1,
+  },
+  // the grey morning: the town under pumice, the mountain flank
+  {
+    at: T.am - 0.2,
+    from: [24, 7, 20],
+    to: [21, 6.6, 17],
+    look: [0, 4, -18],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the first flow reaches the walls
+  {
+    at: T.erreicht - 0.2,
+    from: [3.2, 1.25, -10.4],
+    to: [3.0, 1.25, -10.9],
+    look: [0.5, 3, -22],
+    zoom: 1,
+  },
+  // a person in the street, a cloth over the face (seen from behind)
+  {
+    at: T.wer - 0.2,
+    from: [7.0, 0.52, 2.46],
+    to: [6.7, 0.52, 2.45],
+    look: [4.4, 0.4, 2.4],
+    zoom: 1,
+  },
+  // over in moments: the cloud covers the town (wide, no people)
+  { at: T.fuer - 0.2, from: [-16, 9, 18], to: [-14, 8.6, 15], look: [2, 1, -2], zoom: 1 },
+  // Stabiae: pillows on their heads, a wild sea
+  {
+    at: T.stabiae,
+    from: [36.5, 0.6, 21.5],
+    to: [35.6, 0.55, 21.0],
+    look: [31.5, 0.3, 18.4],
+    zoom: 1,
+    whoosh: true,
+  },
+  // Pliny the Elder on the beach
+  {
+    at: T.dort - 0.2,
+    from: [30.6, 0.32, 18.6],
+    to: [30.9, 0.9, 19.6],
+    look: [32.2, 0.1, 17.0],
+    zoom: 1,
+  },
+  // more flows: Pompeii disappears
+  {
+    at: T.weitere - 0.2,
+    from: [18, 14, 22],
+    to: [15, 15, 19],
+    look: [1.5, 0, 0],
+    zoom: 1,
+    whoosh: true,
+  },
+  // silence
+  { at: T.danach - 0.2, from: [-6, 2.2, 16], to: [-5.5, 2.3, 15], look: [0, 5, -30], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  {
+    text: "Pyroklastischer Strom",
+    at: W("Glutlawine") - 0.1,
+    until: T.sie - 0.4,
+    pos: [0.6, 15.5, -50],
+    side: 1,
+  },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
-
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "glut", at: 0, dur: T.man, db: -10 },
+  { s: "saeule", at: T.sie, dur: T.man - T.sie, db: -16 },
+  { s: "glut", at: T.weil - 0.2, dur: T.am - T.weil, db: -9 },
+  { s: "wind", at: T.am - 0.2, dur: T.erreicht - T.am, db: -18 },
+  { s: "glut", at: T.erreicht - 0.2, dur: T.wer - T.erreicht + 1, db: -8 },
+  { s: "wind", at: T.wer, dur: T.fuer - T.wer, db: -20 },
+  { s: "glut", at: T.fuer, dur: T.stabiae - T.fuer, db: -14 },
+  { s: "meer", at: T.stabiae, dur: T.weitere - T.stabiae, db: -10 },
+  { s: "wind", at: T.stabiae, dur: T.weitere - T.stabiae, db: -16 },
+  { s: "glut", at: T.weitere - 0.2, dur: T.danach - T.weitere, db: -14 },
+  { s: "wind", at: T.danach, dur: T.end - T.danach, db: -26 },
 ];
+
+export const HIGHLIGHTS = [{ kind: "shake", at: T.erreicht + 0.6, dur: 1.4, amp: 0.4 }];

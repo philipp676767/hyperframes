@@ -807,7 +807,7 @@ export function makeFlow(path, { n = 720, seed = 11, width = 6, scale = 1 } = {}
     vertexColors: true,
     roughness: 1,
     flatShading: true,
-    emissive: 0xff4a12,
+    emissive: 0xff5a1a,
     emissiveIntensity: 0.06,
   });
   const im = new THREE.InstancedMesh(geo, mat, n);
@@ -825,8 +825,8 @@ export function makeFlow(path, { n = 720, seed = 11, width = 6, scale = 1 } = {}
       wob: r() * 6.28,
       up: r(),
     });
-    const v = 0.3 + r() * 0.22;
-    col.setRGB(v * 1.03, v * 0.97, v * 0.9);
+    const v = 0.2 + r() * 0.17;
+    col.setRGB(v * 1.02, v * 0.98, v * 0.94);
     im.setColorAt(i, col);
   }
   const m4 = new THREE.Matrix4();
@@ -836,10 +836,10 @@ export function makeFlow(path, { n = 720, seed = 11, width = 6, scale = 1 } = {}
   const tan = new THREE.Vector3();
   const side = new THREE.Vector3();
   im.userData.curve = curve;
-  im.userData.update = (t, p, k = 1) => {
+  im.userData.update = (t, p, k = 1, glow = 0.06) => {
     im.visible = k > 0.01 && p > 0.001;
     if (!im.visible) return;
-    mat.emissiveIntensity = 0.06 * k;
+    mat.emissiveIntensity = glow * k;
     for (let i = 0; i < n; i++) {
       const P_ = P[i];
       // puffs trail behind the front over 55 % of the path
@@ -1417,7 +1417,7 @@ export function buildPompeji({
   tj.position.set(0, 0.03, FORUM.z0 - 1.25);
   city.add(tj);
   out.temple = tj;
-  if (ruins) {
+  if (ruins || buried) {
     // today: the temple stands as podium + broken column stumps
     tj.traverse((o) => {
       if (o.isMesh && o.position.y > 0.6) o.visible = false;
@@ -1427,14 +1427,14 @@ export function buildPompeji({
     const c = colonnade(FORUM.z1 - FORUM.z0 - 0.4, 0.55, stoneMat, roofForum, { along: "z" });
     c.position.set(sx * (FORUM.x1 + 0.05), 0.04, (FORUM.z0 + FORUM.z1) / 2);
     if (sx > 0) c.rotation.y = Math.PI;
-    if (ruins) c.children.forEach((o, i) => i > 0 && (o.visible = false));
+    if (ruins || buried) c.children.forEach((o, i) => i > 0 && (o.visible = false));
     city.add(c);
   }
   {
     const c = colonnade(FORUM.x1 - FORUM.x0, 0.55, stoneMat, roofForum, { along: "x" });
     c.position.set(0, 0.04, FORUM.z1 + 0.05);
     c.rotation.y = Math.PI;
-    if (ruins) c.children.forEach((o, i) => i > 0 && (o.visible = false));
+    if (ruins || buried) c.children.forEach((o, i) => i > 0 && (o.visible = false));
     city.add(c);
   }
   for (let i = 0; i < 5; i++) {
@@ -1924,8 +1924,8 @@ export function buildPompeji({
     const geo = new THREE.ShapeGeometry(sh, 24);
     geo.rotateX(-Math.PI / 2);
     const plain = new THREE.Mesh(
-      facet(geo, 0.05, 3),
-      facetMat(flat(state === "begraben" ? 0x7f8f4a : 0x8a7a62, { roughness: 1 })),
+      patches(facet(geo, 0.05, 3), { amt: 0.08, scale: 0.15, seed: 8 }),
+      facetMat(flat(0x7f8f4a, { roughness: 1 })),
     );
     plain.position.y = 0.95;
     plain.receiveShadow = true;

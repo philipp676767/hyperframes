@@ -6,60 +6,115 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "glut",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 13.14,
+    "db": -10
+  },
+  {
+    "s": "blip",
+    "at": 4.87,
+    "why": "label Pyroklastischer Strom"
+  },
+  {
+    "s": "saeule",
+    "at": 9.1,
+    "why": "beats.js",
+    "dur": 4.040000000000001,
+    "db": -16
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 12.72,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
+    "s": "whoosh",
+    "at": 23.08,
+    "why": "cut"
   },
   {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "glut",
+    "at": 23.3,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "dur": 15.479999999999997,
+    "db": -9
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 38.56,
+    "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "s": "wind",
+    "at": 38.78,
+    "why": "beats.js",
+    "dur": 4.5,
+    "db": -18
+  },
+  {
+    "s": "glut",
+    "at": 43.28,
+    "why": "beats.js",
+    "dur": 4.400000000000006,
+    "db": -8
+  },
+  {
+    "s": "hit",
+    "at": 44.08,
+    "why": "highlight shake"
+  },
+  {
+    "s": "wind",
+    "at": 46.88,
+    "why": "beats.js",
+    "dur": 3.6999999999999957,
+    "db": -20
+  },
+  {
+    "s": "glut",
+    "at": 50.58,
+    "why": "beats.js",
+    "dur": 7.530000000000001,
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 57.89,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 58.11,
+    "why": "beats.js",
+    "dur": 12.709999999999994,
+    "db": -10
+  },
+  {
+    "s": "wind",
+    "at": 58.11,
+    "why": "beats.js",
+    "dur": 12.709999999999994,
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 70.4,
+    "why": "cut"
+  },
+  {
+    "s": "glut",
+    "at": 70.62,
+    "why": "beats.js",
+    "dur": 5.88000000000001,
+    "db": -14
+  },
+  {
+    "s": "wind",
+    "at": 76.7,
+    "why": "beats.js",
+    "dur": 2.3999999999999915,
+    "db": -26
   }
 ]

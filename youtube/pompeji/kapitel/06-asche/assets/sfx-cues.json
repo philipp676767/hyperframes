@@ -6,60 +6,78 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 6.78,
+    "db": -18
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 6.36,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "graben",
+    "at": 7.08,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "db": -10
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "graben",
+    "at": 9.18,
+    "why": "beats.js",
+    "db": -12
+  },
+  {
+    "s": "wind",
+    "at": 11.9,
+    "why": "beats.js",
+    "dur": 8.94,
+    "db": -22
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 20.42,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.39,
+    "why": "cut"
+  },
+  {
+    "s": "graben",
+    "at": 32.26,
+    "why": "beats.js",
+    "db": -12
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 38.93,
+    "why": "label Hohlraum"
+  },
+  {
+    "s": "giessen",
+    "at": 48.1,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "whoosh",
+    "at": 55.26,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 55.48,
+    "why": "beats.js",
+    "dur": 9.619999999999997,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 61.98,
+    "why": "label Noch nicht ausgegraben"
   }
 ]

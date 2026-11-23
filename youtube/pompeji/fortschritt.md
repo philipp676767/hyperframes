@@ -10,14 +10,14 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 | 2   | 02-vulkan     | Was im Berg passiert     | 179    | 71.9 s     | geprüft | Render-Queue |
 | 3   | 03-bimsregen  | Steine fallen vom Himmel | 180    | 70.7 s     | geprüft | Render-Queue |
 | 4   | 04-rettung    | Die Rettungsfahrt        | 186    | 75.4 s     | geprüft | Render-Queue |
-| 5   | 05-glutlawine | Die Glutlawine           | 189    | 78.7 s     | stimme  |              |
-| 6   | 06-asche      | 1.700 Jahre unter Asche  | 161    | 64.7 s     | stimme  |              |
-| 7   | 07-finale     | Warum sie blieben        | 188    | 75.5 s     | stimme  |              |
+| 5   | 05-glutlawine | Die Glutlawine           | 189    | 78.7 s     | geprüft | Render-Queue |
+| 6   | 06-asche      | 1.700 Jahre unter Asche  | 161    | 64.7 s     | geprüft | Render-Queue |
+| 7   | 07-finale     | Warum sie blieben        | 188    | 75.5 s     | geprüft | Render-Queue |
 
 ## Video
 
 - [ ] Titel + 3 Thumbnail-Ideen (plan.md)
-- [ ] Hauptwelt (welt.js) geprüft
+- [x] Hauptwelt (welt.js) geprüft
 - [ ] Alle Kapitel gerendert
 - [ ] Zusammengefügt + Lautheit (-14 LUFS)
 - [ ] 3 Thumbnails

@@ -1,72 +1,142 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 6 "1.700 Jahre unter Asche": fields over the town, the name
+// forgotten; digging from 1748; the inscription of 1763; the snapshot —
+// charred loaves, painted election notices and graffiti; Fiorelli's plaster
+// in the hollows (1863, shown abstractly); ~1,500 found; a third not dug.
+import { W, END } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  ueber: W("Über"),
+  und: W("und", 1),
+  erst: W("Erst", 1),
+  dass: W("Dass"),
+  was: W("Was"),
+  in: W("Bäckerei") - 0.4,
+  an: W("Wänden") - 0.3,
+  fio: W("1863"),
+  in2: W("erstarrten") - 0.4,
+  die: W("Körper", 1) - 0.9,
+  er: W("Er"),
+  heraus: W("heraus"),
+  rund: W("Rund"),
+  drittel: W("Drittel") - 0.35,
+  end: END,
 };
+const b = (x, y, z) => [x, y - 120, z];
+const tr = (x, y, z) => [x + 60, y - 120, z];
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // fields over the buried town
+  { at: 0, from: [8, 1.3, 9], to: [6.5, 1.25, 8], look: [-2, 1.4, -6], zoom: 1 },
+  // the name is lost: wide, the mountain quiet again
+  { at: T.und - 0.15, from: [26, 9, 26], to: [22, 8.6, 23], look: [0, 4, -20], zoom: 1 },
+  // 1748: workers dig the forum free
+  {
+    at: T.erst - 0.2,
+    from: [4.6, 2.6, 7.2],
+    to: [3.8, 2.4, 6.2],
+    look: [0, 0.4, -1],
+    zoom: 1,
+    whoosh: true,
+  },
+  // 1763: the inscription
+  {
+    at: T.dass - 0.2,
+    from: [0.55, 0.32, 1.6],
+    to: [0.45, 0.3, 1.35],
+    look: [0.0, 0.2, 0.6],
+    zoom: 1,
+  },
+  // a moment frozen: the dug-out forum
+  { at: T.was - 0.2, orbit: { c: [0, 0.4, -1], r: 7, y: 3, a0: 0.6, a1: 0.25 }, zoom: 1 },
+  // the bakery: charred loaves in the oven
+  {
+    at: T.in - 0.2,
+    from: b(1.4, 1.1, 1.8),
+    to: b(1.0, 1.0, 1.2),
+    look: b(0.35, 0.8, -0.5),
+    zoom: 1,
+    whoosh: true,
+  },
+  // painted notices and scratched graffiti on the wall
+  {
+    at: T.an - 0.2,
+    from: b(-1.4, 1.6, 1.4),
+    to: b(-1.8, 1.55, 1.0),
+    look: b(-3.3, 1.5, 0.2),
+    zoom: 1,
+  },
+  // 1863: Fiorelli's dig
+  {
+    at: T.fio - 0.25,
+    from: tr(2.6, 2.6, 6.5),
+    to: tr(2.0, 2.4, 5.6),
+    look: tr(0, 1.3, -0.5),
+    zoom: 1,
+    whoosh: true,
+  },
+  // the hollows in the ash
+  {
+    at: T.in2 - 0.2,
+    from: tr(1.4, 1.75, 2.6),
+    to: tr(1.0, 1.7, 2.0),
+    look: tr(0.2, 1.55, -0.1),
+    zoom: 1,
+  },
+  {
+    at: T.die - 0.2,
+    from: tr(0.6, 1.62, 1.6),
+    to: tr(0.5, 1.6, 1.3),
+    look: tr(0.2, 1.55, -0.1),
+    zoom: 1,
+  },
+  // plaster poured in
+  {
+    at: T.er - 0.2,
+    from: tr(2.0, 2.2, 2.4),
+    to: tr(1.8, 2.1, 2.1),
+    look: tr(0.5, 1.6, 0),
+    zoom: 1,
+  },
+  // the shapes come out (abstract, calm)
+  {
+    at: T.heraus - 0.2,
+    from: tr(-1.2, 1.2, 2.6),
+    to: tr(-0.9, 1.1, 2.3),
+    look: tr(0.2, 0.4, 0.7),
+    zoom: 1,
+  },
+  // ~1,500 dead found: the forum at dusk, calm
+  {
+    at: T.rund - 0.2,
+    from: [-5, 1.6, 8],
+    to: [-4, 1.5, 7],
+    look: [0, 0.5, -4],
+    zoom: 1,
+    whoosh: true,
+  },
+  // a third still under the fields
+  { at: T.drittel, from: [12, 16, 24], to: [10, 17, 21], look: [2, 0, 0], zoom: 1 },
 ];
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  {
+    text: "Hohlraum",
+    at: W("Hohlräume", 1),
+    until: T.die - 0.3,
+    pos: [60.2, -118.45, -0.1],
+    side: 1,
+  },
+  { text: "Noch nicht ausgegraben", at: T.drittel + 0.6, until: T.end, pos: [10, 1.0, 4], side: 1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
-
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "wind", at: 0, dur: T.erst, db: -18 },
+  { s: "graben", at: T.erst + 0.3, db: -10 },
+  { s: "graben", at: T.erst + 2.4, db: -12 },
+  { s: "wind", at: T.dass, dur: T.in - T.dass, db: -22 },
+  { s: "graben", at: T.fio + 0.4, db: -12 },
+  { s: "giessen", at: W("gießt") - 0.1, db: -10 },
+  { s: "wind", at: T.rund - 0.2, dur: T.end - T.rund, db: -20 },
 ];
+
+export const HIGHLIGHTS = [];

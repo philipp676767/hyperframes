@@ -4,5 +4,65 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "zikaden",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 24.04,
+    "db": -22
+  },
+  {
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 88.7,
+    "db": -26
+  },
+  {
+    "s": "whoosh",
+    "at": 23.62,
+    "why": "cut"
+  },
+  {
+    "s": "meer",
+    "at": 23.84,
+    "why": "beats.js",
+    "dur": 13.649999999999999,
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 24.29,
+    "why": "label Plinius der Jüngere"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.32,
+    "why": "cut"
+  },
+  {
+    "s": "zikaden",
+    "at": 42.92,
+    "why": "beats.js",
+    "dur": 45.78,
+    "db": -24
+  },
+  {
+    "s": "blip",
+    "at": 45.23,
+    "why": "label Rote Zone"
+  },
+  {
+    "s": "whoosh",
+    "at": 50.6,
+    "why": "cut"
+  },
+  {
+    "s": "stadt",
+    "at": 50.82,
+    "why": "beats.js",
+    "dur": 12.999999999999993,
+    "db": -22
   }
 ]

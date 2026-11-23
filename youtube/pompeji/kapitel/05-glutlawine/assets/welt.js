@@ -807,7 +807,7 @@ export function makeFlow(path, { n = 720, seed = 11, width = 6, scale = 1 } = {}
     vertexColors: true,
     roughness: 1,
     flatShading: true,
-    emissive: 0xff4a12,
+    emissive: 0xff5a1a,
     emissiveIntensity: 0.06,
   });
   const im = new THREE.InstancedMesh(geo, mat, n);
@@ -825,8 +825,8 @@ export function makeFlow(path, { n = 720, seed = 11, width = 6, scale = 1 } = {}
       wob: r() * 6.28,
       up: r(),
     });
-    const v = 0.3 + r() * 0.22;
-    col.setRGB(v * 1.03, v * 0.97, v * 0.9);
+    const v = 0.2 + r() * 0.17;
+    col.setRGB(v * 1.02, v * 0.98, v * 0.94);
     im.setColorAt(i, col);
   }
   const m4 = new THREE.Matrix4();
@@ -836,10 +836,10 @@ export function makeFlow(path, { n = 720, seed = 11, width = 6, scale = 1 } = {}
   const tan = new THREE.Vector3();
   const side = new THREE.Vector3();
   im.userData.curve = curve;
-  im.userData.update = (t, p, k = 1) => {
+  im.userData.update = (t, p, k = 1, glow = 0.06) => {
     im.visible = k > 0.01 && p > 0.001;
     if (!im.visible) return;
-    mat.emissiveIntensity = 0.06 * k;
+    mat.emissiveIntensity = glow * k;
     for (let i = 0; i < n; i++) {
       const P_ = P[i];
       // puffs trail behind the front over 55 % of the path
