@@ -144,5 +144,6 @@ the search interest and the facts again when you pick.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Typ | Datum | Chat |
-| ----- | --- | ----- | ---- |
+| Thema                                        | Typ           | Datum      | Chat                |
+| -------------------------------------------- | ------------- | ---------- | ------------------- |
+| Pompeji — der Tag, an dem der Vesuv ausbrach | Große Momente | 2026-11-23 | YouTube #4: Pompeji |
