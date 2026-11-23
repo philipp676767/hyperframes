@@ -266,7 +266,21 @@ pinned comment, settings).
 
 ### 8. Deliver
 
-`SendUserFile` the final video (display `render`) the three thumbnails and the competitor sheet,
+**The user can only download files under 100 MB** (user, 2026-11-23) —
+an 11-min video is several hundred MB, so it always goes out in parts:
+
+```bash
+python3 -I .claude/skills/youtube-erklaervideo/scripts/split-video.py <slug>
+# → youtube/<slug>/renders/teile/<slug>-teil-<i>-von-<n>.mp4 (each ≤ 95 MB) + teile.txt
+```
+
+Lossless (`-c copy`), cut at chapter seams where possible, only inside a
+chapter that alone is too big; every part plays on its own, and joined in
+order they give back the exact video (checked: same frame count). Never send
+the whole `-final.mp4`.
+
+`SendUserFile` **all parts in order** (display `attach`, caption „Teil 1–n,
+der Reihe nach zusammenfügen“ + the part list from `teile.txt`), the three thumbnails and the competitor sheet,
 then in the message: Titel, Beschreibung (incl. chapter marks + hashtags),
 Tags, Kommentar zum Anpinnen — **each its own code block** (only the field's
 text) — the settings as a short list (end screen: video left, subscribe
