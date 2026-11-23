@@ -31,3 +31,5 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 - Wortzeiten der Zitate von Hand gesetzt (00-hook, 04-rettung) nach silencedetect.
 - W() ist kleinschreibungs-normalisiert („Was“ = „was“): immer n prüfen, Schnitte müssen aufsteigen.
 - welt.js-Änderungen nur noch in nicht gerenderte Kapitel kopieren.
+- Thumbnail-Kandidaten (in kapitel/\*/renders/, nicht versioniert): a6 (00-hook, --at 2, Vesuv+Säule über der Bucht, „POMPEJI: KEINE LAVA“), c3 (03-bimsregen, --at 33, Stadt bei Nacht, „POMPEJI: 18 STUNDEN ZEIT“). Noch offen: B = Glutlawine hinter dem Tempel (05-glutlawine --at 33, cam p [0,0.3,4.2] l [0,4.5,-30]) mit Label — erst nach dem Rendern (CPU).
+- upload.txt + konkurrenz.txt Entwurf fertig; Kapitelmarken nach join-chapters.sh prüfen.
