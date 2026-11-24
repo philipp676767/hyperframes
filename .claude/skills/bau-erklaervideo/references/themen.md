@@ -457,7 +457,6 @@ The scorecard and "What our numbers say" apply too.
 | Thema                 | Format | Datum      | Chat                              |
 | --------------------- | ------ | ---------- | --------------------------------- |
 | Handy gegen Klobrille | D      | 2026-11-24 | TikTok #93: Handy gegen Klobrille |
-| Papier 42-mal falten  | E      | 2026-11-24 | TikTok #94: Papier falten         |
 
 ## Verwendet
 
@@ -468,4 +467,4 @@ Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
 Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B),
 Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B),
-Fettbrand (B), Knicklicht, Treibsand (B), Parfum, Fingerknacken (B).
+Fettbrand (B), Knicklicht, Treibsand (B), Parfum, Fingerknacken (B), Papier 42-mal falten (E).

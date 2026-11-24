@@ -102,3 +102,4 @@ Umgebungen (insel, stadt, …).
 | 89  | Ei in der Mikrowelle (Gabel)     | B      | `tiktok/ei-mikrowelle`       | fruehstueckskueche-mikrowelle | morgen, sonnenaufgang     | 45,0 s | 2026-11-14 |
 | 91  | Flugmodus vergessen (Pilot)      | B      | `tiktok/flugmodus`           | abendflug-alpenvorland        | goldene stunde            | 45,0 s | 2026-11-15 |
 | 92  | Schiefer Turm von Pisa           | C      | `tiktok/pisa`                | piazza-dei-miracoli-wiese     | später nachmittag, warm   | 45,0 s | 2026-11-20 |
+| 94  | Papier 42-mal falten (Mond)      | E      | `tiktok/papier-falten`       | klassenzimmer-schule-weltall  | herbstnachmittag, sonne   | 45,0 s | 2026-11-24 |
