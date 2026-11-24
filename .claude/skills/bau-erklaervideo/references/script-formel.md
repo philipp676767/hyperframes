@@ -12,14 +12,14 @@ picture still assembles the thing in x-ray; the words go straight from
 the hook's Haken into the first part ("Unter dem Glas liegt ein
 Gitter …").
 
-**Format B „Was passiert, wenn …?“** (alternates with this
+**All nine types** (`themenarten.md`, picked at random) use this file. **Format B „Was passiert, wenn …?“** (one of them, earlier alternating with this
 one, SKILL.md step 0) uses this file too, with the differences in
 `format-was-passiert.md` — the hook starts straight with the act already
 happening (no spoken "Was passiert, wenn …?"), 3 Folgen instead of 3 build
 beats, the outcome as payoff.
 
 **Format C „Bauwerke“** (famous bridges, towers, buildings — third in
-the rotation A → B → C, 2026-11-20) uses this file too, with the
+since 2026-11-20) uses this file too, with the
 differences in `format-bauwerke.md`.
 
 ## Simple first — one idea per video (user's rule, 2026-11-11)
@@ -65,15 +65,16 @@ no sentence is there just to fill time.
 
 ## Shape (45 s)
 
-| Part                         | When       | Words | Job                                                                                                                |
-| ---------------------------- | ---------- | ----- | ------------------------------------------------------------------------------------------------------------------ |
-| **Hook** (line 1)            | 0–3 s      | ≤ 9   | **max 3 s**: the reason to watch to the end for _you_ (gain / danger) + twist; open loop 1                         |
-| **Beat 1**                   | 3–13 s     | 26–34 | first part; ends on the **second money shot** (~10 s) and opens loop 2                                             |
-| **Beat 2**                   | 13–21 s    | 20–26 | second part, bigger than beat 1; closes loop 2, opens loop 3                                                       |
-| **Mid twist** (re-hook)      | ~21–25 s   | 10–14 | the obvious explanation is wrong / it's even crazier — or a "Rate mal"                                             |
-| **Beat 3**                   | 25–33 s    | 22–28 | the decisive part (the real trick), the biggest money shot so far                                                  |
-| **Payoff + Übrigens** (line) | 33–39 s    | 20–26 | answer the hook's question + "Übrigens: …", the strongest fact                                                     |
-| **CTA** (last line)          | ~39–44.3 s | 12–16 | comment question + „Schreib's in die Kommentare.“ + „Folge für mehr Wissen.“ (quick) — the video ends ~0.7 s later |
+| Part                    | When       | Words | Job                                                                                                                |
+| ----------------------- | ---------- | ----- | ------------------------------------------------------------------------------------------------------------------ |
+| **Hook** (line 1)       | 0–3 s      | ≤ 9   | **max 3 s**: the reason to watch to the end for _you_ (gain / danger) + twist; open loop 1                         |
+| **Beat 1**              | 3–13 s     | 26–34 | first part; ends on the **second money shot** (~10 s) and opens loop 2                                             |
+| **Beat 2**              | 13–21 s    | 20–26 | second part, bigger than beat 1; closes loop 2, opens loop 3                                                       |
+| **Mid twist** (re-hook) | ~21–25 s   | 10–14 | the obvious explanation is wrong / it's even crazier — or a "Rate mal"                                             |
+| **Beat 3**              | 25–31 s    | 18–22 | the decisive part (the real trick), the biggest money shot so far                                                  |
+| **Übrigens** (optional) | 31–35 s    | 10–14 | one strange fact that makes the question **bigger**, right before the answer — never after it                      |
+| **Payoff** (line)       | 35–40 s    | 12–18 | **the answer, as a picture**: a fast, surprising reveal the viewer wants to see again — the last content           |
+| **CTA** (last line)     | ~40–44.3 s | 12–14 | comment question + „Schreib's in die Kommentare.“ + „Folge für mehr Wissen.“ (quick) — the video ends ~0.7 s later |
 
 **CTA history:** until 2026-10-23 both at the end; 2026-10-24 to -29
 follow in the middle; 2026-10-30 to -31 both at the end; 2026-11-01 to -03
@@ -386,26 +387,29 @@ numbers). So:
 - Concrete numbers (each becomes an LED-panel fact). Facts must be right;
   when unsure, phrase safely or check.
 
-### 3. Payoff
+### 3. Payoff — the answer at the very end, as a picture (2026-11-24)
 
-Close the hook's loop explicitly and with punch — this is the moment the
-hook's question is answered, so the `answer` word in `hf-config` (ding) sits
-here: "Deshalb ist die Rückseite _warm_." / "Darum bleibt echtes
-Geld _dunkel_." **Never** "Schau dich an. Du hast gerade X gebaut." (or
-any other "fertig"-line) — go straight on to "Übrigens".
+Learned from viral 3D shorts: **the video lives for its one question and
+ends where the curiosity ends.** So the answer is the **last content**
+(only the CTA line follows), and it is something you **see**: the melon
+falls apart, both bullets hit the ground at once, the tower stops
+swaying. Make the reveal **fast and surprising** (a slow-mo, then the
+result in one cut) so people want to rewatch it. The `answer` word in
+`hf-config` (ding) sits here: "Deshalb ist die Rückseite _warm_." /
+"Darum bleibt echtes Geld _dunkel_." **One question per video** — no
+second mystery that the payoff also has to close. **Never** "Schau dich
+an. Du hast gerade X gebaut." (or any other "fertig"-line).
 
-### 3b. Bonus fact — "Übrigens: …"
+### 3b. „Übrigens: …“ — optional, before the payoff (since 2026-11-24)
 
-Right after the payoff, on the same line: **"Übrigens: …"** + one
-surprising fact about the topic that people want to repeat to someone
-("Übrigens: In deinem Kühlschrank ist es kälter als am Nordpol im
-Sommer."). It must start with the word **"Übrigens"** — the "WUSSTEST
-DU?" badge and a sparkle sound key on it. Rules: 10–15 words, a number or
-a comparison, **true** (check it; phrase safely when unsure), not a
-repeat of a beat, one `*keyword*`. It is **the last content of the video**
-(only the comment question comes after it), so take the
-strongest fact you have left — the one people repeat ("Krass!" / "Wusste
-ich nicht") — and never a soft one.
+Until 2026-11-23 the bonus fact came after the payoff; there the viewers
+left. Now it is **optional** and stands **right before the payoff**: one
+strange fact that makes the question bigger („Übrigens: Er ist im Sommer
+15 Zentimeter größer.“ before the answer why the Eiffelturm doesn't
+fall). It starts with **"Übrigens"** (the "WUSSTEST DU?" badge and a
+sparkle sound key on it; the badge leaves when the answer comes), 10–14
+words, true, one `*keyword*`. If no fact sharpens the question, leave it
+out — the time goes to the answer.
 
 ### 4. CTA — the last line: comment question + „Folge für mehr Wissen.“
 
@@ -586,7 +590,8 @@ Trick:" is banned and the loop would only close in the payoff.)
 - [ ] The hook leaves a question in the viewer's head (≤ 4 words: „Warum nicht?“, „Wie?!“, „Und dann?“) and holds back the answer until the payoff
 - [ ] Hook lab done: six hooks scored, winner ≥ 10/12, top 3 with scores
 - [ ] No `[whispers]` in the hook (line 1 or the sentence after it)
-- [ ] 45-s shape: beat 1 → beat 2 → mid twist (~21 s) → beat 3 → payoff (≥ 33 s) → Übrigens (strongest fact) → comment question + „Folge für mehr Wissen.“
+- [ ] 45-s shape: beat 1 → beat 2 → mid twist (~21 s) → beat 3 → (Übrigens) → payoff = the answer as a picture, the last content (~35–40 s) → comment question + „Folge für mehr Wissen.“
+- [ ] One question per video; the answer is something you see; a fast reveal worth rewatching
 - [ ] Loop map: always ≥ 1 open question, the next opened before the last one closes
 - [ ] Escalation: a new "Was?!" every 6–8 s, weakest first, strongest in beat 3 / payoff; one "Rate mal" moment after ~13 s
 

@@ -13,10 +13,13 @@ scene + a promise, not a 3-second TikTok hook.
 
 ## Length and pace
 
-- **1.500–1.750 words** in total at **2.5 words/s** (`prepare-voice.sh`
-  RATE 2.5, pauses 0.3 s) → 10–12 min plus the 20-s end screen.
-- **Intro (chapter 0): 110–170 words, 40–70 s** (archive voices + scene + thesis + questions + framing + subscribe ask). Chapters: **150–300 words
-  (60–120 s)**. Finale: 120–180 words.
+- **≈ 1.500–1.600 words** in total at **2.5 words/s** (`prepare-voice.sh`
+  RATE 2.5, pauses 0.3 s) → ≈ 10–10:45 min plus the 20-s end screen. The
+  binding limit is the **ElevenLabs budget: 9 300–9 800 characters** in
+  all `script.txt` (1 character = 1 credit; video total 9 500–10 000,
+  `scripts/credits.py`).
+- **Intro (chapter 0): 110–170 words, 40–70 s** (archive voices + scene + thesis + questions + framing + subscribe ask). Chapters: **150–220 words
+  (60–90 s)**. Finale: 120–180 words.
 - One chapter = one composition with its own `script.txt`: **one paragraph
   per line** (3–6 sentences).
 
@@ -129,16 +132,17 @@ How the documentary channels end (Simplicissimus, tatsache, Kurzgesagt):
 
 ## Word count for `plan.md`
 
-| Part                       | Words           | Speech (2.5 w/s)  |
-| -------------------------- | --------------- | ----------------- |
-| Intro                      | 110–170         | 40–70 s           |
-| 7 chapters                 | 7 × 170–200     | 7 × 68–80 s       |
-| Finale (+ 20-s end screen) | 120–180         | 48–72 s + ~12 s   |
-| **Sum**                    | **1.500–1.750** | **≈ 10:15–11:45** |
+| Part                       | Words           | Speech (2.5 w/s)     |
+| -------------------------- | --------------- | -------------------- |
+| Intro                      | 110–170         | 40–70 s              |
+| 7 chapters                 | 7 × 160–185     | 7 × 64–74 s          |
+| Finale (+ 20-s end screen) | 120–180         | 48–72 s + ~12 s      |
+| **Sum**                    | **1.500–1.600** | **≈ 10:00–10:45**    |
+| **Characters = credits**   | **9 300–9 800** | `scripts/credits.py` |
 
 ## Self-check before the voice (every chapter + once for the whole)
 
-- [ ] Whole: 1.500–1.750 words; intro 40–70 s; 6–9 chapters of 60–120 s; finale with the 20-s end screen
+- [ ] Whole: 1.500–1.600 words and `credits.py` OK (9 300–9 800 characters); intro 40–70 s; 6–9 chapters of 60–120 s; finale with the 20-s end screen
 - [ ] Intro: archive voices → „Es ist <Wochentag>, der <Datum>.“ scene cut before the climax → thesis → 2–3 guiding questions → „Das ist die Geschichte …“ → one subscribe sentence. No greeting or channel intro
 - [ ] Search word spoken in the first ~15 s, in the title, first word of the description
 - [ ] Sounds like a documentary narrator read aloud (`sprechstil.md` self-check): flowing sentences, paragraphs, few questions, signposting

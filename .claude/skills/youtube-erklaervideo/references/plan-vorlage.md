@@ -18,7 +18,7 @@
 | #   | Fakt | Zahl / Vergleich | Quelle | Kapitel |
 | --- | ---- | ---------------- | ------ | ------- |
 
-## Kapitel (Hook + 6–9 Kapitel + Finale, 1.700–1.950 Wörter)
+## Kapitel (Hook + 6–9 Kapitel + Finale, ≈ 1.500–1.600 Wörter = 9 300–9 800 Zeichen / Credits, `scripts/credits.py`)
 
 | Nr  | Ordner  | Titel (kurz, neugierig) | Mini-Hook (Frage) | Kernidee | Offene Frage am Ende | Money-Shot | Ort |
 | --- | ------- | ----------------------- | ----------------- | -------- | -------------------- | ---------- | --- |

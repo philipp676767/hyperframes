@@ -396,7 +396,10 @@
         });
         if (fi >= 0) {
           const f0 = words[fi].start;
-          const f1 = ctaWords.length ? ctaWords[0].start : words[words.length - 1].end;
+          // until the answer word (the payoff comes after "Übrigens" since 2026-11-24), else until the CTA
+          const ansW = cfg.answer ? findWord(cfg.answer, f0 + 0.5) : null;
+          const ctaS = ctaWords.length ? ctaWords[0].start : words[words.length - 1].end;
+          const f1 = ansW != null && ansW < ctaS ? ansW : ctaS;
           tl.fromTo(
             "#fact-badge",
             { opacity: 0, scale: 0.4, rotation: -8 },

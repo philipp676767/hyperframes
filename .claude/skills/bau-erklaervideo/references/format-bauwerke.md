@@ -5,7 +5,7 @@ The series' third format (user's idea, 2026-11-20: „noch größere Sachen
 **how a famous structure stands, holds or works** — the trick that keeps
 the Burj Khalifa upright in the wind, why the Leaning Tower of Pisa
 doesn't fall, how the Golden Gate Bridge hangs on two cables. The
-formats rotate **A → B → C → A …** (SKILL.md step 0).
+It is type C of the nine types picked at random (`themenarten.md`, SKILL.md step 0).
 
 Everything else is the house standard: Jan, the realistic look, captions,
 keywords, name tags, the first-3-seconds rules, the hook that leaves a
@@ -45,15 +45,16 @@ end, cover, descriptions, learning log. This file only lists what is
 
 ## Script shape (exactly 45 s, 130–142 words — as format A)
 
-| Part                  | When       | Job                                                                                                    |
-| --------------------- | ---------- | ------------------------------------------------------------------------------------------------------ |
-| **Hook** (line 1)     | 0–3 s      | the structure + a claim with a hidden reason („Darum fällt der Turm von Pisa nicht um.“)               |
-| **Beat 1**            | 3–13 s     | you are there, the felt moment (height, wind, the lean); second money shot ~10 s                       |
-| **Beat 2**            | 13–21 s    | the problem the builders had (wind, soft ground, weight, water)                                        |
-| **Mid twist**         | ~21–25 s   | „Rate mal“ or the surprise (it nearly fell, it moves, it's hollow …)                                   |
-| **Beat 3**            | 25–33 s    | the trick, shown in x-ray — max 2 terms, one everyday comparison                                       |
-| **Payoff + Übrigens** | 33–39 s    | the hook's question answered in one line + the strongest fact                                          |
-| **CTA** (last line)   | ~39–44.3 s | comment question about the viewer's own experience („Warst du schon oben?“) + „Folge für mehr Wissen.“ |
+| Part                    | When       | Job                                                                                                    |
+| ----------------------- | ---------- | ------------------------------------------------------------------------------------------------------ |
+| **Hook** (line 1)       | 0–3 s      | the structure + a claim with a hidden reason („Darum fällt der Turm von Pisa nicht um.“)               |
+| **Beat 1**              | 3–13 s     | you are there, the felt moment (height, wind, the lean); second money shot ~10 s                       |
+| **Beat 2**              | 13–21 s    | the problem the builders had (wind, soft ground, weight, water)                                        |
+| **Mid twist**           | ~21–25 s   | „Rate mal“ or the surprise (it nearly fell, it moves, it's hollow …)                                   |
+| **Beat 3**              | 25–33 s    | the trick, shown in x-ray — max 2 terms, one everyday comparison                                       |
+| **Übrigens** (optional) | 31–35 s    | one strange fact that makes the question bigger (before the answer)                                    |
+| **Payoff**              | 35–40 s    | the answer **as a picture**, fast reveal — the last content                                            |
+| **CTA** (last line)     | ~39–44.3 s | comment question about the viewer's own experience („Warst du schon oben?“) + „Folge für mehr Wissen.“ |
 
 ## Picture
 

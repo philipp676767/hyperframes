@@ -74,7 +74,7 @@ viewer has done or felt with their own body or their own things.
 5. **The test question:** „Has the viewer done or felt this themselves —
    or would they feel it while watching?“ If neither, think twice.
 
-**The format comes first** (SKILL.md step 0, always alternating): for
+**The type comes first** (SKILL.md step 0, random among the types of `themenarten.md`, 2026-11-24): for
 format A pick from **Offen — Format A „Bauen“**, **Offen —
 Detail-Rätsel** (one small odd detail) or **Offen — Dein Look & dein
 Hobby** (the science behind what viewers show off), for format B from
@@ -269,7 +269,7 @@ sentence 2 = the Umdeutung ("Das ist kein Fehler. Das ist Absicht.");
 the beats build the reason. Same scorecard — a detail only goes in when
 it carries 45 s (≥ 5 facts: the reason, the physics, the history /
 an accident, a comparison, the "Übrigens"); else keep it for a later
-short format. Counts as format A in the alternation.
+short format. Counts as type A.
 
 | Detail (Hook-Frage)                                                         | Die Auflösung (nur fürs Payoff!)                                                                     | Money-Shot                                                             | Kategorie |
 | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | --------- |
@@ -390,11 +390,74 @@ The scorecard and "What our numbers say" apply too.
 | ★ Hoover Dam                       | „Dieser Damm hält einen ganzen See zurück – mit einem Bogen.“ | Bogenstaumauer drückt die Kraft in den Fels (prüfen)                   | Wasserdruck-Pfeiler, Kraft fließt in die Felswände |
 | ★ Elbphilharmonie                  | „In diesem Saal hörst du jedes Husten – überall gleich.“      | 10.000 gefräste Gipsplatten streuen den Schall (prüfen)                | Schallwellen prallen an der Waben-Wand             |
 
+## Offen — D Duell („X gegen Y – was gewinnt?“, themenarten.md)
+
+| Duell                                       | Hook (Frage im Kopf)                                | Antwort (nur Payoff, Fakten prüfen)                     |
+| ------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------- |
+| ★ Abgefeuerte gegen fallen gelassene Kugel  | „Welche Kugel landet zuerst?“                       | gleichzeitig (Schwerkraft wirkt gleich)                 |
+| ★ Dübel in Gipskarton gegen Beton           | „Welcher Dübel hält mehr – und wie viel mehr?“      | Zahlen prüfen                                           |
+| ★ Heißes gegen kaltes Wasser im Gefrierfach | „Welches Wasser friert zuerst?“                     | umstritten (Mpemba) — sauber und vorsichtig formulieren |
+| ★ Airbag gegen Gurt                         | „Was rettet dich mehr: Gurt oder Airbag?“           | Gurt (prüfen)                                           |
+| ★ Treppe gegen Aufzug im Hochhaus           | „Wer ist im 20. Stock zuerst: du oder der Aufzug?“  | prüfen                                                  |
+| ★ Handy gegen Klobrille                     | „Was ist dreckiger: dein Handy oder die Klobrille?“ | prüfen                                                  |
+
+## Offen — E Experiment (themenarten.md)
+
+| Experiment                            | Hook                                                             | Ergebnis (nur Payoff, prüfen)                      | Sicherheit       |
+| ------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------- | ---------------- |
+| ★ Melone mit Zahnseide schneiden      | „Kann Zahnseide eine Melone zerschneiden?“                       | ja, der dünne Faden drückt enorm (prüfen)          | harmlos          |
+| ★ Ei unter dem Auto                   | „Ein Ei hält ein ganzes Auto aus?“                               | Form verteilt die Last (prüfen)                    | harmlos          |
+| ★ Eiswürfel mit Faden angeln          | „Du hebst diesen Eiswürfel mit einem Faden hoch – nur mit Salz.“ | Salz taut, Wasser friert neu um den Faden (prüfen) | harmlos          |
+| ★ Wasser in der Mikrowelle überhitzen | „Dein Wasser kocht nicht – und explodiert trotzdem.“             | Siedeverzug, Warnung                               | Warnung          |
+| ★ Elefantenzahnpasta                  | „Dieser Schaum kommt aus einer einzigen Flasche.“                | Katalysator, Schaumberg (prüfen)                   | nicht nachmachen |
+| ★ Seifenblase im Frost                | „Bei −10 °C gefriert deine Seifenblase in der Luft.“             | Eiskristalle wachsen auf der Haut (prüfen)         | harmlos          |
+
+## Offen — F Rätsel zum Mitmachen (themenarten.md)
+
+| Rätsel                            | Hook                                                | Die eine Idee dahinter             |
+| --------------------------------- | --------------------------------------------------- | ---------------------------------- |
+| ★ Streichholz-Rätsel              | „Leg ein Streichholz um – und die Rechnung stimmt.“ | Umdenken, die Lösung ist kein Plus |
+| ★ Seil um die Erde                | „Du verlängerst ein Seil um die Erde um 1 Meter …“  | Umfang wächst nur mit 2π (prüfen)  |
+| ★ 9 Kugeln, eine schwerer         | „Finde die schwere Kugel mit nur 2 Wiegungen.“      | Dreiergruppen                      |
+| ★ Brücke bei Nacht (Taschenlampe) | „Vier Leute, eine Lampe, 17 Minuten.“               | die Langsamen zusammen schicken    |
+| ★ Ziegenproblem                   | „Wechselst du die Tür – oder nicht?“                | Wechseln verdoppelt die Chance     |
+
+## Offen — G Wahre Geschichte (themenarten.md — Fakten immer per Websuche prüfen)
+
+| Geschichte                                      | Hook                                              | Warum überlebt (Kernidee)                    |
+| ----------------------------------------------- | ------------------------------------------------- | -------------------------------------------- |
+| ★ Vesna Vulović (Sturz aus 10 km, 1972)         | „Sie fiel aus 10 Kilometern – und überlebte.“     | Wrackteil, Schnee, Hang (prüfen, vorsichtig) |
+| ★ Pilot aus dem Cockpit gesaugt (BA 5390, 1990) | „Sein Fenster flog weg – und er hing draußen.“    | Druck, Kälte, Crew hielt ihn (prüfen)        |
+| ★ Mann in Lawine (Airbag-Rucksack)              | „Er lag 2 Meter unter Schnee – und atmete.“       | Atemhöhle, Lawinenairbag (prüfen)            |
+| ★ Blitz trifft Golfer                           | „Ein Blitz traf ihn – und er stand wieder auf.“   | Strom läuft außen über die Haut (prüfen)     |
+| ★ Höhlentaucher-Rettung Thailand (2018)         | „13 Menschen saßen 2 Wochen in einer Höhle fest.“ | Luft, Wasser, Rettung unter Wasser (prüfen)  |
+
+## Offen — H Dein Körper verändert sich (themenarten.md — vorsichtig formulieren)
+
+| Thema                     | Hook                                                         | Vorher → Nachher (prüfen)         |
+| ------------------------- | ------------------------------------------------------------ | --------------------------------- |
+| ★ Mundatmung              | „Mundatmung kann dein Gesicht verändern.“                    | schmaler Kiefer, Gesichtsform     |
+| ★ Handy-Nacken            | „Dein Kopf wiegt beim Scrollen wie ein Kind auf dem Nacken.“ | Haltung, Last auf der Wirbelsäule |
+| ★ Kaugummi kauen          | „Kaugummi trainiert deinen Kiefer – sichtbar?“               | Kaumuskel (vorsichtig)            |
+| ★ Barfußlaufen            | „Barfuß verändert sich dein Fuß.“                            | Hornhaut, Muskeln, Laufstil       |
+| ★ Zuckerfrei: deine Zähne | „Was Zucker in 30 Tagen mit deinen Zähnen macht.“            | Zahnschmelz (vorsichtig)          |
+
+## Offen — I So wird's gemacht (themenarten.md)
+
+| Ding                | Hook                                               | Der Trick im Werk (prüfen)     |
+| ------------------- | -------------------------------------------------- | ------------------------------ |
+| ★ Basketball-Grip   | „Darum rutscht dir ein NBA-Ball nie aus der Hand.“ | Noppen, Leder, Einlauf         |
+| ★ Bleistift         | „Wie kommt die Mine in den Bleistift?“             | Holz-Sandwich, zwei Hälften    |
+| ★ Schokoladen-Knack | „Darum knackt gute Schokolade.“                    | Temperieren, Kristallform      |
+| ★ Gummibärchen      | „Gummibärchen werden in Stärke-Mehl gegossen.“     | Mogul-Anlage, Stärkeformen     |
+| ★ Glasflasche       | „Deine Flasche war vor 10 Minuten noch flüssig.“   | Tropfen, Form, Blasen mit Luft |
+
 ## Reserviert (in Arbeit)
 
-| Thema                  | Format | Datum      | Chat                               |
-| ---------------------- | ------ | ---------- | ---------------------------------- |
-| Schiefer Turm von Pisa | C      | 2026-11-20 | TikTok #92: Schiefer Turm von Pisa |
+| Thema                 | Format | Datum      | Chat                              |
+| --------------------- | ------ | ---------- | --------------------------------- |
+| Handy gegen Klobrille | D      | 2026-11-24 | TikTok #93: Handy gegen Klobrille |
+| Papier 42-mal falten  | E      | 2026-11-24 | TikTok #94: Papier falten         |
 
 ## Verwendet
 
