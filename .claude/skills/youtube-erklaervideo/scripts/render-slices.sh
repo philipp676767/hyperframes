@@ -49,7 +49,7 @@ open(p, 'w').write(s)
 PY
     sed -i 's|frame(e.detail.time)|frame(e.detail.time + (window.HF_T0 \|\| 0))|; s|frame(window.__hfThreeTime \|\| 0)|frame((window.__hfThreeTime \|\| 0) + (window.HF_T0 \|\| 0))|g' "$S/assets/world.js"
     echo "START $CH slice $k try $try $(stamp) (${T0}s +${LEN}s)" >> "$LOG"
-    ( cd "$S" && npx --yes hyperframes@0.8.181 render -o out.mp4 > render.log 2>&1 < /dev/null )
+    ( cd "$S" && npx --yes hyperframes@0.8.181 render -w "${WORKERS:-4}" -o out.mp4 > render.log 2>&1 < /dev/null )
     GOT=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT" 2>/dev/null || echo 0)
     if python3 -c "import sys; sys.exit(0 if abs(float('${GOT:-0}') - $LEN) < 0.1 else 1)"; then
       echo "DONE $CH slice $k $(stamp)" >> "$LOG"
