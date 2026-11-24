@@ -7,6 +7,7 @@ Regel in den Skill. Für Zuschauer-Wissen aus der TikTok-Serie: `tiktok/lernlog.
 
 ## Nächstes Mal (offen) — gilt für jedes Video
 
+- [ ] **Credit-Budget** (Nutzer, 2026-11-24): jedes YouTube-Video ca. 9 500, max. 10 000 ElevenLabs-Credits (eleven_v3: 1 Zeichen = 1 Credit) → Skript 9 300–9 800 Zeichen (`scripts/credits.py`), ≈ 1.500–1.600 Wörter. Erste Nachricht jedes YouTube-Chats: „ElevenLabs: X von Y Credits übrig (Reset am …)“. Titanic-Skript hatte 10 874 Zeichen — wäre zu teuer gewesen.
 - [ ] **Neue Stimme: Johannes Dokumentarfilm** (Nutzer, 2026-11-20, aus 10 Proben in `youtube/stimmen-casting/` gewählt, Nr. 09; `voice_id r8MyP4qUsq5WFFSkPdfV`, eleven_v3) statt Jan — klassischer Doku-Erzähler. Beim ersten Video mit ihm Tempo (2,5 Wörter/s) und Klang der Regieanweisungen prüfen; Archiv-Stimme muss deutlich anders klingen.
 - [ ] **Coverbild mit extrem viel Mühe** (Nutzer, 2026-11-19: „muss sofort zeigen, warum man das Video sehen muss“; `references/thumbnail.md`): spannendster Moment vor dem Ausgang, Motiv riesig (Crop), Poster-Licht, eisblau/kräftig statt dunkel, gelbe Balken oder Zeiger-Label, eine Botschaft, kein Röntgen-Blick; ≥ 12 Kandidaten, 3 Archetypen, Konkurrenz-Test mit `thumb-vergleich.py`.
 - [ ] **Kein Text im Bild** (Nutzer, 2026-11-17): keine Untertitel, Titelkarte, Kapitel-Schilder, Badges, Abo-Pillen, Panels — nur Namensschilder mit Pfeil, die etwas zeigen. Zahlen gehören auf Displays in der 3D-Welt.
