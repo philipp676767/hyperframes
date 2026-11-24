@@ -454,9 +454,9 @@ The scorecard and "What our numbers say" apply too.
 
 ## Reserviert (in Arbeit)
 
-| Thema                  | Format | Datum      | Chat                               |
-| ---------------------- | ------ | ---------- | ---------------------------------- |
-| Schiefer Turm von Pisa | C      | 2026-11-20 | TikTok #92: Schiefer Turm von Pisa |
+| Thema                 | Format | Datum      | Chat                              |
+| --------------------- | ------ | ---------- | --------------------------------- |
+| Handy gegen Klobrille | D      | 2026-11-24 | TikTok #93: Handy gegen Klobrille |
 
 ## Verwendet
 
