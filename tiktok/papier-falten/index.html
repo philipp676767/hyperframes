@@ -248,13 +248,14 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="23.9"
+      data-duration="45"
       data-width="1080"
       data-height="1920"
     >
       <canvas id="stage" width="1080" height="1920"></canvas>
       <div id="captions"></div>
-      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="23.9" data-track-index="4" data-volume="1"></audio>
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="45" data-track-index="2" data-volume="1"></audio>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="45" data-track-index="4" data-volume="1"></audio>
       <!-- Per video: the spoken word that answers the hook (in the payoff) —
            it gets the "ding" (scripts/build-sfx.mjs). "question" stays EMPTY:
            no question text on screen since 2026-11-17 (user's rule). -->
@@ -475,7 +476,7 @@
             );
           }
         }
-        tl.set({}, {}, 23.9);
+        tl.set({}, {}, 45);
         window.__timelines["main"] = tl;
       })();
     </script>
