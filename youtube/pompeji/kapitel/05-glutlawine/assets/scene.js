@@ -98,7 +98,7 @@ const q = new THREE.Quaternion();
 const walker = makePerson({ coat: 0x8a7a5a });
 const cloth = new THREE.Mesh(
   new THREE.SphereGeometry(0.024, 16, 10, 0, Math.PI * 2, 0, Math.PI * 0.7),
-  real.fabric(0xd8d0c0, { side: THREE.DoubleSide }),
+  new THREE.MeshStandardMaterial({ color: 0xd8d0c0, roughness: 1, side: THREE.DoubleSide }),
 );
 cloth.position.y = 0.174;
 walker.add(cloth);
