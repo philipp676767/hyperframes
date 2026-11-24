@@ -27,7 +27,8 @@ prompt contains the word **„YouTube“** („neues YouTube-Video“, „YouTub
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Format         | **1920×1080, 30 fps, 10–12 min** (+ the 20-s end screen inside the finale)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Voice          | ElevenLabs **Johannes Dokumentarfilm**, `voice_id r8MyP4qUsq5WFFSkPdfV`, model **`eleven_v3`**, `generations_count: 1` — same voice and settings for every chapter. Chosen by the user on 2026-11-20 from a 10-voice casting (`youtube/stimmen-casting/`, sample 09) — a classic German documentary narrator (Terra X / ZDF style) instead of the TikTok voice Jan; a video already voiced with Jan keeps Jan, every new video uses Johannes. The archive voice (O-Töne) must sound clearly different from him. **2.5 words/s, a calm documentary narrator** (2026-11-15; was 2.8): `prepare-voice.sh` cuts pauses to 0.3 s and sets the tempo per chapter so all chapters sound like one take. **0–2 delivery tags per chapter**, calm base tone |
-| Words          | **1.500–1.750** in total; intro 110–170, chapters 150–300 each, finale 120–180                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Credits        | **Every video uses ~9 500, at most 10 000 ElevenLabs credits** (user, 2026-11-24). eleven_v3 = 1 credit per character sent (spaces, tags, archive quotes included). Script **9 300–9 800 characters** (`scripts/credits.py <slug>`), the rest is the reserve for at most one repaired piece; no castings, test takes or second takes beyond that. **The first message of every YouTube chat says how many credits are left** (step 0-credits)                                                                                                                                                                                                                                                                                                     |
+| Words          | **≈ 1.500–1.600** in total (follows from the credit budget, ~6.1 characters per word); intro 110–170, chapters 150–220 each, finale 120–180                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | Structure      | The documentary formula of tatsache / vince / Simplicissimus (`references/doku-vorbilder.md`): intro 40–70 s (**archive voices** → „Es ist <Wochentag>, der <Datum>.“ scene cut before the climax → thesis → 2–3 guiding questions → „Das ist die Geschichte …“ + title card → one subscribe sentence) → **6–9 chapters à 60–120 s** in time order (background / the machine → the event with countdown → cause → consequences) → re-hook at ~50–60 % → finale: answer + **epilogue** (what became of them) + what remains today + calm closing line + next-video pointer → 20-s end screen (`references/aufbau.md`)                                                                                                                              |
 | Language       | **YouTube narrator, not a long TikTok** (user, 2026-11-15, after YouTube #1): flowing sentences of 12–18 words in paragraphs, few questions, signposting, historic present for stories, analogies played out, dry humour — `references/sprechstil.md`. The TikTok `script-formel.md` sentence rules do **not** apply. Kept: Du-Form when the viewer is addressed, one idea at a time, ≤ 2 terms per chapter, no filler words, facts checked                                                                                                                                                                                                                                                                                                       |
 | CTA            | **Early and in the middle, never at the end** (user, 2026-11-15/17): one „**abonniere** den Kanal …“ sentence at the end of the intro (≈ 10 %, like tatsache), one comment question + „Schreib's in die Kommentare.“ at ~50–70 %; the finale only points to the next video. Never „Folge für mehr Wissen“. No greeting, no channel intro                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -65,6 +66,25 @@ origin main`, read `youtube/<slug>/fortschritt.md` and `plan.md`, and
 continue at the first chapter whose status is not „gerendert“ (or with the
 render queue / joining / delivery). Don't redo finished chapters. Name the chat
 as that video (step 0a: `YouTube #<Nr>: <Thema>`, the Nr from its row).
+
+### 0-credits. Credits — say them first
+
+Before anything else (also in a „mach weiter“ chat): call
+`account_get_usage` (ElevenLabs MCP; load it with ToolSearch) and start the
+chat's **first message** with one line:
+
+„ElevenLabs: **<limit − character_count> von <limit> Credits übrig**
+(Reset am <next_character_count_reset_unix as date>). Dieses Video braucht
+ca. 9 500–10 000.“ — in a continued chat also „davon für dieses Video schon
+verbraucht: <n> (fortschritt.md)“.
+
+If fewer credits are left than the video still needs: say so in the same
+line („reicht nicht — es fehlen ca. <n>“), still do topic, facts,
+packaging, script, world and chapter builds (they cost no credits), voice
+chapters in order only while the next piece fits, then stop before the
+first piece that would not fit, note it in `fortschritt.md` and tell the
+user (top up or wait for the reset, then „mach weiter“). Never start a
+generation that the account cannot pay — a refused take is lost work.
 
 ### 0. Topic — reserve it FIRST
 
@@ -145,7 +165,10 @@ chapters with `references/aufbau.md` (structure, intro) and
 before/after example first; the TikTok `script-formel.md` sentence rules do
 not apply here; **`references/beispiel-skript.md`** is a whole script in
 this style — read it once). Fill the chapter table + threads + re-hook + money shots
-in `plan.md`. Count the words (1.500–1.750). Read every chapter aloud in
+in `plan.md`. Count the words (≈ 1.500–1.600) and **the credits:**
+`python3 -I .claude/skills/youtube-erklaervideo/scripts/credits.py <slug>`
+must say OK (9 300–9 800 characters) — shorten or extend the script until
+it does, before any voice. Read every chapter aloud in
 your head: does it sound like a documentary or like captions? Run the
 self-checks in both files and fix every point — you are the only reviewer.
 Each chapter's `script.txt`: **one paragraph (3–6 sentences) per line**,
@@ -182,7 +205,10 @@ scripts/sync-html.mjs` (estimated timings; read its warnings).
 2. **Voice** (as TikTok step 3): the chapter's `script.txt` joined to one
    paragraph, every `*` removed, tags kept → `creative_generate_speech`
    (Johannes `r8MyP4qUsq5WFFSkPdfV`, `eleven_v3`, `generations_count: 1`) → poll → `curl` to
-   `assets/vo_takes/main.mp3` right away. 429 on the first try → short
+   `assets/vo_takes/main.mp3` right away. After each chapter add its
+   credits (`price.credits` of the generations) to the „Credits“ line in
+   `fortschritt.md`; a repair take only if the video total stays ≤ 10 000
+   (otherwise keep the take and fix it in the cut). 429 on the first try → short
    pieces (TikTok Gotchas „ElevenLabs 429“, `scripts/join-voice.sh`). Then:
    ```bash
    bash scripts/prepare-voice.sh       # pauses 0.3 s, tempo → 2.5 words/s, -14 LUFS

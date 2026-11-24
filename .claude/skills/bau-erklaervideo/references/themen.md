@@ -403,14 +403,14 @@ The scorecard and "What our numbers say" apply too.
 
 ## Offen — E Experiment (themenarten.md)
 
-| Experiment                            | Hook                                                  | Ergebnis (nur Payoff, prüfen)              | Sicherheit       |
-| ------------------------------------- | ----------------------------------------------------- | ------------------------------------------ | ---------------- |
-| ★ Melone mit Zahnseide schneiden      | „Kann Zahnseide eine Melone zerschneiden?“            | ja, der dünne Faden drückt enorm (prüfen)  | harmlos          |
-| ★ Ei unter dem Auto                   | „Ein Ei hält ein ganzes Auto aus?“                    | Form verteilt die Last (prüfen)            | harmlos          |
-| ★ Papier 42-mal falten                | „Falte dieses Blatt 42-mal – es reicht bis zum Mond.“ | Verdopplung (prüfen)                       | harmlos          |
-| ★ Wasser in der Mikrowelle überhitzen | „Dein Wasser kocht nicht – und explodiert trotzdem.“  | Siedeverzug, Warnung                       | Warnung          |
-| ★ Elefantenzahnpasta                  | „Dieser Schaum kommt aus einer einzigen Flasche.“     | Katalysator, Schaumberg (prüfen)           | nicht nachmachen |
-| ★ Seifenblase im Frost                | „Bei −10 °C gefriert deine Seifenblase in der Luft.“  | Eiskristalle wachsen auf der Haut (prüfen) | harmlos          |
+| Experiment                            | Hook                                                             | Ergebnis (nur Payoff, prüfen)                      | Sicherheit       |
+| ------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------- | ---------------- |
+| ★ Melone mit Zahnseide schneiden      | „Kann Zahnseide eine Melone zerschneiden?“                       | ja, der dünne Faden drückt enorm (prüfen)          | harmlos          |
+| ★ Ei unter dem Auto                   | „Ein Ei hält ein ganzes Auto aus?“                               | Form verteilt die Last (prüfen)                    | harmlos          |
+| ★ Eiswürfel mit Faden angeln          | „Du hebst diesen Eiswürfel mit einem Faden hoch – nur mit Salz.“ | Salz taut, Wasser friert neu um den Faden (prüfen) | harmlos          |
+| ★ Wasser in der Mikrowelle überhitzen | „Dein Wasser kocht nicht – und explodiert trotzdem.“             | Siedeverzug, Warnung                               | Warnung          |
+| ★ Elefantenzahnpasta                  | „Dieser Schaum kommt aus einer einzigen Flasche.“                | Katalysator, Schaumberg (prüfen)                   | nicht nachmachen |
+| ★ Seifenblase im Frost                | „Bei −10 °C gefriert deine Seifenblase in der Luft.“             | Eiskristalle wachsen auf der Haut (prüfen)         | harmlos          |
 
 ## Offen — F Rätsel zum Mitmachen (themenarten.md)
 
@@ -457,6 +457,7 @@ The scorecard and "What our numbers say" apply too.
 | Thema                 | Format | Datum      | Chat                              |
 | --------------------- | ------ | ---------- | --------------------------------- |
 | Handy gegen Klobrille | D      | 2026-11-24 | TikTok #93: Handy gegen Klobrille |
+| Papier 42-mal falten  | E      | 2026-11-24 | TikTok #94: Papier falten         |
 
 ## Verwendet
 
