@@ -392,14 +392,13 @@ The scorecard and "What our numbers say" apply too.
 
 ## Offen — D Duell („X gegen Y – was gewinnt?“, themenarten.md)
 
-| Duell                                       | Hook (Frage im Kopf)                                | Antwort (nur Payoff, Fakten prüfen)                     |
-| ------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------- |
-| ★ Abgefeuerte gegen fallen gelassene Kugel  | „Welche Kugel landet zuerst?“                       | gleichzeitig (Schwerkraft wirkt gleich)                 |
-| ★ Dübel in Gipskarton gegen Beton           | „Welcher Dübel hält mehr – und wie viel mehr?“      | Zahlen prüfen                                           |
-| ★ Heißes gegen kaltes Wasser im Gefrierfach | „Welches Wasser friert zuerst?“                     | umstritten (Mpemba) — sauber und vorsichtig formulieren |
-| ★ Airbag gegen Gurt                         | „Was rettet dich mehr: Gurt oder Airbag?“           | Gurt (prüfen)                                           |
-| ★ Treppe gegen Aufzug im Hochhaus           | „Wer ist im 20. Stock zuerst: du oder der Aufzug?“  | prüfen                                                  |
-| ★ Handy gegen Klobrille                     | „Was ist dreckiger: dein Handy oder die Klobrille?“ | prüfen                                                  |
+| Duell                                       | Hook (Frage im Kopf)                               | Antwort (nur Payoff, Fakten prüfen)                     |
+| ------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------- |
+| ★ Abgefeuerte gegen fallen gelassene Kugel  | „Welche Kugel landet zuerst?“                      | gleichzeitig (Schwerkraft wirkt gleich)                 |
+| ★ Dübel in Gipskarton gegen Beton           | „Welcher Dübel hält mehr – und wie viel mehr?“     | Zahlen prüfen                                           |
+| ★ Heißes gegen kaltes Wasser im Gefrierfach | „Welches Wasser friert zuerst?“                    | umstritten (Mpemba) — sauber und vorsichtig formulieren |
+| ★ Airbag gegen Gurt                         | „Was rettet dich mehr: Gurt oder Airbag?“          | Gurt (prüfen)                                           |
+| ★ Treppe gegen Aufzug im Hochhaus           | „Wer ist im 20. Stock zuerst: du oder der Aufzug?“ | prüfen                                                  |
 
 ## Offen — E Experiment (themenarten.md)
 
@@ -454,10 +453,8 @@ The scorecard and "What our numbers say" apply too.
 
 ## Reserviert (in Arbeit)
 
-| Thema                 | Format | Datum      | Chat                              |
-| --------------------- | ------ | ---------- | --------------------------------- |
-| Handy gegen Klobrille | D      | 2026-11-24 | TikTok #93: Handy gegen Klobrille |
-| Papier 42-mal falten  | E      | 2026-11-24 | TikTok #94: Papier falten         |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
@@ -468,4 +465,4 @@ Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
 Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B),
 Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B),
-Fettbrand (B), Knicklicht, Treibsand (B), Parfum, Fingerknacken (B).
+Fettbrand (B), Knicklicht, Treibsand (B), Parfum, Fingerknacken (B), Papier 42-mal falten (E).
