@@ -82,7 +82,7 @@ export const shots = [
     zoom: 1,
   },
   // over in moments: the cloud covers the town (wide, no people)
-  { at: T.fuer - 0.2, from: [-16, 9, 18], to: [-14, 8.6, 15], look: [2, 1, -2], zoom: 1 },
+  { at: T.fuer - 0.2, from: [30, 10, -4], to: [28, 10, -7], look: [0, 4, -20], zoom: 1 },
   // Stabiae: pillows on their heads, a wild sea
   {
     at: T.stabiae,
