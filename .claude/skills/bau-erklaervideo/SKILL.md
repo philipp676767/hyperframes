@@ -5,13 +5,12 @@ description: 'Make the next 45-s TikTok (9:16) of the German series "Du hast ger
 
 # Bau-Erklärvideo (TikTok series)
 
-One video = one topic, in one of **two formats that always alternate**
-(step 0): **A „Bauen“** — the thing is built up piece by piece (this
-file, `references/script-formel.md`) — and **B „Was passiert, wenn …?“**
-— a scenario played out with its consequences
-(`references/format-was-passiert.md`, which lists only what differs from
-A; the hook starts straight with the act — „Was passiert, wenn …?“ is
-the idea, never spoken since 2026-10-29). Voice, look and structure stay; the script (incl.
+One video = one topic, of one of **nine video types picked at random**
+(step 0, `references/themenarten.md`): A Alltagsding, B „Was passiert,
+wenn …?“ (`references/format-was-passiert.md`), C Bauwerke
+(`references/format-bauwerke.md`), D Duell, E Experiment, F Rätsel, G
+Wahre Geschichte, H Dein Körper verändert sich, I So wird's gemacht —
+all on top of `references/script-formel.md`, always exactly 45 s. Voice, look and structure stay; the script (incl.
 hook title and a topic-specific CTA question), the 3D subject and its story
 beats change every time. The script is what makes people stay — write it
 with `references/script-formel.md` (v2) and treat its self-check as a gate. The reference build is
@@ -27,12 +26,12 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Format       | 1080×1920, 30 fps, **exactly 45.0 s** (user's rule, 2026-10-28; 60 s from 2026-10-24 to -27) — `prepare-voice.sh` fits the speech, the composition is fixed at 45 s (`LENGTH` in timing.js)                                                                                                                                                                                                                                                                                                                                                          |
 | Voice        | ElevenLabs **Jan – Social Media Creator**, `voice_id keqaIOtp0ePlmN5jgQfy`, model **`eleven_v3`** — the house voice; **always use Jan**, always **3.1 words/s** — ~15 % faster than he reads (`prepare-voice.sh` `BASE=1.15`, pitch kept — user's wish 2026-10-26) (user's decision 2026-10-22 after trying Stephan on #7: back to Jan for #7 and every episode after). Don't switch voices unless the user asks. History: Christian Plasa (#1–#5), Jan (#6 →), Stephan – Warm and Friendly `IWm8DnJ4NGjFI7QAM5lM` tried once on #7, replaced by Jan |
 | CTA          | **Never dropped or shortened** (user's rule). **The whole CTA is at the very end** (user, 2026-11-12): the last line = a **comment question** new for every video + „Schreib's in die Kommentare.“ + exactly **„Folge für mehr Wissen.“** as the very last words, spoken **quickly** (`FOLLOW_FAST` x1.3). White "Kommentieren" pill when the line starts, red "+ Folgen" pill on "Folge" → "Gefolgt" (script-formel.md §4)                                                                                                                          |
-| Bonus fact   | "Übrigens: …" right after the payoff — one surprising fact; "WUSSTEST DU?" badge + sparkle sound (automatic on the word "Übrigens")                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Bonus fact   | **Optional** "Übrigens: …" **right before the payoff** (2026-11-24): one fact that makes the question bigger; "WUSSTEST DU?" badge + sparkle sound until the answer word. The payoff = the answer as a picture is the last content                                                                                                                                                                                                                                                                                                                   |
 | Ending       | **No loop** (2026-10-24), **no outro** (2026-11-01): the video ends ~0.7 s after the comment question — no calm drone pull-back, no `> …` line, no cut back to frame 0                                                                                                                                                                                                                                                                                                                                                                               |
 | Cover        | **Every video gets a Titelbild** (`scripts/make-cover.sh`): strongest scene moment + big curiosity title, sent with the video                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Beschreibung | **Every video gets a TikTok description** (step 6c): a keyword line **≤ 60 characters, strongest search words first, one emoji at the end, no dash** + **3–5 hashtags that fit the topic and are really watched** (topic tag first; never `#fyp`, `#viral`, `#lernenmittiktok`); saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                      |
 | YouTube      | **Every video is also posted as a YouTube Short** (2026-11-05, step 6d): `tiktok/<slug>/youtube.txt` with title (40–60 characters, keywords first, always ending in `#shorts`), description (+ „Folge für mehr Wissen.“ + 3–5 hashtags incl. `#shorts`), tags, and the upload settings (TikTok cover, not for kids, synthetic content: yes, category Bildung …; no playlist), sent with the video like the TikTok description                                                                                                                        |
-| Serienformat | **Three formats in rotation A → B → C → A …** (user's rules 2026-10-23 and 2026-11-20): A „Bauen“ (how an everyday thing works), B „Was passiert, wenn …?“ (`references/format-was-passiert.md`), C „Bauwerke“ (famous bridges, towers, buildings, `references/format-bauwerke.md`) — step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                                                                                     |
+| Serienformat | **Nine video types, picked at random** (user, 2026-11-24; never the same type as one of the last two videos): A Alltagsding, B Was passiert, wenn …? (`format-was-passiert.md`), C Bauwerke (`format-bauwerke.md`), D Duell, E Experiment, F Rätsel, G Wahre Geschichte, H Dein Körper verändert sich, I So wird's gemacht — `references/themenarten.md`, step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                 |
 | Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                                                                                                                                               |
 | Payoff       | The hook's question answered in one punchy line . **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                                                                                                                                                                              |
 | Music        | **No music** (user's rule, 2026-10-26): voice + sound effects only. Don't run `prepare-music.sh`, no `assets/bgm.mp3` (sync-html only adds a music tag if that file exists). The old calm bed stays in `assets/` for old episodes                                                                                                                                                                                                                                                                                                                    |
@@ -102,22 +101,28 @@ is: **fewer turns, smaller context** — never fewer checks.
 7. **Voice in one take** whenever ElevenLabs allows it (pieces = many
    extra turns); poll a generation no more often than `poll_after_seconds`.
 
-### 0. Pick the format — always in rotation — then the topic — reserve it FIRST
+### 0. Pick the type at random — then the topic — reserve it FIRST
 
-**Format first** (user's rules, 2026-10-23 "Immer abwechselnd", 2026-11-20
-third format C „Bauwerke“). After
-`git pull origin main`, look at the newest episode: the last row of
-`tiktok/serie.md` **and** the **Reserviert** table in
-`references/themen.md` (a parallel chat may already have taken the next
-slot) — the newest of them by number / date decides. The new video takes
-the **next** format in the rotation **A → B → C → A**: after A „Bauen“
-comes B „Was passiert, wenn …?“, after B comes C „Bauwerke“
-(`references/format-bauwerke.md`), after C comes A. (Until 2026-11-19 it
-was only A ↔ B: after a B, the next is C.) A row without a `Format` value
-counts as A (#1–#23 are all A). Say it in the reservation line ("Diesmal Format B: Was passiert,
-wenn …?"). If the user explicitly asks for a format or names a topic
-that only fits one, take theirs — the next video goes on in the rotation
-from it.
+**Type first — random** (user, 2026-11-24: „nicht mehr strikt A dann B
+dann C, sondern zufällig eines der vielen Themen“). The types are in
+`references/themenarten.md`: A Alltagsding, B Was passiert, wenn …?,
+C Bauwerke, D Duell, E Experiment, F Rätsel zum Mitmachen, G Wahre
+Geschichte, H Dein Körper verändert sich, I So wird's gemacht. After
+`git pull origin main`, read the `Format` column of the last two rows of
+`tiktok/serie.md` **and** of the **Reserviert** table (parallel chats)
+and roll among the **other** types (never the same type as one of the
+last two videos):
+
+```bash
+# example: the last two were B and C
+printf '%s\n' A D E F G H I | shuf -n 1
+```
+
+Then take the best open topic of that type's list. If that list has no
+topic scoring ≥ 15, roll again. Log the letter in the `Format` column.
+Say it in the reservation line („Diesmal: D Duell“). If the user names a
+type or a topic, take theirs. (Until 2026-11-23 the types rotated A → B
+→ C; before 2026-11-20 only A ↔ B.)
 
 **Then the topic** — the user leaves it to you (2026-10-23). **Topical
 when it fits** (2026-10-26): run the Trend-Check in `themen.md` 2b — a

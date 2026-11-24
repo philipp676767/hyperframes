@@ -27,11 +27,11 @@ früher galt und geändert wurde, steht unten unter „Überholt“ und ist
 - [ ] **Einfacher** (Nutzer, 2026-11-11: „etwas zu kompliziert“; Beispiel #56 Kaffee mit 11 Dingen zum Merken): eine Kernidee in einem Satz (Mitte + Payoff), Mechanismus in ≤ 3 Schritten mit Alltagsvergleichen, ≤ 2 Fachbegriffe, ≤ 2 Zahlen, ein Satz = eine Info; im Bild eins nach dem anderen (1 Schild / Anzeige pro Bild, 3–4 Schilder pro Video). Vergleichen: Ø Wiedergabe und Anteil bis zum Ende.
 - [ ] Alle 5–7 s ein Highlight, 2–3 Money-Shots, die die Behauptungen **zeigen**; Stimme mit 3–6 Regieanweisungen.
 - [ ] Genau 45 s, 130–142 Wörter, Jan mit 3,1 Wörtern/s, 0–2 passende Humor-Momente, keine Musik, kein Loop, kein Outro.
-- [ ] **Ganze CTA ans Ende** (Nutzer, 2026-11-12): letzte Zeile = Kommentar-Frage (jedes Mal neu, nie nach Fotos fragen) + „Schreib's in die Kommentare.“ + schnelles „Folge für mehr Wissen.“; Video endet ~0,7 s danach. Davor das stärkste „Übrigens“.
+- [ ] **Ganze CTA ans Ende** (Nutzer, 2026-11-12): letzte Zeile = Kommentar-Frage (jedes Mal neu, nie nach Fotos fragen) + „Schreib's in die Kommentare.“ + schnelles „Folge für mehr Wissen.“; Video endet ~0,7 s danach. Davor die Auflösung als Bild.
 
 **Themen:**
 
-- [ ] **Dritte Reihe C „Bauwerke“** (Nutzer, 2026-11-20): berühmte Brücken, Türme, Gebäude, Tunnel; Formate rotieren A → B → C (references/format-bauwerke.md). Vergleichen: Aufrufe von C gegen A und B.
+- [ ] **Neun Videoarten, zufällig gewählt** (Nutzer, 2026-11-24, aus der Analyse viraler 3D-Shorts / Zack D. Films): A Alltagsding, B Was passiert, wenn, C Bauwerke, D Duell, E Experiment, F Rätsel, G Wahre Geschichte, H Dein Körper verändert sich, I So wird's gemacht — nie dieselbe Art wie in den letzten 2 Videos (themenarten.md). Aufbau: eine Frage pro Video, Antwort als Bild ganz am Ende (schnelle Auflösung zum Nochmal-Sehen), „Übrigens“ optional davor; bleibt 45 s. Vergleichen: Aufrufe je Art.
 - [ ] **Aus den Zahlen 2026-11-17:** Top = #36 Nagellampe 230 K, #46 Blondieren 30 K, #65 10-Meter-Turm 30 K; Flops = nichts trinken, Hundenase, Rolltreppe, satt schwimmen. → **„Du-Thema“**: etwas, das der Zuschauer selbst macht, hat oder gespürt hat (eigener Körper, Alltag, Hobby, Sachen) + ein spürbarer Moment. **Kein Beauty-Fokus** (Nutzer): Look & Beauty nur eine Liste unter vielen, höchstens jedes 4.–5. Video. Keine Gesundheitstipps / alten Mythen, keine niedlichen Tierfakten, keine kleinen Detail-Rätsel (themen.md „What our numbers say“).
 - [ ] Sweet Spot + Zeig-Faktor (#36 viral): ein konkretes Ding einer riesigen Gruppe; am besten etwas, das Zuschauer selbst haben und zeigen. Alltag am Körper / Handy zieht (#23, #18).
 - [ ] Formate A und B immer abwechselnd; Trends nur als Ausnahme, Jahreszeit ohne Bonus.
