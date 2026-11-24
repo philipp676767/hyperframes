@@ -198,9 +198,9 @@ function renderAt(t) {
   }
   drops.instanceMatrix.needsUpdate = true;
   // the walker (from behind) in the morning street
-  walker.visible = t >= T.wer - 0.2 && t < T.fuer - 0.2;
-  walker.position.set(6.0 - (t - T.wer) * 0.07, 0.33, 2.4);
-  walker.rotation.y = Math.PI;
+  walker.visible = false;
+  walker.position.set(0.45, 0.33, 2.2 - (t - T.wer) * 0.07);
+  walker.rotation.y = Math.PI / 2;
   walk(walker, t * 1.6, 0.8);
   // Stabiae: people to the beach, the sea rough
   P.setSea(t >= T.stabiae ? 1.4 : 0.35);

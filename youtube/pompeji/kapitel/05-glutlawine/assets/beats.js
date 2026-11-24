@@ -81,14 +81,6 @@ export const shots = [
     look: [0.5, 3, -22],
     zoom: 1,
   },
-  // a person in the street, a cloth over the face (seen from behind)
-  {
-    at: T.wer - 0.2,
-    from: [7.0, 0.52, 2.46],
-    to: [6.7, 0.52, 2.45],
-    look: [4.4, 0.4, 2.4],
-    zoom: 1,
-  },
   // over in moments: the cloud covers the town (wide, no people)
   { at: T.fuer - 0.2, from: [-16, 9, 18], to: [-14, 8.6, 15], look: [2, 1, -2], zoom: 1 },
   // Stabiae: pillows on their heads, a wild sea
