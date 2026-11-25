@@ -4,7 +4,8 @@
 # Each slice is a copy of the chapter with a time offset (window.HF_T0, read
 # by world.js start()) and no audio; slices already rendered are kept, so a
 # restart only costs the slice that was running. At the end the slices are
-# joined losslessly and the chapter's own voice + sound track is laid under:
+# joined losslessly and the chapter's own voice + sound track is laid under
+# (+2.3 dB = the level of a normal hyperframes render, so chapters match):
 #   bash .claude/skills/youtube-erklaervideo/scripts/render-slices.sh <slug> <chapter> [seconds per slice = 20]
 # → youtube/<slug>/kapitel/<chapter>/renders/kapitel.mp4 (same format as render-queue.sh)
 # Progress lines go to youtube/<slug>/renders/queue.log (START / DONE / FAIL).
@@ -66,7 +67,7 @@ LIST="$D/renders/slices/list.txt"
 for k in $(seq 0 $((N - 1))); do echo "file 's$(printf '%02d' "$k")/out.mp4'" >> "$LIST"; done
 ffmpeg -v error -y -f concat -safe 0 -i "$LIST" -an -c copy "$D/renders/slices/video.mp4"
 ffmpeg -v error -y -i "$D/renders/slices/video.mp4" -i "$D/assets/voiceover.mp3" -i "$D/assets/sfx.mp3" \
-  -filter_complex "[1:a][2:a]amix=inputs=2:normalize=0:duration=longest,apad,atrim=0:$DUR,aresample=48000[a]" \
+  -filter_complex "[1:a][2:a]amix=inputs=2:normalize=0:duration=longest,volume=2.3dB,alimiter=limit=0.89:level=false,apad,atrim=0:$DUR,aresample=48000[a]" \
   -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -ac 2 -t "$DUR" "$D/renders/kapitel.mp4"
 GOT=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$D/renders/kapitel.mp4")
 echo "DONE $CH $(stamp) ${GOT}s (slices)" >> "$LOG"

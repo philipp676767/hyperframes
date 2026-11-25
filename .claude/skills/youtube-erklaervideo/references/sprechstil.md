@@ -79,8 +79,9 @@ Simplicissimus and Kurzgesagt from 2026-11-17 is in `doku-vorbilder.md`):
     („Bis eben haben sie noch gedöst.“).
   - **„Das hier ist …“** pointing at the 3D picture („Das hier ist die
     Mondfähre Eagle.“).
-  - **O-Töne** in the archive voice (`»` lines, radio filter): 3–8 short
-    real quotes per video — radio calls, a news anchor, a witness. Never
+  - **O-Töne** in the archive voice (`»` lines, radio filter): **0–3 per
+    video, only real words spoken over radio / phone / broadcast**
+    (`aufbau.md` „The intro“ step 1); everything else the narrator quotes. Never
     invented as real; paraphrases are introduced by the narrator („Armstrong funkt
     sinngemäß: …“).
 - **Explain inside the story, with room.** A term is introduced in the
