@@ -91,7 +91,7 @@ generation that the account cannot pay — a refused take is lost work.
 `git pull origin main`. Follow `references/themen.md`: duplicate check
 (`youtube/serie.md`, `youtube/*`, the Reserviert table, remote branches),
 the scorecard (incl. **fact inventory ≥ 15** and **thumbnail test**),
-**first filter: a US hit in our niche with no good German version yet** (`themen.md` §0, user 2026-11-25), then take the best (≥ 15/20) — a strong TikTok topic as the long version is a
+**first filter: a US hit in our niche with no good German version yet that also matters to Germans** (`themen.md` §0, user 2026-11-25), then take the best (≥ 17/22, never one with 0 Deutschland-Bezug) — a strong TikTok topic as the long version is a
 good choice. **Reserve it immediately**: row in Reserviert (with the chat
 title of 0a), commit, push on `main` (rejected → pull, re-check that nobody
 took the topic or the number meanwhile, push again). Then rename the chat
