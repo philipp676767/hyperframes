@@ -119,7 +119,6 @@ the search interest and the facts again when you pick.
 | Wie wurden die Pyramiden gebaut?                                     | 2,3 Mio. Blöcke; ~20 Jahre; Rampen-Theorien; Arbeiter, keine Sklaven; früher glatt und weiß                                           | Ein Block alle paar Minuten — 20 Jahre lang (Rechnung prüfen)                       | Riesen-Pyramide im Bau, winzige Arbeiter     | 15                                 |
 | Der erste Mensch im All — Juri Gagarin                               | 1961; 108 Minuten; landete per Fallschirm neben der Kapsel; Bauern auf dem Feld; Raumkapsel kleiner als ein Auto                      | Die Bremsrakete versagt halb, die Kapsel taumelt beim Wiedereintritt                | Kugel-Kapsel glüht über der Erde             | 14                                 |
 | Der erste Flug — die Gebrüder Wright                                 | 1903; 12 Sekunden, 37 m — kürzer als ein Airbus A380 lang ist; Fahrradmechaniker; selbstgebauter Windkanal                            | Die ersten Versuche krachen — und dann hebt er ab                                   | Holzflieger über Dünen, Mensch läuft daneben | 14                                 |
-| Pompeji — der Tag, an dem der Vesuv ausbrach                         | 79 n. Chr.; Aschewolke 30 km hoch; Glutlawine mit über 100 km/h; Stadt 1.700 Jahre verschüttet; Brot im Ofen erhalten                 | Die Leute hatten Stunden Zeit — und viele blieben                                   | Vulkan über der antiken Stadt, Aschesäule    | 14                                 |
 | Penicillin — der schmutzige Teller, der Millionen rettete            | 1928 Fleming; Schimmel tötet Bakterien; vorher starb man an einem Kratzer; Massenproduktion im Krieg; heute: resistente Keime         | Fast vergessen: 10 Jahre lang tat niemand etwas damit                               | Petrischale mit Schimmel-Kreis im Makro      | 14                                 |
 | Das Hindenburg-Unglück                                               | 1937; 245 m lang — größer als die Titanic war breit (prüfen); mit Wasserstoff gefüllt; in 34 Sekunden verbrannt; Ende der Luftschiffe | 62 von 97 Menschen überlebten — wie?                                                | brennendes Luftschiff über dem Mast          | 13                                 |
 | Die Concorde — Überschall für alle, und warum es sie nicht mehr gibt | 2× Schallgeschwindigkeit; London–New York in 3,5 h; Rumpf wurde 20 cm länger vor Hitze; Überschallknall; Absturz 2000                 | Ein Metallstreifen auf der Piste brachte sie zum Absturz                            | weiße Concorde, Hitzeflimmern                | 13                                 |
@@ -144,6 +143,5 @@ the search interest and the facts again when you pick.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                        | Typ           | Datum      | Chat                |
-| -------------------------------------------- | ------------- | ---------- | ------------------- |
-| Pompeji — der Tag, an dem der Vesuv ausbrach | Große Momente | 2026-11-23 | YouTube #4: Pompeji |
+| Thema | Typ | Datum | Chat |
+| ----- | --- | ----- | ---- |

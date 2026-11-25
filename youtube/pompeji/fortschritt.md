@@ -3,24 +3,24 @@
 Stand für einen neuen Chat (Skill `youtube-erklaervideo`, Schritt „Weitermachen“).
 Status je Kapitel: geplant → skript → stimme → szene → geprüft → gerendert.
 
-| Nr  | Ordner        | Kapitel                  | Wörter | Sprechzeit | Status  | Notiz        |
-| --- | ------------- | ------------------------ | ------ | ---------- | ------- | ------------ |
-| 0   | 00-hook       | Der Berg reißt auf       | 162    | 65.1 s     | geprüft | Render läuft |
-| 1   | 01-stadt      | Eine Stadt am Berg       | 153    | 61.5 s     | geprüft | Render-Queue |
-| 2   | 02-vulkan     | Was im Berg passiert     | 179    | 71.9 s     | geprüft | Render-Queue |
-| 3   | 03-bimsregen  | Steine fallen vom Himmel | 180    | 70.7 s     | geprüft | Render-Queue |
-| 4   | 04-rettung    | Die Rettungsfahrt        | 186    | 75.4 s     | geprüft | Render-Queue |
-| 5   | 05-glutlawine | Die Glutlawine           | 189    | 78.7 s     | geprüft | Render-Queue |
-| 6   | 06-asche      | 1.700 Jahre unter Asche  | 161    | 64.7 s     | geprüft | Render-Queue |
-| 7   | 07-finale     | Warum sie blieben        | 188    | 75.5 s     | geprüft | Render-Queue |
+| Nr  | Ordner        | Kapitel                  | Wörter | Sprechzeit | Status    | Notiz |
+| --- | ------------- | ------------------------ | ------ | ---------- | --------- | ----- |
+| 0   | 00-hook       | Der Berg reißt auf       | 162    | 65.1 s     | gerendert |       |
+| 1   | 01-stadt      | Eine Stadt am Berg       | 153    | 61.5 s     | gerendert |       |
+| 2   | 02-vulkan     | Was im Berg passiert     | 179    | 71.9 s     | gerendert |       |
+| 3   | 03-bimsregen  | Steine fallen vom Himmel | 180    | 70.7 s     | gerendert |       |
+| 4   | 04-rettung    | Die Rettungsfahrt        | 186    | 75.4 s     | gerendert |       |
+| 5   | 05-glutlawine | Die Glutlawine           | 189    | 78.7 s     | gerendert |       |
+| 6   | 06-asche      | 1.700 Jahre unter Asche  | 161    | 64.7 s     | gerendert |       |
+| 7   | 07-finale     | Warum sie blieben        | 188    | 75.5 s     | gerendert |       |
 
 ## Video
 
-- [ ] Titel + 3 Thumbnail-Ideen (plan.md)
+- [x] Titel + 3 Thumbnail-Ideen (plan.md)
 - [x] Hauptwelt (welt.js) geprüft
-- [ ] Alle Kapitel gerendert
-- [ ] Zusammengefügt + Lautheit (-14 LUFS)
-- [ ] 3 Thumbnails
+- [x] Alle Kapitel gerendert
+- [x] Zusammengefügt + Lautheit (-14 LUFS): 9:39, -14,6 LUFS
+- [x] 3 Thumbnails
 - [ ] Beschreibung mit Kapitel-Zeitmarken, Tags, Einstellungen, Kommentar (upload.txt)
 - [ ] youtube/serie.md eingetragen
 
@@ -33,3 +33,5 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 - welt.js-Änderungen nur noch in nicht gerenderte Kapitel kopieren.
 - Thumbnail-Kandidaten (in kapitel/\*/renders/, nicht versioniert): a6 (00-hook, --at 2, Vesuv+Säule über der Bucht, „POMPEJI: KEINE LAVA“), c3 (03-bimsregen, --at 33, Stadt bei Nacht, „POMPEJI: 18 STUNDEN ZEIT“). Noch offen: B = Glutlawine hinter dem Tempel (05-glutlawine --at 33, cam p [0,0.3,4.2] l [0,4.5,-30]) mit Label — erst nach dem Rendern (CPU).
 - upload.txt + konkurrenz.txt Entwurf fertig; Kapitelmarken nach join-chapters.sh prüfen.
+- Rendern: Kapitel 5–7 mit `render-slices.sh` (20-s-Stücke). Einzelne Morgen-Einstellungen in der Stadt (Kap. 5) brauchten > 60 s pro Bild unter Last → Renderer hängt; ersetzt durch billigere Kameras (Straße/Forum raus, Seitenblick auf die Lawine). WORKERS=2 für schwere Stücke.
+- Geliefert 2026-11-25: 10 Teile (≤ 95 MB), thumb-a (Säule über der Bucht, „POMPEJI: KEINE LAVA“), thumb-b (Glutlawine, Label „POMPEJIS WAHRER KILLER“), thumb-c (Stadt bei Nacht, „POMPEJI: 18 STUNDEN ZEIT“).
