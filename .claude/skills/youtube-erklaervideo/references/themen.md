@@ -144,6 +144,7 @@ the search interest and the facts again when you pick.
 
 ## Reserviert (in Arbeit)
 
-| Thema                                        | Typ           | Datum      | Chat                |
-| -------------------------------------------- | ------------- | ---------- | ------------------- |
-| Pompeji — der Tag, an dem der Vesuv ausbrach | Große Momente | 2026-11-23 | YouTube #4: Pompeji |
+| Thema                                        | Typ           | Datum      | Chat                  |
+| -------------------------------------------- | ------------- | ---------- | --------------------- |
+| Pompeji — der Tag, an dem der Vesuv ausbrach | Große Momente | 2026-11-23 | YouTube #4: Pompeji   |
+| Wie wurden die Pyramiden gebaut?             | Große Momente | 2026-11-25 | YouTube #5: Pyramiden |
