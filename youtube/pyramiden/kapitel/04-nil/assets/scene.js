@@ -42,6 +42,7 @@ function renderAt(t) {
   const kb = smooth(ramp(t, T.auf + 0.5, T.auf + 4.5));
   BRANCH.visible = t >= T.wie - 0.2 && t < T.laut - 0.2;
   BRANCH.geometry.setDrawRange(0, Math.ceil(kb * BRANCH.userData.segs) * 6 * 6);
+  if (window.HF_THUMB) for (const k of Object.keys(G.ramps)) G.ramps[k].visible = false;
   labels(t, LABELS);
   applyCamera(t);
   renderFrame();

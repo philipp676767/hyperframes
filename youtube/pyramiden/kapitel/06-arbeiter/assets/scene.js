@@ -51,6 +51,7 @@ function renderAt(t) {
         o.rotation.x = (o.name === "armL" ? -1 : 1) * cheer * (2.6 + Math.sin(t * 8 + i) * 0.2);
     p.position.y = cheer * Math.abs(Math.sin(t * 6 + i)) * 0.01;
   });
+  if (window.HF_THUMB) for (const k of Object.keys(G.ramps)) G.ramps[k].visible = false;
   labels(t, LABELS);
   const kb = pop(t, BONE_LABEL.at, BONE_LABEL.until);
   if (kb > 0) showLabel("bone", kb, BONE_LABEL.text, BONE_TIP, -1);
