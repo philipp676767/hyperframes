@@ -1,20 +1,37 @@
-# Fortschritt: Pyramiden: Wie Menschen ohne Maschinen den Berg bauten
+# Fortschritt: Pyramiden: Ein 4.500 Jahre altes Tagebuch verrät den Bau
 
 Stand für einen neuen Chat (Skill `youtube-erklaervideo`, Schritt „Weitermachen“).
 Status je Kapitel: geplant → skript → stimme → szene → geprüft → gerendert.
 
-Credits (ElevenLabs, Budget 9 500–10 000 pro Video): verbraucht 0 · übrig vom Video-Budget 10000
+Credits (ElevenLabs, Budget 9 500–10 000 pro Video): verbraucht 4 476 · übrig vom Video-Budget 5 524
 
-| Nr  | Ordner | Kapitel | Wörter | Zeichen | Sprechzeit | Status | Notiz |
-| --- | ------ | ------- | ------ | ------- | ---------- | ------ | ----- |
+| Nr  | Ordner        | Kapitel                   | Wörter | Sprechzeit | Status | Notiz                                     |
+| --- | ------------- | ------------------------- | ------ | ---------- | ------ | ----------------------------------------- |
+| 0   | 00-hook       | Ein Logbuch im Sand       | 189    | 75.2 s     | szene  | Zitat-Wortzeiten von Hand (silencedetect) |
+| 1   | 01-koenig     | Ein König will ewig leben | 166    | 66.6 s     | stimme |                                           |
+| 2   | 02-plan       | Ein Berg nach Plan        | 165    | 66.2 s     | stimme |                                           |
+| 3   | 03-steinbruch | Steine aus dem Fels       | 148    | 59.3 s     | stimme |                                           |
+| 4   | 04-nil        | Der Fluss als Förderband  | 152    | —          | skript | p01 (n1) + Zitat (q1) da, p03 fehlt       |
+| 5   | 05-rampe      | Schlitten auf nassem Sand | 182    | —          | skript |                                           |
+| 6   | 06-arbeiter   | Die Stadt der Arbeiter    | 180    | —          | skript |                                           |
+| 7   | 07-spitze     | Die weiße Spitze          | 153    | —          | skript |                                           |
+| 8   | 08-finale     | Kein Geheimnis            | 189    | —          | skript |                                           |
 
 ## Video
 
-- [ ] Titel + 3 Thumbnail-Ideen (plan.md)
-- [ ] Skript im Credit-Budget (scripts/credits.py OK, 9 300–9 800 Zeichen)
-- [ ] Hauptwelt (welt.js) geprüft
+- [x] Titel + Thumbnail-Ideen (plan.md)
+- [x] Skript im Credit-Budget (scripts/credits.py OK: 9 655 Zeichen)
+- [x] Hauptwelt (welt.js) geprüft
 - [ ] Alle Kapitel gerendert
 - [ ] Zusammengefügt + Lautheit (-14 LUFS)
 - [ ] 3 Thumbnails
 - [ ] Beschreibung mit Kapitel-Zeitmarken, Tags, Einstellungen, Kommentar (upload.txt)
 - [ ] youtube/serie.md eingetragen
+
+## Notizen
+
+- ElevenLabs Gratis-Konto, Flow FuXnWcYxV6nlPCFtkj2N. „Free generations are busy“ kommt oft — einfach ein paar Minuten später neu versuchen (nichts wird berechnet).
+- Archivstimme „Heribert deutsch“ yR6YPi6ytQSGBZ0uKFQl (eleven_flash_v2_5, 0,5 Credit/Zeichen), Filter: `highpass=f=110,lowpass=f=7000,aecho=0.8:0.55:45|80:0.22|0.12` (Logbuch, kein Funk). Rohdateien in `assets/vo_takes/raw/`.
+- prepare-voice mit `PAUSE=0.45` (Johannes liest schon ruhig; mit 0.3 wäre er > 2,5 W/s).
+- Wort-Anker: `P("Wort", "Folgewort")` in beats.js statt `W()` — viele Wörter (wie, das, vor, und) kommen früher schon vor. beats.js wirft, wenn die Shots nicht aufsteigen.
+- Kamera-Check: `scratchpad/camcheck.py` (window.\_\_cam), Kontaktbögen mit `hyperframes snapshot`.
