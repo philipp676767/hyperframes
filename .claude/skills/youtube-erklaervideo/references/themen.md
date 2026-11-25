@@ -12,6 +12,86 @@ and explained: what really happened, how the technology worked, the
 moment it almost went wrong. Pick from **Offen — Große Momente** first;
 the other types (list below it) are the reserve, at most every third video.
 
+## 0. Where topics come from: US hit, no German version (user, 2026-11-25)
+
+**Rule: take topics that already work in the USA (English YouTube) in our
+niche, but have no good German version yet — and that matter to German
+viewers (step 3).** The US numbers prove the
+demand, the gap means a German viewer who searches it finds us — not
+twenty others. This is the first filter for every pick; the scorecard
+(§3) comes after.
+
+**Our niche** (where to look): big moments of science / technology
+history and engineering disasters, told as a story and explained with 3D
+— dam breaks, collapses, shipwrecks, air and space accidents, reactor
+accidents, record machines, „the moment it almost went wrong“. US
+reference channels: Plainly Difficult, Fascinating Horror, Jared Owen and
+Mike Bell (3D cut-aways), Brick Immortar, Mentour Pilot / Black Box, Real
+Engineering, Kyle Hill, Brew („minute by minute“), Mustard, Sabin Civil
+Engineering, The Infographics Show, Real Stories, LEMMiNO, Veritasium.
+
+**1. Find US hits** (Tube_Alfred, each call costs 1 TubeAlfred credit —
+budget ≈ 8–10 calls per pick):
+
+- 2–3 `youtube_search_query` in English, `sort: popularity`,
+  `type: video` (e.g. „what really happened disaster explained 3d“,
+  „engineering disaster minute by minute“, „<niche word> explained“; add
+  `upload_date: year` once for what is hot now).
+- A **US hit** = one English video **≥ 1 Mio. views**, or **2+ channels
+  ≥ 300 K** on the same story (several channels = the topic itself pulls,
+  not one channel's audience).
+
+**2. Check the German gap** — `youtube_search_query` with the German
+search word (relevance), once per candidate:
+
+- Count only **German-speaking channels**. Careful: YouTube shows English
+  videos with an auto-translated title („Was geschah mit dem Hindenburg?“
+  is Jared Owen, English) — the channel name / description language
+  decides.
+- **Lücke (gap)** = no German-original video **≥ 100 K views** on exactly
+  this story, and none better than ours could be (3D, 10 min, explained).
+- **Halbe Lücke** = one or two German videos 50–300 K, old (> 4 years),
+  short (< 8 min) or without explanation / 3D → still possible, scores
+  lower.
+- **Keine Lücke** = a German video ≥ 300 K or a big German channel
+  (Terra X, Ridddle DE, MrWissen2go …) covered it in the last 3 years →
+  don't pick it as the main video.
+
+**3. Check that it matters to Germans** (user, 2026-11-25: „die Themen
+sollten auch für Deutsche relevant sein“). A US hit is not enough — many
+US hits are US stories (a Californian dam, the Big Dig in Boston, a US
+court case) that nobody here cares about. Score the **Deutschland-Bezug**:
+
+- **2 = clearly relevant** — at least one of: a name every German knows
+  (Titanic, Tschernobyl, Apollo, Pompeji); it happened in Germany / Austria /
+  Switzerland or right next door (the Alps, the North Sea, Northern Italy,
+  holiday regions Germans know); Germans were involved (engineers,
+  victims, the machine was built here — Zeppelin, Rhine, Autobahn); or it
+  could happen here tomorrow and the viewer sees why (a dam, a bridge, a
+  mall, a nuclear plant, a train like the ICE).
+- **1 = universal, but far away** — nobody here knows the name, yet the
+  „Was hat das mit dir zu tun?“ line works (a building that could stand in
+  any German city, a technique everyone uses).
+- **0 = a US / foreign story without a bridge to here** — don't pick it,
+  however big it is in the USA.
+
+Write the bridge in one sentence into the row (it becomes the hook's
+„warum geht dich das an“ line), e.g. Vajont: „Mitten in den Alpen, keine
+Tagesreise von München — und auch bei uns stehen Hunderte Talsperren.“
+
+**4. Write it down** in the candidate's table row (column „US / DE“):
+the US proof (title, channel, views) and the German result (best German
+video + views, or „keine“), with the date. Re-check when you actually pick
+it — the gap can close.
+
+Checked 2026-11-25 (example of the method):
+
+| Story                                                      | US proof                                                                                       | German result                                   | Verdict         | Deutschland-Bezug                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------------- | ---------------------------------------------------- |
+| Vajont-Staudamm 1963 (die Welle, die über den Damm schlug) | Sabin Civil Engineering 2,9 Mio., Fascinating Horror 1,7 Mio., Eclesso 1,0 Mio., Mentour 441 K | the German search shows only English videos     | **Lücke**       | 2 — Alpen, Nachbarland, Talsperren gibt es auch hier |
+| Sampoong-Kaufhaus 1995                                     | Brick Immortar 2,0 Mio., Brew 1,9 Mio., Plainly Difficult 1,7 Mio.                             | „Überleben“ 59 K (Nov 2026, 19 min), rest < 2 K | **halbe Lücke** | 1 — fern (Seoul), aber „dein Einkaufszentrum“ trägt  |
+| Hindenburg 1937                                            | Jared Owen 11 Mio.                                                                             | Ridddle DE 133 K, Deconstructed (DE) 3,2 Mio.   | **keine Lücke** | 2 — deutsches Luftschiff                             |
+
 ## 1. Duplicate check — always, before picking
 
 A topic counts as **used for YouTube** if any of these matches it (same
@@ -70,7 +150,7 @@ Face ID 6.1K, UV-Nagellampe viral) are **long versions with a proven
 hook**: the TikTok / Short then works as a trailer and links to the long
 video (YouTube Shorts: „Ähnliches Video“ → the long one).
 
-## 3. Scorecard — score the candidates 0–2 each (max 16), take the best
+## 3. Scorecard — score the candidates (max 22), take the best
 
 1. **Suchinteresse** — 2 = people search it in German (YouTube search
    suggestions / `youtube_search_suggest` when Tube_Alfred is available,
@@ -92,10 +172,18 @@ video (YouTube Shorts: „Ähnliches Video“ → the long one).
    (their habit, their guess, their side), 1 = an opinion, 0 = nothing.
 8. **3D-Spektakel** — 2 = at least 4 money shots the diorama style can show
    big (impact, eruption, flood, x-ray inside the body), 1 = 2–3, 0 = talk.
+9. **US-Hit, keine deutsche Version** (§0, **counts double: 0–4**) — 4 =
+   US hit + Lücke, 2 = US hit + halbe Lücke, or Lücke without a clear US
+   hit, 0 = keine Lücke or no US proof.
+10. **Deutschland-Bezug** (§0 step 3) — 2 = clearly relevant for Germans,
+    1 = universal but far away, **0 = never pick** (whatever the other
+    scores).
+
+Criteria 1–8 and 10 score 0–2 each (max 22).
 
 Bonus: **+2** a TikTok of ours on it did well (lernlog), **+2** viewers asked
 for it in comments, **+1** a real trend of this week (never just a season).
-Pick nothing under **12 / 16**. Vary the type from the last 2 long videos.
+Pick nothing under **17 / 22** and nothing with 0 in criterion 10; prefer a topic with 4 in criterion 9 **and** 2 in criterion 10 whenever one reaches 17. Vary the type from the last 2 long videos.
 Check the key facts and numbers before writing (web search when available)
 and phrase anything uncertain safely („Forscher schätzen …“).
 
@@ -109,20 +197,28 @@ row here and move the topic out of **Offen**; keep **10+ open topics**.
 
 ## Offen — Große Momente (main type, pick from here first)
 
-Scores: the 8 criteria of §3 (max 16) + bonus, estimated 2026-11-14 — check
-the search interest and the facts again when you pick.
+Scores: the 8 criteria of §3 (max 16) + bonus, estimated 2026-11-14 —
+**before 2026-11-25, without criterion 9**: run the US / DE check of §0
+for each before you pick it (it can add up to 4 or kill it). Check the
+search interest and the facts again when you pick.
 
-| Thema (Arbeitstitel)                                                 | Was?!-Fakten (Auswahl, prüfen)                                                                                                        | Der Fast-schiefgegangen-Moment (Re-Hook)                                            | Thumbnail-Idee                               | Score                              |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------- | ---------------------------------- |
-| Die Atombombe — wie aus einer Formel eine Waffe wurde                | E = mc²; Uran-Kettenreaktion (nur Prinzip); Trinity-Test 1945 in der Wüste; heller als die Sonne; Hiroshima und Nagasaki              | Die Forscher wetteten, ob der Test die Atmosphäre in Brand setzt                    | greller Blitz über der Wüste, winzige Bunker | 15                                 |
-| Apollo 13 — „Houston, wir haben ein Problem“                         | Sauerstofftank explodiert 330.000 km von der Erde; Mondfähre als Rettungsboot; CO₂-Filter aus Klebeband gebaut; Kälte in der Kapsel   | Der Wiedereintritt: 4 Minuten Funkstille, keiner weiß, ob sie leben                 | beschädigte Kapsel im All, Erde weit weg     | 15                                 |
-| Wie wurden die Pyramiden gebaut?                                     | 2,3 Mio. Blöcke; ~20 Jahre; Rampen-Theorien; Arbeiter, keine Sklaven; früher glatt und weiß                                           | Ein Block alle paar Minuten — 20 Jahre lang (Rechnung prüfen)                       | Riesen-Pyramide im Bau, winzige Arbeiter     | 15                                 |
-| Der erste Mensch im All — Juri Gagarin                               | 1961; 108 Minuten; landete per Fallschirm neben der Kapsel; Bauern auf dem Feld; Raumkapsel kleiner als ein Auto                      | Die Bremsrakete versagt halb, die Kapsel taumelt beim Wiedereintritt                | Kugel-Kapsel glüht über der Erde             | 14                                 |
-| Der erste Flug — die Gebrüder Wright                                 | 1903; 12 Sekunden, 37 m — kürzer als ein Airbus A380 lang ist; Fahrradmechaniker; selbstgebauter Windkanal                            | Die ersten Versuche krachen — und dann hebt er ab                                   | Holzflieger über Dünen, Mensch läuft daneben | 14                                 |
-| Penicillin — der schmutzige Teller, der Millionen rettete            | 1928 Fleming; Schimmel tötet Bakterien; vorher starb man an einem Kratzer; Massenproduktion im Krieg; heute: resistente Keime         | Fast vergessen: 10 Jahre lang tat niemand etwas damit                               | Petrischale mit Schimmel-Kreis im Makro      | 14                                 |
-| Das Hindenburg-Unglück                                               | 1937; 245 m lang — größer als die Titanic war breit (prüfen); mit Wasserstoff gefüllt; in 34 Sekunden verbrannt; Ende der Luftschiffe | 62 von 97 Menschen überlebten — wie?                                                | brennendes Luftschiff über dem Mast          | 13                                 |
-| Die Concorde — Überschall für alle, und warum es sie nicht mehr gibt | 2× Schallgeschwindigkeit; London–New York in 3,5 h; Rumpf wurde 20 cm länger vor Hitze; Überschallknall; Absturz 2000                 | Ein Metallstreifen auf der Piste brachte sie zum Absturz                            | weiße Concorde, Hitzeflimmern                | 13                                 |
-| Das erste iPhone — der Tag, der dein Leben verändert hat             | 2007; Prototypen stürzten auf der Bühne fast ab; Steve Jobs' festgelegte Reihenfolge; vorher Tasten-Handys                            | Die Demo funktionierte nur, wenn er alles genau in der richtigen Reihenfolge machte | Handy aus Licht über Tasten-Handys           | 13 (Logos/Personen nur angedeutet) |
+**Checked with §0 (pick from these first):**
+
+| Thema (Arbeitstitel)                                                               | Was?!-Fakten (Auswahl, prüfen)                                                                                                                                                                   | Der Fast-schiefgegangen-Moment (Re-Hook)                                                         | Thumbnail-Idee                                            | US / DE (2026-11-25)                                                                                                                                              |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vajont — die Welle, die über den Damm schlug                                       | 1963; einer der höchsten Staudämme der Welt (262 m); 270 Mio. m³ Berg rutschen in den See; Welle ~250 m über die Dammkrone; Longarone in Minuten zerstört, ~2.000 Tote; der Damm steht bis heute | Monate vorher bewegte sich der Hang schon — Messungen, Warnungen, und man staute trotzdem weiter | Damm intakt, riesige Welle schlägt darüber, Dorf darunter | US-Hit (2,9 Mio. / 1,7 Mio. / 1,0 Mio.) · **Lücke** · DE-Bezug 2 („Mitten in den Alpen, keine Tagesreise von München — auch bei uns stehen Hunderte Talsperren.“) |
+| Sampoong — das Kaufhaus, das in 20 Sekunden einstürzte                             | 1995 Seoul; aus Bürohaus wurde Kaufhaus; Säulen dünner, Klimaanlagen aufs Dach geschleift; Risse am Morgen; 502 Tote                                                                             | Die Chefs sahen die Risse und ließen offen — und gingen selbst raus                              | Kaufhaus, ein Flügel knickt ein, Risse leuchten           | US-Hit (2,0 / 1,9 / 1,7 Mio.) · halbe Lücke („Überleben“ 59 K) · DE-Bezug 1 (Seoul — Brücke: „Das könnte dein Einkaufszentrum sein.“)                             |
+| Thema (Arbeitstitel)                                                               | Was?!-Fakten (Auswahl, prüfen)                                                                                                                                                                   | Der Fast-schiefgegangen-Moment (Re-Hook)                                                         | Thumbnail-Idee                                            | Score                                                                                                                                                             |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------                                                            | -----------------------------------------------------------------------------------              | --------------------------------------------              | ----------------------------------                                                                                                                                |
+| Die Atombombe — wie aus einer Formel eine Waffe wurde                              | E = mc²; Uran-Kettenreaktion (nur Prinzip); Trinity-Test 1945 in der Wüste; heller als die Sonne; Hiroshima und Nagasaki                                                                         | Die Forscher wetteten, ob der Test die Atmosphäre in Brand setzt                                 | greller Blitz über der Wüste, winzige Bunker              | 15                                                                                                                                                                |
+| Apollo 13 — „Houston, wir haben ein Problem“                                       | Sauerstofftank explodiert 330.000 km von der Erde; Mondfähre als Rettungsboot; CO₂-Filter aus Klebeband gebaut; Kälte in der Kapsel                                                              | Der Wiedereintritt: 4 Minuten Funkstille, keiner weiß, ob sie leben                              | beschädigte Kapsel im All, Erde weit weg                  | 15                                                                                                                                                                |
+| Wie wurden die Pyramiden gebaut?                                                   | 2,3 Mio. Blöcke; ~20 Jahre; Rampen-Theorien; Arbeiter, keine Sklaven; früher glatt und weiß                                                                                                      | Ein Block alle paar Minuten — 20 Jahre lang (Rechnung prüfen)                                    | Riesen-Pyramide im Bau, winzige Arbeiter                  | 15                                                                                                                                                                |
+| Der erste Mensch im All — Juri Gagarin                                             | 1961; 108 Minuten; landete per Fallschirm neben der Kapsel; Bauern auf dem Feld; Raumkapsel kleiner als ein Auto                                                                                 | Die Bremsrakete versagt halb, die Kapsel taumelt beim Wiedereintritt                             | Kugel-Kapsel glüht über der Erde                          | 14                                                                                                                                                                |
+| Der erste Flug — die Gebrüder Wright                                               | 1903; 12 Sekunden, 37 m — kürzer als ein Airbus A380 lang ist; Fahrradmechaniker; selbstgebauter Windkanal                                                                                       | Die ersten Versuche krachen — und dann hebt er ab                                                | Holzflieger über Dünen, Mensch läuft daneben              | 14                                                                                                                                                                |
+| Penicillin — der schmutzige Teller, der Millionen rettete                          | 1928 Fleming; Schimmel tötet Bakterien; vorher starb man an einem Kratzer; Massenproduktion im Krieg; heute: resistente Keime                                                                    | Fast vergessen: 10 Jahre lang tat niemand etwas damit                                            | Petrischale mit Schimmel-Kreis im Makro                   | 14                                                                                                                                                                |
+| Das Hindenburg-Unglück (US/DE: **keine Lücke**, 2026-11-25 — nicht als Hauptvideo) | 1937; 245 m lang — größer als die Titanic war breit (prüfen); mit Wasserstoff gefüllt; in 34 Sekunden verbrannt; Ende der Luftschiffe                                                            | 62 von 97 Menschen überlebten — wie?                                                             | brennendes Luftschiff über dem Mast                       | 13                                                                                                                                                                |
+| Die Concorde — Überschall für alle, und warum es sie nicht mehr gibt               | 2× Schallgeschwindigkeit; London–New York in 3,5 h; Rumpf wurde 20 cm länger vor Hitze; Überschallknall; Absturz 2000                                                                            | Ein Metallstreifen auf der Piste brachte sie zum Absturz                                         | weiße Concorde, Hitzeflimmern                             | 13                                                                                                                                                                |
+| Das erste iPhone — der Tag, der dein Leben verändert hat                           | 2007; Prototypen stürzten auf der Bühne fast ab; Steve Jobs' festgelegte Reihenfolge; vorher Tasten-Handys                                                                                       | Die Demo funktionierte nur, wenn er alles genau in der richtigen Reihenfolge machte              | Handy aus Licht über Tasten-Handys                        | 13 (Logos/Personen nur angedeutet)                                                                                                                                |
 
 ## Offen — weitere Typen (Reserve, höchstens jedes dritte Video)
 
@@ -143,5 +239,6 @@ the search interest and the facts again when you pick.
 
 ## Reserviert (in Arbeit)
 
-| Thema | Typ | Datum | Chat |
-| ----- | --- | ----- | ---- |
+| Thema                            | Typ           | Datum      | Chat                  |
+| -------------------------------- | ------------- | ---------- | --------------------- |
+| Wie wurden die Pyramiden gebaut? | Große Momente | 2026-11-25 | YouTube #5: Pyramiden |
