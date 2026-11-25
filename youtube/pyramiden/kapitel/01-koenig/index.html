@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Ein König will ewig leben</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="assets/words.js"></script>
+    <script src="assets/kapitel.js"></script>
+    <script>
+      // No text on the picture (user's rule, 2026-11-17): no captions, no
+      // title card, no chapter tag, no question, no badge, no CTA pills, no
+      // LED panel / HUD displays. The only text allowed is a name tag WITH an
+      // arrow that points at something (world.js labels()). Numbers belong in
+      // the 3D world (a screen, a display, a gauge built into the scene).
+      window.HF_NO_PANEL = true;
+      window.HF_NO_HUD = true;
+    </script>
+    <style>
+      /* 16:9 (skill youtube-erklaervideo, references/bild-16-9.md). Name
+         tags stay inside the title-safe area x 96–1824 / y 54–1026; in the
+         end chapter's last 20 s the middle (y 260–760) stays empty for
+         YouTube's end-screen elements. */
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/montserrat-800.woff2") format("woff2");
+        font-weight: 800;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #1c1c22;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #1c1c22;
+      }
+      #stage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      /* kept empty: the engine inserts its layers (labels, flash) before it
+         and sync-html.mjs puts the <audio> tags after it */
+      #captions {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="46.7"
+      data-width="1920"
+      data-height="1080"
+    >
+      <canvas id="stage" width="1920" height="1080"></canvas>
+      <div id="captions"></div>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="46.7" data-track-index="4" data-volume="1"></audio>
+    </div>
+
+    <script>
+      // The timeline only carries the chapter length; the picture is drawn by
+      // assets/scene.js (three.js), the name tags by world.js.
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        tl.set({}, {}, 46.7);
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+
+    <script type="module" src="assets/scene.js"></script>
+  </body>
+</html>
