@@ -99,7 +99,7 @@ export function heightAt(x, z) {
     const ix = Math.min(x - QUARRY.x0, QUARRY.x1 - x);
     const iz = Math.min(z - QUARRY.z0, QUARRY.z1 - z);
     const i = Math.min(ix, iz);
-    h -= Math.min(QUARRY.d, Math.floor(i / 0.9) * 0.6 + (i > 0.3 ? 0.4 : 0));
+    h -= QUARRY.d * 1.15 * clamp01(i / 3.2);
   }
   // the cliff down to the valley
   const s = x - e;
@@ -325,20 +325,22 @@ function plainTex(base, dots, seed = 4, alpha = 0.12) {
     }
   });
 }
-function brickTex(seed = 6) {
+function brickTex(seed = 6, rep = [1, 1]) {
   const r = rng(seed);
-  return canvasTex(256, 256, (g, w, h) => {
-    g.fillStyle = "#8a6a4c";
+  const t = canvasTex(256, 256, (g, w, h) => {
+    g.fillStyle = "#a08a6c";
     g.fillRect(0, 0, w, h);
     const bh = 16;
     const bw = 40;
     for (let y = 0; y < h; y += bh)
       for (let x = -((y / bh) % 2) * (bw / 2); x < w; x += bw) {
         const l = 0.85 + r() * 0.25;
-        g.fillStyle = `rgb(${154 * l},${118 * l},${84 * l})`;
+        g.fillStyle = `rgb(${178 * l},${150 * l},${112 * l})`;
         g.fillRect(x + 1.5, y + 1.5, bw - 3, bh - 3);
       }
   });
+  t.repeat.set(...rep);
+  return t;
 }
 
 // ---------------------------------------------------------------- people
@@ -429,7 +431,12 @@ export function makePyramid({
   const g = new THREE.Group();
   const r = rng(seed);
   const tex = blockTex({ base: core, seed });
-  const coreMat = xrayMaterial(0xffffff, { roughness: 0.92, metalness: 0, map: tex });
+  const coreMat = xrayMaterial(0xffffff, {
+    roughness: 0.92,
+    metalness: 0,
+    map: tex,
+    envMapIntensity: 0.35,
+  });
   coreMat.userData.base = C(0xffffff);
   const courses = [];
   // half-width at height y (bent: steeper below, flatter above)
@@ -472,9 +479,10 @@ export function makePyramid({
   const clip = new THREE.Plane(V(0, -1, 0), h);
   const casingMat = xrayMaterial(casingColor, {
     roughness: 0.6,
+    envMapIntensity: 0.5,
     metalness: 0,
     clippingPlanes: [clip],
-    side: THREE.DoubleSide,
+    side: THREE.FrontSide,
     map: plainTex("#f3eee2", ["rgba(120,100,70,A)", "rgba(255,255,255,A)"], seed + 7, 0.14),
   });
   let casing = null;
@@ -1206,16 +1214,50 @@ export function buildGiza({ time = "tag", state = "bau", seed = 5, level = 0.72 
   };
   if (state === "bau") out.setRamp("spirale", 1);
 
-  // --- the quarry: cut blocks, half-cut blocks, workers
+  // --- the quarry: stepped terraces, cut blocks, workers
   {
     const g = new THREE.Group();
     const stone = real.plastic(0xdcc59a, { roughness: 0.85, clearcoat: 0 });
+    const wall = new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      roughness: 0.95,
+      map: blockTex({ base: "#e0c89c", joint: "#c2a678", seed: 17 }),
+    });
+    const cx = (QUARRY.x0 + QUARRY.x1) / 2;
+    const cz = (QUARRY.z0 + QUARRY.z1) / 2;
+    for (let j = 1; j <= 4; j++) {
+      const inset = (j - 1) * 0.8;
+      const top = -(j - 1) * 0.6;
+      const wx = QUARRY.x1 - QUARRY.x0 - 2 * inset;
+      const wz = QUARRY.z1 - QUARRY.z0 - 2 * inset;
+      const hh = 3.2;
+      for (const [w, d, x, z] of [
+        [wx, 0.8, cx, QUARRY.z0 + inset + 0.4],
+        [wx, 0.8, cx, QUARRY.z1 - inset - 0.4],
+        [0.8, wz, QUARRY.x0 + inset + 0.4, cz],
+        [0.8, wz, QUARRY.x1 - inset - 0.4, cz],
+      ]) {
+        const geo = new THREE.BoxGeometry(w, hh, d);
+        scaleUV(geo, w, hh, d, 0.24, 0.6);
+        const m = new THREE.Mesh(geo, wall);
+        m.position.set(x, top - hh / 2, z);
+        m.receiveShadow = m.castShadow = true;
+        g.add(m);
+      }
+    }
+    const floor = new THREE.Mesh(
+      new THREE.BoxGeometry(QUARRY.x1 - QUARRY.x0 - 6.4, 0.2, QUARRY.z1 - QUARRY.z0 - 6.4),
+      wall,
+    );
+    floor.position.set(cx, -2.5, cz);
+    floor.receiveShadow = true;
+    g.add(floor);
     const blocks = [];
     for (let i = 0; i < 46; i++) {
-      const x = QUARRY.x0 + 1.2 + r() * (QUARRY.x1 - QUARRY.x0 - 2.4);
-      const z = QUARRY.z0 + 1.2 + r() * (QUARRY.z1 - QUARRY.z0 - 2.4);
+      const x = QUARRY.x0 + 3.4 + r() * (QUARRY.x1 - QUARRY.x0 - 6.8);
+      const z = QUARRY.z0 + 3.4 + r() * (QUARRY.z1 - QUARRY.z0 - 6.8);
       const b = new THREE.Mesh(roundedBox(0.24, 0.14, 0.16, 0.015), stone);
-      b.position.set(x, heightAt(x, z) + 0.07, z);
+      b.position.set(x, -2.4 + 0.07, z);
       b.rotation.y = Math.floor(r() * 4) * (Math.PI / 2) + (r() - 0.5) * 0.08;
       g.add(b);
       blocks.push(b);
@@ -1465,10 +1507,10 @@ export function buildGiza({ time = "tag", state = "bau", seed = 5, level = 0.72 
 // The early pyramids in the desert: Djoser's step pyramid, the Bent
 // Pyramid, the Red Pyramid, two mastabas. Its own world (no Giza).
 export const EARLY = {
-  mastaba: V(-30, 0, 6),
-  djoser: V(-18, 0, -4),
-  bent: V(4, 0, -16),
-  red: V(26, 0, -6),
+  mastaba: V(-50, 0, 20),
+  djoser: V(-36, 0, 6),
+  bent: V(2, 0, -22),
+  red: V(40, 0, -2),
 };
 export function buildEarly({ seed = 11 } = {}) {
   const r = rng(seed);
@@ -1509,7 +1551,8 @@ export function buildEarly({ seed = 11 } = {}) {
     const brick = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       roughness: 0.95,
-      map: brickTex(3),
+      map: brickTex(3, [6, 1.5]),
+      envMapIntensity: 0.4,
     });
     const m = new THREE.Mesh(new THREE.CylinderGeometry(1.9, 2.4, 1.0, 4, 1), brick);
     m.rotation.y = Math.PI / 4;

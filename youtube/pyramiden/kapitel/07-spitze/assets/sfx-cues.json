@@ -6,60 +6,74 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "baustelle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 19.7,
+    "db": -18
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 11.34,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "wind",
+    "at": 11.56,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "dur": 9.38,
+    "db": -20
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "stein",
+    "at": 20.3,
+    "why": "beats.js",
+    "db": -12
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 20.72,
+    "why": "cut"
+  },
+  {
+    "s": "hall",
+    "at": 20.94,
+    "why": "beats.js",
+    "dur": 19.259999999999998,
+    "db": -18
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 26.11,
+    "why": "label Große Galerie"
+  },
+  {
+    "s": "blip",
+    "at": 30.81,
+    "why": "label Königskammer"
+  },
+  {
+    "s": "blip",
+    "at": 34.71,
+    "why": "label Entlastungskammern"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.98,
+    "why": "cut"
+  },
+  {
+    "s": "baustelle",
+    "at": 40.2,
+    "why": "beats.js",
+    "dur": 12.46,
+    "db": -21
+  },
+  {
+    "s": "wind",
+    "at": 52.66,
+    "why": "beats.js",
+    "dur": 9.04,
+    "db": -20
   }
 ]

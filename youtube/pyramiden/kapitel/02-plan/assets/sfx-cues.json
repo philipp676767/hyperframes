@@ -6,60 +6,85 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
-  },
-  {
-    "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
-    "why": "cut"
-  },
-  {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "wind",
+    "at": 0,
     "why": "beats.js",
-    "dur": 7.539999999999999,
+    "dur": 12.64,
     "db": -21
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "blip",
+    "at": 1.05,
+    "why": "label Gizeh"
+  },
+  {
+    "s": "wasser",
+    "at": 4.9,
+    "why": "beats.js",
+    "dur": 7.540000000000001,
+    "db": -20
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 12.22,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 12.44,
+    "why": "beats.js",
+    "dur": 7.48,
+    "db": -22
+  },
+  {
+    "s": "baustelle",
+    "at": 19.92,
+    "why": "beats.js",
+    "dur": 6.5,
+    "db": -23
+  },
+  {
+    "s": "wasser",
+    "at": 26.62,
+    "why": "beats.js",
+    "dur": 8.359999999999996,
+    "db": -24
+  },
+  {
+    "s": "giessen",
+    "at": 27.02,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "whoosh",
+    "at": 34.56,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 34.78,
+    "why": "beats.js",
+    "dur": 19.200000000000003,
+    "db": -22
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 46.29,
+    "why": "label Norden"
+  },
+  {
+    "s": "nacht",
+    "at": 53.98,
+    "why": "beats.js",
+    "dur": 5.539999999999999,
+    "db": -18
+  },
+  {
+    "s": "wind",
+    "at": 58.72,
+    "why": "beats.js",
+    "dur": 8.180000000000007,
+    "db": -22
   }
 ]

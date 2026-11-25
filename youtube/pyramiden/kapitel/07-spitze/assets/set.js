@@ -1,4 +1,4 @@
-// This chapter's place: the video's main world (youtube/<slug>/welt.js, copied
-// in by new-chapter.sh / sync-kit.sh). For a side scene of its own, replace
-// this import with the side world, built the same way (set kit).
-import "./welt.js";
+// Chapter 7: the last years (main world): the pyramid grows to the top, the
+// capstone, the passages and chambers in x-ray, the white casing.
+import { buildGiza } from "./welt.js";
+export const G = buildGiza({ time: "tag", state: "bau", level: 0.94 });

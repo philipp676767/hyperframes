@@ -6,60 +6,106 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "wasser",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 2.26,
+    "db": -20
+  },
+  {
+    "s": "baustelle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 2.26,
+    "db": -26
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
+    "at": 1.84,
+    "why": "cut"
   },
   {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
+    "s": "hoehle",
+    "at": 2.06,
+    "why": "beats.js",
+    "dur": 4.8,
+    "db": -21
   },
   {
     "s": "whoosh",
-    "at": 17.3,
+    "at": 6.64,
+    "why": "cut"
+  },
+  {
+    "s": "baustelle",
+    "at": 6.86,
+    "why": "beats.js",
+    "dur": 8.3,
+    "db": -22
+  },
+  {
+    "s": "blip",
+    "at": 8.11,
+    "why": "label Tura"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.94,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 14.99,
+    "why": "cut"
+  },
+  {
+    "s": "segel",
+    "at": 15.21,
+    "why": "beats.js",
+    "dur": 6.66,
+    "db": -21
+  },
+  {
+    "s": "wasser",
+    "at": 15.21,
+    "why": "beats.js",
+    "dur": 27.92,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 30.28,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
-    "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "at": 31.95,
+    "why": "label Hafen"
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 42.86,
+    "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "s": "wind",
+    "at": 43.08,
+    "why": "beats.js",
+    "dur": 14.36,
+    "db": -22
+  },
+  {
+    "s": "wasser",
+    "at": 57.44,
+    "why": "beats.js",
+    "dur": 10.260000000000005,
+    "db": -20
+  },
+  {
+    "s": "baustelle",
+    "at": 62.22,
+    "why": "beats.js",
+    "dur": 5.480000000000004,
+    "db": -22
   }
 ]

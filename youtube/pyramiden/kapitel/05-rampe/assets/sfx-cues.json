@@ -6,60 +6,118 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "baustelle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 9.46,
+    "db": -20
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 9.04,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "wind",
+    "at": 9.26,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "dur": 2.5999999999999996,
+    "db": -22
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "stein",
+    "at": 10.26,
+    "why": "beats.js",
+    "db": -18
+  },
+  {
+    "s": "schlitten",
+    "at": 11.86,
+    "why": "beats.js",
+    "dur": 3.8599999999999994,
+    "db": -15
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 15.5,
+    "why": "cut"
+  },
+  {
+    "s": "hoehle",
+    "at": 15.72,
+    "why": "beats.js",
+    "dur": 16.5,
+    "db": -20
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 16.57,
+    "why": "label Grabbild"
+  },
+  {
+    "s": "whoosh",
+    "at": 32,
+    "why": "cut"
+  },
+  {
+    "s": "schlitten",
+    "at": 32.22,
+    "why": "beats.js",
+    "dur": 5.739999999999995,
+    "db": -16
+  },
+  {
+    "s": "giessen",
+    "at": 32.82,
+    "why": "beats.js",
+    "db": -14
+  },
+  {
+    "s": "blip",
+    "at": 33.47,
+    "why": "label nasser Sand"
+  },
+  {
+    "s": "whoosh",
+    "at": 37.74,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 37.96,
+    "why": "beats.js",
+    "dur": 13.120000000000005,
+    "db": -22
+  },
+  {
+    "s": "whoosh",
+    "at": 50.86,
+    "why": "cut"
+  },
+  {
+    "s": "schlitten",
+    "at": 51.08,
+    "why": "beats.js",
+    "dur": 10.240000000000002,
+    "db": -17
+  },
+  {
+    "s": "whoosh",
+    "at": 61.1,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 61.32,
+    "why": "beats.js",
+    "dur": 4.460000000000001,
+    "db": -22
+  },
+  {
+    "s": "baustelle",
+    "at": 65.78,
+    "why": "beats.js",
+    "dur": 7.019999999999996,
+    "db": -18
   }
 ]

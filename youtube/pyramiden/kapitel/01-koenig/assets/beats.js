@@ -1,72 +1,103 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 1 "Ein König will ewig leben": the god-king, the mastaba, Djoser's
+// six steps, the Bent Pyramid changing its angle, the Red Pyramid.
+import { END, WORDS } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
+const norm = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+export function P(a, b, n = 1) {
+  let c = 0;
+  for (let i = 0; i + 1 < WORDS.length; i++)
+    if (norm(WORDS[i].w) === norm(a) && norm(WORDS[i + 1].w) === norm(b) && ++c === n)
+      return WORDS[i].start;
+  throw new Error(`anchor not found: ${a} ${b}`);
+}
+
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  in: P("In", "Ägypten"),
+  stirbt: P("Stirbt", "er"),
+  ersten: P("Die", "ersten"),
+  dann: P("Dann", "stapelt"),
+  sechs: P("sechs", "solcher"),
+  und: P("und", "so"),
+  glatte: P("Glatte", "Seiten"),
+  vater: P("Cheops'", "Vater"),
+  bei: P("Bei", "einer"),
+  knicken: P("knicken", "den"),
+  knick: P("Die", "Knickpyramide"),
+  erst: P("Erst", "die"),
+  sohn: P("Sein", "Sohn"),
+  pläne: P("Und", "er"),
+  end: END,
 };
+// the step pyramid rises step by step; the Bent Pyramid to its knee, then on
+export const DJ = { from: T.sechs - 0.2, to: T.und + 0.6 };
+export const BENT = { from: T.bei, knee: T.knicken - 0.3, on: T.knicken, to: T.knick + 1.5 };
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // the desert at morning: all three far away
+  { at: 0, from: [-4, 5, 70], to: [2, 6, 64], look: [0, 4, -6], zoom: 1 },
+  // the god-king's funeral procession towards a tomb
+  {
+    at: T.in - 0.2,
+    from: [-37, 0.7, 33],
+    to: [-38.5, 0.6, 31.5],
+    look: [-46, 0.4, 24],
+    zoom: 1,
+    whoosh: true,
+  },
+  // "Stirbt er …": up into the sky, the sun
+  {
+    at: T.stirbt - 0.2,
+    from: [-38.5, 0.6, 31.5],
+    to: [-39, 0.7, 31],
+    look: [-46, 0.5, 24],
+    lookTo: [0, 24, 110],
+    zoom: 1,
+  },
+  // the mastaba: a flat brick tomb
+  { at: T.ersten - 0.2, from: [-42, 1.8, 28], to: [-44.5, 1.4, 26], look: [-50, 0.5, 20], zoom: 1 },
+  // Imhotep stacks six steps
+  {
+    at: T.dann - 0.2,
+    from: [-21, 3, 21],
+    to: [-23, 3.4, 19],
+    look: [-36, 3, 6],
+    zoom: 1,
+    whoosh: true,
+  },
+  // "Glatte Seiten …": across the desert to the Bent Pyramid
+  { at: T.glatte - 0.2, from: [-26, 4, 26], to: [-16, 5, 24], look: [2, 5, -22], zoom: 1 },
+  // Snofru builds several
+  { at: T.vater - 0.2, from: [26, 6, 32], to: [18, 6.5, 32], look: [8, 4, -16], zoom: 1 },
+  // the Bent Pyramid grows, then the angle changes
+  { at: T.bei - 0.2, from: [28, 5, 8], to: [26, 5.5, 6], look: [2, 4, -22], zoom: 1, whoosh: true },
+  { at: T.knick - 0.2, orbit: { c: [2, 4.5, -22], r: 34, y: 4, a0: -0.2, a1: -0.8 }, zoom: 1 },
+  // the Red Pyramid
+  {
+    at: T.erst - 0.2,
+    from: [66, 3, 26],
+    to: [62, 3.5, 22],
+    look: [40, 5, -2],
+    zoom: 1,
+    whoosh: true,
+  },
+  // his son Cheops inherits the builders: the three in a row, then north
+  { at: T.sohn - 0.2, from: [-12, 12, 66], to: [6, 13, 64], look: [0, 3, -6], zoom: 1 },
+  { at: T.pläne - 0.2, from: [0, 2.5, 34], to: [4, 3.5, 28], look: [80, 8, -80], zoom: 1 },
 ];
+for (let i = 1; i < shots.length; i++)
+  if (shots[i].at <= shots[i - 1].at) throw new Error(`shots out of order at #${i}`);
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Stufenpyramide", at: T.und + 0.4, until: T.glatte - 0.3, pos: [-36, 6.4, 6], side: 1 },
+  { text: "Knickpyramide", at: T.knick + 0.4, until: T.knick + 4.5, pos: [2, 10.4, -22], side: 1 },
+  { text: "Rote Pyramide", at: T.erst + 0.8, until: T.sohn - 0.3, pos: [40, 10.6, -2], side: -1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
-
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "wind", at: 0, dur: T.end, db: -21 },
+  { s: "baustelle", at: DJ.from, dur: DJ.to - DJ.from + 1.5, db: -21 },
+  { s: "stein", at: DJ.from + 0.6, db: -16 },
+  { s: "baustelle", at: BENT.from, dur: BENT.to - BENT.from, db: -21 },
 ];
+
+export const HIGHLIGHTS = [];

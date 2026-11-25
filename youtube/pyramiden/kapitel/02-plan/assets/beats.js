@@ -1,72 +1,121 @@
-// TEMPLATE beats (demo chapter): every time-keyed decision of the chapter as plain data, so
-// scene.js (picture) and scripts/build-sfx.mjs (sound) read the same numbers.
-// Keep this file free of three.js / DOM: it is imported by node too.
-import { W } from "./timing.js";
+// Chapter 2 "Ein Berg nach Plan": the plateau above the flood, the planned
+// pyramid, seven football pitches, water in trenches, the cardinal
+// directions, the stars.
+import { END, WORDS } from "./timing.js";
 
-// ---------------------------------------------------------------- beats
-// Word anchors: W("word", n) = start of the n-th time that word is spoken.
-// Pick distinctive words; common ones ("an", "der") collide.
+const norm = (x) => x.toLowerCase().replace(/[^a-zäöüß0-9-]/g, "");
+export function P(a, b, n = 1) {
+  let c = 0;
+  for (let i = 0; i + 1 < WORDS.length; i++)
+    if (norm(WORDS[i].w) === norm(a) && norm(WORDS[i + 1].w) === norm(b) && ++c === n)
+      return WORDS[i].start;
+  throw new Error(`anchor not found: ${a} ${b}`);
+}
+
 export const T = {
-  kerze: W("Kerze"),
-  lampe1: W("Lampe", 1),
-  aber: W("Aber"),
-  aus: W("aus"),
-  also: W("Also"),
-  draht1: W("Draht", 1),
-  heiss: W("heiß"),
-  gluet: W("glüht"),
-  gluehfaden: W("Glühfaden"),
-  payoff: W("weil"), // the line that answers the hook question
-  fakt: W("Übrigens"),
+  hoch: P("hoch", "genug"),
+  nah: P("nah", "genug"),
+  geplant: P("Geplant", "ist"),
+  deren: P("deren", "Grundfläche"),
+  bevor: P("Bevor", "auch"),
+  giesst: P("Gießt", "man"),
+  ganz: P("ganz", "gleich"),
+  ergebnis: P("Das", "Ergebnis"),
+  genauso: P("Genauso", "präzise"),
+  vier: P("Die", "vier"),
+  ohne: P("und", "das"),
+  sterne: P("Vermutlich", "halfen"),
+  damit: P("Damit", "steht"),
+  was: P("Was", "jetzt"),
+  end: END,
 };
 
-// ---------------------------------------------------------------- shots
-// One shot per beat, always slowly moving. Long form: a change in the picture
-// every 8–20 s at the latest (a cut, a camera move, a new object, a slowmo, a
-// display) — the hook chapter cuts faster (≤ 1.5 s first cut). Every cut gets
-// a whoosh automatically; add `sfx: false` to a shot to keep it silent.
 export const shots = [
-  // opening: fast push-in from frame 0, first cut ≤ 1.5 s (visual-style.md "first 3 seconds")
-  { at: 0, from: [1.5, 1.2, 2.1], to: [0.75, 0.75, 1.05], look: [0, 0.45, 0] },
-  { at: T.lampe1, from: [3.2, 2.6, 5.4], to: [2.6, 2.2, 4.5], look: [0, 0.5, 0] },
-  { at: T.aber, from: [-1.1, 0.9, 1.4], to: [-0.8, 0.8, 1.1], look: [0, 0.5, 0] },
-  { at: T.also, from: [2.2, 2.4, 3.4], to: [1.8, 2.1, 2.9], look: [0, 1.5, 0] },
-  { at: T.draht1, from: [0.9, 2.3, 1.7], to: [0.6, 2.15, 1.4], look: [0, 1.95, 0], whip: 1 },
-  { at: T.gluehfaden, orbit: { c: [0, 1.7, 0], r: 3.2, y: 2.4, a0: 0.8, a1: -0.6 } },
-  { at: T.payoff, from: [1.0, 2.0, 3.6], to: [0.6, 1.9, 3.0], look: [0, 1.5, 0] },
-  { at: T.fakt, from: [3, 2.5, 5], to: [9.5, 7.5, 15], look: [0, 1.4, 0], lookTo: [0, 0.4, 0] },
+  // the empty plateau above the flood, from the air
+  { at: 0, from: [46, 14, 44], to: [40, 15, 38], look: [2, 0, 4], zoom: 1 },
+  // high enough: low over the flood water up to the cliff
+  {
+    at: T.hoch - 0.2,
+    from: [54, -3.1, 6],
+    to: [49, -3.0, 4],
+    look: [16, 0.5, 0],
+    lookTo: [10, 1.6, 0],
+    zoom: 1,
+  },
+  // close enough to the river: the harbour, boats
+  { at: T.nah - 0.2, from: [44, -1.5, 24], to: [42, -1.2, 21], look: [28, -3.4, 12], zoom: 1 },
+  // the planned pyramid as a glass ghost
+  {
+    at: T.geplant - 0.2,
+    from: [30, 5, 34],
+    to: [27, 7, 30],
+    look: [0, 6, 0],
+    zoom: 1,
+    whoosh: true,
+  },
+  // seven football pitches on its footprint (top view)
+  { at: T.deren - 0.2, from: [0.5, 40, 14], to: [0.3, 36, 10], look: [0, 0, 0], zoom: 1 },
+  // the rock must be level
+  { at: T.bevor - 0.2, from: [14, 1.2, 14], to: [12.5, 1.0, 12.5], look: [4, 0, 4], zoom: 1 },
+  // water in a long trench
+  {
+    at: T.giesst - 0.2,
+    from: [-6.6, 0.45, 10.2],
+    to: [-6.8, 0.38, 8.8],
+    look: [-5.75, 0.02, 0],
+    zoom: 1,
+  },
+  // low along the water line
+  {
+    at: T.ganz - 0.2,
+    from: [-5.75, 0.12, 12],
+    to: [-5.75, 0.1, 11.2],
+    look: [-5.75, 0.05, -8],
+    zoom: 1,
+  },
+  // the first course: a level base 230 m long
+  {
+    at: T.ergebnis - 0.2,
+    from: [13.6, 0.26, 12.6],
+    to: [12.9, 0.24, 12.3],
+    look: [-11.5, 0.1, 11.4],
+    zoom: 1,
+    whoosh: true,
+  },
+  // the four sides point to the four directions (top view, axes)
+  { at: T.genauso - 0.2, from: [0, 44, 0.6], to: [0, 40, 0.5], look: [0, 0, 0], zoom: 1 },
+  // without a compass: night falls, the stars turn around the pole
+  {
+    at: T.ohne - 0.2,
+    from: [8, 1.0, 22],
+    to: [7, 1.2, 20],
+    look: [0, 6, -40],
+    lookTo: [0, 30, -60],
+    zoom: 1,
+  },
+  // "Damit steht der Plan": dawn over the prepared site
+  { at: T.damit - 0.2, from: [-14, 8, 30], to: [-10, 9, 27], look: [2, 0, 6], zoom: 1 },
+  // millions of stones: towards the quarry
+  { at: T.was - 0.2, from: [-12, 4, 44], to: [-10, 4.5, 40], look: [3, -0.8, 27], zoom: 1 },
 ];
+for (let i = 1; i < shots.length; i++)
+  if (shots[i].at <= shots[i - 1].at) throw new Error(`shots out of order at #${i}`);
 
-// ---------------------------------------------------------------- labels
-// Tag + arrow on a part, from the word that names it, ~2.5 s. pos = world
-// point the arrow touches; side -1 / 1 (optional) = tag left / right of it.
 export const LABELS = [
-  { text: "Draht", at: T.draht1, until: T.heiss, pos: [0.3, 1.95, 0] },
-  { text: "Glühfaden", at: T.gluehfaden, until: T.payoff, pos: [0.2, 1.95, 0], side: 1 },
+  { text: "Gizeh", at: 1.0, until: T.hoch - 0.3, pos: [0, 0.4, 0], side: -1 },
+  { text: "Norden", at: T.vier + 0.6, until: T.ohne - 0.4, pos: [0, 0.2, -16], side: 1 },
 ];
 
-// ---------------------------------------------------------------- highlights
-// The video's big moments (world.js highlights()): at least one every
-// 5–7 s, the biggest spectacle also in the first 2 s. A slowmo must end on
-// a shot cut (here T.gluehfaden).
-export const HIGHLIGHTS = [
-  { kind: "zoom", at: T.lampe1, amount: 0.3 }, // hook claim lands before 1.5 s
-  { kind: "shake", at: T.also + 0.3, dur: 0.4, amp: 0.8 }, // the bulb lands
-  { kind: "slowmo", at: T.heiss, until: T.gluehfaden, speed: 0.35 }, // the wire heats up
-  { kind: "flash", at: T.gluet }, // … and glows
-  { kind: "zoom", at: T.gluehfaden, amount: 0.3 },
-];
-
-// ---------------------------------------------------------------- sound
-// Extra sound effects for things that happen in the scene. Automatic (no
-// entry needed): whoosh on every cut, hit on the hook title, punch on each
-// *highlighted* word, blip per label, the payoff ding, the CTA pops +
-// click. Kit: pop blip click klack ding boing wow hit punch whoosh (one-shots), zisch brumm surr rauschen piep geiger (loops: give `dur`).
-// Plus this video's OWN sounds from assets/sfx-extra/ (scripts/sfx-extra.py or
-// scripts/add-sfx.sh): popcorn popping, an alarm, a coin drop … used the same way.
-//   { s: "zisch", at: T.x, dur: 2.0, db: -16 }   db = level, optional
 export const SFX = [
-  { s: "anzuenden", at: 0.02 }, // opener: the topic's own sound on frame 0 (scripts/sfx-extra.py)
-  { s: "pop", at: T.also + 0.15 }, // the bulb pops in
-  { s: "surr", at: T.heiss, dur: T.payoff - T.heiss, db: -21 }, // the hot wire buzzes
+  { s: "wind", at: 0, dur: T.geplant, db: -21 },
+  { s: "wasser", at: T.hoch - 0.2, dur: T.geplant - T.hoch, db: -20 },
+  { s: "wind", at: T.geplant - 0.2, dur: T.bevor - T.geplant, db: -22 },
+  { s: "baustelle", at: T.bevor - 0.2, dur: T.giesst - T.bevor, db: -23 },
+  { s: "giessen", at: T.giesst + 0.4, db: -14 },
+  { s: "wasser", at: T.giesst, dur: T.ergebnis - T.giesst, db: -24 },
+  { s: "wind", at: T.ergebnis - 0.2, dur: T.ohne - T.ergebnis, db: -22 },
+  { s: "nacht", at: T.ohne - 0.2, dur: T.damit - T.ohne + 1, db: -18 },
+  { s: "wind", at: T.damit, dur: T.end - T.damit, db: -22 },
 ];
+
+export const HIGHLIGHTS = [];
