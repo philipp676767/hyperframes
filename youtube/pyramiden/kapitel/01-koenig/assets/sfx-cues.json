@@ -6,60 +6,65 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 67.3,
+    "db": -21
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
+    "at": 6.2,
+    "why": "cut"
   },
   {
     "s": "whoosh",
-    "at": 17.3,
+    "at": 20.3,
+    "why": "cut"
+  },
+  {
+    "s": "baustelle",
+    "at": 23.18,
+    "why": "beats.js",
+    "dur": 5.600000000000001,
+    "db": -21
+  },
+  {
+    "s": "stein",
+    "at": 23.78,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "blip",
+    "at": 27.13,
+    "why": "label Stufenpyramide"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.72,
+    "why": "cut"
+  },
+  {
+    "s": "baustelle",
+    "at": 39.14,
+    "why": "beats.js",
+    "dur": 9.100000000000001,
+    "db": -21
+  },
+  {
+    "s": "blip",
+    "at": 47.19,
+    "why": "label Knickpyramide"
+  },
+  {
+    "s": "whoosh",
+    "at": 52.96,
     "why": "cut"
   },
   {
     "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
-    "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
-  },
-  {
-    "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 54.23,
+    "why": "label Rote Pyramide"
   }
 ]

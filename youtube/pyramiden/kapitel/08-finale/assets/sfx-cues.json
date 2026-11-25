@@ -4,5 +4,87 @@
     "at": 0,
     "why": "chapter cut",
     "db": -14
+  },
+  {
+    "s": "wind",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 17.24,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 16.82,
+    "why": "cut"
+  },
+  {
+    "s": "hoehle",
+    "at": 17.04,
+    "why": "beats.js",
+    "dur": 14.780000000000005,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 31.6,
+    "why": "cut"
+  },
+  {
+    "s": "hall",
+    "at": 31.82,
+    "why": "beats.js",
+    "dur": 2.6199999999999974,
+    "db": -22
+  },
+  {
+    "s": "blip",
+    "at": 32.67,
+    "why": "label Merers Logbuch"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.22,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 34.44,
+    "why": "beats.js",
+    "dur": 10.259999999999998,
+    "db": -21
+  },
+  {
+    "s": "blip",
+    "at": 39.99,
+    "why": "label Rest der Hülle"
+  },
+  {
+    "s": "whoosh",
+    "at": 44.48,
+    "why": "cut"
+  },
+  {
+    "s": "hall",
+    "at": 44.7,
+    "why": "beats.js",
+    "dur": 14.5,
+    "db": -18
+  },
+  {
+    "s": "blip",
+    "at": 51.81,
+    "why": "label Hohlraum"
+  },
+  {
+    "s": "whoosh",
+    "at": 58.98,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 59.2,
+    "why": "beats.js",
+    "dur": 30.699999999999996,
+    "db": -21
   }
 ]

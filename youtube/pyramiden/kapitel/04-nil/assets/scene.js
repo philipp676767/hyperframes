@@ -1,157 +1,49 @@
-// TEMPLATE scene (demo chapter, 16:9): a tiny working story (candle -> light
-// bulb) that shows the pattern. Replace the subject here and the beats (T), shots, labels and
-// sounds in beats.js for the new topic; keep the structure. World,
-// captions, panel, arrows, labels and camera come from world.js.
-// Full-size reference: tiktok/kuehlschrank/assets/scene.js
-import {
-  THREE,
-  ramp,
-  smooth,
-  inBack,
-  pop,
-  V,
-  scene,
-  flat,
-  M,
-  xrayMaterial,
-  xrayEdges,
-  setXray,
-  showNope,
-  makeArrowSet,
-  animateArrows,
-  showPanel,
-  LED,
-  labels,
-  squash,
-  puff,
-  highlights,
-  shotCamera,
-  renderFrame,
-  start,
-} from "./world.js";
-import "./set.js";
-import { createHand } from "./hand.js";
-import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
+// Chapter 4: Tura, the logbook, Merer's crossing, the flood rising, the
+// harbour, the buried branch, the arrival.
+import { shotCamera, renderFrame, start, highlights, labels, ramp, smooth, V } from "./world.js";
+import { FLOOD_Y, VALLEY_Y } from "./welt.js";
+import { G, BOAT, MERER, FLEET, BRANCH } from "./set.js";
+import { T, shots, LABELS, HIGHLIGHTS, CROSS } from "./beats.js";
 
 highlights(HIGHLIGHTS);
-
-// The world of this video (sky, ground, props, hero piece, life) is built
-// in set.js — new for every video (SKILL.md 1b). Optional floor pad under
-// the subject:
-
-// ---------------------------------------------------------------- hook prop
-// The primitive version from the hook ("Kerze in einem Glas").
-const hook = new THREE.Group();
-scene.add(hook);
-const flameMat = flat(0xffb02e, { emissive: 0xff7a10, emissiveIntensity: 1 });
-const flame = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.22, 8), flameMat);
-{
-  const jar = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.42, 0.42, 0.9, 20, 1, true),
-    new THREE.MeshStandardMaterial({ color: 0xdff4ff, transparent: true, opacity: 0.35 }),
-  );
-  jar.position.y = 0.49;
-  hook.add(jar);
-  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.5, 14), flat(0xfff3dc));
-  candle.position.y = 0.29;
-  candle.castShadow = true;
-  hook.add(candle);
-  flame.position.y = 0.66;
-  hook.add(flame);
-}
-
-// ---------------------------------------------------------------- subject
-// Big, readable, centred at the origin, ~2-3 units tall. Shell uses
-// xrayMaterial so the inside can be revealed.
-const bulb = new THREE.Group();
-scene.add(bulb);
-const glassMat = xrayMaterial(0xfff8e8);
-const glassGeo = new THREE.SphereGeometry(0.9, 24, 16);
-const glass = new THREE.Mesh(glassGeo, glassMat);
-glass.position.y = 1.9;
-bulb.add(glass);
-const glassEdges = xrayEdges(glassGeo);
-glassEdges.position.copy(glass.position);
-bulb.add(glassEdges);
-const base = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.7, 16), M.alu);
-base.position.y = 0.75;
-base.castShadow = true;
-bulb.add(base);
-const filamentMat = flat(0x6b6b6b, { emissive: 0xffa22e, emissiveIntensity: 0 });
-const coil = [];
-for (let k = 0; k <= 120; k++) {
-  const f = k / 120;
-  const a = f * Math.PI * 2 * 9;
-  coil.push(V(-0.35 + f * 0.7, 1.95 + Math.sin(a) * 0.06, Math.cos(a) * 0.06));
-}
-const filament = new THREE.Mesh(
-  new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coil), 240, 0.012, 6),
-  filamentMat,
-);
-bulb.add(filament);
-const glow = new THREE.PointLight(0xffc46b, 0, 6, 1.5);
-glow.position.set(0, 1.95, 0);
-bulb.add(glow);
-const heatOut = makeArrowSet(
-  [
-    [V(0.3, 2.1, 0.3), V(1.4, 2.6, 0.9)],
-    [V(-0.3, 2.1, 0.3), V(-1.4, 2.6, 0.9)],
-    [V(0, 2.3, 0.4), V(0.1, 3.3, 1.0)],
-  ],
-  { parent: bulb },
-);
-
+for (const s of shots) if (s.follow === "boat") s.rel = BOAT.position;
 const applyCamera = shotCamera(shots);
+const A = V(CROSS.from[0], FLOOD_Y - 0.02, CROSS.from[1]);
+const B = V(CROSS.to[0], FLOOD_Y - 0.02, CROSS.to[1]);
+const head = Math.atan2(B.z - A.z, -(B.x - A.x));
 
-// the viewer's hand reaches in on frame 0 and taps the jar (visual-style.md
-// "The first 3 seconds": a hand doing something stops the scroll)
-const hand = createHand({ scale: 0.7 });
-
-// ---------------------------------------------------------------- render
 function renderAt(t) {
-  hand.track(t, [
-    // starts before 0 so the loop tail (t < 0) already shows it reaching in
-    { t: -0.6, pos: [1.7, 1.0, 1.4], rot: [0.2, -2.1, 0], pose: "open" },
-    { t: 0, pos: [1.2, 0.78, 0.98], rot: [0.25, -2.1, 0], pose: "open" },
-    { t: 0.45, pos: [0.86, 0.64, 0.7], rot: [0.3, -2.1, 0], pose: "press" },
-    { t: 0.9, pos: [0.94, 0.66, 0.76], rot: [0.3, -2.1, 0], pose: "point" },
-    { t: T.lampe1, pos: [1.7, 0.95, 1.4], rot: [0.2, -2.1, 0], pose: "open", out: true },
-  ]);
-  // hook: the candle burns down, then the "nope" X
-  const burn = ramp(t, T.aber, T.aus + 0.3);
-  flame.scale.setScalar(Math.max(0.001, 1 - smooth(burn)));
-  flame.rotation.z = Math.sin(t * 9) * 0.08;
-  showNope(pop(t, T.aus, T.also), 0, 1.4, 0.3);
-  const hookOut = inBack(ramp(t, T.also, T.also + 0.35));
-  hook.visible = hookOut < 1;
-  hook.scale.setScalar(Math.max(0.001, 1 - hookOut));
-
-  // subject pops in when the build starts, x-ray while explaining
-  // pop-ins: squash() for rubbery growth + a dust puff where it lands
-  bulb.visible = t >= T.also + 0.15;
-  bulb.scale.copy(squash(t, T.also + 0.15));
-  puff("bulb", t, T.also + 0.3, 0, 0.05, 0, 1.3);
-  setXray(
-    [glassMat],
-    smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.payoff, T.payoff + 0.5)),
-  );
-  const hot = smooth(ramp(t, T.heiss, T.gluet + 0.4));
-  filamentMat.emissiveIntensity = 2.5 * hot;
-  glow.intensity = 6 * hot;
-  animateArrows(heatOut, t, pop(t, T.gluet, T.payoff));
-
-  // LED panel: one fact per beat, max one at a time
-  if (t >= T.heiss && t < T.gluehfaden) {
-    showPanel(pop(t, T.heiss, T.gluehfaden), "DRAHT", "2500°C", LED.red);
-  } else {
-    showPanel(0);
-  }
-
-  // tags + arrows on the named parts
+  // the flood: low water during "Jeden Sommer …", then it rises
+  const rise = smooth(ramp(t, T.jeden + 0.6, T.ueber - 0.4));
+  const inRise = t >= T.jeden - 0.2 && t < T.ueber - 0.2;
+  G.water.position.y = inRise ? VALLEY_Y + 0.05 + (FLOOD_Y - VALLEY_Y - 0.05) * rise : FLOOD_Y;
+  // Merer's boat
+  const k = smooth(ramp(t, CROSS.t0, CROSS.t1));
+  BOAT.position.lerpVectors(A, B, k);
+  BOAT.position.y = G.water.position.y - 0.02 + Math.sin(t * 0.9) * 0.01;
+  BOAT.rotation.y = head;
+  MERER.rotation.y = Math.sin(t * 0.25) * 0.2;
+  BOAT.visible = !inRise || rise > 0.85;
+  // the fleet shuttles (half loaded towards Giza, half empty back)
+  FLEET.forEach((b, i) => {
+    const u = (t * 0.012 + b.userData.off) % 1;
+    const back = i % 2 === 1;
+    const f = back ? 1 - u : u;
+    b.position.set(88 - 54 * f, G.water.position.y - 0.02, -10 + 22 * f + (i - 2) * 3);
+    b.rotation.y = head + (back ? Math.PI : 0);
+    b.visible = !inRise || rise > 0.85;
+  });
+  for (const bb of G.boats) bb.visible = !inRise || rise > 0.85;
+  G.boatsAt(t);
+  G.peopleAt(t);
+  G.sledgesAt(t, 0.6);
+  for (const s of G.smokes) s.userData.update(t);
+  // the buried branch lights up from the satellite view
+  const kb = smooth(ramp(t, T.auf + 0.5, T.auf + 4.5));
+  BRANCH.visible = t >= T.wie - 0.2 && t < T.laut - 0.2;
+  BRANCH.geometry.setDrawRange(0, Math.ceil(kb * BRANCH.userData.segs) * 6 * 6);
   labels(t, LABELS);
-
   applyCamera(t);
   renderFrame();
 }
-
 start(renderAt);

@@ -6,60 +6,88 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "baustelle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 12.18,
+    "db": -20
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 11.76,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "meissel",
+    "at": 11.98,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "dur": 6.260000000000002,
+    "db": -12
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 18.02,
+    "why": "cut"
+  },
+  {
+    "s": "feuer",
+    "at": 18.24,
+    "why": "beats.js",
+    "dur": 13.8,
+    "db": -16
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 23.51,
+    "why": "label Kupfer"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.82,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 32.04,
+    "why": "beats.js",
+    "dur": 6.659999999999997,
+    "db": -22
+  },
+  {
+    "s": "stein",
+    "at": 32.74,
+    "why": "beats.js",
+    "db": -16
+  },
+  {
+    "s": "whoosh",
+    "at": 38.48,
+    "why": "cut"
+  },
+  {
+    "s": "wasser",
+    "at": 38.7,
+    "why": "beats.js",
+    "dur": 15.64,
+    "db": -19
+  },
+  {
+    "s": "segel",
+    "at": 38.7,
+    "why": "beats.js",
+    "dur": 15.64,
+    "db": -23
+  },
+  {
+    "s": "blip",
+    "at": 42.15,
+    "why": "label Granit"
+  },
+  {
+    "s": "baustelle",
+    "at": 54.34,
+    "why": "beats.js",
+    "dur": 5.359999999999999,
+    "db": -20
   }
 ]

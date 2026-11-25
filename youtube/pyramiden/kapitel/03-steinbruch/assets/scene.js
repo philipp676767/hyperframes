@@ -1,157 +1,68 @@
-// TEMPLATE scene (demo chapter, 16:9): a tiny working story (candle -> light
-// bulb) that shows the pattern. Replace the subject here and the beats (T), shots, labels and
-// sounds in beats.js for the new topic; keep the structure. World,
-// captions, panel, arrows, labels and camera come from world.js.
-// Full-size reference: tiktok/kuehlschrank/assets/scene.js
+// Chapter 3: the quarry, the chisel, the smiths, the balance, the granite boat.
 import {
-  THREE,
-  ramp,
-  smooth,
-  inBack,
-  pop,
-  V,
-  scene,
-  flat,
-  M,
-  xrayMaterial,
-  xrayEdges,
-  setXray,
-  showNope,
-  makeArrowSet,
-  animateArrows,
-  showPanel,
-  LED,
-  labels,
-  squash,
-  puff,
-  highlights,
   shotCamera,
   renderFrame,
   start,
+  highlights,
+  labels,
+  showLabel,
+  pop,
+  puff,
+  ramp,
+  smooth,
+  V,
 } from "./world.js";
-import "./set.js";
-import { createHand } from "./hand.js";
-import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
+import { walk, FLOOD_Y } from "./welt.js";
+import { G, CUTTER, CHISEL, MALLET, FIRE, BALANCE, GBOAT } from "./set.js";
+import { T, shots, LABELS, HIGHLIGHTS, STRIKE } from "./beats.js";
 
 highlights(HIGHLIGHTS);
-
-// The world of this video (sky, ground, props, hero piece, life) is built
-// in set.js — new for every video (SKILL.md 1b). Optional floor pad under
-// the subject:
-
-// ---------------------------------------------------------------- hook prop
-// The primitive version from the hook ("Kerze in einem Glas").
-const hook = new THREE.Group();
-scene.add(hook);
-const flameMat = flat(0xffb02e, { emissive: 0xff7a10, emissiveIntensity: 1 });
-const flame = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.22, 8), flameMat);
-{
-  const jar = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.42, 0.42, 0.9, 20, 1, true),
-    new THREE.MeshStandardMaterial({ color: 0xdff4ff, transparent: true, opacity: 0.35 }),
-  );
-  jar.position.y = 0.49;
-  hook.add(jar);
-  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.5, 14), flat(0xfff3dc));
-  candle.position.y = 0.29;
-  candle.castShadow = true;
-  hook.add(candle);
-  flame.position.y = 0.66;
-  hook.add(flame);
-}
-
-// ---------------------------------------------------------------- subject
-// Big, readable, centred at the origin, ~2-3 units tall. Shell uses
-// xrayMaterial so the inside can be revealed.
-const bulb = new THREE.Group();
-scene.add(bulb);
-const glassMat = xrayMaterial(0xfff8e8);
-const glassGeo = new THREE.SphereGeometry(0.9, 24, 16);
-const glass = new THREE.Mesh(glassGeo, glassMat);
-glass.position.y = 1.9;
-bulb.add(glass);
-const glassEdges = xrayEdges(glassGeo);
-glassEdges.position.copy(glass.position);
-bulb.add(glassEdges);
-const base = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.7, 16), M.alu);
-base.position.y = 0.75;
-base.castShadow = true;
-bulb.add(base);
-const filamentMat = flat(0x6b6b6b, { emissive: 0xffa22e, emissiveIntensity: 0 });
-const coil = [];
-for (let k = 0; k <= 120; k++) {
-  const f = k / 120;
-  const a = f * Math.PI * 2 * 9;
-  coil.push(V(-0.35 + f * 0.7, 1.95 + Math.sin(a) * 0.06, Math.cos(a) * 0.06));
-}
-const filament = new THREE.Mesh(
-  new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coil), 240, 0.012, 6),
-  filamentMat,
-);
-bulb.add(filament);
-const glow = new THREE.PointLight(0xffc46b, 0, 6, 1.5);
-glow.position.set(0, 1.95, 0);
-bulb.add(glow);
-const heatOut = makeArrowSet(
-  [
-    [V(0.3, 2.1, 0.3), V(1.4, 2.6, 0.9)],
-    [V(-0.3, 2.1, 0.3), V(-1.4, 2.6, 0.9)],
-    [V(0, 2.3, 0.4), V(0.1, 3.3, 1.0)],
-  ],
-  { parent: bulb },
-);
-
+for (const s of shots) if (s.follow === "gboat") s.rel = GBOAT.position;
 const applyCamera = shotCamera(shots);
+const tagLabels = LABELS.filter((l) => !l.follow);
+const boatLabel = LABELS.find((l) => l.follow === "gboat");
+const G0 = V(64, FLOOD_Y - 0.02, 40);
+const G1p = V(36, FLOOD_Y - 0.02, 16);
 
-// the viewer's hand reaches in on frame 0 and taps the jar (visual-style.md
-// "The first 3 seconds": a hand doing something stops the scroll)
-const hand = createHand({ scale: 0.7 });
-
-// ---------------------------------------------------------------- render
 function renderAt(t) {
-  hand.track(t, [
-    // starts before 0 so the loop tail (t < 0) already shows it reaching in
-    { t: -0.6, pos: [1.7, 1.0, 1.4], rot: [0.2, -2.1, 0], pose: "open" },
-    { t: 0, pos: [1.2, 0.78, 0.98], rot: [0.25, -2.1, 0], pose: "open" },
-    { t: 0.45, pos: [0.86, 0.64, 0.7], rot: [0.3, -2.1, 0], pose: "press" },
-    { t: 0.9, pos: [0.94, 0.66, 0.76], rot: [0.3, -2.1, 0], pose: "point" },
-    { t: T.lampe1, pos: [1.7, 0.95, 1.4], rot: [0.2, -2.1, 0], pose: "open", out: true },
-  ]);
-  // hook: the candle burns down, then the "nope" X
-  const burn = ramp(t, T.aber, T.aus + 0.3);
-  flame.scale.setScalar(Math.max(0.001, 1 - smooth(burn)));
-  flame.rotation.z = Math.sin(t * 9) * 0.08;
-  showNope(pop(t, T.aus, T.also), 0, 1.4, 0.3);
-  const hookOut = inBack(ramp(t, T.also, T.also + 0.35));
-  hook.visible = hookOut < 1;
-  hook.scale.setScalar(Math.max(0.001, 1 - hookOut));
-
-  // subject pops in when the build starts, x-ray while explaining
-  // pop-ins: squash() for rubbery growth + a dust puff where it lands
-  bulb.visible = t >= T.also + 0.15;
-  bulb.scale.copy(squash(t, T.also + 0.15));
-  puff("bulb", t, T.also + 0.3, 0, 0.05, 0, 1.3);
-  setXray(
-    [glassMat],
-    smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.payoff, T.payoff + 0.5)),
-  );
-  const hot = smooth(ramp(t, T.heiss, T.gluet + 0.4));
-  filamentMat.emissiveIntensity = 2.5 * hot;
-  glow.intensity = 6 * hot;
-  animateArrows(heatOut, t, pop(t, T.gluet, T.payoff));
-
-  // LED panel: one fact per beat, max one at a time
-  if (t >= T.heiss && t < T.gluehfaden) {
-    showPanel(pop(t, T.heiss, T.gluehfaden), "DRAHT", "2500°C", LED.red);
-  } else {
-    showPanel(0);
+  G.peopleAt(t);
+  G.sledgesAt(t, 0.6);
+  G.boatsAt(t);
+  for (const s of G.smokes) s.userData.update(t);
+  // the stone-cutter: mallet up, strike, chisel bites
+  const ph = (t % STRIKE) / STRIKE;
+  const hit = ph < 0.12 ? 1 - ph / 0.12 : 0;
+  const lift = ph < 0.12 ? 0 : Math.sin(((ph - 0.12) / 0.88) * Math.PI) * 0.03;
+  const tip = V(-1.4, -2.0, 30.06);
+  CHISEL.position.copy(tip).add(V(0.004, 0.024, 0.004));
+  CHISEL.rotation.set(0.15, 0, -0.15);
+  MALLET.position.copy(tip).add(V(0.01, 0.062 + lift, 0.008));
+  MALLET.rotation.set(0, 0, 0.4 + lift * 8);
+  CUTTER.rotation.z = 0.25 + hit * 0.06;
+  if (t > T.ihr - 0.3 && t < T.auf) {
+    const k = Math.floor(t / STRIKE);
+    puff("chip" + (k % 3), t, k * STRIKE, tip.x, tip.y, tip.z, 0.035, 0xf0e6d2);
   }
-
-  // tags + arrows on the named parts
-  labels(t, LABELS);
-
+  // fire
+  const f = FIRE.userData;
+  f.light.intensity = 2.5 + Math.sin(t * 13) * 0.4 + Math.sin(t * 29) * 0.25;
+  f.coals.scale.y = 0.35 + Math.sin(t * 9) * 0.03;
+  f.smoke.userData.update(t);
+  f.smiths.forEach((p, i) => walk(p, t * 0.8 + i, 0.15));
+  // balance: settles level after a small swing (2.5 t = two small cars)
+  const sw = ramp(t, T.ein - 0.2, T.ein + 4);
+  const tilt = (1 - smooth(sw)) * 0.22 * Math.cos(sw * 9);
+  BALANCE.userData.beam.rotation.z = tilt;
+  for (const p of BALANCE.userData.pans) p.rotation.z = -tilt;
+  // granite boat: from the south towards the harbour
+  const kb = ramp(t, T.fuer - 6, T.end);
+  GBOAT.position.lerpVectors(G0, G1p, kb);
+  GBOAT.position.y = FLOOD_Y - 0.02 + Math.sin(t * 0.8) * 0.01;
+  GBOAT.rotation.y = Math.atan2(G1p.z - G0.z, -(G1p.x - G0.x));
+  labels(t, tagLabels);
+  const kl = pop(t, boatLabel.at, boatLabel.until);
+  if (kl > 0) showLabel("granit", kl, boatLabel.text, GBOAT.position.clone().add(V(0, 0.22, 0)), 1);
   applyCamera(t);
   renderFrame();
 }
-
 start(renderAt);

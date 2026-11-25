@@ -1,59 +1,102 @@
 [
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "hoehle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 4,
+    "db": -20
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 3.63,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "wasser",
+    "at": 3.85,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
-  },
-  {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "dur": 38.48,
+    "db": -19
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 7.29,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 7.51,
+    "why": "beats.js",
+    "dur": 7.9399999999999995,
+    "db": -22
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 8.71,
+    "why": "label Gizeh"
+  },
+  {
+    "s": "segel",
+    "at": 17.96,
+    "why": "beats.js",
+    "dur": 13.16,
+    "db": -22
+  },
+  {
+    "s": "baustelle",
+    "at": 31.32,
+    "why": "beats.js",
+    "dur": 11.159999999999997,
+    "db": -21
+  },
+  {
+    "s": "blip",
+    "at": 31.97,
+    "why": "label Cheops-Pyramide"
+  },
+  {
+    "s": "whoosh",
+    "at": 42.06,
+    "why": "cut"
+  },
+  {
+    "s": "hoehle",
+    "at": 42.28,
+    "why": "beats.js",
+    "dur": 7.940000000000005,
+    "db": -19
+  },
+  {
+    "s": "whoosh",
+    "at": 50,
+    "why": "cut"
+  },
+  {
+    "s": "wind",
+    "at": 50.22,
+    "why": "beats.js",
+    "dur": 5.100000000000001,
+    "db": -22
+  },
+  {
+    "s": "baustelle",
+    "at": 55.37,
+    "why": "beats.js",
+    "dur": 8.479999999999997,
+    "db": -20
+  },
+  {
+    "s": "wasser",
+    "at": 63.85,
+    "why": "beats.js",
+    "dur": 2.6200000000000045,
+    "db": -20
+  },
+  {
+    "s": "wind",
+    "at": 66.47,
+    "why": "beats.js",
+    "dur": 9.280000000000001,
+    "db": -21
   }
 ]

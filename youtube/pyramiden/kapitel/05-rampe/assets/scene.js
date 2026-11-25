@@ -1,157 +1,82 @@
-// TEMPLATE scene (demo chapter, 16:9): a tiny working story (candle -> light
-// bulb) that shows the pattern. Replace the subject here and the beats (T), shots, labels and
-// sounds in beats.js for the new topic; keep the structure. World,
-// captions, panel, arrows, labels and camera come from world.js.
-// Full-size reference: tiktok/kuehlschrank/assets/scene.js
+// Chapter 5: wheels sink, sledges, the painting, dry vs wet sand, the three
+// ramps (straight, spiral, inside), the 2018 ramp, the crowd.
 import {
-  THREE,
-  ramp,
-  smooth,
-  inBack,
-  pop,
-  V,
-  scene,
-  flat,
-  M,
-  xrayMaterial,
-  xrayEdges,
-  setXray,
-  showNope,
-  makeArrowSet,
-  animateArrows,
-  showPanel,
-  LED,
-  labels,
-  squash,
-  puff,
-  highlights,
   shotCamera,
   renderFrame,
   start,
+  highlights,
+  labels,
+  ramp,
+  smooth,
+  setXray,
 } from "./world.js";
-import "./set.js";
-import { createHand } from "./hand.js";
+import { walk } from "./welt.js";
+import { G, CART, HS, DRY, WET, BERM, LAB, HATS, CROWD } from "./set.js";
 import { T, shots, LABELS, HIGHLIGHTS } from "./beats.js";
 
 highlights(HIGHLIGHTS);
-
-// The world of this video (sky, ground, props, hero piece, life) is built
-// in set.js — new for every video (SKILL.md 1b). Optional floor pad under
-// the subject:
-
-// ---------------------------------------------------------------- hook prop
-// The primitive version from the hook ("Kerze in einem Glas").
-const hook = new THREE.Group();
-scene.add(hook);
-const flameMat = flat(0xffb02e, { emissive: 0xff7a10, emissiveIntensity: 1 });
-const flame = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.22, 8), flameMat);
-{
-  const jar = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.42, 0.42, 0.9, 20, 1, true),
-    new THREE.MeshStandardMaterial({ color: 0xdff4ff, transparent: true, opacity: 0.35 }),
-  );
-  jar.position.y = 0.49;
-  hook.add(jar);
-  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.5, 14), flat(0xfff3dc));
-  candle.position.y = 0.29;
-  candle.castShadow = true;
-  hook.add(candle);
-  flame.position.y = 0.66;
-  hook.add(flame);
-}
-
-// ---------------------------------------------------------------- subject
-// Big, readable, centred at the origin, ~2-3 units tall. Shell uses
-// xrayMaterial so the inside can be revealed.
-const bulb = new THREE.Group();
-scene.add(bulb);
-const glassMat = xrayMaterial(0xfff8e8);
-const glassGeo = new THREE.SphereGeometry(0.9, 24, 16);
-const glass = new THREE.Mesh(glassGeo, glassMat);
-glass.position.y = 1.9;
-bulb.add(glass);
-const glassEdges = xrayEdges(glassGeo);
-glassEdges.position.copy(glass.position);
-bulb.add(glassEdges);
-const base = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.7, 16), M.alu);
-base.position.y = 0.75;
-base.castShadow = true;
-bulb.add(base);
-const filamentMat = flat(0x6b6b6b, { emissive: 0xffa22e, emissiveIntensity: 0 });
-const coil = [];
-for (let k = 0; k <= 120; k++) {
-  const f = k / 120;
-  const a = f * Math.PI * 2 * 9;
-  coil.push(V(-0.35 + f * 0.7, 1.95 + Math.sin(a) * 0.06, Math.cos(a) * 0.06));
-}
-const filament = new THREE.Mesh(
-  new THREE.TubeGeometry(new THREE.CatmullRomCurve3(coil), 240, 0.012, 6),
-  filamentMat,
-);
-bulb.add(filament);
-const glow = new THREE.PointLight(0xffc46b, 0, 6, 1.5);
-glow.position.set(0, 1.95, 0);
-bulb.add(glow);
-const heatOut = makeArrowSet(
-  [
-    [V(0.3, 2.1, 0.3), V(1.4, 2.6, 0.9)],
-    [V(-0.3, 2.1, 0.3), V(-1.4, 2.6, 0.9)],
-    [V(0, 2.3, 0.4), V(0.1, 3.3, 1.0)],
-  ],
-  { parent: bulb },
-);
-
+for (const s of shots) if (s.follow === "sledge") s.rel = HS.position;
 const applyCamera = shotCamera(shots);
+const P = G.g1;
 
-// the viewer's hand reaches in on frame 0 and taps the jar (visual-style.md
-// "The first 3 seconds": a hand doing something stops the scroll)
-const hand = createHand({ scale: 0.7 });
-
-// ---------------------------------------------------------------- render
 function renderAt(t) {
-  hand.track(t, [
-    // starts before 0 so the loop tail (t < 0) already shows it reaching in
-    { t: -0.6, pos: [1.7, 1.0, 1.4], rot: [0.2, -2.1, 0], pose: "open" },
-    { t: 0, pos: [1.2, 0.78, 0.98], rot: [0.25, -2.1, 0], pose: "open" },
-    { t: 0.45, pos: [0.86, 0.64, 0.7], rot: [0.3, -2.1, 0], pose: "press" },
-    { t: 0.9, pos: [0.94, 0.66, 0.76], rot: [0.3, -2.1, 0], pose: "point" },
-    { t: T.lampe1, pos: [1.7, 0.95, 1.4], rot: [0.2, -2.1, 0], pose: "open", out: true },
-  ]);
-  // hook: the candle burns down, then the "nope" X
-  const burn = ramp(t, T.aber, T.aus + 0.3);
-  flame.scale.setScalar(Math.max(0.001, 1 - smooth(burn)));
-  flame.rotation.z = Math.sin(t * 9) * 0.08;
-  showNope(pop(t, T.aus, T.also), 0, 1.4, 0.3);
-  const hookOut = inBack(ramp(t, T.also, T.also + 0.35));
-  hook.visible = hookOut < 1;
-  hook.scale.setScalar(Math.max(0.001, 1 - hookOut));
-
-  // subject pops in when the build starts, x-ray while explaining
-  // pop-ins: squash() for rubbery growth + a dust puff where it lands
-  bulb.visible = t >= T.also + 0.15;
-  bulb.scale.copy(squash(t, T.also + 0.15));
-  puff("bulb", t, T.also + 0.3, 0, 0.05, 0, 1.3);
-  setXray(
-    [glassMat],
-    smooth(ramp(t, T.draht1 - 0.2, T.draht1 + 0.4)) * (1 - ramp(t, T.payoff, T.payoff + 0.5)),
-  );
-  const hot = smooth(ramp(t, T.heiss, T.gluet + 0.4));
-  filamentMat.emissiveIntensity = 2.5 * hot;
-  glow.intensity = 6 * hot;
-  animateArrows(heatOut, t, pop(t, T.gluet, T.payoff));
-
-  // LED panel: one fact per beat, max one at a time
-  if (t >= T.heiss && t < T.gluehfaden) {
-    showPanel(pop(t, T.heiss, T.gluehfaden), "DRAHT", "2500°C", LED.red);
-  } else {
-    showPanel(0);
+  G.peopleAt(t);
+  G.boatsAt(t);
+  for (const s of G.smokes) s.userData.update(t);
+  // the cart sinks while the wheels try to turn
+  const sink = smooth(ramp(t, T.raeder, T.raeder + 2.2));
+  CART.position.y = -0.035 * sink;
+  CART.rotation.z = 0.06 * sink;
+  CART.userData.rim.scale.set(3, 1.8 + sink * 1.4, 1 + sink);
+  // hero sledge
+  HS.position.x = 19 - (t - T.statt) * 0.04;
+  HS.userData.update(t, { pour: 1, speed: 0.8 });
+  // experiment: the wet sledge slides twice as far
+  const ke = Math.max(0, t - T.mit);
+  WET.position.x = LAB.x + 1.0 - Math.min(1.6, ke * 0.16);
+  DRY.position.x = LAB.x + 1.0 - Math.min(0.8, ke * 0.08);
+  WET.userData.update(t, { pour: 1, speed: 1.1 });
+  DRY.userData.update(t, { pour: 0, speed: 0.6 });
+  BERM.position.set(DRY.position.x - 0.26, LAB.y - 0.02, DRY.position.z);
+  BERM.scale.set(0.5 + Math.min(1, ke * 0.15) * 0.6, 0.4 + Math.min(1, ke * 0.15) * 0.9, 1.4);
+  // the ramps on the pyramid
+  let name = "spirale";
+  let k = 1;
+  if (t >= T.gerade - 0.2 && t < T.spirale - 0.15) {
+    name = "gerade";
+    k = smooth(ramp(t, T.gerade, T.gerade + 1.6));
+  } else if (t >= T.spirale - 0.15 && t < T.innen - 0.15) {
+    k = smooth(ramp(t, T.spirale, T.spirale + 1.2));
+  } else if (t >= T.innen - 0.15 && t < T.y2018 - 0.2) {
+    name = "innen";
+    k = smooth(ramp(t, T.innen + 0.2, T.innen + 2.4));
+  } else if (t >= T.welche - 0.2 && t < T.denn - 0.2) {
+    const c = Math.floor((t - T.welche) / 1.4) % 3;
+    name = ["gerade", "spirale", "innen"][c];
   }
-
-  // tags + arrows on the named parts
+  G.setRamp(name, k);
+  const xr = name === "innen" ? 1 : 0;
+  setXray(P.mats, xr * 0.85);
+  G.sledgesAt(t, 0.6);
+  for (const s of G.sledges) if (name === "innen") s.visible = false;
+  // 2018 ramp: a sledge hauled up the steep slope
+  const kh = (Math.max(0, t - T.y2018) * 0.05) % 1;
+  HATS.position.set(
+    HATS.position.x,
+    -0.0 + 1.1 + 0.06 + HATS.userData.rise * kh,
+    -24 + 1.5 - HATS.userData.len * kh,
+  );
+  HATS.rotation.set(0, -Math.PI / 2, 0);
+  HATS.rotateZ(-Math.atan2(HATS.userData.rise, HATS.userData.len));
+  HATS.userData.update(t, { pour: 0, speed: 0.6 });
+  // the crowd
+  const crowdOn = t >= T.denn - 0.2;
+  for (const p of CROWD) {
+    p.visible = crowdOn;
+    if (crowdOn) walk(p, t * 1.4 + p.userData.ph, 0.7);
+  }
   labels(t, LABELS);
-
   applyCamera(t);
   renderFrame();
 }
-
 start(renderAt);

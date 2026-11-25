@@ -6,60 +6,100 @@
     "db": -14
   },
   {
-    "s": "anzuenden",
-    "at": 0.02,
-    "why": "beats.js"
+    "s": "baustelle",
+    "at": 0,
+    "why": "beats.js",
+    "dur": 7.8,
+    "db": -17
   },
   {
     "s": "whoosh",
-    "at": 3.095,
-    "why": "highlight zoom"
-  },
-  {
-    "s": "pop",
-    "at": 11.95,
-    "why": "beats.js"
-  },
-  {
-    "s": "hit",
-    "at": 12.1,
-    "why": "highlight shake"
-  },
-  {
-    "s": "whoosh",
-    "at": 17.3,
+    "at": 7.38,
     "why": "cut"
   },
   {
-    "s": "blip",
-    "at": 17.57,
-    "why": "label Draht"
-  },
-  {
-    "s": "slowmo",
-    "at": 21.57,
-    "why": "highlight slowmo"
-  },
-  {
-    "s": "surr",
-    "at": 21.57,
+    "s": "wind",
+    "at": 7.6,
     "why": "beats.js",
-    "dur": 7.539999999999999,
-    "db": -21
+    "dur": 24.52,
+    "db": -22
   },
   {
-    "s": "hit",
-    "at": 22.72,
-    "why": "highlight flash"
+    "s": "stein",
+    "at": 14.16,
+    "why": "beats.js",
+    "db": -20
+  },
+  {
+    "s": "blip",
+    "at": 18.71,
+    "why": "label Arbeiterfriedhof"
   },
   {
     "s": "whoosh",
-    "at": 24.41,
-    "why": "highlight zoom"
+    "at": 23.74,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 31.9,
+    "why": "cut"
+  },
+  {
+    "s": "baustelle",
+    "at": 32.12,
+    "why": "beats.js",
+    "dur": 5.159999999999997,
+    "db": -23
+  },
+  {
+    "s": "feuer",
+    "at": 37.28,
+    "why": "beats.js",
+    "dur": 2.8400000000000034,
+    "db": -16
+  },
+  {
+    "s": "wind",
+    "at": 40.12,
+    "why": "beats.js",
+    "dur": 10.04,
+    "db": -22
+  },
+  {
+    "s": "baustelle",
+    "at": 45.1,
+    "why": "beats.js",
+    "dur": 6.980000000000004,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 51.91,
+    "why": "cut"
+  },
+  {
+    "s": "hall",
+    "at": 52.13,
+    "why": "beats.js",
+    "dur": 9.240000000000002,
+    "db": -18
   },
   {
     "s": "blip",
-    "at": 24.68,
-    "why": "label Glühfaden"
+    "at": 59.51,
+    "why": "label Freunde des Cheops"
+  },
+  {
+    "s": "whoosh",
+    "at": 61.1,
+    "why": "cut"
+  },
+  {
+    "s": "baustelle",
+    "at": 61.32,
+    "why": "beats.js",
+    "dur": 4.880000000000003,
+    "db": -22
   }
 ]
