@@ -110,7 +110,7 @@ export const shots = [
     whoosh: true,
   },
   // silence
-  { at: T.danach - 0.2, from: [-6, 2.2, 16], to: [-5.5, 2.3, 15], look: [0, 5, -30], zoom: 1 },
+  { at: T.danach - 0.2, from: [34, 12, 2], to: [32, 12, -1], look: [0, 6, -24], zoom: 1 },
 ];
 
 export const LABELS = [
