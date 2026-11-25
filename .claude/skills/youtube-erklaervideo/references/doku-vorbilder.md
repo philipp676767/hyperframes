@@ -97,7 +97,10 @@ Universums und schauen es uns an.“
 - **O-Töne:** witnesses, radio calls, news anchors in almost every minute
   of tatsache / vince — the voice of the time. We have no footage, so the
   **archive voice** speaks short quotes (second ElevenLabs voice, radio
-  filter `scripts/radio.sh`), sparingly: 3–8 per video.
+  filter `scripts/radio.sh`) — **only real radio / phone / broadcast
+  words, 0–3 per video**; otherwise the narrator quotes („funkt die Crew:
+  …“). A filtered voice where it doesn't fit sounds odd (user, 2026-11-25;
+  rules in `aufbau.md` „The intro“ step 1).
 - **Analogies** stay rare and are played out (Kurzgesagt: electrons as
   passengers in an overcrowded underground train, over several
   sentences).
