@@ -23,11 +23,13 @@ analyses found a little more.
 
 ### 00 — Intro
 
-The documentary formula (`aufbau.md` „The intro“): archive voices → „Es
-ist …“ scene cut before the climax → thesis → three guiding questions →
-„Das ist die Geschichte …“ → the subscribe sentence. The `»`
-lines are the archive voice with `radio.sh funk` — the real radio calls of
-20 July 1969, in German translation.
+The documentary formula (`aufbau.md` „The intro“): archive quote (only
+because it fits here) → „Es ist …“ scene cut before the climax → thesis →
+three guiding questions → „Das ist die Geschichte …“ → the subscribe
+sentence. The `»` lines are the archive voice with `radio.sh funk` — they
+fit because they are the **real radio calls** of 20 July 1969, word for
+word, heard over the radio. A topic without such recorded radio / phone /
+broadcast words starts directly with „Es ist …“.
 
 ```text
 »Programmalarm.« »Es ist ein Zwölf-null-zwei.«

@@ -18,7 +18,7 @@ scene + a promise, not a 3-second TikTok hook.
   binding limit is the **ElevenLabs budget: 9 300–9 800 characters** in
   all `script.txt` (1 character = 1 credit; video total 9 500–10 000,
   `scripts/credits.py`).
-- **Intro (chapter 0): 110–170 words, 40–70 s** (archive voices + scene + thesis + questions + framing + subscribe ask). Chapters: **150–220 words
+- **Intro (chapter 0): 110–170 words, 40–70 s** (optional archive quote + scene + thesis + questions + framing + subscribe ask). Chapters: **150–220 words
   (60–90 s)**. Finale: 120–180 words.
 - One chapter = one composition with its own `script.txt`: **one paragraph
   per line** (3–6 sentences).
@@ -28,12 +28,31 @@ scene + a promise, not a 3-second TikTok hook.
 How tatsache, vince and Simplicissimus open every story video (transcripts
 2026-11-17, `doku-vorbilder.md`), 40–70 s, in this order:
 
-1. **Archive voices (≈ 0–10 s):** 1–3 short O-Töne that drop the viewer
-   into the event before any narration — a news anchor, a radio call, a
-   witness („Mindestens 100 Tote und über 200 Verletzte. Das ist die
-   vorläufige Schreckensbilanz …“ / „Houston, wir haben ein Problem.“).
-   Spoken by the **archive voice** (a second ElevenLabs voice, radio
-   filter, `scripts/radio.sh`; lines starting with `»` in `script.txt`).
+1. **Optional — archive voice (≈ 0–8 s), only when it fits:** 1–2 short
+   real radio / phone / broadcast quotes before the narration („Houston,
+   wir haben ein Problem.“). Spoken by the **archive voice** (a second
+   ElevenLabs voice, filter `scripts/radio.sh`; lines starting with `»` in
+   `script.txt`). Without such a quote the video starts directly with
+   step 2.
+
+   **Only when it fits** (user, 2026-11-25: „diese komische verstellte
+   Stimme am Anfang soll nur dann, wenn es auch passt, verwendet werden“).
+   **Default: no archive voice** — the intro starts with the narrator's
+   „Es ist …“ scene. Use an O-Ton only when **all** of these hold:
+   - the words were **really spoken** and are documented word for word
+     (transcript, recording) — never a paraphrase, a letter, a diary, a later
+     interview or an invented line;
+   - they were spoken **over the medium the filter imitates** — a radio call
+     (Apollo, air traffic control, the Titanic's wireless read aloud), a phone
+     call, a live TV / radio announcement. Then `radio.sh funk|telefon|tv`
+     matches what the viewer expects; a voice in a room never gets a filter;
+   - it is **stronger than the narrator's first sentence** — short (≤ 12
+     words), dramatic, understandable without context.
+     If one fails, the narrator says it („Um 21:07 Uhr funkt die Crew: …“) or
+     it is left out. 0 O-Töne is fine and common; at most 3 per video. The
+     archive voice must sound natural (an ordinary human voice, light filter),
+     never a caricature.
+
 2. **„Es ist …“ — the scene (≈ 10–35 s):** „Es ist Mittwoch, der 3. Juni
    1998.“ Weekday, date, exact times („Um 10.33 Uhr verlässt der Zug
    Hannover.“), a place, ordinary people with name and age („der
@@ -143,7 +162,7 @@ How the documentary channels end (Simplicissimus, tatsache, Kurzgesagt):
 ## Self-check before the voice (every chapter + once for the whole)
 
 - [ ] Whole: 1.500–1.600 words and `credits.py` OK (9 300–9 800 characters); intro 40–70 s; 6–9 chapters of 60–120 s; finale with the 20-s end screen
-- [ ] Intro: archive voices → „Es ist <Wochentag>, der <Datum>.“ scene cut before the climax → thesis → 2–3 guiding questions → „Das ist die Geschichte …“ → one subscribe sentence. No greeting or channel intro
+- [ ] Intro: (archive quote only if all three conditions of „The intro“ hold — otherwise none) → „Es ist <Wochentag>, der <Datum>.“ scene cut before the climax → thesis → 2–3 guiding questions → „Das ist die Geschichte …“ → one subscribe sentence. No greeting or channel intro
 - [ ] Search word spoken in the first ~15 s, in the title, first word of the description
 - [ ] Sounds like a documentary narrator read aloud (`sprechstil.md` self-check): flowing sentences, paragraphs, few questions, signposting
 - [ ] Every chapter: context → event → science (one analogy) → meaning → bridge; threads always open, main question open until the finale
