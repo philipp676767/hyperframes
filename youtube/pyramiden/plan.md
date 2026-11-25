@@ -19,7 +19,10 @@
   4. vince-minimal: weiße, glänzende Pyramide in der Sonne — „SO SAH SIE <em>WIRKLICH</em> AUS“
   5. Vorher / nachher: links weiß glatt, rechts rau gelb — „PYRAMIDEN: <em>DAMALS</em> WEISS“
   6. Schlitten mit Wasserguss im Sand — „PYRAMIDEN: DER <em>WASSER</em>-TRICK“
-- **Thumbnail A / B / C:** nach den Kapiteln (Schritt 7), Kandidaten aus 1, 2/6, 4/5.
+- **Thumbnail A** (Bau + Mythos-Bruch): 06-arbeiter --at 6, cam p[-20,7,40] l[0,4,6], Rampen aus (HF_THUMB), kino — „PYRAMIDEN: | KEINE <em>SKLAVEN</em>“. 1 s: „Pyramidenbau, keine Sklaven“ ✓ · Warum schauen: wer dann? ✓
+- **Thumbnail B** (Detail): 04-nil --at 4, Papyrus-Makro — „PYRAMIDEN: | DER <em>AUGENZEUGE</em>“. 1 s: „Pyramiden + altes Dokument“ ✓ · Warum: was hat er gesehen? ✓
+- **Thumbnail C** (vince-minimal / Mythos): 07-spitze --at 50.5, cam p[27,0.3,27] l[0,6.2,0], eis, crop 160,60,1600 — „PYRAMIDEN | WAREN <em>WEISS</em>“. 1 s: „Pyramiden waren weiß“ ✓ · Warum: wirklich? wieso? ✓
+- **Konkurrenz-Test:** renders/vergleich-{a,b,c}.png — C sticht am meisten heraus (weiß/blau gegen gelb-braunes Feld), A erkennbar, B anders als alle.
 - **Hauptfrage:** Wie haben Menschen ohne Maschinen diesen Berg gebaut?
 - **Suchwort:** Pyramiden (+ Cheops-Pyramide, Gizeh)
 
