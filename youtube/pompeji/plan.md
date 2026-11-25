@@ -79,7 +79,7 @@
 ## Stimmen
 
 - Erzähler: Johannes Dokumentarfilm `r8MyP4qUsq5WFFSkPdfV`, eleven_v3.
-- Archivstimme (Plinius-Briefe, keine Funk-Optik — Briefe!): „Heribert deutsch“ `yR6YPi6ytQSGBZ0uKFQl`, eleven_flash_v2_5, Filter: leichter Raumhall (aecho) statt `radio.sh`.
+- Zitate (Plinius-Briefe, „Den Tapferen hilft das Glück“): zuerst „Heribert deutsch“ mit Hall — auf Wunsch des Nutzers (2026-11-25) ganz ersetzt durch Johannes selbst, ohne Effekt (vo_takes/raw/zitate-johannes.mp3, zitat-johannes.mp3).
 - Budget: Gratis-Konto, 9.163 Zeichen frei → Skript auf 1.393 Wörter / 8.550 Zeichen gekürzt (unter der Hausregel 1.500); Länge ≈ 9:40 inkl. Endscreen.
 
 ## Welten
