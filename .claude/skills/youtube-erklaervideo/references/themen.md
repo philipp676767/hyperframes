@@ -56,7 +56,29 @@ search word (relevance), once per candidate:
   (Terra X, Ridddle DE, MrWissen2go …) covered it in the last 3 years →
   don't pick it as the main video.
 
-**3. Write it down** in the candidate's table row (column „US / DE“):
+**3. Check that it matters to Germans** (user, 2026-11-25: „die Themen
+sollten auch für Deutsche relevant sein“). A US hit is not enough — many
+US hits are US stories (a Californian dam, the Big Dig in Boston, a US
+court case) that nobody here cares about. Score the **Deutschland-Bezug**:
+
+- **2 = clearly relevant** — at least one of: a name every German knows
+  (Titanic, Tschernobyl, Apollo, Pompeji); it happened in Germany / Austria /
+  Switzerland or right next door (the Alps, the North Sea, Northern Italy,
+  holiday regions Germans know); Germans were involved (engineers,
+  victims, the machine was built here — Zeppelin, Rhine, Autobahn); or it
+  could happen here tomorrow and the viewer sees why (a dam, a bridge, a
+  mall, a nuclear plant, a train like the ICE).
+- **1 = universal, but far away** — nobody here knows the name, yet the
+  „Was hat das mit dir zu tun?“ line works (a building that could stand in
+  any German city, a technique everyone uses).
+- **0 = a US / foreign story without a bridge to here** — don't pick it,
+  however big it is in the USA.
+
+Write the bridge in one sentence into the row (it becomes the hook's
+„warum geht dich das an“ line), e.g. Vajont: „Mitten in den Alpen, keine
+Tagesreise von München — und auch bei uns stehen Hunderte Talsperren.“
+
+**4. Write it down** in the candidate's table row (column „US / DE“):
 the US proof (title, channel, views) and the German result (best German
 video + views, or „keine“), with the date. Re-check when you actually pick
 it — the gap can close.
