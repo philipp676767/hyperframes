@@ -72,7 +72,32 @@ viewer has done or felt with their own body or their own things.
    stuff) **+2**; a felt body moment **+2**; health tip / old myth, pet
    fact, Detail-Rätsel **−3**. No bonus just for being beauty.
 5. **The test question:** „Has the viewer done or felt this themselves —
-   or would they feel it while watching?“ If neither, think twice.
+   or would they feel it while watching?“ If neither, check rule 6.
+6. **The US-hit formula** (2026-11-26, what the viral US 3D shorts with
+   2–10 M views have in common — Bananenschale, Messer aus Milch,
+   Pool/Bodensee, Oreo-Maschine, Zaubertafel, Becher-Trick, Geheimtür,
+   Münzen-Rätsel). A topic that fits it is as good as a „Du-Thema“:
+   - **An object everyone has at home or knew as a kid** — milk, a
+     banana, a garden hose, a cup, coins, a biscuit, a toy, a bookshelf.
+     No technical device needed, no body, no health.
+   - **An absurd twist on it, asked as a yes/no or „how long / how
+     many“ question:** „Kann eine Bananenschale ein Auto ins Schleudern
+     bringen?“, „Aus Milch wird ein Messer?“, „Wie lange füllt ein
+     Gartenschlauch den Bodensee?“ — the viewer guesses at once.
+   - **The answer can be shown**: a test, a transformation, a race, a
+     scale that grows on screen. It works without sound and without any
+     prior knowledge.
+   - **Bonus: a childhood or pop-culture link** (Mario Kart, Oreo,
+     Zaubertafel, magic tricks, Lego, the film „Oben“) — people share
+     what reminds them of being a kid.
+   - **For scale topics: a familiar place + an absurd amount** (den
+     Bodensee füllen, Magma über Wien, ganz Österreich föhnt gleichzeitig).
+   - **Pure curiosity, playful** — no fear, no lecture; nothing the
+     viewer must change in their life.
+     **Scorecard: +2** for a topic that ticks object + absurd twist +
+     showable answer (+1 more with the childhood / pop-culture link).
+     Generate new ideas with the formula **[Alltagsding] + [absurde Tat /
+     Test / Menge]** — see „Formel-Ideen“ under the US-Hits list.
 
 **The type comes first** (SKILL.md step 0, random among the types of `themenarten.md`, 2026-11-24): for
 format A pick from **Offen — Format A „Bauen“**, **Offen —
@@ -470,6 +495,19 @@ frei. **Scorecard +2** („im Ausland bewiesen, bei uns frei“). Die Spalte
 | ★ Becher-Fall-Trick                                | F   | How The Cup Drop Trick Works (4,6 M)           | „Lass den Becher fallen – und er landet stehend.“ (prüfen)     |
 | ★ Geheimtür hinter dem Bücherregal                 | A   | How A Hidden Bookshelf Door Works (3,6 M)      | „Hinter diesem Regal ist ein Zimmer.“                          |
 | ★ Zehn-Münzen-Rätsel (mit Euro-Münzen)             | F   | How To Solve The Ten Penny Puzzle (2,2 M)      | „Leg 10 Münzen in 5 Reihen zu je 4.“                           |
+
+**Formel-Ideen** (Alltagsding + absurde Tat / Test / Menge — same rules,
+not yet done, facts to check):
+
+| Thema                                | Art | Hook (Frage im Kopf)                                              | Kindheit / Popkultur |
+| ------------------------------------ | --- | ----------------------------------------------------------------- | -------------------- |
+| ★ Luftballons, die dich hochheben    | B   | „Wie viele Luftballons heben dich vom Boden ab?“                  | Film „Oben“          |
+| ★ Lego-Turm bis zum Himmel           | E   | „Wie hoch kannst du Lego stapeln, bis der unterste Stein bricht?“ | Lego                 |
+| ★ Panzertape gegen Auto              | D   | „Hält ein Streifen Panzertape ein Auto fest?“                     | –                    |
+| ★ Spaghetti-Brücke                   | E   | „Trägt dich eine Brücke aus Spaghetti?“                           | –                    |
+| ★ Ganz Österreich föhnt gleichzeitig | B   | „Was passiert mit dem Stromnetz, wenn alle gleichzeitig föhnen?“  | –                    |
+| ★ Seifenblase so groß wie ein Bus    | E   | „Wie groß kann eine Seifenblase werden, bevor sie platzt?“        | Seifenblasen         |
+| ★ Papierflieger aus dem Flugzeug     | B   | „Du wirfst einen Papierflieger aus dem Flugzeug – wo landet er?“  | Papierflieger        |
 
 **Weiter scouten:** bei jeder Themenwahl darf der Video-Chat, wenn Web /
 YouTube-Suche verfügbar ist, 1–2 neue Kandidaten prüfen (aktuelle
