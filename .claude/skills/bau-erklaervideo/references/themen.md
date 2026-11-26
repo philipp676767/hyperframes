@@ -453,9 +453,10 @@ The scorecard and "What our numbers say" apply too.
 
 ## Reserviert (in Arbeit)
 
-| Thema  | Format | Datum      | Chat               |
-| ------ | ------ | ---------- | ------------------ |
-| Waxing | A      | 2026-11-24 | TikTok #95: Waxing |
+| Thema            | Format | Datum      | Chat                         |
+| ---------------- | ------ | ---------- | ---------------------------- |
+| Waxing           | A      | 2026-11-24 | TikTok #95: Waxing           |
+| Eiswürfel angeln | E      | 2026-11-26 | TikTok #96: Eiswürfel angeln |
 
 ## Verwendet
 
