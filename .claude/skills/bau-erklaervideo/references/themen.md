@@ -397,7 +397,6 @@ The scorecard and "What our numbers say" apply too.
 | ★ Abgefeuerte gegen fallen gelassene Kugel  | „Welche Kugel landet zuerst?“                      | gleichzeitig (Schwerkraft wirkt gleich)                 |
 | ★ Dübel in Gipskarton gegen Beton           | „Welcher Dübel hält mehr – und wie viel mehr?“     | Zahlen prüfen                                           |
 | ★ Heißes gegen kaltes Wasser im Gefrierfach | „Welches Wasser friert zuerst?“                    | umstritten (Mpemba) — sauber und vorsichtig formulieren |
-| ★ Airbag gegen Gurt                         | „Was rettet dich mehr: Gurt oder Airbag?“          | Gurt (prüfen)                                           |
 | ★ Treppe gegen Aufzug im Hochhaus           | „Wer ist im 20. Stock zuerst: du oder der Aufzug?“ | prüfen                                                  |
 
 ## Offen — E Experiment (themenarten.md)
@@ -453,10 +452,9 @@ The scorecard and "What our numbers say" apply too.
 
 ## Reserviert (in Arbeit)
 
-| Thema        | Format | Datum      | Chat                     |
-| ------------ | ------ | ---------- | ------------------------ |
-| Waxing       | A      | 2026-11-24 | TikTok #95: Waxing       |
-| Handy-Nacken | H      | 2026-11-26 | TikTok #97: Handy-Nacken |
+| Thema             | Format | Datum      | Chat                          |
+| ----------------- | ------ | ---------- | ----------------------------- |
+| Airbag gegen Gurt | D      | 2026-11-26 | TikTok #99: Airbag gegen Gurt |
 
 ## Verwendet
 
