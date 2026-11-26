@@ -402,14 +402,14 @@ The scorecard and "What our numbers say" apply too.
 
 ## Offen — E Experiment (themenarten.md)
 
-| Experiment                            | Hook                                                             | Ergebnis (nur Payoff, prüfen)                      | Sicherheit       |
-| ------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------- | ---------------- |
-| ★ Melone mit Zahnseide schneiden      | „Kann Zahnseide eine Melone zerschneiden?“                       | ja, der dünne Faden drückt enorm (prüfen)          | harmlos          |
-| ★ Ei unter dem Auto                   | „Ein Ei hält ein ganzes Auto aus?“                               | Form verteilt die Last (prüfen)                    | harmlos          |
-| ★ Eiswürfel mit Faden angeln          | „Du hebst diesen Eiswürfel mit einem Faden hoch – nur mit Salz.“ | Salz taut, Wasser friert neu um den Faden (prüfen) | harmlos          |
-| ★ Wasser in der Mikrowelle überhitzen | „Dein Wasser kocht nicht – und explodiert trotzdem.“             | Siedeverzug, Warnung                               | Warnung          |
-| ★ Elefantenzahnpasta                  | „Dieser Schaum kommt aus einer einzigen Flasche.“                | Katalysator, Schaumberg (prüfen)                   | nicht nachmachen |
-| ★ Seifenblase im Frost                | „Bei −10 °C gefriert deine Seifenblase in der Luft.“             | Eiskristalle wachsen auf der Haut (prüfen)         | harmlos          |
+| Experiment                            | Hook                                                 | Ergebnis (nur Payoff, prüfen)                  | Sicherheit       |
+| ------------------------------------- | ---------------------------------------------------- | ---------------------------------------------- | ---------------- |
+| ★ Melone mit Zahnseide schneiden      | „Kann Zahnseide eine Melone zerschneiden?“           | ja, der dünne Faden drückt enorm (prüfen)      | harmlos          |
+| ★ Ei unter dem Auto                   | „Ein Ei hält ein ganzes Auto aus?“                   | Form verteilt die Last (prüfen)                | harmlos          |
+| ★ Wasser in der Mikrowelle überhitzen | „Dein Wasser kocht nicht – und explodiert trotzdem.“ | Siedeverzug, Warnung                           | Warnung          |
+| ★ Elefantenzahnpasta                  | „Dieser Schaum kommt aus einer einzigen Flasche.“    | Katalysator, Schaumberg (prüfen)               | nicht nachmachen |
+| ★ Seifenblase im Frost                | „Bei −10 °C gefriert deine Seifenblase in der Luft.“ | Eiskristalle wachsen auf der Haut (prüfen)     | harmlos          |
+| ★ Nasses Handy in Reis                | „Dein nasses Handy in Reis? Das bringt fast nichts.“ | Reis zieht kaum Wasser, Luft trocknet (prüfen) | harmlos          |
 
 ## Offen — F Rätsel zum Mitmachen (themenarten.md)
 
@@ -453,11 +453,11 @@ The scorecard and "What our numbers say" apply too.
 
 ## Reserviert (in Arbeit)
 
-| Thema            | Format | Datum      | Chat                         |
-| ---------------- | ------ | ---------- | ---------------------------- |
-| Waxing           | A      | 2026-11-24 | TikTok #95: Waxing           |
-| Eiswürfel angeln | E      | 2026-11-26 | TikTok #96: Eiswürfel angeln |
-| Handy-Nacken     | H      | 2026-11-26 | TikTok #97: Handy-Nacken     |
+| Thema        | Format | Datum      | Chat                     |
+| ------------ | ------ | ---------- | ------------------------ |
+| Waxing       | A      | 2026-11-24 | TikTok #95: Waxing       |
+| Handy-Nacken | H      | 2026-11-26 | TikTok #97: Handy-Nacken |
+| Eiffelturm   | C      | 2026-11-26 | TikTok #98: Eiffelturm   |
 
 ## Verwendet
 
