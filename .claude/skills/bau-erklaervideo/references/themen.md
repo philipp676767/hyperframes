@@ -46,7 +46,7 @@ viewer has done or felt with their own body or their own things.
 0. **Sweet spot stays the first filter** (user, 2026-11-17: „nicht zu
    allgemein, nicht zu nischig“): the topic is **one concrete thing with
    its own name** — a device, product, treatment or place that millions
-   in AT/CH/DE used this month (UV-Nagellampe, Blondieren, 10-Meter-Turm,
+   in Germany used this month (UV-Nagellampe, Blondieren, 10-Meter-Turm,
    Face ID, Taschenwärmer). A body phenomenon or feeling on its own
    („Hirnfrost“, „Musikantenknochen“, „Übelkeit im Auto“) or a whole
    field („Achterbahn“, „Strom“) is **not** a topic — it can only be the
@@ -91,7 +91,7 @@ viewer has done or felt with their own body or their own things.
      Zaubertafel, magic tricks, Lego, the film „Oben“) — people share
      what reminds them of being a kid.
    - **For scale topics: a familiar place + an absurd amount** (den
-     Bodensee füllen, Magma über Wien, ganz Österreich föhnt gleichzeitig).
+     Bodensee füllen, Magma über Berlin, ganz Deutschland föhnt gleichzeitig).
    - **Pure curiosity, playful** — no fear, no lecture; nothing the
      viewer must change in their life.
      **Scorecard: +2** for a topic that ticks object + absurd twist +
@@ -110,7 +110,7 @@ already had an A episode is used for B too, and the other way round,
 unless the question is clearly a different one (Aufzug was built in #3 →
 „… wenn das Seil reißt?“ only if the user wants it).
 
-**Audience (TikTok data, 2026-10-23):** over 93 % from AT/CH/DE, **77 %
+**Audience:** since 2026-11-26 **mainly Germany** (user). Earlier data (2026-10-23): over 93 % from AT/CH/DE (AT first), **77 %
 aged 18–34, 51 % women / 45 % men.** TikTok still shows the account to
 broad random scrollers nearby, so a topic must grab a young adult with no
 special interest in technology — man or woman.
@@ -141,7 +141,7 @@ plus two alternatives **with their scores** (max 20; propose nothing under
   Glätteisen); 1 = a bit too broad or a bit too small; 0 = an abstract
   field („Licht“, „Strom“, „Chemie im Alltag“) or a mini niche
   (Teilchenbeschleuniger, Fangseil am Flugzeugträger). Test: does it
-  have a name people search for — and are there millions in AT/CH/DE
+  have a name people search for — and are there millions in Germany
   who used or saw it this month? Topics marked **⚠️ zu nischig** /
   **⚠️ zu allgemein** in the lists score 0–1 here.
 - **Zeig-Faktor** (learned from the viral #36 UV-Nagellampe, 2026-10-30:
@@ -208,7 +208,7 @@ project):
    week — a viral clip (Tesla flies, a rocket lands), a launch everyone
    sees (new iPhone, a new Deutschland-Ticket rule), a weather event
    (Hitzewelle, erster Schnee, Sturm, Glatteis), a big event (WM, Wiesn,
-   Silvester). Ask: _would a young scroller in AT/CH/DE recognise it
+   Silvester). Ask: _would a young scroller in Germany recognise it
    without context this week?_ If not, it's not a trend for us.
 2. **The calendar** — only as an idea source for _real_ moments (the
    first snow, Silvester night), **not as a theme for the whole list**:
@@ -396,7 +396,7 @@ ask for go in here.
 ## Offen — Format C „Bauwerke“
 
 Criteria: `format-bauwerke.md` (famous by name and seen by millions, one
-trick in one sentence, a „Was?!“ number, a felt moment, AT/CH/DE first).
+trick in one sentence, a „Was?!“ number, a felt moment, Germany first).
 The scorecard and "What our numbers say" apply too.
 
 | Bauwerk                            | Hook (Frage im Kopf)                                          | Der Trick (nur fürs Payoff, Fakten prüfen)                             | Money-Shot                                         |
@@ -406,6 +406,12 @@ The scorecard and "What our numbers say" apply too.
 | ★ Taipei 101                       | „In diesem Hochhaus hängt eine 660-Tonnen-Kugel.“             | Schwingungsdämpfer pendelt gegen den Sturm (prüfen)                    | Riesen-Kugel schwingt gegen das Gebäude            |
 | ★ Golden Gate Bridge               | „Die ganze Golden Gate hängt an nur zwei Kabeln.“             | zwei Hauptkabel aus zehntausenden Drähten tragen die Fahrbahn (prüfen) | Kabel im Röntgen, Drähte fächern auf               |
 | ★ Gotthard-Basistunnel             | „Unter dir liegen 2.300 Meter Fels.“                          | 57 km, heißer Fels, Kühlung (prüfen)                                   | Zug im Berg-Schnitt, LED „45 °C Fels“              |
+| ★ Kölner Dom                       | „Der Kölner Dom ist 600 Jahre alt – und wird nie fertig.“     | weicher Sandstein, ewige Dombauhütte, Strebebögen (prüfen)             | Strebebogen im Schnitt, Kraft fließt nach außen    |
+| ★ Berliner Fernsehturm             | „Die Kugel am Fernsehturm wirft ein Kreuz in die Sonne.“      | Stahlkugel, Schaft aus Beton, Schwingen im Wind (prüfen)               | Sonnenkreuz auf der Kugel, Turm schwingt           |
+| ★ Zugspitzbahn                     | „Diese Seilbahn hängt an einer einzigen Stütze – 127 m hoch.“ | Weltrekord-Stütze, Tragseile (prüfen)                                  | Gondel über dem Abgrund, Seile im Röntgen          |
+| ★ Brandenburger Tor                | „Die Quadriga oben war schon mal in Paris.“                   | Kupfer-Treibarbeit, Säulen tragen (prüfen)                             | Quadriga hebt ab, fährt nach Paris und zurück      |
+| ★ Allianz Arena                    | „Die Allianz Arena ist aus Luftkissen gebaut.“                | ETFE-Kissen, Druckluft, Leuchten (prüfen)                              | Kissen pumpen sich auf, Arena wechselt die Farbe   |
+| ★ Neuschwanstein                   | „Neuschwanstein hat einen Stahlskelett-Kern.“                 | Stahlträger im Thronsaal (prüfen)                                      | Röntgen: Stahl hinter Märchenfassade               |
 | ★ Europabrücke (Brenner)           | „Du fährst 190 Meter über dem Tal – auf Stelzen.“             | hohe Pfeiler, Spannbeton (prüfen)                                      | Lkw über der Brücke, Pfeiler im Schnitt            |
 | ★ Stephansdom                      | „Dieses Dach hat 230.000 Ziegel – und keiner fällt runter.“   | steiles Dach, Ziegel gehängt (prüfen)                                  | Ziegeldach im Sturm, Adler-Muster                  |
 | ★ Prater-Riesenrad                 | „Das Riesenrad dreht sich – und hängt dabei an Speichen.“     | Speichen ziehen statt drücken (prüfen)                                 | Speichen-Spannung leuchtet, Gondel steigt          |
@@ -479,22 +485,22 @@ The scorecard and "What our numbers say" apply too.
 
 Viral in den USA (Zack D. Films, 3D-Erklär-Shorts, Aufrufe Stand
 2026-11-24), auf Deutsch gibt es dazu kein Short (YouTube-Suche geprüft).
-Wir machen die **deutsche Version mit eigenem Dreh für AT/CH/DE** — nie
+Wir machen die **deutsche Version mit eigenem Dreh für Deutschland** — nie
 ein Nachbau: eigene Welt, eigener Hook, eigene Fakten, das Thema ist
 frei. **Scorecard +2** („im Ausland bewiesen, bei uns frei“). Die Spalte
 „Art“ sagt, zu welcher Videoart (`themenarten.md`) es zählt.
 
-| Thema (deutscher Dreh)                             | Art | US-Vorbild (Aufrufe)                           | Hook (Frage im Kopf)                                           |
-| -------------------------------------------------- | --- | ---------------------------------------------- | -------------------------------------------------------------- |
-| ★ Bananenschale gegen Auto (der Mario-Kart-Mythos) | E   | Could A Banana Peel Make A Car Spin (4,6 M)    | „Kann eine Bananenschale dein Auto ins Schleudern bringen?“    |
-| ★ Messer aus Milch                                 | E   | How To Make A Knife From Milk (10 M)           | „Aus dieser Milch wird ein Messer.“ (Kasein, prüfen)           |
-| ★ Bodensee mit dem Gartenschlauch füllen           | B   | How Long To Fill A Pool Across America (10 M)  | „Du füllst den Bodensee mit deinem Gartenschlauch. Wie lange?“ |
-| ★ Yellowstone-Magma über Wien / Berlin             | B   | Dumping Yellowstone's Magma On NYC (5,9 M)     | „Wir kippen das Magma eines Supervulkans über Wien.“ (prüfen)  |
-| ★ Die Maschine, die Kekse aufdreht (Oreo-Test)     | I   | The Machine That Tested The Oreo Twist (8,6 M) | „Eine Maschine dreht Tausende Oreos auf – warum?“ (prüfen)     |
-| ★ Zaubertafel                                      | A   | How An Etch A Sketch Works (2,8 M)             | „Die Zaubertafel malt ohne Strom und ohne Farbe.“              |
-| ★ Becher-Fall-Trick                                | F   | How The Cup Drop Trick Works (4,6 M)           | „Lass den Becher fallen – und er landet stehend.“ (prüfen)     |
-| ★ Geheimtür hinter dem Bücherregal                 | A   | How A Hidden Bookshelf Door Works (3,6 M)      | „Hinter diesem Regal ist ein Zimmer.“                          |
-| ★ Zehn-Münzen-Rätsel (mit Euro-Münzen)             | F   | How To Solve The Ten Penny Puzzle (2,2 M)      | „Leg 10 Münzen in 5 Reihen zu je 4.“                           |
+| Thema (deutscher Dreh)                             | Art | US-Vorbild (Aufrufe)                           | Hook (Frage im Kopf)                                            |
+| -------------------------------------------------- | --- | ---------------------------------------------- | --------------------------------------------------------------- |
+| ★ Bananenschale gegen Auto (der Mario-Kart-Mythos) | E   | Could A Banana Peel Make A Car Spin (4,6 M)    | „Kann eine Bananenschale dein Auto ins Schleudern bringen?“     |
+| ★ Messer aus Milch                                 | E   | How To Make A Knife From Milk (10 M)           | „Aus dieser Milch wird ein Messer.“ (Kasein, prüfen)            |
+| ★ Bodensee mit dem Gartenschlauch füllen           | B   | How Long To Fill A Pool Across America (10 M)  | „Du füllst den Bodensee mit deinem Gartenschlauch. Wie lange?“  |
+| ★ Yellowstone-Magma über Berlin                    | B   | Dumping Yellowstone's Magma On NYC (5,9 M)     | „Wir kippen das Magma eines Supervulkans über Berlin.“ (prüfen) |
+| ★ Die Maschine, die Kekse aufdreht (Oreo-Test)     | I   | The Machine That Tested The Oreo Twist (8,6 M) | „Eine Maschine dreht Tausende Oreos auf – warum?“ (prüfen)      |
+| ★ Zaubertafel                                      | A   | How An Etch A Sketch Works (2,8 M)             | „Die Zaubertafel malt ohne Strom und ohne Farbe.“               |
+| ★ Becher-Fall-Trick                                | F   | How The Cup Drop Trick Works (4,6 M)           | „Lass den Becher fallen – und er landet stehend.“ (prüfen)      |
+| ★ Geheimtür hinter dem Bücherregal                 | A   | How A Hidden Bookshelf Door Works (3,6 M)      | „Hinter diesem Regal ist ein Zimmer.“                           |
+| ★ Zehn-Münzen-Rätsel (mit Euro-Münzen)             | F   | How To Solve The Ten Penny Puzzle (2,2 M)      | „Leg 10 Münzen in 5 Reihen zu je 4.“                            |
 
 **Formel-Ideen** (Alltagsding + absurde Tat / Test / Menge — same rules,
 not yet done, facts to check):

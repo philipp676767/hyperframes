@@ -31,6 +31,7 @@ früher galt und geändert wurde, steht unten unter „Überholt“ und ist
 
 **Themen:**
 
+- [ ] **Hauptzielgruppe jetzt Deutschland** (Nutzer, 2026-11-26): deutsche Orte und Bezüge zuerst (Berlin, Hamburg, Köln, München, Autobahn, DB, Rewe/Aldi, Pfand), Hochdeutsch ohne österreichische Wörter (Bim, Paradeiser, Jänner, Sackerl), deutsche Bauwerke vorn; Welten nicht mehr standardmäßig in Wien.
 - [ ] **US-Hit-Formel** (2026-11-26): Alltagsding, das jeder daheim hat oder als Kind kannte + absurde Wendung als Ja/Nein- oder Wie-viel-Frage + Antwort im Bild zeigbar (+ Kindheits-/Popkultur-Bezug); gleichwertig zum „Du-Thema“, Bewertung +2 (+1). Neue Ideen mit [Alltagsding] + [absurde Tat / Test / Menge].
 - [ ] **US-Hits ohne deutsche Version** (Nutzer, 2026-11-26): 9 Themen, die in den USA viral gingen (Zack D. Films, 2,2–10 Mio.) und auf Deutsch fehlen, mit eigenem Dreh für AT/CH/DE in themen.md, Bewertung +2. Vergleichen: Aufrufe dieser Themen gegen den Rest.
 - [ ] **Neun Videoarten, zufällig gewählt** (Nutzer, 2026-11-24, aus der Analyse viraler 3D-Shorts / Zack D. Films): A Alltagsding, B Was passiert, wenn, C Bauwerke, D Duell, E Experiment, F Rätsel, G Wahre Geschichte, H Dein Körper verändert sich, I So wird's gemacht — nie dieselbe Art wie in den letzten 2 Videos (themenarten.md). Aufbau: eine Frage pro Video, Antwort als Bild ganz am Ende (schnelle Auflösung zum Nochmal-Sehen), „Übrigens“ optional davor; bleibt 45 s. Vergleichen: Aufrufe je Art.

@@ -32,7 +32,7 @@ Talk to the user in German. Keep them posted in short lines while working.
 | Beschreibung | **Every video gets a TikTok description** (step 6c): a keyword line **≤ 60 characters, strongest search words first, one emoji at the end, no dash** + **3–5 hashtags that fit the topic and are really watched** (topic tag first; never `#fyp`, `#viral`, `#lernenmittiktok`); saved as `tiktok/<slug>/beschreibung.txt`, sent with the video                                                                                                                                                                                                      |
 | YouTube      | **Every video is also posted as a YouTube Short** (2026-11-05, step 6d): `tiktok/<slug>/youtube.txt` with title (40–60 characters, keywords first, always ending in `#shorts`), description (+ „Folge für mehr Wissen.“ + 3–5 hashtags incl. `#shorts`), tags, and the upload settings (TikTok cover, not for kids, synthetic content: yes, category Bildung …; no playlist), sent with the video like the TikTok description                                                                                                                        |
 | Serienformat | **Nine video types, picked at random** (user, 2026-11-24; never the same type as one of the last two videos): A Alltagsding, B Was passiert, wenn …? (`format-was-passiert.md`), C Bauwerke (`format-bauwerke.md`), D Duell, E Experiment, F Rätsel, G Wahre Geschichte, H Dein Körper verändert sich, I So wird's gemacht — `references/themenarten.md`, step 0; logged in the `Format` column of `tiktok/serie.md`                                                                                                                                 |
-| Audience     | 77 % aged 18–34, half women, > 93 % AT/CH/DE, mostly random scrollers (TikTok data 2026-10-23): topics from _their_ day (`references/themen.md` ★), cheeky-friend tone, frame 0 for people with no tech interest — sound on frame 0, 2–3 huge words, the viewer's hand doing the thing                                                                                                                                                                                                                                                               |
+| Audience     | **Main audience now Germany** (user, 2026-11-26; on 2026-10-23 it was AT 53 % / CH 23 % / DE 17 %). 18–34, half women, mostly random scrollers: topics from _their_ day (`references/themen.md` ★), German places and references first (Berlin, Hamburg, München, Köln, Autobahn, Deutsche Bahn, Edeka/Rewe/Aldi, Pfand), Standard German (no Austrian words like Bim, Paradeiser, Jänner, Sackerl), euro prices; cheeky-friend tone; frame 0 for people with no tech interest                                                                       |
 | Payoff       | The hook's question answered in one punchy line . **No "Schau dich an. Du hast gerade X gebaut."** — dropped by the user 2026-10-23, never use it again                                                                                                                                                                                                                                                                                                                                                                                              |
 | Music        | **No music** (user's rule, 2026-10-26): voice + sound effects only. Don't run `prepare-music.sh`, no `assets/bgm.mp3` (sync-html only adds a music tag if that file exists). The old calm bed stays in `assets/` for old episodes                                                                                                                                                                                                                                                                                                                    |
 | Setting      | **No fixed environments — a new, high-quality world for every video** (step 1b): own place, light, props, hero piece, life in `assets/set.js`; log it in `tiktok/serie.md`                                                                                                                                                                                                                                                                                                                                                                           |
@@ -212,7 +212,7 @@ Draht") — replace it completely.
 
 1. **Concept — the place.** Where does this thing live, or where does the
    scenario happen, in its most vivid version? Kaffeevollautomat → a
-   Viennese café terrace on a sunny morning; Flugzeugtür → the cabin by the
+   café terrace in Berlin-Kreuzberg on a sunny morning; Flugzeugtür → the cabin by the
    emergency exit, the window over a sea of clouds; Geldautomat → a narrow
    old-town lane at dusk, wet cobbles; Neutronenstern → a moon base under a
    black sky; Glätteisen → a bathroom shelf with a big mirror. One line,
@@ -223,13 +223,17 @@ Draht") — replace it completely.
    at a snowy tram stop still looked "like the old environment" —
    grey paving, a row of lit town-house facades, the subject on a
    plinth in the middle, like the videos before). Of the last 3 videos
-   at most one may be a street / square / town-house backdrop (Vienna
-   included); pick from other kinds: an interior up close (bathroom, car
+   at most one may be a street / square / town-house backdrop; pick from other kinds: an interior up close (bathroom, car
    inside, cinema seat, gym, kids' room), nature (forest, lake, mountain,
    beach, field), an extreme place (cockpit, deep sea, desert, glacier,
    space), a giant-scale world (inside a pocket, a desk seen as a
    landscape). Also a different ground colour, time of day and camera
    height than the last video.
+   **German places** (main audience Germany since 2026-11-26): when a
+   world is a real place, make it a German one people recognise — a
+   Berlin U-Bahn station, a Hamburg harbour pier, a Kölner Altstadt
+   lane, a Munich beer garden, an Autobahn rest stop, a Rewe car park,
+   a DB platform. No more Vienna by default.
    **No stage, no plinth.** The subject never stands on a pedestal,
    podium, plinth or round floor pad in the middle of an empty area —
    that is the old look. It sits where it really lives in that place

@@ -17,7 +17,7 @@ end, cover, descriptions, learning log. This file only lists what is
 
 - **Sweet spot by nature:** a structure with its own famous name that
   millions know from photos or have stood on (Eiffelturm, Golden Gate,
-  Stephansdom, Gotthard-Basistunnel) — not „Brücken allgemein“, not an
+  Kölner Dom, Berliner Fernsehturm) — not „Brücken allgemein“, not an
   unknown viaduct.
 - **Scale is the spectacle:** the picture can show things no photo can —
   the whole bridge in x-ray, the wind pushing the tower, the foundation
@@ -28,7 +28,9 @@ end, cover, descriptions, learning log. This file only lists what is
 
 ## Topic rules
 
-- **Famous by name and seen by millions** (AT/CH/DE first: Stephansdom,
+- **Famous by name and seen by millions** (Germany first, since 2026-11-26:
+  Kölner Dom, Berliner Fernsehturm, Brandenburger Tor, Elbphilharmonie,
+  Zugspitzbahn, Allianz Arena, Neuschwanstein; then AT/CH: Stephansdom,
   Prater-Riesenrad, Europabrücke, Gotthard-Basistunnel, Kapellbrücke,
   Kölner Dom, Berliner Fernsehturm, Elbphilharmonie; world icons:
   Eiffelturm, Golden Gate, Burj Khalifa, Pisa, Kolosseum, Pyramiden,
@@ -40,7 +42,7 @@ end, cover, descriptions, learning log. This file only lists what is
 - **A „Was?!“ number with a comparison** (max 2 numbers): „Der Eiffelturm
   ist im Sommer 15 cm größer.“ — always checked (web search).
 - **Du-Bezug:** the viewer is there — „Du stehst ganz oben im Burj
-  Khalifa …“, „Du fährst über die Europabrücke …“. Safety rules of
+  Khalifa …“, „Du stehst oben auf dem Berliner Fernsehturm …“. Safety rules of
   format B apply to any risky act (warnings only).
 
 ## Script shape (exactly 45 s, 130–142 words — as format A)
@@ -63,7 +65,7 @@ end, cover, descriptions, learning log. This file only lists what is
   sway, a gust, a train rolling over, the elevator shooting up.
 - **Scale:** always one human or the viewer's hand in the shot to read
   the size; one giant-scale comparison as a money shot (a whale in the
-  cable, a bus in the damper ball, the Stephansdom next to the Burj).
+  cable, a bus in the damper ball, the Kölner Dom next to the Burj).
 - **The world is the real place** (SKILL.md 1b): the Seine with Paris
   roofs, the bay with fog under the Golden Gate, the Alps around the
   Europabrücke — still the realistic finish up close, low-poly far away.
@@ -76,7 +78,7 @@ end, cover, descriptions, learning log. This file only lists what is
 
 ## Self-check (in addition to script-formel.md's)
 
-- [ ] A structure famous by name, seen by millions (AT/CH/DE preferred)
+- [ ] A structure famous by name, seen by millions (Germany preferred)
 - [ ] One trick in one sentence; no history lecture, no record list
 - [ ] The hook leaves a question („Warum steht er noch?“, „Wie hält das?“)
 - [ ] Frame 0 = the postcard silhouette + motion; a human for scale
