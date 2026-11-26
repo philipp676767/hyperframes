@@ -458,6 +458,7 @@ The scorecard and "What our numbers say" apply too.
 | Waxing           | A      | 2026-11-24 | TikTok #95: Waxing           |
 | Eiswürfel angeln | E      | 2026-11-26 | TikTok #96: Eiswürfel angeln |
 | Handy-Nacken     | H      | 2026-11-26 | TikTok #97: Handy-Nacken     |
+| Eiffelturm       | C      | 2026-11-26 | TikTok #98: Eiffelturm       |
 
 ## Verwendet
 
