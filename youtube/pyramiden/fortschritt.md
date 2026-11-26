@@ -5,28 +5,28 @@ Status je Kapitel: geplant → skript → stimme → szene → geprüft → gere
 
 Credits (ElevenLabs, Budget 9 500–10 000 pro Video): verbraucht 9 542 · übrig vom Video-Budget 458 (alle Stimmen fertig)
 
-| Nr  | Ordner        | Kapitel                   | Wörter | Sprechzeit | Status  | Notiz        |
-| --- | ------------- | ------------------------- | ------ | ---------- | ------- | ------------ |
-| 0   | 00-hook       | Ein Logbuch im Sand       | 189    | 75.2 s     | geprüft | Render-Queue |
-| 1   | 01-koenig     | Ein König will ewig leben | 166    | 66.6 s     | geprüft | Render-Queue |
-| 2   | 02-plan       | Ein Berg nach Plan        | 165    | 66.2 s     | geprüft | Render-Queue |
-| 3   | 03-steinbruch | Steine aus dem Fels       | 148    | 59.3 s     | geprüft | Render-Queue |
-| 4   | 04-nil        | Der Fluss als Förderband  | 152    | 67.3 s     | geprüft | Render-Queue |
-| 5   | 05-rampe      | Schlitten auf nassem Sand | 182    | 72.3 s     | geprüft | Render-Queue |
-| 6   | 06-arbeiter   | Die Stadt der Arbeiter    | 180    | 65.8 s     | geprüft | Render-Queue |
-| 7   | 07-spitze     | Die weiße Spitze          | 153    | 61.3 s     | geprüft | Render-Queue |
-| 8   | 08-finale     | Kein Geheimnis            | 189    | 75.6 s     | geprüft | Render-Queue |
+| Nr  | Ordner        | Kapitel                   | Wörter | Sprechzeit | Status    | Notiz |
+| --- | ------------- | ------------------------- | ------ | ---------- | --------- | ----- |
+| 0   | 00-hook       | Ein Logbuch im Sand       | 189    | 75.2 s     | gerendert |       |
+| 1   | 01-koenig     | Ein König will ewig leben | 166    | 66.6 s     | gerendert |       |
+| 2   | 02-plan       | Ein Berg nach Plan        | 165    | 66.2 s     | gerendert |       |
+| 3   | 03-steinbruch | Steine aus dem Fels       | 148    | 59.3 s     | gerendert |       |
+| 4   | 04-nil        | Der Fluss als Förderband  | 152    | 67.3 s     | gerendert |       |
+| 5   | 05-rampe      | Schlitten auf nassem Sand | 182    | 72.3 s     | gerendert |       |
+| 6   | 06-arbeiter   | Die Stadt der Arbeiter    | 180    | 65.8 s     | gerendert |       |
+| 7   | 07-spitze     | Die weiße Spitze          | 153    | 61.3 s     | gerendert |       |
+| 8   | 08-finale     | Kein Geheimnis            | 189    | 75.6 s     | gerendert |       |
 
 ## Video
 
 - [x] Titel + Thumbnail-Ideen (plan.md)
 - [x] Skript im Credit-Budget (scripts/credits.py OK: 9 655 Zeichen)
 - [x] Hauptwelt (welt.js) geprüft
-- [ ] Alle Kapitel gerendert
-- [ ] Zusammengefügt + Lautheit (-14 LUFS)
-- [ ] 3 Thumbnails
-- [ ] Beschreibung mit Kapitel-Zeitmarken, Tags, Einstellungen, Kommentar (upload.txt)
-- [ ] youtube/serie.md eingetragen
+- [x] Alle Kapitel gerendert
+- [x] Zusammengefügt + Lautheit (-14 LUFS)
+- [x] 3 Thumbnails
+- [x] Beschreibung mit Kapitel-Zeitmarken, Tags, Einstellungen, Kommentar (upload.txt)
+- [x] youtube/serie.md eingetragen
 
 ## Notizen
 
@@ -36,3 +36,4 @@ Credits (ElevenLabs, Budget 9 500–10 000 pro Video): verbraucht 9 542 · übri
 - Wort-Anker: `P("Wort", "Folgewort")` in beats.js statt `W()` — viele Wörter (wie, das, vor, und) kommen früher schon vor. beats.js wirft, wenn die Shots nicht aufsteigen.
 - Kamera-Check: `scratchpad/camcheck.py` (window.\_\_cam), Kontaktbögen mit `hyperframes snapshot`.
 - Render: Queue 1 = 00–03 (gestartet 16:17 UTC), Queue 2 = 04–08 wartet per `pgrep` auf Queue 1. Nach Neustart: `pgrep -f render-queu[e]`; sonst `render-queue.sh pyramiden` neu starten (fertige Kapitel werden übersprungen).
+- Fertig 2026-11-26: renders/pyramiden-final.mp4 (10:29, -13,9 LUFS), Teile in renders/teile/. Gotcha: nach `git pull` immer `git lfs pull` (sonst werden mp3 zu 132-Byte-Pointern und der Render bricht ab).
