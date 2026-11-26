@@ -376,7 +376,7 @@ The scorecard and "What our numbers say" apply too.
 
 | Bauwerk                            | Hook (Frage im Kopf)                                          | Der Trick (nur fürs Payoff, Fakten prüfen)                             | Money-Shot                                         |
 | ---------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------- |
-| ★ Eiffelturm                       | „Im Sommer wird der Eiffelturm größer.“                       | Stahl dehnt sich bei Hitze aus (Zentimeter, prüfen)                    | Turm wächst sichtbar, LED „+15 cm“                 |
+| ★ Kölner Dom                       | „Dieser Dom wurde über 600 Jahre lang gebaut.“                | Strebebögen leiten das Gewicht nach außen ab (prüfen)                  | Strebebögen im Röntgen, Kraftpfeile laufen ab      |
 | ★ Burj Khalifa                     | „Ganz oben im Burj Khalifa schwankt dein Kaffee.“             | Y-Grundriss bricht den Wind, Turm schwingt Meter weit (prüfen)         | Windwirbel reißen ab, Spitze pendelt               |
 | ★ Taipei 101                       | „In diesem Hochhaus hängt eine 660-Tonnen-Kugel.“             | Schwingungsdämpfer pendelt gegen den Sturm (prüfen)                    | Riesen-Kugel schwingt gegen das Gebäude            |
 | ★ Golden Gate Bridge               | „Die ganze Golden Gate hängt an nur zwei Kabeln.“             | zwei Hauptkabel aus zehntausenden Drähten tragen die Fahrbahn (prüfen) | Kabel im Röntgen, Drähte fächern auf               |
@@ -457,7 +457,6 @@ The scorecard and "What our numbers say" apply too.
 | ------------ | ------ | ---------- | ------------------------ |
 | Waxing       | A      | 2026-11-24 | TikTok #95: Waxing       |
 | Handy-Nacken | H      | 2026-11-26 | TikTok #97: Handy-Nacken |
-| Eiffelturm   | C      | 2026-11-26 | TikTok #98: Eiffelturm   |
 
 ## Verwendet
 
