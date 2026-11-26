@@ -523,9 +523,8 @@ Unglücksgeschichten von dort übernehmen, nur Wissens-Themen.
 
 ## Reserviert (in Arbeit)
 
-| Thema             | Format | Datum      | Chat                          |
-| ----------------- | ------ | ---------- | ----------------------------- |
-| Airbag gegen Gurt | D      | 2026-11-26 | TikTok #99: Airbag gegen Gurt |
+| Thema | Format | Datum | Chat |
+| ----- | ------ | ----- | ---- |
 
 ## Verwendet
 
