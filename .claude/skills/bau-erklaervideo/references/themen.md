@@ -376,7 +376,7 @@ The scorecard and "What our numbers say" apply too.
 
 | Bauwerk                            | Hook (Frage im Kopf)                                          | Der Trick (nur fürs Payoff, Fakten prüfen)                             | Money-Shot                                         |
 | ---------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------- |
-| ★ Eiffelturm                       | „Im Sommer wird der Eiffelturm größer.“                       | Stahl dehnt sich bei Hitze aus (Zentimeter, prüfen)                    | Turm wächst sichtbar, LED „+15 cm“                 |
+| ★ Kölner Dom                       | „Dieser Dom wurde über 600 Jahre lang gebaut.“                | Strebebögen leiten das Gewicht nach außen ab (prüfen)                  | Strebebögen im Röntgen, Kraftpfeile laufen ab      |
 | ★ Burj Khalifa                     | „Ganz oben im Burj Khalifa schwankt dein Kaffee.“             | Y-Grundriss bricht den Wind, Turm schwingt Meter weit (prüfen)         | Windwirbel reißen ab, Spitze pendelt               |
 | ★ Taipei 101                       | „In diesem Hochhaus hängt eine 660-Tonnen-Kugel.“             | Schwingungsdämpfer pendelt gegen den Sturm (prüfen)                    | Riesen-Kugel schwingt gegen das Gebäude            |
 | ★ Golden Gate Bridge               | „Die ganze Golden Gate hängt an nur zwei Kabeln.“             | zwei Hauptkabel aus zehntausenden Drähten tragen die Fahrbahn (prüfen) | Kabel im Röntgen, Drähte fächern auf               |
@@ -433,13 +433,13 @@ The scorecard and "What our numbers say" apply too.
 
 ## Offen — H Dein Körper verändert sich (themenarten.md — vorsichtig formulieren)
 
-| Thema                     | Hook                                                         | Vorher → Nachher (prüfen)         |
-| ------------------------- | ------------------------------------------------------------ | --------------------------------- |
-| ★ Mundatmung              | „Mundatmung kann dein Gesicht verändern.“                    | schmaler Kiefer, Gesichtsform     |
-| ★ Handy-Nacken            | „Dein Kopf wiegt beim Scrollen wie ein Kind auf dem Nacken.“ | Haltung, Last auf der Wirbelsäule |
-| ★ Kaugummi kauen          | „Kaugummi trainiert deinen Kiefer – sichtbar?“               | Kaumuskel (vorsichtig)            |
-| ★ Barfußlaufen            | „Barfuß verändert sich dein Fuß.“                            | Hornhaut, Muskeln, Laufstil       |
-| ★ Zuckerfrei: deine Zähne | „Was Zucker in 30 Tagen mit deinen Zähnen macht.“            | Zahnschmelz (vorsichtig)          |
+| Thema                     | Hook                                              | Vorher → Nachher (prüfen)     |
+| ------------------------- | ------------------------------------------------- | ----------------------------- |
+| ★ Bürostuhl (8 h Sitzen)  | „8 Stunden Sitzen verkürzt deine Hüfte.“          | Hüftbeuger, Becken kippt      |
+| ★ Mundatmung              | „Mundatmung kann dein Gesicht verändern.“         | schmaler Kiefer, Gesichtsform |
+| ★ Kaugummi kauen          | „Kaugummi trainiert deinen Kiefer – sichtbar?“    | Kaumuskel (vorsichtig)        |
+| ★ Barfußlaufen            | „Barfuß verändert sich dein Fuß.“                 | Hornhaut, Muskeln, Laufstil   |
+| ★ Zuckerfrei: deine Zähne | „Was Zucker in 30 Tagen mit deinen Zähnen macht.“ | Zahnschmelz (vorsichtig)      |
 
 ## Offen — I So wird's gemacht (themenarten.md)
 
@@ -457,7 +457,6 @@ The scorecard and "What our numbers say" apply too.
 | ------------ | ------ | ---------- | ------------------------ |
 | Waxing       | A      | 2026-11-24 | TikTok #95: Waxing       |
 | Handy-Nacken | H      | 2026-11-26 | TikTok #97: Handy-Nacken |
-| Eiffelturm   | C      | 2026-11-26 | TikTok #98: Eiffelturm   |
 
 ## Verwendet
 
@@ -468,4 +467,4 @@ Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
 Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B),
 Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B),
-Fettbrand (B), Knicklicht, Treibsand (B), Parfum, Fingerknacken (B), Papier 42-mal falten (E).
+Fettbrand (B), Knicklicht, Treibsand (B), Parfum, Fingerknacken (B), Papier 42-mal falten (E), Handy-Nacken (H).

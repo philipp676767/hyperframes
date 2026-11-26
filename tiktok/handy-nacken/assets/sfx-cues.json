@@ -1,0 +1,311 @@
+[
+  {
+    "s": "knack",
+    "at": 0.03,
+    "why": "beats.js",
+    "db": -4
+  },
+  {
+    "s": "hit",
+    "at": 0.05,
+    "why": "hook title"
+  },
+  {
+    "s": "whoosh",
+    "at": 0.33,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "hit",
+    "at": 0.6,
+    "why": "highlight shake"
+  },
+  {
+    "s": "knack",
+    "at": 0.62,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "whoosh",
+    "at": 1.12,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 1.62,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 1.96,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 2.96,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 3.68,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 6.78,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 7,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 7,
+    "why": "highlight flash"
+  },
+  {
+    "s": "pop",
+    "at": 7,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 7.68,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 9.17,
+    "why": "label Wirbelsäule"
+  },
+  {
+    "s": "whoosh",
+    "at": 10.18,
+    "why": "cut"
+  },
+  {
+    "s": "slowmo",
+    "at": 10.4,
+    "why": "highlight slowmo"
+  },
+  {
+    "s": "klack",
+    "at": 10.9,
+    "why": "beats.js"
+  },
+  {
+    "s": "whoosh",
+    "at": 11.24,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 12.98,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 15.38,
+    "why": "cut"
+  },
+  {
+    "s": "blip",
+    "at": 16.93,
+    "why": "label Nackenmuskeln"
+  },
+  {
+    "s": "whoosh",
+    "at": 18.06,
+    "why": "cut"
+  },
+  {
+    "s": "piep",
+    "at": 18.48,
+    "why": "beats.js",
+    "dur": 1.6,
+    "db": -20
+  },
+  {
+    "s": "whoosh",
+    "at": 20.66,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 20.66,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "punch",
+    "at": 20.88,
+    "why": "highlight"
+  },
+  {
+    "s": "hit",
+    "at": 20.88,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 22.7,
+    "why": "cut"
+  },
+  {
+    "s": "punch",
+    "at": 22.92,
+    "why": "highlight"
+  },
+  {
+    "s": "pop",
+    "at": 22.97,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "hit",
+    "at": 23.17,
+    "why": "highlight shake"
+  },
+  {
+    "s": "plumps",
+    "at": 23.17,
+    "why": "beats.js",
+    "db": -6
+  },
+  {
+    "s": "whoosh",
+    "at": 24.14,
+    "why": "cut"
+  },
+  {
+    "s": "click",
+    "at": 24.46,
+    "why": "beats.js"
+  },
+  {
+    "s": "hit",
+    "at": 25.96,
+    "why": "highlight flash"
+  },
+  {
+    "s": "whoosh",
+    "at": 26.46,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 26.68,
+    "why": "highlight flash"
+  },
+  {
+    "s": "blip",
+    "at": 26.73,
+    "why": "label Brustmuskeln"
+  },
+  {
+    "s": "punch",
+    "at": 27.9,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 28.02,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 30.64,
+    "why": "cut"
+  },
+  {
+    "s": "wow",
+    "at": 30.86,
+    "why": "bonus fact"
+  },
+  {
+    "s": "whoosh",
+    "at": 32.5,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "knack",
+    "at": 32.57,
+    "why": "beats.js",
+    "db": -10
+  },
+  {
+    "s": "punch",
+    "at": 32.72,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 34.38,
+    "why": "cut"
+  },
+  {
+    "s": "hit",
+    "at": 35.02,
+    "why": "highlight shake"
+  },
+  {
+    "s": "whoosh",
+    "at": 36.5,
+    "why": "cut"
+  },
+  {
+    "s": "klack",
+    "at": 37.27,
+    "why": "beats.js",
+    "db": -8
+  },
+  {
+    "s": "punch",
+    "at": 38.12,
+    "why": "highlight"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.64,
+    "why": "cut"
+  },
+  {
+    "s": "whoosh",
+    "at": 38.64,
+    "why": "highlight zoom"
+  },
+  {
+    "s": "whoosh",
+    "at": 39.72,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 39.94,
+    "why": "comment pill"
+  },
+  {
+    "s": "whoosh",
+    "at": 41.84,
+    "why": "cut"
+  },
+  {
+    "s": "pop",
+    "at": 43.42,
+    "why": "follow pill"
+  },
+  {
+    "s": "click",
+    "at": 44.2,
+    "why": "follow tap"
+  },
+  {
+    "s": "ding",
+    "at": 44.24,
+    "why": "gefolgt",
+    "db": -16
+  }
+]
