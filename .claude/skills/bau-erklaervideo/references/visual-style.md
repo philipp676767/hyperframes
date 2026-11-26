@@ -263,7 +263,13 @@ surface in `set.js` (floors, walls, roads, decks) use
 `surface(color, kind)` with `worldUV(geo, scale)` — kinds `grass`,
 `gravel`, `sand`, `asphalt`, `concrete`, `plaster`, `paving`, `tiles`,
 `planks`. Never leave a big ground or wall as one clean flat colour.
-Measured: no extra render time (texture anisotropy stays 1). `LOOK.real = false` brings back the
+Measured: no extra render time (texture anisotropy stays 1). The kit's `tree()` builds a
+tapered trunk with branches and a crown of 6–8 leaf clumps, greens are
+natural (not candy), the grade is neutral (`LOOK.saturation` 1.0); ~8 %
+more render time in tree-heavy shots. Keep set colours natural too:
+muted grass (≈ 0x5f8f3c), real stone / wood / paint tones. The user
+prefers this 3D look over photoscans and photo textures (2026-11-26:
+„doch lieber das alte, aber realistischer“) — no Poly Haven assets. `LOOK.real = false` brings back the
 old toy look (old episodes only). On top, **everything the camera comes
 close to looks like a real, manufactured thing photographed with a real
 lens**:

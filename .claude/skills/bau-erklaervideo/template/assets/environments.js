@@ -544,22 +544,56 @@ export const bigGround = (color, r = 75, seed = 5, look = {}) =>
 
 export function tree(x, z, s = 1, seed = 0) {
   const g = new THREE.Group();
-  const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.2, 1.9, 6), M.trunk);
-  trunk.position.y = 0.95;
-  trunk.castShadow = true;
-  g.add(trunk);
-  const n = 2 + (seed % 2);
-  for (let k = 0; k < n; k++) {
-    const r = 0.95 - k * 0.18;
-    const m = F(
-      jitter(new THREE.IcosahedronGeometry(r, 1), 0.07, seed * 13 + k),
-      k % 2 ? M.leaf2 : M.leaf,
-      0.1,
-      seed * 13 + k,
-    );
-    m.position.set((k % 2 ? 0.35 : -0.15) * (seed % 3 ? 1 : -1), 2.2 + k * 0.85, k * 0.1);
-    m.castShadow = true;
-    g.add(m);
+  const r = rng(seed * 31 + 7);
+  if (!LOOK.real) {
+    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.2, 1.9, 6), M.trunk);
+    trunk.position.y = 0.95;
+    trunk.castShadow = true;
+    g.add(trunk);
+    const n = 2 + (seed % 2);
+    for (let k = 0; k < n; k++) {
+      const rr = 0.95 - k * 0.18;
+      const m = F(
+        jitter(new THREE.IcosahedronGeometry(rr, 1), 0.07, seed * 13 + k),
+        k % 2 ? M.leaf2 : M.leaf,
+        0.1,
+        seed * 13 + k,
+      );
+      m.position.set((k % 2 ? 0.35 : -0.15) * (seed % 3 ? 1 : -1), 2.2 + k * 0.85, k * 0.1);
+      m.castShadow = true;
+      g.add(m);
+    }
+  } else {
+    // realistic finish (2026-11-26): a tapered trunk with two branches and a
+    // crown of 6–8 overlapping leaf clumps in slightly different greens
+    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.22, 2.4, 10), M.trunk);
+    trunk.position.y = 1.2;
+    trunk.castShadow = true;
+    g.add(trunk);
+    for (let b = 0; b < 2; b++) {
+      const br = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.08, 1.0, 8), M.trunk);
+      const a = seed + b * Math.PI;
+      br.position.set(Math.cos(a) * 0.25, 2.1, Math.sin(a) * 0.25);
+      br.rotation.set(Math.sin(a) * 0.7, 0, -Math.cos(a) * 0.7);
+      br.castShadow = true;
+      g.add(br);
+    }
+    const n = 6 + Math.floor(r() * 3);
+    for (let k = 0; k < n; k++) {
+      const rr = 0.55 + r() * 0.35;
+      const a = (k / n) * Math.PI * 2 + r();
+      const d = k === 0 ? 0 : 0.45 + r() * 0.3;
+      const m = F(
+        jitter(new THREE.IcosahedronGeometry(rr, 2), 0.06, seed * 13 + k),
+        r() < 0.5 ? M.leaf2 : M.leaf,
+        0.06,
+        seed * 13 + k,
+      );
+      m.position.set(Math.cos(a) * d, 2.6 + r() * 0.9 + (k === 0 ? 0.5 : 0), Math.sin(a) * d);
+      m.scale.y = 0.85;
+      m.castShadow = true;
+      g.add(m);
+    }
   }
   g.position.set(x, 0, z);
   g.scale.setScalar(s);

@@ -46,7 +46,7 @@ export const LOOK = {
   aoRadius: 0.45, // world units around a point that can shade it
   clarity: 0.22, // local contrast inside the sharp band (0 = off)
   contrast: 0.12, // S-curve strength (0 = off)
-  saturation: 1.06,
+  saturation: 1.0, // natural colours (2026-11-26, was 1.06)
   split: 0.035, // warm highlights / cool shadows (0 = off)
 };
 

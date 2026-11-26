@@ -465,13 +465,14 @@ export function roundedBox(w, h, d, r = 0.06, seg = 4) {
 }
 
 export const M = {
-  grass: flat(0x79c24a),
-  grassDark: flat(0x5f9f37),
+  // realistic finish: natural, less candy-like greens (2026-11-26)
+  grass: flat(LOOK.real ? 0x5f8f3c : 0x79c24a),
+  grassDark: flat(LOOK.real ? 0x4b7a30 : 0x5f9f37),
   earth: flat(0x6e3b22),
   root: flat(0x4b2414),
   trunk: flat(0x7a4a2a),
-  leaf: flat(0x6db33c),
-  leaf2: flat(0x5aa233),
+  leaf: flat(LOOK.real ? 0x51833a : 0x6db33c),
+  leaf2: flat(LOOK.real ? 0x416f2c : 0x5aa233),
   rock: flat(0xa9a3ad),
   wood: flat(0xc58b4f),
   woodDark: flat(0x9a6a38),
