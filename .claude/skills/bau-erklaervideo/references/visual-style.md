@@ -1,8 +1,8 @@
 # Visual style
 
-The look (a stylised but **realistic** diorama: real-looking, smooth
-objects up close in a low-poly world, a real lens, soft shadows, captions,
-CTA — see "Realism", 2026-11-06) is fixed. **The world is not: there are no fixed environments** — every
+The look (a **realistic** 3D world: smooth, rounded shapes everywhere,
+real-looking objects up close, calm physical motion, a real lens, soft
+shadows, captions, CTA — see "Realism", 2026-11-06 / 2026-11-26) is fixed. **The world is not: there are no fixed environments** — every
 video builds a new, high-quality place for its topic in `assets/set.js`
 (SKILL.md 1b: concept, own light, layers, quality check). What each video
 designs is the **world**, the **subject**, its **build-up**, and the
@@ -10,10 +10,11 @@ designs is the **world**, the **subject**, its **build-up**, and the
 
 ## The world (set.js on the set kit)
 
-What every world shares, whatever the place: faceted low-poly shapes in
-the middle and far layers (near props in the realistic finish, see
-"Realism"), natural colours, soft shadows, a gradient sky with a sun glow,
-puffy low-poly cumulus with flat undersides, gentle fog into the
+What every world shares, whatever the place: **smooth, rounded shapes**
+in every layer (since 2026-11-26 the kit shades its geometry smooth and
+keeps only a hint of the old facet colours — `LOOK.real`), natural
+colours, large colour patches instead of one flat colour, soft shadows,
+a gradient sky with a sun glow, soft cumulus, gentle fog into the
 distance. The subject sits near the origin, built into the place (no
 stage, no plinth, no floor pad — SKILL.md 1b).
 
@@ -88,8 +89,13 @@ max 2 at once, never over the captions.
 - **Build-up:** the subject pops in on the first "Also …". Every
   component the script names appears exactly on its word: tubes grow
   (`setDrawRange`), parts pop in, things light up.
-- **Pop-ins are rubbery:** use `obj.scale.copy(squash(t, at))` (overshoot +
-  squash-and-stretch that settles) instead of a plain scale, and a dust
+- **Motion is physical, not rubbery** (2026-11-26): `obj.scale.copy(squash(t, at))`
+  now gives a calm ease-in with a tiny settle (no overshoot, no
+  squash-and-stretch — `LOOK.real`). Better still, let things **arrive
+  like real objects**: slide in, drop with gravity and land, swing on a
+  hinge, roll — with weight (ease-in on the fall, a small bounce only
+  where a real thing would bounce). Cartoon wobble, rubber stretch and
+  springy overshoots are out. A dust
   `puff(id, t, at + 0.15, x, y, z, size)` where something big lands on the
   ground. Parts that pop in one after another get staggered by
   0.08–0.15 s, never all on one frame.
@@ -245,10 +251,22 @@ to look.
 
 ## Realism — the "photographed real object" finish (2026-11-06)
 
-User: _"Lass die zukünftigen Videos noch realistischer aussehen."_ The
-world keeps its low-poly character in the distance, but **everything the
-camera comes close to looks like a real, manufactured thing photographed
-with a real lens**:
+User: _"Lass die zukünftigen Videos noch realistischer aussehen."_
+(2026-11-06) and _"Animationsstil realistischer, Renderzeit nicht viel
+länger"_ (2026-11-26). Since 2026-11-26 **the whole world** is smooth
+(`LOOK.real = true`, post.js): kit geometry gets smooth normals with crisp
+hard edges kept (`smoothNormals()`), the per-facet colour is only a hint,
+`flat()` materials shade smooth, pop-ins move physically, and **big
+surfaces get real surface detail**: `terrain()` and `pathStrip()` pick
+grass / sand / gravel / concrete automatically; for every other large
+surface in `set.js` (floors, walls, roads, decks) use
+`surface(color, kind)` with `worldUV(geo, scale)` — kinds `grass`,
+`gravel`, `sand`, `asphalt`, `concrete`, `plaster`, `paving`, `tiles`,
+`planks`. Never leave a big ground or wall as one clean flat colour.
+Measured: no extra render time (texture anisotropy stays 1). `LOOK.real = false` brings back the
+old toy look (old episodes only). On top, **everything the camera comes
+close to looks like a real, manufactured thing photographed with a real
+lens**:
 
 - **Hero subject and near props: smooth, no facets.** Use the `real.*`
   materials (`world.js`: `plastic`, `gloss`, `metal`, `rubber`, `fabric`,

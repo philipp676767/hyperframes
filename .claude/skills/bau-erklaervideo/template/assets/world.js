@@ -76,12 +76,61 @@ export function jitter(geom, amt, seed = 1) {
   return geom;
 }
 
+// Smooth normals for a non-indexed (faceted) geometry: every vertex gets the
+// average normal of all faces that share its position, so the surface
+// shades round instead of in flat facets — the realistic finish
+// (2026-11-26). Colours stay per face, so patches() still works.
+export function smoothNormals(g, crease = 0.5) {
+  const p = g.attributes.position;
+  const n = p.count;
+  const face = new Float32Array(n * 3);
+  const a = new THREE.Vector3();
+  const b = new THREE.Vector3();
+  const c = new THREE.Vector3();
+  for (let i = 0; i + 2 < n; i += 3) {
+    a.fromBufferAttribute(p, i);
+    b.fromBufferAttribute(p, i + 1);
+    c.fromBufferAttribute(p, i + 2);
+    const fn = c.clone().sub(b).cross(a.clone().sub(b)).normalize();
+    for (let j = 0; j < 3; j++) face.set([fn.x, fn.y, fn.z], (i + j) * 3);
+  }
+  const key = (i) =>
+    `${Math.round(p.getX(i) * 1e4)},${Math.round(p.getY(i) * 1e4)},${Math.round(p.getZ(i) * 1e4)}`;
+  const groups = new Map();
+  for (let i = 0; i < n; i++) {
+    const k = key(i);
+    let gr = groups.get(k);
+    if (!gr) groups.set(k, (gr = []));
+    gr.push(i);
+  }
+  const out = new Float32Array(n * 3);
+  const v = new THREE.Vector3();
+  const f = new THREE.Vector3();
+  for (const gr of groups.values()) {
+    for (const i of gr) {
+      f.fromArray(face, i * 3);
+      v.set(0, 0, 0);
+      // average only faces that bend less than the crease angle: hard edges
+      // of boxes and roofs stay crisp, round shapes go smooth
+      for (const j of gr) {
+        const o = new THREE.Vector3().fromArray(face, j * 3);
+        if (o.dot(f) >= crease) v.add(o);
+      }
+      v.normalize();
+      out.set([v.x, v.y, v.z], i * 3);
+    }
+  }
+  g.setAttribute("normal", new THREE.BufferAttribute(out, 3));
+  return g;
+}
+
 // Per-facet colour variation: every triangle gets a slightly lighter or darker
 // tint of its material colour (seeded) — the hand-painted low-poly look.
 // Returns a non-indexed geometry with a colour attribute; use it with a
 // material that has `vertexColors: true` (facetMat() below).
 export function facet(geom, amt = 0.08, seed = 1) {
   const g = geom.index ? geom.toNonIndexed() : geom;
+  if (LOOK.real) amt *= 0.3; // realistic: only a hint of hand-painted facets
   const n = g.attributes.position.count;
   const col = new Float32Array(n * 3);
   const r = rng(seed * 7919 + 17);
@@ -95,7 +144,8 @@ export function facet(geom, amt = 0.08, seed = 1) {
     }
   }
   g.setAttribute("color", new THREE.BufferAttribute(col, 3));
-  g.computeVertexNormals();
+  if (LOOK.real) smoothNormals(g);
+  else g.computeVertexNormals();
   return g;
 }
 // Smooth value noise in 0..1 (deterministic): large-scale variation for
@@ -153,6 +203,131 @@ export function facetMat(m) {
   return f;
 }
 
+// ---------------------------------------------------------------- surfaces
+// Realistic ground and wall surfaces (2026-11-26): a tiled, seeded canvas
+// texture with the detail real materials have — grass blades and clover,
+// gravel, paving joints, asphalt grain, sand ripples, planks, tiles,
+// concrete, plaster. Near-white, so the material colour still decides the
+// tone; one texture lookup per pixel (render time ~unchanged).
+//   new THREE.Mesh(worldUV(geo, 0.5), surface(0x6fae4a, "grass"))
+//   facetMat(surface(color, "gravel")) on facet() geometry works too
+const texCache = new Map();
+export function surfaceTex(kind, seed = 1) {
+  const key = kind + seed;
+  if (texCache.has(key)) return texCache.get(key);
+  const S = 512;
+  const c = document.createElement("canvas");
+  c.width = c.height = S;
+  const g = c.getContext("2d");
+  const r = rng(seed * 101 + kind.length * 7);
+  const shade = (v) => `rgb(${v},${v},${v})`;
+  g.fillStyle = shade(230);
+  g.fillRect(0, 0, S, S);
+  const specks = (n, size, lo, hi) => {
+    for (let i = 0; i < n; i++) {
+      g.fillStyle = shade(Math.round(lo + r() * (hi - lo)));
+      const s = size * (0.5 + r());
+      g.fillRect(r() * S, r() * S, s, s);
+    }
+  };
+  if (kind === "grass") {
+    specks(2600, 2, 150, 255);
+    g.lineWidth = 1.4;
+    for (let i = 0; i < 2600; i++) {
+      const x = r() * S;
+      const y = r() * S;
+      const v = Math.round(150 + r() * 105);
+      g.strokeStyle = shade(v);
+      g.beginPath();
+      g.moveTo(x, y);
+      g.lineTo(x + (r() - 0.5) * 6, y - 4 - r() * 8);
+      g.stroke();
+    }
+  } else if (kind === "gravel" || kind === "sand") {
+    const big = kind === "gravel";
+    specks(big ? 5200 : 9000, big ? 4 : 1.6, big ? 120 : 175, 255);
+    if (!big) {
+      g.strokeStyle = shade(200);
+      g.lineWidth = 3;
+      for (let y = 0; y < S; y += 26) {
+        g.beginPath();
+        for (let x = 0; x <= S; x += 16) g.lineTo(x, y + Math.sin(x * 0.03 + y) * 5);
+        g.stroke();
+      }
+    }
+  } else if (kind === "asphalt" || kind === "concrete" || kind === "plaster") {
+    specks(kind === "asphalt" ? 14000 : 7000, 1.5, kind === "asphalt" ? 140 : 185, 255);
+    if (kind === "concrete") {
+      g.strokeStyle = shade(170);
+      g.lineWidth = 2;
+      g.strokeRect(1, 1, S - 2, S - 2);
+    }
+  } else if (kind === "paving" || kind === "tiles") {
+    const n = kind === "paving" ? 8 : 4;
+    const s = S / n;
+    for (let y = 0; y < n; y++)
+      for (let x = 0; x < n; x++) {
+        const off = kind === "paving" && y % 2 ? s / 2 : 0;
+        g.fillStyle = shade(Math.round(205 + r() * 45));
+        g.fillRect(((x * s + off) % S) + 2, y * s + 2, s - 4, s - 4);
+      }
+    specks(3000, 1.4, 170, 255);
+  } else if (kind === "planks") {
+    const n = 6;
+    for (let i = 0; i < n; i++) {
+      g.fillStyle = shade(Math.round(195 + r() * 50));
+      g.fillRect(0, (i * S) / n + 2, S, S / n - 4);
+      g.strokeStyle = shade(180);
+      for (let k = 0; k < 6; k++) {
+        const y = (i * S) / n + 6 + r() * (S / n - 12);
+        g.beginPath();
+        g.moveTo(0, y);
+        g.bezierCurveTo(S * 0.3, y + 3, S * 0.6, y - 3, S, y);
+        g.stroke();
+      }
+    }
+  }
+  const tex = new THREE.CanvasTexture(c);
+  tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.anisotropy = 1; // more costs render time in software WebGL
+  texCache.set(key, tex);
+  return tex;
+}
+// UVs from world position (metres): per face from its dominant axis, so
+// ground, walls and slopes all get evenly sized detail. `scale` = texture
+// repeats per world unit.
+export function worldUV(geo, scale = 0.5) {
+  const g = geo.index ? geo.toNonIndexed() : geo;
+  const p = g.attributes.position;
+  const uv = new Float32Array(p.count * 2);
+  const a = new THREE.Vector3();
+  const b = new THREE.Vector3();
+  const c = new THREE.Vector3();
+  for (let i = 0; i + 2 < p.count; i += 3) {
+    a.fromBufferAttribute(p, i);
+    b.fromBufferAttribute(p, i + 1);
+    c.fromBufferAttribute(p, i + 2);
+    const n = c.clone().sub(b).cross(a.clone().sub(b));
+    const ax = Math.abs(n.x);
+    const ay = Math.abs(n.y);
+    const az = Math.abs(n.z);
+    for (let j = 0; j < 3; j++) {
+      const x = p.getX(i + j);
+      const y = p.getY(i + j);
+      const z = p.getZ(i + j);
+      const [u, v] = ay >= ax && ay >= az ? [x, z] : ax >= az ? [z, y] : [x, y];
+      uv[(i + j) * 2] = u * scale;
+      uv[(i + j) * 2 + 1] = v * scale;
+    }
+  }
+  g.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+  return g;
+}
+// A lit material with a realistic surface: surface(0x6fae4a, "grass").
+export const surface = (color, kind, { seed = 1, ...extra } = {}) =>
+  flat(color, { map: surfaceTex(kind, seed), ...extra });
+
 // ---------------------------------------------------------------- renderer
 const canvas = document.getElementById("stage");
 export const renderer = new THREE.WebGLRenderer({
@@ -181,7 +356,7 @@ overlay.add(new THREE.HemisphereLight(0xffffff, 0x8a8090, 2.2));
 export const flat = (color, extra = {}) =>
   new THREE.MeshStandardMaterial({
     color,
-    flatShading: true,
+    flatShading: !LOOK.real, // realistic finish: smooth shading (2026-11-26)
     roughness: 0.85,
     metalness: 0,
     ...extra,
@@ -422,6 +597,12 @@ const sq = V(1, 1, 1);
 export function squash(t, at, d = 0.75, base = 1) {
   if (t < at) return sq.set(0.001, 0.001, 0.001);
   const k = clamp01((t - at) / d);
+  if (LOOK.real) {
+    // realistic: a calm, physical ease-in with a tiny settle — no rubber
+    const e = 1 - Math.pow(1 - Math.min(1, k * 1.4), 3);
+    const s = Math.max(0.001, (e + Math.sin(k * Math.PI) * 0.025) * base);
+    return sq.set(s, s, s);
+  }
   const s = outBack(Math.min(1, k * 1.7)) * base;
   const w = Math.sin(k * Math.PI * 3) * (1 - k) * 0.16;
   return sq.set(

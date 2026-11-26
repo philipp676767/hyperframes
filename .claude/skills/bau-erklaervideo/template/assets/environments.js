@@ -28,6 +28,9 @@ import {
   patches,
   noise2,
   renderer,
+  LOOK,
+  worldUV,
+  surface,
 } from "./world.js";
 
 // mesh with per-facet colour variation (world.js facet)
@@ -225,7 +228,7 @@ export function setSky(sky) {
       emissive: sky.cloud[1],
       emissiveIntensity: 0.28,
       roughness: 1,
-      flatShading: true,
+      flatShading: !LOOK.real,
       fog: false,
     }),
   );
@@ -500,6 +503,18 @@ export function discGeo(r, step, seed, height = () => 0) {
 // relief (may go negative: valleys, a lake bed, a sloping beach) — keep it
 // 0 for d < 6 so the stage stays level. `look` = patches() options
 // (amt, scale, warm, fn).
+// which surface detail fits a ground colour (realistic finish)
+function autoTex(color) {
+  const c = new THREE.Color(color);
+  const hsl = {};
+  c.getHSL(hsl);
+  if (hsl.l > 0.85) return null; // snow, white floors: clean
+  if (hsl.s < 0.12) return "concrete";
+  if (hsl.h > 0.17 && hsl.h < 0.45) return "grass";
+  if (hsl.h >= 0.08 && hsl.h <= 0.17) return "sand";
+  return "gravel";
+}
+
 export function terrain(
   color,
   { r = 75, seed = 5, step = 3.2, flatR = 36, hills = 6, height, ...look } = {},
@@ -512,9 +527,12 @@ export function terrain(
       return ((d - flatR) / (r - flatR)) * hills * (0.35 + 0.65 * v);
     });
   const geo = discGeo(r, step, seed, relief);
+  const g = patches(facet(geo, 0.06, seed), { amt: 0.1, scale: 0.12, seed, ...look });
+  // realistic finish: grass / sand / gravel detail picked from the colour
+  const kind = look.tex ?? (LOOK.real ? autoTex(color) : null);
   const m = new THREE.Mesh(
-    patches(facet(geo, 0.06, seed), { amt: 0.1, scale: 0.12, seed, ...look }),
-    facetMat(flat(color)),
+    kind ? worldUV(g, 0.45) : g,
+    facetMat(kind ? surface(color, kind, { seed }) : flat(color)),
   );
   m.receiveShadow = true;
   ground.add(m);
@@ -665,7 +683,7 @@ export function sea({ zFrom = -4, depth = 110, width = 180, y = -0.05, amp = 0.0
     geo,
     new THREE.MeshStandardMaterial({
       vertexColors: true,
-      flatShading: true,
+      flatShading: !LOOK.real,
       roughness: 0.12,
       metalness: 0.05,
       transparent: true,
@@ -720,9 +738,10 @@ export function pathStrip(pts, { width = 1.6, color = 0xc9a46b, lift = 0.02, see
   geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
   geo.setIndex(idx);
   geo.computeVertexNormals();
+  const pg = patches(facet(geo, 0.08, seed), { amt: 0.1, scale: 0.5, seed });
   const m = new THREE.Mesh(
-    patches(facet(geo, 0.08, seed), { amt: 0.1, scale: 0.5, seed }),
-    facetMat(flat(color)),
+    LOOK.real ? worldUV(pg, 0.8) : pg,
+    facetMat(LOOK.real ? surface(color, "gravel", { seed }) : flat(color)),
   );
   m.receiveShadow = true;
   ground.add(m);
@@ -737,7 +756,7 @@ export function pond(x, z, { rx = 3, rz = 2, color = 0x4fa9c9, seed = 6 } = {}) 
     geo,
     new THREE.MeshStandardMaterial({
       color,
-      flatShading: true,
+      flatShading: !LOOK.real,
       roughness: 0.08,
       metalness: 0.1,
       envMapIntensity: 1.6,

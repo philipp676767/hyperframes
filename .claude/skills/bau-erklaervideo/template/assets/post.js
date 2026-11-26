@@ -38,6 +38,10 @@ export const LOOK = {
   dofRange: 0.35, // relative distance from the focus where the blur starts
   grain: 0.018, // fine film grain (0 = off), changes every frame
   exposure: 1.0, // renderer tone-mapping exposure (Neutral tone mapping)
+  // realistic finish for the whole world (2026-11-26): smooth shading instead
+  // of facets, only a hint of per-facet colour, calm physical motion instead
+  // of rubbery pop-ins. false = the old toy low-poly look (old episodes).
+  real: true,
   ao: 0.75, // ambient occlusion strength (0 = off)
   aoRadius: 0.45, // world units around a point that can shade it
   clarity: 0.22, // local contrast inside the sharp band (0 = off)

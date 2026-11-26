@@ -39,6 +39,7 @@ früher galt und geändert wurde, steht unten unter „Überholt“ und ist
 
 **Bild:**
 
+- [ ] **Realistischer Animationsstil** (Nutzer, 2026-11-26): ganze Welt glatt statt Kanten-Look (`LOOK.real`), nur ein Hauch Facetten-Farbe, Bewegungen physikalisch (gleiten, fallen, landen) statt Gummi-Überschwingen, große Flächen mit echter Struktur (Gras, Kies, Sand, Beton … über `surface()`); Renderzeit gleich.
 - [ ] Realistisch: Hauptobjekt + Nahes mit `real.*`-Materialien, runden Kanten, echten Farben und Größen, 3–6 Details.
 - [ ] Welt: andere Art von Ort als die letzten 3, kein Sockel, kein Podest, keine Bodenplatte. Objekt groß im Bild, Röntgen max. ⅓ der Zeit.
 
