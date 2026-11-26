@@ -12,17 +12,18 @@ second; the video lives for the answer; the answer is something you
 **see** (the melon falls apart, both bullets land at once); a fast,
 surprising reveal makes people rewatch.
 
-| Code | Type                           | One-line idea                                                    | Topic list (themen.md)            | Extra file               |
-| ---- | ------------------------------ | ---------------------------------------------------------------- | --------------------------------- | ------------------------ |
-| A    | **Alltagsding**                | how a concrete everyday thing works (incl. Look & Hobby, Detail) | Offen — Format A (+ Look, Detail) | —                        |
-| B    | **Was passiert, wenn …?**      | a scenario with a felt body moment, chain of consequences        | Offen — Format B                  | `format-was-passiert.md` |
-| C    | **Bauwerke**                   | how a famous bridge / tower / building stands                    | Offen — Format C                  | `format-bauwerke.md`     |
-| D    | **Duell**                      | „X gegen Y – was gewinnt?“ — everyone guesses first              | Offen — D Duell                   | below                    |
-| E    | **Experiment**                 | a crazy test you'd never do yourself, shown in 3D                | Offen — E Experiment              | below                    |
-| F    | **Rätsel zum Mitmachen**       | a puzzle the viewer tries to solve before the answer             | Offen — F Rätsel                  | below                    |
-| G    | **Wahre Geschichte**           | a real incident with a person — and why they survived            | Offen — G Wahre Geschichte        | below                    |
-| H    | **Dein Körper verändert sich** | a visible before/after on your own body from a habit             | Offen — H Körper                  | below                    |
-| I    | **So wird's gemacht**          | how a famous thing you own is made in the factory                | Offen — I Herstellung             | below                    |
+| Code | Type                           | One-line idea                                                          | Topic list (themen.md)            | Extra file               |
+| ---- | ------------------------------ | ---------------------------------------------------------------------- | --------------------------------- | ------------------------ |
+| A    | **Alltagsding**                | how a concrete everyday thing works (incl. Look & Hobby, Detail)       | Offen — Format A (+ Look, Detail) | —                        |
+| B    | **Was passiert, wenn …?**      | a scenario with a felt body moment, chain of consequences              | Offen — Format B                  | `format-was-passiert.md` |
+| C    | **Bauwerke**                   | how a famous bridge / tower / building stands                          | Offen — Format C                  | `format-bauwerke.md`     |
+| D    | **Duell**                      | „X gegen Y – was gewinnt?“ — everyone guesses first                    | Offen — D Duell                   | below                    |
+| E    | **Experiment**                 | a crazy test you'd never do yourself, shown in 3D                      | Offen — E Experiment              | below                    |
+| F    | **Rätsel zum Mitmachen**       | a puzzle the viewer tries to solve before the answer                   | Offen — F Rätsel                  | below                    |
+| G    | **Wahre Geschichte**           | a real incident with a person — and why they survived                  | Offen — G Wahre Geschichte        | below                    |
+| H    | **Dein Körper verändert sich** | a visible before/after on your own body from a habit                   | Offen — H Körper                  | below                    |
+| US   | (any type)                     | **US-Hits ohne deutsche Version** — proven abroad, our own German take | Offen — US-Hits                   | themen.md                |
+| I    | **So wird's gemacht**          | how a famous thing you own is made in the factory                      | Offen — I Herstellung             | below                    |
 
 ## D — Duell
 

@@ -118,7 +118,7 @@ last two videos):
 printf '%s\n' A D E F G H I | shuf -n 1
 ```
 
-Then take the best open topic of that type's list. If that list has no
+Then take the best open topic of that type's list **plus the rows of „US-Hits ohne deutsche Version“ (themen.md) with that type in the `Art` column** (they get +2). If that list has no
 topic scoring ≥ 15, roll again. Log the letter in the `Format` column.
 Say it in the reservation line („Diesmal: D Duell“). If the user names a
 type or a topic, take theirs. (Until 2026-11-23 the types rotated A → B

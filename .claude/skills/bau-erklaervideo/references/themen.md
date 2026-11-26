@@ -450,6 +450,33 @@ The scorecard and "What our numbers say" apply too.
 | ★ Gummibärchen      | „Gummibärchen werden in Stärke-Mehl gegossen.“     | Mogul-Anlage, Stärkeformen     |
 | ★ Glasflasche       | „Deine Flasche war vor 10 Minuten noch flüssig.“   | Tropfen, Form, Blasen mit Luft |
 
+## Offen — US-Hits ohne deutsche Version (2026-11-26)
+
+Viral in den USA (Zack D. Films, 3D-Erklär-Shorts, Aufrufe Stand
+2026-11-24), auf Deutsch gibt es dazu kein Short (YouTube-Suche geprüft).
+Wir machen die **deutsche Version mit eigenem Dreh für AT/CH/DE** — nie
+ein Nachbau: eigene Welt, eigener Hook, eigene Fakten, das Thema ist
+frei. **Scorecard +2** („im Ausland bewiesen, bei uns frei“). Die Spalte
+„Art“ sagt, zu welcher Videoart (`themenarten.md`) es zählt.
+
+| Thema (deutscher Dreh)                             | Art | US-Vorbild (Aufrufe)                           | Hook (Frage im Kopf)                                           |
+| -------------------------------------------------- | --- | ---------------------------------------------- | -------------------------------------------------------------- |
+| ★ Bananenschale gegen Auto (der Mario-Kart-Mythos) | E   | Could A Banana Peel Make A Car Spin (4,6 M)    | „Kann eine Bananenschale dein Auto ins Schleudern bringen?“    |
+| ★ Messer aus Milch                                 | E   | How To Make A Knife From Milk (10 M)           | „Aus dieser Milch wird ein Messer.“ (Kasein, prüfen)           |
+| ★ Bodensee mit dem Gartenschlauch füllen           | B   | How Long To Fill A Pool Across America (10 M)  | „Du füllst den Bodensee mit deinem Gartenschlauch. Wie lange?“ |
+| ★ Yellowstone-Magma über Wien / Berlin             | B   | Dumping Yellowstone's Magma On NYC (5,9 M)     | „Wir kippen das Magma eines Supervulkans über Wien.“ (prüfen)  |
+| ★ Die Maschine, die Kekse aufdreht (Oreo-Test)     | I   | The Machine That Tested The Oreo Twist (8,6 M) | „Eine Maschine dreht Tausende Oreos auf – warum?“ (prüfen)     |
+| ★ Zaubertafel                                      | A   | How An Etch A Sketch Works (2,8 M)             | „Die Zaubertafel malt ohne Strom und ohne Farbe.“              |
+| ★ Becher-Fall-Trick                                | F   | How The Cup Drop Trick Works (4,6 M)           | „Lass den Becher fallen – und er landet stehend.“ (prüfen)     |
+| ★ Geheimtür hinter dem Bücherregal                 | A   | How A Hidden Bookshelf Door Works (3,6 M)      | „Hinter diesem Regal ist ein Zimmer.“                          |
+| ★ Zehn-Münzen-Rätsel (mit Euro-Münzen)             | F   | How To Solve The Ten Penny Puzzle (2,2 M)      | „Leg 10 Münzen in 5 Reihen zu je 4.“                           |
+
+**Weiter scouten:** bei jeder Themenwahl darf der Video-Chat, wenn Web /
+YouTube-Suche verfügbar ist, 1–2 neue Kandidaten prüfen (aktuelle
+Top-Shorts großer US-3D-Erklärkanäle → gibt es eine deutsche Version?
+→ wenn nein: mit Dreh in diese Liste). Nie wahre Verbrechens- oder
+Unglücksgeschichten von dort übernehmen, nur Wissens-Themen.
+
 ## Reserviert (in Arbeit)
 
 | Thema             | Format | Datum      | Chat                          |
