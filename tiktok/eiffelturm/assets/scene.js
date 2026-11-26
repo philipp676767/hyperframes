@@ -416,7 +416,7 @@ function bendTower(t) {
   for (const r of riders) {
     const f = (r.y / H) * (r.y / H);
     r.obj.position.set(bx * f, r.y * (1 + g), bz * f);
-    r.obj.rotation.set((-bz * 2 * r.y) / (H * H), 0, (bx * 2 * r.y) / (H * H));
+    r.obj.rotation.set((bz * 2 * r.y) / (H * H), 0, (-bx * 2 * r.y) / (H * H));
   }
   return [bx, bz, g];
 }
