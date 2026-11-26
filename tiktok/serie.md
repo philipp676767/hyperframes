@@ -107,3 +107,4 @@ Umgebungen (insel, stadt, …).
 | 95  | Waxing (sofort draufdrücken)     | A      | `tiktok/waxing`              | waxing-studio-hautlandschaft  | wintermorgen, fensterlicht  | 45,0 s | 2026-11-24 |
 | 96  | Eiswürfel angeln (Salz)          | E      | `tiktok/eiswuerfel-angeln`   | huettenterrasse-alpenglühen   | spätnachmittag, alpenglühen | 45,0 s | 2026-11-26 |
 | 98  | Eiffelturm (biegt sich weg)      | C      | `tiktok/eiffelturm`          | paris-marsfeld-seine          | juli-mittag, hohe sonne     | 45,0 s | 2026-11-26 |
+| 97  | Handy-Nacken                     | H      | `tiktok/handy-nacken`        | schlafzimmer-nacht-bett       | nacht, lampe + handylicht   | 45,0 s | 2026-11-26 |

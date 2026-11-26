@@ -433,13 +433,13 @@ The scorecard and "What our numbers say" apply too.
 
 ## Offen — H Dein Körper verändert sich (themenarten.md — vorsichtig formulieren)
 
-| Thema                     | Hook                                                         | Vorher → Nachher (prüfen)         |
-| ------------------------- | ------------------------------------------------------------ | --------------------------------- |
-| ★ Mundatmung              | „Mundatmung kann dein Gesicht verändern.“                    | schmaler Kiefer, Gesichtsform     |
-| ★ Handy-Nacken            | „Dein Kopf wiegt beim Scrollen wie ein Kind auf dem Nacken.“ | Haltung, Last auf der Wirbelsäule |
-| ★ Kaugummi kauen          | „Kaugummi trainiert deinen Kiefer – sichtbar?“               | Kaumuskel (vorsichtig)            |
-| ★ Barfußlaufen            | „Barfuß verändert sich dein Fuß.“                            | Hornhaut, Muskeln, Laufstil       |
-| ★ Zuckerfrei: deine Zähne | „Was Zucker in 30 Tagen mit deinen Zähnen macht.“            | Zahnschmelz (vorsichtig)          |
+| Thema                     | Hook                                              | Vorher → Nachher (prüfen)     |
+| ------------------------- | ------------------------------------------------- | ----------------------------- |
+| ★ Bürostuhl (8 h Sitzen)  | „8 Stunden Sitzen verkürzt deine Hüfte.“          | Hüftbeuger, Becken kippt      |
+| ★ Mundatmung              | „Mundatmung kann dein Gesicht verändern.“         | schmaler Kiefer, Gesichtsform |
+| ★ Kaugummi kauen          | „Kaugummi trainiert deinen Kiefer – sichtbar?“    | Kaumuskel (vorsichtig)        |
+| ★ Barfußlaufen            | „Barfuß verändert sich dein Fuß.“                 | Hornhaut, Muskeln, Laufstil   |
+| ★ Zuckerfrei: deine Zähne | „Was Zucker in 30 Tagen mit deinen Zähnen macht.“ | Zahnschmelz (vorsichtig)      |
 
 ## Offen — I So wird's gemacht (themenarten.md)
 
@@ -467,4 +467,4 @@ Noise-Cancelling-Kopfhörer, Wassersprudler (Sodastream), Geldautomat,
 Taschenwärmer, Popcorn, Kontaktlos bezahlen, Zapfpistole, Feuerzeug, Face ID,
 Erde hört auf, sich zu drehen (B), Flugzeugtür (B), MRT, Tiefsee (B), Raketen-Landung, Blitz ins Auto (B),
 Schleudersitz, Loch durch die Erde (B), Flugzeugfenster, Ohne Raumanzug ins Weltall (B),
-Fettbrand (B), Knicklicht, Treibsand (B), Parfum, Fingerknacken (B), Papier 42-mal falten (E).
+Fettbrand (B), Knicklicht, Treibsand (B), Parfum, Fingerknacken (B), Papier 42-mal falten (E), Handy-Nacken (H).
